@@ -2,9 +2,9 @@ name: "Your Name"
 role: senior_software_engineer
 tagline: "I build reliable\nweb & mobile products"
 bio: "Bio placeholder — what you do, your focus areas, and what you're looking for. Written to be skimmed by a recruiter in seconds."
-github: https://github.com/handle
+github: https://github.com/2sem
 linkedin: https://linkedin.com/in/handle
-email: you@email.com
+email: kofggm@gmail.com
 resume: "#"
 contactMsg: "Let's talk. Open to new opportunities and interesting projects."
 
@@ -41,16 +41,14 @@ companies[2]:
     role: Developer
     cur: false
     projects[3]:
-      - id: proj-a
-        name: "Project A"
-        meta: "2016 · Web · PHP"
-        tags[2]: web,php
-        desc: "Short description of the project. What problem it solved and what you built."
-        role: "Led backend development, designed database schema."
-        tech[3]: PHP,MySQL,jQuery
-        links[2]{label,href}:
-          "↗ Repo","#"
-          "↗ Live","#"
+      - id: ems
+        name: "EMS"
+        meta: "2009.09 · Desktop · VB"
+        tags[3]: desktop,vb,windows
+        desc: "MDI terminal monitor for IDC ops — saves window positions and per-terminal connection settings so nothing needs repositioning after restart."
+        role: "Sole developer. Designed MDI layout engine, implemented Telnet protocol from RFC, built XML-based multi-user config system."
+        tech[3]: VB,Telnet,XML
+        links: []
         image: null
       - id: proj-b
         name: "Project B"
