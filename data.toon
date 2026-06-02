@@ -1,0 +1,114 @@
+name: "Your Name"
+role: senior_software_engineer
+tagline: "I build reliable\nweb & mobile products"
+bio: "Bio placeholder — what you do, your focus areas, and what you're looking for. Written to be skimmed by a recruiter in seconds."
+github: https://github.com/handle
+linkedin: https://linkedin.com/in/handle
+email: you@email.com
+resume: "#"
+contactMsg: "Let's talk. Open to new opportunities and interesting projects."
+
+stats[4]{num,em,cap}:
+  6,y,experience
+  42,,projects_shipped
+  23,,skills_tools
+  5,,highlights
+
+tags[4]:
+  - "#open-source-maintainer"
+  - "#conf-speaker"
+  - "#1M+-users"
+  - "#led-team-of-5"
+
+filterDefs[6]:
+  - key: "platform:web"
+    tags[1]: web
+  - key: "platform:ios"
+    tags[1]: ios
+  - key: "lang:swift"
+    tags[1]: swift
+  - key: "lang:ts"
+    tags[2]: ts,typescript
+  - key: "stack:react"
+    tags[1]: react
+  - key: "stack:node"
+    tags[2]: node,nodejs
+
+companies[2]:
+  - id: credif
+    name: "CREDiF"
+    when: "2009 — 2017"
+    role: Developer
+    cur: false
+    projects[3]:
+      - id: proj-a
+        name: "Project A"
+        meta: "2016 · Web · PHP"
+        tags[2]: web,php
+        desc: "Short description of the project. What problem it solved and what you built."
+        role: "Led backend development, designed database schema."
+        tech[3]: PHP,MySQL,jQuery
+        links[2]{label,href}:
+          "↗ Repo","#"
+          "↗ Live","#"
+        image: null
+      - id: proj-b
+        name: "Project B"
+        meta: "2015 · Web · Java"
+        tags[2]: web,java
+        desc: "Short description of the project. What problem it solved and what you built."
+        role: "Full-stack development across 3 modules."
+        tech[3]: Java,Spring,Oracle
+        links: []
+        image: null
+      - id: proj-c
+        name: "Project C"
+        meta: "2013 · iOS · ObjC"
+        tags[2]: ios,objc
+        desc: "First mobile project. Delivered to 10k+ internal users."
+        role: "Built from scratch, sole iOS engineer."
+        tech[3]: Obj-C,CoreData,AFNetworking
+        links: []
+        image: null
+  - id: freelance
+    name: Freelance
+    when: "2017 — now"
+    role: "iOS Developer"
+    cur: true
+    projects[3]:
+      - id: proj-d
+        name: "App D"
+        meta: "2023 · iOS · Swift"
+        tags[2]: ios,swift
+        desc: "Description of the app. Users, impact, key features."
+        role: "Solo developer — design to App Store."
+        tech[3]: Swift,SwiftUI,Firebase
+        links[1]{label,href}:
+          "↗ AppStore","#"
+        image: null
+      - id: proj-e
+        name: "App E"
+        meta: "2021 · iOS · Swift"
+        tags[3]: ios,swift,swiftui
+        desc: "Description of the app."
+        role: "Built core features and led team of 2 contractors."
+        tech[3]: Swift,SwiftUI,Combine
+        links: []
+        image: null
+      - id: proj-f
+        name: "Web Dashboard"
+        meta: "2022 · Web · React"
+        tags[4]: web,react,ts,typescript
+        desc: "Internal analytics dashboard with real-time data and complex filtering."
+        role: "Front-end architecture and component library."
+        tech[3]: React,TypeScript,"Node.js"
+        links: []
+        image: null
+
+skills[3]:
+  - group: Languages
+    chips[6]: Swift,TypeScript,JavaScript,SQL,PHP,Bash
+  - group: Frameworks
+    chips[5]: SwiftUI,UIKit,React,"Node.js","Next.js"
+  - group: "Tools / Infra"
+    chips[7]: Xcode,Tuist,Git,Docker,AWS,Figma,CI/CD
