@@ -48,7 +48,6 @@ companies[2]:
         desc: "MDI terminal monitor for IDC ops — saves window positions and per-terminal connection settings so nothing needs repositioning after restart."
         role: "Sole developer. Designed MDI layout engine, implemented Telnet protocol from RFC, built XML-based multi-user config system."
         tech[3]: VB,Telnet,XML
-        links: []
         image: null
       - id: proj-b
         name: "Project B"
@@ -57,7 +56,6 @@ companies[2]:
         desc: "Short description of the project. What problem it solved and what you built."
         role: "Full-stack development across 3 modules."
         tech[3]: Java,Spring,Oracle
-        links: []
         image: null
       - id: proj-c
         name: "Project C"
@@ -66,7 +64,6 @@ companies[2]:
         desc: "First mobile project. Delivered to 10k+ internal users."
         role: "Built from scratch, sole iOS engineer."
         tech[3]: Obj-C,CoreData,AFNetworking
-        links: []
         image: null
   - id: freelance
     name: Freelance
@@ -91,7 +88,6 @@ companies[2]:
         desc: "Description of the app."
         role: "Built core features and led team of 2 contractors."
         tech[3]: Swift,SwiftUI,Combine
-        links: []
         image: null
       - id: proj-f
         name: "Web Dashboard"
@@ -100,7 +96,6 @@ companies[2]:
         desc: "Internal analytics dashboard with real-time data and complex filtering."
         role: "Front-end architecture and component library."
         tech[3]: React,TypeScript,"Node.js"
-        links: []
         image: null
 
 skills[3]:
