@@ -31,6 +31,24 @@ histories/
 - Flags missing numbers/scope in `profile/_gaps.md`.
 - Uses screenshots for GitHub Pages visual cards.
 
+## Notion → TOON tag mapping
+
+When syncing a project from Notion to `data.toon`, map fields to tags:
+
+| Notion field | Value | Tag |
+|---|---|---|
+| type | Desktop App | `desktop` |
+| OS | Windows | `windows` |
+| OS | macOS | `macos` |
+| type | Web | `web` |
+| type | iOS App | `ios` |
+| lang | Swift | `swift` |
+| lang | TypeScript / TS | `ts`, `typescript` |
+| stack | React | `react` |
+| stack | Node.js | `node`, `nodejs` |
+
+filterDefs in `data.toon` must cover every tag used. Add new filterDef when adding new tag.
+
 ## Good raw entry ingredients
 
 - **Numbers**: users, %, latency, team size, time saved.
