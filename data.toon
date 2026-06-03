@@ -31,7 +31,7 @@ companies[2]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
-        tags[3]: desktop,vb,windows
+        tags[2]: platform:windows,lang:vb
         desc: "MDI terminal monitor for IDC ops — saves window positions and per-terminal connection settings so nothing needs repositioning after restart."
         role: "Sole developer. Designed MDI layout engine, implemented Telnet protocol from RFC, built XML-based multi-user config system."
         tech[3]: VB,Telnet,XML
@@ -39,7 +39,7 @@ companies[2]:
       - id: proj-b
         name: "Project B"
         meta: "2015 · Web · Java"
-        tags[2]: web,java
+        tags[2]: platform:web,lang:java
         desc: "Short description of the project. What problem it solved and what you built."
         role: "Full-stack development across 3 modules."
         tech[3]: Java,Spring,Oracle
@@ -47,7 +47,7 @@ companies[2]:
       - id: proj-c
         name: "Project C"
         meta: "2013 · iOS · ObjC"
-        tags[2]: ios,objc
+        tags[2]: platform:ios,lang:objc
         desc: "First mobile project. Delivered to 10k+ internal users."
         role: "Built from scratch, sole iOS engineer."
         tech[3]: Obj-C,CoreData,AFNetworking
@@ -61,7 +61,7 @@ companies[2]:
       - id: proj-d
         name: "App D"
         meta: "2023 · iOS · Swift"
-        tags[2]: ios,swift
+        tags[2]: platform:ios,lang:swift
         desc: "Description of the app. Users, impact, key features."
         role: "Solo developer — design to App Store."
         tech[3]: Swift,SwiftUI,Firebase
@@ -71,7 +71,7 @@ companies[2]:
       - id: proj-e
         name: "App E"
         meta: "2021 · iOS · Swift"
-        tags[3]: ios,swift,swiftui
+        tags[3]: platform:ios,lang:swift,framework:swiftui
         desc: "Description of the app."
         role: "Built core features and led team of 2 contractors."
         tech[3]: Swift,SwiftUI,Combine
@@ -79,7 +79,7 @@ companies[2]:
       - id: proj-f
         name: "Web Dashboard"
         meta: "2022 · Web · React"
-        tags[4]: web,react,ts,typescript
+        tags[3]: platform:web,framework:react,lang:ts
         desc: "Internal analytics dashboard with real-time data and complex filtering."
         role: "Front-end architecture and component library."
         tech[3]: React,TypeScript,"Node.js"

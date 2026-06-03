@@ -6,6 +6,18 @@ export default function FilterBar({
   onChipToggle,
   resultCount,
 }) {
+  const { groups, orderedGroups } = filterDefs.reduce((acc, tag) => {
+    const sep = tag.indexOf(':')
+    const group = sep >= 0 ? tag.slice(0, sep) : 'other'
+    const label = sep >= 0 ? tag.slice(sep + 1) : tag
+    if (!acc.groups[group]) {
+      acc.groups[group] = []
+      acc.orderedGroups.push(group)
+    }
+    acc.groups[group].push({ tag, label })
+    return acc
+  }, { groups: {}, orderedGroups: [] })
+
   return (
     <div className="filterbar">
       <div className="filterbar-cmd">
@@ -21,16 +33,25 @@ export default function FilterBar({
         />
         <span className="filterbar-kbd">⌘K</span>
       </div>
-      <div className="filterbar-chips">
-        {filterDefs.map(tag => (
-          <button
-            key={tag}
-            className={`chip${activeChips.includes(tag) ? ' active' : ''}`}
-            onClick={() => onChipToggle(tag)}
-          >
-            {tag}
-          </button>
+      <div className="filterbar-groups">
+        {orderedGroups.map(group => (
+          <div key={group} className="filterbar-group">
+            <span className="filterbar-group-label">{group}</span>
+            <div className="filterbar-chips">
+              {groups[group].map(({ tag, label }) => (
+                <button
+                  key={tag}
+                  className={`chip${activeChips.includes(tag) ? ' active' : ''}`}
+                  onClick={() => onChipToggle(tag)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
         ))}
+      </div>
+      <div className="filterbar-footer">
         <span className="filterbar-result">
           // {resultCount} project{resultCount !== 1 ? 's' : ''} · sort:recent
         </span>
