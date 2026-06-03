@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Wireframe — Layout A (detailed)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b2a26; --ink-soft:#6f6d64; --line:#3a3833;
+    --paper:#f6f4ec; --paper-2:#efece1; --fill:#e9e6da; --fill-2:#dedacb;
+    --accent:#2f5fd0; --accent-soft:#cfdaf6; --hl:#ffe66d;
+    --shadow:rgba(43,42,38,.14); --grid:rgba(43,42,38,.045);
+    --mono:"DejaVu Sans Mono",ui-monospace,Menlo,Consolas,monospace;
+  }
+  [data-theme="dark"]{
+    --ink:#e7e4da; --ink-soft:#9a978c; --line:#b8b4a6;
+    --paper:#272622; --paper-2:#2f2e29; --fill:#3a3833; --fill-2:#45433c;
+    --accent:#6f93e8; --accent-soft:#33415f; --hl:#7a6a28;
+    --shadow:rgba(0,0,0,.4); --grid:rgba(231,228,218,.05);
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; font-family:"Kalam",system-ui,sans-serif; color:var(--ink);
+    background:var(--paper);
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+    background-size:26px 26px; font-size:16.5px; line-height:1.35; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{ margin:0; font-weight:700; }
+  p{ margin:0; }
+  .mono{ font-family:var(--mono); font-size:11.5px; letter-spacing:.2px; }
+  .muted{ color:var(--ink-soft); }
+
+  /* toolbar */
+  .toolbar{ position:sticky; top:0; z-index:60; display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+    padding:11px 22px; background:color-mix(in srgb,var(--paper) 92%,transparent); backdrop-filter:blur(4px); border-bottom:2px solid var(--line); }
+  .brand{ font-family:"Architects Daughter",cursive; font-size:20px; }
+  .brand small{ display:block; font-family:"Kalam"; font-size:12px; color:var(--ink-soft); font-weight:400; }
+  .toolbar .spacer{ flex:1; }
+  .toggle{ cursor:pointer; border:2px solid var(--line); background:var(--paper); color:var(--ink);
+    border-radius:230px 12px 200px 12px/12px 200px 12px 230px; padding:5px 12px; font-family:"Kalam"; font-size:13px; }
+  .toggle.on{ background:var(--hl); }
+
+  /* sketch primitives */
+  .sketch{ border:2px solid var(--line); border-radius:255px 14px 230px 14px/14px 230px 14px 255px; background:var(--paper); box-shadow:2px 3px 0 var(--shadow); }
+  .sketch.alt{ border-radius:14px 235px 14px 255px/235px 14px 255px 14px; }
+  .dash{ border:2px dashed var(--line); background:transparent; box-shadow:none; }
+  .bar{ height:11px; background:var(--fill); border-radius:6px; }
+  .bar.s{ width:55%; } .bar.m{ width:75%; } .bar.l{ width:92%; } .bar.dark{ background:var(--fill-2); }
+  .ph{ position:relative; border:2px solid var(--line); border-radius:10px; overflow:hidden;
+    background:linear-gradient(to top right,transparent calc(50% - 1px),rgba(58,56,51,.3) calc(50% - 1px),rgba(58,56,51,.3) calc(50% + 1px),transparent calc(50% + 1px)),
+    linear-gradient(to top left,transparent calc(50% - 1px),rgba(58,56,51,.3) calc(50% - 1px),rgba(58,56,51,.3) calc(50% + 1px),transparent calc(50% + 1px)),
+    repeating-linear-gradient(45deg,var(--fill),var(--fill) 7px,var(--paper-2) 7px,var(--paper-2) 14px);
+    display:flex; align-items:flex-end; justify-content:center; }
+  .ph .lbl{ position:relative; margin-bottom:7px; background:var(--paper); border:1.5px solid var(--line); border-radius:4px; padding:1px 7px; }
+  .chip{ display:inline-flex; align-items:center; gap:6px; font-size:13px; padding:3px 10px; border:2px solid var(--line); background:var(--paper); color:var(--ink);
+    border-radius:200px 12px 180px 12px/12px 180px 12px 200px; cursor:pointer; user-select:none; }
+  .chip.on{ background:var(--accent-soft); }
+  .chip.tag{ background:var(--hl); }
+  .chip .x{ font-family:var(--mono); font-size:11px; }
+  .btn{ font-family:"Kalam"; font-size:15px; cursor:pointer; padding:8px 16px; border:2px solid var(--line); background:var(--paper); color:var(--ink);
+    border-radius:240px 14px 220px 14px/14px 220px 14px 240px; box-shadow:2px 3px 0 var(--shadow); }
+  .btn.primary{ background:var(--accent); color:#fff; }
+  .btn.sm{ font-size:13px; padding:5px 11px; }
+  .cb{ display:inline-flex; align-items:center; gap:8px; font-size:14.5px; cursor:pointer; }
+  .box{ width:17px; height:17px; border:2px solid var(--line); border-radius:5px; flex:none; display:inline-block; }
+  .box.ck{ background:var(--accent); position:relative; }
+  .box.ck::after{ content:"✓"; color:#fff; font-size:12px; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+
+  .anno{ font-family:"Architects Daughter",cursive; color:var(--accent); font-size:13.5px; }
+  .anno.block{ display:block; margin:6px 0; }
+  body.hide-anno .anno{ display:none !important; }
+
+  .row{ display:flex; gap:16px; } .col{ display:flex; flex-direction:column; gap:16px; }
+  .wrap{ display:flex; gap:10px; flex-wrap:wrap; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .grid2{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+
+  /* shell */
+  .shell{ display:grid; grid-template-columns:218px 1fr; gap:24px; align-items:start; max-width:1240px; margin:0 auto; padding:24px 24px 140px; }
+  .side{ position:sticky; top:78px; padding:18px 15px; }
+  .avatar{ width:66px; height:66px; border-radius:50%; border:2px solid var(--line); margin:0 auto 10px;
+    background:repeating-linear-gradient(45deg,var(--fill),var(--fill) 6px,var(--paper-2) 6px,var(--paper-2) 12px); }
+  .side .nm{ text-align:center; font-weight:700; }
+  .side .role{ text-align:center; font-size:13px; color:var(--ink-soft); margin-top:2px; }
+  .nav{ display:flex; flex-direction:column; gap:6px; margin:14px 0; }
+  .nav a{ font-size:15px; padding:7px 11px; border:2px solid transparent; border-radius:8px; cursor:pointer; color:var(--ink); text-decoration:none; display:flex; align-items:center; gap:8px; }
+  .nav a .n{ font-family:var(--mono); font-size:10px; color:var(--ink-soft); }
+  .nav a:hover{ background:var(--paper-2); }
+  .nav a.active{ background:var(--accent-soft); border:2px solid var(--line); border-radius:200px 10px 180px 10px/10px 180px 10px 200px; }
+  .side .links{ display:flex; flex-direction:column; gap:7px; border-top:2px dashed var(--line); padding-top:12px; margin-top:4px; }
+  .side .links a{ font-size:13.5px; color:var(--ink); text-decoration:none; display:flex; align-items:center; gap:7px; }
+  .side .avail{ margin-top:12px; font-size:12.5px; display:flex; align-items:center; gap:7px; color:var(--ink-soft); }
+  .dot{ width:9px; height:9px; border-radius:50%; background:var(--accent); border:1.5px solid var(--line); }
+
+  /* sections */
+  section[id]{ scroll-margin-top:72px; }
+  .sec-h{ font-family:"Architects Daughter",cursive; font-size:23px; display:flex; align-items:center; gap:10px; margin-bottom:4px; }
+  .sec-h .n{ font-family:var(--mono); font-size:12px; color:var(--ink-soft); }
+
+  .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .stat{ padding:15px; text-align:center; }
+  .stat .num{ font-family:"Architects Daughter",cursive; font-size:36px; line-height:1; }
+  .stat .cap{ font-size:13px; color:var(--ink-soft); margin-top:5px; }
+
+  /* filter */
+  .filterbar{ padding:15px; display:flex; flex-direction:column; gap:12px; }
+  .search{ display:flex; align-items:center; gap:10px; padding:9px 13px; border:2px solid var(--line); background:var(--paper);
+    border-radius:200px 14px 180px 14px/14px 180px 14px 200px; }
+  .search .ico{ font-family:var(--mono); }
+  .search .ph-txt{ color:var(--ink-soft); }
+  .facets{ display:flex; gap:22px; flex-wrap:wrap; }
+  .facet h4{ font-size:13.5px; margin-bottom:7px; }
+  .rangewrap{ width:150px; }
+  .range{ height:30px; position:relative; border-radius:8px; }
+  .range .track{ position:absolute; left:22%; right:14%; top:50%; height:3px; background:var(--accent); transform:translateY(-50%); }
+  .range .knob{ position:absolute; top:50%; width:14px; height:14px; border-radius:50%; background:var(--paper); border:2px solid var(--line); transform:translate(-50%,-50%); }
+
+  /* timeline / gallery */
+  .timeline{ position:relative; padding-left:30px; }
+  .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background:var(--line); }
+  .tl-item{ position:relative; margin-bottom:24px; }
+  .tl-item::before{ content:""; position:absolute; left:-26px; top:5px; width:13px; height:13px; border-radius:50%; background:var(--paper); border:2px solid var(--line); }
+  .tl-item.cur::before{ background:var(--accent); }
+  .tl-head{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .tl-head .co{ font-weight:700; font-size:17px; }
+  .tl-head .when{ font-family:var(--mono); color:var(--ink-soft); }
+  .scrollhint{ font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin:4px 0 2px; }
+  .gallery{ display:flex; gap:14px; overflow-x:auto; padding:4px 2px 12px; scroll-snap-type:x mandatory; }
+  .gallery::-webkit-scrollbar{ height:8px; }
+  .gallery::-webkit-scrollbar-thumb{ background:var(--fill-2); border-radius:8px; }
+  .gcard{ flex:0 0 198px; scroll-snap-align:start; overflow:hidden; cursor:pointer; }
+  .gcard .ph{ border:none; border-bottom:2px solid var(--line); border-radius:0; height:116px; }
+  .gcard .gbody{ padding:9px 11px 11px; }
+  .gcard .ttl{ font-weight:700; font-size:15px; }
+  .gcard .meta{ font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:2px; }
+  .gcard .addmini{ display:inline-flex; align-items:center; gap:5px; font-size:11.5px; margin-top:7px; padding:2px 8px; border:2px solid var(--line); border-radius:6px; }
+  .gcard .addmini.on{ background:var(--hl); }
+  .more{ flex:0 0 96px; scroll-snap-align:start; display:flex; align-items:center; justify-content:center; text-align:center; cursor:pointer; font-size:14px; }
+
+  /* flat grid card */
+  .card{ overflow:hidden; position:relative; }
+  .card .ph{ border:none; border-bottom:2px solid var(--line); border-radius:0; height:128px; }
+  .card .body{ padding:12px 13px 14px; }
+  .card .ttl{ font-weight:700; font-size:16px; }
+  .card .meta{ font-family:var(--mono); color:var(--ink-soft); margin:3px 0 0; }
+  .card .addcb{ position:absolute; top:9px; right:9px; background:var(--paper); border:2px solid var(--line); border-radius:6px; padding:3px 8px; font-size:12px; cursor:pointer; }
+  .card .addcb.on{ background:var(--hl); }
+
+  /* inline detail */
+  .detail{ margin:14px 0 4px; padding:0; overflow:hidden; }
+  .detail-inner{ padding:18px; }
+  .media{ display:grid; grid-template-columns:1.4fr 1fr; gap:16px; }
+  .slideshow{ position:relative; height:230px; }
+  .slideshow .arrow{ position:absolute; top:50%; transform:translateY(-50%); width:30px; height:30px; border-radius:50%; border:2px solid var(--line); background:var(--paper); display:flex; align-items:center; justify-content:center; font-family:var(--mono); cursor:pointer; }
+  .slideshow .arrow.l{ left:8px; } .slideshow .arrow.r{ right:8px; }
+  .dots{ position:absolute; bottom:8px; left:0; right:0; display:flex; gap:6px; justify-content:center; }
+  .dots i{ width:8px; height:8px; border-radius:50%; border:2px solid var(--line); background:var(--paper); }
+  .dots i.on{ background:var(--accent); }
+  .yt{ height:230px; } .yt .play{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:50px; height:36px; border-radius:8px; border:2px solid var(--line); background:var(--paper); display:flex; align-items:center; justify-content:center; }
+  .yt .play::after{ content:"▶"; }
+
+  /* skills */
+  .skillgroup h4{ font-size:14.5px; margin-bottom:9px; }
+  .skill{ display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .skill .nm{ width:96px; font-size:14px; }
+  .skill .meter{ flex:1; height:10px; border:2px solid var(--line); border-radius:6px; overflow:hidden; background:var(--paper); }
+  .skill .meter i{ display:block; height:100%; background:var(--accent-soft); }
+
+  /* resume cart */
+  .fab{ position:fixed; right:26px; bottom:26px; z-index:70; display:flex; align-items:center; gap:9px; padding:12px 18px; cursor:pointer; }
+  .fab .badge{ background:var(--accent); color:#fff; border-radius:50%; min-width:24px; height:24px; padding:0 6px; display:flex; align-items:center; justify-content:center; font-size:13px; border:2px solid var(--line); }
+  .drawer{ position:fixed; right:26px; bottom:84px; z-index:70; width:330px; padding:16px; display:none; max-height:72vh; overflow:auto; }
+  .drawer.open{ display:block; }
+  body.cart-top .drawer.open{ top:64px; bottom:auto; }
+  #cartTop{ display:inline-flex; align-items:center; gap:8px; }
+  .drawer h3{ font-family:"Architects Daughter",cursive; font-size:20px; }
+  .res-item{ display:flex; align-items:center; gap:10px; padding:8px 10px; margin-bottom:8px; border-radius:10px; }
+  .res-item .handle{ font-family:var(--mono); color:var(--ink-soft); cursor:grab; }
+  .res-item .nm{ flex:1; font-size:14px; }
+  .res-item .rm{ font-family:var(--mono); cursor:pointer; }
+  .seg{ display:flex; }
+  .seg .opt{ flex:1; text-align:center; font-size:13px; padding:6px 4px; border:2px solid var(--line); border-right-width:0; cursor:pointer; }
+  .seg .opt:first-child{ border-radius:10px 0 0 10px; }
+  .seg .opt:last-child{ border-right-width:2px; border-radius:0 10px 10px 0; }
+  .seg .opt.on{ background:var(--accent); color:#fff; }
+  .empty-cart{ color:var(--ink-soft); font-size:13.5px; }
+
+  @media (max-width:860px){
+    .shell{ grid-template-columns:1fr; } .side{ position:static; }
+    .stats{ grid-template-columns:repeat(2,1fr); } .grid3{ grid-template-columns:repeat(2,1fr); }
+    .media{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body class="cart-top">
+
+<div class="toolbar">
+  <div class="brand">Layout A — detailed<small>working wireframe · sidebar nav fixed</small></div>
+  <div class="spacer"></div>
+  <button class="toggle on" id="annoToggle">Notes: on</button>
+  <button class="toggle" id="darkToggle">◐ Dark mode</button>
+  <button class="toggle" id="cartTop">Resume cart <span class="badge" id="cartCountTop" style="background:var(--accent);color:#fff;border-radius:50%;padding:0 6px;border:2px solid var(--line);font-size:12px;">0</span></button>
+</div>
+
+<div class="shell">
+  <!-- ===== SIDEBAR (now functional) ===== -->
+  <aside class="side sketch">
+    <div class="avatar"></div>
+    <div class="nm">Your Name</div>
+    <div class="role">Senior Software Engineer</div>
+    <nav class="nav" id="nav">
+      <a href="#summary" class="active"><span class="n">01</span> Summary</a>
+      <a href="#projects"><span class="n">02</span> Projects</a>
+      <a href="#skills"><span class="n">03</span> Skills</a>
+      <a href="#contact"><span class="n">04</span> Contact</a>
+    </nav>
+    <div class="links">
+      <a href="#contact">↗ GitHub</a>
+      <a href="#contact">↗ LinkedIn</a>
+      <a href="#contact">✉ Email</a>
+    </div>
+    <div class="avail"><span class="dot"></span> Open to opportunities</div>
+    <button class="btn sm" style="width:100%; margin-top:12px;" id="dlResume">⬇ Download résumé</button>
+    <div class="anno block" style="margin-top:10px;">← clicking nav now scrolls to each section + highlights the active one</div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="col" style="gap:34px;">
+
+    <!-- SUMMARY -->
+    <section id="summary" class="col" style="gap:14px;">
+      <div>
+        <h2 style="font-family:'Architects Daughter';font-size:26px;">Hi, I build reliable web & mobile products.</h2>
+        <p class="muted" style="margin-top:6px; max-width:60ch;">One-line bio placeholder — what you do, your focus areas, and what you're looking for. Keep it to a sentence or two recruiters can read in seconds.</p>
+      </div>
+      <div class="stats">
+        <div class="stat sketch"><div class="num">6</div><div class="cap">years experience</div></div>
+        <div class="stat sketch"><div class="num">42</div><div class="cap">projects shipped</div></div>
+        <div class="stat sketch"><div class="num">23</div><div class="cap">skills / tools</div></div>
+        <div class="stat sketch"><div class="num">5</div><div class="cap">highlights</div></div>
+      </div>
+      <div class="wrap">
+        <span class="chip tag">★ Open-source maintainer</span>
+        <span class="chip tag">★ Conference speaker</span>
+        <span class="chip tag">★ Shipped to 1M+ users</span>
+        <span class="chip tag">★ Led a team of 5</span>
+      </div>
+      <div class="anno">↑ summary stats + highlights — the first thing recruiters see</div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="col" style="gap:12px;">
+      <div class="row" style="align-items:center; flex-wrap:wrap;">
+        <h3 class="sec-h"><span class="n">02</span> Projects</h3>
+        <span class="spacer" style="flex:1"></span>
+        <strong style="font-size:13.5px;">group:</strong>
+        <span class="chip on grp-pick" data-g="company">By company · timeline</span>
+        <span class="chip grp-pick" data-g="flat">Flat grid</span>
+      </div>
+
+      <!-- persistent filter -->
+      <div class="filterbar sketch alt">
+        <div class="search">
+          <span class="ico">⌕</span><span class="ph-txt">search projects, or type a tag…</span>
+          <span class="spacer" style="flex:1"></span>
+          <span class="mono muted" style="border:1.5px solid var(--line); border-radius:5px; padding:1px 6px;">⌘K</span>
+        </div>
+        <div class="facets">
+          <div class="facet"><h4>Period</h4>
+            <div class="rangewrap"><div class="range dash"><div class="track"></div><div class="knob" style="left:22%;"></div><div class="knob" style="left:86%;"></div></div>
+            <div class="mono muted">2018 — 2026</div></div>
+          </div>
+          <div class="facet"><h4>Platform</h4><div class="wrap"><span class="chip filt on">Web</span><span class="chip filt">iOS</span><span class="chip filt">Android</span></div></div>
+          <div class="facet"><h4>Language</h4><div class="wrap"><span class="chip filt">TS</span><span class="chip filt">Python</span><span class="chip filt">Go</span></div></div>
+          <div class="facet"><h4>Stack</h4><div class="wrap"><span class="chip filt">React</span><span class="chip filt">Node</span><span class="chip filt">Postgres</span></div></div>
+        </div>
+        <div class="row" style="align-items:center; flex-wrap:wrap; gap:10px;">
+          <strong style="font-size:13.5px;">active:</strong>
+          <span class="chip on">Web <span class="x">✕</span></span>
+          <span class="chip tag">react <span class="x">✕</span></span>
+          <span class="mono muted" style="cursor:pointer;">clear all</span>
+          <span class="spacer" style="flex:1"></span>
+          <span class="mono muted">12 results · sort: recent ▾</span>
+        </div>
+        <div class="anno">↑ persistent filter — always visible, drives the projects below (⌘K opens quick search)</div>
+      </div>
+
+      <!-- grouped BY COMPANY (= history) -->
+      <div id="grpCompany">
+        <div class="timeline" id="timeline"></div>
+        <div class="anno block">↑ projects grouped under each role · zero clicks to see them · scroll ↔ · click a card to expand details</div>
+      </div>
+
+      <!-- FLAT grid -->
+      <div id="grpFlat" style="display:none;">
+        <div class="grid3" id="flatGrid"></div>
+        <div class="anno block">↑ every project ranked by the filter — for “show me all your Go work”</div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="col" style="gap:12px;">
+      <h3 class="sec-h"><span class="n">03</span> Skills</h3>
+      <div class="grid3">
+        <div class="sketch skillgroup" style="padding:15px;">
+          <h4>Languages</h4>
+          <div class="wrap"><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Go</span><span class="chip">Python</span><span class="chip">Swift</span><span class="chip">SQL</span></div>
+        </div>
+        <div class="sketch skillgroup" style="padding:15px;">
+          <h4>Frameworks</h4>
+          <div class="wrap"><span class="chip">React</span><span class="chip">Node</span><span class="chip">Next.js</span><span class="chip">Express</span><span class="chip">SwiftUI</span></div>
+        </div>
+        <div class="sketch skillgroup" style="padding:15px;">
+          <h4>Tools / infra</h4>
+          <div class="wrap"><span class="chip">Docker</span><span class="chip">Postgres</span><span class="chip">AWS</span><span class="chip">Redis</span><span class="chip">CI/CD</span><span class="chip">Figma</span></div>
+        </div>
+      </div>
+      <div class="anno">↑ skills grouped &amp; tokenized — no level meters (proficiency is hard to gauge objectively)</div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="col" style="gap:12px;">
+      <h3 class="sec-h"><span class="n">04</span> Contact</h3>
+      <div class="sketch" style="padding:18px;">
+        <div class="grid2" style="gap:18px; align-items:center;">
+          <div class="col" style="gap:10px;">
+            <p>Let's talk. Placeholder line for a short call-to-action.</p>
+            <div class="wrap">
+              <span class="chip">✉ you@email.com</span>
+              <span class="chip">↗ github.com/handle</span>
+              <span class="chip">↗ linkedin.com/in/handle</span>
+            </div>
+            <button class="btn primary" style="align-self:flex-start; margin-top:6px;" id="dlResume2">⬇ Download résumé (PDF)</button>
+          </div>
+          <div class="ph" style="height:130px;"><span class="lbl mono">optional: location map / photo</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- resume cart (top-right) -->
+<div class="drawer sketch" id="drawer">
+  <h3>Resume cart</h3>
+  <div class="muted" style="margin:2px 0 12px;" id="cartSub">No projects yet — add some with “+ resume”.</div>
+  <div id="cartList"></div>
+  <div id="cartOpts" style="display:none;">
+    <h4 style="margin:8px 0 8px;">Include</h4>
+    <div class="col" style="gap:7px;">
+      <span class="cb"><span class="box ck"></span>Summary stats header</span>
+      <span class="cb"><span class="box ck"></span>Tech stack per project</span>
+      <span class="cb"><span class="box"></span>Screenshots</span>
+      <span class="cb"><span class="box ck"></span>Dates &amp; company</span>
+    </div>
+    <h4 style="margin:14px 0 8px;">Template</h4>
+    <div class="seg"><span class="opt on">Compact</span><span class="opt">Detailed</span><span class="opt">One-pager</span></div>
+    <button class="btn primary" style="width:100%; margin-top:14px;">Generate PDF →</button>
+  </div>
+</div>
+
+<script>
+  // ---- data ----
+  var companies = [
+    { co:"Acme Corp", when:"2023 — now · Senior Dev", cur:true, total:7, projects:[
+      ["Atlas","2024 · Web · React"],["Beacon","2023 · iOS · Swift"],["Halo","2023 · Web · TS"]]},
+    { co:"Startup Inc", when:"2020 — 2023 · Engineer", cur:false, total:5, projects:[
+      ["Comet","2022 · Web · TS"],["Drift","2021 · Android · Kotlin"]]},
+    { co:"Freelance", when:"2018 — 2020", cur:false, total:3, projects:[
+      ["Spark","2019 · Web · Vue"]]}
+  ];
+  var flatProjects = [
+    ["Atlas","2024 · Web · React"],["Beacon","2023 · iOS · Swift"],["Comet","2022 · Web · TS"],
+    ["Drift","2021 · Android · Kotlin"],["Halo","2023 · Web · TS"],["Spark","2019 · Web · Vue"]
+  ];
+  var cart = [];
+
+  // ---- build timeline ----
+  function gcard(p){
+    return '<div class="gcard sketch" data-proj="'+p[0]+'">'+
+      '<div class="ph"><span class="lbl mono">shot</span></div>'+
+      '<div class="gbody"><div class="ttl">'+p[0]+'</div><div class="meta">'+p[1]+'</div>'+
+      '<span class="addmini" data-add="'+p[0]+'">+ resume</span></div></div>';
+  }
+  document.getElementById('timeline').innerHTML = companies.map(function(c){
+    return '<div class="tl-item'+(c.cur?' cur':'')+'">'+
+      '<div class="tl-head"><span class="co">'+c.co+'</span><span class="when">'+c.when+'</span></div>'+
+      '<div class="scrollhint">scroll ↔ to browse projects · click one for details</div>'+
+      '<div class="gallery">'+ c.projects.map(gcard).join('') +
+      '<div class="more sketch dash" data-co="'+c.co+'">see all '+c.total+' →</div></div></div>';
+  }).join('');
+
+  // ---- build flat grid ----
+  document.getElementById('flatGrid').innerHTML = flatProjects.map(function(p){
+    return '<div class="card sketch" data-proj="'+p[0]+'">'+
+      '<span class="addcb" data-add="'+p[0]+'">+ resume</span>'+
+      '<div class="ph"><span class="lbl mono">thumb</span></div>'+
+      '<div class="body"><div class="ttl">'+p[0]+'</div><div class="meta">'+p[1]+'</div></div></div>';
+  }).join('');
+
+  // ---- inline detail panel ----
+  function detailHTML(name){
+    return '<div class="detail sketch">'+
+      '<div class="detail-inner col">'+
+        '<div class="row" style="justify-content:space-between; align-items:flex-start;">'+
+          '<div><h3 style="font-family:\'Architects Daughter\';font-size:23px;">Project '+name+'</h3>'+
+          '<div class="meta mono" style="color:var(--ink-soft);">2022 · Web · TS · React · Node · Postgres</div></div>'+
+          '<button class="btn sm" data-collapse="1">collapse ✕</button></div>'+
+        '<div class="media">'+
+          '<div class="ph slideshow"><span class="lbl mono">screenshot slideshow</span>'+
+            '<div class="arrow l">‹</div><div class="arrow r">›</div>'+
+            '<div class="dots"><i class="on"></i><i></i><i></i></div></div>'+
+          '<div class="ph yt"><span class="lbl mono">YouTube embed</span><div class="play"></div></div>'+
+        '</div>'+
+        '<div class="grid2" style="gap:18px;">'+
+          '<div class="col" style="gap:8px;"><h4>What it is</h4><div class="bar l"></div><div class="bar l"></div><div class="bar m"></div>'+
+            '<h4 style="margin-top:8px;">My role</h4><div class="bar l"></div><div class="bar s"></div></div>'+
+          '<div class="col" style="gap:10px;"><h4>Tech / tags</h4>'+
+            '<div class="wrap"><span class="chip">React</span><span class="chip">Node</span><span class="chip">Postgres</span><span class="chip tag">realtime</span></div>'+
+            '<h4 style="margin-top:6px;">Links</h4><div class="wrap"><span class="chip">↗ Repo</span><span class="chip">↗ Live demo</span></div>'+
+            '<button class="btn primary" data-add="'+name+'" style="align-self:flex-start; margin-top:8px;">+ Add to resume</button></div>'+
+        '</div>'+
+      '</div></div>';
+  }
+
+  function closeDetail(){
+    var d = document.getElementById('liveDetail');
+    if(d) d.remove();
+  }
+  function openDetail(name, afterEl){
+    closeDetail();
+    var wrap = document.createElement('div');
+    wrap.id = 'liveDetail';
+    wrap.innerHTML = detailHTML(name);
+    afterEl.parentNode.insertBefore(wrap, afterEl.nextSibling);
+  }
+
+  // ---- delegate clicks ----
+  document.addEventListener('click', function(e){
+    var add = e.target.closest('[data-add]');
+    if(add){ e.stopPropagation(); toggleCart(add.getAttribute('data-add')); return; }
+
+    var collapse = e.target.closest('[data-collapse]');
+    if(collapse){ closeDetail(); return; }
+
+    var card = e.target.closest('.gcard, .card');
+    if(card){
+      var name = card.getAttribute('data-proj');
+      // anchor the detail after the row (timeline item) or grid (flat)
+      var anchor = card.closest('.tl-item') || card.closest('#grpFlat');
+      var existing = document.getElementById('liveDetail');
+      if(existing && existing.dataset.for === name){ closeDetail(); return; }
+      openDetail(name, anchor);
+      var ld = document.getElementById('liveDetail'); if(ld) ld.dataset.for = name;
+      return;
+    }
+  });
+
+  // ---- resume cart ----
+  function toggleCart(name){
+    var i = cart.indexOf(name);
+    if(i>=0) cart.splice(i,1); else cart.push(name);
+    renderCart();
+    // reflect on add buttons
+    document.querySelectorAll('[data-add]').forEach(function(b){
+      var on = cart.indexOf(b.getAttribute('data-add'))>=0;
+      if(b.classList.contains('addmini')){ b.classList.toggle('on', on); b.textContent = on ? '✓ added' : '+ resume'; }
+      else if(b.classList.contains('addcb')){ b.classList.toggle('on', on); b.textContent = on ? '✓ added' : '+ resume'; }
+    });
+  }
+  function renderCart(){
+    document.getElementById('cartCountTop').textContent = cart.length;
+    var sub = document.getElementById('cartSub');
+    var opts = document.getElementById('cartOpts');
+    var list = document.getElementById('cartList');
+    if(cart.length===0){
+      sub.textContent = 'No projects yet — add some with “+ resume”.';
+      sub.className = 'empty-cart';
+      opts.style.display = 'none'; list.innerHTML = '';
+      return;
+    }
+    sub.className = 'muted';
+    sub.textContent = cart.length + ' project' + (cart.length>1?'s':'') + ' · drag to reorder';
+    opts.style.display = '';
+    list.innerHTML = cart.map(function(n){
+      return '<div class="res-item sketch"><span class="handle">⠿</span><span class="nm">Project '+n+'</span><span class="rm" data-add="'+n+'">✕</span></div>';
+    }).join('');
+  }
+
+  document.getElementById('cartTop').addEventListener('click', function(){
+    document.getElementById('drawer').classList.toggle('open');
+  });
+
+  // ---- group toggle ----
+  document.querySelectorAll('.grp-pick').forEach(function(p){
+    p.addEventListener('click', function(){
+      document.querySelectorAll('.grp-pick').forEach(function(x){ x.classList.remove('on'); });
+      p.classList.add('on');
+      var flat = p.dataset.g === 'flat';
+      closeDetail();
+      document.getElementById('grpCompany').style.display = flat ? 'none' : '';
+      document.getElementById('grpFlat').style.display = flat ? '' : 'none';
+    });
+  });
+
+  // ---- filter chips visual toggle ----
+  document.querySelectorAll('.chip.filt').forEach(function(c){
+    c.addEventListener('click', function(){ c.classList.toggle('on'); });
+  });
+
+  // ---- sidebar scroll-spy (the fix) ----
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
+  var sections = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function spy(){
+    var y = window.scrollY + 90;
+    var idx = 0;
+    sections.forEach(function(s,i){ if(s && s.offsetTop <= y) idx = i; });
+    navLinks.forEach(function(a,i){ a.classList.toggle('active', i===idx); });
+  }
+  window.addEventListener('scroll', spy, { passive:true });
+  spy();
+
+  // ---- toolbar toggles ----
+  var at = document.getElementById('annoToggle');
+  at.addEventListener('click', function(){
+    document.body.classList.toggle('hide-anno');
+    var off = document.body.classList.contains('hide-anno');
+    at.classList.toggle('on', !off);
+    at.textContent = 'Notes: ' + (off ? 'off' : 'on');
+  });
+  var dt = document.getElementById('darkToggle');
+  dt.addEventListener('click', function(){
+    var on = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', on ? 'light' : 'dark');
+    dt.classList.toggle('on', !on);
+    dt.textContent = on ? '◐ Dark mode' : '◑ Light mode';
+  });
+
+  renderCart();
+</script>
+</body>
+</html>

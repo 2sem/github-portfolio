@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Portfolio — Wireframes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b2a26;
+    --ink-soft:#6f6d64;
+    --line:#3a3833;
+    --paper:#f6f4ec;
+    --paper-2:#efece1;
+    --fill:#e9e6da;
+    --fill-2:#dedacb;
+    --accent:#2f5fd0;
+    --accent-soft:#cfdaf6;
+    --hl:#ffe66d;
+    --shadow:rgba(43,42,38,.14);
+    --grid:rgba(43,42,38,.045);
+    --mono:"DejaVu Sans Mono",ui-monospace,Menlo,Consolas,monospace;
+  }
+  /* dark mode — wireframing the product's theme switch */
+  [data-theme="dark"]{
+    --ink:#e7e4da;
+    --ink-soft:#9a978c;
+    --line:#b8b4a6;
+    --paper:#272622;
+    --paper-2:#2f2e29;
+    --fill:#3a3833;
+    --fill-2:#45433c;
+    --accent:#6f93e8;
+    --accent-soft:#33415f;
+    --hl:#7a6a28;
+    --shadow:rgba(0,0,0,.4);
+    --grid:rgba(231,228,218,.05);
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; }
+  body{
+    font-family:"Kalam",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size:26px 26px;
+    -webkit-font-smoothing:antialiased;
+    font-size:16.5px;
+    line-height:1.35;
+  }
+  h1,h2,h3,h4{ font-weight:700; margin:0; }
+  p{ margin:0; }
+
+  /* ---------- toolbar ---------- */
+  .toolbar{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+    padding:12px 22px;
+    background:color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter:blur(4px);
+    border-bottom:2px solid var(--line);
+  }
+  .brand{ font-family:"Architects Daughter",cursive; font-size:21px; letter-spacing:.3px; }
+  .brand small{ display:block; font-family:"Kalam"; font-size:12.5px; color:var(--ink-soft); font-weight:400; }
+  .tabs{ display:flex; gap:8px; flex-wrap:wrap; }
+  .tab{
+    font-family:"Kalam"; font-size:15px; cursor:pointer;
+    padding:6px 13px; background:var(--paper); color:var(--ink);
+    border:2px solid var(--line); border-radius:240px 14px 220px 14px/14px 220px 14px 240px;
+    transform:rotate(-.4deg);
+  }
+  .tab:nth-child(even){ transform:rotate(.5deg); }
+  .tab.active{ background:var(--accent); color:#fff; border-color:var(--line); }
+  .toolbar .spacer{ flex:1; }
+  .ctrls{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .ctrl{ display:flex; align-items:center; gap:7px; font-size:13.5px; color:var(--ink-soft); }
+  .toggle{
+    cursor:pointer; border:2px solid var(--line); background:var(--paper);
+    border-radius:230px 12px 200px 12px/12px 200px 12px 230px; padding:4px 11px; font-family:"Kalam"; font-size:13px;
+  }
+  .toggle.on{ background:var(--hl); }
+  .swatches{ display:flex; gap:6px; }
+  .sw{ width:20px; height:20px; border-radius:50%; border:2px solid var(--line); cursor:pointer; padding:0; }
+  .sw.sel{ outline:2px solid var(--ink); outline-offset:2px; }
+
+  /* ---------- screens ---------- */
+  .screen{ display:none; max-width:1240px; margin:0 auto; padding:26px 24px 120px; }
+  .screen.active{ display:block; }
+  .screen-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:18px; flex-wrap:wrap; }
+  .screen-head h2{ font-family:"Architects Daughter",cursive; font-size:26px; }
+  .screen-head .desc{ color:var(--ink-soft); font-size:15px; }
+
+  /* ---------- sketch primitives ---------- */
+  .sketch{
+    border:2px solid var(--line);
+    border-radius:255px 14px 230px 14px/14px 230px 14px 255px;
+    background:var(--paper);
+    box-shadow:2px 3px 0 var(--shadow);
+  }
+  .sketch.alt{ border-radius:14px 235px 14px 255px/235px 14px 255px 14px; }
+  .fill{ background:var(--fill); }
+  .bar{ height:11px; background:var(--fill); border-radius:6px; }
+  .bar.s{ width:55%; } .bar.m{ width:75%; } .bar.l{ width:92%; }
+  .bar.dark{ background:var(--fill-2); }
+  .dash{ border:2px dashed var(--line); background:transparent; }
+  .muted{ color:var(--ink-soft); }
+  .mono{ font-family:var(--mono); font-size:11.5px; letter-spacing:.2px; }
+
+  /* image / media placeholder with crossed X */
+  .ph{
+    position:relative; border:2px solid var(--line); border-radius:10px; overflow:hidden;
+    background:
+      linear-gradient(to top right, transparent calc(50% - 1px), rgba(58,56,51,.35) calc(50% - 1px), rgba(58,56,51,.35) calc(50% + 1px), transparent calc(50% + 1px)),
+      linear-gradient(to top left, transparent calc(50% - 1px), rgba(58,56,51,.35) calc(50% - 1px), rgba(58,56,51,.35) calc(50% + 1px), transparent calc(50% + 1px)),
+      repeating-linear-gradient(45deg, #ece9dd, #ece9dd 7px, #f2efe6 7px, #f2efe6 14px);
+    display:flex; align-items:flex-end; justify-content:center;
+  }
+  .ph .lbl{ position:relative; margin-bottom:7px; background:var(--paper); border:1.5px solid var(--line); border-radius:4px; padding:1px 7px; }
+
+  .chip{
+    display:inline-flex; align-items:center; gap:6px; font-size:13px;
+    padding:3px 10px; border:2px solid var(--line); background:var(--paper);
+    border-radius:200px 12px 180px 12px/12px 180px 12px 200px;
+  }
+  .chip.on{ background:var(--accent-soft); }
+  .chip.tag{ background:var(--hl); }
+  .chip .x{ font-family:var(--mono); font-size:11px; }
+
+  .btn{
+    font-family:"Kalam"; font-size:15px; cursor:pointer;
+    padding:8px 16px; border:2px solid var(--line); background:var(--paper); color:var(--ink);
+    border-radius:240px 14px 220px 14px/14px 220px 14px 240px; box-shadow:2px 3px 0 var(--shadow);
+  }
+  .btn.primary{ background:var(--accent); color:#fff; }
+  .btn.sm{ font-size:13px; padding:5px 11px; }
+
+  .cb{ display:inline-flex; align-items:center; gap:8px; font-size:14.5px; }
+  .box{ width:17px; height:17px; border:2px solid var(--line); border-radius:5px; display:inline-block; flex:none; }
+  .box.ck{ background:var(--accent); position:relative; }
+  .box.ck::after{ content:"✓"; color:#fff; font-size:12px; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+
+  /* annotations */
+  .anno{
+    font-family:"Architects Daughter",cursive; color:var(--accent); font-size:13.5px;
+    display:inline-flex; align-items:center; gap:5px;
+  }
+  .anno.block{ display:block; margin:6px 0; }
+  body.hide-anno .anno{ display:none !important; }
+  .pin{ position:relative; }
+  .pin .anno.float{ position:absolute; z-index:5; max-width:190px; line-height:1.25; }
+
+  /* layout helpers */
+  .row{ display:flex; gap:16px; }
+  .col{ display:flex; flex-direction:column; gap:16px; }
+  .wrap{ display:flex; gap:14px; flex-wrap:wrap; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .grid2{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+
+  /* app shell (sidebar + main) */
+  .shell{ display:grid; grid-template-columns:212px 1fr; gap:22px; align-items:start; }
+  .side{ padding:18px 16px; position:sticky; top:84px; }
+  .avatar{ width:64px; height:64px; border-radius:50%; border:2px solid var(--line); margin:0 auto 10px;
+    background:repeating-linear-gradient(45deg,#ece9dd,#ece9dd 6px,#f2efe6 6px,#f2efe6 12px); }
+  .nav{ display:flex; flex-direction:column; gap:7px; margin-top:14px; }
+  .nav a{ font-size:15px; padding:7px 11px; border:2px solid transparent; border-radius:8px; cursor:pointer; color:var(--ink); text-decoration:none; }
+  .nav a.on{ background:var(--accent-soft); border:2px solid var(--line); border-radius:200px 10px 180px 10px/10px 180px 10px 200px; }
+  .nav a:hover{ background:var(--paper-2); }
+
+  .stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .stat{ padding:16px; text-align:center; }
+  .stat .num{ font-family:"Architects Daughter",cursive; font-size:38px; line-height:1; }
+  .stat .cap{ font-size:13.5px; color:var(--ink-soft); margin-top:6px; }
+
+  /* persistent filter bar */
+  .filterbar{ padding:16px; display:flex; flex-direction:column; gap:13px; }
+  .search{ display:flex; align-items:center; gap:10px; padding:9px 13px; border:2px solid var(--line); border-radius:200px 14px 180px 14px/14px 180px 14px 200px; background:var(--paper); }
+  .search .ico{ font-family:var(--mono); }
+  .search .ph-txt{ color:var(--ink-soft); }
+  .facets{ display:flex; gap:22px; flex-wrap:wrap; }
+  .facet h4{ font-size:14px; margin-bottom:8px; }
+  .facet .wrap{ gap:8px; }
+
+  /* timeline */
+  .timeline{ position:relative; padding-left:30px; }
+  .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background:var(--line); }
+  .tl-item{ position:relative; margin-bottom:22px; }
+  .tl-item::before{ content:""; position:absolute; left:-26px; top:5px; width:13px; height:13px; border-radius:50%; background:var(--paper); border:2px solid var(--line); }
+  .tl-item.cur::before{ background:var(--accent); }
+  .tl-head{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .tl-head .co{ font-weight:700; font-size:17px; }
+  .tl-head .when{ font-family:var(--mono); color:var(--ink-soft); }
+
+  /* history: horizontal gallery */
+  .gallery{ display:flex; gap:14px; overflow-x:auto; padding:4px 2px 12px; scroll-snap-type:x mandatory; }
+  .gallery::-webkit-scrollbar{ height:8px; }
+  .gallery::-webkit-scrollbar-thumb{ background:var(--fill-2); border-radius:8px; }
+  .gallery .gcard{ flex:0 0 200px; scroll-snap-align:start; overflow:hidden; cursor:pointer; }
+  .gallery .gcard .ph{ border:none; border-bottom:2px solid var(--line); border-radius:0; height:118px; }
+  .gallery .gcard .gbody{ padding:9px 11px 11px; }
+  .gallery .gcard .ttl{ font-weight:700; font-size:15px; }
+  .gallery .gcard .meta{ font-family:var(--mono); font-size:11px; color:var(--ink-soft); margin-top:2px; }
+  .gallery .more{ flex:0 0 92px; scroll-snap-align:start; display:flex; align-items:center; justify-content:center; text-align:center; cursor:pointer; font-size:14px; }
+  .scrollhint{ font-family:var(--mono); font-size:11px; color:var(--ink-soft); display:flex; align-items:center; gap:6px; }
+  /* accordion variant */
+  .acc-row{ cursor:pointer; }
+  .acc-row .caret{ font-family:var(--mono); transition:transform .2s; display:inline-block; }
+  .acc-row.open .caret{ transform:rotate(90deg); }
+  .acc-panel{ overflow:hidden; }
+
+  /* project card */
+  .card{ overflow:hidden; }
+  .card .ph{ border:none; border-bottom:2px solid var(--line); border-radius:0; height:128px; }
+  .card .body{ padding:12px 13px 14px; }
+  .card .ttl{ font-weight:700; font-size:16px; }
+  .card .meta{ font-family:var(--mono); color:var(--ink-soft); margin:3px 0 9px; }
+  .card .foot{ display:flex; align-items:center; justify-content:space-between; margin-top:10px; }
+  .card-pin{ position:relative; }
+  .card .addcb{ position:absolute; top:9px; right:9px; background:var(--paper); border:2px solid var(--line); border-radius:6px; padding:3px 8px; font-size:12px; display:flex; align-items:center; gap:5px; cursor:pointer; }
+  .card .addcb.on{ background:var(--hl); }
+
+  /* expanded detail panel */
+  .detail{ grid-column:1 / -1; padding:0; overflow:hidden; }
+  .detail-inner{ padding:18px; }
+  .detail .media{ display:grid; grid-template-columns:1.4fr 1fr; gap:16px; }
+  .slideshow{ position:relative; height:240px; }
+  .slideshow .arrow{ position:absolute; top:50%; transform:translateY(-50%); width:30px; height:30px; border-radius:50%; border:2px solid var(--line); background:var(--paper); display:flex; align-items:center; justify-content:center; font-family:var(--mono); }
+  .slideshow .arrow.l{ left:8px; } .slideshow .arrow.r{ right:8px; }
+  .dots{ position:absolute; bottom:8px; left:0; right:0; display:flex; gap:6px; justify-content:center; }
+  .dots i{ width:8px; height:8px; border-radius:50%; border:2px solid var(--line); background:var(--paper); }
+  .dots i.on{ background:var(--accent); }
+  .yt{ height:240px; }
+  .yt .play{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:50px; height:36px; border-radius:8px; border:2px solid var(--line); background:var(--paper); display:flex; align-items:center; justify-content:center; }
+  .yt .play::after{ content:"▶"; }
+
+  /* resume cart */
+  .fab{ position:fixed; right:26px; bottom:26px; z-index:60; display:flex; align-items:center; gap:9px; padding:12px 18px; cursor:pointer; }
+  .fab .badge{ background:var(--accent); color:#fff; border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:13px; border:2px solid var(--line); }
+  .drawer{ width:330px; padding:16px; }
+  .drawer h3{ font-family:"Architects Daughter",cursive; font-size:20px; margin-bottom:4px; }
+  .res-item{ display:flex; align-items:center; gap:10px; padding:9px 10px; margin-bottom:9px; }
+  .res-item .handle{ font-family:var(--mono); color:var(--ink-soft); cursor:grab; }
+  .res-item .nm{ flex:1; font-size:14.5px; }
+  .res-item .rm{ font-family:var(--mono); cursor:pointer; }
+  .seg{ display:flex; gap:0; }
+  .seg .opt{ flex:1; text-align:center; font-size:13px; padding:6px 4px; border:2px solid var(--line); border-right-width:0; cursor:pointer; }
+  .seg .opt:first-child{ border-radius:10px 0 0 10px; }
+  .seg .opt:last-child{ border-right-width:2px; border-radius:0 10px 10px 0; }
+  .seg .opt.on{ background:var(--accent); color:#fff; }
+
+  .legend{ font-size:13px; color:var(--ink-soft); display:flex; gap:18px; flex-wrap:wrap; margin-top:8px; }
+  .legend span{ display:inline-flex; align-items:center; gap:6px; }
+  .swdot{ width:14px; height:14px; border:2px solid var(--line); border-radius:3px; display:inline-block; }
+
+  @media (max-width:820px){
+    .shell{ grid-template-columns:1fr; }
+    .side{ position:static; }
+    .stats{ grid-template-columns:repeat(2,1fr); }
+    .grid3{ grid-template-columns:repeat(2,1fr); }
+    .detail .media{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="brand">Dev Portfolio<small>rough wireframes · v1</small></div>
+  <div class="tabs">
+    <button class="tab active" data-tab="s1">A · Long&nbsp;page</button>
+    <button class="tab" data-tab="s2">B · App&nbsp;mode</button>
+    <button class="tab" data-tab="s3">Search&nbsp;+&nbsp;results</button>
+    <button class="tab" data-tab="s4">Project&nbsp;detail</button>
+    <button class="tab" data-tab="s5">Resume&nbsp;export</button>
+  </div>
+  <div class="spacer"></div>
+  <div class="ctrls">
+    <button class="toggle on" id="annoToggle">Notes: on</button>
+    <button class="toggle" id="darkToggle">◐ Dark mode</button>
+  </div>
+</div>
+
+<!-- ============ SCREEN 1: LONG PAGE + SIDEBAR ============ -->
+<section class="screen active" id="s1">
+  <div class="screen-head">
+    <h2>A · Long scrolling page + sidebar</h2>
+    <span class="desc">Everything stacked top-to-bottom. Sidebar = jump links + persistent identity.</span>
+  </div>
+
+  <div class="shell">
+    <aside class="side sketch">
+      <div class="avatar"></div>
+      <div style="text-align:center; font-weight:700;">Your Name</div>
+      <div style="text-align:center;" class="mono muted">@github-handle</div>
+      <nav class="nav">
+        <a class="on">Summary</a>
+        <a>Projects</a>
+        <a>History</a>
+        <a>Skills</a>
+        <a>Contact</a>
+      </nav>
+      <div class="anno block">← sticky sidebar = section jump links</div>
+    </aside>
+
+    <main class="col">
+      <!-- hero summary -->
+      <div class="pin">
+        <span class="anno float" style="top:-6px; right:0;">leads with summary stats ↑</span>
+        <div class="stats">
+          <div class="stat sketch"><div class="num">6</div><div class="cap">years experience</div></div>
+          <div class="stat sketch"><div class="num">42</div><div class="cap">projects shipped</div></div>
+          <div class="stat sketch"><div class="num">23</div><div class="cap">skills / tools</div></div>
+          <div class="stat sketch"><div class="num">5</div><div class="cap">specials / highlights</div></div>
+        </div>
+      </div>
+
+      <!-- search pattern comparison -->
+      <div class="pin">
+        <div class="row" style="align-items:center;gap:10px;flex-wrap:wrap;">
+          <strong style="font-size:14.5px;">Search pattern:</strong>
+          <span class="chip on sp-pick" data-sp="persistent" style="cursor:pointer;">Persistent (default)</span>
+          <span class="chip sp-pick" data-sp="compact" style="cursor:pointer;">Compact + ⌘K overlay</span>
+          <span class="anno">← compare the two UX options</span>
+        </div>
+      </div>
+
+      <!-- persistent filter -->
+      <div class="filterbar sketch alt" id="filterPersistent">
+        <div class="search">
+          <span class="ico">⌕</span><span class="ph-txt">search projects, or type a tag…</span>
+          <span class="spacer" style="flex:1"></span><span class="chip tag">react <span class="x">✕</span></span>
+        </div>
+        <div class="facets">
+          <div class="facet"><h4>Period</h4><div class="wrap"><span class="chip">’16–’19</span><span class="chip on">’20–’23</span><span class="chip on">’24–now</span></div></div>
+          <div class="facet"><h4>Platform</h4><div class="wrap"><span class="chip">Web</span><span class="chip">iOS</span><span class="chip">Android</span></div></div>
+          <div class="facet"><h4>Language</h4><div class="wrap"><span class="chip">TS</span><span class="chip">Python</span><span class="chip">Go</span></div></div>
+          <div class="facet"><h4>Stack</h4><div class="wrap"><span class="chip">React</span><span class="chip">Node</span><span class="chip">Postgres</span></div></div>
+        </div>
+        <div class="anno">↑ everything visible — best for browsing-first UX & recruiters (recommended)</div>
+      </div>
+
+      <!-- compact bar + overlay -->
+      <div id="filterCompact" style="display:none;">
+        <div class="sketch" style="padding:11px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <div class="search" style="flex:1;min-width:200px;border-radius:200px 14px 180px 14px/14px 180px 14px 200px;">
+            <span class="ico">⌕</span><span class="ph-txt">Search projects…</span>
+            <span class="spacer" style="flex:1"></span><span class="mono muted" style="border:1.5px solid var(--line);border-radius:5px;padding:1px 6px;">⌘K</span>
+          </div>
+          <span class="chip on">react ✕</span>
+          <span class="chip" style="cursor:pointer;">+ filters ▾</span>
+        </div>
+        <div class="anno block">↑ slim bar saves space — facets hidden until you open them, and ⌘K pops the overlay below</div>
+
+        <!-- command palette overlay mock -->
+        <div class="sketch" style="margin-top:10px;max-width:560px;padding:14px;border-radius:14px;box-shadow:4px 6px 0 var(--shadow);">
+          <div class="search" style="border-radius:10px;"><span class="ico">⌕</span><span class="ph-txt">type to search · or jump to a filter…</span></div>
+          <div class="mono muted" style="margin:10px 0 5px;">tags</div>
+          <div class="wrap"><span class="chip tag">react</span><span class="chip">graphql</span><span class="chip">realtime</span></div>
+          <div class="mono muted" style="margin:10px 0 5px;">filters</div>
+          <div class="wrap"><span class="chip">Platform: Web</span><span class="chip">Language: Go</span><span class="chip">Period: 2024</span></div>
+          <div class="mono muted" style="margin:10px 0 5px;">go to</div>
+          <div class="col" style="gap:5px;">
+            <span style="font-size:14px;">↳ Project Atlas</span>
+            <span style="font-size:14px;">↳ Project Comet</span>
+          </div>
+        </div>
+        <div class="anno block">↑ ⌘K overlay — fast for power users, but facets aren't discoverable at a glance</div>
+      </div>
+
+      <!-- projects — one section, two groupings (timeline = history) -->
+      <div class="col" style="gap:10px;">
+        <div class="row" style="align-items:center;gap:10px;flex-wrap:wrap;">
+          <h3 style="font-family:'Architects Daughter';font-size:21px;">Projects</h3>
+          <span class="spacer" style="flex:1"></span>
+          <strong style="font-size:13.5px;">group:</strong>
+          <span class="chip on grp-pick" data-g="company" style="cursor:pointer;">By company · timeline</span>
+          <span class="chip grp-pick" data-g="flat" style="cursor:pointer;">Flat grid</span>
+        </div>
+        <div class="anno block">↑ same projects, two groupings — the timeline IS your work history, so no separate list is needed</div>
+
+        <!-- grouped BY COMPANY = the history timeline -->
+        <div id="grpCompany">
+          <div class="timeline">
+            <div class="tl-item cur">
+              <div class="tl-head"><span class="co">Acme Corp</span><span class="when">2023 — now · Senior Dev</span></div>
+              <div class="scrollhint" style="margin:4px 0 2px;">scroll ↔ to browse projects</div>
+              <div class="gallery">
+                <div class="gcard sketch"><div class="ph"><span class="lbl mono">shot</span></div><div class="gbody"><div class="ttl">Atlas</div><div class="meta">2024 · Web · React</div></div></div>
+                <div class="gcard sketch"><div class="ph"><span class="lbl mono">shot</span></div><div class="gbody"><div class="ttl">Beacon</div><div class="meta">2023 · iOS · Swift</div></div></div>
+                <div class="gcard sketch"><div class="ph"><span class="lbl mono">shot</span></div><div class="gbody"><div class="ttl">Halo</div><div class="meta">2023 · Web · TS</div></div></div>
+                <div class="more sketch dash">see all 7 →</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-head"><span class="co">Startup Inc</span><span class="when">2020 — 2023</span></div>
+              <div class="gallery" style="margin-top:6px;">
+                <div class="gcard sketch"><div class="ph"><span class="lbl mono">shot</span></div><div class="gbody"><div class="ttl">Comet</div><div class="meta">2022 · Web · TS</div></div></div>
+                <div class="gcard sketch"><div class="ph"><span class="lbl mono">shot</span></div><div class="gbody"><div class="ttl">Drift</div><div class="meta">2021 · Android · Kotlin</div></div></div>
+                <div class="more sketch dash">see all 5 →</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-head"><span class="co">Freelance</span><span class="when">2018 — 2020</span></div>
+              <div class="gallery" style="margin-top:6px;">
+                <div class="gcard sketch"><div class="ph"><span class="lbl mono">shot</span></div><div class="gbody"><div class="ttl">Spark</div><div class="meta">2019 · Web · Vue</div></div></div>
+                <div class="more sketch dash">see all 3 →</div>
+              </div>
+            </div>
+          </div>
+          <div class="anno block">↑ projects grouped under each role · zero clicks · scroll ↔ like a gallery (best for recruiters)</div>
+        </div>
+
+        <!-- FLAT GRID = everything matching the filter -->
+        <div id="grpFlat" style="display:none;">
+          <div class="grid3" id="grid1"><!-- cards injected --></div>
+          <div class="anno block">↑ flat list of every project, ranked by the filter above — good for “show me all your Go work”</div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- ============ SCREEN 2: APP MODE ============ -->
+<section class="screen" id="s2">
+  <div class="screen-head">
+    <h2>B · App mode (switching views)</h2>
+    <span class="desc">No long scroll — the sidebar swaps the main panel between views. Same data, different feel.</span>
+  </div>
+
+  <div class="shell">
+    <aside class="side sketch">
+      <div class="avatar"></div>
+      <div style="text-align:center; font-weight:700;">Your Name</div>
+      <div style="text-align:center;" class="mono muted">@github-handle</div>
+      <nav class="nav">
+        <a class="on">Overview</a>
+        <a>Projects</a>
+        <a>History</a>
+        <a>Skills</a>
+      </nav>
+      <div class="anno block">← these switch the main panel<br>(not scroll-to)</div>
+    </aside>
+
+    <main class="col">
+      <div class="pin">
+        <span class="anno float" style="top:-22px; left:0;">view tabs ↓ &nbsp; opens on “Overview” first</span>
+        <div class="wrap" style="margin-top:6px;">
+          <span class="chip on">Overview</span><span class="chip">Projects</span><span class="chip">History</span><span class="chip">Skills</span>
+        </div>
+      </div>
+
+      <div class="pin">
+        <span class="anno float" style="top:-6px; right:0;">recruiters see this in 2 seconds ↑</span>
+        <div class="stats">
+          <div class="stat sketch"><div class="num">6</div><div class="cap">years experience</div></div>
+          <div class="stat sketch"><div class="num">42</div><div class="cap">projects shipped</div></div>
+          <div class="stat sketch"><div class="num">23</div><div class="cap">skills / tools</div></div>
+          <div class="stat sketch"><div class="num">5</div><div class="cap">specials / highlights</div></div>
+        </div>
+      </div>
+
+      <div class="grid2" style="gap:18px;">
+        <div class="sketch" style="padding:16px;">
+          <h3 style="font-family:'Architects Daughter';font-size:19px;margin-bottom:10px;">Highlights / specials</h3>
+          <div class="col" style="gap:9px;">
+            <span class="chip tag">★ Open-source maintainer</span>
+            <span class="chip tag">★ Conf speaker</span>
+            <span class="chip tag">★ 1M+ users shipped</span>
+          </div>
+        </div>
+        <div class="sketch" style="padding:16px;">
+          <h3 style="font-family:'Architects Daughter';font-size:19px;margin-bottom:10px;">Top skills</h3>
+          <div class="wrap"><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Go</span><span class="chip">Node</span><span class="chip">Postgres</span><span class="chip">AWS</span></div>
+        </div>
+      </div>
+
+      <div class="sketch" style="padding:16px;">
+        <div class="row" style="justify-content:space-between;align-items:baseline;">
+          <h3 style="font-family:'Architects Daughter';font-size:19px;">Featured projects</h3>
+          <span class="chip" style="font-size:12px;">see all →</span>
+        </div>
+        <div class="grid3" id="grid2" style="margin-top:12px;"></div>
+      </div>
+      <div class="anno block" style="text-align:center;">opens on Overview (summary-first) · clicking “Projects” swaps in the full filter + grid view</div>
+    </main>
+  </div>
+</section>
+
+<!-- ============ SCREEN 3: SEARCH + RESULTS ============ -->
+<section class="screen" id="s3">
+  <div class="screen-head">
+    <h2>Search + results state</h2>
+    <span class="desc">Filter rail on the left, live results on the right. Open tag search with suggestions.</span>
+  </div>
+
+  <div class="shell">
+    <aside class="side sketch" style="top:84px;">
+      <h3 style="font-family:'Architects Daughter';font-size:19px;margin-bottom:10px;">Filters</h3>
+
+      <div class="pin" style="margin-bottom:14px;">
+        <div class="search" style="border-radius:10px;"><span class="ico">⌕</span><span class="ph-txt">type a tag…</span></div>
+        <div class="sketch" style="margin-top:6px;padding:7px;border-radius:10px;">
+          <div class="mono muted" style="margin-bottom:5px;">suggestions</div>
+          <div class="wrap"><span class="chip tag">graphql</span><span class="chip">webgl</span><span class="chip">realtime</span></div>
+        </div>
+        <span class="anno block">↑ open tag search (autocomplete)</span>
+      </div>
+
+      <div class="facet" style="margin-bottom:14px;">
+        <h4>Period</h4>
+        <div class="dash" style="height:34px;border-radius:8px;position:relative;">
+          <div style="position:absolute;left:25%;right:18%;top:50%;height:3px;background:var(--accent);transform:translateY(-50%);"></div>
+          <div style="position:absolute;left:25%;top:50%;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--line);transform:translate(-50%,-50%);"></div>
+          <div style="position:absolute;right:18%;top:50%;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--line);transform:translate(50%,-50%);"></div>
+        </div>
+        <div class="mono muted" style="margin-top:4px;">2020 &nbsp;——&nbsp; 2025</div>
+      </div>
+
+      <div class="facet" style="margin-bottom:12px;"><h4>Platform</h4>
+        <div class="col" style="gap:6px;">
+          <span class="cb"><span class="box ck"></span>Web</span>
+          <span class="cb"><span class="box"></span>iOS</span>
+          <span class="cb"><span class="box ck"></span>Android</span>
+          <span class="cb"><span class="box"></span>Desktop</span>
+        </div>
+      </div>
+      <div class="facet" style="margin-bottom:12px;"><h4>Language</h4>
+        <div class="col" style="gap:6px;">
+          <span class="cb"><span class="box ck"></span>TypeScript</span>
+          <span class="cb"><span class="box"></span>Python</span>
+          <span class="cb"><span class="box"></span>Go</span>
+        </div>
+      </div>
+      <div class="facet"><h4>Stack</h4>
+        <div class="wrap" style="gap:7px;"><span class="chip on">React</span><span class="chip">Vue</span><span class="chip on">Node</span><span class="chip">Rails</span></div>
+      </div>
+    </aside>
+
+    <main class="col">
+      <div class="row" style="align-items:center;justify-content:space-between;flex-wrap:wrap;">
+        <div class="wrap" style="align-items:center;">
+          <strong>Active:</strong>
+          <span class="chip on">Web <span class="x">✕</span></span>
+          <span class="chip on">Android <span class="x">✕</span></span>
+          <span class="chip on">TypeScript <span class="x">✕</span></span>
+          <span class="chip tag">graphql <span class="x">✕</span></span>
+          <span class="mono muted" style="cursor:pointer;">clear all</span>
+        </div>
+        <div class="mono muted">14 results · sort: recent ▾</div>
+      </div>
+      <div class="anno block">↑ active filters shown as removable chips · tag chips highlighted differently</div>
+
+      <div class="grid3" id="grid3"></div>
+
+      <!-- empty state example -->
+      <div class="sketch dash" style="padding:26px;text-align:center;margin-top:6px;">
+        <div style="font-family:'Architects Daughter';font-size:20px;">No results for this combo</div>
+        <div class="muted" style="margin:6px 0 12px;">empty state — when filters are too narrow</div>
+        <button class="btn sm">Loosen filters</button>
+        <div class="anno block" style="margin-top:10px;">↑ designed empty state lives here too</div>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- ============ SCREEN 4: PROJECT DETAIL ============ -->
+<section class="screen" id="s4">
+  <div class="screen-head">
+    <h2>Project detail — inline expanding panel</h2>
+    <span class="desc">Click a card → it expands in place and pushes the grid down. No page change, no modal.</span>
+  </div>
+
+  <div class="grid3" style="align-items:start;">
+    <!-- card before -->
+    <div class="card sketch card-pin">
+      <span class="addcb">+ resume</span>
+      <div class="ph"><span class="lbl mono">thumb</span></div>
+      <div class="body"><div class="ttl">Project Atlas</div><div class="meta mono">2024 · Web · React</div></div>
+    </div>
+    <div class="card sketch card-pin">
+      <span class="addcb on">✓ added</span>
+      <div class="ph"><span class="lbl mono">thumb</span></div>
+      <div class="body"><div class="ttl">Project Beacon</div><div class="meta mono">2023 · iOS · Swift</div></div>
+    </div>
+
+    <!-- the expanded detail -->
+    <div class="detail sketch" style="grid-column:1 / -1;">
+      <div class="detail-inner col">
+        <div class="row" style="justify-content:space-between;align-items:flex-start;">
+          <div>
+            <h3 style="font-family:'Architects Daughter';font-size:24px;">Project Comet</h3>
+            <div class="meta mono">2022 · Web · TypeScript · React · Node · Postgres</div>
+          </div>
+          <button class="btn sm">collapse ✕</button>
+        </div>
+
+        <div class="media">
+          <div class="ph slideshow">
+            <span class="lbl mono">screenshot slideshow</span>
+            <div class="arrow l">‹</div><div class="arrow r">›</div>
+            <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="ph yt">
+            <span class="lbl mono">YouTube embed</span>
+            <div class="play"></div>
+          </div>
+        </div>
+        <span class="anno">↑ photos as slideshow (arrows + dots) · video as embedded YouTube</span>
+
+        <div class="grid2" style="gap:18px;">
+          <div class="col" style="gap:8px;">
+            <h4>What it is</h4>
+            <div class="bar l"></div><div class="bar l"></div><div class="bar m"></div>
+            <h4 style="margin-top:8px;">My role</h4>
+            <div class="bar l"></div><div class="bar s"></div>
+          </div>
+          <div class="col" style="gap:10px;">
+            <h4>Tech / tags</h4>
+            <div class="wrap"><span class="chip">React</span><span class="chip">Node</span><span class="chip">Postgres</span><span class="chip">Docker</span><span class="chip tag">realtime</span></div>
+            <h4 style="margin-top:6px;">Links</h4>
+            <div class="wrap"><span class="chip">↗ Repo</span><span class="chip">↗ Live demo</span></div>
+            <div class="row" style="margin-top:10px;gap:10px;">
+              <button class="btn primary">+ Add to resume</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- cards after -->
+    <div class="card sketch card-pin">
+      <span class="addcb">+ resume</span>
+      <div class="ph"><span class="lbl mono">thumb</span></div>
+      <div class="body"><div class="ttl">Project Drift</div><div class="meta mono">2021 · Android · Kotlin</div></div>
+    </div>
+    <div class="card sketch card-pin">
+      <span class="addcb">+ resume</span>
+      <div class="ph"><span class="lbl mono">thumb</span></div>
+      <div class="body"><div class="ttl">Project Echo</div><div class="meta mono">2021 · Web · Vue</div></div>
+    </div>
+    <div class="card sketch card-pin">
+      <span class="addcb">+ resume</span>
+      <div class="ph"><span class="lbl mono">thumb</span></div>
+      <div class="body"><div class="ttl">Project Flux</div><div class="meta mono">2020 · Web · Go</div></div>
+    </div>
+  </div>
+  <div class="anno block" style="text-align:center;margin-top:16px;">expands between rows & pushes everything down — keeps your scroll position and the grid context</div>
+</section>
+
+<!-- ============ SCREEN 5: RESUME EXPORT ============ -->
+<section class="screen" id="s5">
+  <div class="screen-head">
+    <h2>Resume export — floating cart</h2>
+    <span class="desc">As you browse, “+ resume” drops projects into a cart that builds up. Open it to arrange + generate.</span>
+  </div>
+
+  <div class="row" style="align-items:flex-start;gap:24px;flex-wrap:wrap;">
+    <!-- the drawer, shown open -->
+    <div class="drawer sketch">
+      <h3>Resume cart</h3>
+      <div class="muted" style="margin-bottom:12px;">3 projects selected · drag to reorder</div>
+
+      <div class="res-item sketch" style="border-radius:10px;"><span class="handle">⠿</span><span class="nm">Project Atlas</span><span class="mono muted">2024</span><span class="rm">✕</span></div>
+      <div class="res-item sketch" style="border-radius:10px;"><span class="handle">⠿</span><span class="nm">Project Comet</span><span class="mono muted">2022</span><span class="rm">✕</span></div>
+      <div class="res-item sketch" style="border-radius:10px;"><span class="handle">⠿</span><span class="nm">Project Drift</span><span class="mono muted">2021</span><span class="rm">✕</span></div>
+
+      <h4 style="margin:14px 0 8px;">Include</h4>
+      <div class="col" style="gap:7px;">
+        <span class="cb"><span class="box ck"></span>Summary stats header</span>
+        <span class="cb"><span class="box ck"></span>Tech stack per project</span>
+        <span class="cb"><span class="box"></span>Screenshots</span>
+        <span class="cb"><span class="box ck"></span>Dates & company</span>
+      </div>
+
+      <h4 style="margin:14px 0 8px;">Template</h4>
+      <div class="seg">
+        <span class="opt on">Compact</span><span class="opt">Detailed</span><span class="opt">One-pager</span>
+      </div>
+
+      <div class="row" style="margin-top:16px;gap:10px;">
+        <button class="btn primary" style="flex:1;">Generate PDF →</button>
+        <button class="btn">⬇</button>
+      </div>
+      <div class="anno block" style="margin-top:10px;">↑ pick projects, toggle what's shown, choose a layout, export</div>
+    </div>
+
+    <!-- live preview -->
+    <div class="col" style="flex:1;min-width:260px;">
+      <h4 style="font-family:'Architects Daughter';font-size:18px;">Live preview</h4>
+      <div class="sketch" style="padding:20px;aspect-ratio:1/1.3;max-width:380px;">
+        <div style="text-align:center;border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:12px;">
+          <div style="font-weight:700;font-size:18px;">Your Name</div>
+          <div class="mono muted">6 yrs · 42 projects · 23 skills</div>
+        </div>
+        <div class="col" style="gap:14px;">
+          <div><div class="bar m dark" style="height:9px;margin-bottom:6px;"></div><div class="bar l"></div><div class="bar s"></div></div>
+          <div><div class="bar m dark" style="height:9px;margin-bottom:6px;"></div><div class="bar l"></div><div class="bar m"></div></div>
+          <div><div class="bar m dark" style="height:9px;margin-bottom:6px;"></div><div class="bar l"></div><div class="bar s"></div></div>
+        </div>
+      </div>
+      <span class="anno">↑ updates as you tweak the cart</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><span class="swdot" style="background:var(--fill)"></span> placeholder copy</span>
+    <span><span class="swdot" style="background:var(--hl)"></span> open tag</span>
+    <span><span class="swdot" style="background:var(--accent-soft)"></span> active filter</span>
+    <span><span class="swdot" style="background:var(--accent)"></span> primary action</span>
+  </div>
+</section>
+
+<!-- floating cart button (visible on all screens) -->
+<div class="fab sketch" id="fab" title="Resume cart">
+  <span>Resume cart</span><span class="badge">3</span>
+</div>
+
+<script>
+  // ---- project card factory ----
+  var projects = [
+    ["Project Atlas","2024 · Web · React",false],
+    ["Project Beacon","2023 · iOS · Swift",true],
+    ["Project Comet","2022 · Web · TS",false],
+    ["Project Drift","2021 · Android · Kotlin",false],
+    ["Project Echo","2021 · Web · Vue",false],
+    ["Project Flux","2020 · Web · Go",false]
+  ];
+  function cards(extra){
+    return projects.map(function(p){
+      return '<div class="card sketch card-pin">'+
+        '<span class="addcb'+(p[2]?' on':'')+'">'+(p[2]?'✓ added':'+ resume')+'</span>'+
+        '<div class="ph"><span class="lbl mono">thumb</span></div>'+
+        '<div class="body"><div class="ttl">'+p[0]+'</div><div class="meta mono">'+p[1]+'</div>'+
+        '<div class="foot"><span class="chip" style="font-size:11.5px">details ▾</span></div></div>'+
+      '</div>';
+    }).join('');
+  }
+  document.getElementById('grid1').innerHTML = cards();
+  document.getElementById('grid2').innerHTML = projects.slice(0,3).map(function(p){
+    return '<div class="card sketch card-pin">'+
+      '<span class="addcb'+(p[2]?' on':'')+'">'+(p[2]?'✓ added':'+ resume')+'</span>'+
+      '<div class="ph"><span class="lbl mono">thumb</span></div>'+
+      '<div class="body"><div class="ttl">'+p[0]+'</div><div class="meta mono">'+p[1]+'</div></div></div>';
+  }).join('');
+  document.getElementById('grid3').innerHTML = projects.slice(0,3).map(function(p){
+    return '<div class="card sketch card-pin"><span class="addcb">+ resume</span>'+
+      '<div class="ph"><span class="lbl mono">thumb</span></div>'+
+      '<div class="body"><div class="ttl">'+p[0]+'</div><div class="meta mono">'+p[1]+'</div></div></div>';
+  }).join('');
+
+  // ---- tab switching ----
+  var tabs = document.querySelectorAll('.tab');
+  var screens = document.querySelectorAll('.screen');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.remove('active'); });
+      screens.forEach(function(x){ x.classList.remove('active'); });
+      t.classList.add('active');
+      document.getElementById(t.dataset.tab).classList.add('active');
+      window.scrollTo(0,0);
+    });
+  });
+
+  // ---- notes toggle ----
+  var at = document.getElementById('annoToggle');
+  at.addEventListener('click', function(){
+    document.body.classList.toggle('hide-anno');
+    var off = document.body.classList.contains('hide-anno');
+    at.classList.toggle('on', !off);
+    at.textContent = 'Notes: ' + (off ? 'off' : 'on');
+  });
+
+  // ---- dark mode toggle ----
+  var dt = document.getElementById('darkToggle');
+  dt.addEventListener('click', function(){
+    var on = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', on ? 'light' : 'dark');
+    dt.classList.toggle('on', !on);
+    dt.textContent = (on ? '◐ Dark mode' : '◑ Light mode');
+  });
+
+  // ---- fab jumps to resume screen ----
+  document.getElementById('fab').addEventListener('click', function(){
+    document.querySelector('.tab[data-tab="s5"]').click();
+  });
+
+  // ---- search pattern compare (screen A) ----
+  document.querySelectorAll('.sp-pick').forEach(function(p){
+    p.addEventListener('click', function(){
+      document.querySelectorAll('.sp-pick').forEach(function(x){ x.classList.remove('on'); });
+      p.classList.add('on');
+      var compact = p.dataset.sp === 'compact';
+      document.getElementById('filterPersistent').style.display = compact ? 'none' : '';
+      document.getElementById('filterCompact').style.display = compact ? '' : 'none';
+    });
+  });
+
+  // ---- projects grouping (screen A): by company timeline vs flat grid ----
+  document.querySelectorAll('.grp-pick').forEach(function(p){
+    p.addEventListener('click', function(){
+      document.querySelectorAll('.grp-pick').forEach(function(x){ x.classList.remove('on'); });
+      p.classList.add('on');
+      var flat = p.dataset.g === 'flat';
+      document.getElementById('grpCompany').style.display = flat ? 'none' : '';
+      document.getElementById('grpFlat').style.display = flat ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>
