@@ -842,6 +842,18 @@ section[id] {
   object-fit: cover;
 }
 
+.detail-slide--diagram {
+  height: auto;
+  min-height: 180px;
+  padding: 16px;
+  background: var(--panel);
+}
+
+.diagram-wrap svg {
+  width: 100%;
+  height: auto;
+}
+
 .detail-slide-lbl {
   font-family: var(--mono);
   font-size: 10px;

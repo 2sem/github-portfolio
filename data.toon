@@ -35,7 +35,9 @@ companies[2]:
         desc: "MDI terminal monitor for IDC ops — saves window positions and per-terminal connection settings so nothing needs repositioning after restart."
         role: "Sole developer. Designed MDI layout engine, implemented Telnet protocol from RFC, built XML-based multi-user config system."
         tech[3]: VB,Telnet,XML
-        image: null
+        diagrams[2]:
+          - "graph LR\n  subgraph Form\n    Main --> User\n    Main --> Setting\n    Main --> Monitor\n  end\n  subgraph Module\n    Parse\n    Telnet\n    XML\n  end\n  subgraph Servers\n    S1[Server1]\n    S2[Server2]\n    SN[...]\n  end\n  subgraph Users\n    U1[User1.CFG]\n    U2[User2.CFG]\n    UN[...]\n  end\n  Form <--> Module\n  Telnet --> Servers\n  XML --> Users"
+          - "graph TD\n  Server --> Monitor\n  Monitor --> Commands\n  Commands --> CE[Case Execute]\n  Commands --> Cmd[Command]\n  Commands --> CS[Case Success]\n  Commands --> LC[Loop Count]\n  Commands --> LL[Loop Limit]\n  Commands --> LD[Loop Delay]"
       - id: proj-b
         name: "Project B"
         meta: "2015 · Web · Java"

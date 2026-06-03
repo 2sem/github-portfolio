@@ -1,3 +1,5 @@
+import Diagram from './Diagram.jsx'
+
 export default function DetailPanel({ project, isInCart, onCartToggle, onClose }) {
   const inCart = isInCart(project.id)
 
@@ -15,15 +17,21 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
         </div>
 
         <div className="detail-media">
-          <div className="detail-slide">
-            {project.image
-              ? <img src={project.image} alt={project.name} />
-              : <span className="detail-slide-lbl">screenshot slideshow</span>
-            }
-          </div>
-          <div className="detail-slide">
-            <span className="detail-slide-lbl">demo / video</span>
-          </div>
+          {project.diagrams.map((code, i) => (
+            <div key={i} className="detail-slide detail-slide--diagram">
+              <Diagram code={code} />
+            </div>
+          ))}
+          {project.images.map((src, i) => (
+            <div key={i} className="detail-slide">
+              <img src={src} alt={`${project.name} screenshot ${i + 1}`} />
+            </div>
+          ))}
+          {project.diagrams.length === 0 && project.images.length === 0 && (
+            <div className="detail-slide">
+              <span className="detail-slide-lbl">no screenshots</span>
+            </div>
+          )}
         </div>
 
         <div className="detail-body">

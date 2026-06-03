@@ -6,7 +6,7 @@ function arr(v) {
 }
 
 function normalizeProject(p) {
-  return { ...p, tech: arr(p.tech), links: arr(p.links), tags: arr(p.tags) }
+  return { ...p, tech: arr(p.tech), links: arr(p.links), tags: arr(p.tags), images: arr(p.images), diagrams: arr(p.diagrams) }
 }
 
 function normalize(data) {
