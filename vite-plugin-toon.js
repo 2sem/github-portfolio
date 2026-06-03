@@ -14,7 +14,6 @@ function normalize(data) {
     ...data,
     stats: arr(data.stats),
     tags: arr(data.tags),
-    filterDefs: arr(data.filterDefs),
     skills: arr(data.skills),
     companies: arr(data.companies).map(c => ({
       ...c,

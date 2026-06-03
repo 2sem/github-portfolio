@@ -22,13 +22,13 @@ export default function FilterBar({
         <span className="filterbar-kbd">⌘K</span>
       </div>
       <div className="filterbar-chips">
-        {filterDefs.map(def => (
+        {filterDefs.map(tag => (
           <button
-            key={def.key}
-            className={`chip${activeChips.includes(def.key) ? ' active' : ''}`}
-            onClick={() => onChipToggle(def.key)}
+            key={tag}
+            className={`chip${activeChips.includes(tag) ? ' active' : ''}`}
+            onClick={() => onChipToggle(tag)}
           >
-            {def.key}
+            {tag}
           </button>
         ))}
         <span className="filterbar-result">

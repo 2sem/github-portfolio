@@ -20,21 +20,6 @@ tags[4]:
   - "#1M+-users"
   - "#led-team-of-5"
 
-filterDefs[7]:
-  - key: "platform:web"
-    tags[1]: web
-  - key: "platform:ios"
-    tags[1]: ios
-  - key: "platform:desktop"
-    tags[2]: desktop,windows
-  - key: "lang:swift"
-    tags[1]: swift
-  - key: "lang:ts"
-    tags[2]: ts,typescript
-  - key: "stack:react"
-    tags[1]: react
-  - key: "stack:node"
-    tags[2]: node,nodejs
 
 companies[2]:
   - id: credif

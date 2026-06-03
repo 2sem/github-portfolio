@@ -53,6 +53,11 @@ export default function App() {
     )
   }, [])
 
+  const filterDefs = useMemo(() => {
+    const allTags = DATA.companies.flatMap(c => c.projects.flatMap(p => p.tags))
+    return [...new Set(allTags)].sort()
+  }, [])
+
   const filteredProjects = useMemo(() => {
     const allProjects = DATA.companies.flatMap(c => c.projects)
     return allProjects.filter(p => {
@@ -65,11 +70,7 @@ export default function App() {
       )
       if (!matchesSearch) return false
       if (!activeChips.length) return true
-      return activeChips.some(chipKey => {
-        const def = DATA.filterDefs.find(d => d.key === chipKey)
-        if (!def) return false
-        return def.tags.some(t => p.tags.includes(t))
-      })
+      return activeChips.some(chip => p.tags.includes(chip))
     })
   }, [search, activeChips])
 
@@ -120,7 +121,7 @@ export default function App() {
           />
 
           <Projects
-            filterDefs={DATA.filterDefs}
+            filterDefs={filterDefs}
             search={search}
             onSearchChange={setSearch}
             activeChips={activeChips}
