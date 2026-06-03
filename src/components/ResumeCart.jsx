@@ -21,7 +21,7 @@ function buildResumeHTML(cart, template) {
       ${isDetailed || (!isOnePager) ? `<p class="proj-desc">${p.desc}</p>` : ''}
       ${isDetailed ? `<p class="proj-role"><strong>Role:</strong> ${p.role}</p>` : ''}
       <div class="proj-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
-      ${Array.isArray(p.links) && p.links.length ? `<div class="proj-links">${p.links.map(l => `<a href="${l.href}">${l.label}</a>`).join(' ')}</div>` : ''}
+      ${p.links.length ? `<div class="proj-links">${p.links.map(l => `<a href="${l.href}">${l.label}</a>`).join(' ')}</div>` : ''}
     </div>
   `).join('')
 

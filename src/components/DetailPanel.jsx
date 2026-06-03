@@ -40,7 +40,7 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
                 <span key={t} className="d-chip accent">{t}</span>
               ))}
             </div>
-            {Array.isArray(project.links) && project.links.length > 0 && (
+            {project.links.length > 0 && (
               <>
                 <h4>Links</h4>
                 <div className="detail-links">
