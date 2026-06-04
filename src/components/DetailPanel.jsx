@@ -5,6 +5,11 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
   const { t, tr } = useLang()
   const inCart = isInCart(project.id)
 
+  const techLower = new Set(project.tech.map(x => x.toLowerCase()))
+  const extraTags = project.tags
+    .map(tag => (tag.includes(':') ? tag.slice(tag.indexOf(':') + 1) : tag))
+    .filter(label => !techLower.has(label.toLowerCase()))
+
   return (
     <div className="detail-panel">
       <div className="detail-inner">
@@ -46,8 +51,11 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
           <div>
             <h4>{t('techTags')}</h4>
             <div className="detail-chips">
-              {project.tech.map(t => (
-                <span key={t} className="d-chip accent">{t}</span>
+              {project.tech.map(tech => (
+                <span key={tech} className="d-chip accent">{tech}</span>
+              ))}
+              {extraTags.map(label => (
+                <span key={label} className="d-chip">{label}</span>
               ))}
             </div>
             {project.links.length > 0 && (
