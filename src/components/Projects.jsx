@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useLang } from '../i18n.jsx'
 import FilterBar from './FilterBar.jsx'
 import CompanyView from './CompanyView.jsx'
 import FlatView from './FlatView.jsx'
@@ -15,6 +16,7 @@ export default function Projects({
   onCartToggle,
   onVisible,
 }) {
+  const { t } = useLang()
   const [layout, setLayout] = useState('company')
   const ref = useRef(null)
 
@@ -32,20 +34,20 @@ export default function Projects({
   return (
     <section id="projects" className="projects-section" ref={ref}>
       <div className="proj-header">
-        <span className="proj-header-label">## 02 — projects</span>
+        <span className="proj-header-label">## 02 — {t('projects')}</span>
         <div className="proj-header-spacer" />
         <div className="view-toggle">
           <button
             className={`view-btn${layout === 'company' ? ' active' : ''}`}
             onClick={() => setLayout('company')}
           >
-            by company
+            {t('byCompany')}
           </button>
           <button
             className={`view-btn${layout === 'flat' ? ' active' : ''}`}
             onClick={() => setLayout('flat')}
           >
-            flat grid
+            {t('flatGrid')}
           </button>
         </div>
       </div>

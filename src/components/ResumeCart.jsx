@@ -1,9 +1,11 @@
 import { useState, useRef } from 'react'
 import { DATA } from '../data.js'
+import { useLang, resolve } from '../i18n.jsx'
 
 const TEMPLATES = ['Compact', 'Detailed', '1-pager']
 
-function buildResumeHTML(cart, template) {
+function buildResumeHTML(cart, template, lang, roleLabel) {
+  const tr = (v) => resolve(v, lang)
   const projects = cart
     .map(item => {
       const p = DATA.companies.flatMap(c => c.projects).find(p => p.id === item.id)
@@ -18,15 +20,15 @@ function buildResumeHTML(cart, template) {
     <div class="proj">
       <div class="proj-name">${p.name}</div>
       <div class="proj-meta">${p.meta}</div>
-      ${isDetailed || (!isOnePager) ? `<p class="proj-desc">${p.desc}</p>` : ''}
-      ${isDetailed ? `<p class="proj-role"><strong>Role:</strong> ${p.role}</p>` : ''}
+      ${isDetailed || (!isOnePager) ? `<p class="proj-desc">${tr(p.desc)}</p>` : ''}
+      ${isDetailed ? `<p class="proj-role"><strong>${roleLabel}:</strong> ${tr(p.role)}</p>` : ''}
       <div class="proj-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
       ${p.links.length ? `<div class="proj-links">${p.links.map(l => `<a href="${l.href}">${l.label}</a>`).join(' ')}</div>` : ''}
     </div>
   `).join('')
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${lang}">
 <head>
   <meta charset="UTF-8" />
   <title>${DATA.name} — Resume</title>
@@ -76,20 +78,21 @@ function buildResumeHTML(cart, template) {
 <body>
   <div class="header">
     <h1>${DATA.name}</h1>
-    <div class="role">${DATA.role}</div>
+    <div class="role">${tr(DATA.role)}</div>
     <div class="contact">
       <span>${DATA.email}</span>
       <span>${DATA.github.replace('https://', '')}</span>
       <span>${DATA.linkedin.replace('https://', '')}</span>
     </div>
   </div>
-  <div class="section-label">// selected projects</div>
+  <div class="section-label">${lang === 'ko' ? '// 선택한 프로젝트' : '// selected projects'}</div>
   ${projectsHTML}
 </body>
 </html>`
 }
 
 export default function ResumeCart({ cart, onRemove, onReorder, onClose }) {
+  const { lang, t } = useLang()
   const [template, setTemplate] = useState('Compact')
   const dragIdx = useRef(null)
 
@@ -110,7 +113,7 @@ export default function ResumeCart({ cart, onRemove, onReorder, onClose }) {
   }
 
   const handleGenerate = () => {
-    const html = buildResumeHTML(cart, template)
+    const html = buildResumeHTML(cart, template, lang, t('roleLabel'))
     const win = window.open('', '_blank')
     if (!win) return
     win.document.write(html)
@@ -122,13 +125,13 @@ export default function ResumeCart({ cart, onRemove, onReorder, onClose }) {
     <>
       <div className="cart-overlay" onClick={onClose} />
       <div className="cart-drawer">
-        <h3>// resume cart</h3>
+        <h3>{t('resumeCart')}</h3>
         {cart.length === 0 ? (
-          <p className="cart-sub">No projects yet — add with &ldquo;+ resume&rdquo;.</p>
+          <p className="cart-sub">{t('cartEmpty')}</p>
         ) : (
           <>
             <p className="cart-sub">
-              {cart.length} project{cart.length !== 1 ? 's' : ''} · drag to reorder
+              {cart.length}{lang === 'ko' ? '개 프로젝트' : ` project${cart.length !== 1 ? 's' : ''}`} · {t('dragReorder')}
             </p>
             <div>
               {cart.map((item, idx) => (
@@ -153,7 +156,7 @@ export default function ResumeCart({ cart, onRemove, onReorder, onClose }) {
               ))}
             </div>
             <div className="cart-opts">
-              <h4>Template</h4>
+              <h4>{t('template')}</h4>
               <div className="template-seg">
                 {TEMPLATES.map(t => (
                   <button
@@ -166,7 +169,7 @@ export default function ResumeCart({ cart, onRemove, onReorder, onClose }) {
                 ))}
               </div>
               <button className="gen-btn" onClick={handleGenerate}>
-                Generate PDF →
+                {t('generatePdf')}
               </button>
             </div>
           </>

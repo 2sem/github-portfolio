@@ -1,4 +1,7 @@
-export default function Topbar({ theme, onToggleTheme, cartCount, onToggleCart }) {
+import { useLang } from '../i18n.jsx'
+
+export default function Topbar({ theme, onToggleTheme, lang, onToggleLang, cartCount, onToggleCart }) {
+  const { t } = useLang()
   return (
     <div className="topbar">
       <div className="topbar-dots">
@@ -11,11 +14,14 @@ export default function Topbar({ theme, onToggleTheme, cartCount, onToggleCart }
         <span style={{ opacity: 0.55 }}>./run --layout=A</span>
       </span>
       <div className="topbar-right">
+        <button className="pill" onClick={onToggleLang}>
+          ⌘ {lang === 'en' ? 'EN' : '한'}
+        </button>
         <button className="pill" onClick={onToggleTheme}>
-          ◑ theme:{theme}
+          ◑ {t('theme')}:{theme}
         </button>
         <button className="pill" onClick={onToggleCart}>
-          resume <span className="pill-badge">{cartCount}</span>
+          {t('resume')} <span className="pill-badge">{cartCount}</span>
         </button>
       </div>
     </div>

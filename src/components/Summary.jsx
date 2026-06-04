@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
+import { useLang } from '../i18n.jsx'
 
 export default function Summary({ tagline, bio, stats, tags, onVisible }) {
+  const { t, tr } = useLang()
   const ref = useRef(null)
 
   useEffect(() => {
@@ -16,12 +18,12 @@ export default function Summary({ tagline, bio, stats, tags, onVisible }) {
 
   return (
     <section id="summary" className="summary-section" ref={ref}>
-      <div className="klabel"><span className="c">//</span> 01 — summary</div>
+      <div className="klabel"><span className="c">//</span> 01 — {t('summary')}</div>
       <h1 className="summary-h1">
-        {tagline}
+        {tr(tagline)}
         <span className="blink-cursor" />
       </h1>
-      <p className="summary-bio">{bio}</p>
+      <p className="summary-bio">{tr(bio)}</p>
 
       <div className="stats-grid">
         {stats.map((s, i) => (
@@ -30,14 +32,14 @@ export default function Summary({ tagline, bio, stats, tags, onVisible }) {
               {s.num}
               {s.em && <em>{s.em}</em>}
             </div>
-            <div className="stat-cap">{s.cap}</div>
+            <div className="stat-cap">{tr(s.cap)}</div>
           </div>
         ))}
       </div>
 
       <div className="tags-row">
-        {tags.map((t, i) => (
-          <span className="tag-pill" key={i}>{t}</span>
+        {tags.map((tag, i) => (
+          <span className="tag-pill" key={i}>{tr(tag)}</span>
         ))}
       </div>
     </section>

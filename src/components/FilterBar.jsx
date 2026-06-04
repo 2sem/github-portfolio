@@ -1,3 +1,5 @@
+import { useLang } from '../i18n.jsx'
+
 export default function FilterBar({
   filterDefs,
   search,
@@ -6,6 +8,7 @@ export default function FilterBar({
   onChipToggle,
   resultCount,
 }) {
+  const { lang, t } = useLang()
   const { groups, orderedGroups } = filterDefs.reduce((acc, tag) => {
     const sep = tag.indexOf(':')
     const group = sep >= 0 ? tag.slice(0, sep) : 'other'
@@ -26,7 +29,7 @@ export default function FilterBar({
         <input
           className="filterbar-input"
           type="text"
-          placeholder="projects, or type a tag…"
+          placeholder={t('searchPlaceholder')}
           value={search}
           onChange={e => onSearchChange(e.target.value)}
           spellCheck={false}
@@ -53,7 +56,7 @@ export default function FilterBar({
       </div>
       <div className="filterbar-footer">
         <span className="filterbar-result">
-          // {resultCount} project{resultCount !== 1 ? 's' : ''} · sort:recent
+          // {resultCount}{lang === 'ko' ? '개 프로젝트' : ` project${resultCount !== 1 ? 's' : ''}`} · {t('sortRecent')}
         </span>
       </div>
     </div>

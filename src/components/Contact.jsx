@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
+import { useLang } from '../i18n.jsx'
 
 export default function Contact({ github, linkedin, email, contactMsg, onVisible }) {
+  const { t, tr } = useLang()
   const ref = useRef(null)
 
   useEffect(() => {
@@ -22,10 +24,10 @@ export default function Contact({ github, linkedin, email, contactMsg, onVisible
 
   return (
     <section id="contact" className="contact-section" ref={ref}>
-      <div className="klabel"><span className="c">//</span> 04 — contact</div>
+      <div className="klabel"><span className="c">//</span> 04 — {t('contact')}</div>
       <div className="contact-box">
         <div>
-          <p className="contact-msg">{contactMsg}</p>
+          <p className="contact-msg">{tr(contactMsg)}</p>
           <div className="contact-links">
             {links.map((l, i) => (
               <a key={i} className="contact-link" href={l.href} target="_blank" rel="noopener noreferrer">
@@ -36,7 +38,7 @@ export default function Contact({ github, linkedin, email, contactMsg, onVisible
           </div>
         </div>
         <div className="contact-art">
-          <span className="lbl">📍 location</span>
+          <span className="lbl">{t('location')}</span>
         </div>
       </div>
     </section>

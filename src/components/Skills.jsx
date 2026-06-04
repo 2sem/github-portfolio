@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
+import { useLang } from '../i18n.jsx'
 
 export default function Skills({ skills, onVisible }) {
+  const { t, tr } = useLang()
   const ref = useRef(null)
 
   useEffect(() => {
@@ -16,11 +18,11 @@ export default function Skills({ skills, onVisible }) {
 
   return (
     <section id="skills" className="skills-section" ref={ref}>
-      <div className="klabel"><span className="c">//</span> 03 — skills</div>
+      <div className="klabel"><span className="c">//</span> 03 — {t('skills')}</div>
       <div className="skills-grid">
-        {skills.map(sg => (
-          <div className="skill-group" key={sg.group}>
-            <h4>{sg.group}</h4>
+        {skills.map((sg, i) => (
+          <div className="skill-group" key={i}>
+            <h4>{tr(sg.group)}</h4>
             <div className="skill-chips">
               {sg.chips.map(c => (
                 <span className="s-chip" key={c}>{c}</span>

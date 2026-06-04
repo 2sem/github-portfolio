@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useLang } from '../i18n.jsx'
 import ProjectCard from './ProjectCard.jsx'
 import DetailPanel from './DetailPanel.jsx'
 
 export default function CompanyView({ companies, isInCart, onCartToggle }) {
+  const { t, tr } = useLang()
   const [selected, setSelected] = useState(null)
 
   const handleSelect = (projectId, companyId) => {
@@ -28,11 +30,11 @@ export default function CompanyView({ companies, isInCart, onCartToggle }) {
           <div className="co-head">
             <span className="co-name">## {co.name}</span>
             <span className="co-when">
-              {co.when} · {co.role}
-              {co.cur && <> · <span className="co-cur">now</span></>}
+              {co.when} · {tr(co.role)}
+              {co.cur && <> · <span className="co-cur">{t('now')}</span></>}
             </span>
           </div>
-          <div className="scroll-hint">scroll ↔ · click card for details</div>
+          <div className="scroll-hint">{t('scrollHint')}</div>
           <div className="gallery">
             {co.projects.map(p => (
               <ProjectCard

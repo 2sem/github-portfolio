@@ -1,4 +1,7 @@
+import { useLang } from '../i18n.jsx'
+
 export default function ProjectCard({ project, isSelected, isInCart, onSelect, onCartToggle, className = '' }) {
+  const { t } = useLang()
   const inCart = isInCart(project.id)
 
   return (
@@ -9,7 +12,7 @@ export default function ProjectCard({ project, isSelected, isInCart, onSelect, o
       <div className="pcard-shot">
         {project.image
           ? <img src={project.image} alt={project.name} />
-          : <span className="pcard-shot-lbl">screenshot</span>
+          : <span className="pcard-shot-lbl">{t('screenshot')}</span>
         }
       </div>
       <div className="pcard-body">
@@ -22,7 +25,7 @@ export default function ProjectCard({ project, isSelected, isInCart, onSelect, o
             onCartToggle(project.id, project.name)
           }}
         >
-          {inCart ? '✓ added' : '+ resume'}
+          {inCart ? t('added') : t('addResume')}
         </button>
       </div>
     </div>

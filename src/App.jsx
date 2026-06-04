@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { DATA } from './data.js'
+import { useLang } from './i18n.jsx'
 import Topbar from './components/Topbar.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import Summary from './components/Summary.jsx'
@@ -9,6 +10,7 @@ import Contact from './components/Contact.jsx'
 import ResumeCart from './components/ResumeCart.jsx'
 
 export default function App() {
+  const { lang, setLang, tr } = useLang()
   const [theme, setTheme] = useState('dark')
   const [cartOpen, setCartOpen] = useState(false)
   const [cart, setCart] = useState([])
@@ -65,14 +67,14 @@ export default function App() {
       const matchesSearch = !search || (
         p.name.toLowerCase().includes(searchLower) ||
         p.meta.toLowerCase().includes(searchLower) ||
-        p.desc.toLowerCase().includes(searchLower) ||
+        String(tr(p.desc)).toLowerCase().includes(searchLower) ||
         p.tags.some(t => t.toLowerCase().includes(searchLower))
       )
       if (!matchesSearch) return false
       if (!activeChips.length) return true
       return activeChips.some(chip => p.tags.includes(chip))
     })
-  }, [search, activeChips])
+  }, [search, activeChips, lang, tr])
 
   const filteredCompanies = useMemo(() => {
     const visibleIds = new Set(filteredProjects.map(p => p.id))
@@ -86,6 +88,8 @@ export default function App() {
       <Topbar
         theme={theme}
         onToggleTheme={toggleTheme}
+        lang={lang}
+        onToggleLang={() => setLang(lang === 'en' ? 'ko' : 'en')}
         cartCount={cart.length}
         onToggleCart={() => setCartOpen(o => !o)}
       />

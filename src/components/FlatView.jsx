@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useLang } from '../i18n.jsx'
 import DetailPanel from './DetailPanel.jsx'
 
 export default function FlatView({ projects, isInCart, onCartToggle }) {
+  const { t } = useLang()
   const [selected, setSelected] = useState(null)
 
   const handleSelect = (id) => {
@@ -22,7 +24,7 @@ export default function FlatView({ projects, isInCart, onCartToggle }) {
             <div className="pcard-shot">
               {p.image
                 ? <img src={p.image} alt={p.name} />
-                : <span className="pcard-shot-lbl">screenshot</span>
+                : <span className="pcard-shot-lbl">{t('screenshot')}</span>
               }
             </div>
             <div className="pcard-body">
@@ -35,7 +37,7 @@ export default function FlatView({ projects, isInCart, onCartToggle }) {
                   onCartToggle(p.id, p.name)
                 }}
               >
-                {isInCart(p.id) ? '✓ added' : '+ resume'}
+                {isInCart(p.id) ? t('added') : t('addResume')}
               </button>
             </div>
           </div>

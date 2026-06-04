@@ -1,39 +1,70 @@
 name: "Your Name"
-role: senior_software_engineer
-tagline: "I build reliable\nweb & mobile products"
-bio: "Bio placeholder — what you do, your focus areas, and what you're looking for. Written to be skimmed by a recruiter in seconds."
+role:
+  en: senior_software_engineer
+  ko: 시니어_소프트웨어_엔지니어
+tagline:
+  en: "I build reliable\nweb & mobile products"
+  ko: "신뢰할 수 있는\n웹·모바일 제품을 만듭니다"
+bio:
+  en: "Bio placeholder — what you do, your focus areas, and what you're looking for. Written to be skimmed by a recruiter in seconds."
+  ko: "자기소개 자리 — 하는 일, 집중 분야, 찾고 있는 기회. 채용 담당자가 몇 초 만에 훑어볼 수 있도록 작성."
 github: https://github.com/2sem
 linkedin: https://linkedin.com/in/handle
 email: kofggm@gmail.com
 resume: "#"
-contactMsg: "Let's talk. Open to new opportunities and interesting projects."
+contactMsg:
+  en: "Let's talk. Open to new opportunities and interesting projects."
+  ko: "편하게 연락 주세요. 새로운 기회와 흥미로운 프로젝트를 환영합니다."
 
-stats[4]{num,em,cap}:
-  6,y,experience
-  42,,projects_shipped
-  23,,skills_tools
-  5,,highlights
+stats[4]:
+  - num: 6
+    em: y
+    cap:
+      en: experience
+      ko: 경력
+  - num: 42
+    cap:
+      en: projects_shipped
+      ko: 출시_프로젝트
+  - num: 23
+    cap:
+      en: skills_tools
+      ko: 기술_도구
+  - num: 5
+    cap:
+      en: highlights
+      ko: 주요_성과
 
 tags[4]:
-  - "#open-source-maintainer"
-  - "#conf-speaker"
-  - "#1M+-users"
-  - "#led-team-of-5"
+  - en: "#open-source-maintainer"
+    ko: "#오픈소스-메인테이너"
+  - en: "#conf-speaker"
+    ko: "#컨퍼런스-발표자"
+  - en: "#1M+-users"
+    ko: "#100만+-사용자"
+  - en: "#led-team-of-5"
+    ko: "#5인-팀-리드"
 
 
 companies[2]:
   - id: credif
     name: "CREDiF"
     when: "2009 — 2017"
-    role: Developer
+    role:
+      en: Developer
+      ko: 개발자
     cur: false
     projects[3]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
         tags[2]: platform:windows,lang:vb
-        desc: "MDI terminal monitor for IDC ops — saves window positions and per-terminal connection settings so nothing needs repositioning after restart."
-        role: "Sole developer. Designed MDI layout engine, implemented Telnet protocol from RFC, built XML-based multi-user config system."
+        desc:
+          en: "MDI terminal monitor for IDC ops — saves window positions and per-terminal connection settings so nothing needs repositioning after restart."
+          ko: "IDC 운영을 위한 MDI 터미널 모니터 — 창 위치와 터미널별 접속 설정을 저장해 재시작 후 재배치가 필요 없습니다."
+        role:
+          en: "Sole developer. Designed MDI layout engine, implemented Telnet protocol from RFC, built XML-based multi-user config system."
+          ko: "단독 개발. MDI 레이아웃 엔진 설계, RFC 기반 Telnet 프로토콜 구현, XML 기반 다중 사용자 설정 시스템 구축."
         tech[3]: VB,Telnet,XML
         diagrams[2]:
           - "graph LR\n  subgraph Form\n    Main --> User\n    Main --> Setting\n    Main --> Monitor\n  end\n  subgraph Module\n    Parse\n    Telnet\n    XML\n  end\n  subgraph Servers\n    S1[Server1]\n    S2[Server2]\n    SN[...]\n  end\n  subgraph Users\n    U1[User1.CFG]\n    U2[User2.CFG]\n    UN[...]\n  end\n  Form <--> Module\n  Telnet --> Servers\n  XML --> Users"
@@ -42,30 +73,44 @@ companies[2]:
         name: "Project B"
         meta: "2015 · Web · Java"
         tags[2]: platform:web,lang:java
-        desc: "Short description of the project. What problem it solved and what you built."
-        role: "Full-stack development across 3 modules."
+        desc:
+          en: "Short description of the project. What problem it solved and what you built."
+          ko: "프로젝트 간단 설명. 어떤 문제를 풀었고 무엇을 만들었는지."
+        role:
+          en: "Full-stack development across 3 modules."
+          ko: "3개 모듈에 걸친 풀스택 개발."
         tech[3]: Java,Spring,Oracle
         image: null
       - id: proj-c
         name: "Project C"
         meta: "2013 · iOS · ObjC"
         tags[2]: platform:ios,lang:objc
-        desc: "First mobile project. Delivered to 10k+ internal users."
-        role: "Built from scratch, sole iOS engineer."
+        desc:
+          en: "First mobile project. Delivered to 10k+ internal users."
+          ko: "첫 모바일 프로젝트. 1만+ 내부 사용자에게 제공."
+        role:
+          en: "Built from scratch, sole iOS engineer."
+          ko: "처음부터 단독 iOS 엔지니어로 개발."
         tech[3]: Obj-C,CoreData,AFNetworking
         image: null
   - id: freelance
     name: Freelance
     when: "2017 — now"
-    role: "iOS Developer"
+    role:
+      en: "iOS Developer"
+      ko: "iOS 개발자"
     cur: true
     projects[3]:
       - id: proj-d
         name: "App D"
         meta: "2023 · iOS · Swift"
         tags[2]: platform:ios,lang:swift
-        desc: "Description of the app. Users, impact, key features."
-        role: "Solo developer — design to App Store."
+        desc:
+          en: "Description of the app. Users, impact, key features."
+          ko: "앱 설명. 사용자, 임팩트, 핵심 기능."
+        role:
+          en: "Solo developer — design to App Store."
+          ko: "단독 개발 — 디자인부터 앱스토어 출시까지."
         tech[3]: Swift,SwiftUI,Firebase
         links[1]{label,href}:
           "↗ AppStore","#"
@@ -74,23 +119,37 @@ companies[2]:
         name: "App E"
         meta: "2021 · iOS · Swift"
         tags[3]: platform:ios,lang:swift,framework:swiftui
-        desc: "Description of the app."
-        role: "Built core features and led team of 2 contractors."
+        desc:
+          en: "Description of the app."
+          ko: "앱 설명."
+        role:
+          en: "Built core features and led team of 2 contractors."
+          ko: "핵심 기능 개발 및 외주 2인 팀 리드."
         tech[3]: Swift,SwiftUI,Combine
         image: null
       - id: proj-f
         name: "Web Dashboard"
         meta: "2022 · Web · React"
         tags[3]: platform:web,framework:react,lang:ts
-        desc: "Internal analytics dashboard with real-time data and complex filtering."
-        role: "Front-end architecture and component library."
+        desc:
+          en: "Internal analytics dashboard with real-time data and complex filtering."
+          ko: "실시간 데이터와 복합 필터링을 지원하는 내부 분석 대시보드."
+        role:
+          en: "Front-end architecture and component library."
+          ko: "프런트엔드 아키텍처 및 컴포넌트 라이브러리 담당."
         tech[3]: React,TypeScript,"Node.js"
         image: null
 
 skills[3]:
-  - group: Languages
+  - group:
+      en: Languages
+      ko: 언어
     chips[6]: Swift,TypeScript,JavaScript,SQL,PHP,Bash
-  - group: Frameworks
+  - group:
+      en: Frameworks
+      ko: 프레임워크
     chips[5]: SwiftUI,UIKit,React,"Node.js","Next.js"
-  - group: "Tools / Infra"
+  - group:
+      en: "Tools / Infra"
+      ko: "도구 / 인프라"
     chips[7]: Xcode,Tuist,Git,Docker,AWS,Figma,CI/CD

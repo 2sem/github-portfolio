@@ -1,18 +1,21 @@
+import { useLang } from '../i18n.jsx'
+
 const NAV = [
-  { id: 'summary', pre: '01', label: 'summary' },
-  { id: 'projects', pre: '02', label: 'projects' },
-  { id: 'skills', pre: '03', label: 'skills' },
-  { id: 'contact', pre: '04', label: 'contact' },
+  { id: 'summary', pre: '01' },
+  { id: 'projects', pre: '02' },
+  { id: 'skills', pre: '03' },
+  { id: 'contact', pre: '04' },
 ]
 
 export default function Sidebar({ name, role, github, linkedin, email, resume, activeSection }) {
+  const { t, tr } = useLang()
   return (
     <aside className="sidebar">
       <div className="sidebar-avatar">&gt;_</div>
 
       <div className="sidebar-ident">
         <div className="nm">{name}</div>
-        <div className="role">{role}</div>
+        <div className="role">{tr(role)}</div>
       </div>
 
       <nav className="sidebar-nav">
@@ -23,7 +26,7 @@ export default function Sidebar({ name, role, github, linkedin, email, resume, a
             className={activeSection === item.id ? 'active' : ''}
           >
             <span className="nav-pre">{item.pre}</span>
-            {item.label}
+            {t(item.id)}
           </a>
         ))}
       </nav>
@@ -44,7 +47,7 @@ export default function Sidebar({ name, role, github, linkedin, email, resume, a
 
       <div className="sidebar-avail">
         <span className="avail-dot" />
-        open_to_work
+        {t('openToWork')}
       </div>
 
       <div className="sidebar-spacer" />
@@ -53,7 +56,7 @@ export default function Sidebar({ name, role, github, linkedin, email, resume, a
         className="dl-btn"
         onClick={() => window.open(resume)}
       >
-        ⬇ download résumé
+        {t('downloadResume')}
       </button>
     </aside>
   )

@@ -1,6 +1,8 @@
 import Diagram from './Diagram.jsx'
+import { useLang } from '../i18n.jsx'
 
 export default function DetailPanel({ project, isInCart, onCartToggle, onClose }) {
+  const { t, tr } = useLang()
   const inCart = isInCart(project.id)
 
   return (
@@ -12,7 +14,7 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
             <div className="detail-meta">{project.meta}</div>
           </div>
           <button className="detail-close" onClick={onClose}>
-            collapse ✕
+            {t('collapse')}
           </button>
         </div>
 
@@ -29,20 +31,20 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
           ))}
           {project.diagrams.length === 0 && project.images.length === 0 && (
             <div className="detail-slide">
-              <span className="detail-slide-lbl">no screenshots</span>
+              <span className="detail-slide-lbl">{t('noScreenshots')}</span>
             </div>
           )}
         </div>
 
         <div className="detail-body">
           <div>
-            <h4>What it is</h4>
-            <p>{project.desc}</p>
-            <h4 className="detail-sec-gap">My role</h4>
-            <p>{project.role}</p>
+            <h4>{t('whatItIs')}</h4>
+            <p>{tr(project.desc)}</p>
+            <h4 className="detail-sec-gap">{t('myRole')}</h4>
+            <p>{tr(project.role)}</p>
           </div>
           <div>
-            <h4>Tech / tags</h4>
+            <h4>{t('techTags')}</h4>
             <div className="detail-chips">
               {project.tech.map(t => (
                 <span key={t} className="d-chip accent">{t}</span>
@@ -50,7 +52,7 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
             </div>
             {project.links.length > 0 && (
               <>
-                <h4>Links</h4>
+                <h4>{t('links')}</h4>
                 <div className="detail-links">
                   {project.links.map((l, i) => (
                     <a key={i} className="detail-link" href={l.href} target="_blank" rel="noopener noreferrer">
@@ -64,7 +66,7 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
               className={`detail-add-btn${inCart ? ' in-cart' : ''}`}
               onClick={() => onCartToggle(project.id, project.name)}
             >
-              {inCart ? '✓ In resume' : '+ Add to resume'}
+              {inCart ? t('inResume') : t('addToResume')}
             </button>
           </div>
         </div>
