@@ -85,7 +85,6 @@ function buildResumeHTML(cart, template, lang, roleLabel) {
       <span>${DATA.linkedin.replace('https://', '')}</span>
     </div>
   </div>
-  <div class="section-label">${lang === 'ko' ? '// 선택한 프로젝트' : '// selected projects'}</div>
   ${projectsHTML}
 </body>
 </html>`
