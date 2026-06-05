@@ -3,6 +3,15 @@ import { DATA } from './data.js'
 import { useLang } from './i18n.jsx'
 import Topbar from './components/Topbar.jsx'
 import Sidebar from './components/Sidebar.jsx'
+
+// Latest YYYY(.MM) date in a project's meta (handles ranges like "2010.01 – 2017.02").
+function recencyKey(meta) {
+  const head = String(meta).split('·')[0]
+  const dates = [...head.matchAll(/(\d{4})(?:\.(\d{2}))?/g)]
+    .map(m => Number(m[1]) * 100 + (m[2] ? Number(m[2]) : 0))
+  return dates.length ? Math.max(...dates) : 0
+}
+const byRecency = (a, b) => recencyKey(b.meta) - recencyKey(a.meta)
 import Summary from './components/Summary.jsx'
 import Projects from './components/Projects.jsx'
 import Skills from './components/Skills.jsx'
@@ -73,14 +82,18 @@ export default function App() {
       if (!matchesSearch) return false
       if (!activeChips.length) return true
       return activeChips.some(chip => p.tags.includes(chip))
-    })
+    }).sort(byRecency)
   }, [search, activeChips, lang, tr])
 
   const filteredCompanies = useMemo(() => {
     const visibleIds = new Set(filteredProjects.map(p => p.id))
     return DATA.companies
-      .map(co => ({ ...co, projects: co.projects.filter(p => visibleIds.has(p.id)) }))
+      .map(co => ({
+        ...co,
+        projects: co.projects.filter(p => visibleIds.has(p.id)).sort(byRecency),
+      }))
       .filter(co => co.projects.length > 0)
+      .sort((a, b) => recencyKey(b.projects[0].meta) - recencyKey(a.projects[0].meta))
   }, [filteredProjects])
 
   return (

@@ -34,7 +34,7 @@ export default function Projects({
   return (
     <section id="projects" className="projects-section" ref={ref}>
       <div className="proj-header">
-        <span className="proj-header-label">## 02 — {t('projects')}</span>
+        <span className="proj-header-label">// 02 — {t('projects')}</span>
         <div className="proj-header-spacer" />
         <div className="view-toggle">
           <button
