@@ -93,11 +93,11 @@ companies[2]:
         meta: "2010.01 – 2017.02 · Backend · C"
         tags[2]: platform:unix,lang:c
         desc:
-          en: "Backend for KT's TwoPhone service — calls KT infrastructure and feeds data to the service's web UI. Maintained for years through an N-Step transition and an IDC migration, using a file-based store (per-phone-number folders holding paired-number records) instead of a DBMS, plus SMS dispatch."
-          ko: "KT 투폰 서비스 백엔드 — KT 인프라를 호출해 서비스 웹 UI에 데이터를 제공. N-Step 전환과 IDC 이전을 거치며 장기 운영했고, DBMS 대신 전화번호 폴더에 이중 전화번호 정보를 담는 파일 기반 저장 방식과 SMS 발송 기능을 사용."
+          en: "Backend for KT's TwoPhone service — calls KT infrastructure to feed data into the service's web UI. Stores data in per-phone-number folders holding paired-number records instead of a DBMS, and handles SMS dispatch."
+          ko: "KT 투폰 서비스 백엔드 — KT 인프라를 호출해 서비스 웹 UI에 데이터를 제공. DBMS 대신 전화번호 폴더에 이중 전화번호 정보를 담는 파일 방식으로 데이터를 저장하고 SMS 발송을 처리."
         role:
-          en: "Sole maintainer and operator. Ran the N-Step transition and IDC migration, keeping the service running on its existing DBMS-less, phone-number-folder file store."
-          ko: "단독 유지보수·운영. N-Step 전환과 IDC 이전을 수행했고, 기존의 DBMS 없는 전화번호 폴더 기반 파일 저장 구조 위에서 서비스를 운영."
+          en: "Sole maintainer and operator for ~7 years. Carried out the N-Step transition and the IDC migration while keeping the service running."
+          ko: "약 7년간 단독 유지보수·운영. 서비스를 지속 운영하며 N-Step 전환과 IDC 이전 작업을 수행."
         tech[3]: C,Unix,SMS
       - id: proj-b
         name: "Project B"
