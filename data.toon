@@ -93,36 +93,44 @@ companies[2]:
         meta: "2010.01 – 2017.02 · Backend · C"
         tags[2]: platform:unix,lang:c
         desc:
-          en: "Backend for KT's TwoPhone service — calls KT infrastructure to feed data into the service's web UI. Stores data in per-phone-number folders holding paired-number records instead of a DBMS, and handles SMS dispatch."
-          ko: "KT 투폰 서비스 백엔드 — KT 인프라를 호출해 서비스 웹 UI에 데이터를 제공. DBMS 대신 전화번호 폴더에 이중 전화번호 정보를 담는 파일 방식으로 데이터를 저장하고 SMS 발송을 처리."
+          en: "Backend for KT's TwoPhone service, which gives one device a second virtual number. Calls KT infrastructure to feed the service's web UI; maps real ↔ virtual numbers and checks number availability via a file-based store (per-phone-number folders) instead of a DBMS; and provisions a device's virtual number through a special SMS."
+          ko: "한 기기에 두 번째 가상 번호를 부여하는 KT 투폰 서비스의 백엔드. KT 인프라를 호출해 서비스 웹 UI에 데이터를 제공하고, DBMS 대신 전화번호 폴더 기반 파일 저장으로 실제 번호와 가상 번호를 매핑·사용 가능 번호를 확인하며, 특수 SMS로 기기의 가상 번호를 설정."
         role:
           en: "Sole maintainer and operator for ~7 years. Carried out the N-Step transition and the IDC migration while keeping the service running."
           ko: "약 7년간 단독 유지보수·운영. 서비스를 지속 운영하며 N-Step 전환과 IDC 이전 작업을 수행."
         tech[3]: C,Unix,SMS
-      - id: proj-b
-        name: "Project B"
-        meta: "2015 · Web · Java"
-        tags[2]: platform:web,lang:java
+      - id: verisign-sms
+        name: "Verisign SMS"
+        meta: "2010.01 – 2013.04 · Backend · C"
+        tags[2]: platform:linux,lang:c
         desc:
-          en: "Short description of the project. What problem it solved and what you built."
-          ko: "프로젝트 간단 설명. 어떤 문제를 풀었고 무엇을 만들었는지."
+          en: "SMS delivery server that received Korea-bound SMS requests from Verisign through SMPP. Converted Korean message text from UCS2-BE to EUC-KR, inserted send requests into the corporate SMS Agent's MySQL queue, checked delivery status, and reported results back to Verisign."
+          ko: "Verisign에서 SMPP로 전달한 한국 번호 대상 SMS 발송 요청을 처리한 발송 서버. 한글 메시지를 UCS2-BE에서 EUC-KR로 변환하고, 기업형 SMS Agent가 사용하는 MySQL 큐에 발송 요청을 insert한 뒤 발송 상태를 조회해 Verisign에 결과를 전달."
         role:
-          en: "Full-stack development across 3 modules."
-          ko: "3개 모듈에 걸친 풀스택 개발."
-        tech[3]: Java,Spring,Oracle
-        image: null
-      - id: proj-c
-        name: "Project C"
-        meta: "2013 · iOS · ObjC"
-        tags[2]: platform:ios,lang:objc
+          en: "Sole developer for the server-side integration with Verisign, SMPP message handling, character conversion, MySQL queue integration, and delivery-status reporting."
+          ko: "Verisign 연동, SMPP 전문 처리, 문자셋 변환, MySQL 큐 연동, 발송 상태 리포팅까지 서버 측 기능을 단독 개발."
+        achievement:
+          en: "Built practical understanding of SMPP and Unicode, gained experience working with an international partner, and used MySQL in a production delivery flow."
+          ko: "SMPP와 Unicode를 이해하고 국제 기업과 협업한 경험을 쌓았으며, 운영 발송 흐름에서 MySQL을 사용한 경험을 확보."
+        tech[5]: C,Linux,SMPP,UCS2-BE,MySQL
+        diagrams[1]:
+          - "graph LR\n  Verisign[\"Verisign\"] -->|\"SMPP\"| SmsServer[\"SMS delivery server<br>(Verisign SMS)\"]\n  SmsServer -->|\"UCS2-BE\"| Ucs2[\"UCS2-BE\"]\n  Ucs2 -->|\"Convert\"| EucKr[\"EUC-KR\"]\n  SmsServer -->|\"Insert\"| MySql[\"MySQL\"]\n  MySql -->|\"Queue\"| CorpSms[\"SMS Agent\"]\n  CorpSms -->|\"Send\"| UserDevice[\"User device\"]\n  UserDevice -->|\"Delivery result\"| CorpSms\n  CorpSms -->|\"Update\"| MySql\n  MySql -->|\"Status lookup\"| SmsServer\n  SmsServer -->|\"Report\"| Verisign"
+      - id: tmoney-ota-gateway
+        name: "TMoney OTA Gateway"
+        meta: "2010.01 · Backend · C"
+        tags[2]: platform:unix,lang:c
         desc:
-          en: "First mobile project. Delivered to 10k+ internal users."
-          ko: "첫 모바일 프로젝트. 1만+ 내부 사용자에게 제공."
+          en: "Relay gateway between TMoney and SCMS (KT's USIM system). TMoney's encrypted messages couldn't pass through the existing relay, so it accepts TMoney connections, forwards the encrypted payload to SCMS untouched, and relays the response back."
+          ko: "TMoney와 SCMS(KT USIM 시스템) 사이의 중계 게이트웨이. TMoney의 암호화 전문을 기존 중계기로 처리할 수 없어, TMoney 접속을 수락하고 암호화된 페이로드를 그대로 SCMS에 전달한 뒤 응답을 되돌려줌."
         role:
-          en: "Built from scratch, sole iOS engineer."
-          ko: "처음부터 단독 iOS 엔지니어로 개발."
-        tech[3]: Obj-C,CoreData,AFNetworking
-        image: null
+          en: "Sole developer. Built it on the raw Socket API with no framework, using a fork-per-client process model (unlike the select-based micro-payment gateway)."
+          ko: "단독 개발. 프레임워크 없이 기본 Socket API로 구현했고, (select 기반인 소액결제 게이트웨이와 달리) 클라이언트마다 fork하는 프로세스 모델을 사용."
+        achievement:
+          en: "First experience coordinating directly with an external company."
+          ko: "처음으로 타 업체와 직접 소통한 경험."
+        tech[3]: C,Unix,Socket
+        diagrams[1]:
+          - "graph TD\n  TM[\"TMoney\"] -->|\"Request (encrypted)\"| GW[\"OTA Gateway (Socket Server)\"]\n  GW -->|Forward| SCMS[\"SCMS (KT USIM System)\"]\n  SCMS -->|Response| GW\n  GW -->|Relay response| TM\n  subgraph Process Model\n    L[\"Listen socket\"] --> A[Accept]\n    A -->|fork per client| C[\"Child handles Tx/Rx\"]\n  end"
   - id: freelance
     name: Freelance
     when: "2017 — now"
