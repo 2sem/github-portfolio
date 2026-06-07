@@ -54,7 +54,7 @@ companies[2]:
       en: Developer
       ko: 개발자
     cur: false
-    projects[17]:
+    projects[18]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
@@ -329,6 +329,22 @@ companies[2]:
         tech[3]: Java,Android,Barometer
         diagrams[1]:
           - "flowchart LR\n  subgraph Android[\"Android\"]\n    Sensor[\"Pressure Sensor\"]\n\n    subgraph App\n      Algorithm\n      Sqlite\n      UI\n    end\n  end\n\n  Sensor --> Sqlite\n  Sqlite --> Algorithm\n  Sensor --> Algorithm\n  Algorithm -->|Floor| UI"
+      - id: web-page-test-multi
+        name: "WebPageTest – 다중 테스트 기능 추가"
+        meta: "2014.05 · Desktop · C++"
+        tags[3]: platform:windows,lang:cpp,lang:php
+        desc:
+          en: "Modification of the open-source WebPageTest web-performance tool to run multiple pages concurrently. A web front end (server) registers tests; test-runner machines (clients) pull jobs, launch browsers, attach the capture plugin and record network/resource usage and timed screenshots, then upload results back to the web UI."
+          ko: "웹 페이지 성능 측정 오픈소스 WebPageTest를 여러 페이지를 동시에 테스트할 수 있게 개조. 웹(Server)에서 테스트를 등록하면 테스트 수행 장비(Client)가 작업을 받아 브라우저를 실행하고 캡처 플러그인을 연결해 네트워크·리소스 사용량과 시간별 스크린샷을 기록한 뒤 결과를 웹으로 업로드."
+        role:
+          en: "Sole developer. Analyzed and modified the C++ open-source codebase — first hands-on C++ since graduation — and achieved concurrency by spawning multiple RDP sessions on a single PC, each running a WebPageTest client. The project was dropped when the requesting client lost their bid before a demo."
+          ko: "단독 개발. C++ 오픈소스 코드를 분석·수정 — 졸업 후 처음 다루는 C++ — 하고, 한 대의 PC에서 여러 RDP 세션을 띄워 각 세션이 WebPageTest 클라이언트를 실행하도록 만들어 동시 처리를 구현. 의뢰 업체가 데모 전에 수주에 실패해 더 진행되지는 않음."
+        achievement:
+          en: "Learned to drive multiple concurrent RDP sessions on one PC to run parallel WebPageTest clients — the mechanism that made simultaneous multi-page testing possible. First hands-on C++ since graduation (reading and modifying a real open-source codebase), and first experience reaching out to an upstream open-source maintainer with questions."
+          ko: "한 PC에서 여러 RDP 세션을 동시에 띄워 WebPageTest 클라이언트를 병렬 실행하는 방식을 익혀 다중 페이지 동시 테스트를 가능하게 함. 졸업 후 처음으로 실제 오픈소스 코드를 읽고 수정하며 C++을 다뤘고, 오픈소스 메인테이너에게 직접 문의해 본 첫 경험."
+        tech[4]: "C++",PHP,RDP,WebPageTest
+        diagrams[1]:
+          - "flowchart TB\n  Server[\"Server\"]\n\n  subgraph Browser[\"Browser\"]\n    Ext[\"Extension (js)\"]\n  end\n\n  Driver[\"wptdriver.exe\"]\n\n  subgraph OS[\"OS\"]\n    TestDat[\"test.dat\"]\n    subgraph Hook[\"wpthook.dll\"]\n      Web[\"local webservice\"]\n    end\n    Result[\"result\"]\n  end\n\n  Driver -->|\"① DLL Register\"| Hook\n  Driver -->|\"② query test job\"| Server\n  Driver -->|\"③ store\"| TestDat\n  Driver -->|\"④ Launch\"| Ext\n  Hook -->|\"⑤ Loading\"| Browser\n  TestDat -->|\"⑥ load\"| Hook\n  Hook -->|\"⑦ start web service\"| Web\n  Ext -->|\"⑧ navigate to blank\"| Web\n  Ext <-->|\"⑨ query test page url\"| Web\n  Browser -->|\"⑩ navigate to test page\"| Ext\n  Hook -->|\"⑪ store\"| Result\n  Result -->|\"⑫ upload result\"| Server"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"
