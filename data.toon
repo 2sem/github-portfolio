@@ -54,7 +54,7 @@ companies[2]:
       en: Developer
       ko: 개발자
     cur: false
-    projects[18]:
+    projects[20]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
@@ -345,6 +345,41 @@ companies[2]:
         tech[4]: "C++",PHP,RDP,WebPageTest
         diagrams[1]:
           - "flowchart TB\n  Server[\"Server\"]\n\n  subgraph Browser[\"Browser\"]\n    Ext[\"Extension (js)\"]\n  end\n\n  Driver[\"wptdriver.exe\"]\n\n  subgraph OS[\"OS\"]\n    TestDat[\"test.dat\"]\n    subgraph Hook[\"wpthook.dll\"]\n      Web[\"local webservice\"]\n    end\n    Result[\"result\"]\n  end\n\n  Driver -->|\"① DLL Register\"| Hook\n  Driver -->|\"② query test job\"| Server\n  Driver -->|\"③ store\"| TestDat\n  Driver -->|\"④ Launch\"| Ext\n  Hook -->|\"⑤ Loading\"| Browser\n  TestDat -->|\"⑥ load\"| Hook\n  Hook -->|\"⑦ start web service\"| Web\n  Ext -->|\"⑧ navigate to blank\"| Web\n  Ext <-->|\"⑨ query test page url\"| Web\n  Browser -->|\"⑩ navigate to test page\"| Ext\n  Hook -->|\"⑪ store\"| Result\n  Result -->|\"⑫ upload result\"| Server"
+      - id: skt-o2o
+        name: "SKT iBeacon O2O SDK"
+        meta: "2014.05 – 2014.07 · Mobile · Java"
+        tags[2]: platform:android,lang:java
+        desc:
+          en: "Android SDK for SKT's iBeacon-based O2O platform. It lets third-party developers fire events based on proximity to beacons without touching the underlying O2O agent: developers register event handlers through the library, and the SDK handles the connection to the beacon-scanning agent internally."
+          ko: "SKT의 iBeacon 기반 O2O 플랫폼용 Android SDK. 외부 개발자가 비콘과의 거리에 따라 이벤트를 발생시키되 내부 O2O Agent를 직접 다루지 않아도 되게 함 — 개발자는 라이브러리로 이벤트 핸들러를 등록하고, SDK가 비콘 스캔 Agent와의 연결을 내부에서 처리."
+        role:
+          en: "SDK developer. Initially analyzed the beacon-scanning Agent (service) source; then, while the Android devs built the app, built the developer-facing SDK. Rather than exposing JNI or AIDL, wrapped the agent connection internally so developers needed neither. Investigated and tested Google Geofence (and contract terms) to address Bluetooth power consumption; handed the SDK to another Android developer when reassigned."
+          ko: "SDK 개발 담당. 초기엔 비콘 신호를 수집하는 Agent(Service) 소스를 분석했고, 실제 앱은 안드로이드 개발자들이 맡는 동안 개발자용 SDK를 구현. 개발자에게 JNI나 AIDL을 노출하는 대신 둘 다 몰라도 되도록 Agent 연결을 내부에서 처리. Bluetooth 전력 문제를 해결하기 위해 Google Geofence 연동·테스트와 계약 조건을 검토했고, 재배치되며 다른 안드로이드 개발자에게 인계."
+        achievement:
+          en: "Designed the SDK so consuming developers register a simple event handler and need to know neither JNI nor AIDL — the agent connection is wrapped internally. Built it on Java/AIDL, strengthening Android skills, and explored Google Geofence as a lower-power alternative to constant Bluetooth scanning."
+          ko: "외부 개발자가 단순히 이벤트 핸들러만 등록하면 되고 JNI·AIDL을 몰라도 되도록 Agent 연결을 내부에 감춘 SDK를 설계. Java/AIDL 기반으로 구현하며 Android 개발 역량을 강화했고, 상시 Bluetooth 스캔의 전력 문제를 줄일 대안으로 Google Geofence를 검토."
+        tech[5]: Java,Android,AIDL,iBeacon,Bluetooth
+        diagrams[1]:
+          - "flowchart LR\n  subgraph Building\n    Beacon[\"iBeacon\"]\n  end\n\n  subgraph Device[\"Android\"]\n    subgraph App[\"Developer's App\"]\n      SDK[\"O2O SDK / Library\"]\n      Handler[\"Event handler\"]\n    end\n    Agent[\"O2O Agent (service)\"]\n  end\n\n  Server[\"O2O Server\"]\n  Developer[\"Web console\"]\n\n  Beacon -->|\"BLE signal\"| Agent\n  Agent <--> Server\n  Handler -->|\"Register handler\"| SDK\n  SDK -->|\"Event\"| Handler\n  SDK <-->|\"AIDL\"| Agent\n  Server --> Developer"
+      - id: skt-ilbp
+        name: "SKT ILBP – 분당 서울대 병원"
+        meta: "2014.07 – 2014.08 · Desktop · Delphi"
+        tags[3]: platform:windows,lang:delphi,lang:java
+        desc:
+          en: "Maintenance and extension of a Delphi map-authoring tool for SKT's ILBP indoor-navigation platform, deployed for Bundang Seoul National University Hospital. The tool downloads maps from the map vendor's server, converts and stores them, then lets you draw the map, place and configure beacons, and generate data for the field installer's mobile app."
+          ko: "SKT ILBP 실내 내비게이션 플랫폼용 Delphi 맵 제작 툴의 유지보수·기능 추가. 분당 서울대병원에 도입. 맵 업체 서버에서 맵을 다운로드해 변환·저장하고, 맵을 그려 비콘을 배치·설정하며 설치 기사용 모바일 앱을 위한 데이터를 생성."
+        role:
+          en: "Sole developer on a legacy project with no original developers and uncertain source. Reconstructed the build by hunting down old external components — some recovered from a leftover PC, others swapped for upgraded equivalents. The ask was to find why maps wouldn't render (client, server, or vendor); after extensive analysis and testing, traced it to the map vendor uploading bad data after a staff change. Built an installer and deployed at the hospital, including a server program that existed only as a binary with no source."
+          ko: "원 개발자도 없고 소스 최신 여부도 불분명한 레거시 프로젝트의 단독 개발. 검색조차 안 되는 오래된 외부 컴포넌트를 남아있던 PC에서 복구하거나 상위 버전으로 대체해 빌드를 복구. 맵이 안 뜨는 원인이 클라이언트·서버·맵 업체 중 무엇인지 가려달라는 요구를, 많은 분석·테스트 끝에 담당자 교체 후 맵 업체의 데이터 오등록으로 규명. 인스톨러를 만들어 병원에 설치했고, 소스 없이 바이너리만 있던 서버 프로그램도 설치 완료."
+        achievement:
+          en: "Revived a legacy Delphi build whose external components were so old they were no longer findable online — recovering some from a leftover PC and substituting upgraded equivalents — and root-caused a map-rendering failure across client/server/vendor boundaries to the vendor's mis-uploaded data. Shipped an installer (including a source-less, binary-only server) to the hospital, putting school-learned Delphi to real use."
+          ko: "외부 컴포넌트가 너무 오래돼 검색조차 안 되는 레거시 Delphi 빌드를 — 남은 PC에서 일부 복구하고 상위 버전으로 대체해 — 되살리고, 클라이언트·서버·맵 업체에 걸친 맵 렌더링 오류의 근본 원인을 맵 업체의 데이터 오등록으로 규명. 소스 없이 바이너리만 있던 서버를 포함해 인스톨러를 만들어 병원에 설치하며 학교에서 배운 Delphi를 실무에 적용."
+        tech[4]: Delphi,Java,Windows,Installer
+        image: "/images/credif/skt-ilbp/ilbp.jpeg"
+        images[1]:
+          - "/images/credif/skt-ilbp/ilbp.jpeg"
+        diagrams[1]:
+          - "flowchart LR\n  Vendor[\"Map vendor\"]\n\n  subgraph Windows\n    subgraph Tool[\"ILBP Client\"]\n      Editor[\"Map Tool\"]\n    end\n\n    DB[\"MSSql\"]\n    Server[\"ILBP Server\"]\n  end\n\n  Installer[\"Mobile app\"]\n\n  Vendor -->|Download| Tool\n  Editor -->|Upload| Server\n  Server <--> DB\n  Server -->|Download| Installer"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"
