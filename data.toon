@@ -328,7 +328,7 @@ companies[2]:
           ko: "기기 기압 센서 측정 방법을 습득하고, 실시간 기압과 지속 수집한 기준 층 기압의 차이로 현재 층을 추정하는 알고리즘을 고안 — 복층 건물에서 다른 층 WIFI 신호가 섞이는 문제를 현재 층 기준으로 필터링해 해결."
         tech[3]: Java,Android,Barometer
         diagrams[1]:
-          - "flowchart LR\n  Ref[\"Reference floor pressure (server / app)\"]\n  Sensor[\"Device barometer\"]\n\n  Sensor -->|\"Live pressure\"| Diff[\"Pressure difference\"]\n  Ref -->|\"Continuous collection\"| Diff\n  Diff --> Floor[\"Estimated current floor\"]\n  Floor --> Gate[\"Use only same-floor WIFI signals\"]\n  Gate --> Pos[\"WIFI positioning\"]"
+          - "flowchart LR\n  subgraph Android[\"Android\"]\n    Sensor[\"Pressure Sensor\"]\n\n    subgraph App\n      Algorithm\n      Sqlite\n      UI\n    end\n  end\n\n  Sensor --> Sqlite\n  Sqlite --> Algorithm\n  Sensor --> Algorithm\n  Algorithm -->|Floor| UI"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"
