@@ -22,7 +22,7 @@ stats[4]:
     cap:
       en: experience
       ko: 경력
-  - num: 42
+  - num: 43
     cap:
       en: projects_shipped
       ko: 출시_프로젝트
@@ -54,7 +54,7 @@ companies[2]:
       en: Developer
       ko: 개발자
     cur: false
-    projects[5]:
+    projects[14]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
@@ -115,6 +115,160 @@ companies[2]:
         tech[5]: C,Linux,SMPP,UCS2-BE,MySQL
         diagrams[1]:
           - "graph LR\n  Verisign[\"Verisign\"] -->|\"SMPP\"| SmsServer[\"SMS delivery server<br>(Verisign SMS)\"]\n  SmsServer -->|\"UCS2-BE\"| Ucs2[\"UCS2-BE\"]\n  Ucs2 -->|\"Convert\"| EucKr[\"EUC-KR\"]\n  SmsServer -->|\"Insert\"| MySql[\"MySQL\"]\n  MySql -->|\"Queue\"| CorpSms[\"SMS Agent\"]\n  CorpSms -->|\"Send\"| UserDevice[\"User device\"]\n  UserDevice -->|\"Delivery result\"| CorpSms\n  CorpSms -->|\"Update\"| MySql\n  MySql -->|\"Status lookup\"| SmsServer\n  SmsServer -->|\"Report\"| Verisign"
+      - id: gcos
+        name: "GCOS"
+        meta: "2010.02 – 2013.05 · Desktop · C#"
+        tags[2]: platform:windows,lang:csharp
+        desc:
+          en: "Google Calendar Outlook Synchronizer built as part of a Google Calendar activation strategy. It made Outlook-to-Google Calendar sync easier, increasing calendar usage and SMS notification volume for the CREDiF-operated Korea delivery flow."
+          ko: "Google Calendar 활성화 전략의 일환으로 만든 Outlook-Google Calendar 동기화 도구. Outlook과 Google Calendar 간 동기화를 쉽게 제공해 캘린더 사용과 CREDiF가 담당한 한국 번호 SMS 알림 발송량을 늘리는 데 기여."
+        role:
+          en: "Sole developer. Integrated Microsoft Outlook objects and Google Calendar API, implemented one-way and two-way sync, stored sync identifiers in a serialized file DB, and built an Outlook Add-in to avoid repeated permission prompts for automatic sync."
+          ko: "단독 개발. Microsoft Outlook 객체와 Google Calendar API를 연동하고, 단방향·양방향 동기화, 직렬화 기반 파일 DB, 자동 동기화를 위한 Outlook Add-in 권한 우회 구조를 구현."
+        achievement:
+          en: "Learned Google Calendar API usage, Outlook plug-in permission bypass techniques, and inter-process remote communication through Marshal."
+          ko: "Google Calendar API 사용법, Outlook Plugin을 통한 권한 우회 방법, Marshal 기반 프로세스 간 원격 통신 방법을 습득."
+        tech[5]: "C#",Windows,Outlook,"Google Calendar API",Marshal
+        links[1]{label,href}:
+          "Blog","https://blog.naver.com/PostView.naver?blogId=k0fnaver&logNo=130085631771&redirect=Dlog&widgetTypeCall=true"
+        diagrams[1]:
+          - "flowchart TD\n  A[GCOS]\n  B[Outlook]\n  C[Google Calendar]\n  D[File DB]\n  E[Outlook Add-in]\n  A -->|Permission prompt| B\n  A -->|Calendar lookup| C\n  A -->|One-way: delete all target events| C\n  A -->|Create events| C\n  A <-->|Outlook - Google ID pairs| D\n  A -->|Sync: bypass permission| E\n  B <-->|Sync| E"
+      - id: gcc
+        name: "구달e"
+        meta: "2010.05 – 2011.02 · Desktop · C#"
+        tags[2]: platform:windows,lang:csharp
+        desc:
+          en: "Desktop Google Calendar client built to increase Google Calendar usage without requiring users to open the web page. It let users view and edit schedules, manage Gmail contacts, and invite contacts to calendar events."
+          ko: "웹 페이지에 접속하지 않고 Google Calendar를 사용할 수 있도록 만든 PC용 클라이언트. 일정 확인·수정, Gmail 주소록 관리, Gmail 주소록 기반 일정 초대를 지원해 Google Calendar 사용 활성화를 목표로 함."
+        role:
+          en: "Sole developer. Loaded schedules for the selected month and adjacent months through Google Calendar API, rendered them in a calendar control, integrated Gmail contacts, and built invitation flows from the contact list."
+          ko: "단독 개발. Google Calendar API로 현재 선택한 월과 앞뒤 1개월 일정을 불러와 달력 컨트롤에 표시하고, Gmail 주소록 연동과 주소록 기반 일정 초대 흐름을 구현."
+        achievement:
+          en: "Gained experience with Google Gmail API, collaboration with a planner, and calendar UI implementation."
+          ko: "Google Gmail API 사용 경험, 기획자와의 협업 경험, 달력 UI 구현 경험을 확보."
+        tech[5]: "C#",Windows,"Google Calendar API","Gmail API","Calendar UI"
+        image: "/images/gcc-screenshot.jpeg"
+        images[1]:
+          - "/images/gcc-screenshot.jpeg"
+        diagrams[1]:
+          - "flowchart TD\n  Client[\"구달e\"] <-->|\"Contacts\"| Gmail[\"Gmail\"]\n  Client -->|Invitation| Calendar[\"Google Calendar\"]\n  Client -->|Schedule| Calendar[\"Google Calendar\"]\n  Calendar --> Verisign\n  Verisign --> CREDiF\n  CREDiF -->|SMS| User"
+      - id: rolling-timer
+        name: "무조건 한바퀴"
+        meta: "2011.04 · iOS SDK · Objective-C"
+        tags[2]: platform:ios,lang:objc
+        desc:
+          en: "iOS rotation timer module for rotating a target image for a configured duration. It supported touch-based pause and resume behavior while the image kept rotating through timer-driven animation."
+          ko: "설정한 시간 동안 대상 이미지를 회전시키는 iOS 회전 타이머 모듈. 이미지 터치로 정지와 계속을 제어하고 Timer와 Rotation Animation을 사용해 회전 동작을 구현."
+        role:
+          en: "Built the rotation library as an Objective-C SDK prototype while preparing for future iPhone development work."
+          ko: "향후 iPhone 개발 투입을 준비하며 Objective-C 기반 회전 라이브러리 SDK 프로토타입을 개발."
+        achievement:
+          en: "Learned how to rotate views on iOS and how to structure reusable library code."
+          ko: "iOS에서 View를 회전하는 방법과 재사용 가능한 라이브러리를 만드는 방법을 습득."
+        tech[4]: Objective-C,iOS,Timer,"Rotation Animation"
+        diagrams[1]:
+          - "flowchart TD\n  App --> SpinableImageView\n  SpinableImageView -->|Touch| Animation[\"Rotation Animation\"]\n  Animation -->|Rotate| Image[\"Image View\"]\n  Animation -->|Finish Event| App"
+      - id: smseco
+        name: "SMSECO"
+        meta: "2011.05 – 2011.12 · Backend · C#"
+        tags[2]: platform:windows,lang:csharp
+        desc:
+          en: "Backend SMS delivery component for an open messaging ECO service. As smartphone adoption reduced SMS revenue, the service shared revenue with mobile developers who sent SMS through an API; this component received API requests and performed the actual SMS delivery."
+          ko: "개방형 메시지 ECO 서비스의 SMS 발송 백엔드. 스마트폰 증가로 SMS 수익이 감소하자 모바일 개발자가 API로 SMS를 발송하면 수익을 공유하는 서비스였고, 이 컴포넌트는 API 요청을 받아 실제 SMS 발송을 수행."
+        role:
+          en: "SMS backend developer within the FE/API/Billing/SMS backend team. Received socket/XML send requests from the gateway, sent SMS through KT KHUB API, provided a C# communication library to the API process, and built a watchdog to keep server processes running."
+          ko: "FE/API/과금 BE/SMS BE 구성 중 SMS 백엔드 담당. Gateway의 Socket + XML 발송 요청을 수신하고 KT KHUB API로 SMS를 발송했으며, API 프로세스용 C# 통신 라이브러리와 서버 프로세스 WatchDog을 개발."
+        achievement:
+          en: "Learned C# library development and process health monitoring, and reused XML serialization knowledge from GCOS to provide a communication library for the API process developer."
+          ko: "C# 라이브러리 개발 방법과 프로세스 상태 감시 방법을 습득. GCOS 개발 과정에서 익힌 직렬화 기반 XML 통신 방식을 API 프로세스 개발자에게 라이브러리로 제공."
+        tech[5]: "C#",Windows,Socket,XML,"KT KHUB API"
+        diagrams[1]:
+          - "flowchart TB\n  App[\"App / Mobile Developer\"] <--> ALib\n\n  subgraph SMSECO[\"SMSECO\"]\n    direction TB\n\n    WatchDog[\"WatchDog\"]\n\n    subgraph ApiGroup[\"API\"]\n      direction TB\n      ALib[\"SMS Library\"]\n    end\n\n    subgraph SmsBeGroup[\"SMS Backend\"]\n      direction TB\n      SLib[\"SMS Library\"]\n      Sender[\"SMS Sender\"]\n    end\n\n    WatchDog -->|\"Keep running\"| ApiGroup\n    WatchDog -->|\"Keep running\"| SmsBeGroup\n    ApiGroup <-->|\"Socket + XML\"| SmsBeGroup\n  end\n\n  SLib --> Sender\n  Sender -->|\"KT KHUB API\"| KT[\"KT infrastructure\"]\n  KT -->|\"SMS\"| User[\"Recipient\"]"
+      - id: smseco-ios-test
+        name: "SMSECO iOS Tester"
+        meta: "2011.07 – 2011.11 · Mobile · Objective-C"
+        tags[2]: platform:ios,lang:objc
+        desc:
+          en: "iPhone test app for validating whether the SMSECO API worked correctly from iOS. It called each API with entered parameters and displayed raw request and response messages for authentication, SMS, LMS, and MMS flows."
+          ko: "SMSECO API가 iPhone에서 정상 호출되는지 검증하기 위한 테스트 앱. 입력한 파라미터로 인증, SMS, LMS, MMS API를 호출하고 각 요청 전문과 응답 전문을 그대로 확인할 수 있게 구성."
+        role:
+          en: "Built the iOS test app while responsible for the SMSECO SMS backend. Implemented the basic UI and API communication with guidance from the iPhone developer, then used the app for internal validation and carrier review."
+          ko: "SMSECO SMS 백엔드 담당자로서 iOS 테스트 앱을 직접 개발. 기본 UI와 API 통신부를 구현하고, 내부 검증 및 통신사 검증용으로 제공."
+        achievement:
+          en: "Learned how to call REST APIs from iOS."
+          ko: "iOS에서 REST API를 호출하는 방법을 습득."
+        tech[4]: Objective-C,iOS,REST,SMSECO
+        diagrams[1]:
+          - "flowchart LR\n  Tester\n\n  subgraph App[\"SMSECO iOS App\"]\n    direction TB\n    AuthReq[\"Authentication\"]\n    AuthCheck[\"Authentication check\"]\n    SmsReq[\"SMS send\"]\n    LmsReq[\"LMS send\"]\n    MmsReq[\"MMS send\"]\n  end\n\n  subgraph SMSECO\n    API\n  end\n\n  Tester -->|Parameter| App\n  App -->|Request| API\n\n  API -->|Response| App\n  App -->|Log| Tester"
+      - id: pankyo-ibs
+        name: "판교 R&D Center IBS/FMS"
+        meta: "2011.12 – 2012.05 · Desktop · C#"
+        tags[3]: platform:windows,lang:csharp,framework:wpf
+        desc:
+          en: "WPF client for an integrated building system and facility management system at Pangyo R&D Center. It centralized monitoring and control for facility systems, displayed real object locations on floor plans, and supported alarm handling and automated response scenarios."
+          ko: "판교 R&D Center의 IBS/FMS용 WPF 클라이언트. 엘리베이터, 주차, 전력, 소방 등 건물 설비 시스템을 중앙에서 모니터링·제어하고, 도면 위 실제 개체 위치 표시와 경보·자동 대응 시나리오를 지원."
+        role:
+          en: "Lead client developer. Reworked the planning/design spec, guided another developer, built the WPF MVVM client, created packet and database helper libraries, implemented floor-plan object binding, and added a fire-area editor for alarm visualization."
+          ko: "클라이언트 개발 담당. 기획·디자인 산출물을 재정리하고 개발자를 가이드하며 WPF MVVM 클라이언트, 패킷/DB 헬퍼 라이브러리, 도면 개체 바인딩, 화재 구역 편집 및 경보 시각화를 구현."
+        achievement:
+          en: "Delivered the client under staffing constraints by training a .NET web developer and providing reusable Network and DB libraries. The libraries hid socket complexity and generated DB queries automatically, letting feature work proceed without low-level communication code."
+          ko: "클라이언트 개발 인력 부족 상황에서 .NET 웹 개발자를 교육하고 재사용 가능한 Network/DB 라이브러리를 제공해 프로젝트를 완수. Socket 복잡도와 DB 쿼리 생성을 라이브러리로 흡수해 기능 개발에 집중할 수 있게 함."
+        tech[6]: "C#",WPF,MVVM,Socket,DataBinding,Database
+        image: "/images/credif/pankyo-ibs/ibs-client.jpeg"
+        images[1]:
+          - "/images/credif/pankyo-ibs/ibs-client.jpeg"
+        diagrams[2]:
+          - "flowchart LR\n  subgraph IBS\n    subgraph Client[\"SpiderIBS(Client)\"]\n      subgraph MDI\n        Feature\n      end\n      NetworkManager --> Feature\n    end\n\n    subgraph DB[\"Oracle\"]\n      Map <--> Object\n      Object <--> WatchDog\n      WatchDog <--> Device\n      Device\n    end\n\n    Server[\"IBS Server\"]\n  end\n\n  FacilityDB[\"MSSql\"]\n\n  subgraph Facilities[\"Building facility systems\"]\n    Elevator[\"Elevator\"]\n    Parking[\"Parking\"]\n    Power[\"Power\"]\n    Fire[\"Fire detection\"]\n    Other[\"Other systems\"]\n  end\n\n  Client <-->|TCP| Server\n  Server <-->|TCP| Facilities\n  Server <-->|UDP| Facilities\n  Server <-->|Serial| Facilities\n\n  Feature <--> WatchDog\n  WatchDog -->|Update| Server\n\n  FacilityDB -->|Pulling| Client\n  Facilities -->|Update| FacilityDB"
+          - "flowchart TB\n  subgraph Windows\n    subgraph IBS\n      WPF\n      C#\n      EntityFramework\n    end\n\n    EntityFramework <--> Oracle\n  end"
+      - id: henb-management-system
+        name: "HeMS"
+        meta: "2012.05 – 2012.10 · FE/BE · C / Java / JSP"
+        tags[4]: platform:linux,lang:c,lang:java,framework:jsp
+        desc:
+          en: "Configuration management module for LG's HeNB small base-station management system. It managed eNodeB basic information, location, CPU and memory limits, neighbor settings, and applied changed settings back to each HeNB Config.xml."
+          ko: "LG 소형 기지국 HeNB 관리 시스템의 환경설정 형상관리 모듈. eNodeB 기본정보, 위치, CPU/Memory 제한, Neighbor 설정을 관리하고 변경된 환경설정을 각 HeNB의 Config.xml에 적용."
+        role:
+          en: "Configuration Management developer. Implemented the server-side configuration flow and also built the JSP/jQuery admin UI after the project could not secure a dedicated web developer."
+          ko: "형상관리 기능 담당. 서버 측 환경설정 적용 흐름을 구현하고, 웹 개발자를 구하지 못한 상황에서 JSP/jQuery 기반 관리 화면까지 개발."
+        achievement:
+          en: "Reduced the gap between XML-based base-station configuration and the management database by applying Oracle XMLDB and sharing the approach with the team. Completed the configuration-management feature beyond the original server scope by building the JSP/jQuery UI and Daum Map-based location setup."
+          ko: "XML 기반 기지국 설정과 관리 DB 사이의 간극을 Oracle XMLDB로 줄이고 적용 방식을 팀에 공유. 서버 담당 범위를 넘어 JSP/jQuery 관리 화면과 Daum Map 기반 위치 설정까지 구현해 형상관리 기능을 완성."
+        tech[6]: C,Java,JSP,jQuery,"Oracle XMLDB","Daum Map"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph HEMS[\"HeMS\"]\n    subgraph FE\n      MAP[\"Map\"]\n      CONFIG[\"Configuration Setup\"]\n    end\n\n    subgraph BE\n      WAS\n      EMSCOHB[\"COHB\"]\n    end\n\n    subgraph Oracle\n      XMLDB\n    end\n\n    MAP -->|JS| Daum[\"Daum Map\"]\n\n    CONFIG <-->|TCP| WAS\n    WAS <-->|TCP| EMSCOHB\n    EMSCOHB <--> XMLDB\n  end\n\n  subgraph HeNB[\"HeNB small base station\"]\n    ENBCOHB[\"COHB\"] -->|Update| ConfigXml[\"XML Configuration\"]\n  end\n\n  EMSCOHB <-->|\"TCP\"| ENBCOHB"
+      - id: muju-ibs
+        name: "무주 태권도 공원 IBS"
+        meta: "2012.09 – 2012.11 · Desktop · C#"
+        tags[3]: platform:windows,lang:csharp,framework:wpf
+        desc:
+          en: "WPF client and object-management tool for the Muju Taekwondo Park integrated building system. Based on the Pangyo R&D Center IBS, it expanded building-system integration and added richer editor support for the much larger floor-plan and equipment dataset."
+          ko: "무주 태권도 공원의 IBS용 WPF 클라이언트와 개체 관리 도구. 판교 R&D Center IBS를 기반으로 더 많은 설비 연동과 대규모 도면·장비 데이터를 다루기 위한 편집 기능을 확장."
+        role:
+          en: "Client lead. Extended the Pangyo IBS client, built a dedicated ObjectManager for drawing and binding floor-plan objects to equipment, added map upload and sizing flows, and recreated a commercial-style theme with WPF styles when the planned UI library could not be purchased."
+          ko: "클라이언트 리드. 판교 IBS 클라이언트를 확장하고, 도면 개체 작성·정렬·검색 및 장비 연결을 위한 전용 ObjectManager, 도면 업로드와 표시 크기 설정 흐름을 구현. 유료 UI 라이브러리 도입이 어려워 WPF Style로 유사한 테마를 구성."
+        achievement:
+          en: "Turned Pangyo's ad hoc, manual data-entry into a proper ObjectManager editor so part-time staff could load a dataset about three times larger. Recreated a commercial-grade theme with WPF global styles and themes after the paid UI library fell through, and tuned the client on multiple fronts to handle the large-scale data — gaining hands-on large-dataset optimization experience."
+          ko: "판교의 수동·임시 데이터 입력을 전용 ObjectManager 편집기로 전환해 약 3배 규모의 데이터를 아르바이트 인력이 입력할 수 있게 함. 유료 UI 라이브러리 도입이 무산되자 WPF Global Style·Theme를 직접 적용해 상용 수준 외관을 재현하고, 급증한 데이터를 감당하기 위해 클라이언트를 다방면으로 튜닝하며 대용량 데이터 최적화 경험을 확보."
+        tech[6]: "C#",WPF,MVVM,DataBinding,Style,Database
+        diagrams[2]:
+          - "flowchart LR\n  subgraph MujuIBS[\"Muju Taekwondo Park IBS\"]\n    Client[\"IBS Client\"]\n    ObjectManager[\"ObjectManager\"]\n\n    subgraph Editor[\"ObjectManager features\"]\n      Draw[\"Draw / select modes\"]\n      Link[\"Object-device binding\"]\n      MapUpload[\"Map upload / display sizing\"]\n      Arrange[\"Align / search objects\"]\n    end\n\n    subgraph DB[\"IBS database\"]\n      Map\n      Object\n      WatchDog\n      Device\n    end\n\n    Server[\"IBS Server\"]\n  end\n\n  ObjectManager --> Draw\n  ObjectManager --> Link\n  ObjectManager --> MapUpload\n  ObjectManager --> Arrange\n  ObjectManager <--> DB\n  Client <--> DB\n  Client <-->|TCP| Server\n  Server <-->|Integration| Facilities[\"Building facility systems\"]\n  Link --> WatchDog"
+          - "flowchart TB\n  subgraph Windows\n    subgraph IBS[\"WPF IBS client\"]\n      CSharp[\"C#\"]\n      WPF\n      Styles[\"Global styles / theme\"]\n      DataBinding\n    end\n\n    ObjectManager[\"ObjectManager\"] --> DataBinding\n    Styles --> WPF\n  end"
+      - id: ifs
+        name: "평택 삼성 물류 센터 IFS"
+        meta: "2012.09 – 2012.11 · Desktop · C#"
+        tags[2]: platform:windows,lang:csharp
+        desc:
+          en: "Fire-monitoring client for Samsung's Pyeongtaek logistics center. It extracted the fire-detection portion of the IBS concept to show alarm locations on a floor plan, with zoom support and tooltips for location names and device numbers."
+          ko: "평택 삼성 물류 센터의 화재 감시 클라이언트. IBS 중 화재 감지 기능만 분리해 도면 위 화재 발생 위치를 표시하고, 도면 확대/축소와 위치명·장비번호 Tooltip을 제공."
+        role:
+          en: "Client developer. Adapted the Pangyo IBS fire-monitoring UI into a focused single-floor-plan tool, using wave animation for detector alarms and a local server/client setup on the control-room PC."
+          ko: "클라이언트 개발 담당. 판교 IBS의 소방 감시 UI를 단일 도면 중심 도구로 축소·재구성하고, 감지기 경보 위치를 파형 애니메이션으로 표시하는 현장형 서버/클라이언트 구성을 구현."
+        achievement:
+          en: "Repackaged the fire-monitoring portion of Pangyo IBS into a small, focused IFS client under a short schedule. Implemented a field setup that connected fire-control equipment directly to the control-room PC over Serial without a separate physical server, gaining practical Serial Port communication experience."
+          ko: "판교 IBS의 소방 감시 기능을 분리·축소해 짧은 일정의 단독 IFS 클라이언트로 재구성. 별도 물리 서버 없이 소방 제어 장비와 관제 PC를 Serial로 직접 연결하는 현장형 구성을 구현하며 Serial Port 통신 경험을 확보."
+        tech[4]: "C#",Windows,Serial,WPF
+        diagrams[1]:
+          - "flowchart LR\n  FirePanel[\"Fire control equipment\"] -->|\"Serial signal\"| Server[\"Server Program\"]\n\n  subgraph ControlPC[\"Control-room PC\"]\n    Server -->|\"Fire alarm event\"| Client[\"IFS Client\"]\n    Client --> FloorPlan[\"Single fire floor plan\"]\n    FloorPlan --> Detector[\"Detected location\"]\n    Detector --> Wave[\"Wave animation\"]\n    Detector --> Tooltip[\"Location / device tooltip\"]\n  end"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"
