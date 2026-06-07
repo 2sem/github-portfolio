@@ -292,8 +292,8 @@ companies[2]:
           - "/images/credif/gstorage/gstorage-main.jpeg"
           - "/images/credif/gstorage/gstorage-transfer.jpeg"
         diagrams[2]:
-          - "flowchart LR\n  subgraph Client[\"gStorage Client (Java SWT)\"]\n    Services[\"Service select: gAnalysis / gStorage / Shared Me\"]\n    Browser[\"File / directory browse\"]\n    Transfer[\"Transfer engine\"]\n    subgraph Opts[\"Transfer options\"]\n      Resume[\"Resume / pause / cancel\"]\n      Chunk[\"Chunk size\"]\n      Threads[\"Thread count\"]\n      Crypt[\"Encryption toggle\"]\n    end\n  end\n\n  Services --> Browser\n  Browser --> Transfer\n  Transfer --> Opts\n  Transfer -->|\"UDT / TCP\"| Server[\"Genome Cloud Server (C)\"]\n  Server --> Storage[\"Genome file storage\"]"
-          - "flowchart TB\n  subgraph Cross[\"Cross-platform desktop\"]\n    Win[\"Windows\"]\n    Linux[\"Linux\"]\n    Mac[\"macOS\"]\n  end\n\n  subgraph App[\"Java SWT client\"]\n    SWT[\"SWT UI\"]\n    Socket[\"Socket layer (ported from IBS)\"]\n    JNA[\"JNA\"]\n  end\n\n  Cross --> App\n  JNA -->|native| UDT[\"UDT (UDP-based)\"]\n  Socket -->|TCP| Server[\"C server\"]\n  UDT --> Server"
+          - "flowchart LR\n  subgraph Client[\"GTPClient\"]\n    Browser[\"File / directory browser\"]\n    subgraph CTransfer[\"Transfer\"]\n      Resume[\"Resume / pause / cancel\"]\n      Chunk[\"Chunk size\"]\n      Threads[\"Thread count\"]\n      Crypt[\"Encryption toggle\"]\n    end\n  end\n\n  subgraph gStorage\n    STransfer[\"Server\"]\n  end\n\n  GenomeCloud[\"Genome Cloud\"]\n\n  CTransfer -->|\"UDT\"| GenomeCloud\n  Browser -->|\"TCP\"| gStorage\n  gStorage --> GenomeCloud\n  GenomeCloud --> Storage[\"Genome File\"]"
+          - "flowchart TB\n  User\n\n  subgraph Desktop\n    subgraph Client[\"GTPClient\"]\n      subgraph Java\n        SWT\n        Library[\"UDT Library\"]\n        JNA\n      end\n    end\n    subgraph OS\n      Win[\"Windows\"]\n      Linux[\"Linux\"]\n      Mac[\"macOS\"]\n    end\n  end\n\n  SWT -->|UI| User\n  JNA -->|TCP| Server\n  Library -->|UDT| Server"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"
