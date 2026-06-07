@@ -54,7 +54,7 @@ companies[2]:
       en: Developer
       ko: 개발자
     cur: false
-    projects[16]:
+    projects[17]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
@@ -313,6 +313,22 @@ companies[2]:
           - "/images/credif/wifi-lbs/wifi-lbs.jpeg"
         diagrams[1]:
           - "flowchart LR\n  subgraph Wifi\n    AP1\n    AP2\n    AP3\n    AP4\n  end\n\n  subgraph App[\"Android App\"]\n    Map\n    Sqlite\n  end\n\n  Map <--> Sqlite\n\n  subgraph Developer\n    RESTClient[\"Client\"]\n    Algorithm\n  end\n\n  Wifi -->|Signal| App\n\n  subgraph Platform[\"WIFI Research Platform\"]\n    Viz[\"Map\"]\n    Search\n    RESTServer[\"REST server\"]\n    PSqlite[\"Sqlite\"]\n  end\n\n  Sqlite <-->|Import| PSqlite\n  RESTClient -->|Import| RESTServer\n  PSqlite <--> RESTServer\n  RESTServer -->|Export| Developer\n  Algorithm --> RESTClient\n  PSqlite --> Viz\n  Search --> PSqlite"
+      - id: air-floor
+        name: "측위 알고리즘 연구 – 기압에 의한 현재 층 추정"
+        meta: "2014.04 – 2014.05 · Android · Java"
+        tags[2]: platform:android,lang:java
+        desc:
+          en: "Research into estimating a user's current floor from barometric pressure, to improve WIFI indoor positioning in multi-floor buildings. In stacked structures WIFI signals leak in from other floors; knowing the current floor lets positioning use only same-floor signals. Since air pressure varies with height, comparing live pressure against a continuously-collected reference-floor pressure yields the current floor."
+          ko: "복층 건물에서 WIFI 실내 측위 정밀도를 높이기 위해 기압으로 현재 층을 추정하는 연구. 복층 구조에서는 다른 층의 WIFI 신호가 잡혀 문제가 되는데, 현재 층을 알면 같은 층 신호만 사용할 수 있음. 높이에 따라 기압이 달라지므로, 서버(앱)로 지속 수집한 기준 층 기압과의 차이로 현재 층을 추정."
+        role:
+          en: "Sole researcher and developer. Built an Android app to sample the barometric sensor, designed the floor-estimation algorithm around the live-vs-reference pressure difference, and validated it by collecting and testing across floors 1–15 on foot via the stairwell."
+          ko: "단독 연구·개발. 기압 센서를 측정하는 Android 앱을 만들고, 실시간 기압과 기준 기압의 차이를 이용한 층 추정 알고리즘을 설계. 1층부터 15층까지 계단을 직접 오르내리며 수집·테스트해 검증."
+        achievement:
+          en: "Learned to read device barometric sensors and devised a floor-estimation algorithm that gates WIFI positioning to the current floor — using the difference between live pressure and a continuously-collected reference-floor pressure to resolve cross-floor signal interference in multi-floor buildings."
+          ko: "기기 기압 센서 측정 방법을 습득하고, 실시간 기압과 지속 수집한 기준 층 기압의 차이로 현재 층을 추정하는 알고리즘을 고안 — 복층 건물에서 다른 층 WIFI 신호가 섞이는 문제를 현재 층 기준으로 필터링해 해결."
+        tech[3]: Java,Android,Barometer
+        diagrams[1]:
+          - "flowchart LR\n  Ref[\"Reference floor pressure (server / app)\"]\n  Sensor[\"Device barometer\"]\n\n  Sensor -->|\"Live pressure\"| Diff[\"Pressure difference\"]\n  Ref -->|\"Continuous collection\"| Diff\n  Diff --> Floor[\"Estimated current floor\"]\n  Floor --> Gate[\"Use only same-floor WIFI signals\"]\n  Gate --> Pos[\"WIFI positioning\"]"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"
