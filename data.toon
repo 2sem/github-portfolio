@@ -54,7 +54,7 @@ companies[2]:
       en: Developer
       ko: 개발자
     cur: false
-    projects[14]:
+    projects[15]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
@@ -250,6 +250,10 @@ companies[2]:
           en: "Turned Pangyo's ad hoc, manual data-entry into a proper ObjectManager editor so part-time staff could load a dataset about three times larger. Recreated a commercial-grade theme with WPF global styles and themes after the paid UI library fell through, and tuned the client on multiple fronts to handle the large-scale data — gaining hands-on large-dataset optimization experience."
           ko: "판교의 수동·임시 데이터 입력을 전용 ObjectManager 편집기로 전환해 약 3배 규모의 데이터를 아르바이트 인력이 입력할 수 있게 함. 유료 UI 라이브러리 도입이 무산되자 WPF Global Style·Theme를 직접 적용해 상용 수준 외관을 재현하고, 급증한 데이터를 감당하기 위해 클라이언트를 다방면으로 튜닝하며 대용량 데이터 최적화 경험을 확보."
         tech[6]: "C#",WPF,MVVM,DataBinding,Style,Database
+        image: "/images/credif/muju-ibs/muju-ibs.jpeg"
+        images[2]:
+          - "/images/credif/muju-ibs/muju-ibs.jpeg"
+          - "/images/credif/muju-ibs/muju-object-manager.jpeg"
         diagrams[2]:
           - "flowchart LR\n  subgraph MujuIBS[\"Muju Taekwondo Park IBS\"]\n    Client[\"IBS Client\"]\n    ObjectManager[\"ObjectManager\"]\n\n    subgraph Editor[\"ObjectManager features\"]\n      Draw[\"Draw / select modes\"]\n      Link[\"Object-device binding\"]\n      MapUpload[\"Map upload / display sizing\"]\n      Arrange[\"Align / search objects\"]\n    end\n\n    subgraph DB[\"IBS database\"]\n      Map\n      Object\n      WatchDog\n      Device\n    end\n\n    Server[\"IBS Server\"]\n  end\n\n  ObjectManager --> Draw\n  ObjectManager --> Link\n  ObjectManager --> MapUpload\n  ObjectManager --> Arrange\n  ObjectManager <--> DB\n  Client <--> DB\n  Client <-->|TCP| Server\n  Server <-->|Integration| Facilities[\"Building facility systems\"]\n  Link --> WatchDog"
           - "flowchart TB\n  subgraph Windows\n    subgraph IBS[\"WPF IBS client\"]\n      CSharp[\"C#\"]\n      WPF\n      Styles[\"Global styles / theme\"]\n      DataBinding\n    end\n\n    ObjectManager[\"ObjectManager\"] --> DataBinding\n    Styles --> WPF\n  end"
@@ -269,6 +273,27 @@ companies[2]:
         tech[4]: "C#",Windows,Serial,WPF
         diagrams[1]:
           - "flowchart LR\n  FirePanel[\"Fire control equipment\"] -->|\"Serial signal\"| Server[\"Server Program\"]\n\n  subgraph ControlPC[\"Control-room PC\"]\n    Server -->|\"Fire alarm event\"| Client[\"IFS Client\"]\n    Client --> FloorPlan[\"Single fire floor plan\"]\n    FloorPlan --> Detector[\"Detected location\"]\n    Detector --> Wave[\"Wave animation\"]\n    Detector --> Tooltip[\"Location / device tooltip\"]\n  end"
+      - id: gstorage
+        name: "gStorage (GTP) Client"
+        meta: "2013.07 – 2014.03 · Desktop · Java"
+        tags[5]: platform:windows,platform:linux,platform:macos,lang:java,framework:swt
+        desc:
+          en: "Cross-platform desktop client for KT Genome Cloud (GTP — Genome Transfer Protocol). Huge genome files were previously mailed on disk or sent with a tool that had no resume and no chunked upload. gStorage adds resumable, chunked, optionally encrypted up/download with configurable protocol (UDT/TCP), chunk size and thread count, plus import/export to the gAnalysis and Shared Me services."
+          ko: "KT Genome Cloud(GTP — Genome Transfer Protocol)용 크로스플랫폼 데스크톱 클라이언트. 대용량 유전자 파일을 기존엔 디스크째 우편으로 보내거나 이어올리기·분할 업로드가 없는 도구로 전송했음. gStorage는 이어받기·분할·선택적 암호화 업/다운로드와 프로토콜(UDT/TCP)·분할 크기·스레드 수 설정, gAnalysis·Shared Me 서비스와의 Import/Export를 제공."
+        role:
+          en: "Sole client developer. Prototyped both server and client alone in WPF/TCP for the demo; after winning the contract a Linux/macOS requirement forced a re-platform to Java SWT. Ported the IBS socket layer into Java to talk to the C server, drove UDT via its JAR through JNA, and tracked issues with KT in Jira."
+          ko: "단독 클라이언트 개발. 데모 단계에선 서버·클라이언트를 WPF/TCP로 혼자 구현했으나, 수주 후 Linux/macOS 지원 요구로 Java SWT로 재구현. C 서버와 통신하기 위해 IBS의 Socket 계층을 Java로 이식하고, UDT는 JAR을 JNA로 연동했으며, KT와의 현안 공유는 Jira로 진행."
+        achievement:
+          en: "Learned UDT (UDP-based pseudo-TCP) and JNA, and proved out cross-platform desktop delivery with Java SWT after the WPF prototype couldn't meet the Linux/Mac requirement. Reused the IBS socket layer in Java to interoperate with a C server, and learned UDT's real cost firsthand — throughput was high but so resource-heavy that transfers saturated the office network during tests, forcing a dedicated line."
+          ko: "UDT(UDP 기반 의사 TCP)와 JNA를 익히고, WPF 프로토타입이 Linux/Mac 요구를 충족하지 못하자 Java SWT로 크로스플랫폼 데스크톱 전달을 입증. C 서버와 통신하기 위해 IBS의 Socket 계층을 Java로 재사용. UDT는 속도는 빠르나 리소스 사용이 극심해 테스트 중 사무실 네트워크가 마비될 정도였고 결국 전용 회선을 설치 — 고속 전송의 실제 비용을 체득."
+        tech[5]: Java,SWT,UDT,JNA,Socket
+        image: "/images/credif/gstorage/gstorage-main.jpeg"
+        images[2]:
+          - "/images/credif/gstorage/gstorage-main.jpeg"
+          - "/images/credif/gstorage/gstorage-transfer.jpeg"
+        diagrams[2]:
+          - "flowchart LR\n  subgraph Client[\"gStorage Client (Java SWT)\"]\n    Services[\"Service select: gAnalysis / gStorage / Shared Me\"]\n    Browser[\"File / directory browse\"]\n    Transfer[\"Transfer engine\"]\n    subgraph Opts[\"Transfer options\"]\n      Resume[\"Resume / pause / cancel\"]\n      Chunk[\"Chunk size\"]\n      Threads[\"Thread count\"]\n      Crypt[\"Encryption toggle\"]\n    end\n  end\n\n  Services --> Browser\n  Browser --> Transfer\n  Transfer --> Opts\n  Transfer -->|\"UDT / TCP\"| Server[\"Genome Cloud Server (C)\"]\n  Server --> Storage[\"Genome file storage\"]"
+          - "flowchart TB\n  subgraph Cross[\"Cross-platform desktop\"]\n    Win[\"Windows\"]\n    Linux[\"Linux\"]\n    Mac[\"macOS\"]\n  end\n\n  subgraph App[\"Java SWT client\"]\n    SWT[\"SWT UI\"]\n    Socket[\"Socket layer (ported from IBS)\"]\n    JNA[\"JNA\"]\n  end\n\n  Cross --> App\n  JNA -->|native| UDT[\"UDT (UDP-based)\"]\n  Socket -->|TCP| Server[\"C server\"]\n  UDT --> Server"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"
