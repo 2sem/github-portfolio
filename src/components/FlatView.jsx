@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useLang } from '../i18n.jsx'
 import DetailPanel from './DetailPanel.jsx'
+import ProjectVisual from './ProjectVisual.jsx'
 
 export default function FlatView({ projects, isInCart, onCartToggle }) {
   const { t } = useLang()
@@ -21,12 +22,7 @@ export default function FlatView({ projects, isInCart, onCartToggle }) {
             className={`flat-card${selected === p.id ? ' selected' : ''}`}
             onClick={() => handleSelect(p.id)}
           >
-            <div className="pcard-shot">
-              {p.image
-                ? <img src={p.image} alt={p.name} />
-                : <span className="pcard-shot-lbl">{t('screenshot')}</span>
-              }
-            </div>
+            <ProjectVisual project={p} />
             <div className="pcard-body">
               <div className="pcard-title">{p.name}</div>
               <div className="pcard-meta">{p.meta}</div>

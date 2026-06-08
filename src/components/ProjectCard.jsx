@@ -1,4 +1,5 @@
 import { useLang } from '../i18n.jsx'
+import ProjectVisual from './ProjectVisual.jsx'
 
 export default function ProjectCard({ project, isSelected, isInCart, onSelect, onCartToggle, className = '' }) {
   const { t } = useLang()
@@ -9,12 +10,7 @@ export default function ProjectCard({ project, isSelected, isInCart, onSelect, o
       className={`pcard${isSelected ? ' selected' : ''} ${className}`}
       onClick={() => onSelect(project.id)}
     >
-      <div className="pcard-shot">
-        {project.image
-          ? <img src={project.image} alt={project.name} />
-          : <span className="pcard-shot-lbl">{t('screenshot')}</span>
-        }
-      </div>
+      <ProjectVisual project={project} />
       <div className="pcard-body">
         <div className="pcard-title">{project.name}</div>
         <div className="pcard-meta">{project.meta}</div>

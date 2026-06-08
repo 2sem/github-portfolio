@@ -1,5 +1,6 @@
 import Diagram from './Diagram.jsx'
 import { useLang } from '../i18n.jsx'
+import { tagLabel } from '../tagLabels.js'
 
 export default function DetailPanel({ project, isInCart, onCartToggle, onClose }) {
   const { t, tr } = useLang()
@@ -7,7 +8,7 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
 
   const techLower = new Set(project.tech.map(x => x.toLowerCase()))
   const extraTags = project.tags
-    .map(tag => (tag.includes(':') ? tag.slice(tag.indexOf(':') + 1) : tag))
+    .map(tagLabel)
     .filter(label => !techLower.has(label.toLowerCase()))
 
   return (
@@ -24,14 +25,14 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
         </div>
 
         <div className="detail-media">
-          {project.diagrams.map((code, i) => (
-            <div key={i} className="detail-slide detail-slide--diagram">
-              <Diagram code={code} />
-            </div>
-          ))}
           {project.images.map((src, i) => (
             <div key={i} className="detail-slide">
               <img src={src} alt={`${project.name} screenshot ${i + 1}`} />
+            </div>
+          ))}
+          {project.diagrams.map((code, i) => (
+            <div key={i} className="detail-slide detail-slide--diagram">
+              <Diagram code={code} />
             </div>
           ))}
           {project.diagrams.length === 0 && project.images.length === 0 && (

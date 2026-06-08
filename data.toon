@@ -54,7 +54,7 @@ companies[2]:
       en: Developer
       ko: 개발자
     cur: false
-    projects[20]:
+    projects[23]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
@@ -380,6 +380,54 @@ companies[2]:
           - "/images/credif/skt-ilbp/ilbp.jpeg"
         diagrams[1]:
           - "flowchart LR\n  Vendor[\"Map vendor\"]\n\n  subgraph Windows\n    subgraph Tool[\"ILBP Client\"]\n      Editor[\"Map Tool\"]\n    end\n\n    DB[\"MSSql\"]\n    Server[\"ILBP Server\"]\n  end\n\n  Installer[\"Mobile app\"]\n\n  Vendor -->|Download| Tool\n  Editor -->|Upload| Server\n  Server <--> DB\n  Server -->|Download| Installer"
+      - id: gpt-advance
+        name: "KT GenomeCloud gStorage 고도화"
+        meta: "2014.07 – 2015.04 · Desktop · Java"
+        tags[6]: platform:windows,platform:linux,platform:macos,lang:c,lang:java,framework:swt
+        desc:
+          en: "Enhancement and operations phase of the KT GenomeCloud gStorage client. Added console improvements (ls sort options, key-event handling, command history), server failover so the client connects to a standby server when the primary is unreachable, and same-account use across multiple PCs. Mid-project the server developers left, so the Linux/C server came under my ownership too."
+          ko: "KT GenomeCloud gStorage 클라이언트의 고도화·운영 단계. 콘솔 개선(ls 정렬 옵션, 키 이벤트 처리, History 명령), 기본 서버 접속 실패 시 예비 서버로 연결하는 서버 페일오버, 동일 계정의 다중 PC 사용을 추가. 도중에 서버 개발자들이 퇴사해 Linux/C 서버까지 직접 담당."
+        role:
+          en: "Sole developer across client and server. Built a standby server that port-forwards to the primary and added DB-driven failover (the client falls back to the standby, which redirects to the primary). After UDT's heavy traffic once took down KT Cloud, switched to a KT-provided alternate router with standby-router fallback. Took over the Linux/C server when its developers left."
+          ko: "클라이언트·서버 단독 개발. 기본 서버로 Port Forwarding하는 예비 서버를 만들고 DB 기반 페일오버를 구현(클라이언트가 예비 서버로 접속하면 원래 서버로 유도). UDT의 과다 트래픽으로 KT Cloud가 다운된 뒤 KT가 제공한 대체 라우터로 전환하고 라우터 장애 시 예비 라우터로 처리하도록 구현. 서버 개발자 퇴사 후 Linux/C 서버까지 인수."
+        achievement:
+          en: "Took sole ownership of both the cross-platform client and the Linux/C server after the rest of the team left, gaining hands-on server-redundancy and performance-tuning experience: built a standby/proxy server with DB-driven failover and port forwarding to the primary, and recovered from a KT Cloud outage caused by UDT traffic by moving to alternate/standby routers."
+          ko: "팀이 모두 떠난 뒤 크로스플랫폼 클라이언트와 Linux/C 서버를 단독으로 맡아 서버 이중화와 성능 튜닝을 실제로 경험: DB 기반 페일오버와 원본 서버로의 Port Forwarding을 갖춘 예비/프록시 서버를 구축하고, UDT 트래픽으로 발생한 KT Cloud 다운을 대체·예비 라우터 전환으로 복구."
+        tech[5]: Java,SWT,C,UDT,Socket
+        diagrams[1]:
+          - "flowchart LR\n  subgraph Client[\"gStorage Client (Java SWT)\"]\n    Console\n  end\n\n  Primary[\"Primary server (Linux C)\"]\n  Standby[\"Standby / proxy server\"]\n  DB[\"DB (server info)\"]\n\n  Client -->|\"1. connect\"| Primary\n  Client -.->|\"on failure\"| Standby\n  Standby -->|\"Port forward\"| Primary\n  Standby <--> DB\n  DB -->|\"primary / standby info\"| Standby"
+      - id: safe-house
+        name: "SafeHouse - 전자 부동산 계약 인증"
+        meta: "2014.11 – 2015.02 · Desktop · C#"
+        tags[4]: platform:windows,lang:csharp,lang:js,framework:wpf
+        desc:
+          en: "Add-in for electronic real-estate contract certification. Contracts are authored as electronic documents, signatures are replaced by mobile-phone identity verification for buyer, agent, and seller, and the signed contract is stored as PDF on a certified e-document server."
+          ko: "전자 부동산 계약 인증 애드인. 계약서를 전자 문서로 작성하고, 매수자·중개인·매도자의 휴대폰 본인 인증으로 서명을 대신하며, 서명이 포함된 계약서를 PDF로 변환해 공인전자문서서버에 보관."
+        role:
+          en: "Sole developer. Originally a web project, it was changed to ship as an add-in and handed to me. First tried WPF input forms with a conversion library to match the on-screen layout, but free libraries kept corrupting Korean text; the final approach used HTML as a template in a hybrid form — binding data to HTML elements and rendering the PDF via PhantomJS. Integrated Mobilians phone identity verification. The project stopped when the realtor association's contact changed amid a patent lawsuit with another vendor."
+          ko: "단독 개발. 원래 웹 기반이었으나 애드인 형태로 변경되며 의뢰받음. 처음엔 WPF 입력 양식과 변환 라이브러리로 입력 화면과 유사한 모양을 만들려 했으나 무료 라이브러리가 한글을 자꾸 깨뜨려, 최종적으로 HTML을 템플릿으로 쓰는 하이브리드 방식 — HTML Element에 데이터를 연결하고 PhantomJS로 PDF를 생성 — 을 채택. 모빌리언스 휴대폰 본인 인증을 연동. 부동산 협회 담당자 교체와 타 업체와의 특허 소송 문제로 진행 중단."
+        achievement:
+          en: "Devised an HTML-template approach to PDF generation: after WPF + free conversion libraries kept corrupting Korean text, switched to a hybrid that binds contract data into HTML elements and renders the PDF with PhantomJS — getting faithful Korean output and a layout matching the input form. Also integrated Mobilians mobile identity verification in place of handwritten signatures."
+          ko: "HTML 템플릿 기반 PDF 생성 방식을 고안: WPF와 무료 변환 라이브러리가 한글을 깨뜨리는 문제를, 계약 데이터를 HTML Element에 연결하고 PhantomJS로 PDF를 렌더링하는 하이브리드 방식으로 해결해 한글 출력과 입력 화면과 유사한 레이아웃을 확보. 서명 대신 모빌리언스 휴대폰 본인 인증도 연동."
+        tech[5]: "C#",WPF,JavaScript,PhantomJS,HTML
+        diagrams[1]:
+          - "flowchart LR\n  Buyer\n  Agent\n  Seller\n\n  subgraph AgentPC[\"Realtor Agent Program\"]\n    subgraph Addin[\"Add-in\"]\n      subgraph Form[\"Contract Input Form\"]\n        Data\n        Template[\"HTML template\"]\n      end\n\n      Phantom[\"PhantomJS\"]\n    end\n  end\n\n  Auth[\"Mobilians\"]\n  Storage[\"Certified e-Document Storage\"]\n\n  Buyer -->|Phone Auth| Auth\n  Agent -->|Phone Auth| Auth\n  Seller -->|Phone Auth| Auth\n  Form --> Template\n  Data -->|Binding| Template\n  Auth -->|\"Verified signature\"| Template\n  Template --> Phantom\n  Phantom -->|\"Export PDF\"| Storage"
+      - id: olleh-tv-pay
+        name: "OllehTVPay - SMS 서버"
+        meta: "2015.05 – 2015.08 · Backend · Java"
+        tags[2]: platform:linux,lang:java
+        desc:
+          en: "SMS dispatch server replacing KT's Xroshot SMS agent for the OllehTVPay service. KT standardized on PostgreSQL, but the Xroshot agent didn't support it — so this server reproduces the agent's behavior: it polls a send-request table and dispatches SMS, lets service/admin pages send messages, and records delivery results."
+          ko: "OllehTVPay 서비스용 SMS 발송 서버로, KT의 Xroshot SMS Agent를 대체. KT가 DBMS를 PostgreSQL로 표준화했으나 Xroshot Agent가 이를 지원하지 않아, Agent와 동일하게 동작하는 서버를 구현 — 발송 요청 테이블을 폴링해 SMS를 발송하고, 서비스/관리자 페이지에서 발송할 수 있게 하며, 발송 결과를 기록."
+        role:
+          en: "Sole developer (handed over from the original web developer). Built a DB-driven dispatch flow that behaves like the agent but actually talks to the MCS (Xroshot) server over Socket/XML: a poller reads the request table, sends to MCS, and writes acks and delivery results back to the result table — with KHUB SMS sending through the same structure. Used MyBatis for DB access. Beyond development, handled infra: VM allocation, TB setup, and Apache reverse-proxy configuration."
+          ko: "단독 개발(기존 웹 개발자에게서 인수). Agent처럼 동작하지만 실제로는 MCS(Xroshot) 서버와 Socket/XML로 통신하는 DB 기반 발송 흐름을 구현 — 폴러가 요청 테이블을 읽어 MCS에 발송하고, 응답과 발송 결과를 결과 테이블에 기록. KHUB SMS 발송도 동일 구조로 처리. DB는 MyBatis로 접근. 개발 외에 VM 할당, TB 구성, Apache 리버스 프록시 설정 등 인프라 작업도 수행."
+        achievement:
+          en: "Worked around an unsupported-DB constraint: when KT mandated PostgreSQL but the Xroshot agent didn't support it, reproduced the agent's DB-in/result-out contract with a custom Socket/XML server on MyBatis, so existing service/admin pages could send SMS unchanged (KHUB included). Also stood up the surrounding infrastructure myself — VM, TB, and Apache reverse proxy."
+          ko: "DBMS 미지원 제약을 우회: KT가 PostgreSQL을 의무화했지만 Xroshot Agent가 이를 지원하지 않자, Agent의 'DB 입력 → 결과 기록' 계약을 MyBatis 기반 Socket/XML 서버로 재현해 기존 서비스/관리자 페이지가 수정 없이 SMS를 발송할 수 있게 함(KHUB 포함). 주변 인프라(VM·TB·Apache 리버스 프록시)도 직접 구성."
+        tech[5]: Java,JSP,MyBatis,Socket,XML
+        diagrams[1]:
+          - "flowchart LR\n  Pages[\"Service / Admin pages\"]\n  DB[\"PostgreSQL\"]\n\n  subgraph Server[\"SMS Dispatch Server (Java)\"]\n    Poller[\"Poll request table\"]\n    Sender[\"Send via Socket / XML\"]\n    Writer[\"Write result table\"]\n  end\n\n  MCS[\"MCS (Xroshot) Server\"]\n  KHUB[\"KHUB\"]\n\n  Pages -->|\"Insert request\"| DB\n  DB --> Poller\n  Poller --> Sender\n  Sender -->|\"Socket / XML\"| MCS\n  Sender -->|\"Same structure\"| KHUB\n  MCS -->|\"Ack + delivery result\"| Writer\n  Writer --> DB"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"

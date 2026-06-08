@@ -1,4 +1,5 @@
 import { useLang } from '../i18n.jsx'
+import { tagLabel } from '../tagLabels.js'
 
 export default function FilterBar({
   filterDefs,
@@ -12,7 +13,7 @@ export default function FilterBar({
   const { groups, orderedGroups } = filterDefs.reduce((acc, tag) => {
     const sep = tag.indexOf(':')
     const group = sep >= 0 ? tag.slice(0, sep) : 'other'
-    const label = sep >= 0 ? tag.slice(sep + 1) : tag
+    const label = tagLabel(tag)
     if (!acc.groups[group]) {
       acc.groups[group] = []
       acc.orderedGroups.push(group)

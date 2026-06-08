@@ -35,7 +35,7 @@ function DiagramModal({ svg, onClose }) {
   )
 }
 
-export default function Diagram({ code }) {
+export default function Diagram({ code, interactive = true }) {
   const ref = useRef(null)
   const [svg, setSvg] = useState(null)
   const [open, setOpen] = useState(false)
@@ -50,8 +50,13 @@ export default function Diagram({ code }) {
 
   return (
     <>
-      <div className="diagram-wrap diagram-wrap--thumb" ref={ref} onClick={() => svg && setOpen(true)} title="Click to zoom" />
-      {open && svg && <DiagramModal svg={svg} onClose={() => setOpen(false)} />}
+      <div
+        className={`diagram-wrap${interactive ? ' diagram-wrap--thumb' : ''}`}
+        ref={ref}
+        onClick={() => interactive && svg && setOpen(true)}
+        title={interactive ? 'Click to zoom' : undefined}
+      />
+      {interactive && open && svg && <DiagramModal svg={svg} onClose={() => setOpen(false)} />}
     </>
   )
 }
