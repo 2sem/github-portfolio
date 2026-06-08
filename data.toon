@@ -54,7 +54,7 @@ companies[2]:
       en: Developer
       ko: 개발자
     cur: false
-    projects[24]:
+    projects[25]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
@@ -444,6 +444,22 @@ companies[2]:
         tech[5]: "C#",Windows,SMTP,Email,Database
         diagrams[1]:
           - "flowchart LR\n  Employee\n\n  subgraph Server[\"Windows Server\"]\n    subgraph Converter[\"MailToBoardConverter\"]\n      Account[\"Dedicated mail account\"]\n      Poller[\"Mailbox\"]\n      Parser[\"Parse subject / recipients\"]\n      Router{\"Route rule\"}\n    end\n\n    MailServer[\"Mail Server\"]\n    BoardBySubject[\"Target board\"]\n    BoardByGroup[\"Mapped board\"]\n    Board[\"Intranet Board DB\"]\n  end\n\n  Employee -->|CC: Group Mail| MailServer\n  Employee -->|Specific Mail| MailServer\n  MailServer -->|SMTP| Poller\n  Poller -->|Poll| Parser\n  Parser --> Router\n\n  Router -->|\"Subject: @{board}\"| BoardBySubject\n  Router -->|\"Group mail recipient\"| BoardByGroup\n\n  BoardBySubject -->|Insert| Board\n  BoardByGroup -->|Insert| Board"
+      - id: related-stock-searcher
+        name: "관련주식검색기 - 서버"
+        meta: "2015.09 · Backend · JavaScript"
+        tags[3]: platform:windows,lang:js,framework:nodejs
+        desc:
+          en: "Backend server that supplies the 'Related Stock Searcher' app with lists of related stocks. To let the app developer manage the data easily, the related-stock lists are driven from comments on a specific GNUBoard forum — editing a comment updates the list."
+          ko: "'관련주식검색기' 앱에 관련주 목록을 제공하는 백엔드 서버. 앱 개발자가 데이터를 쉽게 관리할 수 있도록, GNU 보드 특정 게시판의 댓글을 수정하면 목록에 반영되도록 구성."
+        role:
+          en: "Backend developer. Built the server in Node.js to support an Android developer's idea inside an in-house app TF. Designated a GNUBoard forum as the data source — post titles are keywords, each comment is a related stock — and on a related-stocks request, queried that board's table and returned the extracted list (plus recommended stocks)."
+          ko: "백엔드 개발 담당. 사내 앱 TF에서 안드로이드 개발자의 아이디어를 돕기 위해 서버를 Node.js로 구현. GNU 보드의 특정 게시판을 데이터 소스로 지정 — 글 제목을 키워드, 각 댓글을 관련주로 등록 — 하고, 관련주 요청 시 해당 게시판 테이블을 검색해 목록을 추출·전송(추천주 포함)."
+        achievement:
+          en: "Learned Node.js on this project and turned an existing GNUBoard forum into a zero-admin content store — post titles as keywords, comments as related stocks — so the app developer could manage the lists by simply editing comments, with no separate admin tool to build or maintain."
+          ko: "이 프로젝트에서 Node.js를 익히고, 기존 GNU 보드 게시판을 관리 도구가 필요 없는 데이터 저장소로 전환 — 글 제목을 키워드, 댓글을 관련주로 — 해 앱 개발자가 댓글 수정만으로 목록을 관리할 수 있게 함(별도 관리자 도구 불필요)."
+        tech[3]: JavaScript,"Node.js",GNUBoard
+        diagrams[1]:
+          - "flowchart LR\n  Dev[\"App developer\"]\n\n  subgraph Windows\n    subgraph Board[\"GNUBoard\"]\n      Web\n    end\n\n    subgraph DB\n      subgraph PostTable[\"Post title = keyword\"]\n        CommentTable[\"Comments = stocks related to keyword\"]\n      end\n    end\n\n    subgraph Server[\"App Server\"]\n      REST[\"REST API\"]\n    end\n  end\n\n  Dev -->|Post stock item as comment| Web\n  Board -->|Post| DB\n  Query --> REST\n  REST -->|Query| DB\n  App -->|Request by keyword| Server\n  Server -->|Related /\n  recommended stocks| App"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"
