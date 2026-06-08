@@ -54,7 +54,7 @@ companies[2]:
       en: Developer
       ko: 개발자
     cur: false
-    projects[25]:
+    projects[27]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
@@ -460,6 +460,52 @@ companies[2]:
         tech[3]: JavaScript,"Node.js",GNUBoard
         diagrams[1]:
           - "flowchart LR\n  Dev[\"App developer\"]\n\n  subgraph Windows\n    subgraph Board[\"GNUBoard\"]\n      Web\n    end\n\n    subgraph DB\n      subgraph PostTable[\"Post title = keyword\"]\n        CommentTable[\"Comments = stocks related to keyword\"]\n      end\n    end\n\n    subgraph Server[\"App Server\"]\n      REST[\"REST API\"]\n    end\n  end\n\n  Dev -->|Post stock item as comment| Web\n  Board -->|Post| DB\n  Query --> REST\n  REST -->|Query| DB\n  App -->|Request by keyword| Server\n  Server -->|Related /\n  recommended stocks| App"
+      - id: shownote
+        name: "ShowNote"
+        meta: "2015.11 – 2017.02 · Mobile · Swift"
+        tags[2]: platform:ipados,lang:swift
+        desc:
+          en: "iPad presentation app built on PDF documents. It uses each PDF page as a background so you can run a presentation directly from an existing document, with Google Drive and Dropbox integration for loading files."
+          ko: "PDF 문서 기반 iPad 프리젠테이션 앱. PDF 각 페이지를 배경으로 사용해 이미 만들어진 문서로 바로 프레젠테이션을 진행하며, Google Drive·Dropbox 연동으로 파일을 불러옴."
+        role:
+          en: "Sole developer. The project came as a 'do you know Objective-C?' favor (revenue-share, not paid). The original Objective-C source reused a Duzon ebook codebase that rasterized every PDF page to images — and was riddled with hard-coded values (e.g. literal 1024×768 screen sizes scattered through the code), so I rebuilt it from scratch in Swift as iOS was moving that way. Built the main features over about a month of remote work, and devised a 'Trigger' concept (not in the original spec) that separates the touch target from the element it reveals."
+          ko: "단독 개발. 'Objective-C 할 줄 아냐'로 시작된 지인 아이디어(개발비 없이 수익 배분) 건. 원본 Objective-C 소스는 더존 ebook 코드를 활용해 PDF 전 페이지를 이미지로 변환·압축하는 구조였고 하드코딩(예: 1024×768 화면 크기가 상수도 아닌 숫자로 여러 소스에 박힘)이 심해, iOS 흐름에 맞춰 Swift로 새로 구현. 약 한 달간 재택으로 주요 기능을 만들고, 기존 기획에 없던 'Trigger' 개념 — 터치할 부분과 나타날 부분을 분리 — 을 고안."
+        achievement:
+          en: "Rebuilt a hard-coded Objective-C app cleanly in Swift (the original had literal screen sizes scattered throughout), learning the iOS PDF API and Google Drive/Dropbox integration along the way. Designed a new 'Trigger' interaction — decoupling the touch target from the element it reveals — that wasn't in the original spec."
+          ko: "하드코딩투성이(화면 크기를 숫자 그대로 박아둔) Objective-C 앱을 Swift로 깔끔하게 재구현하며 iOS PDF API와 Google Drive·Dropbox 연동을 습득. 기존 기획에 없던 'Trigger' 인터랙션 — 터치 영역과 나타날 요소를 분리 — 을 새로 설계."
+        tech[4]: Swift,PDF,GoogleDrive,Dropbox
+        image: "/images/credif/shownote/shownote1.jpeg"
+        images[3]:
+          - "/images/credif/shownote/shownote1.jpeg"
+          - "/images/credif/shownote/shownote2.jpeg"
+          - "/images/credif/shownote/shownote4.jpeg"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph Cloud[\"Cloud storage\"]\n    GDrive[\"Google Drive\"]\n    Dropbox\n  end\n\n  subgraph App\n    subgraph Presentation\n      subgraph Page\n        Background\n        Trigger\n        Object\n        Media\n      end\n    end\n  end\n\n  User\n\n  Cloud -->|PDF| Background\n  Cloud -->|Image| Background\n  Cloud -->|Effect| Media\n  Cloud -->|Image| Object\n  Page --> Presentation\n  User -->|Touch| Trigger\n  Trigger -->|Present| Object\n  Trigger -->|Play| Media"
+      - id: whocallme
+        name: "누군지 다알아 2.0"
+        meta: "2016.04 – 2016.06 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "Caller-ID enhancement app revived from a discontinued paid app. When a call comes in, it shows pre-registered details about the caller (to distinguish people with the same name), and stores Korean initials (초성) in the contact memo field so contacts can be searched by initials."
+          ko: "판매 중단된 유료 앱을 되살린 발신자 정보 앱. 전화가 걸려오면 미리 등록한 상대방 상세 정보를 표시해 동명이인을 구분하고, 연락처 메모 필드에 초성을 저장해 초성으로 연락처를 검색할 수 있게 함."
+        role:
+          en: "Sole developer. The original Objective-C paid app had been pulled when its developer left and the iOS account lapsed; I revived it by rewriting in Swift. Stored original contact info in Core Data and generated the on-call display image from it, designed an 'auto photo on incoming call' feature via the iOS Contacts API, and applied AdMob for the first time to monetize. Added RxSwift while job-seeking, and rebuilt it in SwiftUI in 2026."
+          ko: "단독 개발. 원래 Objective-C 유료 앱이 개발자 퇴사·iOS 계정 미연장으로 판매 중단된 상태였고, 이를 Swift로 재개발해 부활. Core Data에 원본 연락처 정보를 저장하고 이를 토대로 통화 화면용 이미지를 생성, iOS 연락처 API로 '수신 시 사진 자동 설정' 기능을 기획·구현하고, Admob을 처음 적용해 수익화. 구직 준비 중 RxSwift를 도입했고 2026년 SwiftUI로 재개발."
+        achievement:
+          en: "Revived a discontinued paid app with new capabilities: built an 'auto-set photo on incoming call' feature on the iOS Contacts API, and applied AdMob for the first time to establish a monetization base. Later modernized it — RxSwift during job prep, then a SwiftUI rebuild in 2026."
+          ko: "판매 중지된 유료 앱을 새 기능으로 부활: iOS 연락처 API로 '전화 수신 시 사진 자동 설정' 기능을 기획·구현하고, Admob을 처음 적용해 앱 수익화 기반을 마련. 이후 구직 준비 중 RxSwift를 도입하고 2026년 SwiftUI로 재개발하며 현대화."
+        tech[5]: Swift,CoreData,Contacts,AdMob,RxSwift
+        image: "/images/credif/whocallme/whocallme1.jpeg"
+        images[4]:
+          - "/images/credif/whocallme/whocallme1.jpeg"
+          - "/images/credif/whocallme/whocallme3.jpeg"
+          - "/images/credif/whocallme/whocallme4.jpeg"
+          - "/images/credif/whocallme/whocallme2.jpeg"
+        links[1]:
+          - label: "Medium — Mastering Contacts in iOS with Swift"
+            href: "https://medium.com/@toyboy2/mastering-contacts-in-ios-development-with-swift-4e9ea6469128"
+        diagrams[1]:
+          - "flowchart LR\n  User\n\n  subgraph iOS\n    Contacts\n    Call[\"Incoming call screen\"]\n  end\n\n  subgraph App\n    CoreData[\"Core Data(Backup)\"]\n    Photo[\"Photo Generation\"]\n    Choseong\n    Framework[\"Contacts Framework\"]\n  end\n\n  Photo --> Contacts\n  Choseong -->|Memo| Contacts\n  Contacts -->|\"Present Photo\"| Call\n  Contacts -->|Search by Choseong| User"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"
