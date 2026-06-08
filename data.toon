@@ -22,7 +22,7 @@ stats[4]:
     cap:
       en: experience
       ko: 경력
-  - num: 43
+  - num: 44
     cap:
       en: projects_shipped
       ko: 출시_프로젝트
@@ -54,7 +54,7 @@ companies[2]:
       en: Developer
       ko: 개발자
     cur: false
-    projects[23]:
+    projects[24]:
       - id: ems
         name: "EMS"
         meta: "2009.09 · Desktop · VB"
@@ -427,7 +427,23 @@ companies[2]:
           ko: "DBMS 미지원 제약을 우회: KT가 PostgreSQL을 의무화했지만 Xroshot Agent가 이를 지원하지 않자, Agent의 'DB 입력 → 결과 기록' 계약을 MyBatis 기반 Socket/XML 서버로 재현해 기존 서비스/관리자 페이지가 수정 없이 SMS를 발송할 수 있게 함(KHUB 포함). 주변 인프라(VM·TB·Apache 리버스 프록시)도 직접 구성."
         tech[5]: Java,JSP,MyBatis,Socket,XML
         diagrams[1]:
-          - "flowchart LR\n  Pages[\"Service / Admin pages\"]\n  DB[\"PostgreSQL\"]\n\n  subgraph Server[\"SMS Dispatch Server (Java)\"]\n    Poller[\"Poll request table\"]\n    Sender[\"Send via Socket / XML\"]\n    Writer[\"Write result table\"]\n  end\n\n  MCS[\"MCS (Xroshot) Server\"]\n  KHUB[\"KHUB\"]\n\n  Pages -->|\"Insert request\"| DB\n  DB --> Poller\n  Poller --> Sender\n  Sender -->|\"Socket / XML\"| MCS\n  Sender -->|\"Same structure\"| KHUB\n  MCS -->|\"Ack + delivery result\"| Writer\n  Writer --> DB"
+          - "flowchart LR\n  subgraph OllehTVPay[\"Olleh TV Pay\"]\n    AuthSystem[\"Auth System\"]\n\n    subgraph DB[\"PostgreSQL\"]\n      RequestTable[\"Request Table\"]\n      ResultTable[\"Result Table\"]\n    end\n\n    subgraph SMSAgent[\"SMS Agent\"]\n      IsPhoneKT{\"Is Phone KT?\"}\n      SDK\n      TCP\n    end\n  end\n\n  SMS[\"SMS Server\"]\n  KHUB[\"KHUB\"]\n\n  AuthSystem -->|Insert| RequestTable\n  RequestTable -->|Pull| SMSAgent\n\n  SMSAgent -->|Insert| ResultTable\n  SMSAgent --> IsPhoneKT\n\n  IsPhoneKT -->|Y| SDK\n  SDK --> KHUB\n  IsPhoneKT -->|N| TCP\n  TCP --> SMS\n\n  KHUB -->|Response| SMSAgent\n  KHUB -->|Pull Status| SMSAgent\n  SMS -->|Response| SMSAgent\n  SMS -->|Pull Status| SMSAgent"
+      - id: mail-to-board
+        name: "MailToBoardConverter – 메일을 통한 사내 게시판 작성기"
+        meta: "2015.07 – 2015.09 · Desktop · C#"
+        tags[2]: platform:windows,lang:csharp
+        desc:
+          en: "Windows desktop converter that periodically reads mail from a dedicated account, classifies messages by subject format or group-mail recipient, and automatically posts the mail body to the related internal bulletin board."
+          ko: "전용 계정에 수신된 메일을 주기적으로 읽고, 제목 형식 또는 수신인에 포함된 그룹 메일을 기준으로 분류해 메일 본문을 관련 사내 게시판에 자동 등록하는 Windows 데스크톱 변환 도구."
+        role:
+          en: "Sole developer. Built the mail polling and parsing flow with an SMTP library, mapped subject markers like @{board name} and group-mail recipients to board targets, and inserted parsed mail content into the internal board database."
+          ko: "단독 개발. SMTP 라이브러리로 메일 수신·해석 흐름을 만들고, 제목의 @{게시판명} 표시와 수신인에 포함된 그룹 메일을 게시판 대상으로 매핑해 해석된 메일 내용을 사내 게시판 DB에 등록하도록 구성."
+        achievement:
+          en: "Learned the practical structure of SMTP/mail handling while turning group-mail backup needs into an automated board-posting workflow."
+          ko: "그룹 메일 백업 요구를 자동 게시판 등록 흐름으로 구현하며 SMTP와 메일 처리 구조를 실무적으로 이해하게 됨."
+        tech[5]: "C#",Windows,SMTP,Email,Database
+        diagrams[1]:
+          - "flowchart LR\n  Employee\n\n  subgraph Server[\"Windows Server\"]\n    subgraph Converter[\"MailToBoardConverter\"]\n      Account[\"Dedicated mail account\"]\n      Poller[\"Mailbox\"]\n      Parser[\"Parse subject / recipients\"]\n      Router{\"Route rule\"}\n    end\n\n    MailServer[\"Mail Server\"]\n    BoardBySubject[\"Target board\"]\n    BoardByGroup[\"Mapped board\"]\n    Board[\"Intranet Board DB\"]\n  end\n\n  Employee -->|CC: Group Mail| MailServer\n  Employee -->|Specific Mail| MailServer\n  MailServer -->|SMTP| Poller\n  Poller -->|Poll| Parser\n  Parser --> Router\n\n  Router -->|\"Subject: @{board}\"| BoardBySubject\n  Router -->|\"Group mail recipient\"| BoardByGroup\n\n  BoardBySubject -->|Insert| Board\n  BoardByGroup -->|Insert| Board"
       - id: tmoney-ota-gateway
         name: "TMoney OTA Gateway"
         meta: "2010.01 · Backend · C"
