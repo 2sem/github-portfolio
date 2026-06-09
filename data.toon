@@ -529,7 +529,7 @@ companies[3]:
       en: "Plan · Design · Development"
       ko: "기획 · 디자인 · 개발"
     cur: false
-    projects[3]:
+    projects[4]:
       - id: shownote-indie
         name: "ShowNote 유지보수"
         meta: "2017.02 – 2018.07 · Mobile · Swift"
@@ -600,6 +600,31 @@ companies[3]:
             href: "https://github.com/2sem/wherewego"
         diagrams[1]:
           - "flowchart LR\n  TourAPI[\"TourAPI 3.0 (public data)\"]\n\n  subgraph iOS\n    Loc[\"Core Location\"]\n    subgraph App\n      REST[\"REST API\"]\n      List[\"Place List\"]\n      Detail[\"Place Detail\"]\n      Cat[\"Category filter\"]\n      Map[\"Google Maps\"]\n      Favorites[\"Favorite List\"]\n      Share[\"KakaoTalk Framework\"]\n      DB[\"Core Data\"]\n    end\n  end\n\n  KakaoTalk[\"KakaoTalk Server\"]\n  User[\"Other User\"]\n\n  Loc --> REST\n  Cat -->|Set Category| REST\n  Map -->|Set Location| REST\n  REST -->|Query Places| TourAPI\n  TourAPI --> List\n  List --> Detail\n  Detail -->|Share| Share\n  Share --> KakaoTalk\n  KakaoTalk -->|Notification| User\n  Detail -->|Register| Favorites\n  Favorites --> DB"
+      - id: sendadv
+        name: "보내봐 단체문자"
+        meta: "2017.02 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "Group-SMS app that filters contacts by company / department / position to send bulk messages. You define recipient-generation rules, enable just the ones you want, auto-generate condition lists, and extract only mobile numbers from contacts."
+          ko: "연락처를 회사·부서·직위로 필터링해 단체 문자를 보내는 앱. 수신자 생성 규칙을 정의하고 원하는 규칙만 활성화하며, 조건 목록을 자동 생성하고 연락처에서 모바일 번호만 추출."
+        role:
+          en: "Sole developer of the iOS version (also contributed to the idea on the Android side). Built rule-based recipient generation over the iOS Contacts framework with Core Data, auto-generating condition lists and extracting mobile-only numbers for sending."
+          ko: "iOS 버전 단독 개발(안드로이드 버전 기획에도 참여). iOS Contacts 프레임워크와 Core Data로 규칙 기반 수신자 생성을 구현하고, 조건 목록 자동 생성과 모바일 번호만 추출하는 발송 흐름을 구성."
+        achievement:
+          en: "Turned manual group-texting into a rule-driven flow: users compose reusable recipient rules (by company / department / position) that auto-generate condition lists and pull mobile-only numbers from Contacts, then toggle which rules apply per send."
+          ko: "수동 단체 문자를 규칙 기반 흐름으로 전환: 회사·부서·직위 기준의 재사용 가능한 수신자 규칙을 만들어 조건 목록을 자동 생성하고 연락처에서 모바일 번호만 추출하며, 발송마다 적용할 규칙을 켜고 끌 수 있게 함."
+        tech[4]: Swift,Contacts,CoreData,MessageUI
+        image: "/images/indie/sendadv/sendadv1.png"
+        images[4]:
+          - "/images/indie/sendadv/sendadv1.png"
+          - "/images/indie/sendadv/sendadv2.png"
+          - "/images/indie/sendadv/sendadv3.png"
+          - "/images/indie/sendadv/sendadv4.png"
+        links[1]:
+          - label: "GitHub — 2sem/sendadv-ios"
+            href: "https://github.com/2sem/sendadv-ios"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph iOS\n    subgraph App\n      Rules[\"Rules \n(company / dept / position)\"]\n      List[\"Recipient List\"]\n      DB[\"Core Data\"]\n    end\n\n    Contacts\n  end\n\n  User1\n  User2\n  Users\n\n  Contacts -->|Mobile Numbers| Rules\n  Rules <--> DB\n  Rules -->|Generate| List\n  List -->|Group SMS| User1\n  List -->|Group SMS| User2\n  List -->|Group SMS| Users"
   - id: freelance
     name: Freelance
     when: "2017 — now"

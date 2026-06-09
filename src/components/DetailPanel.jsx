@@ -44,19 +44,23 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
         </div>
 
         <div className="detail-media">
-          {project.images.map((src, i) => {
-            const alt = `${project.name} screenshot ${i + 1}`
-            return (
-              <div
-                key={i}
-                className="detail-slide detail-slide--zoom"
-                onClick={() => setZoom({ src, alt })}
-                title="Click to zoom"
-              >
-                <img src={src} alt={alt} />
-              </div>
-            )
-          })}
+          {project.images.length > 0 && (
+            <div className="detail-shots">
+              {project.images.map((src, i) => {
+                const alt = `${project.name} screenshot ${i + 1}`
+                return (
+                  <div
+                    key={i}
+                    className="detail-shot"
+                    onClick={() => setZoom({ src, alt })}
+                    title="Click to zoom"
+                  >
+                    <img src={src} alt={alt} />
+                  </div>
+                )
+              })}
+            </div>
+          )}
           {project.diagrams.map((code, i) => (
             <div key={i} className="detail-slide detail-slide--diagram">
               <Diagram code={code} />

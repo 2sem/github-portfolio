@@ -657,7 +657,7 @@ section[id] {
 .pcard-shot img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .pcard-shot--diagram {
@@ -830,10 +830,38 @@ section[id] {
 }
 
 .detail-media {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
   margin-bottom: 18px;
+}
+
+.detail-shots {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.detail-shot {
+  flex: 0 0 auto;
+  height: 320px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0c100b;
+  cursor: zoom-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-shot img {
+  height: 100%;
+  width: auto;
+  max-width: 70vw;
+  object-fit: contain;
+  display: block;
 }
 
 .detail-slide {
