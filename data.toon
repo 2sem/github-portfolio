@@ -46,7 +46,7 @@ tags[4]:
     ko: "#5인-팀-리드"
 
 
-companies[2]:
+companies[3]:
   - id: credif
     name: "CREDiF"
     when: "2009 — 2017"
@@ -522,6 +522,84 @@ companies[2]:
         tech[3]: C,Unix,Socket
         diagrams[1]:
           - "graph TD\n  TM[\"TMoney\"] -->|\"Request (encrypted)\"| GW[\"OTA Gateway (Socket Server)\"]\n  GW -->|Forward| SCMS[\"SCMS (KT USIM System)\"]\n  SCMS -->|Response| GW\n  GW -->|Relay response| TM\n  subgraph Process Model\n    L[\"Listen socket\"] --> A[Accept]\n    A -->|fork per client| C[\"Child handles Tx/Rx\"]\n  end"
+  - id: indie
+    name: "Solo iOS Developer"
+    when: "2017 — 2018"
+    role:
+      en: "Plan · Design · Development"
+      ko: "기획 · 디자인 · 개발"
+    cur: false
+    projects[3]:
+      - id: shownote-indie
+        name: "ShowNote 유지보수"
+        meta: "2017.02 – 2018.07 · Mobile · Swift"
+        tags[2]: platform:ipados,lang:swift
+        desc:
+          en: "Continued maintenance of the ShowNote iPad presentation app while the company sought investment — bug fixes and feature improvements carried on even after I had left."
+          ko: "투자 유치를 진행하는 동안 ShowNote iPad 프레젠테이션 앱의 유지보수를 지속 — 퇴사 이후에도 버그 수정과 기능 개선을 지원."
+        role:
+          en: "Sole developer. Kept fixing and improving the app even after leaving (they came to my neighborhood to ask). Investment was decided a month after I'd joined Siwonschool, but I declined to rejoin."
+          ko: "단독 개발. 퇴사 후에도 계속 수정·개선을 맡음(동네까지 찾아와 요청). 시원스쿨 입사 한 달 후 투자가 결정되었지만 합류는 거절."
+        achievement:
+          en: "The app I built and maintained went on to attract a ₩1 billion investment."
+          ko: "직접 만들고 유지보수한 앱이 10억 원 투자 유치에 성공."
+        tech[1]: Swift
+        image: "/images/credif/shownote/shownote1.jpeg"
+        images[3]:
+          - "/images/credif/shownote/shownote1.jpeg"
+          - "/images/credif/shownote/shownote2.jpeg"
+          - "/images/credif/shownote/shownote4.jpeg"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph Cloud[\"Cloud storage\"]\n    GDrive[\"Google Drive\"]\n    Dropbox\n  end\n\n  subgraph App\n    subgraph Presentation\n      subgraph Page\n        Background\n        Trigger\n        Object\n        Media\n      end\n    end\n  end\n\n  User\n\n  Cloud -->|PDF| Background\n  Cloud -->|Image| Background\n  Cloud -->|Effect| Media\n  Cloud -->|Image| Object\n  Page --> Presentation\n  User -->|Touch| Trigger\n  Trigger -->|Present| Object\n  Trigger -->|Play| Media"
+      - id: letscheers
+        name: "술마셔 건배사"
+        meta: "2017.01 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "A collection app of Korean drinking toasts (건배사) for year-end/new-year gatherings and company dinners. Browse by category, favorite the ones you like, and get a random suggestion."
+          ko: "연말·연초 모임이나 회식 등 각종 술자리에서 쓰는 건배사 모음 앱. 카테고리별로 둘러보고, 즐겨찾기하고, 랜덤 추천을 받을 수 있음."
+        role:
+          en: "Sole developer. Built the iOS version from an Excel file provided by an Android developer I knew — bundling it as default data and storing favorites in Core Data."
+          ko: "단독 개발. 아는 안드로이드 개발자가 만든 앱의 Excel 파일을 받아 iOS 버전으로 구현 — Excel을 기본 데이터로 번들하고 즐겨찾기는 Core Data에 저장."
+        achievement:
+          en: "Shipped a solo iOS app by repurposing an Android app's Excel dataset as bundled default data, with Core Data for favorites and a random-suggestion feature."
+          ko: "안드로이드 앱의 Excel 데이터를 기본 데이터로 재활용해 iOS 앱을 단독 출시 — 즐겨찾기는 Core Data로 저장하고 랜덤 추천 기능을 구현."
+        tech[3]: Swift,CoreData,Excel
+        image: "/images/indie/letscheers/letscheer1.png"
+        images[4]:
+          - "/images/indie/letscheers/letscheer1.png"
+          - "/images/indie/letscheers/letscheer2.png"
+          - "/images/indie/letscheers/letscheer3.png"
+          - "/images/indie/letscheers/letscheer4.png"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph App[\"App\"]\n    Xlsx[\"Excel (default data)\"]\n    List[\"Category / toast list\"]\n    Random[\"Random suggestion\"]\n    Fav[\"Favorites\"]\n    DB[\"Core Data(Sqlite)\"]\n  end\n\n  Xlsx -->|\"Bundled default\"| DB\n  DB --> List\n  DB --> Random\n  Fav <--> DB"
+      - id: wherewego
+        name: "우리어디가"
+        meta: "2017.05 · Mobile · Swift"
+        tags[3]: platform:ios,lang:swift,framework:swiftui
+        desc:
+          en: "Location-based tourism guide built on Korea's public TourAPI 3.0. From a chosen location and radius it surfaces nearby attractions, restaurants, cafes and lodging by category, with details, map directions, and tourism info translated into 10 languages; KakaoTalk sharing built in."
+          ko: "한국관광공사 공공데이터(TourAPI 3.0) 기반 위치 관광 가이드. 설정한 위치와 반경 내의 관광지·맛집·카페·숙소를 카테고리별로 보여주고, 지도에서 상세 정보와 길찾기를 제공하며 10개 국어로 번역된 관광 정보를 제공. 카카오톡 공유 지원."
+        role:
+          en: "Sole developer — design to App Store. Built the SwiftUI app (MVVM) on CoreLocation/MapKit and the public TourAPI 3.0, integrated KakaoTalk sharing and Google AdMob, and went through the public-data application/integration process firsthand."
+          ko: "단독 개발 — 디자인부터 앱스토어 출시까지. CoreLocation/MapKit과 공공 TourAPI 3.0 위에 SwiftUI(MVVM) 앱을 구현하고, 카카오톡 공유와 Google AdMob을 연동했으며, 공공데이터 신청·연동 절차를 직접 수행."
+        achievement:
+          en: "Gained hands-on experience applying for and integrating Korean government open data (TourAPI 3.0), shipping a solo SwiftUI app that turns it into a category-based, multi-language nearby-tourism guide with map directions and KakaoTalk sharing."
+          ko: "공공데이터(TourAPI 3.0) 신청·연동을 직접 경험하고, 이를 카테고리별·다국어 주변 관광 가이드(지도 길찾기·카카오톡 공유 포함)로 만든 SwiftUI 앱을 단독 출시."
+        tech[6]: Swift,SwiftUI,MapKit,CoreLocation,"Tour API",AdMob
+        image: "/images/indie/wherewego/wherewego2.png"
+        images[6]:
+          - "/images/indie/wherewego/wherewego2.png"
+          - "/images/indie/wherewego/wherewego1.png"
+          - "/images/indie/wherewego/wherewego3.png"
+          - "/images/indie/wherewego/wherewego4.png"
+          - "/images/indie/wherewego/wherewego5.png"
+          - "/images/indie/wherewego/wherewego6.png"
+        links[1]:
+          - label: "GitHub — 2sem/wherewego"
+            href: "https://github.com/2sem/wherewego"
+        diagrams[1]:
+          - "flowchart LR\n  TourAPI[\"TourAPI 3.0 (public data)\"]\n\n  subgraph iOS\n    Loc[\"Core Location\"]\n    subgraph App\n      REST[\"REST API\"]\n      List[\"Place List\"]\n      Detail[\"Place Detail\"]\n      Cat[\"Category filter\"]\n      Map[\"Google Maps\"]\n      Favorites[\"Favorite List\"]\n      Share[\"KakaoTalk Framework\"]\n      DB[\"Core Data\"]\n    end\n  end\n\n  KakaoTalk[\"KakaoTalk Server\"]\n  User[\"Other User\"]\n\n  Loc --> REST\n  Cat -->|Set Category| REST\n  Map -->|Set Location| REST\n  REST -->|Query Places| TourAPI\n  TourAPI --> List\n  List --> Detail\n  Detail -->|Share| Share\n  Share --> KakaoTalk\n  KakaoTalk -->|Notification| User\n  Detail -->|Register| Favorites\n  Favorites --> DB"
   - id: freelance
     name: Freelance
     when: "2017 — now"

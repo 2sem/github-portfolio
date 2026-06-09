@@ -1,10 +1,29 @@
+import { useEffect, useState } from 'react'
 import Diagram from './Diagram.jsx'
 import { useLang } from '../i18n.jsx'
 import { tagLabel } from '../tagLabels.js'
 
+function ImageModal({ src, alt, onClose }) {
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [onClose])
+
+  return (
+    <div className="diagram-overlay" onClick={onClose}>
+      <div className="diagram-modal" onClick={e => e.stopPropagation()}>
+        <button className="diagram-modal-close" onClick={onClose}>✕</button>
+        <img className="image-modal-img" src={src} alt={alt} />
+      </div>
+    </div>
+  )
+}
+
 export default function DetailPanel({ project, isInCart, onCartToggle, onClose }) {
   const { t, tr } = useLang()
   const inCart = isInCart(project.id)
+  const [zoom, setZoom] = useState(null)
 
   const techLower = new Set(project.tech.map(x => x.toLowerCase()))
   const extraTags = project.tags
@@ -25,11 +44,19 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
         </div>
 
         <div className="detail-media">
-          {project.images.map((src, i) => (
-            <div key={i} className="detail-slide">
-              <img src={src} alt={`${project.name} screenshot ${i + 1}`} />
-            </div>
-          ))}
+          {project.images.map((src, i) => {
+            const alt = `${project.name} screenshot ${i + 1}`
+            return (
+              <div
+                key={i}
+                className="detail-slide detail-slide--zoom"
+                onClick={() => setZoom({ src, alt })}
+                title="Click to zoom"
+              >
+                <img src={src} alt={alt} />
+              </div>
+            )
+          })}
           {project.diagrams.map((code, i) => (
             <div key={i} className="detail-slide detail-slide--diagram">
               <Diagram code={code} />
@@ -86,6 +113,7 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
           </div>
         </div>
       </div>
+      {zoom && <ImageModal src={zoom.src} alt={zoom.alt} onClose={() => setZoom(null)} />}
     </div>
   )
 }
