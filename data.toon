@@ -529,7 +529,7 @@ companies[3]:
       en: "Plan · Design · Development"
       ko: "기획 · 디자인 · 개발"
     cur: false
-    projects[4]:
+    projects[5]:
       - id: shownote-indie
         name: "ShowNote 유지보수"
         meta: "2017.02 – 2018.07 · Mobile · Swift"
@@ -625,6 +625,31 @@ companies[3]:
             href: "https://github.com/2sem/sendadv-ios"
         diagrams[1]:
           - "flowchart LR\n  subgraph iOS\n    subgraph App\n      Rules[\"Rules \n(company / dept / position)\"]\n      List[\"Recipient List\"]\n      DB[\"Core Data\"]\n    end\n\n    Contacts\n  end\n\n  User1\n  User2\n  Users\n\n  Contacts -->|Mobile Numbers| Rules\n  Rules <--> DB\n  Rules -->|Generate| List\n  List -->|Group SMS| User1\n  List -->|Group SMS| User2\n  List -->|Group SMS| Users"
+      - id: talktrans
+        name: "말해봐 번역기"
+        meta: "2017.01 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "Korean ↔ foreign-language translator that calls Naver Papago. Pick source and target languages, flip the result screen to show the other person face-to-face, and swap source/target with one tap."
+          ko: "네이버 파파고를 호출해 번역하는 한국어 ↔ 외국어 번역기. 원문/번역 언어를 선택하고, 번역 결과 화면을 뒤집어 마주 본 상대에게 보여주며, 원문/번역 언어를 한 번에 맞바꿀 수 있음."
+        role:
+          en: "Sole developer of the iOS version (contributed ideas like banner rotation on the Android side). Integrated the Naver Papago API through a CocoaPods wrapper and used Firebase Remote Config to drive theming."
+          ko: "iOS 버전 단독 개발(안드로이드 버전엔 배너 회전 등 아이디어로 참여). NaverPapago CocoaPods로 파파고 API를 연동하고, Firebase Remote Config로 테마를 제어."
+        achievement:
+          en: "Built a translator on the Naver Papago API with a flip-the-screen result view for face-to-face conversation and one-tap source/target swap, and drove the app's theme remotely via Firebase Remote Config."
+          ko: "네이버 파파고 API 기반 번역기를 구현하고, 마주 보고 대화할 수 있는 결과 화면 뒤집기와 원문/번역 한 번에 맞바꾸기를 제공; Firebase Remote Config로 앱 테마를 원격 제어."
+        tech[4]: Swift,"Papago API","Firebase Remote Config",CocoaPods
+        image: "/images/indie/talktrans/talktrans1.png"
+        images[4]:
+          - "/images/indie/talktrans/talktrans1.png"
+          - "/images/indie/talktrans/talktrans2.png"
+          - "/images/indie/talktrans/talktrans3.png"
+          - "/images/indie/talktrans/talktrans4.png"
+        links[1]:
+          - label: "GitHub — 2sem/talktrans"
+            href: "https://github.com/2sem/talktrans"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph App\n    Input[\"Source Text\"]\n    Swap[\"Swap Language\"]\n    Flip[\"Flip result screen\"]\n    Theme\n    Translator\n    Output[\"Translated Text\"]\n  end\n\n  Papago[\"Naver Papago API\"]\n  Pods[\"CocoaPods\"]\n  Remote[\"Firebase\"]\n\n  Input -->|\"Translate\"| Translator\n  Pods <--> Papago\n  Pods --> Output\n  Input <--> Swap\n  Output <--> Swap\n  Remote -->|Remote Config| Theme\n  Translator --> Pods"
   - id: freelance
     name: Freelance
     when: "2017 — now"
