@@ -22,7 +22,7 @@ stats[4]:
     cap:
       en: experience
       ko: 경력
-  - num: 44
+  - num: 48
     cap:
       en: projects_shipped
       ko: 출시_프로젝트
@@ -46,7 +46,7 @@ tags[4]:
     ko: "#5인-팀-리드"
 
 
-companies[3]:
+companies[4]:
   - id: credif
     name: "CREDiF"
     when: "2009 — 2017"
@@ -529,7 +529,7 @@ companies[3]:
       en: "Plan · Design · Development"
       ko: "기획 · 디자인 · 개발"
     cur: false
-    projects[6]:
+    projects[9]:
       - id: shownote-indie
         name: "ShowNote 유지보수"
         meta: "2017.02 – 2018.07 · Mobile · Swift"
@@ -573,6 +573,33 @@ companies[3]:
           - "/images/indie/letscheers/letscheer4.png"
         diagrams[1]:
           - "flowchart LR\n  subgraph App[\"App\"]\n    Xlsx[\"Excel (default data)\"]\n    List[\"Category / toast list\"]\n    Random[\"Random suggestion\"]\n    Fav[\"Favorites\"]\n    DB[\"Core Data(Sqlite)\"]\n  end\n\n  Xlsx -->|\"Bundled default\"| DB\n  DB --> List\n  DB --> Random\n  Fav <--> DB"
+      - id: related-stocks-ios
+        name: "관련주식검색기 iOS"
+        meta: "2017.01 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "iOS app for finding stocks related to a selected theme or keyword. It shows recommended search terms, favorite stocks, synced stock prices, and push notifications for fast-rising stocks and recommended themes."
+          ko: "선택하거나 입력한 테마·키워드와 관련된 주식 종목을 나열하는 iOS 앱. 추천 검색어, 나의 관심주, 종목별 주가 동기화, 실시간 급등주와 추천 테마 푸시 알림을 제공."
+        role:
+          en: "Sole iOS developer. Built the Swift app with RxSwift/RxCocoa, Core Data favorites, Kakao sharing, and integration with the Node.js/MySQL/GNUBoard backend originally built for the related-stock data."
+          ko: "iOS 단독 개발. RxSwift/RxCocoa 기반 Swift 앱, Core Data 관심주 저장, Kakao 공유, 관련주 데이터 제공을 위해 만들었던 Node.js/MySQL/GNUBoard 백엔드 연동을 구현."
+        achievement:
+          en: "Proposed push notifications for fast-rising and recommended stocks to increase repeat app usage, then added the supporting server/app flow; the Android version's revenue reportedly doubled after the push feature, reaching about ₩3 million per month."
+          ko: "앱 재방문을 늘리기 위해 급등주·추천주 푸시 기능을 제안하고 서버/앱 흐름을 추가. 해당 푸시 기능 적용 후 안드로이드 기준 수익이 약 2배 증가해 월 300만 원 수준까지 올랐다고 전달받음."
+        tech[6]: Swift,RxSwift,CoreData,KakaoSDK,FCM,"Node.js"
+        image: "/images/indie/related-stocks/related-stocks1.png"
+        images[6]:
+          - "/images/indie/related-stocks/related-stocks1.png"
+          - "/images/indie/related-stocks/related-stocks2.png"
+          - "/images/indie/related-stocks/related-stocks3.png"
+          - "/images/indie/related-stocks/related-stocks4.png"
+          - "/images/indie/related-stocks/related-stocks5.png"
+          - "/images/indie/related-stocks/related-stocks6.png"
+        links[1]:
+          - label: "GitHub — 2sem/relatedstocks-app-ios"
+            href: "https://github.com/2sem/relatedstocks-app-ios"
+        diagrams[1]:
+          - "flowchart LR\n  Developer[\"App developer\"]\n  App\n\n  subgraph Windows\n    subgraph Board[\"GNUBoard\"]\n      Web\n    end\n\n    subgraph DB\n      subgraph PostTable[\"Post title = keyword\"]\n        CommentTable[\"Comments = stocks related to keyword\"]\n      end\n    end\n\n    subgraph Server[\"App Server\"]\n      REST[\"REST API\"]\n    end\n  end\n\n  Firebase\n  APNS\n  UserApp[\"Other User's App\"]\n\n  Developer -->|Post stock item as comment| Web\n  Board -->|Post| DB\n  Query --> REST\n  REST -->|Query| DB\n  App -->|Request by keyword| Server\n  Server -->|Related /\n  recommended stocks| App\n\n  App -->|Register| Firebase\n  Developer -->|Send Notification| Firebase\n  Firebase --> APNS\n  APNS -->|Notification| UserApp"
       - id: wherewego
         name: "우리어디가"
         meta: "2017.05 · Mobile · Swift"
@@ -674,6 +701,158 @@ companies[3]:
           - "/images/indie/democracyaction/democracyaction6.png"
         diagrams[1]:
           - "flowchart LR\n  GDrive[\"Google Drive (Xlsx)\"]\n\n  subgraph App[\"문자행동 (Swift)\"]\n    Import[\"Import → Core Data\"]\n    Search[\"Search by name / party / region\"]\n    Detail[\"Member detail: phone / email / site / SNS\"]\n    Fav[\"Favorites\"]\n  end\n\n  SNS[\"Facebook / Twitter / ... apps\"]\n  Kakao[\"KakaoTalk share\"]\n\n  GDrive --> Import\n  Import --> Search\n  Search --> Detail\n  Detail -->|\"Open via URL / SDK\"| SNS\n  Detail --> Kakao\n  Detail --> Fav"
+      - id: gersang-helper
+        name: "거상도우미"
+        meta: "2017.06 – 2017.12 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "iOS companion app for the online game Geosang, collecting play-assist tools such as event and siege-time notifications, mercenary and treasure-box simulators, monster and item search, and trade, bonus, EXP, and cash calculators."
+          ko: "온라인 게임 거상 플레이를 돕는 iOS 보조 앱. 이벤트·공성 시간 알림, 용병·보물상자 시뮬레이터, 몬스터·아이템 검색, 상재·보너스·경험치·캐쉬 계산기를 제공."
+        role:
+          en: "Sole developer. Planned and built the app from a long-held idea, captured game data directly and wrote helper extraction tools, then converted Excel sheets into Core Data and bundled the extracted SQLite store as an app resource to avoid runtime imports."
+          ko: "단독 개발. 오래 구상하던 아이디어를 직접 기획·구현하고, 게임 데이터를 직접 캡처하거나 데이터 파일 해석 도구를 만들어 추출. Excel 각 시트를 Core Data로 변환한 뒤 컨테이너에서 SQLite를 추출해 앱 리소스로 번들하여 실행 시 import 비용을 줄임."
+        achievement:
+          en: "Launched a self-planned game utility, built the game-data pipeline by combining manual capture and extraction tools, reached 500+ daily users, and passed $100 in first-month revenue, validating monetization for a solo app."
+          ko: "온라인 게임 보조 도구를 직접 기획·데이터 구축·개발해 출시. 게임 데이터 캡처와 파일 해석 도구를 병행해 데이터 파이프라인을 만들고, 일간 사용자 500명 이상과 첫 월 수익 $100 돌파로 개인 앱의 유료화 가능성을 검증."
+        tech[5]: Swift,CoreData,Xlsx,SQLite,LocalNotification
+        image: "/images/indie/gersanghelper/gersanghelper1.png"
+        images[6]:
+          - "/images/indie/gersanghelper/gersanghelper1.png"
+          - "/images/indie/gersanghelper/gersanghelper2.png"
+          - "/images/indie/gersanghelper/gersanghelper3.png"
+          - "/images/indie/gersanghelper/gersanghelper4.png"
+          - "/images/indie/gersanghelper/gersanghelper5.png"
+          - "/images/indie/gersanghelper/gersanghelper6.png"
+        links[1]:
+          - label: "GitHub — 2sem/gersanghelper"
+            href: "https://github.com/2sem/gersanghelper"
+        diagrams[1]:
+          - "flowchart LR\n  Game\n  Xlsx[\"Excel File\"]\n\n  subgraph App\n    subgraph SyncMode\n      XlsxResource[\"Xlsx Resource\"]\n    end\n\n    subgraph NormalMode\n      Sqlite[\"Sqlite Resource\"]\n    end\n\n    ImageResource[\"Image Resource\"]\n  end\n\n  subgraph Device\n    Container\n  end\n\n  Game -->|Manual Data| Xlsx\n  Xlsx -->|Embed| XlsxResource\n  XlsxResource -->|Core Data| Container\n  Container -->|Download| Sqlite\n\n  Game -->|Screenshot| ImageResource\n  Game -->|Export| ImageResource"
+      - id: realtornote
+        name: "공인중개사요약집"
+        meta: "2017.08 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "Study app that summarizes the Korean licensed-real-estate-agent exam by subject for learning on the go. Favorites, zoom, search, auto-generated quizzes, study-time reminders, and last-read position memory."
+          ko: "공인중개사 시험 내용을 과목별로 요약해 이동 중에도 학습할 수 있는 앱. 즐겨찾기·확대/축소·검색, 자동 생성 퀴즈, 공부 시간 알림, 최근 학습 위치 기억을 제공."
+        role:
+          en: "Sole developer. Took text data (from an Android app built by someone who'd studied for the exam) into an Excel workbook — treating each sheet as a table and splitting/merging cells that overflowed — and added an auto-generated quiz with a countdown animation plus local-notification study reminders."
+          ko: "단독 개발. (시험을 준비했던 분이 만든 안드로이드 앱의) 텍스트 데이터를 받아 Excel로 제작 — 각 시트를 Table로 취급하고 셀 크기를 넘는 데이터는 셀을 분리·병합 — 하고, 카운트다운 애니메이션이 있는 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
+        achievement:
+          en: "Built a serverless content-update mechanism: the study material lives in a Google Drive Excel file the app downloads (with per-version caching to skip re-downloads), so content updates ship without an App Store release. Modeled each spreadsheet sheet as a table, and added auto-generated quizzes and local-notification study reminders."
+          ko: "서버 없는 콘텐츠 업데이트 구조를 구현: 학습 자료를 Google Drive Excel로 두고 앱이 다운로드(버전별 캐싱으로 재다운로드 방지)해, 앱스토어 출시 없이 콘텐츠를 갱신. 각 시트를 Table로 모델링하고 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
+        tech[5]: Swift,CoreData,Xlsx,GoogleDrive,LocalNotification
+        image: "/images/indie/realtornote/realtornote1.png"
+        images[6]:
+          - "/images/indie/realtornote/realtornote1.png"
+          - "/images/indie/realtornote/realtornote2.png"
+          - "/images/indie/realtornote/realtornote3.png"
+          - "/images/indie/realtornote/realtornote4.png"
+          - "/images/indie/realtornote/realtornote5.png"
+          - "/images/indie/realtornote/realtornote6.jpg"
+        links[1]:
+          - label: "GitHub — 2sem/realtornote"
+            href: "https://github.com/2sem/realtornote"
+        diagrams[1]:
+          - "flowchart LR\n  GDrive[\"Google Drive (Excel, per-version)\"]\n\n  subgraph App[\"공인중개사요약집 (Swift)\"]\n    Download[\"Version-checked download\"]\n    Parse[\"Sheet → Table\"]\n    Study[\"Study: zoom / search / favorites / resume\"]\n    Quiz[\"Auto-generated quiz\"]\n    Notify[\"Local notification\"]\n    DB[\"Core Data\"]\n  end\n\n  GDrive -->|\"If new version\"| Download\n  Download --> Parse\n  Parse --> Study\n  Study --> Quiz\n  Study <--> DB\n  Notify -.->|\"Study time\"| Study"
+  - id: siwonschool
+    name: "SIWONSCHOOL(SJWInternational)"
+    when: "2018.06 — 2021.05"
+    role:
+      en: "iOS Developer"
+      ko: "EduTech 개발팀 / iOS 개발자"
+    cur: false
+    projects[4]:
+      - id: lectureroom
+        name: "시원스쿨"
+        meta: "2018.06 – 2021.05 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "Representative Siwonschool iOS app for taking language courses across the service. It supports video/audio playback, minimized and full-screen playback, Picture in Picture, landscape/iPad layouts, background downloads, offline playback, section repeat, and gesture controls for volume and brightness."
+          ko: "시원스쿨의 모든 언어 강의를 수강할 수 있는 대표 iOS 앱. 영상/음원 재생, 최소화·전체화면·PIP·Landscape, 백그라운드 다운로드와 오프라인 재생, iPad/Landscape 대응, 구간 반복, 제스처 기반 볼륨·밝기 조정을 지원."
+        role:
+          en: "iOS developer from zero-base development through three years of maintenance. Led planning review and server-progress coordination during early project stagnation, designed reusable minimized playback across screens, built iPad playback layouts, PiP/background playback controls, background download task queues, XCUITest automation, VoiceOver improvements, and RxSwift + MVVM structure."
+          ko: "Zero-Base iOS 개발부터 3년간 유지보수까지 담당. 초기 프로젝트 정체 상황에서 기획 검토와 서버 진행 관리를 주도하고, 화면 전반에 재사용 가능한 최소화/복원 구조, iPad 전용 재생 화면, PIP/백그라운드 재생 제어, 백그라운드 다운로드 Task Queue, XCUITest 자동화, VoiceOver 개선, RxSwift + MVVM 구조를 구현."
+        achievement:
+          en: "Built and maintained the representative lecture app from scratch, recovered momentum in a stalled early project by leading planning/server coordination, and proposed/implemented review prompts that helped the app reach and keep a 4.7 rating after offboarding."
+          ko: "대표 강의 앱을 처음부터 개발하고 3년간 유지보수. 초기 정체 상황에서 기획/서버 진행을 주도해 프로젝트 흐름을 회복했으며, 사용자 리뷰 요청 기능을 제안·구현해 평점 4.7 달성과 퇴사 후 유지에 기여."
+        tech[7]: Swift,RxSwift,MVVM,CocoaPods,DRM,AVFoundation,XCUITest
+        image: "/images/siwonschool/lectureroom/lectureroom1.png"
+        images[10]:
+          - "/images/siwonschool/lectureroom/lectureroom1.png"
+          - "/images/siwonschool/lectureroom/lectureroom2.png"
+          - "/images/siwonschool/lectureroom/lectureroom3.png"
+          - "/images/siwonschool/lectureroom/lectureroom4.png"
+          - "/images/siwonschool/lectureroom/lectureroom5.png"
+          - "/images/siwonschool/lectureroom/lectureroom6.png"
+          - "/images/siwonschool/lectureroom/lectureroom7.png"
+          - "/images/siwonschool/lectureroom/lectureroom8.png"
+          - "/images/siwonschool/lectureroom/lectureroom9.png"
+          - "/images/siwonschool/lectureroom/lectureroom10.png"
+        diagrams[1]:
+          - "flowchart LR\n  User[\"Learner\"]\n  CocoaPods[\"Private CocoaPods\"]\n  CDN\n\n  subgraph iOS\n    subgraph App\n      Course[\"Course list / lecture room\"]\n      Player\n      Minimization\n      Maximization\n\n      DRM[\"DRM library\"]\n      Controls[\"Minimize / fullscreen / PiP / landscape\"]\n      Offline[\"Offline playback\"]\n      Review[\"App Review\"]\n    end\n\n    Background[\"Background\"]\n    Play\n    RemoteControl[\"Remote Control\"]\n  end\n\n  Tests[\"XCUITest\"]\n\n  CocoaPods -->|Install| Player\n\n  CDN -->|\"(Background)Download\"| DRM\n  DRM -->|Decode| Player\n  Player --> Minimization\n  Player --> Maximization\n  Player --> Background\n  Background --> Play\n  Background --> RemoteControl\n\n  Server\n  AppStore\n\n  User -->|Choose| Course\n  Server --|Query| Course\n  Course --> Player\n  Player --> Controls\n  Offline --> Player\n\n  Review -->|Prompt| User\n\n  User -->|Rating| AppStore\n\n  User -->|VoidceOver| App\n\n  Tests --> App"
+      - id: real-training
+        name: "리얼트레이닝"
+        meta: "2018.06 – 2021.05 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "iOS app for situation-based English speaking practice. Learners watch native-speaker prompts, record their own speech, receive analysis/evaluation, and replay results; maintenance covered SNS login, recording/playback, Firebase integration, Safe Area adaptation, and production stabilization."
+          ko: "상황별 원어민 영어를 따라 말하고 녹음·분석·평가받는 iOS 학습 앱. SNS 로그인, 녹음·분석·재생, Firebase 연동, SafeArea 대응과 운영 안정화를 맡음."
+        role:
+          en: "iOS developer. Took over the app immediately after joining, fixed bugs and server-error cases without a dedicated planner, improved usability based on comments/feedback, handled Safe Area support, and made list UI changes near offboarding."
+          ko: "iOS 개발 담당. 입사 직후 프로젝트를 인수해 별도 기획자나 명확한 요구사항이 부족한 상태에서 버그 수정, 서버 오류 대응, 댓글/피드백 기반 편의성 개선, SafeArea 대응, 퇴사 직전 리스트 UI 수정까지 처리."
+        achievement:
+          en: "Stabilized a live learning app after takeover: reduced production friction through bug fixes, server-error handling, Safe Area adaptation, and user-feedback-driven UX improvements while keeping recording, analysis, playback, and SNS login flows operational."
+          ko: "인수 직후 운영 중인 학습 앱을 안정화: 버그 수정, 서버 오류 대응, SafeArea 대응, 사용자 피드백 기반 편의성 개선을 진행하며 녹음·분석·재생·SNS 로그인 흐름을 유지."
+        tech[5]: Swift,Firebase,Recording,Video,SafeArea
+        image: "/images/siwonschool/real-training/real-training1.png"
+        images[6]:
+          - "/images/siwonschool/real-training/real-training1.png"
+          - "/images/siwonschool/real-training/real-training2.png"
+          - "/images/siwonschool/real-training/real-training3.png"
+          - "/images/siwonschool/real-training/real-training4.png"
+          - "/images/siwonschool/real-training/real-training5.png"
+          - "/images/siwonschool/real-training/real-training6.png"
+        diagrams[1]:
+          - "flowchart LR\n  User[\"Learner\"]\n  Server\n\n  subgraph App\n    Login[\"login\"]\n    Video[\"Play Native speaker video\"]\n    Record[\"Speech recording\"]\n    Library\n  end\n\n  Firebase\n  Facebook\n  KakaoTalk\n\n  Server --> Video\n\n  Video -->|Replay| Video\n\n  User --> Login\n  Login --> Server\n  Login --> Firebase\n  Login --> Facebook\n  Login --> KakaoTalk\n\n  User --> Record\n  Record -->|Analyze| Library\n  Library -->|Result| User"
+      - id: victoeic-voca
+        name: "빅토익 보카"
+        meta: "2019.01 – 2021.05 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "iOS version of the Big TOEIC Voca vocabulary app — previously Android-only. Learners browse TOEIC word books, unlock content via in-app purchase, study with card-style UI, bookmark words, group vocabulary, and play MP3 audio with background playback and Remote Control support."
+          ko: "Android로만 존재하던 빅토익 보카 iOS 버전. 책 선택·인앱 결제·단어카드·북마크·단어장 그룹·MP3 다운로드·백그라운드 재생·Remote Control을 지원."
+        role:
+          en: "Sole iOS developer. Received a project where the spec, design, and existing Android app were all inconsistent, independently determined the development direction, proposed and implemented an in-app purchase model, and built all features from scratch including background audio playback and Card UI."
+          ko: "iOS 단독 개발. 기획서·디자인·기존 앱이 모두 불일치하는 상태에서 개발 방향을 직접 정립. 인앱 결제 모델 제안·구축, 백그라운드 음원 재생·Card UI 포함 전 기능 개발."
+        achievement:
+          en: "Delivered the first iOS version of an Android-only TOEIC vocabulary app, independently resolving spec/design inconsistencies to drive it to release, and transformed it from a book appendix into a standalone revenue service via in-app purchase."
+          ko: "Android 전용 TOEIC 단어장 부록 앱을 iOS로 독자 개발. 기획·디자인·앱 불일치 상황을 직접 해결해 출시로 이끌고, 인앱 결제 모델 도입으로 독립적인 수익 서비스로 전환."
+        tech[5]: Swift,AVFoundation,StoreKit,CocoaPods,CDN
+        image: "/images/siwonschool/victoeic-voca/victoeic-voca1.jpeg"
+        images[3]:
+          - "/images/siwonschool/victoeic-voca/victoeic-voca1.jpeg"
+          - "/images/siwonschool/victoeic-voca/victoeic-voca2.jpeg"
+          - "/images/siwonschool/victoeic-voca/victoeic-voca3.jpeg"
+        diagrams[1]:
+          - "flowchart LR\n  User[\"Learner\"]\n  AppStore[\"App Store\"]\n  CDN\n  Server\n  CocoaPods[\"Shared CocoaPods\\n(with 시원스쿨)\"]\n\n  subgraph iOS\n    subgraph App\n      Books[\"Book List\"]\n\n      subgraph Study[\"Study\"]\n        subgraph Card[\"Word Cards\"]\n          Audio\n        end\n        Bookmark[\"Bookmark\"]\n\n        Lecture\n      end\n\n      Player[\"Video Player\"]\n      Group[\"Vocab Group\"]\n    end\n\n    Background\n    BGPlay[\"Background Play\"]\n    Remote[\"Remote Control\"]\n  end\n\n  User --> Books\n  Server -->|REST API| Books\n  Books -->|In App Purchase| AppStore\n  AppStore -->|Unlock| Books\n  Books --> Study\n\n  CDN -->|Download MP3| Audio\n\n  Lecture --> Player\n\n  CocoaPods -->|Install| Player\n\n  Player --> Background\n  Background --> BGPlay\n  Background --> Remote\n\n  Audio --> Background\n\n  Bookmark --> Cards\n  Card -->|Add| Bookmark"
+      - id: korean-lecture
+        name: "React Native 선행 학습"
+        meta: "2019.04 – 2019.06 · Mobile · React Native"
+        tags[2]: platform:ios,lang:reactnative
+        desc:
+          en: "Proof-of-concept and internal R&D project to evaluate React Native for an upcoming Korean-language lecture app. Rebuilt Siwonschool's [Home] and [Free Lecture] screens in React Native, explored server communication and DRM player integration, and produced internal training documentation for the team."
+          ko: "한국어 강의 앱 신규 개발을 앞두고 React Native 기술 검증을 위한 사내 PoC 프로젝트. 시원스쿨 [홈]·[무료강의] 화면을 React Native로 재구현하고, 서버 통신·DRM 플레이어 연동을 탐색. 팀 내 교육 자료 작성·배포."
+        role:
+          en: "Self-directed R&D. Independently continued learning and prototyping after team momentum stalled, rebuilt existing screens to validate feasibility, and authored internal training docs."
+          ko: "자기주도 R&D. 팀 진행이 중단된 이후에도 독자적으로 학습·프로토타이핑을 지속. 기존 화면 재구현으로 가능성을 검증하고 내부 교육 자료 작성."
+        achievement:
+          en: "Independently drove a React Native PoC for a planned Korean lecture app after team-led momentum stalled — rebuilt two production screens, explored DRM integration, and delivered internal training docs that raised team readiness even though the project was ultimately cancelled."
+          ko: "팀 주도가 중단된 상황에서도 React Native PoC를 독자 완성. 실 서비스 화면 2개 재구현·DRM 연동 탐색·교육 자료 배포로 팀 역량에 기여. 프로젝트는 최종 취소."
+        tech[3]: "React Native",JavaScript,DRM
+        image: null
+        diagrams[1]:
+          - "flowchart LR\n  Server\n  NPM\n\n  subgraph App[\"React Native PoC\\nof 시원스쿨\"]\n    Home[\"Home Screen\"]\n    Free[\"Free Lecture Screen\"]\n    DRM[\"DRM Library\"]\n    Player[\"Video Player\"]\n  end\n\n  Team\n  Docs[\"Training Documentation\"]\n\n  Server -->|REST API| Home\n  Server -->|REST API| Free\n  Home --> DRM\n  Free --> DRM\n  DRM -->|Decode| Player\n  App -->|Export Experience| Docs\n  NPM -->|Install| Player\n  Docs --> Team"
   - id: freelance
     name: Freelance
     when: "2017 — now"
