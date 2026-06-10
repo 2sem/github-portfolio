@@ -762,7 +762,7 @@ companies[4]:
       en: "iOS Developer"
       ko: "EduTech 개발팀 / iOS 개발자"
     cur: false
-    projects[8]:
+    projects[9]:
       - id: lectureroom
         name: "시원스쿨"
         meta: "2018.06 – 2021.05 · Mobile · Swift"
@@ -938,6 +938,23 @@ companies[4]:
           - "/images/siwonschool/siwon-pen/siwon-pen13.png"
         diagrams[1]:
           - "flowchart LR\n  subgraph App\n    WordCard[\"Word Cards (FlatList)\"]\n    Lecture[\"Lecture Player\"]\n    Quiz[\"Quiz\"]\n    MyWords[\"My Vocabulary\"]\n  end\n\n  Server\n  CDN\n  Firebase[\"Firebase Analytics\"]\n\n  Server -->|Content| WordCard\n  Server -->|Video| Lecture\n  CDN -->|Audio| WordCard\n  WordCard --> Quiz\n  Quiz --> MyWords\n  App -->|Events| Firebase"
+      - id: amgigorae
+        name: "암기고래 iOS"
+        meta: "2019.11 – 2021.05 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "Vocabulary memorization app — inherited maintenance from a departing team lead and worked through a backlog of bugs and feature requests in spare time. Migrated Objective-C modules to Swift, replaced the legacy Excel library, hardened JSON parsing, and added local push notifications without server changes."
+          ko: "단어 암기 앱. 팀장 퇴사 후 인수해 남는 시간에 버그·편의 기능 작업. ObjC→Swift 변환, 레거시 Excel 라이브러리 교체, JSON NSNull 크래시 수정, 서버 변경 없는 로컬 푸시 추가."
+        role:
+          en: "Maintenance developer — inherited sole ownership from a departing team lead."
+          ko: "유지보수 담당 — 퇴사한 팀장으로부터 단독 소유권 인수."
+        achievement:
+          en: "Inherited a solo-maintained codebase when the team lead left. Migrated Objective-C modules to Swift to reduce future maintenance overhead; replaced the legacy XlsxReaderWriter Excel library to resolve build warnings; added NSNull safety across JSON parsing to eliminate server-response crashes; implemented local push notifications for study reminders and enrollment expiry without any server changes; added audio playback speed control, word-card navigation tracks, pronunciation search filter, new learning language support, landscape layout, and small-device (SE) fixes."
+          ko: "팀장 퇴사 후 단독 유지보수 코드베이스 인수. ObjC→Swift 변환으로 유지보수 진입 비용 절감; XlsxReaderWriter 교체로 빌드 경고 해소; JSON NSNull 처리 전면 추가로 서버 응답 파싱 크래시 제거; 서버 변경 없이 앱 내 스케줄링으로 리마인드·수강만료 로컬 푸시 구현; 음원 재생속도 조절, 단어 카드 탐색 트랙, 발음 검색 조건, 신규 학습 언어, Landscape 대응, 소형기기 레이아웃 수정."
+        tech[4]: Swift,"Storyboard / Auto Layout",NotificationCenter,XlsxReaderWriter
+        image: null
+        diagrams[1]:
+          - "flowchart LR\n\n\tsubgraph iOS\n\t  subgraph App\n\t    Excel[\"Excel File\"]\n\t    Words[\"Word List\"]\n\t    Player\n\t    Reminder\n\t  end\n\t  \n\t  UserNotification[\"User Notification\"]\n  end\n\n\tExcel -->|Upload| Server\n  Push[\"Local Push\"]\n\n  Server -->|Download| Words\n  Excel -->|Vocabulary| Words\n  Words -->|Audio| Player\n  Reminder -->|Register Schedule| UserNotification\n  UserNotification -->|Notification| App"
   - id: freelance
     name: Freelance
     when: "2017 — now"
