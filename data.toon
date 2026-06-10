@@ -46,7 +46,7 @@ tags[4]:
     ko: "#5인-팀-리드"
 
 
-companies[4]:
+companies[5]:
   - id: credif
     name: "CREDiF"
     when: "2009 — 2017"
@@ -762,7 +762,7 @@ companies[4]:
       en: "iOS Developer"
       ko: "EduTech 개발팀 / iOS 개발자"
     cur: false
-    projects[11]:
+    projects[12]:
       - id: lectureroom
         name: "시원스쿨"
         meta: "2018.06 – 2021.05 · Mobile · Swift"
@@ -1003,6 +1003,54 @@ companies[4]:
           - "/images/siwonschool/siwon-intra/siwon-intra2.jpeg"
         diagrams[1]:
           - "flowchart LR\n  subgraph App\n\t  Login[\"Login Screen\"]\n    Home[\"Home Screen\"]\n    \n    subgraph Webview\n      Intranet[\"Intranet Web\"]\n    end\n  end\n\n  IntranetServer[\"Intranet Server\"]\n\n\tLogin -->|Javascript Injection| Webview\n\tLogin -->|Bypass SMS| Home\n  Home --> Webview\n  IntranetServer --> Intranet"
+      - id: next-class
+        name: "Next-Class"
+        meta: "2020.08 – 2021.04 · Mobile · React Native / Expo"
+        tags[2]: platform:ios,lang:reactnative
+        desc:
+          en: "Global lecture platform for teaching Korean to non-native speakers — chosen Expo to support both React Native mobile and web from a single codebase. Implemented login/signup UI before the project was cancelled."
+          ko: "외국인 대상 한국어 글로벌 강의 플랫폼. 모바일 웹 동시 대응 요건에 맞춰 Expo(React Native + Web) 선택. 로그인·회원가입 UI 구현 후 프로젝트 중단."
+        role:
+          en: "Solo developer — set up the Expo environment and built login/signup screens."
+          ko: "단독 개발 — Expo 개발환경 구축 및 로그인·회원가입 화면 구현."
+        achievement:
+          en: "Chose Expo over bare React Native to satisfy a possible web requirement — one codebase targeting both iOS/Android and mobile web. Set up the team's development environment and implemented login/signup UI from the design spec before the project was cancelled."
+          ko: "모바일 웹 대응 가능성에 대비해 bare RN 대신 Expo 선택 — iOS/Android + 웹을 단일 코드베이스로 지원. 개발환경 구성 및 기획서 기반 로그인·회원가입 UI 구현 후 프로젝트 중단."
+        tech[3]: Expo,"React Native",JavaScript
+        image: null
+        diagrams[1]:
+          - "flowchart LR\n  subgraph Expo[\"Next-Class (Expo)\"]\n    Login[\"Login / Sign Up\"]\n    Lectures[\"Lecture Platform\\n(planned)\"]\n  end\n\n  iOS\n  Web[\"Mobile Web\"]\n\n  Expo -->|Native| iOS\n  Expo -->|Web| Web\n  Login -.->|cancelled| Lectures"
+  - id: side-projects
+    name: "Side Projects"
+    when: "2019 —"
+    role:
+      en: "Personal"
+      ko: "개인 프로젝트"
+    cur: false
+    projects[1]:
+      - id: loa-helper
+        name: "로아 도우미"
+        meta: "2019.01 – 2019.02 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "Personal Lost Ark item-level simulator built solo after a friend who promised to handle the server never followed through. Scraped the item dictionary site, bundled base data as Xlsx, and stored dynamic data in Core Data — no server needed."
+          ko: "친구가 서버를 약속했지만 혼자 하게 된 로스트아크 아이템 레벨 시뮬레이터. 아이템 사전 사이트 크롤링으로 데이터 수집, 기본 데이터 Xlsx 번들링 + 동적 데이터 Core Data 저장으로 서버 없이 완성."
+        role:
+          en: "Solo developer."
+          ko: "단독 개발."
+        achievement:
+          en: "Scraped the Lost Ark item dictionary site solo — analyzed the HTML structure and implemented web crawling to collect item data without a server. Bundled base class and item data as Xlsx and stored dynamic user data in Core Data, eliminating the need for any backend. Built a full item-level simulator: character creation, item search with grade adjustment, and equip-to-level verification."
+          ko: "아이템 사전 사이트 HTML 구조를 직접 분석해 크롤링 구현, 서버 없이 데이터 수집. 기본 클래스·아이템 데이터는 Xlsx로 번들링, 동적 데이터는 Core Data로 로컬 저장. 캐릭터 생성, 아이템 검색·등급 조정, 장착 후 레벨 확인 시뮬레이터 완성."
+        tech[3]: Swift,"Core Data",Xlsx
+        image: "/images/side-projects/loa-helper/loa-helper1.png"
+        images[5]:
+          - "/images/side-projects/loa-helper/loa-helper1.png"
+          - "/images/side-projects/loa-helper/loa-helper2.png"
+          - "/images/side-projects/loa-helper/loa-helper3.png"
+          - "/images/side-projects/loa-helper/loa-helper4.png"
+          - "/images/side-projects/loa-helper/loa-helper5.png"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph App[\"로아 도우미\"]\n    Character[\"Character\"]\n    ItemSearch[\"Item Search\"]\n    Simulator[\"Level Simulator\"]\n  end\n\n  Website[\"Item Dictionary\\n(Web)\"]\n  Xlsx[\"Bundled Xlsx\"]\n  CoreData[\"Core Data\"]\n\n  Website -->|Crawling| App\n  Xlsx -->|Base Data| App\n  Character --> Simulator\n  ItemSearch --> Simulator\n  Simulator -->|Save| CoreData"
   - id: freelance
     name: Freelance
     when: "2017 — now"
