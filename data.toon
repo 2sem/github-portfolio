@@ -762,7 +762,7 @@ companies[4]:
       en: "iOS Developer"
       ko: "EduTech 개발팀 / iOS 개발자"
     cur: false
-    projects[5]:
+    projects[6]:
       - id: lectureroom
         name: "시원스쿨"
         meta: "2018.06 – 2021.05 · Mobile · Swift"
@@ -853,6 +853,26 @@ companies[4]:
         image: null
         diagrams[1]:
           - "flowchart LR\n  Server\n  NPM\n\n  subgraph App[\"React Native PoC\\nof 시원스쿨\"]\n    Home[\"Home Screen\"]\n    Free[\"Free Lecture Screen\"]\n    DRM[\"DRM Library\"]\n    Player[\"Video Player\"]\n  end\n\n  Team\n  Docs[\"Training Documentation\"]\n\n  Server -->|REST API| Home\n  Server -->|REST API| Free\n  Home --> DRM\n  Free --> DRM\n  DRM -->|Decode| Player\n  App -->|Export Experience| Docs\n  NPM -->|Install| Player\n  Docs --> Team"
+      - id: lectureroom-b2b
+        name: "시원스쿨 B2B"
+        meta: "2019.08 – 2019.09 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "B2B variant of the Siwonschool lecture app for corporate users. Shares the full codebase via a common Xcode Workspace, with B2B-specific login and customer service contacts branched using Swift preprocessor macros and a separate Storyboard — minimizing duplication while keeping both apps maintainable."
+          ko: "시원스쿨 강의 앱의 기업 전용 B2B 버전. 동일 Xcode Workspace 내 공통 소스를 공유하고, Swift preprocessor와 별도 Storyboard로 기업 전용 로그인·연락처만 분기 처리."
+        role:
+          en: "Sole iOS developer. Designed the multi-target workspace structure, configured the multi-project Podfile, and implemented preprocessor-based branching for all B2B-specific screens."
+          ko: "iOS 단독 개발. 멀티 타겟 Workspace 구조 설계, 다중 프로젝트 Podfile 구성, preprocessor 분기 처리 구현."
+        achievement:
+          en: "Delivered a B2B white-label of the Siwonschool app by structuring shared code across a common Xcode Workspace, using Swift preprocessor branching and separate Storyboards to swap only B2B-specific login, server, and contact screens — zero duplication."
+          ko: "시원스쿨 앱을 공통 Xcode Workspace 구조로 공유하고 Swift preprocessor + 별도 Storyboard로 기업 전용 로그인·서버·연락처만 교체하는 B2B 버전 출시. 중복 개발 없음."
+        tech[4]: Swift,Xcode,"Preprocessor",CocoaPods
+        image: "/images/siwonschool/lectureroom-b2b/lectureroom-b2b1.jpeg"
+        images[2]:
+          - "/images/siwonschool/lectureroom-b2b/lectureroom-b2b1.jpeg"
+          - "/images/siwonschool/lectureroom-b2b/lectureroom-b2b2.jpeg"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph Workspace[\"Xcode Workspace\"]\n    Preprocessor{\"#if B2B?\"}\n\n    subgraph B2CTarget[\"B2C Target\"]\n      subgraph B2CLogin[\"B2C Login\"]\n        B2CID[\"User ID\"]\n        B2CContact[\"Customer Center\"]\n      end\n    end\n\n    subgraph B2BTarget[\"B2B Target\"]\n      subgraph B2BLogin[\"B2B Login\"]\n        B2BID[\"User ID\"]\n        B2BCorpID[\"Corp ID\"]\n        B2BContact[\"Corp Customer Center\"]\n        B2BStory[\"B2B Storyboard\"]\n      end\n    end\n  end\n\n  B2BServer[\"B2B 서버\"]\n  subgraph CocoaPods[\"Podfile\"]\n    CB2B[\"B2B\"]\n    CNormal[\"B2C\"]\n  end\n\n  Preprocessor -->|Y| B2BTarget\n  Preprocessor -->|N| B2CTarget\n  CocoaPods --> Workspace\n  B2BServer --> B2BLogin"
       - id: siwon-alimi
         name: "시원알리미"
         meta: "2019.05 – 2019.06 · Mobile · Swift"
