@@ -762,7 +762,7 @@ companies[4]:
       en: "iOS Developer"
       ko: "EduTech 개발팀 / iOS 개발자"
     cur: false
-    projects[6]:
+    projects[8]:
       - id: lectureroom
         name: "시원스쿨"
         meta: "2018.06 – 2021.05 · Mobile · Swift"
@@ -853,6 +853,23 @@ companies[4]:
         image: null
         diagrams[1]:
           - "flowchart LR\n  Server\n  NPM\n\n  subgraph App[\"React Native PoC\\nof 시원스쿨\"]\n    Home[\"Home Screen\"]\n    Free[\"Free Lecture Screen\"]\n    DRM[\"DRM Library\"]\n    Player[\"Video Player\"]\n  end\n\n  Team\n  Docs[\"Training Documentation\"]\n\n  Server -->|REST API| Home\n  Server -->|REST API| Free\n  Home --> DRM\n  Free --> DRM\n  DRM -->|Decode| Player\n  App -->|Export Experience| Docs\n  NPM -->|Install| Player\n  Docs --> Team"
+      - id: word-rocket
+        name: "단어 로켓 게임"
+        meta: "2019.07 – 2019.09 · Mobile · Unity"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "Unity-based word rocket game and iOS integration PoC for Siwonschool. A spaceship auto-moves through space collecting alphabet letters in order to form words fetched from the server. Researched and successfully embedded Unity as a library inside the existing Siwonschool iOS app."
+          ko: "시원스쿨을 위한 Unity 기반 단어 로켓 게임 및 iOS 연동 PoC. 우주선이 자동 이동하며 서버에서 가져온 단어의 알파벳을 순서대로 수집. Unity를 기존 iOS 앱에 라이브러리로 내장하는 데 성공."
+        role:
+          en: "Self-directed R&D. Built the full Unity game, researched Unity-as-Library integration with iOS, successfully embedded it in the Siwonschool app, and produced internal training docs."
+          ko: "자기주도 R&D. Unity 게임 개발, iOS 라이브러리 내장 연구·성공, 교육 자료 작성."
+        achievement:
+          en: "Validated Unity-as-Library integration with an existing iOS app by building a word-collection rocket game in Unity and successfully embedding it in the Siwonschool app — then documented the process as internal training material."
+          ko: "Unity를 기존 iOS 앱에 라이브러리로 내장하는 가능성을 검증. 단어 로켓 게임을 직접 개발해 시원스쿨 앱 내장에 성공하고 교육 자료로 정리·배포."
+        tech[3]: Unity,Swift,"Unity as Library"
+        image: null
+        diagrams[1]:
+          - "flowchart LR\n  Server\n\n  subgraph Unity[\"Unity Game\"]\n    Word[\"Word Data\"]\n    Letters[\"Letters\"]\n    Rocket[\"Rocket (Auto Move)\"]\n    Touch[\"Touch Direction\"]\n    Collect[\"Letter Collection\"]\n  end\n\n  subgraph App\n    UnityLib[\"Unity as Library\"]\n  end\n\n  Docs[\"Training Documentation\"]\n  Team\n\n  Server -->|Random Word| Letters\n  Letters --> Collect\n  Rocket --> Touch\n  Rocket --> Collect\n  Unity -->|Embed| UnityLib\n  UnityLib -->|기반| Docs\n  Docs --> Team"
       - id: lectureroom-b2b
         name: "시원스쿨 B2B"
         meta: "2019.08 – 2019.09 · Mobile · Swift"
@@ -890,6 +907,37 @@ companies[4]:
         image: null
         diagrams[1]:
           - "flowchart LR\n  User[\"Employee\"]\n  Server[\"Intranet Server\"]\n\n  subgraph App\n    subgraph WebView\n      Intranet[\"Intranet\"]\n    end\n    JSInject[\"JavaScript Injection\"]\n    Inbox[\"Move to InBox\"]\n  end\n\n  Firebase[\"Firebase\"]\n\n  User -->|Run| App\n  WebView -->|Inject| JSInject\n  JSInject -->|\"Detect Login\"| Inbox\n  JSInject -->|\"Register ID as topic\"| Firebase\n  Firebase -->|\"Personal Notification\"| User\n  Server -->|\"Send Notification to topics\"| Firebase\n  Inbox --> Intranet"
+      - id: siwon-pen
+        name: "시원스쿨펜"
+        meta: "2019.11 – 2021.05 · Mobile · React Native"
+        tags[2]: platform:ios,lang:reactnative
+        desc:
+          en: "Companion app for 시원스쿨's smart-pen hardware — the pen scans hidden patterns in textbooks to trigger audio playback, and this app provides word cards, lecture player, quiz, and my-vocabulary. I contributed the initial React Native lecture-player code, then owned post-launch maintenance: replaced ScrollView with FlatList for word cards, introduced Appium regression testing, and wired Firebase Analytics."
+          ko: "시원스쿨 자동암기펜 전용 앱. 펜이 교재의 숨겨진 패턴을 인식해 음원을 재생하는 제품에 연동되며, 단어 카드·강의 재생·퀴즈·내단어장 기능 제공. RN 강의 재생 코드를 기여해 앱 출시 기반을 만들고, ScrollView→FlatList 교체로 성능 개선, Appium 자동화 테스트 도입, Firebase Analytics 연동 등 유지보수 담당."
+        role:
+          en: "React Native code contributor → post-launch maintenance developer."
+          ko: "React Native 코드 기여 → 출시 후 유지보수 담당."
+        achievement:
+          en: "Delivered the initial React Native lecture-player code — built during the prior 선행 학습 project — to the 시원스쿨펜 team, which shipped as the app's core feature. Post-launch, replaced ScrollView with FlatList in word cards to eliminate scroll jank, removed the confirm-tap from quiz flow for instant submission, redesigned my-vocabulary with inline edit/delete, introduced Appium regression coverage, and wired Firebase Analytics to track study-flow patterns."
+          ko: "선행 학습 프로젝트에서 구현한 RN 강의 재생 코드를 시원스쿨펜 팀에 제공해 앱의 핵심 기능으로 출시. 출시 후 ScrollView→FlatList 교체로 단어 카드 스크롤 성능 개선, 퀴즈 즉시 제출로 학습 흐름 개선, 내단어장 인라인 편집/삭제 재설계, Appium 회귀 테스트 도입, Firebase Analytics 연동."
+        tech[3]: "React Native",Firebase,Appium
+        image: "/images/siwonschool/siwon-pen/siwon-pen1.png"
+        images[13]:
+          - "/images/siwonschool/siwon-pen/siwon-pen1.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen2.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen3.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen4.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen5.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen6.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen7.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen8.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen9.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen10.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen11.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen12.png"
+          - "/images/siwonschool/siwon-pen/siwon-pen13.png"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph App\n    WordCard[\"Word Cards (FlatList)\"]\n    Lecture[\"Lecture Player\"]\n    Quiz[\"Quiz\"]\n    MyWords[\"My Vocabulary\"]\n  end\n\n  Server\n  CDN\n  Firebase[\"Firebase Analytics\"]\n\n  Server -->|Content| WordCard\n  Server -->|Video| Lecture\n  CDN -->|Audio| WordCard\n  WordCard --> Quiz\n  Quiz --> MyWords\n  App -->|Events| Firebase"
   - id: freelance
     name: Freelance
     when: "2017 — now"
