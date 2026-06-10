@@ -1027,7 +1027,24 @@ companies[5]:
       en: "Personal"
       ko: "개인 프로젝트"
     cur: false
-    projects[1]:
+    projects[2]:
+      - id: symlink-maker
+        name: "심볼릭 링크 생성기"
+        meta: "2020.10 – 2020.11 · macOS · Swift"
+        tags[2]: platform:macos,lang:swift
+        desc:
+          en: "macOS Finder extension that adds a right-click 'Create Symbolic Link' menu item — built because ln -s argument order is confusing. Supports multi-file selection and custom link names."
+          ko: "ln -s 문법이 헷갈려 만든 macOS Finder 확장 앱. 우클릭 메뉴로 심볼릭 링크를 생성하며, 다중 파일 선택과 사용자 지정 링크 이름을 지원."
+        role:
+          en: "Solo developer."
+          ko: "단독 개발."
+        achievement:
+          en: "Implemented a Finder Sync Extension target — a sandboxed App Extension process that injects a right-click menu item into Finder and communicates with the main app via XPC to perform symlink creation outside the sandbox. Handled multi-file selection by batching the operation across all selected files. Added a rename flow so users can specify a custom link name at creation time, solving the core UX problem that ln -s argument order is unintuitive."
+          ko: "Finder Sync Extension 타겟으로 Finder에 우클릭 메뉴 항목 주입 — 샌드박스 App Extension 프로세스가 XPC로 메인 앱과 통신해 샌드박스 외부에서 심볼릭 링크 생성. 다중 파일 선택 시 일괄 처리. 링크 이름 직접 지정 흐름 추가 — ln -s 인자 순서 혼란 문제를 UI로 해결."
+        tech[3]: Swift,"Finder Extension",macOS
+        image: "/images/side-projects/symlink-maker/symlink-maker1.png"
+        images[1]:
+          - "/images/side-projects/symlink-maker/symlink-maker1.png"
       - id: loa-helper
         name: "로아 도우미"
         meta: "2019.01 – 2019.02 · Mobile · Swift"
@@ -1050,7 +1067,7 @@ companies[5]:
           - "/images/side-projects/loa-helper/loa-helper4.png"
           - "/images/side-projects/loa-helper/loa-helper5.png"
         diagrams[1]:
-          - "flowchart LR\n  subgraph App[\"로아 도우미\"]\n    Character[\"Character\"]\n    ItemSearch[\"Item Search\"]\n    Simulator[\"Level Simulator\"]\n  end\n\n  Website[\"Item Dictionary\\n(Web)\"]\n  Xlsx[\"Bundled Xlsx\"]\n  CoreData[\"Core Data\"]\n\n  Website -->|Crawling| App\n  Xlsx -->|Base Data| App\n  Character --> Simulator\n  ItemSearch --> Simulator\n  Simulator -->|Save| CoreData"
+          - "flowchart LR\n  subgraph App\n    Characters\n    Character\n    ItemSearch[\"Item Search\"]\n    ItemLevel[\"Item Level Average\"]\n    Inventory\n    CoreData[\"Core Data\"]\n  end\n\n  Website[\"Item Dictionary\\n(Web)\"]\n  Xlsx[\"Xlsx\"]\n\n  Xlsx -->|Bundle| Characters\n  Characters -->|Select| Character\n  Character --> Inventory\n  Inventory -->|Search| ItemSearch\n  Website -->|Crawling| ItemSearch\n  ItemSearch -->|Select| Inventory\n  Inventory --> ItemLevel\n  Character -->|Save| CoreData"
   - id: freelance
     name: Freelance
     when: "2017 — now"
