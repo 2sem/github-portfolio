@@ -762,7 +762,7 @@ companies[4]:
       en: "iOS Developer"
       ko: "EduTech 개발팀 / iOS 개발자"
     cur: false
-    projects[9]:
+    projects[10]:
       - id: lectureroom
         name: "시원스쿨"
         meta: "2018.06 – 2021.05 · Mobile · Swift"
@@ -952,9 +952,37 @@ companies[4]:
           en: "Inherited a solo-maintained codebase when the team lead left. Migrated Objective-C modules to Swift to reduce future maintenance overhead; replaced the legacy XlsxReaderWriter Excel library to resolve build warnings; added NSNull safety across JSON parsing to eliminate server-response crashes; implemented local push notifications for study reminders and enrollment expiry without any server changes; added audio playback speed control, word-card navigation tracks, pronunciation search filter, new learning language support, landscape layout, and small-device (SE) fixes."
           ko: "팀장 퇴사 후 단독 유지보수 코드베이스 인수. ObjC→Swift 변환으로 유지보수 진입 비용 절감; XlsxReaderWriter 교체로 빌드 경고 해소; JSON NSNull 처리 전면 추가로 서버 응답 파싱 크래시 제거; 서버 변경 없이 앱 내 스케줄링으로 리마인드·수강만료 로컬 푸시 구현; 음원 재생속도 조절, 단어 카드 탐색 트랙, 발음 검색 조건, 신규 학습 언어, Landscape 대응, 소형기기 레이아웃 수정."
         tech[4]: Swift,"Storyboard / Auto Layout",NotificationCenter,XlsxReaderWriter
-        image: null
+        image: "/images/siwonschool/amgigorae/amgigorae1.jpeg"
+        images[5]:
+          - "/images/siwonschool/amgigorae/amgigorae1.jpeg"
+          - "/images/siwonschool/amgigorae/amgigorae2.jpeg"
+          - "/images/siwonschool/amgigorae/amgigorae3.jpeg"
+          - "/images/siwonschool/amgigorae/amgigorae4.jpeg"
+          - "/images/siwonschool/amgigorae/amgigorae5.jpeg"
         diagrams[1]:
           - "flowchart LR\n\n\tsubgraph iOS\n\t  subgraph App\n\t    Excel[\"Excel File\"]\n\t    Words[\"Word List\"]\n\t    Player\n\t    Reminder\n\t  end\n\t  \n\t  UserNotification[\"User Notification\"]\n  end\n\n\tExcel -->|Upload| Server\n  Push[\"Local Push\"]\n\n  Server -->|Download| Words\n  Excel -->|Vocabulary| Words\n  Words -->|Audio| Player\n  Reminder -->|Register Schedule| UserNotification\n  UserNotification -->|Notification| App"
+      - id: english-adventure
+        name: "영어대모험"
+        meta: "2020.04 – 2020.05 · Mobile · Unity"
+        tags[2]: platform:ios,lang:unity
+        desc:
+          en: "Internal side-project Unity card-flip game to explore gamified English-learning content. Applied Unity skills the team had studied under the previous team lead — used official 영어대모험 textbook characters, built stage progression, and shipped to TestFlight in two months."
+          ko: "게임 접목 영어 학습 콘텐츠 가능성 검증을 위한 내부 사이드 프로젝트. 이전 팀장 주도로 공부했던 Unity를 실전에 적용, 시원스쿨 '영어대모험' 교재 캐릭터 활용, 단어 카드 플립 게임·단계 전환 구현, 2개월 만에 TestFlight 배포."
+        role:
+          en: "Solo developer — built and demoed the full Unity prototype in two months as part of a team-wide game experiment."
+          ko: "단독 개발 — 팀 전체 게임 실험의 일환으로 2개월 안에 Unity 프로토타입 완성·시연."
+        achievement:
+          en: "Turned team-wide Unity study into a shipped prototype in two months — the first practical output of the Unity investment. Sourced and edited official 영어대모험 brand assets from the business team solo, without a designer. Demoed to the business team and got a positive reception for the gamified learning concept."
+          ko: "팀이 학습했던 Unity를 2개월 만에 TestFlight 배포 가능한 프로토타입으로 결실. 디자이너 없이 사업부 교재 캐릭터·표지 이미지를 직접 편집·적용. 게임 접목 학습 콘텐츠 상품 가능성을 사업부에 시연하고 긍정적 반응 확인."
+        tech[3]: Unity,C#,"Unity Audio"
+        image: "/images/siwonschool/english-adventure/english-adventure1.jpeg"
+        images[4]:
+          - "/images/siwonschool/english-adventure/english-adventure1.jpeg"
+          - "/images/siwonschool/english-adventure/english-adventure2.jpeg"
+          - "/images/siwonschool/english-adventure/english-adventure3.jpeg"
+          - "/images/siwonschool/english-adventure/english-adventure4.jpeg"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph App\n    Intro[\"Intro Video\"]\n    subgraph Stage\n\t    Assets[\"Character Assets\"]\n\t    Words[\"Word - Image Pairs\"]\n\t    Cards[\"Cards\"]\n    end\n    Complete[\"Stage Complete\"]\n  end\n\n  Demo\n\n\tIntro --> Stage\n  Words -->|Generate| Cards\n  Cards -->|Flip| Cards\n  \n  Stage -->|All matched| Complete\n  \n  Complete -->|Next Stage| Stage\n  App -->|TestFlight| Demo"
   - id: freelance
     name: Freelance
     when: "2017 — now"
