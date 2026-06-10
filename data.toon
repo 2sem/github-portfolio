@@ -762,7 +762,7 @@ companies[4]:
       en: "iOS Developer"
       ko: "EduTech 개발팀 / iOS 개발자"
     cur: false
-    projects[10]:
+    projects[11]:
       - id: lectureroom
         name: "시원스쿨"
         meta: "2018.06 – 2021.05 · Mobile · Swift"
@@ -983,6 +983,26 @@ companies[4]:
           - "/images/siwonschool/english-adventure/english-adventure4.jpeg"
         diagrams[1]:
           - "flowchart LR\n  subgraph App\n    Intro[\"Intro Video\"]\n    subgraph Stage\n\t    Assets[\"Character Assets\"]\n\t    Words[\"Word - Image Pairs\"]\n\t    Cards[\"Cards\"]\n    end\n    Complete[\"Stage Complete\"]\n  end\n\n  Demo\n\n\tIntro --> Stage\n  Words -->|Generate| Cards\n  Cards -->|Flip| Cards\n  \n  Stage -->|All matched| Complete\n  \n  Complete -->|Next Stage| Stage\n  App -->|TestFlight| Demo"
+      - id: siwon-intra
+        name: "시원인트라"
+        meta: "2020.06 – 2021.05 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "Native iOS intranet app built with a designer — used JavaScript Injection to handle login authentication through the company's WebView-based intranet, which normally requires SMS auth on unregistered devices. Home screen was completed but the project halted when server-side development stalled."
+          ko: "디자이너와 협업한 사내 인트라넷 iOS 앱. 미등록 기기에서 문자인증을 요구하는 인트라넷 웹페이지에 JavaScript Injection을 적용해 앱 내 로그인 처리 구현. 홈 화면까지 완성했으나 서버 개발 미진행으로 중단."
+        role:
+          en: "iOS developer — built the WebView login layer and native home screen with a designer."
+          ko: "iOS 개발 담당 — WebView 로그인 레이어 및 디자이너와 협업한 네이티브 홈 화면 구현."
+        achievement:
+          en: "Implemented JavaScript Injection to bypass the intranet's SMS authentication gate — the site requires SMS auth on any non-registered device, so JS was injected into the WebView to handle the login flow without triggering the SMS step. Collaborated with a designer to build the native home screen."
+          ko: "등록된 기기가 아니면 문자인증을 요구하는 인트라넷 웹페이지에 JavaScript Injection을 적용해 SMS 단계 없이 앱에서 로그인 처리 구현. 디자이너와 협업해 네이티브 홈 화면 완성."
+        tech[3]: Swift,WebView,"JavaScript Injection"
+        image: "/images/siwonschool/siwon-intra/siwon-intra1.jpeg"
+        images[2]:
+          - "/images/siwonschool/siwon-intra/siwon-intra1.jpeg"
+          - "/images/siwonschool/siwon-intra/siwon-intra2.jpeg"
+        diagrams[1]:
+          - "flowchart LR\n  subgraph App\n\t  Login[\"Login Screen\"]\n    Home[\"Home Screen\"]\n    \n    subgraph Webview\n      Intranet[\"Intranet Web\"]\n    end\n  end\n\n  IntranetServer[\"Intranet Server\"]\n\n\tLogin -->|Javascript Injection| Webview\n\tLogin -->|Bypass SMS| Home\n  Home --> Webview\n  IntranetServer --> Intranet"
   - id: freelance
     name: Freelance
     when: "2017 — now"
