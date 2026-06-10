@@ -762,7 +762,7 @@ companies[4]:
       en: "iOS Developer"
       ko: "EduTech 개발팀 / iOS 개발자"
     cur: false
-    projects[4]:
+    projects[5]:
       - id: lectureroom
         name: "시원스쿨"
         meta: "2018.06 – 2021.05 · Mobile · Swift"
@@ -853,6 +853,23 @@ companies[4]:
         image: null
         diagrams[1]:
           - "flowchart LR\n  Server\n  NPM\n\n  subgraph App[\"React Native PoC\\nof 시원스쿨\"]\n    Home[\"Home Screen\"]\n    Free[\"Free Lecture Screen\"]\n    DRM[\"DRM Library\"]\n    Player[\"Video Player\"]\n  end\n\n  Team\n  Docs[\"Training Documentation\"]\n\n  Server -->|REST API| Home\n  Server -->|REST API| Free\n  Home --> DRM\n  Free --> DRM\n  DRM -->|Decode| Player\n  App -->|Export Experience| Docs\n  NPM -->|Install| Player\n  Docs --> Team"
+      - id: siwon-alimi
+        name: "시원알리미"
+        meta: "2019.05 – 2019.06 · Mobile · Swift"
+        tags[2]: platform:ios,lang:swift
+        desc:
+          en: "Internal iOS app for Siwonschool intranet notifications. Solved the problem of missing important alerts due to frequent intranet logouts — detects login state via WebView JavaScript injection and delivers personalized push notifications through Firebase topic subscriptions without additional server development."
+          ko: "시원스쿨 인트라넷 알림을 위한 사내 iOS 앱. 잦은 로그아웃으로 알림을 놓치는 문제를 해결. WebView JavaScript injection으로 로그인 감지·수신함 자동 이동, Firebase topic 구독으로 별도 토큰 저장 없이 개인화 푸시 전달."
+        role:
+          en: "Sole developer. Identified the pain point, proposed the solution architecture (JS injection + Firebase topic), and built the full app."
+          ko: "단독 개발. 문제를 직접 발굴하고 해결 방식(JS injection + Firebase topic)을 제안·설계·구현."
+        achievement:
+          en: "Solved intranet notification failures from frequent logouts by building an iOS app that uses WebView JavaScript injection for login detection and Firebase topic-based push — zero extra server development required."
+          ko: "인트라넷 잦은 로그아웃으로 인한 알림 누락 문제를 iOS 앱으로 해결. WebView JS injection으로 로그인 감지·자동 이동, Firebase topic 구독으로 추가 서버 개발 없이 개인화 푸시 구현."
+        tech[4]: Swift,WebView,"JavaScript Injection",Firebase
+        image: null
+        diagrams[1]:
+          - "flowchart LR\n  User[\"Employee\"]\n  Server[\"Intranet Server\"]\n\n  subgraph App\n    subgraph WebView\n      Intranet[\"Intranet\"]\n    end\n    JSInject[\"JavaScript Injection\"]\n    Inbox[\"Move to InBox\"]\n  end\n\n  Firebase[\"Firebase\"]\n\n  User -->|Run| App\n  WebView -->|Inject| JSInject\n  JSInject -->|\"Detect Login\"| Inbox\n  JSInject -->|\"Register ID as topic\"| Firebase\n  Firebase -->|\"Personal Notification\"| User\n  Server -->|\"Send Notification to topics\"| Firebase\n  Inbox --> Intranet"
   - id: freelance
     name: Freelance
     when: "2017 — now"
