@@ -5,7 +5,7 @@ role:
   en: "App Developer → Mobile Tech Lead"
   ko: "앱 개발팀 / 앱 개발자 → 연구개발본부 / Mobile Tech Lead"
 cur: false
-projects[3]:
+projects[4]:
   - id: kickgoing-pass
     name: "킥고잉 패스"
     meta: "2021.09 – 2021.11 · Mobile · React Native"
@@ -78,3 +78,22 @@ projects[3]:
     image: null
     diagrams[1]:
       - "flowchart TD\n  CityPass[\"City Pass\"]\n\n  subgraph Android\n    InstallReferrer[\"Install Referrer\"]\n    InstallCondition{\"Is Installed?\"}\n    PlayStore[\"Google Play Store\"]\n  end\n\n  subgraph iOS\n    Linking[\"RN Linking\"]\n  end\n\n  subgraph KICKGOING\n    ReferrerLibrary[\"rn-play-install-referrer\"]\n    KLogin[\"Login\"]\n  end\n\n  CityPass -->|① Call KICKGOING| InstallReferrer\n  InstallReferrer --> InstallCondition\n  InstallCondition -->|N| PlayStore\n  InstallCondition -->|Y| ReferrerLibrary\n  PlayStore -->|install + launch| ReferrerLibrary\n  ReferrerLibrary --> KLogin\n\n  CityPass -->|DeepLink| Linking\n  Linking --> KLogin\n\n  KLogin -->|② Verify| CityPass\n  CityPass -->|③ DeepLink| KLogin"
+  - id: kickgoing-route
+    name: "길 안내 기능"
+    meta: "2021.12 – 2022.04 · Mobile · TypeScript"
+    tags[3]: platform:ios,platform:android,lang:ts
+    desc:
+      en: "In-app turn-by-turn navigation — eliminates the need to launch a separate map app. Users search a destination, see the route drawn on the map, and the map auto-zooms to fit. The only feature at KICKGOING that the developer prototyped before any planning request existed."
+      ko: "앱 내 길 안내 기능 — 다른 앱을 실행해야 하는 불편함을 없앰. 목적지 검색, 지도 위 경로 표시, 자동 줌을 제공. 킥고잉에서 유일하게 기획 요청 전에 개발자가 먼저 구현한 기능."
+    role:
+      en: "Solo — API spec, coordinate conversion, Native Bridge extension, and state update timer. Prototyped the full navigation flow before UX planning existed, then handed the working prototype to planning to define the UI and flow."
+      ko: "단독 — API 스펙 정의, 좌표 변환, Native Bridge 확장, 상태 업데이트 타이머. UI/Flow 기획 전에 동작하는 프로토타입을 완성한 뒤 기획자에게 전달해 UI와 흐름을 설계하게 함."
+    achievement:
+      en: "Reverse-engineered Daum Maps' proprietary Kongnamul coordinate system from its minified JS source via Chrome DevTools — the publicly available conversion formula produced wrong results, so I traced through the obfuscated source, found the real transformation function, cleaned it up, and ported it to TypeScript. Extended react-native-naver-map (open source) by modifying the Native Bridge view layer to add scale calculation that the library didn't support. After shipping to positive feedback from delivery drivers, the feature generated multiple follow-up development requests."
+      ko: "공개된 콩나물 좌표 변환 공식이 틀린 결과를 내자, Chrome DevTools로 다음 사이트의 난독화된 JS를 직접 분석해 실제 변환 함수를 찾아내고 가독성 있게 수정한 후 TypeScript로 포팅. react-native-naver-map 오픈소스의 Native Bridge View 부분을 수정해 기존에 없던 축척 계산 기능을 직접 추가. 출시 후 대리기사들로부터 좋은 반응을 받았으며 이후 여러 차례 후속 개발 문의로 이어짐."
+    tech[4]: TypeScript,"React Native","Naver Map","Daum Route API"
+    links[1]:
+      - label: "YouTube Demo"
+        href: "https://www.youtube.com/watch?v=MdAB0oqFh7Y"
+    diagrams[1]:
+      - "flowchart TD\n  User\n\n  subgraph App[\"KICKGOING App\"]\n    Search[\"Destination Search\"]\n    RouteQuery[\"Route Query\"]\n    Convert[\"Kongnamul → lat/lng\\n(reverse-engineered)\"]\n    Map[\"Naver Map\\n(+ custom scale calc)\"]\n    AutoZoom[\"Auto Zoom\"]\n  end\n\n  NaverSearch[\"Naver Search API\"]\n  DaumRoute[\"Daum Route API\\n(crawled)\"]\n\n  User -->|Tap navigate| Search\n  Search --> NaverSearch\n  NaverSearch -->|Destination| RouteQuery\n  RouteQuery --> DaumRoute\n  DaumRoute -->|Kongnamul coords| Convert\n  Convert -->|lat/lng path| Map\n  Map --> AutoZoom\n  AutoZoom --> User"
