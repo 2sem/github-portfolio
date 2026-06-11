@@ -5,7 +5,7 @@ role:
   en: "App Developer → Mobile Tech Lead"
   ko: "앱 개발팀 / 앱 개발자 → 연구개발본부 / Mobile Tech Lead"
 cur: false
-projects[4]:
+projects[5]:
   - id: kickgoing-pass
     name: "킥고잉 패스"
     meta: "2021.09 – 2021.11 · Mobile · React Native"
@@ -105,3 +105,23 @@ projects[4]:
         href: "https://www.youtube.com/watch?v=MdAB0oqFh7Y"
     diagrams[1]:
       - "flowchart TD\n  User\n\n  subgraph App[\"KICKGOING App\"]\n    Search[\"Destination Search\"]\n    RouteQuery[\"Route Query\"]\n    Convert[\"Kongnamul → lat/lng\\n(reverse-engineered)\"]\n    Map[\"Naver Map\\n(+ custom scale calc)\"]\n    AutoZoom[\"Auto Zoom\"]\n  end\n\n  NaverSearch[\"Naver Search API\"]\n  DaumRoute[\"Daum Route API\\n(crawled)\"]\n\n  User -->|Tap navigate| Search\n  Search --> NaverSearch\n  NaverSearch -->|Destination| RouteQuery\n  RouteQuery --> DaumRoute\n  DaumRoute -->|Kongnamul coords| Convert\n  Convert -->|lat/lng path| Map\n  Map --> AutoZoom\n  AutoZoom --> User"
+  - id: kickgoing-data-optimization
+    name: "데이터 사용 최적화"
+    meta: "2022.05 – 2022.06 · Mobile · TypeScript"
+    tags[3]: platform:ios,platform:android,lang:ts
+    desc:
+      en: "Three-pronged data reduction ahead of the Neighborhood Map feature launch — grid-based server-side caching with version diffing (only changed grids sent), Google Polyline compression for coordinate payloads, and Flipper-diagnosed duplicate location polling elimination."
+      ko: "동네지도 출시 전 데이터 사용량 사전 대응 — 격자 기반 서버사이드 캐싱 + 버전 비교(변경된 격자만 전송), Google Polyline 좌표 압축, Flipper로 진단한 중복 위치 조회 제거."
+    role:
+      en: "Solo — analyzed network behavior via Flipper, co-designed the grid-cache protocol with the server team, and implemented all client-side caching, Polyline decoding, and call-deduplication logic."
+      ko: "단독 — Flipper로 네트워크 패턴 분석, 서버팀과 격자 캐시 프로토콜 공동 설계, 클라이언트 캐싱·Polyline 디코딩·호출 중복 제거 전체 구현."
+    achievement:
+      en: "Past user complaints about excessive mobile data usage were the trigger; the upcoming Neighborhood Map feature would send far more map data and made optimization unavoidable. Designed a grid-partitioned cache protocol with the server team: the Korea map is split into fixed-size grids, each versioned — the client sends its cached grid ID and version, the server returns only changed grids, the client stores the response in AsyncStorage and serves unchanged grids from cache. Applied Google Polyline encoding to compress coordinate payloads. Used Flipper network inspection to diagnose duplicate location-fetch calls; traced them to map position change events firing on every intermediate position during initial pan — eliminated them by enforcing explicit call ordering and adding a guard state that blocks calls during invalid phases. Significantly reduced data consumption."
+      ko: "과거 과도한 데이터 사용 관련 민원이 있었고 동네지도 추가 시 더 많은 지도 데이터 전송이 불가피하여 최적화 착수. 서버팀과 격자 캐시 프로토콜 설계: 국내 지도를 고정 크기 격자로 분할·버전 관리, 클라이언트는 격자 식별값과 버전을 전송하고 서버는 변경된 격자만 응답, 수신 데이터는 AsyncStorage에 저장하고 미전송 격자는 캐시 사용. Google Polyline 인코딩으로 좌표 데이터 압축. Flipper 네트워크 분석으로 중복 위치 조회 원인 파악 — 초기 위치 이동 중 중간 위치마다 이벤트가 반복 발생하는 것을 확인하고, 호출 순서 정리 및 유효하지 않은 상태에서의 호출을 막는 가드 상태 추가로 불필요한 호출 제거. 데이터 사용량 크게 감소."
+    tech[5]: TypeScript,"React Native",AsyncStorage,"Google Polyline",Flipper
+    image: null
+    links[1]:
+      - label: "YouTube: Background Exit Demo"
+        href: "https://www.youtube.com/watch?v=tsO0VKNlEYk"
+    diagrams[1]:
+      - "flowchart TD\n  LocationEvents[\"Location Events\\n(map move / init pan)\"]\n  GuardState{\"Guard State\"}\n\n  subgraph Request[\"API Request\"]\n    GridID[\"Grid ID + Cached Version\"]\n  end\n\n  subgraph Server\n    VersionCheck[\"Version Check\"]\n    Polyline[\"Polyline Encoder\"]\n  end\n\n  subgraph AppCache[\"App Cache (AsyncStorage)\"]\n    CachedGrids[\"Grid Data + Version\"]\n  end\n\n  MapView[\"Map View\"]\n  Background[\"Background Entry\"]\n\n  LocationEvents -->|\"① dedup filter\"| GuardState\n  Background -->|\"stop calls\"| GuardState\n  GuardState -->|\"single deduplicated call\"| GridID\n  GridID --> VersionCheck\n  VersionCheck -->|\"② diff — changed grids only\"| Polyline\n  Polyline -->|\"③ compressed coords\"| AppCache\n  CachedGrids -.->|\"unchanged grids from cache\"| MapView\n  AppCache -->|\"new grids\"| MapView"
