@@ -1027,7 +1027,36 @@ companies[6]:
       en: "App Developer → Mobile Tech Lead"
       ko: "앱 개발팀 / 앱 개발자 → 연구개발본부 / Mobile Tech Lead"
     cur: false
-    projects[2]:
+    projects[3]:
+      - id: kickgoing-pass
+        name: "킥고잉 패스"
+        meta: "2021.09 – 2021.11 · Mobile · React Native"
+        tags[2]: platform:ios,platform:android
+        desc:
+          en: "Subscription-style pass feature — users pay by time or rides based on usage pattern. Includes custom top-tab navigation, real-time countdown, deep link entry to Pass home, and a fully typed API service layer."
+          ko: "이용 패턴에 맞춘 시간/횟수 정기권 기능. 커스텀 상단 탭, 실시간 카운트다운, 패스 홈 딥링크 진입, 타입 완비 API 서비스 레이어 포함."
+        role:
+          en: "Solo — API service design, timer logic, tab navigation, and deep link."
+          ko: "단독 — API 서비스 설계, 타이머 로직, 탭 네비게이션, 딥링크."
+        achievement:
+          en: "Real-time pass countdown required second-by-second validity checks outside the normal request/response cycle — existing patterns all ran inside mounted components. Solved by storing a Redux dispatch reference outside the component tree and driving a setInterval timer from it, updating state without a hidden container component. Designed typed API response models per endpoint with shared base types to reduce duplication. Implemented custom top-tab navigation by styling React Navigation. Added a deep link that bypasses normal navigation and jumps directly to the Pass home screen, working around a React Navigation structural limitation that prevented the built-in deep link handler. Published two Medium articles on Jest testing patterns developed alongside this feature."
+          ko: "패스 남은 시간 실시간 표시에 초 단위 유효성 갱신이 필요했으나, 기존 업데이트 패턴은 모두 마운트된 컴포넌트 안에서만 동작. Redux dispatch 참조를 컴포넌트 트리 외부에 저장 후 setInterval 타이머에서 직접 호출해 숨겨진 컨테이너 없이 상태 갱신 구현. 엔드포인트별 API 응답 타입 설계 + 공통 베이스 타입으로 중복 최소화. React Navigation 스타일링으로 커스텀 상단 탭 구현. React Navigation 구조적 제한 우회해 패스 홈 직접 진입 딥링크 구현. 관련 Jest 테스트 패턴 Medium 아티클 2편 게재."
+        tech[3]: TypeScript,"React Navigation","React Native"
+        image: "/images/kickgoing/kickgoing-pass1.png"
+        images[6]:
+          - "/images/kickgoing/kickgoing-pass1.png"
+          - "/images/kickgoing/kickgoing-pass2.png"
+          - "/images/kickgoing/kickgoing-pass3.png"
+          - "/images/kickgoing/kickgoing-pass4.png"
+          - "/images/kickgoing/kickgoing-pass5.png"
+          - "/images/kickgoing/kickgoing-pass6.png"
+        links[2]:
+          - label: "Medium: Jest Complex Test Case Part 1"
+            href: "https://medium.com/@toyboy2/jest-complex-test-case-part1-3a165afdbbe9"
+          - label: "Medium: Jest Complex Test Case Part 2"
+            href: "https://medium.com/@toyboy2/jest-complex-test-case-part2-c12f57e5b2a8"
+        diagrams[1]:
+          - "flowchart TD\n  Marketing[\"Marketing Site\"]\n\n  subgraph App\n    subgraph PassScreen[\"Pass Screen\"]\n      subgraph MarketingTab[\"Marketing Tab\"]\n        Webview\n      end\n      PassListTab[\"Pass List Tab\"]\n    end\n\n    subgraph Timer\n      DispatchRef[\"Dispatch Ref\"]\n    end\n\n    subgraph Redux\n      Store[\"Pass State\"]\n      Dispatch\n    end\n  end\n\n  subgraph Server\n    PassAPI[\"Pass API\"]\n  end\n\n  Marketing -->|Deeplink| PassListTab\n  Webview -->|Deeplink| PassListTab\n  Store --> PassListTab\n  PassAPI -->|fetch| PassListTab\n  Dispatch --> DispatchRef\n  DispatchRef -->|Update| Store"
       - id: kickgoing-auto-deploy
         name: "배포 및 테스트 자동화"
         meta: "2021.07 – 2021.09 · CI/CD · React Native"
