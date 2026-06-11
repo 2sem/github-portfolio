@@ -1,0 +1,46 @@
+id: freelance
+name: Freelance
+when: "2017 — now"
+role:
+  en: "iOS Developer"
+  ko: "iOS 개발자"
+cur: true
+projects[3]:
+  - id: proj-d
+    name: "App D"
+    meta: "2023 · iOS · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Description of the app. Users, impact, key features."
+      ko: "앱 설명. 사용자, 임팩트, 핵심 기능."
+    role:
+      en: "Solo developer — design to App Store."
+      ko: "단독 개발 — 디자인부터 앱스토어 출시까지."
+    tech[3]: Swift,SwiftUI,Firebase
+    links[1]{label,href}:
+      "↗ AppStore","#"
+    image: null
+  - id: proj-e
+    name: "App E"
+    meta: "2021 · iOS · Swift"
+    tags[3]: platform:ios,lang:swift,framework:swiftui
+    desc:
+      en: "Description of the app."
+      ko: "앱 설명."
+    role:
+      en: "Built core features and led team of 2 contractors."
+      ko: "핵심 기능 개발 및 외주 2인 팀 리드."
+    tech[3]: Swift,SwiftUI,Combine
+    image: null
+  - id: proj-f
+    name: "Web Dashboard"
+    meta: "2022 · Web · React"
+    tags[3]: platform:web,framework:react,lang:ts
+    desc:
+      en: "Internal analytics dashboard with real-time data and complex filtering."
+      ko: "실시간 데이터와 복합 필터링을 지원하는 내부 분석 대시보드."
+    role:
+      en: "Front-end architecture and component library."
+      ko: "프런트엔드 아키텍처 및 컴포넌트 라이브러리 담당."
+    tech[3]: React,TypeScript,"Node.js"
+    image: null

@@ -1,0 +1,265 @@
+id: siwonschool
+name: "SIWONSCHOOL(SJWInternational)"
+when: "2018.06 — 2021.05"
+role:
+  en: "iOS Developer"
+  ko: "EduTech 개발팀 / iOS 개발자"
+cur: false
+projects[12]:
+  - id: lectureroom
+    name: "시원스쿨"
+    meta: "2018.06 – 2021.05 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Representative Siwonschool iOS app for taking language courses across the service. It supports video/audio playback, minimized and full-screen playback, Picture in Picture, landscape/iPad layouts, background downloads, offline playback, section repeat, and gesture controls for volume and brightness."
+      ko: "시원스쿨의 모든 언어 강의를 수강할 수 있는 대표 iOS 앱. 영상/음원 재생, 최소화·전체화면·PIP·Landscape, 백그라운드 다운로드와 오프라인 재생, iPad/Landscape 대응, 구간 반복, 제스처 기반 볼륨·밝기 조정을 지원."
+    role:
+      en: "iOS developer from zero-base development through three years of maintenance. Led planning review and server-progress coordination during early project stagnation, designed reusable minimized playback across screens, built iPad playback layouts, PiP/background playback controls, background download task queues, XCUITest automation, VoiceOver improvements, and RxSwift + MVVM structure."
+      ko: "Zero-Base iOS 개발부터 3년간 유지보수까지 담당. 초기 프로젝트 정체 상황에서 기획 검토와 서버 진행 관리를 주도하고, 화면 전반에 재사용 가능한 최소화/복원 구조, iPad 전용 재생 화면, PIP/백그라운드 재생 제어, 백그라운드 다운로드 Task Queue, XCUITest 자동화, VoiceOver 개선, RxSwift + MVVM 구조를 구현."
+    achievement:
+      en: "Built and maintained the representative lecture app from scratch, recovered momentum in a stalled early project by leading planning/server coordination, and proposed/implemented review prompts that helped the app reach and keep a 4.7 rating after offboarding."
+      ko: "대표 강의 앱을 처음부터 개발하고 3년간 유지보수. 초기 정체 상황에서 기획/서버 진행을 주도해 프로젝트 흐름을 회복했으며, 사용자 리뷰 요청 기능을 제안·구현해 평점 4.7 달성과 퇴사 후 유지에 기여."
+    tech[7]: Swift,RxSwift,MVVM,CocoaPods,DRM,AVFoundation,XCUITest
+    image: "/images/siwonschool/lectureroom/lectureroom1.png"
+    images[10]:
+      - "/images/siwonschool/lectureroom/lectureroom1.png"
+      - "/images/siwonschool/lectureroom/lectureroom2.png"
+      - "/images/siwonschool/lectureroom/lectureroom3.png"
+      - "/images/siwonschool/lectureroom/lectureroom4.png"
+      - "/images/siwonschool/lectureroom/lectureroom5.png"
+      - "/images/siwonschool/lectureroom/lectureroom6.png"
+      - "/images/siwonschool/lectureroom/lectureroom7.png"
+      - "/images/siwonschool/lectureroom/lectureroom8.png"
+      - "/images/siwonschool/lectureroom/lectureroom9.png"
+      - "/images/siwonschool/lectureroom/lectureroom10.png"
+    diagrams[1]:
+      - "flowchart LR\n  User[\"Learner\"]\n  CocoaPods[\"Private CocoaPods\"]\n  CDN\n\n  subgraph iOS\n    subgraph App\n      Course[\"Course list / lecture room\"]\n      Player\n      Minimization\n      Maximization\n\n      DRM[\"DRM library\"]\n      Controls[\"Minimize / fullscreen / PiP / landscape\"]\n      Offline[\"Offline playback\"]\n      Review[\"App Review\"]\n    end\n\n    Background[\"Background\"]\n    Play\n    RemoteControl[\"Remote Control\"]\n  end\n\n  Tests[\"XCUITest\"]\n\n  CocoaPods -->|Install| Player\n\n  CDN -->|\"(Background)Download\"| DRM\n  DRM -->|Decode| Player\n  Player --> Minimization\n  Player --> Maximization\n  Player --> Background\n  Background --> Play\n  Background --> RemoteControl\n\n  Server\n  AppStore\n\n  User -->|Choose| Course\n  Server --|Query| Course\n  Course --> Player\n  Player --> Controls\n  Offline --> Player\n\n  Review -->|Prompt| User\n\n  User -->|Rating| AppStore\n\n  User -->|VoidceOver| App\n\n  Tests --> App"
+  - id: real-training
+    name: "리얼트레이닝"
+    meta: "2018.06 – 2021.05 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "iOS app for situation-based English speaking practice. Learners watch native-speaker prompts, record their own speech, receive analysis/evaluation, and replay results; maintenance covered SNS login, recording/playback, Firebase integration, Safe Area adaptation, and production stabilization."
+      ko: "상황별 원어민 영어를 따라 말하고 녹음·분석·평가받는 iOS 학습 앱. SNS 로그인, 녹음·분석·재생, Firebase 연동, SafeArea 대응과 운영 안정화를 맡음."
+    role:
+      en: "iOS developer. Took over the app immediately after joining, fixed bugs and server-error cases without a dedicated planner, improved usability based on comments/feedback, handled Safe Area support, and made list UI changes near offboarding."
+      ko: "iOS 개발 담당. 입사 직후 프로젝트를 인수해 별도 기획자나 명확한 요구사항이 부족한 상태에서 버그 수정, 서버 오류 대응, 댓글/피드백 기반 편의성 개선, SafeArea 대응, 퇴사 직전 리스트 UI 수정까지 처리."
+    achievement:
+      en: "Stabilized a live learning app after takeover: reduced production friction through bug fixes, server-error handling, Safe Area adaptation, and user-feedback-driven UX improvements while keeping recording, analysis, playback, and SNS login flows operational."
+      ko: "인수 직후 운영 중인 학습 앱을 안정화: 버그 수정, 서버 오류 대응, SafeArea 대응, 사용자 피드백 기반 편의성 개선을 진행하며 녹음·분석·재생·SNS 로그인 흐름을 유지."
+    tech[5]: Swift,Firebase,Recording,Video,SafeArea
+    image: "/images/siwonschool/real-training/real-training1.png"
+    images[6]:
+      - "/images/siwonschool/real-training/real-training1.png"
+      - "/images/siwonschool/real-training/real-training2.png"
+      - "/images/siwonschool/real-training/real-training3.png"
+      - "/images/siwonschool/real-training/real-training4.png"
+      - "/images/siwonschool/real-training/real-training5.png"
+      - "/images/siwonschool/real-training/real-training6.png"
+    diagrams[1]:
+      - "flowchart LR\n  User[\"Learner\"]\n  Server\n\n  subgraph App\n    Login[\"login\"]\n    Video[\"Play Native speaker video\"]\n    Record[\"Speech recording\"]\n    Library\n  end\n\n  Firebase\n  Facebook\n  KakaoTalk\n\n  Server --> Video\n\n  Video -->|Replay| Video\n\n  User --> Login\n  Login --> Server\n  Login --> Firebase\n  Login --> Facebook\n  Login --> KakaoTalk\n\n  User --> Record\n  Record -->|Analyze| Library\n  Library -->|Result| User"
+  - id: victoeic-voca
+    name: "빅토익 보카"
+    meta: "2019.01 – 2021.05 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "iOS version of the Big TOEIC Voca vocabulary app — previously Android-only. Learners browse TOEIC word books, unlock content via in-app purchase, study with card-style UI, bookmark words, group vocabulary, and play MP3 audio with background playback and Remote Control support."
+      ko: "Android로만 존재하던 빅토익 보카 iOS 버전. 책 선택·인앱 결제·단어카드·북마크·단어장 그룹·MP3 다운로드·백그라운드 재생·Remote Control을 지원."
+    role:
+      en: "Sole iOS developer. Received a project where the spec, design, and existing Android app were all inconsistent, independently determined the development direction, proposed and implemented an in-app purchase model, and built all features from scratch including background audio playback and Card UI."
+      ko: "iOS 단독 개발. 기획서·디자인·기존 앱이 모두 불일치하는 상태에서 개발 방향을 직접 정립. 인앱 결제 모델 제안·구축, 백그라운드 음원 재생·Card UI 포함 전 기능 개발."
+    achievement:
+      en: "Delivered the first iOS version of an Android-only TOEIC vocabulary app, independently resolving spec/design inconsistencies to drive it to release, and transformed it from a book appendix into a standalone revenue service via in-app purchase."
+      ko: "Android 전용 TOEIC 단어장 부록 앱을 iOS로 독자 개발. 기획·디자인·앱 불일치 상황을 직접 해결해 출시로 이끌고, 인앱 결제 모델 도입으로 독립적인 수익 서비스로 전환."
+    tech[5]: Swift,AVFoundation,StoreKit,CocoaPods,CDN
+    image: "/images/siwonschool/victoeic-voca/victoeic-voca1.jpeg"
+    images[3]:
+      - "/images/siwonschool/victoeic-voca/victoeic-voca1.jpeg"
+      - "/images/siwonschool/victoeic-voca/victoeic-voca2.jpeg"
+      - "/images/siwonschool/victoeic-voca/victoeic-voca3.jpeg"
+    diagrams[1]:
+      - "flowchart LR\n  User[\"Learner\"]\n  AppStore[\"App Store\"]\n  CDN\n  Server\n  CocoaPods[\"Shared CocoaPods\\n(with 시원스쿨)\"]\n\n  subgraph iOS\n    subgraph App\n      Books[\"Book List\"]\n\n      subgraph Study[\"Study\"]\n        subgraph Card[\"Word Cards\"]\n          Audio\n        end\n        Bookmark[\"Bookmark\"]\n\n        Lecture\n      end\n\n      Player[\"Video Player\"]\n      Group[\"Vocab Group\"]\n    end\n\n    Background\n    BGPlay[\"Background Play\"]\n    Remote[\"Remote Control\"]\n  end\n\n  User --> Books\n  Server -->|REST API| Books\n  Books -->|In App Purchase| AppStore\n  AppStore -->|Unlock| Books\n  Books --> Study\n\n  CDN -->|Download MP3| Audio\n\n  Lecture --> Player\n\n  CocoaPods -->|Install| Player\n\n  Player --> Background\n  Background --> BGPlay\n  Background --> Remote\n\n  Audio --> Background\n\n  Bookmark --> Cards\n  Card -->|Add| Bookmark"
+  - id: korean-lecture
+    name: "React Native 선행 학습"
+    meta: "2019.04 – 2019.06 · Mobile · React Native"
+    tags[2]: platform:ios,lang:reactnative
+    desc:
+      en: "Proof-of-concept and internal R&D project to evaluate React Native for an upcoming Korean-language lecture app. Rebuilt Siwonschool's [Home] and [Free Lecture] screens in React Native, explored server communication and DRM player integration, and produced internal training documentation for the team."
+      ko: "한국어 강의 앱 신규 개발을 앞두고 React Native 기술 검증을 위한 사내 PoC 프로젝트. 시원스쿨 [홈]·[무료강의] 화면을 React Native로 재구현하고, 서버 통신·DRM 플레이어 연동을 탐색. 팀 내 교육 자료 작성·배포."
+    role:
+      en: "Self-directed R&D. Independently continued learning and prototyping after team momentum stalled, rebuilt existing screens to validate feasibility, and authored internal training docs."
+      ko: "자기주도 R&D. 팀 진행이 중단된 이후에도 독자적으로 학습·프로토타이핑을 지속. 기존 화면 재구현으로 가능성을 검증하고 내부 교육 자료 작성."
+    achievement:
+      en: "Independently drove a React Native PoC for a planned Korean lecture app after team-led momentum stalled — rebuilt two production screens, explored DRM integration, and delivered internal training docs that raised team readiness even though the project was ultimately cancelled."
+      ko: "팀 주도가 중단된 상황에서도 React Native PoC를 독자 완성. 실 서비스 화면 2개 재구현·DRM 연동 탐색·교육 자료 배포로 팀 역량에 기여. 프로젝트는 최종 취소."
+    tech[3]: "React Native",JavaScript,DRM
+    image: null
+    diagrams[1]:
+      - "flowchart LR\n  Server\n  NPM\n\n  subgraph App[\"React Native PoC\\nof 시원스쿨\"]\n    Home[\"Home Screen\"]\n    Free[\"Free Lecture Screen\"]\n    DRM[\"DRM Library\"]\n    Player[\"Video Player\"]\n  end\n\n  Team\n  Docs[\"Training Documentation\"]\n\n  Server -->|REST API| Home\n  Server -->|REST API| Free\n  Home --> DRM\n  Free --> DRM\n  DRM -->|Decode| Player\n  App -->|Export Experience| Docs\n  NPM -->|Install| Player\n  Docs --> Team"
+  - id: word-rocket
+    name: "단어 로켓 게임"
+    meta: "2019.07 – 2019.09 · Mobile · Unity"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Unity-based word rocket game and iOS integration PoC for Siwonschool. A spaceship auto-moves through space collecting alphabet letters in order to form words fetched from the server. Researched and successfully embedded Unity as a library inside the existing Siwonschool iOS app."
+      ko: "시원스쿨을 위한 Unity 기반 단어 로켓 게임 및 iOS 연동 PoC. 우주선이 자동 이동하며 서버에서 가져온 단어의 알파벳을 순서대로 수집. Unity를 기존 iOS 앱에 라이브러리로 내장하는 데 성공."
+    role:
+      en: "Self-directed R&D. Built the full Unity game, researched Unity-as-Library integration with iOS, successfully embedded it in the Siwonschool app, and produced internal training docs."
+      ko: "자기주도 R&D. Unity 게임 개발, iOS 라이브러리 내장 연구·성공, 교육 자료 작성."
+    achievement:
+      en: "Validated Unity-as-Library integration with an existing iOS app by building a word-collection rocket game in Unity and successfully embedding it in the Siwonschool app — then documented the process as internal training material."
+      ko: "Unity를 기존 iOS 앱에 라이브러리로 내장하는 가능성을 검증. 단어 로켓 게임을 직접 개발해 시원스쿨 앱 내장에 성공하고 교육 자료로 정리·배포."
+    tech[3]: Unity,Swift,"Unity as Library"
+    image: null
+    diagrams[1]:
+      - "flowchart LR\n  Server\n\n  subgraph Unity[\"Unity Game\"]\n    Word[\"Word Data\"]\n    Letters[\"Letters\"]\n    Rocket[\"Rocket (Auto Move)\"]\n    Touch[\"Touch Direction\"]\n    Collect[\"Letter Collection\"]\n  end\n\n  subgraph App\n    UnityLib[\"Unity as Library\"]\n  end\n\n  Docs[\"Training Documentation\"]\n  Team\n\n  Server -->|Random Word| Letters\n  Letters --> Collect\n  Rocket --> Touch\n  Rocket --> Collect\n  Unity -->|Embed| UnityLib\n  UnityLib -->|기반| Docs\n  Docs --> Team"
+  - id: lectureroom-b2b
+    name: "시원스쿨 B2B"
+    meta: "2019.08 – 2019.09 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "B2B variant of the Siwonschool lecture app for corporate users. Shares the full codebase via a common Xcode Workspace, with B2B-specific login and customer service contacts branched using Swift preprocessor macros and a separate Storyboard — minimizing duplication while keeping both apps maintainable."
+      ko: "시원스쿨 강의 앱의 기업 전용 B2B 버전. 동일 Xcode Workspace 내 공통 소스를 공유하고, Swift preprocessor와 별도 Storyboard로 기업 전용 로그인·연락처만 분기 처리."
+    role:
+      en: "Sole iOS developer. Designed the multi-target workspace structure, configured the multi-project Podfile, and implemented preprocessor-based branching for all B2B-specific screens."
+      ko: "iOS 단독 개발. 멀티 타겟 Workspace 구조 설계, 다중 프로젝트 Podfile 구성, preprocessor 분기 처리 구현."
+    achievement:
+      en: "Delivered a B2B white-label of the Siwonschool app by structuring shared code across a common Xcode Workspace, using Swift preprocessor branching and separate Storyboards to swap only B2B-specific login, server, and contact screens — zero duplication."
+      ko: "시원스쿨 앱을 공통 Xcode Workspace 구조로 공유하고 Swift preprocessor + 별도 Storyboard로 기업 전용 로그인·서버·연락처만 교체하는 B2B 버전 출시. 중복 개발 없음."
+    tech[4]: Swift,Xcode,"Preprocessor",CocoaPods
+    image: "/images/siwonschool/lectureroom-b2b/lectureroom-b2b1.jpeg"
+    images[2]:
+      - "/images/siwonschool/lectureroom-b2b/lectureroom-b2b1.jpeg"
+      - "/images/siwonschool/lectureroom-b2b/lectureroom-b2b2.jpeg"
+    diagrams[1]:
+      - "flowchart LR\n  subgraph Workspace[\"Xcode Workspace\"]\n    Preprocessor{\"#if B2B?\"}\n\n    subgraph B2CTarget[\"B2C Target\"]\n      subgraph B2CLogin[\"B2C Login\"]\n        B2CID[\"User ID\"]\n        B2CContact[\"Customer Center\"]\n      end\n    end\n\n    subgraph B2BTarget[\"B2B Target\"]\n      subgraph B2BLogin[\"B2B Login\"]\n        B2BID[\"User ID\"]\n        B2BCorpID[\"Corp ID\"]\n        B2BContact[\"Corp Customer Center\"]\n        B2BStory[\"B2B Storyboard\"]\n      end\n    end\n  end\n\n  B2BServer[\"B2B 서버\"]\n  subgraph CocoaPods[\"Podfile\"]\n    CB2B[\"B2B\"]\n    CNormal[\"B2C\"]\n  end\n\n  Preprocessor -->|Y| B2BTarget\n  Preprocessor -->|N| B2CTarget\n  CocoaPods --> Workspace\n  B2BServer --> B2BLogin"
+  - id: siwon-alimi
+    name: "시원알리미"
+    meta: "2019.05 – 2019.06 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Internal iOS app for Siwonschool intranet notifications. Solved the problem of missing important alerts due to frequent intranet logouts — detects login state via WebView JavaScript injection and delivers personalized push notifications through Firebase topic subscriptions without additional server development."
+      ko: "시원스쿨 인트라넷 알림을 위한 사내 iOS 앱. 잦은 로그아웃으로 알림을 놓치는 문제를 해결. WebView JavaScript injection으로 로그인 감지·수신함 자동 이동, Firebase topic 구독으로 별도 토큰 저장 없이 개인화 푸시 전달."
+    role:
+      en: "Sole developer. Identified the pain point, proposed the solution architecture (JS injection + Firebase topic), and built the full app."
+      ko: "단독 개발. 문제를 직접 발굴하고 해결 방식(JS injection + Firebase topic)을 제안·설계·구현."
+    achievement:
+      en: "Solved intranet notification failures from frequent logouts by building an iOS app that uses WebView JavaScript injection for login detection and Firebase topic-based push — zero extra server development required."
+      ko: "인트라넷 잦은 로그아웃으로 인한 알림 누락 문제를 iOS 앱으로 해결. WebView JS injection으로 로그인 감지·자동 이동, Firebase topic 구독으로 추가 서버 개발 없이 개인화 푸시 구현."
+    tech[4]: Swift,WebView,"JavaScript Injection",Firebase
+    image: null
+    diagrams[1]:
+      - "flowchart LR\n  User[\"Employee\"]\n  Server[\"Intranet Server\"]\n\n  subgraph App\n    subgraph WebView\n      Intranet[\"Intranet\"]\n    end\n    JSInject[\"JavaScript Injection\"]\n    Inbox[\"Move to InBox\"]\n  end\n\n  Firebase[\"Firebase\"]\n\n  User -->|Run| App\n  WebView -->|Inject| JSInject\n  JSInject -->|\"Detect Login\"| Inbox\n  JSInject -->|\"Register ID as topic\"| Firebase\n  Firebase -->|\"Personal Notification\"| User\n  Server -->|\"Send Notification to topics\"| Firebase\n  Inbox --> Intranet"
+  - id: siwon-pen
+    name: "시원스쿨펜"
+    meta: "2019.11 – 2021.05 · Mobile · React Native"
+    tags[2]: platform:ios,lang:reactnative
+    desc:
+      en: "Companion app for 시원스쿨's smart-pen hardware — the pen scans hidden patterns in textbooks to trigger audio playback, and this app provides word cards, lecture player, quiz, and my-vocabulary. I contributed the initial React Native lecture-player code, then owned post-launch maintenance: replaced ScrollView with FlatList for word cards, introduced Appium regression testing, and wired Firebase Analytics."
+      ko: "시원스쿨 자동암기펜 전용 앱. 펜이 교재의 숨겨진 패턴을 인식해 음원을 재생하는 제품에 연동되며, 단어 카드·강의 재생·퀴즈·내단어장 기능 제공. RN 강의 재생 코드를 기여해 앱 출시 기반을 만들고, ScrollView→FlatList 교체로 성능 개선, Appium 자동화 테스트 도입, Firebase Analytics 연동 등 유지보수 담당."
+    role:
+      en: "React Native code contributor → post-launch maintenance developer."
+      ko: "React Native 코드 기여 → 출시 후 유지보수 담당."
+    achievement:
+      en: "Delivered the initial React Native lecture-player code — built during the prior 선행 학습 project — to the 시원스쿨펜 team, which shipped as the app's core feature. Post-launch, replaced ScrollView with FlatList in word cards to eliminate scroll jank, removed the confirm-tap from quiz flow for instant submission, redesigned my-vocabulary with inline edit/delete, introduced Appium regression coverage, and wired Firebase Analytics to track study-flow patterns."
+      ko: "선행 학습 프로젝트에서 구현한 RN 강의 재생 코드를 시원스쿨펜 팀에 제공해 앱의 핵심 기능으로 출시. 출시 후 ScrollView→FlatList 교체로 단어 카드 스크롤 성능 개선, 퀴즈 즉시 제출로 학습 흐름 개선, 내단어장 인라인 편집/삭제 재설계, Appium 회귀 테스트 도입, Firebase Analytics 연동."
+    tech[3]: "React Native",Firebase,Appium
+    image: "/images/siwonschool/siwon-pen/siwon-pen1.png"
+    images[13]:
+      - "/images/siwonschool/siwon-pen/siwon-pen1.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen2.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen3.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen4.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen5.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen6.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen7.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen8.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen9.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen10.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen11.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen12.png"
+      - "/images/siwonschool/siwon-pen/siwon-pen13.png"
+    diagrams[1]:
+      - "flowchart LR\n  subgraph App\n    WordCard[\"Word Cards (FlatList)\"]\n    Lecture[\"Lecture Player\"]\n    Quiz[\"Quiz\"]\n    MyWords[\"My Vocabulary\"]\n  end\n\n  Server\n  CDN\n  Firebase[\"Firebase Analytics\"]\n\n  Server -->|Content| WordCard\n  Server -->|Video| Lecture\n  CDN -->|Audio| WordCard\n  WordCard --> Quiz\n  Quiz --> MyWords\n  App -->|Events| Firebase"
+  - id: amgigorae
+    name: "암기고래 iOS"
+    meta: "2019.11 – 2021.05 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Vocabulary memorization app — inherited maintenance from a departing team lead and worked through a backlog of bugs and feature requests in spare time. Migrated Objective-C modules to Swift, replaced the legacy Excel library, hardened JSON parsing, and added local push notifications without server changes."
+      ko: "단어 암기 앱. 팀장 퇴사 후 인수해 남는 시간에 버그·편의 기능 작업. ObjC→Swift 변환, 레거시 Excel 라이브러리 교체, JSON NSNull 크래시 수정, 서버 변경 없는 로컬 푸시 추가."
+    role:
+      en: "Maintenance developer — inherited sole ownership from a departing team lead."
+      ko: "유지보수 담당 — 퇴사한 팀장으로부터 단독 소유권 인수."
+    achievement:
+      en: "Inherited a solo-maintained codebase when the team lead left. Migrated Objective-C modules to Swift to reduce future maintenance overhead; replaced the legacy XlsxReaderWriter Excel library to resolve build warnings; added NSNull safety across JSON parsing to eliminate server-response crashes; implemented local push notifications for study reminders and enrollment expiry without any server changes; added audio playback speed control, word-card navigation tracks, pronunciation search filter, new learning language support, landscape layout, and small-device (SE) fixes."
+      ko: "팀장 퇴사 후 단독 유지보수 코드베이스 인수. ObjC→Swift 변환으로 유지보수 진입 비용 절감; XlsxReaderWriter 교체로 빌드 경고 해소; JSON NSNull 처리 전면 추가로 서버 응답 파싱 크래시 제거; 서버 변경 없이 앱 내 스케줄링으로 리마인드·수강만료 로컬 푸시 구현; 음원 재생속도 조절, 단어 카드 탐색 트랙, 발음 검색 조건, 신규 학습 언어, Landscape 대응, 소형기기 레이아웃 수정."
+    tech[4]: Swift,"Storyboard / Auto Layout",NotificationCenter,XlsxReaderWriter
+    image: "/images/siwonschool/amgigorae/amgigorae1.jpeg"
+    images[5]:
+      - "/images/siwonschool/amgigorae/amgigorae1.jpeg"
+      - "/images/siwonschool/amgigorae/amgigorae2.jpeg"
+      - "/images/siwonschool/amgigorae/amgigorae3.jpeg"
+      - "/images/siwonschool/amgigorae/amgigorae4.jpeg"
+      - "/images/siwonschool/amgigorae/amgigorae5.jpeg"
+    diagrams[1]:
+      - "flowchart LR\n\n\tsubgraph iOS\n\t  subgraph App\n\t    Excel[\"Excel File\"]\n\t    Words[\"Word List\"]\n\t    Player\n\t    Reminder\n\t  end\n\t  \n\t  UserNotification[\"User Notification\"]\n  end\n\n\tExcel -->|Upload| Server\n  Push[\"Local Push\"]\n\n  Server -->|Download| Words\n  Excel -->|Vocabulary| Words\n  Words -->|Audio| Player\n  Reminder -->|Register Schedule| UserNotification\n  UserNotification -->|Notification| App"
+  - id: english-adventure
+    name: "영어대모험"
+    meta: "2020.04 – 2020.05 · Mobile · Unity"
+    tags[2]: platform:ios,lang:unity
+    desc:
+      en: "Internal side-project Unity card-flip game to explore gamified English-learning content. Applied Unity skills the team had studied under the previous team lead — used official 영어대모험 textbook characters, built stage progression, and shipped to TestFlight in two months."
+      ko: "게임 접목 영어 학습 콘텐츠 가능성 검증을 위한 내부 사이드 프로젝트. 이전 팀장 주도로 공부했던 Unity를 실전에 적용, 시원스쿨 '영어대모험' 교재 캐릭터 활용, 단어 카드 플립 게임·단계 전환 구현, 2개월 만에 TestFlight 배포."
+    role:
+      en: "Solo developer — built and demoed the full Unity prototype in two months as part of a team-wide game experiment."
+      ko: "단독 개발 — 팀 전체 게임 실험의 일환으로 2개월 안에 Unity 프로토타입 완성·시연."
+    achievement:
+      en: "Turned team-wide Unity study into a shipped prototype in two months — the first practical output of the Unity investment. Sourced and edited official 영어대모험 brand assets from the business team solo, without a designer. Demoed to the business team and got a positive reception for the gamified learning concept."
+      ko: "팀이 학습했던 Unity를 2개월 만에 TestFlight 배포 가능한 프로토타입으로 결실. 디자이너 없이 사업부 교재 캐릭터·표지 이미지를 직접 편집·적용. 게임 접목 학습 콘텐츠 상품 가능성을 사업부에 시연하고 긍정적 반응 확인."
+    tech[3]: Unity,C#,"Unity Audio"
+    image: "/images/siwonschool/english-adventure/english-adventure1.jpeg"
+    images[4]:
+      - "/images/siwonschool/english-adventure/english-adventure1.jpeg"
+      - "/images/siwonschool/english-adventure/english-adventure2.jpeg"
+      - "/images/siwonschool/english-adventure/english-adventure3.jpeg"
+      - "/images/siwonschool/english-adventure/english-adventure4.jpeg"
+    diagrams[1]:
+      - "flowchart LR\n  subgraph App\n    Intro[\"Intro Video\"]\n    subgraph Stage\n\t    Assets[\"Character Assets\"]\n\t    Words[\"Word - Image Pairs\"]\n\t    Cards[\"Cards\"]\n    end\n    Complete[\"Stage Complete\"]\n  end\n\n  Demo\n\n\tIntro --> Stage\n  Words -->|Generate| Cards\n  Cards -->|Flip| Cards\n  \n  Stage -->|All matched| Complete\n  \n  Complete -->|Next Stage| Stage\n  App -->|TestFlight| Demo"
+  - id: siwon-intra
+    name: "시원인트라"
+    meta: "2020.06 – 2021.05 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Native iOS intranet app built with a designer — used JavaScript Injection to handle login authentication through the company's WebView-based intranet, which normally requires SMS auth on unregistered devices. Home screen was completed but the project halted when server-side development stalled."
+      ko: "디자이너와 협업한 사내 인트라넷 iOS 앱. 미등록 기기에서 문자인증을 요구하는 인트라넷 웹페이지에 JavaScript Injection을 적용해 앱 내 로그인 처리 구현. 홈 화면까지 완성했으나 서버 개발 미진행으로 중단."
+    role:
+      en: "iOS developer — built the WebView login layer and native home screen with a designer."
+      ko: "iOS 개발 담당 — WebView 로그인 레이어 및 디자이너와 협업한 네이티브 홈 화면 구현."
+    achievement:
+      en: "Implemented JavaScript Injection to bypass the intranet's SMS authentication gate — the site requires SMS auth on any non-registered device, so JS was injected into the WebView to handle the login flow without triggering the SMS step. Collaborated with a designer to build the native home screen."
+      ko: "등록된 기기가 아니면 문자인증을 요구하는 인트라넷 웹페이지에 JavaScript Injection을 적용해 SMS 단계 없이 앱에서 로그인 처리 구현. 디자이너와 협업해 네이티브 홈 화면 완성."
+    tech[3]: Swift,WebView,"JavaScript Injection"
+    image: "/images/siwonschool/siwon-intra/siwon-intra1.jpeg"
+    images[2]:
+      - "/images/siwonschool/siwon-intra/siwon-intra1.jpeg"
+      - "/images/siwonschool/siwon-intra/siwon-intra2.jpeg"
+    diagrams[1]:
+      - "flowchart LR\n  subgraph App\n\t  Login[\"Login Screen\"]\n    Home[\"Home Screen\"]\n    \n    subgraph Webview\n      Intranet[\"Intranet Web\"]\n    end\n  end\n\n  IntranetServer[\"Intranet Server\"]\n\n\tLogin -->|Javascript Injection| Webview\n\tLogin -->|Bypass SMS| Home\n  Home --> Webview\n  IntranetServer --> Intranet"
+  - id: next-class
+    name: "Next-Class"
+    meta: "2020.08 – 2021.04 · Mobile · React Native / Expo"
+    tags[2]: platform:ios,lang:reactnative
+    desc:
+      en: "Global lecture platform for teaching Korean to non-native speakers — chosen Expo to support both React Native mobile and web from a single codebase. Implemented login/signup UI before the project was cancelled."
+      ko: "외국인 대상 한국어 글로벌 강의 플랫폼. 모바일 웹 동시 대응 요건에 맞춰 Expo(React Native + Web) 선택. 로그인·회원가입 UI 구현 후 프로젝트 중단."
+    role:
+      en: "Solo developer — set up the Expo environment and built login/signup screens."
+      ko: "단독 개발 — Expo 개발환경 구축 및 로그인·회원가입 화면 구현."
+    achievement:
+      en: "Chose Expo over bare React Native to satisfy a possible web requirement — one codebase targeting both iOS/Android and mobile web. Set up the team's development environment and implemented login/signup UI from the design spec before the project was cancelled."
+      ko: "모바일 웹 대응 가능성에 대비해 bare RN 대신 Expo 선택 — iOS/Android + 웹을 단일 코드베이스로 지원. 개발환경 구성 및 기획서 기반 로그인·회원가입 UI 구현 후 프로젝트 중단."
+    tech[3]: Expo,"React Native",JavaScript
+    image: null
+    diagrams[1]:
+      - "flowchart LR\n  subgraph Expo[\"Next-Class (Expo)\"]\n    Login[\"Login / Sign Up\"]\n    Lectures[\"Lecture Platform\\n(planned)\"]\n  end\n\n  iOS\n  Web[\"Mobile Web\"]\n\n  Expo -->|Native| iOS\n  Expo -->|Web| Web\n  Login -.->|cancelled| Lectures"

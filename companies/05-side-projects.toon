@@ -1,0 +1,50 @@
+id: side-projects
+name: "Side Projects"
+when: "2019 —"
+role:
+  en: "Personal"
+  ko: "개인 프로젝트"
+cur: false
+projects[2]:
+  - id: symlink-maker
+    name: "심볼릭 링크 생성기"
+    meta: "2020.10 – 2020.11 · macOS · Swift"
+    tags[2]: platform:macos,lang:swift
+    desc:
+      en: "macOS Finder extension that adds a right-click 'Create Symbolic Link' menu item — built because ln -s argument order is confusing. Supports multi-file selection and custom link names."
+      ko: "ln -s 문법이 헷갈려 만든 macOS Finder 확장 앱. 우클릭 메뉴로 심볼릭 링크를 생성하며, 다중 파일 선택과 사용자 지정 링크 이름을 지원."
+    role:
+      en: "Solo developer."
+      ko: "단독 개발."
+    achievement:
+      en: "Implemented a Finder Sync Extension target — a sandboxed App Extension process that injects a right-click menu item into Finder and communicates with the main app via XPC to perform symlink creation outside the sandbox. Handled multi-file selection by batching the operation across all selected files. Added a rename flow so users can specify a custom link name at creation time, solving the core UX problem that ln -s argument order is unintuitive."
+      ko: "Finder Sync Extension 타겟으로 Finder에 우클릭 메뉴 항목 주입 — 샌드박스 App Extension 프로세스가 XPC로 메인 앱과 통신해 샌드박스 외부에서 심볼릭 링크 생성. 다중 파일 선택 시 일괄 처리. 링크 이름 직접 지정 흐름 추가 — ln -s 인자 순서 혼란 문제를 UI로 해결."
+    tech[3]: Swift,"Finder Extension",macOS
+    image: "/images/side-projects/symlink-maker/symlink-maker1.png"
+    images[1]:
+      - "/images/side-projects/symlink-maker/symlink-maker1.png"
+    diagrams[1]:
+      - "flowchart LR\n  User\n\n  subgraph Finder\n    Files[\"Selected Files\"]\n    ContextMenu[\"Context Menu\\n(right-click)\"]\n  end\n\n  subgraph Extension[\"Finder Sync Extension\"]\n    MenuAction[\"Menu Action\"]\n    RenameDialog[\"Rename Dialog\"]\n  end\n\n  Main[\"Main App\\n(XPC Handler)\"]\n  FileSystem[\"File System\\n(symlink)\"]\n\n  User -->|Select + right-click| Files\n  Files --> ContextMenu\n  ContextMenu --> MenuAction\n  MenuAction --> RenameDialog\n  RenameDialog -->|XPC| Main\n  Main -->|ln -s| FileSystem"
+  - id: loa-helper
+    name: "로아 도우미"
+    meta: "2019.01 – 2019.02 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Personal Lost Ark item-level simulator built solo after a friend who promised to handle the server never followed through. Scraped the item dictionary site, bundled base data as Xlsx, and stored dynamic data in Core Data — no server needed."
+      ko: "친구가 서버를 약속했지만 혼자 하게 된 로스트아크 아이템 레벨 시뮬레이터. 아이템 사전 사이트 크롤링으로 데이터 수집, 기본 데이터 Xlsx 번들링 + 동적 데이터 Core Data 저장으로 서버 없이 완성."
+    role:
+      en: "Solo developer."
+      ko: "단독 개발."
+    achievement:
+      en: "Scraped the Lost Ark item dictionary site solo — analyzed the HTML structure and implemented web crawling to collect item data without a server. Bundled base class and item data as Xlsx and stored dynamic user data in Core Data, eliminating the need for any backend. Built a full item-level simulator: character creation, item search with grade adjustment, and equip-to-level verification."
+      ko: "아이템 사전 사이트 HTML 구조를 직접 분석해 크롤링 구현, 서버 없이 데이터 수집. 기본 클래스·아이템 데이터는 Xlsx로 번들링, 동적 데이터는 Core Data로 로컬 저장. 캐릭터 생성, 아이템 검색·등급 조정, 장착 후 레벨 확인 시뮬레이터 완성."
+    tech[3]: Swift,"Core Data",Xlsx
+    image: "/images/side-projects/loa-helper/loa-helper1.png"
+    images[5]:
+      - "/images/side-projects/loa-helper/loa-helper1.png"
+      - "/images/side-projects/loa-helper/loa-helper2.png"
+      - "/images/side-projects/loa-helper/loa-helper3.png"
+      - "/images/side-projects/loa-helper/loa-helper4.png"
+      - "/images/side-projects/loa-helper/loa-helper5.png"
+    diagrams[1]:
+      - "flowchart LR\n  subgraph App\n    Characters\n    Character\n    ItemSearch[\"Item Search\"]\n    ItemLevel[\"Item Level Average\"]\n    Inventory\n    CoreData[\"Core Data\"]\n  end\n\n  Website[\"Item Dictionary\\n(Web)\"]\n  Xlsx[\"Xlsx\"]\n\n  Xlsx -->|Bundle| Characters\n  Characters -->|Select| Character\n  Character --> Inventory\n  Inventory -->|Search| ItemSearch\n  Website -->|Crawling| ItemSearch\n  ItemSearch -->|Select| Inventory\n  Inventory --> ItemLevel\n  Character -->|Save| CoreData"

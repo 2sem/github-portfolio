@@ -1,0 +1,233 @@
+id: indie
+name: "Solo iOS Developer"
+when: "2017 — 2018"
+role:
+  en: "Plan · Design · Development"
+  ko: "기획 · 디자인 · 개발"
+cur: false
+projects[9]:
+  - id: shownote-indie
+    name: "ShowNote 유지보수"
+    meta: "2017.02 – 2018.07 · Mobile · Swift"
+    tags[2]: platform:ipados,lang:swift
+    desc:
+      en: "Continued maintenance of the ShowNote iPad presentation app while the company sought investment — bug fixes and feature improvements carried on even after I had left."
+      ko: "투자 유치를 진행하는 동안 ShowNote iPad 프레젠테이션 앱의 유지보수를 지속 — 퇴사 이후에도 버그 수정과 기능 개선을 지원."
+    role:
+      en: "Sole developer. Kept fixing and improving the app even after leaving (they came to my neighborhood to ask). Investment was decided a month after I'd joined Siwonschool, but I declined to rejoin."
+      ko: "단독 개발. 퇴사 후에도 계속 수정·개선을 맡음(동네까지 찾아와 요청). 시원스쿨 입사 한 달 후 투자가 결정되었지만 합류는 거절."
+    achievement:
+      en: "The app I built and maintained went on to attract a ₩1 billion investment."
+      ko: "직접 만들고 유지보수한 앱이 10억 원 투자 유치에 성공."
+    tech[1]: Swift
+    image: "/images/credif/shownote/shownote1.jpeg"
+    images[3]:
+      - "/images/credif/shownote/shownote1.jpeg"
+      - "/images/credif/shownote/shownote2.jpeg"
+      - "/images/credif/shownote/shownote4.jpeg"
+    diagrams[1]:
+      - "flowchart LR\n  subgraph Cloud[\"Cloud storage\"]\n    GDrive[\"Google Drive\"]\n    Dropbox\n  end\n\n  subgraph App\n    subgraph Presentation\n      subgraph Page\n        Background\n        Trigger\n        Object\n        Media\n      end\n    end\n  end\n\n  User\n\n  Cloud -->|PDF| Background\n  Cloud -->|Image| Background\n  Cloud -->|Effect| Media\n  Cloud -->|Image| Object\n  Page --> Presentation\n  User -->|Touch| Trigger\n  Trigger -->|Present| Object\n  Trigger -->|Play| Media"
+  - id: letscheers
+    name: "술마셔 건배사"
+    meta: "2017.01 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "A collection app of Korean drinking toasts (건배사) for year-end/new-year gatherings and company dinners. Browse by category, favorite the ones you like, and get a random suggestion."
+      ko: "연말·연초 모임이나 회식 등 각종 술자리에서 쓰는 건배사 모음 앱. 카테고리별로 둘러보고, 즐겨찾기하고, 랜덤 추천을 받을 수 있음."
+    role:
+      en: "Sole developer. Built the iOS version from an Excel file provided by an Android developer I knew — bundling it as default data and storing favorites in Core Data."
+      ko: "단독 개발. 아는 안드로이드 개발자가 만든 앱의 Excel 파일을 받아 iOS 버전으로 구현 — Excel을 기본 데이터로 번들하고 즐겨찾기는 Core Data에 저장."
+    achievement:
+      en: "Shipped a solo iOS app by repurposing an Android app's Excel dataset as bundled default data, with Core Data for favorites and a random-suggestion feature."
+      ko: "안드로이드 앱의 Excel 데이터를 기본 데이터로 재활용해 iOS 앱을 단독 출시 — 즐겨찾기는 Core Data로 저장하고 랜덤 추천 기능을 구현."
+    tech[3]: Swift,CoreData,Excel
+    image: "/images/indie/letscheers/letscheer1.png"
+    images[4]:
+      - "/images/indie/letscheers/letscheer1.png"
+      - "/images/indie/letscheers/letscheer2.png"
+      - "/images/indie/letscheers/letscheer3.png"
+      - "/images/indie/letscheers/letscheer4.png"
+    diagrams[1]:
+      - "flowchart LR\n  subgraph App[\"App\"]\n    Xlsx[\"Excel (default data)\"]\n    List[\"Category / toast list\"]\n    Random[\"Random suggestion\"]\n    Fav[\"Favorites\"]\n    DB[\"Core Data(Sqlite)\"]\n  end\n\n  Xlsx -->|\"Bundled default\"| DB\n  DB --> List\n  DB --> Random\n  Fav <--> DB"
+  - id: related-stocks-ios
+    name: "관련주식검색기 iOS"
+    meta: "2017.01 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "iOS app for finding stocks related to a selected theme or keyword. It shows recommended search terms, favorite stocks, synced stock prices, and push notifications for fast-rising stocks and recommended themes."
+      ko: "선택하거나 입력한 테마·키워드와 관련된 주식 종목을 나열하는 iOS 앱. 추천 검색어, 나의 관심주, 종목별 주가 동기화, 실시간 급등주와 추천 테마 푸시 알림을 제공."
+    role:
+      en: "Sole iOS developer. Built the Swift app with RxSwift/RxCocoa, Core Data favorites, Kakao sharing, and integration with the Node.js/MySQL/GNUBoard backend originally built for the related-stock data."
+      ko: "iOS 단독 개발. RxSwift/RxCocoa 기반 Swift 앱, Core Data 관심주 저장, Kakao 공유, 관련주 데이터 제공을 위해 만들었던 Node.js/MySQL/GNUBoard 백엔드 연동을 구현."
+    achievement:
+      en: "Proposed push notifications for fast-rising and recommended stocks to increase repeat app usage, then added the supporting server/app flow; the Android version's revenue reportedly doubled after the push feature, reaching about ₩3 million per month."
+      ko: "앱 재방문을 늘리기 위해 급등주·추천주 푸시 기능을 제안하고 서버/앱 흐름을 추가. 해당 푸시 기능 적용 후 안드로이드 기준 수익이 약 2배 증가해 월 300만 원 수준까지 올랐다고 전달받음."
+    tech[6]: Swift,RxSwift,CoreData,KakaoSDK,FCM,"Node.js"
+    image: "/images/indie/related-stocks/related-stocks1.png"
+    images[6]:
+      - "/images/indie/related-stocks/related-stocks1.png"
+      - "/images/indie/related-stocks/related-stocks2.png"
+      - "/images/indie/related-stocks/related-stocks3.png"
+      - "/images/indie/related-stocks/related-stocks4.png"
+      - "/images/indie/related-stocks/related-stocks5.png"
+      - "/images/indie/related-stocks/related-stocks6.png"
+    links[1]:
+      - label: "GitHub — 2sem/relatedstocks-app-ios"
+        href: "https://github.com/2sem/relatedstocks-app-ios"
+    diagrams[1]:
+      - "flowchart LR\n  Developer[\"App developer\"]\n  App\n\n  subgraph Windows\n    subgraph Board[\"GNUBoard\"]\n      Web\n    end\n\n    subgraph DB\n      subgraph PostTable[\"Post title = keyword\"]\n        CommentTable[\"Comments = stocks related to keyword\"]\n      end\n    end\n\n    subgraph Server[\"App Server\"]\n      REST[\"REST API\"]\n    end\n  end\n\n  Firebase\n  APNS\n  UserApp[\"Other User's App\"]\n\n  Developer -->|Post stock item as comment| Web\n  Board -->|Post| DB\n  Query --> REST\n  REST -->|Query| DB\n  App -->|Request by keyword| Server\n  Server -->|Related /\n  recommended stocks| App\n\n  App -->|Register| Firebase\n  Developer -->|Send Notification| Firebase\n  Firebase --> APNS\n  APNS -->|Notification| UserApp"
+  - id: wherewego
+    name: "우리어디가"
+    meta: "2017.05 · Mobile · Swift"
+    tags[3]: platform:ios,lang:swift,framework:swiftui
+    desc:
+      en: "Location-based tourism guide built on Korea's public TourAPI 3.0. From a chosen location and radius it surfaces nearby attractions, restaurants, cafes and lodging by category, with details, map directions, and tourism info translated into 10 languages; KakaoTalk sharing built in."
+      ko: "한국관광공사 공공데이터(TourAPI 3.0) 기반 위치 관광 가이드. 설정한 위치와 반경 내의 관광지·맛집·카페·숙소를 카테고리별로 보여주고, 지도에서 상세 정보와 길찾기를 제공하며 10개 국어로 번역된 관광 정보를 제공. 카카오톡 공유 지원."
+    role:
+      en: "Sole developer — design to App Store. Built the SwiftUI app (MVVM) on CoreLocation/MapKit and the public TourAPI 3.0, integrated KakaoTalk sharing and Google AdMob, and went through the public-data application/integration process firsthand."
+      ko: "단독 개발 — 디자인부터 앱스토어 출시까지. CoreLocation/MapKit과 공공 TourAPI 3.0 위에 SwiftUI(MVVM) 앱을 구현하고, 카카오톡 공유와 Google AdMob을 연동했으며, 공공데이터 신청·연동 절차를 직접 수행."
+    achievement:
+      en: "Gained hands-on experience applying for and integrating Korean government open data (TourAPI 3.0), shipping a solo SwiftUI app that turns it into a category-based, multi-language nearby-tourism guide with map directions and KakaoTalk sharing."
+      ko: "공공데이터(TourAPI 3.0) 신청·연동을 직접 경험하고, 이를 카테고리별·다국어 주변 관광 가이드(지도 길찾기·카카오톡 공유 포함)로 만든 SwiftUI 앱을 단독 출시."
+    tech[6]: Swift,SwiftUI,MapKit,CoreLocation,"Tour API",AdMob
+    image: "/images/indie/wherewego/wherewego2.png"
+    images[6]:
+      - "/images/indie/wherewego/wherewego2.png"
+      - "/images/indie/wherewego/wherewego1.png"
+      - "/images/indie/wherewego/wherewego3.png"
+      - "/images/indie/wherewego/wherewego4.png"
+      - "/images/indie/wherewego/wherewego5.png"
+      - "/images/indie/wherewego/wherewego6.png"
+    links[1]:
+      - label: "GitHub — 2sem/wherewego"
+        href: "https://github.com/2sem/wherewego"
+    diagrams[1]:
+      - "flowchart LR\n  TourAPI[\"TourAPI 3.0 (public data)\"]\n\n  subgraph iOS\n    Loc[\"Core Location\"]\n    subgraph App\n      REST[\"REST API\"]\n      List[\"Place List\"]\n      Detail[\"Place Detail\"]\n      Cat[\"Category filter\"]\n      Map[\"Google Maps\"]\n      Favorites[\"Favorite List\"]\n      Share[\"KakaoTalk Framework\"]\n      DB[\"Core Data\"]\n    end\n  end\n\n  KakaoTalk[\"KakaoTalk Server\"]\n  User[\"Other User\"]\n\n  Loc --> REST\n  Cat -->|Set Category| REST\n  Map -->|Set Location| REST\n  REST -->|Query Places| TourAPI\n  TourAPI --> List\n  List --> Detail\n  Detail -->|Share| Share\n  Share --> KakaoTalk\n  KakaoTalk -->|Notification| User\n  Detail -->|Register| Favorites\n  Favorites --> DB"
+  - id: sendadv
+    name: "보내봐 단체문자"
+    meta: "2017.02 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Group-SMS app that filters contacts by company / department / position to send bulk messages. You define recipient-generation rules, enable just the ones you want, auto-generate condition lists, and extract only mobile numbers from contacts."
+      ko: "연락처를 회사·부서·직위로 필터링해 단체 문자를 보내는 앱. 수신자 생성 규칙을 정의하고 원하는 규칙만 활성화하며, 조건 목록을 자동 생성하고 연락처에서 모바일 번호만 추출."
+    role:
+      en: "Sole developer of the iOS version (also contributed to the idea on the Android side). Built rule-based recipient generation over the iOS Contacts framework with Core Data, auto-generating condition lists and extracting mobile-only numbers for sending."
+      ko: "iOS 버전 단독 개발(안드로이드 버전 기획에도 참여). iOS Contacts 프레임워크와 Core Data로 규칙 기반 수신자 생성을 구현하고, 조건 목록 자동 생성과 모바일 번호만 추출하는 발송 흐름을 구성."
+    achievement:
+      en: "Turned manual group-texting into a rule-driven flow: users compose reusable recipient rules (by company / department / position) that auto-generate condition lists and pull mobile-only numbers from Contacts, then toggle which rules apply per send."
+      ko: "수동 단체 문자를 규칙 기반 흐름으로 전환: 회사·부서·직위 기준의 재사용 가능한 수신자 규칙을 만들어 조건 목록을 자동 생성하고 연락처에서 모바일 번호만 추출하며, 발송마다 적용할 규칙을 켜고 끌 수 있게 함."
+    tech[4]: Swift,Contacts,CoreData,MessageUI
+    image: "/images/indie/sendadv/sendadv1.png"
+    images[4]:
+      - "/images/indie/sendadv/sendadv1.png"
+      - "/images/indie/sendadv/sendadv2.png"
+      - "/images/indie/sendadv/sendadv3.png"
+      - "/images/indie/sendadv/sendadv4.png"
+    links[1]:
+      - label: "GitHub — 2sem/sendadv-ios"
+        href: "https://github.com/2sem/sendadv-ios"
+    diagrams[1]:
+      - "flowchart LR\n  subgraph iOS\n    subgraph App\n      Rules[\"Rules \n(company / dept / position)\"]\n      List[\"Recipient List\"]\n      DB[\"Core Data\"]\n    end\n\n    Contacts\n  end\n\n  User1\n  User2\n  Users\n\n  Contacts -->|Mobile Numbers| Rules\n  Rules <--> DB\n  Rules -->|Generate| List\n  List -->|Group SMS| User1\n  List -->|Group SMS| User2\n  List -->|Group SMS| Users"
+  - id: talktrans
+    name: "말해봐 번역기"
+    meta: "2017.01 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Korean ↔ foreign-language translator that calls Naver Papago. Pick source and target languages, flip the result screen to show the other person face-to-face, and swap source/target with one tap."
+      ko: "네이버 파파고를 호출해 번역하는 한국어 ↔ 외국어 번역기. 원문/번역 언어를 선택하고, 번역 결과 화면을 뒤집어 마주 본 상대에게 보여주며, 원문/번역 언어를 한 번에 맞바꿀 수 있음."
+    role:
+      en: "Sole developer of the iOS version (contributed ideas like banner rotation on the Android side). Integrated the Naver Papago API through a CocoaPods wrapper and used Firebase Remote Config to drive theming."
+      ko: "iOS 버전 단독 개발(안드로이드 버전엔 배너 회전 등 아이디어로 참여). NaverPapago CocoaPods로 파파고 API를 연동하고, Firebase Remote Config로 테마를 제어."
+    achievement:
+      en: "Built a translator on the Naver Papago API with a flip-the-screen result view for face-to-face conversation and one-tap source/target swap, and drove the app's theme remotely via Firebase Remote Config."
+      ko: "네이버 파파고 API 기반 번역기를 구현하고, 마주 보고 대화할 수 있는 결과 화면 뒤집기와 원문/번역 한 번에 맞바꾸기를 제공; Firebase Remote Config로 앱 테마를 원격 제어."
+    tech[4]: Swift,"Papago API","Firebase Remote Config",CocoaPods
+    image: "/images/indie/talktrans/talktrans1.png"
+    images[4]:
+      - "/images/indie/talktrans/talktrans1.png"
+      - "/images/indie/talktrans/talktrans2.png"
+      - "/images/indie/talktrans/talktrans3.png"
+      - "/images/indie/talktrans/talktrans4.png"
+    links[1]:
+      - label: "GitHub — 2sem/talktrans"
+        href: "https://github.com/2sem/talktrans"
+    diagrams[1]:
+      - "flowchart LR\n  subgraph App\n    Input[\"Source Text\"]\n    Swap[\"Swap Language\"]\n    Flip[\"Flip result screen\"]\n    Theme\n    Translator\n    Output[\"Translated Text\"]\n  end\n\n  Papago[\"Naver Papago API\"]\n  Pods[\"CocoaPods\"]\n  Remote[\"Firebase\"]\n\n  Input -->|\"Translate\"| Translator\n  Pods <--> Papago\n  Pods --> Output\n  Input <--> Swap\n  Output <--> Swap\n  Remote -->|Remote Config| Theme\n  Translator --> Pods"
+  - id: democracyaction
+    name: "문자행동"
+    meta: "2017.06 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "App to find National Assembly members by name, party, or region and view their contact info, SNS, and homepages. Office phone, email, and site are shown, with favorites and KakaoTalk sharing; each SNS link opens the respective app directly."
+      ko: "국회의원을 이름·정당·지역으로 검색하고 연락처·SNS·홈페이지 정보를 보여주는 앱. 사무실 전화·이메일·사이트를 표시하고 즐겨찾기와 카카오톡 공유를 지원하며, SNS 링크는 각 앱이 바로 열리도록 연결."
+    role:
+      en: "Sole developer of the iOS version, born from a friend's idea amid a wave of civic 'text-action' messaging. Members' phone numbers weren't obtainable (privacy), so over two weeks I collected each member's linked SNS and sites from the Assembly website, and wired Facebook/Twitter/etc. to open natively via URL schemes and SDKs. Data was bundled from an Excel sheet (Google Drive) into Core Data."
+      ko: "iOS 버전 단독 개발. 시민 '문자행동' 흐름 속 친구의 아이디어에서 출발. 의원 휴대폰 번호는 개인정보 문제로 확보가 어려워, 국회 사이트를 기초로 각 의원의 연결 SNS·사이트를 2주에 걸쳐 직접 수집하고 Facebook·Twitter 등을 URL 스킴·SDK로 각 앱이 바로 열리게 연결. 데이터는 Excel(Google Drive)을 Core Data로 번들."
+    achievement:
+      en: "Hand-collected linked SNS/site data for National Assembly members over two weeks (numbers being unavailable for privacy) and made every channel open natively via URL schemes/SDKs. After a community post, the app went viral and earned interviews with major outlets including SBS, gaining substantial public visibility and influence."
+      ko: "(번호 확보가 불가능한 상황에서) 국회의원의 연결 SNS·사이트 데이터를 2주간 직접 수집하고 모든 채널이 URL 스킴·SDK로 네이티브하게 열리도록 구현. 커뮤니티 공유로 입소문을 타며 SBS 등 주요 언론 인터뷰를 진행해 앱 인지도와 영향력을 크게 확보."
+    tech[6]: Swift,CoreData,KakaoSDK,FacebookSDK,Firebase,Xlsx
+    image: "/images/indie/democracyaction/democracyaction3.png"
+    images[6]:
+      - "/images/indie/democracyaction/democracyaction3.png"
+      - "/images/indie/democracyaction/democracyaction5.png"
+      - "/images/indie/democracyaction/democracyaction1.png"
+      - "/images/indie/democracyaction/democracyaction2.png"
+      - "/images/indie/democracyaction/democracyaction4.png"
+      - "/images/indie/democracyaction/democracyaction6.png"
+    diagrams[1]:
+      - "flowchart LR\n  GDrive[\"Google Drive (Xlsx)\"]\n\n  subgraph App[\"문자행동 (Swift)\"]\n    Import[\"Import → Core Data\"]\n    Search[\"Search by name / party / region\"]\n    Detail[\"Member detail: phone / email / site / SNS\"]\n    Fav[\"Favorites\"]\n  end\n\n  SNS[\"Facebook / Twitter / ... apps\"]\n  Kakao[\"KakaoTalk share\"]\n\n  GDrive --> Import\n  Import --> Search\n  Search --> Detail\n  Detail -->|\"Open via URL / SDK\"| SNS\n  Detail --> Kakao\n  Detail --> Fav"
+  - id: gersang-helper
+    name: "거상도우미"
+    meta: "2017.06 – 2017.12 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "iOS companion app for the online game Geosang, collecting play-assist tools such as event and siege-time notifications, mercenary and treasure-box simulators, monster and item search, and trade, bonus, EXP, and cash calculators."
+      ko: "온라인 게임 거상 플레이를 돕는 iOS 보조 앱. 이벤트·공성 시간 알림, 용병·보물상자 시뮬레이터, 몬스터·아이템 검색, 상재·보너스·경험치·캐쉬 계산기를 제공."
+    role:
+      en: "Sole developer. Planned and built the app from a long-held idea, captured game data directly and wrote helper extraction tools, then converted Excel sheets into Core Data and bundled the extracted SQLite store as an app resource to avoid runtime imports."
+      ko: "단독 개발. 오래 구상하던 아이디어를 직접 기획·구현하고, 게임 데이터를 직접 캡처하거나 데이터 파일 해석 도구를 만들어 추출. Excel 각 시트를 Core Data로 변환한 뒤 컨테이너에서 SQLite를 추출해 앱 리소스로 번들하여 실행 시 import 비용을 줄임."
+    achievement:
+      en: "Launched a self-planned game utility, built the game-data pipeline by combining manual capture and extraction tools, reached 500+ daily users, and passed $100 in first-month revenue, validating monetization for a solo app."
+      ko: "온라인 게임 보조 도구를 직접 기획·데이터 구축·개발해 출시. 게임 데이터 캡처와 파일 해석 도구를 병행해 데이터 파이프라인을 만들고, 일간 사용자 500명 이상과 첫 월 수익 $100 돌파로 개인 앱의 유료화 가능성을 검증."
+    tech[5]: Swift,CoreData,Xlsx,SQLite,LocalNotification
+    image: "/images/indie/gersanghelper/gersanghelper1.png"
+    images[6]:
+      - "/images/indie/gersanghelper/gersanghelper1.png"
+      - "/images/indie/gersanghelper/gersanghelper2.png"
+      - "/images/indie/gersanghelper/gersanghelper3.png"
+      - "/images/indie/gersanghelper/gersanghelper4.png"
+      - "/images/indie/gersanghelper/gersanghelper5.png"
+      - "/images/indie/gersanghelper/gersanghelper6.png"
+    links[1]:
+      - label: "GitHub — 2sem/gersanghelper"
+        href: "https://github.com/2sem/gersanghelper"
+    diagrams[1]:
+      - "flowchart LR\n  Game\n  Xlsx[\"Excel File\"]\n\n  subgraph App\n    subgraph SyncMode\n      XlsxResource[\"Xlsx Resource\"]\n    end\n\n    subgraph NormalMode\n      Sqlite[\"Sqlite Resource\"]\n    end\n\n    ImageResource[\"Image Resource\"]\n  end\n\n  subgraph Device\n    Container\n  end\n\n  Game -->|Manual Data| Xlsx\n  Xlsx -->|Embed| XlsxResource\n  XlsxResource -->|Core Data| Container\n  Container -->|Download| Sqlite\n\n  Game -->|Screenshot| ImageResource\n  Game -->|Export| ImageResource"
+  - id: realtornote
+    name: "공인중개사요약집"
+    meta: "2017.08 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Study app that summarizes the Korean licensed-real-estate-agent exam by subject for learning on the go. Favorites, zoom, search, auto-generated quizzes, study-time reminders, and last-read position memory."
+      ko: "공인중개사 시험 내용을 과목별로 요약해 이동 중에도 학습할 수 있는 앱. 즐겨찾기·확대/축소·검색, 자동 생성 퀴즈, 공부 시간 알림, 최근 학습 위치 기억을 제공."
+    role:
+      en: "Sole developer. Took text data (from an Android app built by someone who'd studied for the exam) into an Excel workbook — treating each sheet as a table and splitting/merging cells that overflowed — and added an auto-generated quiz with a countdown animation plus local-notification study reminders."
+      ko: "단독 개발. (시험을 준비했던 분이 만든 안드로이드 앱의) 텍스트 데이터를 받아 Excel로 제작 — 각 시트를 Table로 취급하고 셀 크기를 넘는 데이터는 셀을 분리·병합 — 하고, 카운트다운 애니메이션이 있는 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
+    achievement:
+      en: "Built a serverless content-update mechanism: the study material lives in a Google Drive Excel file the app downloads (with per-version caching to skip re-downloads), so content updates ship without an App Store release. Modeled each spreadsheet sheet as a table, and added auto-generated quizzes and local-notification study reminders."
+      ko: "서버 없는 콘텐츠 업데이트 구조를 구현: 학습 자료를 Google Drive Excel로 두고 앱이 다운로드(버전별 캐싱으로 재다운로드 방지)해, 앱스토어 출시 없이 콘텐츠를 갱신. 각 시트를 Table로 모델링하고 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
+    tech[5]: Swift,CoreData,Xlsx,GoogleDrive,LocalNotification
+    image: "/images/indie/realtornote/realtornote1.png"
+    images[6]:
+      - "/images/indie/realtornote/realtornote1.png"
+      - "/images/indie/realtornote/realtornote2.png"
+      - "/images/indie/realtornote/realtornote3.png"
+      - "/images/indie/realtornote/realtornote4.png"
+      - "/images/indie/realtornote/realtornote5.png"
+      - "/images/indie/realtornote/realtornote6.jpg"
+    links[1]:
+      - label: "GitHub — 2sem/realtornote"
+        href: "https://github.com/2sem/realtornote"
+    diagrams[1]:
+      - "flowchart LR\n  GDrive[\"Google Drive (Excel, per-version)\"]\n\n  subgraph App[\"공인중개사요약집 (Swift)\"]\n    Download[\"Version-checked download\"]\n    Parse[\"Sheet → Table\"]\n    Study[\"Study: zoom / search / favorites / resume\"]\n    Quiz[\"Auto-generated quiz\"]\n    Notify[\"Local notification\"]\n    DB[\"Core Data\"]\n  end\n\n  GDrive -->|\"If new version\"| Download\n  Download --> Parse\n  Parse --> Study\n  Study --> Quiz\n  Study <--> DB\n  Notify -.->|\"Study time\"| Study"
