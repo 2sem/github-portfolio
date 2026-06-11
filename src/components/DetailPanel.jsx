@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Diagram from './Diagram.jsx'
+import { ProjectCover } from './ProjectVisual.jsx'
 import { useLang } from '../i18n.jsx'
 import { tagLabel } from '../tagLabels.js'
 
@@ -30,6 +31,8 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
     .map(tagLabel)
     .filter(label => !techLower.has(label.toLowerCase()))
 
+  const hasMedia = project.diagrams.length > 0 || project.images.length > 0
+
   return (
     <div className="detail-panel">
       <div className="detail-inner">
@@ -44,14 +47,19 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
         </div>
 
         <div className="detail-media">
-          {project.images.length > 0 && (
-            <div className="detail-shots">
+          {hasMedia ? (
+            <>
+              {project.diagrams.map((code, i) => (
+                <div key={`d${i}`} className="detail-slide detail-slide--diagram">
+                  <Diagram code={code} />
+                </div>
+              ))}
               {project.images.map((src, i) => {
                 const alt = `${project.name} screenshot ${i + 1}`
                 return (
                   <div
-                    key={i}
-                    className="detail-shot"
+                    key={`i${i}`}
+                    className="detail-slide"
                     onClick={() => setZoom({ src, alt })}
                     title="Click to zoom"
                   >
@@ -59,16 +67,10 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
                   </div>
                 )
               })}
-            </div>
-          )}
-          {project.diagrams.map((code, i) => (
-            <div key={i} className="detail-slide detail-slide--diagram">
-              <Diagram code={code} />
-            </div>
-          ))}
-          {project.diagrams.length === 0 && project.images.length === 0 && (
-            <div className="detail-slide">
-              <span className="detail-slide-lbl">{t('noScreenshots')}</span>
+            </>
+          ) : (
+            <div className="detail-slide has-cover">
+              <ProjectCover project={project} />
             </div>
           )}
         </div>

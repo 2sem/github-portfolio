@@ -1,5 +1,37 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLang } from '../i18n.jsx'
+
+function useCountUp(target) {
+  const [val, setVal] = useState(target)
+  useEffect(() => {
+    const n = Number(target)
+    if (!isFinite(n) || n === 0) { setVal(target); return }
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    if (reduce) { setVal(target); return }
+    let raf, start
+    setVal(0)
+    const step = (ts) => {
+      if (!start) start = ts
+      const p = Math.min((ts - start) / 900, 1)
+      setVal(Math.round((1 - Math.pow(1 - p, 3)) * n))
+      if (p < 1) raf = requestAnimationFrame(step)
+      else setVal(n)
+    }
+    raf = requestAnimationFrame(step)
+    return () => { if (raf) cancelAnimationFrame(raf) }
+  }, [target])
+  return val
+}
+
+function StatNum({ s }) {
+  const v = useCountUp(s.num)
+  return (
+    <div className="stat-num">
+      {v}
+      {s.em && <em>{s.em}</em>}
+    </div>
+  )
+}
 
 export default function Summary({ tagline, bio, stats, tags, onVisible }) {
   const { t, tr } = useLang()
@@ -28,10 +60,7 @@ export default function Summary({ tagline, bio, stats, tags, onVisible }) {
       <div className="stats-grid">
         {stats.map((s, i) => (
           <div className="stat-card" key={i}>
-            <div className="stat-num">
-              {s.num}
-              {s.em && <em>{s.em}</em>}
-            </div>
+            <StatNum s={s} />
             <div className="stat-cap">{tr(s.cap)}</div>
           </div>
         ))}
