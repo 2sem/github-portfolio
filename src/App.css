@@ -678,6 +678,21 @@ section[id] {
   background: linear-gradient(155deg, var(--panel), var(--panel2));
 }
 
+.pcard-shot--diagram {
+  background: #080d07;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.pcard-shot--diagram .diagram-wrap {
+  pointer-events: none;
+  transform: scale(0.4);
+  transform-origin: top center;
+  width: 250%;
+  margin-left: -75%;
+  flex-shrink: 0;
+}
+
 .pcard-cover {
   position: absolute;
   inset: 0;
