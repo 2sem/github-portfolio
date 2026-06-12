@@ -5,7 +5,7 @@ role:
   en: "App Developer → Mobile Tech Lead"
   ko: "앱 개발팀 / 앱 개발자 → 연구개발본부 / Mobile Tech Lead"
 cur: false
-projects[8]:
+projects[9]:
   - id: kickgoing-pass
     name: "킥고잉 패스"
     meta: "2021.09 – 2021.11 · Mobile · React Native"
@@ -195,3 +195,35 @@ projects[8]:
         href: "https://medium.com/@toyboy2/setting-ios-app-badge-using-in-react-native-and-user-defaults-a4184ec6c402"
     diagrams[1]:
       - "flowchart TD\n  User\n\n  subgraph App\n    Settings[\"Settings Screen\"]\n    NotiSettingsScreen[\"Notification Settings\"]\n\n    subgraph Android\n      Badge[\"Notification Badge\"]\n      SDK33[\"Is SDK 33?\"]\n      ReadMediaPerm[\"READ_MEDIA_IMAGES\"]\n      ReadExternalPerm[\"READ_EXTERNAL_STORAGE\"]\n    end\n\n    subgraph iOS\n      Badge[\"Notification Badge\"]\n      Extension[\"Notification Extension\"]\n    end\n  end\n\n  APNS\n  FCM\n\n  FCM -->|Sync| Badge\n\n  APNS --> Extension\n  Extension --> Badge\n\n  NotiSettingsScreen --> SDK33\n  SDK33 -->|\"Y\"| ReadMediaPerm\n  SDK33 -->|\"N\"| ReadExternalPerm\n\n  User --> Settings\n  Settings --> NotiSettingsScreen"
+  - id: kickgoing-eng
+    name: "외국어 지원"
+    meta: "2023.06 – 2023.08 · Mobile · TypeScript"
+    tags[3]: platform:ios,platform:android,lang:ts
+    desc:
+      en: "English UI support for foreign users — detects device language and switches all strings, images, and API headers to English. Contributed app-language navigation to react-native-android-open-settings open source."
+      ko: "외국인 이용자를 위한 영어 UI 지원 — 기기 언어를 감지해 문구·이미지·API 헤더를 영어로 전환. react-native-android-open-settings 오픈소스에 앱 언어 설정 화면 이동 기여."
+    role:
+      en: "Solo — language hook design, resource file structure, API language header, event logging, and open-source contribution."
+      ko: "단독 — 언어 훅 설계, 리소스 파일 구조, API 언어 헤더, 이벤트 로깅, 오픈소스 기여."
+    achievement:
+      en: "No prior React Native project at the team had implemented a full multi-language resource set — designed the pattern from scratch: separate string and image resource files per locale, unified via a custom language hook that reads device locale and re-exports the correct set. Added an Accept-Language header to all API requests so the server could return locale-specific content and URLs. Wired event logging to track which language users were running the app in. Discovered that react-native-android-open-settings lacked navigation to the Android app-language settings screen — implemented it and submitted an open-source PR that was merged. Built incrementally: highest-impact strings first, images next, then edge cases — prioritized by user-visible impact rather than completeness."
+      ko: "팀 내 RN 다국어 리소스 세트 구현 선례 없음 — 로케일별 문구·이미지 리소스 파일 분리 후 기기 언어를 읽어 올바른 세트를 반환하는 언어 훅으로 통합하는 패턴 직접 설계. 모든 API 요청에 Accept-Language 헤더 추가해 서버에서 로케일별 콘텐츠·URL 반환. 이벤트 로깅으로 사용자 언어 현황 추적. react-native-android-open-settings에 Android 앱 언어 설정 이동 기능이 없어 직접 구현 후 PR 기여·머지. 사용자에게 보이는 영향이 큰 순서(문구→이미지→엣지케이스)로 단계적 구현."
+    tech[5]: TypeScript,"React Native","react-native-android-open-settings","i18n","Open Source"
+    image: "/images/kickgoing/kickgoing-eng1.png"
+    images[7]:
+      - "/images/kickgoing/kickgoing-eng1.png"
+      - "/images/kickgoing/kickgoing-eng2.png"
+      - "/images/kickgoing/kickgoing-eng3.png"
+      - "/images/kickgoing/kickgoing-eng4.png"
+      - "/images/kickgoing/kickgoing-eng5.png"
+      - "/images/kickgoing/kickgoing-eng6.png"
+      - "/images/kickgoing/kickgoing-eng8.png"
+    links[3]:
+      - label: "Medium: Multi-Language in React Native"
+        href: "https://medium.com/@toyboy2/supporting-multi-language-in-react-native-applications-8bf4ddc8a8ef"
+      - label: "Medium: Android Per-App Language Settings"
+        href: "https://medium.com/@toyboy2/react-native-android-per-app-language-settings-5f9d4a29e9d2"
+      - label: "YouTube Demo"
+        href: "https://www.youtube.com/watch?v=ulF32AaobeQ"
+    diagrams[1]:
+      - "flowchart TD\n  User\n  DeviceLocale[\"Device Locale\"]\n\n  subgraph App[\"KICKGOING App\"]\n    LangHook[\"useLanguage Hook\"]\n\n    subgraph Resources[\"Resource Set\"]\n      StringSet[\"String Set (en/ko)\"]\n      ImageSet[\"Image Set (en/ko)\"]\n    end\n\n    EventLog[\"Event Logger\"]\n  end\n\n  subgraph Request[\"API Request\"]\n    LangHeader[\"Accept-Language Header\"]\n  end\n\n  AndroidLang[\"Android App Language\\n(OS Settings contribution)\"]\n  Server[\"App Server\"]\n\n  DeviceLocale --> LangHook\n  AndroidLang --> LangHook\n  LangHook --> StringSet\n  LangHook --> ImageSet\n  LangHook --> EventLog\n  LangHook --> LangHeader\n  LangHeader --> Server\n\n  User --> AndroidLang"
