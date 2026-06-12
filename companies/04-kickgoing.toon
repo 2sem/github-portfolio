@@ -5,7 +5,7 @@ role:
   en: "App Developer → Mobile Tech Lead"
   ko: "앱 개발팀 / 앱 개발자 → 연구개발본부 / Mobile Tech Lead"
 cur: false
-projects[6]:
+projects[7]:
   - id: kickgoing-pass
     name: "킥고잉 패스"
     meta: "2021.09 – 2021.11 · Mobile · React Native"
@@ -151,3 +151,28 @@ projects[6]:
         href: "https://toyboy2.medium.com/resizing-react-native-view-with-pan-gesture-2e19db93238e"
     diagrams[1]:
       - "flowchart TD\n  User\n  Server\n\n  subgraph Map\n    subgraph NaverMap[\"Naver Map\"]\n      Marker\n      Tooltip[\"Customized Tooltip\"]\n    end\n  end\n\n  PlaceDetailScreen[\"Place Detail Screen\"]\n  PlaceCreateScreen[\"Place Create Screen\"]\n\n  Location[\"Location Event\"]\n\n  Server -->|Fetch Places| Marker\n  User -->|Select| Marker\n  Marker -->|Present| Tooltip\n  Tooltip --> PlaceDetailScreen\n\n  Location -->|Query| Server\n\n  Server -->|Fetch Detail| PlaceDetailScreen\n  PlaceCreateScreen -->|Create| Server"
+  - id: kickgoing-channel-talk
+    name: "채널톡"
+    meta: "2023.01 – 2023.02 · Mobile · TypeScript"
+    tags[3]: platform:ios,platform:android,lang:ts
+    desc:
+      en: "In-app customer support replacing the phone hotline — integrated Channel Talk SDK for live chat, fixed a push notification routing bug with a local notification workaround, and diagnosed a crash inside the SDK."
+      ko: "유선전화 고객센터를 채널톡으로 대체 — SDK 연동으로 앱 내 라이브 채팅 제공, 푸시 알림 라우팅 버그를 로컬 알림으로 우회 해결, SDK 내부 비정상 종료 원인 진단."
+    role:
+      en: "Solo on client — SDK integration, push notification workaround, SDK crash root-cause analysis and patch, user info sync on session start."
+      ko: "클라이언트 단독 — SDK 연동, 푸시 알림 우회, SDK 비정상 종료 원인 분석·패치, 세션 시작 시 고객 정보 동기화 구현."
+    achievement:
+      en: "Channel Talk's push notification had a critical flaw: tapping the notification launched the app but did not navigate to the chat screen. Fixed by intercepting Channel Talk notifications and re-firing them as local notifications, which correctly resume to the chat. Later, a crash appeared inside the Channel Talk SDK's own notification-check function — traced the root cause to a nil-to-String conversion in the SDK source, reported it to the Channel Talk team with a fix proposal, and applied a local patch until their update shipped. Implemented user info sync: on every Channel Talk session entry, the app pushes the customer's latest profile to the server so support agents always see current data in the web dashboard."
+      ko: "채널톡 푸시 알림이 앱을 실행만 하고 채팅 화면으로 이동하지 않는 문제 발생 — 채널톡 알림을 수신 시 로컬 알림으로 재발행하는 방식으로 우회. 이후 채널톡 SDK 알림 판단 함수에서 비정상 종료 발생 — SDK 내부 String 변환 과정의 nil 처리 문제로 원인 파악, 채널톡 팀에 수정 제안 및 업데이트 전까지 자체 패치 적용. 상담사가 웹 대시보드에서 최신 정보를 조회하도록 채널톡 진입 시 서버에 고객 정보 업데이트 요청 구현."
+    tech[3]: TypeScript,"React Native","Channel Talk SDK"
+    image: "/images/kickgoing/kickgoing-channeltalk1.png"
+    images[4]:
+      - "/images/kickgoing/kickgoing-channeltalk1.png"
+      - "/images/kickgoing/kickgoing-channeltalk2.png"
+      - "/images/kickgoing/kickgoing-channeltalk3.png"
+      - "/images/kickgoing/kickgoing-channeltalk4.png"
+    links[1]:
+      - label: "YouTube Demo"
+        href: "https://www.youtube.com/watch?v=tC-np8ShcZU"
+    diagrams[1]:
+      - "flowchart TD\n  User\n\n  subgraph App[\"KICKGOING App\"]\n    CTScreen[\"Channel Talk Screen\"]\n    NotifHandler[\"Notification Handler\"]\n    LocalNotif[\"Local Notification\\n(workaround)\"]\n    UserInfoSync[\"User Info Sync\"]\n  end\n\n  CTServer[\"Channel Talk Server\"]\n  KGServer[\"KICKGOING Server\"]\n  CTDash[\"Channel Talk\\nDashboard (Agent)\"]\n\n  User -->|open Channel Talk| UserInfoSync\n  UserInfoSync --> KGServer\n  KGServer --> CTDash\n\n  CTServer -->|push notification| NotifHandler\n  NotifHandler -->|re-fire as| LocalNotif\n  LocalNotif -->|navigate| CTScreen\n\n  User -->|tap| CTScreen"
