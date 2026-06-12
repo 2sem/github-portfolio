@@ -31,8 +31,6 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
     .map(tagLabel)
     .filter(label => !techLower.has(label.toLowerCase()))
 
-  const hasMedia = project.diagrams.length > 0 || project.images.length > 0
-
   return (
     <div className="detail-panel">
       <div className="detail-inner">
@@ -46,34 +44,38 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
           </button>
         </div>
 
-        <div className="detail-media">
-          {hasMedia ? (
-            <>
-              {project.diagrams.map((code, i) => (
+        {project.images.length > 0 && (
+          <div className="detail-shots">
+            {project.images.map((src, i) => {
+              const alt = `${project.name} screenshot ${i + 1}`
+              return (
+                <div
+                  key={`i${i}`}
+                  className="detail-shot"
+                  onClick={() => setZoom({ src, alt })}
+                  title="Click to zoom"
+                >
+                  <img src={src} alt={alt} />
+                </div>
+              )
+            })}
+          </div>
+        )}
+        {(project.diagrams.length > 0 || project.images.length === 0) && (
+          <div className="detail-media">
+            {project.diagrams.length > 0 ? (
+              project.diagrams.map((code, i) => (
                 <div key={`d${i}`} className="detail-slide detail-slide--diagram">
                   <Diagram code={code} />
                 </div>
-              ))}
-              {project.images.map((src, i) => {
-                const alt = `${project.name} screenshot ${i + 1}`
-                return (
-                  <div
-                    key={`i${i}`}
-                    className="detail-slide"
-                    onClick={() => setZoom({ src, alt })}
-                    title="Click to zoom"
-                  >
-                    <img src={src} alt={alt} />
-                  </div>
-                )
-              })}
-            </>
-          ) : (
-            <div className="detail-slide has-cover">
-              <ProjectCover project={project} />
-            </div>
-          )}
-        </div>
+              ))
+            ) : (
+              <div className="detail-slide has-cover">
+                <ProjectCover project={project} />
+              </div>
+            )}
+          </div>
+        )}
 
         <div className="detail-body">
           <div>

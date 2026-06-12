@@ -903,10 +903,42 @@ section[id] {
   justify-content: center;
 }
 
-.detail-slide img {
-  width: 100%;
+.detail-shots {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 18px;
+}
+
+.detail-shots::-webkit-scrollbar {
+  height: 5px;
+}
+
+.detail-shots::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+
+.detail-shot {
+  flex: 0 0 auto;
+  height: 320px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0c100b;
+  cursor: zoom-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-shot img {
   height: 100%;
-  object-fit: cover;
+  width: auto;
+  max-width: 70vw;
+  object-fit: contain;
+  display: block;
 }
 
 .detail-slide--diagram {
