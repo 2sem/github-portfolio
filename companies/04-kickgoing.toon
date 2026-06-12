@@ -5,7 +5,7 @@ role:
   en: "App Developer → Mobile Tech Lead"
   ko: "앱 개발팀 / 앱 개발자 → 연구개발본부 / Mobile Tech Lead"
 cur: false
-projects[7]:
+projects[8]:
   - id: kickgoing-pass
     name: "킥고잉 패스"
     meta: "2021.09 – 2021.11 · Mobile · React Native"
@@ -176,3 +176,22 @@ projects[7]:
         href: "https://www.youtube.com/watch?v=tC-np8ShcZU"
     diagrams[1]:
       - "flowchart TD\n  User\n\n  subgraph App[\"KICKGOING App\"]\n    CTScreen[\"Channel Talk Screen\"]\n    NotifHandler[\"Notification Handler\"]\n    LocalNotif[\"Local Notification\\n(workaround)\"]\n    UserInfoSync[\"User Info Sync\"]\n  end\n\n  CTServer[\"Channel Talk Server\"]\n  KGServer[\"KICKGOING Server\"]\n  CTDash[\"Channel Talk\\nDashboard (Agent)\"]\n\n  User -->|open Channel Talk| UserInfoSync\n  UserInfoSync --> KGServer\n  KGServer --> CTDash\n\n  CTServer -->|push notification| NotifHandler\n  NotifHandler -->|re-fire as| LocalNotif\n  LocalNotif -->|navigate| CTScreen\n\n  User -->|tap| CTScreen"
+  - id: kickgoing-notification-settings
+    name: "알림 설정 분리"
+    meta: "2023.03 – 2023.05 · Mobile · TypeScript"
+    tags[3]: platform:ios,platform:android,lang:ts
+    desc:
+      en: "Separated notification settings from the main Settings screen into a dedicated Notification screen — covering Android SDK 33 permission changes, iOS App Tracking Transparency, and iOS Notification Badge via Notification Extension Service."
+      ko: "설정 화면의 알림 설정을 별도 알림 화면으로 분리. Android SDK 33 권한 변경 대응, iOS 앱 추적 투명성 권한 요청, iOS Notification Extension Service로 배지 동기화 구현."
+    role:
+      en: "All client — screen separation, Android 33 permission split, iOS tracking permission, notification badge. Collaborated on FAQ screen with 1 server dev."
+      ko: "클라이언트 전담 — 화면 분리, Android 33 권한 분기, iOS 추적 권한, 알림 배지 구현. 서버 1인·FAQ 화면 일부 협업."
+    achievement:
+      en: "Android SDK 33 changed photo album access permissions — implemented OS version branching to handle both old and new APIs cleanly. iOS app tracking permission was added to the request sequence but failed to display — traced the cause to a missing setup-ios-permission configuration and resolved by upgrading react-native-permissions and applying the required native setup. iOS does not auto-sync notification badge count (unlike Android) — implemented Notification Extension Service to manually increment the badge on each push received, matching Android behavior."
+      ko: "Android SDK 33에서 사진 앨범 접근 권한 API 변경 — OS 버전별 분기 처리로 이전·신규 버전 모두 대응. iOS 앱 추적 권한 요청 순서 추가 후 미표시 문제 발생 — react-native-permissions 업그레이드와 setup-ios-permission 네이티브 설정 추가로 해결. iOS는 Android와 달리 알림 배지가 자동 동기화되지 않음 — Notification Extension Service 구현으로 푸시 수신마다 배지 수동 증가, Android와 동일한 동작 구현."
+    tech[4]: TypeScript,"React Native","Android SDK 33","Notification Extension Service"
+    links[1]:
+      - label: "Medium: iOS Badge with Notification Extension"
+        href: "https://medium.com/@toyboy2/setting-ios-app-badge-using-in-react-native-and-user-defaults-a4184ec6c402"
+    diagrams[1]:
+      - "flowchart TD\n  User\n\n  subgraph App[\"KICKGOING App\"]\n    Settings[\"Settings Screen\"]\n    NotifScreen[\"Notification Settings Screen\"]\n    subgraph Permissions[\"Permission Flow\"]\n      AndPerm[\"Android SDK33\\nPhoto Permission\"]\n      iOSPerm[\"iOS Tracking\\nPermission\"]\n    end\n    Badge[\"Notification Badge\"]\n  end\n\n  subgraph iOSSys[\"iOS System\"]\n    ExtService[\"Notification Extension Service\"]\n  end\n\n  User -->|navigate| Settings\n  Settings --> NotifScreen\n  NotifScreen --> AndPerm\n  NotifScreen --> iOSPerm\n  ExtService -->|sync badge count| Badge"
