@@ -5,7 +5,7 @@ role:
   en: "App Developer → Mobile Tech Lead"
   ko: "앱 개발팀 / 앱 개발자 → 연구개발본부 / Mobile Tech Lead"
 cur: false
-projects[9]:
+projects[10]:
   - id: kickgoing-pass
     name: "킥고잉 패스"
     meta: "2021.09 – 2021.11 · Mobile · React Native"
@@ -227,3 +227,30 @@ projects[9]:
         href: "https://www.youtube.com/watch?v=ulF32AaobeQ"
     diagrams[1]:
       - "flowchart TD\n  User\n\n\tsubgraph OS\n\t\tSettings[\"Settings App\"]\n\t\tLocalSettings[\"Locale Settings\"]\n\n\t  subgraph App\n\t    LangHook[\"useLanguage Hook\"]\n\n\t\t\tsubgraph Screen\n\t\t\t\tStringHook[\"useStrings Hook\"]\n\t\t\t\tText\n\n\t\t\t\tImageHook[\"useImages Hook\"]\n\t\t\t\tImage\n\t\t\tend\n\t  end\n  end\n\n  Server[\"App Server\"]\n\n\tUser --> Settings\n\tSettings --> |Open| LocalSettings\n\tLocalSettings --> |Choose Locale| LangHook\n\n\tLangHook --> StringHook\n\tStringHook --> Text\n\n\tLangHook --> ImageHook\n\tImageHook --> Image\n\n  Server -->|Fetch with Lang| Screen"
+  - id: kickgoing-stamp
+    name: "스탬프"
+    meta: "2023.09 – 2023.10 · Mobile · TypeScript"
+    tags[3]: platform:ios,platform:android,lang:ts
+    desc:
+      en: "Stamp loyalty feature — users earn a stamp for every ride over 1 minute. Collected stamps unlock a roulette spin on return, with Lottie-powered animations for the spin, win state, and confetti celebration."
+      ko: "스탬프 적립 기능 — 1분 이상 탑승 시 스탬프 지급. 수집한 스탬프로 반납 후 룰렛 화면으로 이동해 쿠폰 리워드 제공. Lottie 기반 뽑기·당첨·축하 애니메이션 포함."
+    role:
+      en: "Solo — stamp count query, roulette redirect flow, roulette and celebration animations (Lottie + Reanimated), confetti fallback, return flow improvement."
+      ko: "단독 — 스탬프 조회, 룰렛 이동 플로우, 룰렛·축하 애니메이션(Lottie + Reanimated), 꽃가루 대체 처리, 반납 플로우 개선."
+    achievement:
+      en: "Dynamic post-win stamp animations built with Reanimated (stamp count drives the animation count dynamically). Fixed-state roulette and celebration animations used Lottie. Designer's original confetti Lottie file didn't render on iOS — proposed using a free Lottie confetti alternative and let the designer pick, resolving the blocker without an asset ping-pong loop. Coordinated with planning to route users directly to the roulette screen on scooter return, which required improving the existing return flow."
+      ko: "당첨 후 스탬프 개수 기반 동적 애니메이션은 Reanimated로 구현. 고정된 뽑기 전·축하 애니메이션은 Lottie 적용. 디자이너가 제작한 꽃가루 Lottie 파일이 iOS에서 미표시 — 무료 Lottie 옵션을 제안하고 디자이너가 직접 선정하게 하여 에셋 핑퐁 없이 해결. 기획자와 협의해 반납 즉시 룰렛 화면으로 연결되도록 반납 플로우 개선."
+    tech[4]: TypeScript,"React Native",Lottie,Reanimated
+    image: "/images/kickgoing/kickgoing-stamp1.png"
+    images[6]:
+      - "/images/kickgoing/kickgoing-stamp1.png"
+      - "/images/kickgoing/kickgoing-stamp2.png"
+      - "/images/kickgoing/kickgoing-stamp3.png"
+      - "/images/kickgoing/kickgoing-stamp4.png"
+      - "/images/kickgoing/kickgoing-stamp5.png"
+      - "/images/kickgoing/kickgoing-stamp6.png"
+    links[1]:
+      - label: "YouTube Demo"
+        href: "https://www.youtube.com/watch?v=2VGHm1oz_g8"
+    diagrams[1]:
+      - "flowchart TD\n  User\n  Server[\"App Server\"]\n\n  subgraph Ride[\"Scooter Ride\"]\n    RideStart[\"Ride Start\"]\n    MinCheck{\">= 1 min?\"}\n    Return[\"Return Scooter\"]\n  end\n\n  subgraph StampFeature[\"Stamp Feature\"]\n    StampCheck[\"Stamp Count Check\"]\n    Roulette[\"Roulette Screen\\n(Lottie)\"]\n    WinCheck{\"Won?\"}\n    Celebration[\"Celebration\\n(Lottie + Reanimated)\"]\n    Coupon[\"Coupon Reward\"]\n  end\n\n  User --> RideStart\n  RideStart --> MinCheck\n  MinCheck -->|Y| Return\n  MinCheck -->|N| User\n  Return --> Server\n  Server -->|Stamp awarded| StampCheck\n  StampCheck --> Roulette\n  Roulette --> WinCheck\n  WinCheck -->|Y| Celebration\n  Celebration --> Coupon\n  WinCheck -->|N| User"
