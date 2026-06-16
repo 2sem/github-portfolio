@@ -3,6 +3,18 @@ import { DATA } from './data.js'
 import { useLang } from './i18n.jsx'
 import Topbar from './components/Topbar.jsx'
 import Sidebar from './components/Sidebar.jsx'
+import Summary from './components/Summary.jsx'
+import Projects from './components/Projects.jsx'
+import Skills from './components/Skills.jsx'
+import Contact from './components/Contact.jsx'
+import ResumeCart from './components/ResumeCart.jsx'
+
+const NAV_ITEMS = [
+  { id: 'summary', pre: '01' },
+  { id: 'projects', pre: '02' },
+  { id: 'skills', pre: '03' },
+  { id: 'contact', pre: '04' },
+]
 
 // Latest YYYY(.MM) date in a project's meta (handles ranges like "2010.01 – 2017.02").
 function recencyKey(meta) {
@@ -12,14 +24,9 @@ function recencyKey(meta) {
   return dates.length ? Math.max(...dates) : 0
 }
 const byRecency = (a, b) => recencyKey(b.meta) - recencyKey(a.meta)
-import Summary from './components/Summary.jsx'
-import Projects from './components/Projects.jsx'
-import Skills from './components/Skills.jsx'
-import Contact from './components/Contact.jsx'
-import ResumeCart from './components/ResumeCart.jsx'
 
 export default function App() {
-  const { lang, setLang, tr } = useLang()
+  const { lang, setLang, t, tr } = useLang()
   const [theme, setTheme] = useState('dark')
   const [cartOpen, setCartOpen] = useState(false)
   const [cart, setCart] = useState([])
@@ -32,7 +39,7 @@ export default function App() {
   }, [theme])
 
   const toggleTheme = useCallback(() => {
-    setTheme(t => t === 'dark' ? 'light' : 'dark')
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
   }, [])
 
   const toggleCart = useCallback((id, name) => {
@@ -202,6 +209,19 @@ export default function App() {
           />
         </main>
       </div>
+
+      <nav className="mobile-nav">
+        {NAV_ITEMS.map(item => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            className={`mobile-nav-item${activeSection === item.id ? ' active' : ''}`}
+          >
+            <span className="mobile-nav-pre">{item.pre}</span>
+            <span>{t(item.id)}</span>
+          </a>
+        ))}
+      </nav>
     </div>
   )
 }
