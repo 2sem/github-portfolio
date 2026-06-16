@@ -25,11 +25,11 @@ stats[4]:
     cap:
       en: experience
       ko: 경력
-  - num: 48
+  - num: 64
     cap:
       en: projects_shipped
       ko: 출시_프로젝트
-  - num: 23
+  - num: 22
     cap:
       en: skills_tools
       ko: 기술_도구
@@ -51,12 +51,12 @@ highlights[5]:
     ko: "독점 지도 좌표계 역공학"
 
 tags[4]:
-  - en: "#open-source-maintainer"
-    ko: "#오픈소스-메인테이너"
-  - en: "#conf-speaker"
-    ko: "#컨퍼런스-발표자"
-  - en: "#1M+-users"
-    ko: "#100만+-사용자"
+  - en: "#open-source-contributor"
+    ko: "#오픈소스-기여자"
+  - en: "#solo-developer"
+    ko: "#솔로-개발자"
+  - en: "#multi-platform"
+    ko: "#멀티-플랫폼"
   - en: "#led-team-of-5"
     ko: "#5인-팀-리드"
 
@@ -69,8 +69,8 @@ skills[3]:
   - group:
       en: Frameworks
       ko: 프레임워크
-    chips[5]: SwiftUI,UIKit,React,"Node.js","Next.js"
+    chips[6]: SwiftUI,UIKit,"React Native",React,"Node.js","Next.js"
   - group:
       en: "Tools / Infra"
       ko: "도구 / 인프라"
-    chips[7]: Xcode,Tuist,Git,Docker,AWS,Figma,CI/CD
+    chips[10]: Xcode,Tuist,Git,Firebase,RxSwift,AVFoundation,Docker,AWS,Figma,CI/CD
