@@ -25,7 +25,7 @@ export default function CompanyView({ companies, isInCart, onCartToggle }) {
 
   return (
     <div>
-      {companies.map(co => (
+      {companies.filter(co => co.projects.length > 0).map(co => (
         <div key={co.id} className="co-section">
           <div className="co-head">
             <span className="co-name">## {co.name}</span>

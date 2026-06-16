@@ -1,4 +1,5 @@
 import { useLang } from '../i18n.jsx'
+import AvatarDot from './AvatarDot.jsx'
 
 const NAV = [
   { id: 'summary', pre: '01' },
@@ -11,7 +12,7 @@ export default function Sidebar({ name, role, github, linkedin, email, resume, a
   const { t, tr } = useLang()
   return (
     <aside className="sidebar">
-      <div className="sidebar-avatar">&gt;_</div>
+      <AvatarDot realSrc="/images/profile.jpeg" alt="Lee Young-jun" />
 
       <div className="sidebar-ident">
         <div className="nm">{name}</div>

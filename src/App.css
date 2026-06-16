@@ -173,15 +173,31 @@ button {
   height: 60px;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background: linear-gradient(135deg, #15321f, #0c1610);
+  object-fit: cover;
+  flex: none;
+  user-select: none;
+}
+.sidebar-avatar--dot {
+  cursor: pointer;
+  display: block;
+}
+.avatar-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.75);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--mono);
-  color: var(--accent);
-  font-size: 22px;
-  flex: none;
-  user-select: none;
+  cursor: zoom-out;
+}
+.avatar-modal-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  box-shadow: 0 0 60px rgba(52,217,134,0.15);
 }
 
 .sidebar-ident .nm {
