@@ -27,7 +27,11 @@ const byRecency = (a, b) => recencyKey(b.meta) - recencyKey(a.meta)
 
 export default function App() {
   const { lang, setLang, t, tr } = useLang()
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('theme')
+    if (saved === 'light' || saved === 'dark') return saved
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  })
   const [cartOpen, setCartOpen] = useState(false)
   const [cart, setCart] = useState([])
   const [search, setSearch] = useState('')
@@ -36,6 +40,7 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : '')
+    localStorage.setItem('theme', theme)
   }, [theme])
 
   const toggleTheme = useCallback(() => {
