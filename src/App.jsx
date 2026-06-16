@@ -107,7 +107,7 @@ export default function App() {
     DATA.companies.reduce((sum, co) => sum + co.projects.length, 0), [])
 
   const highlights = useMemo(() =>
-    DATA.companies.flatMap(co => co.projects).filter(p => p.highlight).map(p => p.highlight),
+    DATA.companies.flatMap(co => co.projects).filter(p => p.highlight).map(p => p.highlight).slice(0, 5),
   [])
 
   const stats = useMemo(() => DATA.stats.map((s, i) => {
