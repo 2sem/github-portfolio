@@ -42,7 +42,24 @@ export default function Contact({ github, linkedin, email, x, threads, facebook,
           </div>
         </div>
         <div className="contact-art">
-          <span className="lbl">{t('location')}</span>
+          <div className="contact-status">
+            <div className="contact-status-row">
+              <span className="cs-key">📍</span>
+              <span className="cs-val">{t('location').replace('📍 ', '')}</span>
+            </div>
+            <div className="contact-status-row">
+              <span className="cs-key">🕐</span>
+              <span className="cs-val">UTC+9 · KST</span>
+            </div>
+            <div className="contact-status-row">
+              <span className="cs-key cs-green">✓</span>
+              <span className="cs-val">{t('openToWork')}</span>
+            </div>
+            <div className="contact-status-row">
+              <span className="cs-key">✉</span>
+              <span className="cs-val">{t('replyTime')}</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
