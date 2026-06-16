@@ -14,6 +14,7 @@ export default function Projects({
   filteredCompanies,
   isInCart,
   onCartToggle,
+  onCartToggleAll,
   onVisible,
 }) {
   const { t } = useLang()
@@ -66,6 +67,7 @@ export default function Projects({
           companies={filteredCompanies}
           isInCart={isInCart}
           onCartToggle={onCartToggle}
+          onCartToggleAll={onCartToggleAll}
         />
       ) : (
         <FlatView

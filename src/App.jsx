@@ -47,6 +47,15 @@ export default function App() {
     setCart(prev => prev.filter(x => x.id !== id))
   }, [])
 
+  const toggleCartAll = useCallback((projects) => {
+    setCart(prev => {
+      const allIn = projects.every(p => prev.some(x => x.id === p.id))
+      if (allIn) return prev.filter(x => !projects.some(p => p.id === x.id))
+      const toAdd = projects.filter(p => !prev.some(x => x.id === p.id))
+      return [...prev, ...toAdd.map(p => ({ id: p.id, name: p.name }))]
+    })
+  }, [])
+
   const reorderCart = useCallback((from, to) => {
     setCart(prev => {
       const next = [...prev]
@@ -160,6 +169,7 @@ export default function App() {
             filteredCompanies={filteredCompanies}
             isInCart={isInCart}
             onCartToggle={toggleCart}
+            onCartToggleAll={toggleCartAll}
             onVisible={() => setActiveSection('projects')}
           />
 

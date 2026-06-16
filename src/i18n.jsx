@@ -38,6 +38,8 @@ const UI = {
     roleLabel: 'Role',
     sortRecent: 'sort:recent',
     searchPlaceholder: 'projects, or type a tag…',
+    addAll: 'add all',
+    inCart: '✓ all added',
   },
   ko: {
     summary: '소개',
@@ -74,6 +76,8 @@ const UI = {
     roleLabel: '역할',
     sortRecent: '최신순',
     searchPlaceholder: '프로젝트명 또는 태그 입력…',
+    addAll: '전체 추가',
+    inCart: '✓ 전체 추가됨',
   },
 }
 

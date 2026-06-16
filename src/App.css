@@ -593,6 +593,11 @@ section[id] {
   margin-bottom: 12px;
   flex-wrap: wrap;
 }
+.co-add {
+  margin-left: auto;
+  margin-top: 0;
+  align-self: center;
+}
 
 .co-name {
   font-family: var(--mono);

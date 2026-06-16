@@ -3,7 +3,7 @@ import { useLang } from '../i18n.jsx'
 import ProjectCard from './ProjectCard.jsx'
 import DetailPanel from './DetailPanel.jsx'
 
-export default function CompanyView({ companies, isInCart, onCartToggle }) {
+export default function CompanyView({ companies, isInCart, onCartToggle, onCartToggleAll }) {
   const { t, tr } = useLang()
   const [selected, setSelected] = useState(null)
 
@@ -33,6 +33,12 @@ export default function CompanyView({ companies, isInCart, onCartToggle }) {
               {co.when} · {tr(co.role)}
               {co.cur && <> · <span className="co-cur">{t('now')}</span></>}
             </span>
+            <button
+              className={`pcard-add co-add${co.projects.every(p => isInCart(p.id)) ? ' in-cart' : ''}`}
+              onClick={() => onCartToggleAll(co.projects)}
+            >
+              {co.projects.every(p => isInCart(p.id)) ? t('inCart') : `+ ${t('addAll')}`}
+            </button>
           </div>
           <div className="scroll-hint">{t('scrollHint')}</div>
           <div className="gallery">
