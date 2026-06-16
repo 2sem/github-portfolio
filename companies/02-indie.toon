@@ -224,10 +224,10 @@ projects[9]:
       en: "Built a serverless content-update mechanism: the study material lives in a Google Drive Excel file the app downloads (with per-version caching to skip re-downloads), so content updates ship without an App Store release. Modeled each spreadsheet sheet as a table, and added auto-generated quizzes and local-notification study reminders."
       ko: "서버 없는 콘텐츠 업데이트 구조를 구현: 학습 자료를 Google Drive Excel로 두고 앱이 다운로드(버전별 캐싱으로 재다운로드 방지)해, 앱스토어 출시 없이 콘텐츠를 갱신. 각 시트를 Table로 모델링하고 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
     tech[5]: Swift,CoreData,Xlsx,GoogleDrive,LocalNotification
-    image: "/images/indie/realtornote/realtornote1.png"
+    image: "/images/indie/realtornote/realtornote2.png"
     images[6]:
-      - "/images/indie/realtornote/realtornote1.png"
       - "/images/indie/realtornote/realtornote2.png"
+      - "/images/indie/realtornote/realtornote1.png"
       - "/images/indie/realtornote/realtornote3.png"
       - "/images/indie/realtornote/realtornote4.png"
       - "/images/indie/realtornote/realtornote5.png"
