@@ -169,15 +169,13 @@ button {
 }
 
 .sidebar-avatar {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 14px;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
   border: 1px solid var(--line);
   object-fit: cover;
-  object-position: top;
   flex: none;
   user-select: none;
-  display: block;
 }
 .sidebar-avatar--dot {
   cursor: pointer;
