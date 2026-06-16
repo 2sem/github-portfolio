@@ -53,7 +53,6 @@ export default function Summary({ tagline, bio, stats, tags, highlights, onVisib
       <div className="klabel"><span className="c">//</span> 01 — {t('summary')}</div>
       <h1 className="summary-h1">
         {tr(tagline)}
-        <span className="blink-cursor" />
       </h1>
       <p className="summary-bio">{tr(bio)}</p>
 
