@@ -46,7 +46,7 @@ projects[3]:
     diagrams[1]:
       - "flowchart LR\n  User\n\n  subgraph Finder\n    Files[\"Selected Files\"]\n    ContextMenu[\"Context Menu\\n(right-click)\"]\n  end\n\n  subgraph Extension[\"Finder Sync Extension\"]\n    MenuAction[\"Menu Action\"]\n    RenameDialog[\"Rename Dialog\"]\n  end\n\n  Main[\"Main App\\n(XPC Handler)\"]\n  FileSystem[\"File System\\n(symlink)\"]\n\n  User -->|Select + right-click| Files\n  Files --> ContextMenu\n  ContextMenu --> MenuAction\n  MenuAction --> RenameDialog\n  RenameDialog -->|XPC| Main\n  Main -->|ln -s| FileSystem"
   - id: loa-helper
-    name: "로아 도우미"
+    name: "로아도우미"
     meta: "2019.01 – 2019.02 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
