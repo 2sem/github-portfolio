@@ -91,6 +91,9 @@ projects[10]:
     achievement:
       en: "Reverse-engineered Daum Maps' proprietary Kongnamul coordinate system from its minified JS source via Chrome DevTools — the publicly available conversion formula produced wrong results, so I traced through the obfuscated source, found the real transformation function, cleaned it up, and ported it to TypeScript. Extended react-native-naver-map (open source) by modifying the Native Bridge view layer to add scale calculation that the library didn't support. After shipping to positive feedback from delivery drivers, the feature generated multiple follow-up development requests."
       ko: "공개된 콩나물 좌표 변환 공식이 틀린 결과를 내자, Chrome DevTools로 다음 사이트의 난독화된 JS를 직접 분석해 실제 변환 함수를 찾아내고 가독성 있게 수정한 후 TypeScript로 포팅. react-native-naver-map 오픈소스의 Native Bridge View 부분을 수정해 기존에 없던 축척 계산 기능을 직접 추가. 출시 후 대리기사들로부터 좋은 반응을 받았으며 이후 여러 차례 후속 개발 문의로 이어짐."
+    highlight:
+      en: "Proprietary map coords reverse-engineered"
+      ko: "독점 지도 좌표계 역공학"
     tech[4]: TypeScript,"React Native","Naver Map","Daum Route API"
     image: "/images/kickgoing/kickgoing-route4.jpg"
     images[6]:
@@ -141,6 +144,9 @@ projects[10]:
     achievement:
       en: "No suitable open-source emoji picker existed — surveyed the Unicode emoji specification, understood the dataset structure, built a custom picker from scratch, and published two npm packages: ts-unicode-emojis (emoji dataset utility) and react-native-emoji-collection-view (the picker component). Extended react-native-naver-map's Native Bridge view to support custom info-window (call-out balloon) rendering. Built a collapsible bottom panel with Reanimated and Pan Gesture: it had to compose with existing bottom UI and behave differently across multiple scenarios, so a gesture-driven reusable Animated.View was the only viable approach. Performance degraded with the new Lottie-heavy UI — Flipper Profiler identified the cause as continuous location polling and API calls even when the map was off-screen; resolved by deduplicating calls and restricting location updates to active-rental and visible-map states. Redesigned the API service layer: replaced scattered inline URL construction and get/post calls with a typed service that auto-converts snake_case↔camelCase; injected Redux dispatch into services so any module can read/write Redux state without being a Redux function."
       ko: "적합한 오픈소스 이모지 피커가 없어 유니코드 이모지 규격을 분석·구조 파악 후 직접 구현, ts-unicode-emojis(이모지 데이터셋 유틸리티)·react-native-emoji-collection-view(피커 컴포넌트) 두 개의 npm 패키지로 배포. react-native-naver-map Native Bridge View 수정해 커스텀 말풍선(InfoWindow) 렌더링 지원 추가. Reanimated + Pan Gesture로 접이식 하단 패널 직접 구현 — 기존 하단 UI와 결합 및 시나리오별 다른 동작이 필요해 재사용 가능한 Gesture 기반 Animated View로 설계. Lottie 포함 신규 UI에서 성능 저하 발생 — Flipper Profiler로 지도 비활성 상태에서도 위치 조회·API 호출이 지속됨을 특정, 중복 제거 및 대여 중·지도 활성 상태에서만 위치 조회하도록 수정. API 서비스 레이어 재설계: 로직 내 URL 직접 생성·get/post 분산 호출을 타입 완비 서비스로 교체, snake_case↔camelCase 자동 변환, Redux dispatch 주입으로 Redux 함수 외부에서도 스토어 접근 가능하게 구현."
+    highlight:
+      en: "2 npm packages published"
+      ko: "npm 패키지 2개 배포"
     tech[7]: TypeScript,"React Native",Reanimated,"Pan Gesture",Lottie,Flipper,"Naver Map"
     image: null
     links[4]:

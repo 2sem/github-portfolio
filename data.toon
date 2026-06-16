@@ -37,6 +37,18 @@ stats[4]:
       en: highlights
       ko: 주요_성과
 
+highlights[5]:
+  - en: "₩1B investment secured"
+    ko: "10억 원 투자 유치"
+  - en: "Push notifications doubled Android revenue"
+    ko: "푸시 알림으로 안드로이드 매출 2배"
+  - en: "5,000+ weekly crashes eliminated"
+    ko: "주 5,000건+ Crash 제거"
+  - en: "Retroactive contract secured after work stoppage"
+    ko: "작업 중단으로 소급 계약 체결"
+  - en: "Proprietary map coords reverse-engineered"
+    ko: "독점 지도 좌표계 역공학"
+
 tags[4]:
   - en: "#open-source-maintainer"
     ko: "#오픈소스-메인테이너"

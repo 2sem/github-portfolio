@@ -65,6 +65,9 @@ projects[9]:
     achievement:
       en: "Proposed push notifications for fast-rising and recommended stocks to increase repeat app usage, then added the supporting server/app flow; the Android version's revenue reportedly doubled after the push feature, reaching about ₩3 million per month."
       ko: "앱 재방문을 늘리기 위해 급등주·추천주 푸시 기능을 제안하고 서버/앱 흐름을 추가. 해당 푸시 기능 적용 후 안드로이드 기준 수익이 약 2배 증가해 월 300만 원 수준까지 올랐다고 전달받음."
+    highlight:
+      en: "Push notifications doubled Android revenue"
+      ko: "푸시 알림으로 안드로이드 매출 2배"
     tech[6]: Swift,RxSwift,CoreData,KakaoSDK,FCM,"Node.js"
     image: "/images/indie/related-stocks/related-stocks1.png"
     images[6]:

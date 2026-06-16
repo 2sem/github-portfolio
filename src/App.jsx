@@ -106,16 +106,14 @@ export default function App() {
   const projectCount = useMemo(() =>
     DATA.companies.reduce((sum, co) => sum + co.projects.length, 0), [])
 
-  const highlights = useMemo(() =>
-    DATA.companies.flatMap(co => co.projects).filter(p => p.highlight).map(p => p.highlight).slice(0, 5),
-  [])
+  const highlights = DATA.highlights ?? []
 
   const stats = useMemo(() => DATA.stats.map((s, i) => {
     if (i === 0) return { ...s, num: experienceYears }
     if (i === 1) return { ...s, num: projectCount }
     if (i === 3) return { ...s, num: highlights.length }
     return s
-  }), [experienceYears, projectCount, highlights])
+  }), [experienceYears, projectCount])
 
   const filteredCompanies = useMemo(() => {
     const visibleIds = new Set(filteredProjects.map(p => p.id))
