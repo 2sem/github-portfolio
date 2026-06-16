@@ -3,11 +3,11 @@ role:
   en: "Senior iOS Developer"
   ko: "Senior iOS 개발자"
 tagline:
-  en: "Building better products\nby thinking and sharing together"
-  ko: "더 좋은 제품을 만들기 위해\n함께 고민하고 공유합니다"
+  en: "Shipping iOS apps\nwith a full-stack perspective"
+  ko: "풀스택 관점으로\niOS 앱을 만듭니다"
 bio:
-  en: "Senior iOS developer focused on mobile since 2017, having started in server-side and crossed through full-stack web. Builds mobile apps with Swift and React Native."
-  ko: "서버 개발자로 시작해 Full Stack을 거쳐 2017년부터 모바일에 집중한 Senior iOS 개발자. Swift와 React Native로 모바일 앱을 개발합니다."
+  en: "Started server-side, moved through full-stack web, and settled on iOS in 2017. Now building apps with Swift and React Native."
+  ko: "서버 개발로 시작해 풀스택을 거쳐 2017년 iOS에 정착했습니다. 현재 Swift와 React Native로 앱을 개발합니다."
 github: https://github.com/2sem
 linkedin: https://www.linkedin.com/in/gamehelper/
 email: kofggm@gmail.com
@@ -16,8 +16,8 @@ threads: https://www.threads.com/@kofinstar
 facebook: https://www.facebook.com/youngjun.lee.3998
 resume: "#"
 contactMsg:
-  en: "Let's talk. Open to new opportunities and interesting projects."
-  ko: "편하게 연락 주세요. 새로운 기회와 흥미로운 프로젝트를 환영합니다."
+  en: "Seoul-based. Open to remote. Always interested in ambitious iOS products."
+  ko: "서울 기반, 원격 근무 가능합니다. 도전적인 iOS 프로젝트에 언제나 열려있습니다."
 
 stats[4]:
   - num: 6
@@ -47,8 +47,8 @@ highlights[5]:
     ko: "주 5,000건+ Crash 제거"
   - en: "App Store rating reached 4.7"
     ko: "앱스토어 평점 4.7 달성"
-  - en: "Proprietary map coords reverse-engineered"
-    ko: "독점 지도 좌표계 역공학"
+  - en: "Reverse-engineered a proprietary map coordinate system"
+    ko: "독점 지도 좌표계를 역공학으로 해독"
 
 tags[4]:
   - en: "#ios-developer"
@@ -65,7 +65,7 @@ skills[3]:
   - group:
       en: Languages
       ko: 언어
-    chips[6]: Swift,TypeScript,JavaScript,SQL,PHP,Bash
+    chips[5]: Swift,TypeScript,JavaScript,SQL,Bash
   - group:
       en: Frameworks
       ko: 프레임워크
