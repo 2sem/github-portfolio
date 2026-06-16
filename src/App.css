@@ -176,10 +176,17 @@ button {
   object-fit: cover;
   flex: none;
   user-select: none;
+  transition: width 0.25s ease, height 0.25s ease, border-radius 0.25s ease;
 }
 .sidebar-avatar--dot {
   cursor: pointer;
   display: block;
+}
+.sidebar-avatar--real {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
 }
 .avatar-modal {
   position: fixed;
