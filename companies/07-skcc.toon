@@ -11,15 +11,15 @@ projects[1]:
     meta: "2024.06 – 2025.10 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
-      en: "Maintenance and junior coaching for SWING iOS — the internal dealer management app for SKT franchises. Resolved a long-standing Xcode version lock, introduced GitLab MR templates, migrated CocoaPods to SPM, and coached a junior developer to 80% ownership."
-      ko: "SKT 대리점 업무 앱 SWING iOS 유지보수 및 주니어 코칭. Xcode 버전 제약 해결, GitLab MR 템플릿 도입, CocoaPods→SPM 마이그레이션, 주니어 개발자 코칭으로 80% 업무 위임."
+      en: "Maintenance and junior coaching for SWING iOS — an iPadOS Cordova hybrid app for SKT dealer management. Native Swift/ObjC shell wraps a webview loading SWING Web, backed by SKT Intra. Resolved a long-standing Xcode version lock, introduced GitLab MR templates, migrated CocoaPods to SPM, and coached a junior to 80% ownership."
+      ko: "SKT 대리점 업무용 iPadOS Cordova 하이브리드 앱 SWING iOS 유지보수 및 주니어 코칭. Swift/ObjC 네이티브 쉘이 SWING Web을 로드하는 웹뷰를 감싸며 SKT Intra와 통신. Xcode 버전 제약 해결, GitLab MR 템플릿 도입, CocoaPods→SPM 마이그레이션, 주니어 80% 업무 위임."
     role:
       en: "Sole iOS developer — maintenance, process improvement, and junior coaching. Joined the day after the interview with the previous developer leaving a week later."
       ko: "단독 iOS 개발자 — 유지보수, 프로세스 개선, 주니어 코칭. 면접 다음날 합류, 전임자 일주일 후 퇴사."
     achievement:
       en: "The project was locked to Xcode 13, blocking macOS upgrades and accumulating tech debt — researched a method to run older Xcode on newer macOS, published two Medium articles, and applied the same approach iteratively to upgrade from Xcode 13 to 16. GitLab MRs had no descriptions, templates, or reviewers — introduced a template with intent, test steps, results, default labels, and auto-assigned reviewer, speeding up manager approval and spreading the practice to other freelance projects. Coached a junior by splitting tasks into hand-off-sized units; the junior eventually took 80% ownership of SWING iOS. Migrated CocoaPods to SPM and introduced JIRA, reducing dependency overhead."
       ko: "Xcode 13 고착으로 macOS 업그레이드 불가·기술 부채 누적 — 구버전 Xcode를 신규 macOS에서 실행하는 방법 연구 후 Medium 아티클 2편 게재, 동일 방법으로 Xcode 13→16 순차 업그레이드해 기술 부채 해소. GitLab MR에 설명·템플릿·리뷰어 없음 — 의도·테스트 방법·결과·기본 Label·Reviewer 자동 설정 MR 템플릿 도입, 매니저 신속 승인·주니어 협업 교육·타 프리랜서 프로젝트에 전파. 주니어에게 Task 분할 방식으로 코칭, 이후 SWING의 80% 담당. CocoaPods→SPM 마이그레이션 및 JIRA 도입."
-    tech[4]: Swift,"Objective-C",SPM,GitLab
+    tech[6]: Swift,"Objective-C",Cordova,Firebase,SPM,GitLab
     image: null
     links[2]:
       - label: "Medium: Running Xcode 14 on Sonoma"
@@ -27,4 +27,4 @@ projects[1]:
       - label: "Medium: Run Xcode 15.4 on Ventura"
         href: "https://medium.com/@toyboy2/how-to-run-xcode-15-4-on-ventura-macos-break-os-limitation-07e181499da4"
     diagrams[1]:
-      - "flowchart TD\n  subgraph Before[\"Tech Debt\"]\n    Xcode13[\"Xcode 13\\n(OS locked)\"]\n    CocoaPods\n    NoMR[\"GitLab MR\\n(no template)\"]\n  end\n\n  Research[\"Research: Old Xcode\\non New macOS\\n(2 Articles)\"]\n\n  subgraph After[\"Improvements\"]\n    Xcode16[\"Xcode 13 → 16\"]\n    SPM[\"Swift Package Manager\"]\n    MRTemplate[\"MR Template\\n(Labels + Reviewer)\"]\n    Junior[\"Junior Dev\\n(80% ownership)\"]\n  end\n\n  Xcode13 --> Research\n  Research --> Xcode16\n  CocoaPods -->|Migration| SPM\n  NoMR -->|Template intro| MRTemplate\n  MRTemplate -->|Task split + coaching| Junior"
+      - "flowchart TD\n  Agency[\"Agency Manager\"]\n  SKT[\"SKT Intra\"]\n  Web[\"SWING Web\"]\n  Customer\n\n  subgraph iPadOS\n    subgraph App\n      subgraph Cordova\n        Webview\n      end\n      Firebase\n      SPM\n    end\n  end\n\n  Agency -->|Uses| App\n  Web -->|Loads in| Webview\n  App <-->|API| SKT\n  App -->|Manages| Customer"
