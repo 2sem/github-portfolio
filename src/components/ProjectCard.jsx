@@ -2,7 +2,7 @@ import { useLang } from '../i18n.jsx'
 import ProjectVisual from './ProjectVisual.jsx'
 
 export default function ProjectCard({ project, isSelected, isInCart, onSelect, onCartToggle, className = '' }) {
-  const { t } = useLang()
+  const { t, tr } = useLang()
   const inCart = isInCart(project.id)
 
   return (
@@ -14,6 +14,12 @@ export default function ProjectCard({ project, isSelected, isInCart, onSelect, o
       <div className="pcard-body">
         <div className="pcard-title">{project.name}</div>
         <div className="pcard-meta">{project.meta}</div>
+        {project.highlight && (
+          <div className="pcard-highlight">
+            <span className="pcard-highlight-star">★</span>
+            {tr(project.highlight)}
+          </div>
+        )}
         <button
           className={`pcard-add${inCart ? ' in-cart' : ''}`}
           onClick={e => {
