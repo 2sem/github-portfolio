@@ -6,9 +6,10 @@ export default function AvatarDot({ realSrc, alt }) {
   return (
     <>
       <img
-        src={realSrc}
+        src="/images/pixel-avatar.png"
         alt={alt}
         className="sidebar-avatar sidebar-avatar--dot"
+        style={{ imageRendering: 'pixelated' }}
         onClick={() => setOpen(true)}
       />
       {open && (
