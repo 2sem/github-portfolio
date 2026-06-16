@@ -17,11 +17,11 @@ export default function Contact({ github, linkedin, email, x, threads, contactMs
   }, [onVisible])
 
   const links = [
-    { href: github,            label: 'github/' + github.split('/').filter(Boolean).pop() },
-    { href: linkedin,          label: 'in/' + linkedin.split('/').filter(Boolean).pop() },
-    x       && { href: x,       label: '@' + x.split('/').filter(Boolean).pop() },
-    threads && { href: threads, label: '@' + threads.split('/').filter(Boolean).pop().replace('@','') + ' · threads' },
-    { href: `mailto:${email}`, label: email, mail: true },
+    { href: github,            name: 'GitHub',   handle: '/' + github.split('/').filter(Boolean).pop() },
+    { href: linkedin,          name: 'LinkedIn', handle: '/' + linkedin.split('/').filter(Boolean).pop() },
+    x       && { href: x,       name: 'X',        handle: '@' + x.split('/').filter(Boolean).pop() },
+    threads && { href: threads, name: 'Threads',  handle: '@' + threads.split('/').filter(Boolean).pop().replace('@','') },
+    { href: `mailto:${email}`, name: 'Email',    handle: email, mail: true },
   ].filter(Boolean)
 
   return (
@@ -34,7 +34,8 @@ export default function Contact({ github, linkedin, email, x, threads, contactMs
             {links.map((l, i) => (
               <a key={i} className="contact-link" href={l.href} target="_blank" rel="noopener noreferrer">
                 <span className="arrow">{l.mail ? '✉' : '↗'}</span>
-                {l.label}
+                <span className="sns-name">{l.name}</span>
+                <span className="sns-handle">{l.handle}</span>
               </a>
             ))}
           </div>

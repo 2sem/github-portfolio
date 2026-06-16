@@ -35,11 +35,26 @@ export default function Sidebar({ name, role, github, linkedin, email, x, thread
       <div className="sidebar-divider" />
 
       <div className="sidebar-links">
-        <a href={github} target="_blank" rel="noopener noreferrer">↗ github/{github.split('/').filter(Boolean).pop()}</a>
-        <a href={linkedin} target="_blank" rel="noopener noreferrer">↗ in/{linkedin.split('/').filter(Boolean).pop()}</a>
-        {x && <a href={x} target="_blank" rel="noopener noreferrer">↗ @{x.split('/').filter(Boolean).pop()}</a>}
-        {threads && <a href={threads} target="_blank" rel="noopener noreferrer">↗ @{threads.split('/').filter(Boolean).pop().replace('@','')} · th</a>}
-        <a href={`mailto:${email}`}>✉ {email}</a>
+        <a href={github} target="_blank" rel="noopener noreferrer">
+          <span className="sns-name">GitHub</span>
+          <span className="sns-handle">/{github.split('/').filter(Boolean).pop()}</span>
+        </a>
+        <a href={linkedin} target="_blank" rel="noopener noreferrer">
+          <span className="sns-name">LinkedIn</span>
+          <span className="sns-handle">/{linkedin.split('/').filter(Boolean).pop()}</span>
+        </a>
+        {x && <a href={x} target="_blank" rel="noopener noreferrer">
+          <span className="sns-name">X</span>
+          <span className="sns-handle">@{x.split('/').filter(Boolean).pop()}</span>
+        </a>}
+        {threads && <a href={threads} target="_blank" rel="noopener noreferrer">
+          <span className="sns-name">Threads</span>
+          <span className="sns-handle">@{threads.split('/').filter(Boolean).pop().replace('@','')}</span>
+        </a>}
+        <a href={`mailto:${email}`}>
+          <span className="sns-name">Email</span>
+          <span className="sns-handle">{email}</span>
+        </a>
       </div>
 
       <div className="sidebar-avail">
