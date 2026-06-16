@@ -51,14 +51,14 @@ highlights[5]:
     ko: "독점 지도 좌표계 역공학"
 
 tags[4]:
-  - en: "#open-source-contributor"
-    ko: "#오픈소스-기여자"
-  - en: "#solo-developer"
-    ko: "#솔로-개발자"
+  - en: "#ios-developer"
+    ko: "#iOS-개발자"
   - en: "#multi-platform"
     ko: "#멀티-플랫폼"
-  - en: "#led-team-of-4"
-    ko: "#4인-팀-리드"
+  - en: "#tech-lead"
+    ko: "#테크-리드"
+  - en: "#solo-developer"
+    ko: "#솔로-개발자"
 
 
 skills[3]:
