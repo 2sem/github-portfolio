@@ -85,6 +85,19 @@ export default function App() {
     }).sort(byRecency)
   }, [search, activeChips, lang, tr])
 
+  const experienceYears = useMemo(() => {
+    const earliest = Math.min(
+      ...DATA.companies
+        .map(co => parseInt(co.when))
+        .filter(Boolean)
+    )
+    return new Date().getFullYear() - earliest
+  }, [])
+
+  const stats = useMemo(() => DATA.stats.map((s, i) =>
+    i === 0 ? { ...s, num: experienceYears } : s
+  ), [experienceYears])
+
   const filteredCompanies = useMemo(() => {
     const visibleIds = new Set(filteredProjects.map(p => p.id))
     return DATA.companies
@@ -132,7 +145,7 @@ export default function App() {
           <Summary
             tagline={DATA.tagline}
             bio={DATA.bio}
-            stats={DATA.stats}
+            stats={stats}
             tags={DATA.tags}
             onVisible={() => setActiveSection('summary')}
           />
