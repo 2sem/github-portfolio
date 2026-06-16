@@ -47,8 +47,8 @@ highlights[5]:
     ko: "주 5,000건+ Crash 제거"
   - en: "App Store rating reached 4.7"
     ko: "앱스토어 평점 4.7 달성"
-  - en: "Reverse-engineered a proprietary map coordinate system"
-    ko: "독점 지도 좌표계를 역공학으로 해독"
+  - en: "Cut map data transfer with grid-versioned caching + Polyline compression"
+    ko: "격자 캐시 + Polyline 압축으로 지도 데이터 전송량 감소"
 
 tags[4]:
   - en: "#ios-developer"
