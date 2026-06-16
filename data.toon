@@ -53,8 +53,8 @@ highlights[5]:
 tags[4]:
   - en: "#ios-developer"
     ko: "#iOS-개발자"
-  - en: "#multi-platform"
-    ko: "#멀티-플랫폼"
+  - en: "#cross-platform"
+    ko: "#크로스-플랫폼"
   - en: "#tech-lead"
     ko: "#테크-리드"
   - en: "#indie-developer"
