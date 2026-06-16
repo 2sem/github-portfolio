@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useLang } from '../i18n.jsx'
 
-export default function Contact({ github, linkedin, email, x, threads, contactMsg, onVisible }) {
+export default function Contact({ github, linkedin, email, x, threads, facebook, contactMsg, onVisible }) {
   const { t, tr } = useLang()
   const ref = useRef(null)
 
@@ -20,7 +20,8 @@ export default function Contact({ github, linkedin, email, x, threads, contactMs
     { href: github,            name: 'GitHub',   handle: '/' + github.split('/').filter(Boolean).pop() },
     { href: linkedin,          name: 'LinkedIn', handle: '/' + linkedin.split('/').filter(Boolean).pop() },
     x       && { href: x,       name: 'X',        handle: '@' + x.split('/').filter(Boolean).pop() },
-    threads && { href: threads, name: 'Threads',  handle: '@' + threads.split('/').filter(Boolean).pop().replace('@','') },
+    threads  && { href: threads,  name: 'Threads',  handle: '@' + threads.split('/').filter(Boolean).pop().replace('@','') },
+    facebook && { href: facebook, name: 'Facebook', handle: '/' + facebook.split('/').filter(Boolean).pop() },
     { href: `mailto:${email}`, name: 'Email',    handle: email, mail: true },
   ].filter(Boolean)
 

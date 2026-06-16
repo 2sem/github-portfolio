@@ -156,6 +156,7 @@ export default function App() {
           email={DATA.email}
           x={DATA.x}
           threads={DATA.threads}
+          facebook={DATA.facebook}
           resume={DATA.resume}
           activeSection={activeSection}
         />
@@ -195,6 +196,7 @@ export default function App() {
             email={DATA.email}
             x={DATA.x}
             threads={DATA.threads}
+            facebook={DATA.facebook}
             contactMsg={DATA.contactMsg}
             onVisible={() => setActiveSection('contact')}
           />

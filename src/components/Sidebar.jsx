@@ -8,7 +8,7 @@ const NAV = [
   { id: 'contact', pre: '04' },
 ]
 
-export default function Sidebar({ name, role, github, linkedin, email, x, threads, resume, activeSection }) {
+export default function Sidebar({ name, role, github, linkedin, email, x, threads, facebook, resume, activeSection }) {
   const { t, tr } = useLang()
   return (
     <aside className="sidebar">
@@ -50,6 +50,10 @@ export default function Sidebar({ name, role, github, linkedin, email, x, thread
         {threads && <a href={threads} target="_blank" rel="noopener noreferrer">
           <span className="sns-name">Threads</span>
           <span className="sns-handle">@{threads.split('/').filter(Boolean).pop().replace('@','')}</span>
+        </a>}
+        {facebook && <a href={facebook} target="_blank" rel="noopener noreferrer">
+          <span className="sns-name">Facebook</span>
+          <span className="sns-handle">/{facebook.split('/').filter(Boolean).pop()}</span>
         </a>}
         <a href={`mailto:${email}`}>
           <span className="sns-name">Email</span>
