@@ -8,7 +8,7 @@ const NAV = [
   { id: 'contact', pre: '04' },
 ]
 
-export default function Sidebar({ name, role, github, linkedin, email, resume, activeSection }) {
+export default function Sidebar({ name, role, github, linkedin, email, x, threads, resume, activeSection }) {
   const { t, tr } = useLang()
   return (
     <aside className="sidebar">
@@ -35,15 +35,11 @@ export default function Sidebar({ name, role, github, linkedin, email, resume, a
       <div className="sidebar-divider" />
 
       <div className="sidebar-links">
-        <a href={github} target="_blank" rel="noopener noreferrer">
-          ↗ {github.replace('https://', '')}
-        </a>
-        <a href={linkedin} target="_blank" rel="noopener noreferrer">
-          ↗ {linkedin.replace('https://', '')}
-        </a>
-        <a href={`mailto:${email}`}>
-          ✉ {email}
-        </a>
+        <a href={github} target="_blank" rel="noopener noreferrer">↗ github/{github.split('/').filter(Boolean).pop()}</a>
+        <a href={linkedin} target="_blank" rel="noopener noreferrer">↗ in/{linkedin.split('/').filter(Boolean).pop()}</a>
+        {x && <a href={x} target="_blank" rel="noopener noreferrer">↗ @{x.split('/').filter(Boolean).pop()}</a>}
+        {threads && <a href={threads} target="_blank" rel="noopener noreferrer">↗ @{threads.split('/').filter(Boolean).pop().replace('@','')} · th</a>}
+        <a href={`mailto:${email}`}>✉ {email}</a>
       </div>
 
       <div className="sidebar-avail">

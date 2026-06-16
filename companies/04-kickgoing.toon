@@ -118,6 +118,9 @@ projects[10]:
     achievement:
       en: "Past user complaints about excessive mobile data usage were the trigger; the upcoming Neighborhood Map feature would send far more map data and made optimization unavoidable. Designed a grid-partitioned cache protocol with the server team: the Korea map is split into fixed-size grids, each versioned — the client sends its cached grid ID and version, the server returns only changed grids, the client stores the response in AsyncStorage and serves unchanged grids from cache. Applied Google Polyline encoding to compress coordinate payloads. Used Flipper network inspection to diagnose duplicate location-fetch calls; traced them to map position change events firing on every intermediate position during initial pan — eliminated them by enforcing explicit call ordering and adding a guard state that blocks calls during invalid phases. Significantly reduced data consumption."
       ko: "과거 과도한 데이터 사용 관련 민원이 있었고 동네지도 추가 시 더 많은 지도 데이터 전송이 불가피하여 최적화 착수. 서버팀과 격자 캐시 프로토콜 설계: 국내 지도를 고정 크기 격자로 분할·버전 관리, 클라이언트는 격자 식별값과 버전을 전송하고 서버는 변경된 격자만 응답, 수신 데이터는 AsyncStorage에 저장하고 미전송 격자는 캐시 사용. Google Polyline 인코딩으로 좌표 데이터 압축. Flipper 네트워크 분석으로 중복 위치 조회 원인 파악 — 초기 위치 이동 중 중간 위치마다 이벤트가 반복 발생하는 것을 확인하고, 호출 순서 정리 및 유효하지 않은 상태에서의 호출을 막는 가드 상태 추가로 불필요한 호출 제거. 데이터 사용량 크게 감소."
+    highlight:
+      en: "API data usage significantly reduced"
+      ko: "API 데이터 사용량 대폭 감소"
     tech[5]: TypeScript,"React Native",AsyncStorage,"Google Polyline",Flipper
     image: null
     links[1]:
@@ -208,6 +211,9 @@ projects[10]:
     achievement:
       en: "No prior React Native project at the team had implemented a full multi-language resource set — designed the pattern from scratch: separate string and image resource files per locale, unified via a custom language hook that reads device locale and re-exports the correct set. Added an Accept-Language header to all API requests so the server could return locale-specific content and URLs. Wired event logging to track which language users were running the app in. Discovered that react-native-android-open-settings lacked navigation to the Android app-language settings screen — implemented it and submitted an open-source PR that was merged. Built incrementally: highest-impact strings first, images next, then edge cases — prioritized by user-visible impact rather than completeness."
       ko: "팀 내 RN 다국어 리소스 세트 구현 선례 없음 — 로케일별 문구·이미지 리소스 파일 분리 후 기기 언어를 읽어 올바른 세트를 반환하는 언어 훅으로 통합하는 패턴 직접 설계. 모든 API 요청에 Accept-Language 헤더 추가해 서버에서 로케일별 콘텐츠·URL 반환. 이벤트 로깅으로 사용자 언어 현황 추적. react-native-android-open-settings에 Android 앱 언어 설정 이동 기능이 없어 직접 구현 후 PR 기여·머지. 사용자에게 보이는 영향이 큰 순서(문구→이미지→엣지케이스)로 단계적 구현."
+    highlight:
+      en: "Open-source PR merged"
+      ko: "오픈소스 PR 머지"
     tech[5]: TypeScript,"React Native","react-native-android-open-settings","i18n","Open Source"
     image: "/images/kickgoing/kickgoing-eng1.png"
     images[7]:

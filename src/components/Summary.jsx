@@ -33,7 +33,7 @@ function StatNum({ s }) {
   )
 }
 
-export default function Summary({ tagline, bio, stats, tags, onVisible }) {
+export default function Summary({ tagline, bio, stats, tags, highlights, onVisible }) {
   const { t, tr } = useLang()
   const ref = useRef(null)
 
@@ -65,6 +65,17 @@ export default function Summary({ tagline, bio, stats, tags, onVisible }) {
           </div>
         ))}
       </div>
+
+      {highlights && highlights.length > 0 && (
+        <div className="highlights-row">
+          {highlights.map((h, i) => (
+            <span className="highlight-pill" key={i}>
+              <span className="highlight-star">★</span>
+              {tr(h)}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div className="tags-row">
         {tags.map((tag, i) => (

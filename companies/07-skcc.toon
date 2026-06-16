@@ -37,6 +37,9 @@ projects[3]:
     achievement:
       en: "WKWebview delegate method had a force-unwrapped optional (!) causing 5,000+ crashes per week — traced via Firebase, reproduced the scenario, and fixed with a guard statement, eliminating all weekly crashes in one change. Widget sessions were blocked for customers using the security password feature — avoided a broad API rewrite by using App Groups-based CookieStorage to share the session between app and widget, giving customers 1-hour widget access after password entry and resolving a standing complaint. Set up a GitLab Runner with a local Ollama model to auto-review MRs and post comments, solving the non-technical manager's review bottleneck while keeping code off external servers — published a Medium article on the setup."
       ko: "WKWebview Delegate 메서드의 강제 언래핑(!)으로 주 5,000건 이상 Crash 발생 — Firebase로 추적 후 동일 상황 재현, Guard로 수정해 Crash 전량 제거. 보안 비밀번호 고객의 Widget 미사용 문제 — API 수정 범위가 넓어 보류 중이던 건을 App Groups 기반 CookieStorage로 앱↔Widget 세션 공유해 비밀번호 입력 후 1시간 Widget 사용 가능하도록 해결, 민원 해소. Ollama Local 모델 기반 GitLab Runner MR 자동 검토 구성 — 비개발자 매니저의 검토 부담 해소 및 보안 유지, Medium 아티클 게재."
+    highlight:
+      en: "5,000+ weekly crashes eliminated"
+      ko: "주 5,000건+ Crash 제거"
     tech[6]: Swift,Firebase,SPM,WKWebview,Ollama,Widget
     image: null
     links[1]:
@@ -57,6 +60,9 @@ projects[3]:
     achievement:
       en: "The project was locked to Xcode 13, blocking macOS upgrades and accumulating tech debt — researched a method to run older Xcode on newer macOS, published two Medium articles, and applied the same approach iteratively to upgrade from Xcode 13 to 16. GitLab MRs had no descriptions, templates, or reviewers — introduced a template with intent, test steps, results, default labels, and auto-assigned reviewer, speeding up manager approval and spreading the practice to other freelance projects. Coached a junior by splitting tasks into hand-off-sized units; the junior eventually took 80% ownership of SWING iOS. Migrated CocoaPods to SPM and refined the team's incorrect JIRA usage into a proper workflow."
       ko: "Xcode 13 고착으로 macOS 업그레이드 불가·기술 부채 누적 — 구버전 Xcode를 신규 macOS에서 실행하는 방법 연구 후 Medium 아티클 2편 게재, 동일 방법으로 Xcode 13→16 순차 업그레이드해 기술 부채 해소. GitLab MR에 설명·템플릿·리뷰어 없음 — 의도·테스트 방법·결과·기본 Label·Reviewer 자동 설정 MR 템플릿 도입, 매니저 신속 승인·주니어 협업 교육·타 프리랜서 프로젝트에 전파. 주니어에게 Task 분할 방식으로 코칭, 이후 SWING의 80% 담당. CocoaPods→SPM 마이그레이션, 잘못 사용하던 JIRA 활용 방식 개선."
+    highlight:
+      en: "Junior coached to 80% ownership"
+      ko: "주니어 80% 업무 위임"
     tech[6]: Swift,"Objective-C",Cordova,Firebase,SPM,GitLab
     image: null
     links[2]:

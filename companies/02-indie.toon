@@ -19,6 +19,9 @@ projects[9]:
     achievement:
       en: "The app I built and maintained went on to attract a ₩1 billion investment."
       ko: "직접 만들고 유지보수한 앱이 10억 원 투자 유치에 성공."
+    highlight:
+      en: "₩1B investment secured"
+      ko: "10억 원 투자 유치"
     tech[1]: Swift
     image: "/images/credif/shownote/shownote1.jpeg"
     images[3]:

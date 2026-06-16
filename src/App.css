@@ -405,6 +405,31 @@ section[id] {
   margin-top: 4px;
 }
 
+.highlights-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.highlight-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 5px 11px;
+  background: transparent;
+}
+
+.highlight-star {
+  color: var(--accent);
+  font-size: 10px;
+}
+
 .tags-row {
   display: flex;
   flex-wrap: wrap;

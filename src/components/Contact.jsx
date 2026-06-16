@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useLang } from '../i18n.jsx'
 
-export default function Contact({ github, linkedin, email, contactMsg, onVisible }) {
+export default function Contact({ github, linkedin, email, x, threads, contactMsg, onVisible }) {
   const { t, tr } = useLang()
   const ref = useRef(null)
 
@@ -17,10 +17,12 @@ export default function Contact({ github, linkedin, email, contactMsg, onVisible
   }, [onVisible])
 
   const links = [
-    { href: github, label: github.replace('https://', ''), type: 'arrow' },
-    { href: linkedin, label: linkedin.replace('https://', ''), type: 'arrow' },
-    { href: `mailto:${email}`, label: email, type: 'mail' },
-  ]
+    { href: github,            label: 'github/' + github.split('/').filter(Boolean).pop() },
+    { href: linkedin,          label: 'in/' + linkedin.split('/').filter(Boolean).pop() },
+    x       && { href: x,       label: '@' + x.split('/').filter(Boolean).pop() },
+    threads && { href: threads, label: '@' + threads.split('/').filter(Boolean).pop().replace('@','') + ' · threads' },
+    { href: `mailto:${email}`, label: email, mail: true },
+  ].filter(Boolean)
 
   return (
     <section id="contact" className="contact-section" ref={ref}>
@@ -31,7 +33,7 @@ export default function Contact({ github, linkedin, email, contactMsg, onVisible
           <div className="contact-links">
             {links.map((l, i) => (
               <a key={i} className="contact-link" href={l.href} target="_blank" rel="noopener noreferrer">
-                <span className="arrow">{l.type === 'mail' ? '✉' : '↗'}</span>
+                <span className="arrow">{l.mail ? '✉' : '↗'}</span>
                 {l.label}
               </a>
             ))}

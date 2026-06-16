@@ -1,16 +1,18 @@
-name: "Your Name"
+name: "Lee Young-jun"
 role:
-  en: senior_software_engineer
-  ko: 시니어_소프트웨어_엔지니어
+  en: "Senior iOS Developer"
+  ko: "Senior iOS 개발자"
 tagline:
-  en: "I build reliable\nweb & mobile products"
-  ko: "신뢰할 수 있는\n웹·모바일 제품을 만듭니다"
+  en: "Building better products\nby thinking and sharing together"
+  ko: "더 좋은 제품을 만들기 위해\n함께 고민하고 공유합니다"
 bio:
-  en: "Bio placeholder — what you do, your focus areas, and what you're looking for. Written to be skimmed by a recruiter in seconds."
-  ko: "자기소개 자리 — 하는 일, 집중 분야, 찾고 있는 기회. 채용 담당자가 몇 초 만에 훑어볼 수 있도록 작성."
+  en: "Senior iOS developer focused on mobile since 2017, having started in server-side and crossed through full-stack web. Builds mobile apps with Swift and React Native."
+  ko: "서버 개발자로 시작해 Full Stack을 거쳐 2017년부터 모바일에 집중한 Senior iOS 개발자. Swift와 React Native로 모바일 앱을 개발합니다."
 github: https://github.com/2sem
-linkedin: https://linkedin.com/in/handle
+linkedin: https://www.linkedin.com/in/gamehelper/
 email: kofggm@gmail.com
+x: https://x.com/leesam988929
+threads: https://www.threads.com/@kofinstar
 resume: "#"
 contactMsg:
   en: "Let's talk. Open to new opportunities and interesting projects."

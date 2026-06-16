@@ -103,9 +103,19 @@ export default function App() {
     return new Date().getFullYear() - earliest
   }, [])
 
-  const stats = useMemo(() => DATA.stats.map((s, i) =>
-    i === 0 ? { ...s, num: experienceYears } : s
-  ), [experienceYears])
+  const projectCount = useMemo(() =>
+    DATA.companies.reduce((sum, co) => sum + co.projects.length, 0), [])
+
+  const highlights = useMemo(() =>
+    DATA.companies.flatMap(co => co.projects).filter(p => p.highlight).map(p => p.highlight),
+  [])
+
+  const stats = useMemo(() => DATA.stats.map((s, i) => {
+    if (i === 0) return { ...s, num: experienceYears }
+    if (i === 1) return { ...s, num: projectCount }
+    if (i === 3) return { ...s, num: highlights.length }
+    return s
+  }), [experienceYears, projectCount, highlights])
 
   const filteredCompanies = useMemo(() => {
     const visibleIds = new Set(filteredProjects.map(p => p.id))
@@ -146,6 +156,8 @@ export default function App() {
           github={DATA.github}
           linkedin={DATA.linkedin}
           email={DATA.email}
+          x={DATA.x}
+          threads={DATA.threads}
           resume={DATA.resume}
           activeSection={activeSection}
         />
@@ -156,6 +168,7 @@ export default function App() {
             bio={DATA.bio}
             stats={stats}
             tags={DATA.tags}
+            highlights={highlights}
             onVisible={() => setActiveSection('summary')}
           />
 
@@ -182,6 +195,8 @@ export default function App() {
             github={DATA.github}
             linkedin={DATA.linkedin}
             email={DATA.email}
+            x={DATA.x}
+            threads={DATA.threads}
             contactMsg={DATA.contactMsg}
             onVisible={() => setActiveSection('contact')}
           />
