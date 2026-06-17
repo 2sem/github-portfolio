@@ -4,5 +4,5 @@ import { toonPlugin } from './vite-plugin-toon.js'
 
 export default defineConfig({
   plugins: [react(), toonPlugin()],
-  base: './',
+  base: '/',
 })
