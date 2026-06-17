@@ -10,8 +10,9 @@ export default function Topbar({ theme, onToggleTheme, lang, onToggleLang, cartC
         <span className="topbar-dot" style={{ background: '#34d986' }} />
       </div>
       <span className="topbar-path">
-        ~/portfolio <b>$</b>{' '}
-        <span style={{ opacity: 0.55 }}>./run --layout=A</span>
+        <span className="topbar-user">leesam</span>
+        <span className="topbar-at">@mac</span>
+        {' '}~/portfolio <b>$</b> <span className="topbar-cursor" />
       </span>
       <div className="topbar-right">
         <button className="pill" onClick={onToggleLang}>

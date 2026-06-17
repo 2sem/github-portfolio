@@ -3,6 +3,18 @@ import { DATA } from './data.js'
 import { useLang } from './i18n.jsx'
 import Topbar from './components/Topbar.jsx'
 import Sidebar from './components/Sidebar.jsx'
+import Summary from './components/Summary.jsx'
+import Projects from './components/Projects.jsx'
+import Skills from './components/Skills.jsx'
+import Contact from './components/Contact.jsx'
+import ResumeCart from './components/ResumeCart.jsx'
+
+const NAV_ITEMS = [
+  { id: 'summary', pre: '01' },
+  { id: 'projects', pre: '02' },
+  { id: 'skills', pre: '03' },
+  { id: 'contact', pre: '04' },
+]
 
 // Latest YYYY(.MM) date in a project's meta (handles ranges like "2010.01 – 2017.02").
 function recencyKey(meta) {
@@ -12,15 +24,14 @@ function recencyKey(meta) {
   return dates.length ? Math.max(...dates) : 0
 }
 const byRecency = (a, b) => recencyKey(b.meta) - recencyKey(a.meta)
-import Summary from './components/Summary.jsx'
-import Projects from './components/Projects.jsx'
-import Skills from './components/Skills.jsx'
-import Contact from './components/Contact.jsx'
-import ResumeCart from './components/ResumeCart.jsx'
 
 export default function App() {
-  const { lang, setLang, tr } = useLang()
-  const [theme, setTheme] = useState('dark')
+  const { lang, setLang, t, tr } = useLang()
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('theme')
+    if (saved === 'light' || saved === 'dark') return saved
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  })
   const [cartOpen, setCartOpen] = useState(false)
   const [cart, setCart] = useState([])
   const [search, setSearch] = useState('')
@@ -29,10 +40,11 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : '')
+    localStorage.setItem('theme', theme)
   }, [theme])
 
   const toggleTheme = useCallback(() => {
-    setTheme(t => t === 'dark' ? 'light' : 'dark')
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
   }, [])
 
   const toggleCart = useCallback((id, name) => {
@@ -45,6 +57,15 @@ export default function App() {
 
   const removeFromCart = useCallback((id) => {
     setCart(prev => prev.filter(x => x.id !== id))
+  }, [])
+
+  const toggleCartAll = useCallback((projects) => {
+    setCart(prev => {
+      const allIn = projects.every(p => prev.some(x => x.id === p.id))
+      if (allIn) return prev.filter(x => !projects.some(p => p.id === x.id))
+      const toAdd = projects.filter(p => !prev.some(x => x.id === p.id))
+      return [...prev, ...toAdd.map(p => ({ id: p.id, name: p.name }))]
+    })
   }, [])
 
   const reorderCart = useCallback((from, to) => {
@@ -85,6 +106,27 @@ export default function App() {
     }).sort(byRecency)
   }, [search, activeChips, lang, tr])
 
+  const experienceYears = useMemo(() => {
+    const earliest = Math.min(
+      ...DATA.companies
+        .map(co => parseInt(co.when))
+        .filter(Boolean)
+    )
+    return new Date().getFullYear() - earliest
+  }, [])
+
+  const projectCount = useMemo(() =>
+    DATA.companies.reduce((sum, co) => sum + co.projects.length, 0), [])
+
+  const highlights = DATA.highlights ?? []
+
+  const stats = useMemo(() => DATA.stats.map((s, i) => {
+    if (i === 0) return { ...s, num: experienceYears }
+    if (i === 1) return { ...s, num: projectCount }
+    if (i === 3) return { ...s, num: highlights.length }
+    return s
+  }), [experienceYears, projectCount])
+
   const filteredCompanies = useMemo(() => {
     const visibleIds = new Set(filteredProjects.map(p => p.id))
     return DATA.companies
@@ -124,6 +166,9 @@ export default function App() {
           github={DATA.github}
           linkedin={DATA.linkedin}
           email={DATA.email}
+          x={DATA.x}
+          threads={DATA.threads}
+          facebook={DATA.facebook}
           resume={DATA.resume}
           activeSection={activeSection}
         />
@@ -132,8 +177,9 @@ export default function App() {
           <Summary
             tagline={DATA.tagline}
             bio={DATA.bio}
-            stats={DATA.stats}
+            stats={stats}
             tags={DATA.tags}
+            highlights={highlights}
             onVisible={() => setActiveSection('summary')}
           />
 
@@ -147,6 +193,7 @@ export default function App() {
             filteredCompanies={filteredCompanies}
             isInCart={isInCart}
             onCartToggle={toggleCart}
+            onCartToggleAll={toggleCartAll}
             onVisible={() => setActiveSection('projects')}
           />
 
@@ -159,11 +206,27 @@ export default function App() {
             github={DATA.github}
             linkedin={DATA.linkedin}
             email={DATA.email}
+            x={DATA.x}
+            threads={DATA.threads}
+            facebook={DATA.facebook}
             contactMsg={DATA.contactMsg}
             onVisible={() => setActiveSection('contact')}
           />
         </main>
       </div>
+
+      <nav className="mobile-nav">
+        {NAV_ITEMS.map(item => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            className={`mobile-nav-item${activeSection === item.id ? ' active' : ''}`}
+          >
+            <span className="mobile-nav-pre">{item.pre}</span>
+            <span>{t(item.id)}</span>
+          </a>
+        ))}
+      </nav>
     </div>
   )
 }

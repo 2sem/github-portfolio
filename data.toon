@@ -1,20 +1,23 @@
-name: "Your Name"
+name: "Lee Young-jun"
 role:
-  en: senior_software_engineer
-  ko: 시니어_소프트웨어_엔지니어
+  en: "Senior iOS Developer"
+  ko: "Senior iOS 개발자"
 tagline:
-  en: "I build reliable\nweb & mobile products"
-  ko: "신뢰할 수 있는\n웹·모바일 제품을 만듭니다"
+  en: "Build end-to-end.\nShare everything."
+  ko: "처음부터 끝까지 만들고\n배운 건 모두 나눕니다"
 bio:
-  en: "Bio placeholder — what you do, your focus areas, and what you're looking for. Written to be skimmed by a recruiter in seconds."
-  ko: "자기소개 자리 — 하는 일, 집중 분야, 찾고 있는 기회. 채용 담당자가 몇 초 만에 훑어볼 수 있도록 작성."
+  en: "Started server-side, moved through full-stack web, and settled on iOS in 2017. Now building apps with Swift and React Native."
+  ko: "서버 개발로 시작해 풀스택을 거쳐 2017년 iOS에 정착했습니다. 현재 Swift와 React Native로 앱을 개발합니다."
 github: https://github.com/2sem
-linkedin: https://linkedin.com/in/handle
+linkedin: https://www.linkedin.com/in/gamehelper/
 email: kofggm@gmail.com
+x: https://x.com/leesam988929
+threads: https://www.threads.com/@kofinstar
+facebook: https://www.facebook.com/youngjun.lee.3998
 resume: "#"
 contactMsg:
-  en: "Let's talk. Open to new opportunities and interesting projects."
-  ko: "편하게 연락 주세요. 새로운 기회와 흥미로운 프로젝트를 환영합니다."
+  en: "Seoul-based. Open to remote. Always interested in ambitious iOS products."
+  ko: "서울 기반, 원격 근무 가능합니다. 도전적인 iOS 프로젝트에 언제나 열려있습니다."
 
 stats[4]:
   - num: 6
@@ -22,11 +25,11 @@ stats[4]:
     cap:
       en: experience
       ko: 경력
-  - num: 48
+  - num: 64
     cap:
       en: projects_shipped
       ko: 출시_프로젝트
-  - num: 23
+  - num: 22
     cap:
       en: skills_tools
       ko: 기술_도구
@@ -35,27 +38,39 @@ stats[4]:
       en: highlights
       ko: 주요_성과
 
+highlights[5]:
+  - en: "₩1B investment secured"
+    ko: "10억 원 투자 유치"
+  - en: "Push notifications doubled Android revenue"
+    ko: "푸시 알림으로 안드로이드 매출 2배"
+  - en: "5,000+ weekly crashes eliminated"
+    ko: "주 5,000건+ Crash 제거"
+  - en: "App Store rating reached 4.7"
+    ko: "앱스토어 평점 4.7 달성"
+  - en: "Cut map data transfer with grid-versioned caching + Polyline compression"
+    ko: "격자 캐시 + Polyline 압축으로 지도 데이터 전송량 감소"
+
 tags[4]:
-  - en: "#open-source-maintainer"
-    ko: "#오픈소스-메인테이너"
-  - en: "#conf-speaker"
-    ko: "#컨퍼런스-발표자"
-  - en: "#1M+-users"
-    ko: "#100만+-사용자"
-  - en: "#led-team-of-5"
-    ko: "#5인-팀-리드"
+  - en: "#ios-developer"
+    ko: "#iOS-개발자"
+  - en: "#cross-platform"
+    ko: "#크로스-플랫폼"
+  - en: "#tech-lead"
+    ko: "#테크-리드"
+  - en: "#indie-developer"
+    ko: "#인디-개발자"
 
 
 skills[3]:
   - group:
       en: Languages
       ko: 언어
-    chips[6]: Swift,TypeScript,JavaScript,SQL,PHP,Bash
+    chips[5]: Swift,TypeScript,JavaScript,SQL,Bash
   - group:
       en: Frameworks
       ko: 프레임워크
-    chips[5]: SwiftUI,UIKit,React,"Node.js","Next.js"
+    chips[6]: SwiftUI,UIKit,"React Native",React,"Node.js","Next.js"
   - group:
       en: "Tools / Infra"
       ko: "도구 / 인프라"
-    chips[7]: Xcode,Tuist,Git,Docker,AWS,Figma,CI/CD
+    chips[10]: Xcode,Tuist,Git,Firebase,RxSwift,AVFoundation,"GitHub Actions",CocoaPods,SPM,CI/CD

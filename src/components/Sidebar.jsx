@@ -1,4 +1,5 @@
 import { useLang } from '../i18n.jsx'
+import AvatarDot from './AvatarDot.jsx'
 
 const NAV = [
   { id: 'summary', pre: '01' },
@@ -7,11 +8,11 @@ const NAV = [
   { id: 'contact', pre: '04' },
 ]
 
-export default function Sidebar({ name, role, github, linkedin, email, resume, activeSection }) {
+export default function Sidebar({ name, role, github, linkedin, email, x, threads, facebook, resume, activeSection }) {
   const { t, tr } = useLang()
   return (
     <aside className="sidebar">
-      <div className="sidebar-avatar">&gt;_</div>
+      <AvatarDot realSrc="/images/profile.jpeg" alt="Lee Young-jun" />
 
       <div className="sidebar-ident">
         <div className="nm">{name}</div>
@@ -35,13 +36,28 @@ export default function Sidebar({ name, role, github, linkedin, email, resume, a
 
       <div className="sidebar-links">
         <a href={github} target="_blank" rel="noopener noreferrer">
-          ↗ {github.replace('https://', '')}
+          <span className="sns-name">GitHub</span>
+          <span className="sns-handle">/{github.split('/').filter(Boolean).pop()}</span>
         </a>
         <a href={linkedin} target="_blank" rel="noopener noreferrer">
-          ↗ {linkedin.replace('https://', '')}
+          <span className="sns-name">LinkedIn</span>
+          <span className="sns-handle">/{linkedin.split('/').filter(Boolean).pop()}</span>
         </a>
+        {x && <a href={x} target="_blank" rel="noopener noreferrer">
+          <span className="sns-name">X</span>
+          <span className="sns-handle">@{x.split('/').filter(Boolean).pop()}</span>
+        </a>}
+        {threads && <a href={threads} target="_blank" rel="noopener noreferrer">
+          <span className="sns-name">Threads</span>
+          <span className="sns-handle">@{threads.split('/').filter(Boolean).pop().replace('@','')}</span>
+        </a>}
+        {facebook && <a href={facebook} target="_blank" rel="noopener noreferrer">
+          <span className="sns-name">Facebook</span>
+          <span className="sns-handle">/{facebook.split('/').filter(Boolean).pop()}</span>
+        </a>}
         <a href={`mailto:${email}`}>
-          ✉ {email}
+          <span className="sns-name">Email</span>
+          <span className="sns-handle">{email}</span>
         </a>
       </div>
 

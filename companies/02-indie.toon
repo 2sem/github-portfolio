@@ -19,6 +19,9 @@ projects[9]:
     achievement:
       en: "The app I built and maintained went on to attract a ₩1 billion investment."
       ko: "직접 만들고 유지보수한 앱이 10억 원 투자 유치에 성공."
+    highlight:
+      en: "₩1B investment secured"
+      ko: "10억 원 투자 유치"
     tech[1]: Swift
     image: "/images/credif/shownote/shownote1.jpeg"
     images[3]:
@@ -41,10 +44,10 @@ projects[9]:
       en: "Shipped a solo iOS app by repurposing an Android app's Excel dataset as bundled default data, with Core Data for favorites and a random-suggestion feature."
       ko: "안드로이드 앱의 Excel 데이터를 기본 데이터로 재활용해 iOS 앱을 단독 출시 — 즐겨찾기는 Core Data로 저장하고 랜덤 추천 기능을 구현."
     tech[3]: Swift,CoreData,Excel
-    image: "/images/indie/letscheers/letscheer1.png"
+    image: "/images/indie/letscheers/letscheer2.png"
     images[4]:
-      - "/images/indie/letscheers/letscheer1.png"
       - "/images/indie/letscheers/letscheer2.png"
+      - "/images/indie/letscheers/letscheer1.png"
       - "/images/indie/letscheers/letscheer3.png"
       - "/images/indie/letscheers/letscheer4.png"
     diagrams[1]:
@@ -62,6 +65,9 @@ projects[9]:
     achievement:
       en: "Proposed push notifications for fast-rising and recommended stocks to increase repeat app usage, then added the supporting server/app flow; the Android version's revenue reportedly doubled after the push feature, reaching about ₩3 million per month."
       ko: "앱 재방문을 늘리기 위해 급등주·추천주 푸시 기능을 제안하고 서버/앱 흐름을 추가. 해당 푸시 기능 적용 후 안드로이드 기준 수익이 약 2배 증가해 월 300만 원 수준까지 올랐다고 전달받음."
+    highlight:
+      en: "Push notifications doubled Android revenue"
+      ko: "푸시 알림으로 안드로이드 매출 2배"
     tech[6]: Swift,RxSwift,CoreData,KakaoSDK,FCM,"Node.js"
     image: "/images/indie/related-stocks/related-stocks1.png"
     images[6]:
@@ -167,12 +173,12 @@ projects[9]:
       en: "Hand-collected linked SNS/site data for National Assembly members over two weeks (numbers being unavailable for privacy) and made every channel open natively via URL schemes/SDKs. After a community post, the app went viral and earned interviews with major outlets including SBS, gaining substantial public visibility and influence."
       ko: "(번호 확보가 불가능한 상황에서) 국회의원의 연결 SNS·사이트 데이터를 2주간 직접 수집하고 모든 채널이 URL 스킴·SDK로 네이티브하게 열리도록 구현. 커뮤니티 공유로 입소문을 타며 SBS 등 주요 언론 인터뷰를 진행해 앱 인지도와 영향력을 크게 확보."
     tech[6]: Swift,CoreData,KakaoSDK,FacebookSDK,Firebase,Xlsx
-    image: "/images/indie/democracyaction/democracyaction3.png"
+    image: "/images/indie/democracyaction/democracyaction2.png"
     images[6]:
+      - "/images/indie/democracyaction/democracyaction2.png"
       - "/images/indie/democracyaction/democracyaction3.png"
       - "/images/indie/democracyaction/democracyaction5.png"
       - "/images/indie/democracyaction/democracyaction1.png"
-      - "/images/indie/democracyaction/democracyaction2.png"
       - "/images/indie/democracyaction/democracyaction4.png"
       - "/images/indie/democracyaction/democracyaction6.png"
     diagrams[1]:
@@ -218,10 +224,10 @@ projects[9]:
       en: "Built a serverless content-update mechanism: the study material lives in a Google Drive Excel file the app downloads (with per-version caching to skip re-downloads), so content updates ship without an App Store release. Modeled each spreadsheet sheet as a table, and added auto-generated quizzes and local-notification study reminders."
       ko: "서버 없는 콘텐츠 업데이트 구조를 구현: 학습 자료를 Google Drive Excel로 두고 앱이 다운로드(버전별 캐싱으로 재다운로드 방지)해, 앱스토어 출시 없이 콘텐츠를 갱신. 각 시트를 Table로 모델링하고 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
     tech[5]: Swift,CoreData,Xlsx,GoogleDrive,LocalNotification
-    image: "/images/indie/realtornote/realtornote1.png"
+    image: "/images/indie/realtornote/realtornote2.png"
     images[6]:
-      - "/images/indie/realtornote/realtornote1.png"
       - "/images/indie/realtornote/realtornote2.png"
+      - "/images/indie/realtornote/realtornote1.png"
       - "/images/indie/realtornote/realtornote3.png"
       - "/images/indie/realtornote/realtornote4.png"
       - "/images/indie/realtornote/realtornote5.png"

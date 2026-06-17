@@ -1,0 +1,77 @@
+id: skcc
+name: "SK AX(C&C)"
+when: "2024.06 – 2025.10"
+role:
+  en: "Freelancer iOS Developer"
+  ko: "서비스 프론트 / iOS 개발자 (프리랜서)"
+cur: false
+projects[3]:
+  - id: skcc-ai-sdk
+    name: "AI Layer iOS SDK"
+    meta: "2025.01 – 2025.10 · SDK · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Maintenance and improvement of AI Layer iOS SDK — a shared AI screen SDK embedded in T world and T membership apps. Inherited with one handoff briefing, declared a work stoppage in month 4 when no formal contract was in place, and secured retroactive pay from 2025.01. Improved accessibility, UI, MR templates, and SDK change notification workflow."
+      ko: "T world·T membership 공용 AI 화면 iOS SDK 유지보수 및 개선. 1회 인수 설명 후 담당, 4개월간 계약 조치 없어 작업 중단 선언 → 2025.01 소급 추가 계약 체결. 접근성·UI 개선, MR 템플릿 구축, SDK 변경 Slack 알림 운영."
+    role:
+      en: "Sole iOS SDK maintainer — inherited without prior context, led contract negotiation, and drove improvements."
+      ko: "단독 iOS SDK 담당자 — 사전 맥락 없이 인수, 계약 협상 주도, 개선 작업 진행."
+    achievement:
+      en: "Inherited SDK maintenance with one handoff briefing and no contract — declared a work stoppage in month 4 when no formal assignment had been made, which prompted an additional contract with retroactive payment from 2025.01. Improved accessibility and UI, set up MR templates, and established a Slack notification workflow to alert the team on every SDK update."
+      ko: "계약 없이 1회 인수 설명만 받은 상태로 유지보수 담당 — 4개월 후 공식 계약 없음을 이유로 작업 중단 선언, 2025.01 소급 추가 계약 체결. 접근성·UI 개선, MR 템플릿 구축, SDK 업데이트 시 Slack 알림 운영 체계 수립."
+    highlight:
+      en: "Retroactive contract secured after work stoppage"
+      ko: "작업 중단으로 소급 계약 체결"
+    tech[3]: Swift,GitLab,Slack
+    image: null
+    links[0]:
+    diagrams[1]:
+      - "flowchart TD\n  User\n\n  subgraph Tworld[\"T world App\"]\n    subgraph WWebview[\"Webview\"]\n      WFE[\"T world FE\"]\n    end\n    WAIButton[\"AI Button\"]\n    WAISDK[\"AI Layer SDK\"]\n  end\n\n  subgraph Tmembership[\"T membership App\"]\n    subgraph MWebview[\"Webview\"]\n      MFE[\"T membership FE\"]\n    end\n    MAIButton[\"AI Button\"]\n    MAISDK[\"AI Layer SDK\"]\n  end\n\n  AISDKFE[\"AI Layer FE\"]\n\n  User --> Tworld\n  User --> Tmembership\n\n  WFE --> WAISDK\n  WAISDK <--> AISDKFE\n\n  WAIButton --> WAISDK\n\n  MFE --> MAISDK\n  MAISDK <--> AISDKFE\n\n  MAIButton --> MAISDK"
+  - id: skcc-tworld
+    name: "T world iOS"
+    meta: "2024.10 – 2025.10 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Maintenance and junior coaching for T world iOS — SKT's customer service app. Fixed a WKWebview delegate crash causing 5,000+ weekly crashes, resolved a Widget session bug blocking customers with security passwords, and built an AI-powered GitLab MR review pipeline using Ollama."
+      ko: "SKT 고객센터 앱 T world iOS 유지보수 및 주니어 코칭. WKWebview Delegate 강제 언래핑으로 주 5,000건 Crash 수정, 보안 비밀번호 고객의 Widget 미사용 문제 해결, Ollama 기반 GitLab MR AI 자동 검토 파이프라인 구성."
+    role:
+      en: "iOS developer — maintenance, AI tooling, and junior coaching."
+      ko: "iOS 개발자 — 유지보수, AI 툴링, 주니어 코칭."
+    achievement:
+      en: "WKWebview delegate method had a force-unwrapped optional (!) causing 5,000+ crashes per week — traced via Firebase, reproduced the scenario, and fixed with a guard statement, eliminating all weekly crashes in one change. Widget sessions were blocked for customers using the security password feature — avoided a broad API rewrite by using App Groups-based CookieStorage to share the session between app and widget, giving customers 1-hour widget access after password entry and resolving a standing complaint. Set up a GitLab Runner with a local Ollama model to auto-review MRs and post comments, solving the non-technical manager's review bottleneck while keeping code off external servers — published a Medium article on the setup."
+      ko: "WKWebview Delegate 메서드의 강제 언래핑(!)으로 주 5,000건 이상 Crash 발생 — Firebase로 추적 후 동일 상황 재현, Guard로 수정해 Crash 전량 제거. 보안 비밀번호 고객의 Widget 미사용 문제 — API 수정 범위가 넓어 보류 중이던 건을 App Groups 기반 CookieStorage로 앱↔Widget 세션 공유해 비밀번호 입력 후 1시간 Widget 사용 가능하도록 해결, 민원 해소. Ollama Local 모델 기반 GitLab Runner MR 자동 검토 구성 — 비개발자 매니저의 검토 부담 해소 및 보안 유지, Medium 아티클 게재."
+    highlight:
+      en: "5,000+ weekly crashes eliminated"
+      ko: "주 5,000건+ Crash 제거"
+    tech[6]: Swift,Firebase,SPM,WKWebview,Ollama,Widget
+    image: null
+    links[1]:
+      - label: "Medium: Automating MR Review on GitLab Using AI (Ollama)"
+        href: "https://medium.com/@toyboy2/automating-mr-review-on-self-hosted-gitlab-using-ai-ollama-932e1cab30d9"
+    diagrams[1]:
+      - "flowchart TD\n  User\n  Server\n  Web[\"Web\"]\n  AIWeb[\"AI Web\"]\n  ExFeature[\"External Feature\"]\n\n  subgraph iOS\n    subgraph App\n      subgraph Tab\n        Webview\n      end\n      Firebase\n      SPM\n      FeatureSDK[\"Feature SDK\"]\n      AISDK[\"AI Layer SDK\"]\n    end\n\n    Widget\n  end\n\n  User --> App\n  Web <--> Webview\n  App <--> Server\n  AISDK <--> AIWeb\n  ExFeature <--> FeatureSDK\n\n  App <--> Widget"
+  - id: skcc-swing
+    name: "SWING iOS"
+    meta: "2024.06 – 2025.10 · Mobile · Swift"
+    tags[2]: platform:ios,lang:swift
+    desc:
+      en: "Maintenance and junior coaching for SWING iOS — an iPadOS Cordova hybrid app for SKT dealer management. Native Swift/ObjC shell wraps a webview loading SWING Web, backed by SKT Intra. Resolved a long-standing Xcode version lock, introduced GitLab MR templates, migrated CocoaPods to SPM, refined JIRA workflow, and coached a junior to 80% ownership."
+      ko: "SKT 대리점 업무용 iPadOS Cordova 하이브리드 앱 SWING iOS 유지보수 및 주니어 코칭. Xcode 버전 제약 해결, GitLab MR 템플릿 도입, CocoaPods→SPM 마이그레이션, JIRA 활용 방식 개선, 주니어 80% 업무 위임."
+    role:
+      en: "Sole iOS developer — maintenance, process improvement, and junior coaching. Joined the day after the interview with the previous developer leaving a week later."
+      ko: "단독 iOS 개발자 — 유지보수, 프로세스 개선, 주니어 코칭. 면접 다음날 합류, 전임자 일주일 후 퇴사."
+    achievement:
+      en: "The project was locked to Xcode 13, blocking macOS upgrades and accumulating tech debt — researched a method to run older Xcode on newer macOS, published two Medium articles, and applied the same approach iteratively to upgrade from Xcode 13 to 16. GitLab MRs had no descriptions, templates, or reviewers — introduced a template with intent, test steps, results, default labels, and auto-assigned reviewer, speeding up manager approval and spreading the practice to other freelance projects. Coached a junior by splitting tasks into hand-off-sized units; the junior eventually took 80% ownership of SWING iOS. Migrated CocoaPods to SPM and refined the team's incorrect JIRA usage into a proper workflow."
+      ko: "Xcode 13 고착으로 macOS 업그레이드 불가·기술 부채 누적 — 구버전 Xcode를 신규 macOS에서 실행하는 방법 연구 후 Medium 아티클 2편 게재, 동일 방법으로 Xcode 13→16 순차 업그레이드해 기술 부채 해소. GitLab MR에 설명·템플릿·리뷰어 없음 — 의도·테스트 방법·결과·기본 Label·Reviewer 자동 설정 MR 템플릿 도입, 매니저 신속 승인·주니어 협업 교육·타 프리랜서 프로젝트에 전파. 주니어에게 Task 분할 방식으로 코칭, 이후 SWING의 80% 담당. CocoaPods→SPM 마이그레이션, 잘못 사용하던 JIRA 활용 방식 개선."
+    highlight:
+      en: "Junior coached to 80% ownership"
+      ko: "주니어 80% 업무 위임"
+    tech[6]: Swift,"Objective-C",Cordova,Firebase,SPM,GitLab
+    image: null
+    links[2]:
+      - label: "Medium: Running Xcode 14 on Sonoma"
+        href: "https://medium.com/@toyboy2/running-xcode-14-on-sonoma-ccb627ee154c"
+      - label: "Medium: Run Xcode 15.4 on Ventura"
+        href: "https://medium.com/@toyboy2/how-to-run-xcode-15-4-on-ventura-macos-break-os-limitation-07e181499da4"
+    diagrams[1]:
+      - "flowchart TD\n  Agency[\"Agency Manager\"]\n  SKT[\"SKT Intra\"]\n  Web[\"SWING Web\"]\n  Customer\n\n  subgraph iPadOS\n    subgraph App\n      subgraph Cordova\n        Webview\n      end\n      Firebase\n      SPM\n    end\n  end\n\n  Agency -->|Uses| App\n  Web -->|Loads in| Webview\n  App <-->|API| SKT\n  App -->|Manages| Customer"

@@ -44,6 +44,13 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
           </button>
         </div>
 
+        {project.highlight && (
+          <div className="detail-highlight">
+            <span className="detail-highlight-star">★</span>
+            {tr(project.highlight)}
+          </div>
+        )}
+
         {project.images.length > 0 && (
           <div className="detail-shots">
             {project.images.map((src, i) => {

@@ -33,7 +33,7 @@ function StatNum({ s }) {
   )
 }
 
-export default function Summary({ tagline, bio, stats, tags, onVisible }) {
+export default function Summary({ tagline, bio, stats, tags, highlights, onVisible }) {
   const { t, tr } = useLang()
   const ref = useRef(null)
 
@@ -53,7 +53,6 @@ export default function Summary({ tagline, bio, stats, tags, onVisible }) {
       <div className="klabel"><span className="c">//</span> 01 — {t('summary')}</div>
       <h1 className="summary-h1">
         {tr(tagline)}
-        <span className="blink-cursor" />
       </h1>
       <p className="summary-bio">{tr(bio)}</p>
 
@@ -65,6 +64,17 @@ export default function Summary({ tagline, bio, stats, tags, onVisible }) {
           </div>
         ))}
       </div>
+
+      {highlights && highlights.length > 0 && (
+        <div className="highlights-row">
+          {highlights.map((h, i) => (
+            <span className="highlight-pill" key={i}>
+              <span className="highlight-star">★</span>
+              {tr(h)}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div className="tags-row">
         {tags.map((tag, i) => (

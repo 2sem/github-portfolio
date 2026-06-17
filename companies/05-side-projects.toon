@@ -5,7 +5,27 @@ role:
   en: "Personal"
   ko: "개인 프로젝트"
 cur: false
-projects[2]:
+projects[3]:
+  - id: zicding
+    name: "직딩"
+    meta: "2024.01 – 2024.02 · Mobile · React Native"
+    tags[3]: platform:ios,platform:android,lang:ts
+    desc:
+      en: "Work-life balance app for office workers — plan rest days in advance to build a healthy routine. Shows time remaining in the workday, upcoming public holidays, and suggests annual leave plans. Built with a UX designer; uses Realm for local storage and the Korean public holidays API."
+      ko: "직장인의 일과 생활 균형을 위한 앱 — 쉬는 날을 미리 계획하는 습관 형성 지원. 오늘 남은 시간·공휴일 정보 표시, 연차 계획 제안. UX 디자이너 협업, Realm 로컬 저장소, 공공데이터 공휴일 API 활용."
+    role:
+      en: "App developer — collaborated with a UX designer."
+      ko: "앱 개발 — UX 디자이너와 협업."
+    achievement:
+      en: "Integrated the Korean public holidays API to display remaining holidays and generate annual leave suggestions. Implemented a custom calendar view. Used Realm for offline-first local data storage. Built a real-time countdown showing time remaining in the workday."
+      ko: "공공데이터 공휴일 API 연동으로 남은 공휴일 표시 및 연차 계획 제안 생성. 커스텀 캘린더 구현. Realm으로 오프라인 우선 로컬 저장소 구성. 오늘 남은 시간 실시간 카운트다운 구현."
+    tech[4]: TypeScript,"React Native",Realm,"Public API"
+    image: null
+    links[1]:
+      - label: "GitHub"
+        href: "https://github.com/2sem/zicding-app"
+    diagrams[1]:
+      - "flowchart TD\n  User\n  PublicAPI[\"Public Holiday API\"]\n\n  subgraph App[\"직딩 App\"]\n    Realm\n    TodayTime[\"Time Left Today\"]\n    Holidays[\"Upcoming Holidays\"]\n    LeavePlanner[\"Leave Planner\"]\n  end\n\n  User --> App\n  PublicAPI -->|Holiday Data| Realm\n  Realm --> Holidays\n  Realm --> LeavePlanner\n  TodayTime --> User\n  Holidays --> User\n  LeavePlanner --> User"
   - id: symlink-maker
     name: "심볼릭 링크 생성기"
     meta: "2020.10 – 2020.11 · macOS · Swift"
@@ -26,7 +46,7 @@ projects[2]:
     diagrams[1]:
       - "flowchart LR\n  User\n\n  subgraph Finder\n    Files[\"Selected Files\"]\n    ContextMenu[\"Context Menu\\n(right-click)\"]\n  end\n\n  subgraph Extension[\"Finder Sync Extension\"]\n    MenuAction[\"Menu Action\"]\n    RenameDialog[\"Rename Dialog\"]\n  end\n\n  Main[\"Main App\\n(XPC Handler)\"]\n  FileSystem[\"File System\\n(symlink)\"]\n\n  User -->|Select + right-click| Files\n  Files --> ContextMenu\n  ContextMenu --> MenuAction\n  MenuAction --> RenameDialog\n  RenameDialog -->|XPC| Main\n  Main -->|ln -s| FileSystem"
   - id: loa-helper
-    name: "로아 도우미"
+    name: "로아도우미"
     meta: "2019.01 – 2019.02 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
