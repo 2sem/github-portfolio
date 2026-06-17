@@ -173,12 +173,12 @@ projects[9]:
       en: "Hand-collected linked SNS/site data for National Assembly members over two weeks (numbers being unavailable for privacy) and made every channel open natively via URL schemes/SDKs. After a community post, the app went viral and earned interviews with major outlets including SBS, gaining substantial public visibility and influence."
       ko: "(번호 확보가 불가능한 상황에서) 국회의원의 연결 SNS·사이트 데이터를 2주간 직접 수집하고 모든 채널이 URL 스킴·SDK로 네이티브하게 열리도록 구현. 커뮤니티 공유로 입소문을 타며 SBS 등 주요 언론 인터뷰를 진행해 앱 인지도와 영향력을 크게 확보."
     tech[6]: Swift,CoreData,KakaoSDK,FacebookSDK,Firebase,Xlsx
-    image: "/images/indie/democracyaction/democracyaction3.png"
+    image: "/images/indie/democracyaction/democracyaction2.png"
     images[6]:
+      - "/images/indie/democracyaction/democracyaction2.png"
       - "/images/indie/democracyaction/democracyaction3.png"
       - "/images/indie/democracyaction/democracyaction5.png"
       - "/images/indie/democracyaction/democracyaction1.png"
-      - "/images/indie/democracyaction/democracyaction2.png"
       - "/images/indie/democracyaction/democracyaction4.png"
       - "/images/indie/democracyaction/democracyaction6.png"
     diagrams[1]:
