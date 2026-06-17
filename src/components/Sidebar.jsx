@@ -8,8 +8,8 @@ const NAV = [
   { id: 'contact', pre: '04' },
 ]
 
-export default function Sidebar({ name, role, github, linkedin, email, x, threads, facebook, resume, activeSection }) {
-  const { t, tr } = useLang()
+export default function Sidebar({ name, role, github, linkedin, email, x, threads, facebook, activeSection }) {
+  const { t, tr, lang } = useLang()
   return (
     <aside className="sidebar">
       <AvatarDot realSrc="/images/profile.jpeg" alt="Lee Young-jun" />
@@ -70,7 +70,7 @@ export default function Sidebar({ name, role, github, linkedin, email, x, thread
 
       <button
         className="dl-btn"
-        onClick={() => window.open(resume)}
+        onClick={() => window.open(lang === 'ko' ? '/Lee-Young-jun-Resume-ko.pdf' : '/Lee-Young-jun-Resume-en.pdf', '_blank')}
       >
         {t('downloadResume')}
       </button>

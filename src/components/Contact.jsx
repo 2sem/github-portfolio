@@ -5,22 +5,9 @@ export default function Contact({ github, linkedin, email, x, threads, facebook,
   const { t, tr, lang } = useLang()
   const ref = useRef(null)
 
-  const handleResumeDownload = async () => {
+  const handleResumeDownload = () => {
     const url = lang === 'ko' ? '/Lee-Young-jun-Resume-ko.pdf' : '/Lee-Young-jun-Resume-en.pdf'
-    try {
-      const res = await fetch(url)
-      const blob = await res.blob()
-      const blobUrl = URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = blobUrl
-      a.download = 'Lee-Young-jun-Resume.pdf'
-      document.body.appendChild(a)
-      a.click()
-      a.remove()
-      URL.revokeObjectURL(blobUrl)
-    } catch {
-      window.open(url, '_blank')
-    }
+    window.open(url, '_blank')
   }
 
   useEffect(() => {
