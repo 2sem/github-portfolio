@@ -3,8 +3,8 @@ role:
   en: "Senior iOS Developer"
   ko: "Senior iOS 개발자"
 tagline:
-  en: "Shipping iOS apps\nwith a full-stack perspective"
-  ko: "풀스택 관점으로\niOS 앱을 만듭니다"
+  en: "Build end-to-end.\nShare everything."
+  ko: "처음부터 끝까지 만들고\n배운 건 모두 나눕니다"
 bio:
   en: "Started server-side, moved through full-stack web, and settled on iOS in 2017. Now building apps with Swift and React Native."
   ko: "서버 개발로 시작해 풀스택을 거쳐 2017년 iOS에 정착했습니다. 현재 Swift와 React Native로 앱을 개발합니다."
