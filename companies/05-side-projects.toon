@@ -45,8 +45,8 @@ projects[3]:
       en: "Implemented a Finder Sync Extension target — a sandboxed App Extension process that injects a right-click menu item into Finder and communicates with the main app via XPC to perform symlink creation outside the sandbox. Handled multi-file selection by batching the operation across all selected files. Added a rename flow so users can specify a custom link name at creation time, solving the core UX problem that ln -s argument order is unintuitive."
       ko: "Finder Sync Extension 타겟으로 Finder에 우클릭 메뉴 항목 주입 — 샌드박스 App Extension 프로세스가 XPC로 메인 앱과 통신해 샌드박스 외부에서 심볼릭 링크 생성. 다중 파일 선택 시 일괄 처리. 링크 이름 직접 지정 흐름 추가 — ln -s 인자 순서 혼란 문제를 UI로 해결."
     highlight:
-      en: "Finder Sync Extension — right-click symlink with XPC sandbox bypass"
-      ko: "Finder Sync Extension으로 우클릭 심볼릭 링크 생성 — XPC 샌드박스 우회"
+      en: "Solved ln -s confusion — right-click symlink creation via Finder extension"
+      ko: "ln -s 혼란 해결 — Finder 우클릭으로 심볼릭 링크 생성"
     tech[3]: Swift,"Finder Extension",macOS
     image: "/images/side-projects/symlink-maker/symlink-maker1.png"
     images[1]:

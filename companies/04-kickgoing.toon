@@ -111,8 +111,8 @@ projects[10]:
       en: "Reverse-engineered Daum Maps' proprietary Kongnamul coordinate system from its minified JS source via Chrome DevTools — the publicly available conversion formula produced wrong results, so I traced through the obfuscated source, found the real transformation function, cleaned it up, and ported it to TypeScript. Extended react-native-naver-map (open source) by modifying the Native Bridge view layer to add scale calculation that the library didn't support. After shipping to positive feedback from delivery drivers, the feature generated multiple follow-up development requests."
       ko: "공개된 콩나물 좌표 변환 공식이 틀린 결과를 내자, Chrome DevTools로 다음 사이트의 난독화된 JS를 직접 분석해 실제 변환 함수를 찾아내고 가독성 있게 수정한 후 TypeScript로 포팅. react-native-naver-map 오픈소스의 Native Bridge View 부분을 수정해 기존에 없던 축척 계산 기능을 직접 추가. 출시 후 대리기사들로부터 좋은 반응을 받았으며 이후 여러 차례 후속 개발 문의로 이어짐."
     highlight:
-      en: "Proprietary map coords reverse-engineered"
-      ko: "독점 지도 좌표계 역공학"
+      en: "Daum minified JS analyzed to extract real coordinate transform"
+      ko: "다음 난독화 JS 분석으로 좌표 변환 구현"
     tech[4]: TypeScript,"React Native","Naver Map","Daum Route API"
     image: "/images/kickgoing/kickgoing-route4.jpg"
     images[6]:
