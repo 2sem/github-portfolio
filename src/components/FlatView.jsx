@@ -4,7 +4,7 @@ import DetailPanel from './DetailPanel.jsx'
 import ProjectVisual from './ProjectVisual.jsx'
 
 export default function FlatView({ projects, isInCart, onCartToggle }) {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const [selected, setSelected] = useState(null)
 
   const handleSelect = (id) => {
@@ -24,13 +24,13 @@ export default function FlatView({ projects, isInCart, onCartToggle }) {
           >
             <ProjectVisual project={p} />
             <div className="pcard-body">
-              <div className="pcard-title">{p.name}</div>
+              <div className="pcard-title">{(lang === 'en' && p.nameEn) ? p.nameEn : p.name}</div>
               <div className="pcard-meta">{p.meta}</div>
               <button
                 className={`pcard-add${isInCart(p.id) ? ' in-cart' : ''}`}
                 onClick={e => {
                   e.stopPropagation()
-                  onCartToggle(p.id, p.name)
+                  onCartToggle(p.id, (lang === 'en' && p.nameEn) ? p.nameEn : p.name)
                 }}
               >
                 {isInCart(p.id) ? t('added') : t('addResume')}

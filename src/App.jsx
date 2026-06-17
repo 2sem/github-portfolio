@@ -64,7 +64,7 @@ export default function App() {
       const allIn = projects.every(p => prev.some(x => x.id === p.id))
       if (allIn) return prev.filter(x => !projects.some(p => p.id === x.id))
       const toAdd = projects.filter(p => !prev.some(x => x.id === p.id))
-      return [...prev, ...toAdd.map(p => ({ id: p.id, name: p.name }))]
+      return [...prev, ...toAdd.map(p => ({ id: p.id, name: (lang === 'en' && p.nameEn) ? p.nameEn : p.name }))]
     })
   }, [])
 
@@ -96,6 +96,7 @@ export default function App() {
       const searchLower = search.toLowerCase()
       const matchesSearch = !search || (
         p.name.toLowerCase().includes(searchLower) ||
+        (p.nameEn && p.nameEn.toLowerCase().includes(searchLower)) ||
         p.meta.toLowerCase().includes(searchLower) ||
         String(tr(p.desc)).toLowerCase().includes(searchLower) ||
         p.tags.some(t => t.toLowerCase().includes(searchLower))

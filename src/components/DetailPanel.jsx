@@ -22,8 +22,9 @@ function ImageModal({ src, alt, onClose }) {
 }
 
 export default function DetailPanel({ project, isInCart, onCartToggle, onClose }) {
-  const { t, tr } = useLang()
+  const { t, tr, lang } = useLang()
   const inCart = isInCart(project.id)
+  const displayName = (lang === 'en' && project.nameEn) ? project.nameEn : project.name
   const [zoom, setZoom] = useState(null)
 
   const techLower = new Set(project.tech.map(x => x.toLowerCase()))
@@ -36,7 +37,7 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
       <div className="detail-inner">
         <div className="detail-top">
           <div>
-            <h3>{project.name}</h3>
+            <h3>{displayName}</h3>
             <div className="detail-meta">{project.meta}</div>
           </div>
           <button className="detail-close" onClick={onClose}>
@@ -54,7 +55,7 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
         {project.images.length > 0 && (
           <div className="detail-shots">
             {project.images.map((src, i) => {
-              const alt = `${project.name} screenshot ${i + 1}`
+              const alt = `${displayName} screenshot ${i + 1}`
               return (
                 <div
                   key={`i${i}`}
@@ -121,7 +122,7 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
             )}
             <button
               className={`detail-add-btn${inCart ? ' in-cart' : ''}`}
-              onClick={() => onCartToggle(project.id, project.name)}
+              onClick={() => onCartToggle(project.id, displayName)}
             >
               {inCart ? t('inResume') : t('addToResume')}
             </button>
