@@ -51,10 +51,10 @@ projects[12]:
       en: "Stabilized a live learning app after takeover: reduced production friction through bug fixes, server-error handling, Safe Area adaptation, and user-feedback-driven UX improvements while keeping recording, analysis, playback, and SNS login flows operational."
       ko: "인수 직후 운영 중인 학습 앱을 안정화: 버그 수정, 서버 오류 대응, SafeArea 대응, 사용자 피드백 기반 편의성 개선을 진행하며 녹음·분석·재생·SNS 로그인 흐름을 유지."
     tech[5]: Swift,Firebase,Recording,Video,SafeArea
-    image: "/images/siwonschool/real-training/real-training1.png"
+    image: "/images/siwonschool/real-training/real-training2.png"
     images[6]:
-      - "/images/siwonschool/real-training/real-training1.png"
       - "/images/siwonschool/real-training/real-training2.png"
+      - "/images/siwonschool/real-training/real-training1.png"
       - "/images/siwonschool/real-training/real-training3.png"
       - "/images/siwonschool/real-training/real-training4.png"
       - "/images/siwonschool/real-training/real-training5.png"
