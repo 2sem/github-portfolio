@@ -22,8 +22,10 @@ function buildResumeHTML(cart, template, lang, roleLabel) {
       <div class="proj-meta">${p.meta}</div>
       ${isDetailed || (!isOnePager) ? `<p class="proj-desc">${tr(p.desc)}</p>` : ''}
       ${isDetailed ? `<p class="proj-role"><strong>${roleLabel}:</strong> ${tr(p.role)}</p>` : ''}
-      <div class="proj-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
-      ${p.links.length ? `<div class="proj-links">${p.links.map(l => `<a href="${l.href}">${l.label}</a>`).join(' ')}</div>` : ''}
+      ${isOnePager
+        ? `<div class="proj-tech-inline">${p.tech.join(' · ')}</div>`
+        : `<div class="proj-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>`}
+      ${(!isOnePager && p.links.length) ? `<div class="proj-links">${p.links.map(l => `<a href="${l.href}">${l.label}</a>`).join(' ')}</div>` : ''}
     </div>
   `).join('')
 
@@ -59,19 +61,21 @@ function buildResumeHTML(cart, template, lang, roleLabel) {
       margin-bottom: 12px;
       margin-top: ${isOnePager ? '16px' : '24px'};
     }
-    .proj { margin-bottom: ${isOnePager ? '12px' : '18px'}; padding-bottom: ${isOnePager ? '12px' : '18px'}; border-bottom: 1px solid #eee; }
+    .projects { ${isOnePager ? 'display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px;' : ''} }
+    .proj { margin-bottom: ${isOnePager ? '10px' : '18px'}; padding-bottom: ${isOnePager ? '10px' : '18px'}; border-bottom: 1px solid #eee; }
     .proj:last-child { border-bottom: none; }
-    .proj-name { font-size: ${isOnePager ? '14px' : '16px'}; font-weight: 600; }
-    .proj-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #777; margin-top: 2px; }
+    .proj-name { font-size: ${isOnePager ? '13px' : '16px'}; font-weight: 600; }
+    .proj-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #777; margin-top: 2px; }
     .proj-desc { margin-top: 6px; color: #333; }
     .proj-role { margin-top: 4px; color: #333; }
     .proj-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
     .proj-tech span { font-family: 'JetBrains Mono', monospace; font-size: 10px; border: 1px solid #ddd; border-radius: 4px; padding: 2px 7px; color: #555; }
+    .proj-tech-inline { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #777; margin-top: 4px; }
     .proj-links { margin-top: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
     .proj-links a { margin-right: 12px; color: #333; }
     @media print {
       body { padding: 0; }
-      @page { margin: 20mm 16mm; }
+      @page { margin: 12mm 14mm; size: A4; }
     }
   </style>
 </head>
@@ -85,7 +89,7 @@ function buildResumeHTML(cart, template, lang, roleLabel) {
       <span>${DATA.linkedin.replace('https://', '')}</span>
     </div>
   </div>
-  ${projectsHTML}
+  <div class="projects">${projectsHTML}</div>
 </body>
 </html>`
 }
