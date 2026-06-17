@@ -8,6 +8,7 @@ cur: false
 projects[10]:
   - id: kickgoing-pass
     name: "킥고잉 패스"
+    nameEn: "Kickgoing Pass"
     meta: "2021.09 – 2021.11 · Mobile · React Native"
     tags[2]: platform:ios,platform:android
     desc:
@@ -37,6 +38,7 @@ projects[10]:
       - "flowchart TD\n  Marketing[\"Marketing Site\"]\n\n  subgraph App\n    subgraph PassScreen[\"Pass Screen\"]\n      subgraph MarketingTab[\"Marketing Tab\"]\n        Webview\n      end\n      PassListTab[\"Pass List Tab\"]\n    end\n\n    subgraph Timer\n      DispatchRef[\"Dispatch Ref\"]\n    end\n\n    subgraph Redux\n      Store[\"Pass State\"]\n      Dispatch\n    end\n  end\n\n  subgraph Server\n    PassAPI[\"Pass API\"]\n  end\n\n  Marketing -->|Deeplink| PassListTab\n  Webview -->|Deeplink| PassListTab\n  Store --> PassListTab\n  PassAPI -->|fetch| PassListTab\n  Dispatch --> DispatchRef\n  DispatchRef -->|Update| Store"
   - id: kickgoing-auto-deploy
     name: "배포 및 테스트 자동화"
+    nameEn: "CI/CD & Test Automation"
     meta: "2021.07 – 2021.09 · CI/CD · React Native"
     tags[3]: platform:ios,platform:android,lang:yaml
     desc:
@@ -63,6 +65,7 @@ projects[10]:
       - "flowchart TD\n  Dev[\"Developer\"]\n\n  subgraph Git\n    Commit\n    Push\n  end\n\n  subgraph Husky[\"Husky (Git Hook)\"]\n    PreCommit[\"pre-commit - Attach Issue Number\"]\n    PrePush[\"pre-push\"]\n    LTest[\"Test (Jest)\"]\n  end\n\n  subgraph Github\n    PR[\"Pull Request\"]\n\n    subgraph Actions[\"GitHub Actions\"]\n      Test[\"Test (Jest)\"]\n      Trigger[\"Deploy\"]\n      IsQA{\"Is QA?\"}\n      ConfigInject[\"Config Injection\\n(URL / Amplitude)\"]\n      Uploader\n    end\n  end\n\n  subgraph Project[\"App Project\"]\n    Fastlane\n\n    subgraph Android\n      Gradle\n      Flavor\n    end\n\n    subgraph iOS\n      Scheme\n      Target\n    end\n\n    KICKGOING\n    TESTKICK\n  end\n\n  Slack\n\n  Dev --> Commit\n  Commit --> PreCommit\n  PreCommit --> Git\n\n  Dev --> Push\n  Push --> PrePush\n  PrePush --> LTest\n  LTest --> Github\n\n  Dev --> PR\n  PR --> Test\n\n  Dev --> Trigger\n  Trigger --> ConfigInject\n  ConfigInject --> IsQA\n  IsQA --> Fastlane\n\n  Fastlane --> iOS\n  Scheme --> Target\n  Target --> KICKGOING\n  Target -->|QA| TESTKICK\n\n  Fastlane --> Android\n  Gradle --> Flavor\n  Flavor --> KICKGOING\n  Flavor -->|QA| TESTKICK\n\n  Project --> Uploader\n  Uploader --> Slack"
   - id: kickgoing-city-pass
     name: "부천 스마트 시티패스 연동"
+    nameEn: "Bucheon Smart City Pass Integration"
     meta: "2021.06 – 2021.07 · Mobile · React Native"
     tags[3]: platform:ios,platform:android,lang:reactnative
     desc:
@@ -80,6 +83,7 @@ projects[10]:
       - "flowchart TD\n  CityPass[\"City Pass\"]\n\n  subgraph Android\n    InstallReferrer[\"Install Referrer\"]\n    InstallCondition{\"Is Installed?\"}\n    PlayStore[\"Google Play Store\"]\n  end\n\n  subgraph iOS\n    Linking[\"RN Linking\"]\n  end\n\n  subgraph KICKGOING\n    ReferrerLibrary[\"rn-play-install-referrer\"]\n    KLogin[\"Login\"]\n  end\n\n  CityPass -->|① Call KICKGOING| InstallReferrer\n  InstallReferrer --> InstallCondition\n  InstallCondition -->|N| PlayStore\n  InstallCondition -->|Y| ReferrerLibrary\n  PlayStore -->|install + launch| ReferrerLibrary\n  ReferrerLibrary --> KLogin\n\n  CityPass -->|DeepLink| Linking\n  Linking --> KLogin\n\n  KLogin -->|② Verify| CityPass\n  CityPass -->|③ DeepLink| KLogin"
   - id: kickgoing-route
     name: "길 안내 기능"
+    nameEn: "Turn-by-Turn Navigation"
     meta: "2021.12 – 2022.04 · Mobile · TypeScript"
     tags[3]: platform:ios,platform:android,lang:ts
     desc:
@@ -110,6 +114,7 @@ projects[10]:
       - "flowchart TD\n  User\n\n  subgraph App[\"KICKGOING App\"]\n    Search[\"Destination Search\"]\n    RouteQuery[\"Route Query\"]\n    Convert[\"Kongnamul → lat/lng\\n(reverse-engineered)\"]\n    Map[\"Naver Map\\n(+ custom scale calc)\"]\n    AutoZoom[\"Auto Zoom\"]\n  end\n\n  NaverSearch[\"Naver Search API\"]\n  DaumRoute[\"Daum Route API\\n(crawled)\"]\n\n  User -->|Tap navigate| Search\n  Search --> NaverSearch\n  NaverSearch -->|Destination| RouteQuery\n  RouteQuery --> DaumRoute\n  DaumRoute -->|Kongnamul coords| Convert\n  Convert -->|lat/lng path| Map\n  Map --> AutoZoom\n  AutoZoom --> User"
   - id: kickgoing-data-optimization
     name: "데이터 사용 최적화"
+    nameEn: "Data Usage Optimization"
     meta: "2022.05 – 2022.06 · Mobile · TypeScript"
     tags[3]: platform:ios,platform:android,lang:ts
     desc:
@@ -133,6 +138,7 @@ projects[10]:
       - "flowchart TD\n  LocationEvents[\"Location Events\\n(map move / init pan)\"]\n  GuardState{\"Guard State\"}\n\n  subgraph Request[\"API Request\"]\n    GridID[\"Grid ID + Cached Version\"]\n  end\n\n  subgraph Server\n    VersionCheck[\"Version Check\"]\n    Polyline[\"Polyline Encoder\"]\n  end\n\n  subgraph AppCache[\"App Cache (AsyncStorage)\"]\n    CachedGrids[\"Grid Data + Version\"]\n  end\n\n  MapView[\"Map View\"]\n  Background[\"Background Entry\"]\n\n  LocationEvents -->|\"① dedup filter\"| GuardState\n  Background -->|\"stop calls\"| GuardState\n  GuardState -->|\"single deduplicated call\"| GridID\n  GridID --> VersionCheck\n  VersionCheck -->|\"② diff — changed grids only\"| Polyline\n  Polyline -->|\"③ compressed coords\"| AppCache\n  CachedGrids -.->|\"unchanged grids from cache\"| MapView\n  AppCache -->|\"new grids\"| MapView"
   - id: kickgoing-town-map
     name: "동네지도"
+    nameEn: "Neighborhood Map"
     meta: "2022.07 – 2022.12 · Mobile · TypeScript"
     tags[3]: platform:ios,platform:android,lang:ts
     desc:
@@ -162,6 +168,7 @@ projects[10]:
       - "flowchart TD\n  User\n  Server\n\n  subgraph Map\n    subgraph NaverMap[\"Naver Map\"]\n      Marker\n      Tooltip[\"Customized Tooltip\"]\n    end\n  end\n\n  PlaceDetailScreen[\"Place Detail Screen\"]\n  PlaceCreateScreen[\"Place Create Screen\"]\n\n  Location[\"Location Event\"]\n\n  Server -->|Fetch Places| Marker\n  User -->|Select| Marker\n  Marker -->|Present| Tooltip\n  Tooltip --> PlaceDetailScreen\n\n  Location -->|Query| Server\n\n  Server -->|Fetch Detail| PlaceDetailScreen\n  PlaceCreateScreen -->|Create| Server"
   - id: kickgoing-channel-talk
     name: "채널톡"
+    nameEn: "ChannelTalk Integration"
     meta: "2023.01 – 2023.02 · Mobile · TypeScript"
     tags[3]: platform:ios,platform:android,lang:ts
     desc:
@@ -187,6 +194,7 @@ projects[10]:
       - "flowchart TD\n  User\n  CTServer[\"Channel Talk Server\"]\n  Server[\"App Server\"]\n\n  subgraph App\n    Notification\n    IsChannelNoti{\"Is Channel Talk?\"}\n    Deeplink\n\n    subgraph SDK[\"Channel Talk SDK\"]\n      CTScreen[\"Channel Talk Screen\"]\n    end\n\n    FAQ[\"FAQ Screen\"]\n  end\n\n  Web[\"Channel Talk Web\"]\n  CS[\"Customer Service\"]\n\n  User --> FAQ\n  FAQ --> CTScreen\n  CTScreen --> CTServer\n  CTServer -->|Answer as Notification| User\n  User -->|Tap| Notification\n\n  Notification --> IsChannelNoti\n  IsChannelNoti -->|Y| SDK\n  IsChannelNoti -->|N| Deeplink\n\n  CTServer <--> Server\n  Server <--> Web\n  CS <--> Web"
   - id: kickgoing-notification-settings
     name: "알림 설정 분리"
+    nameEn: "Notification Settings Refactor"
     meta: "2023.03 – 2023.05 · Mobile · TypeScript"
     tags[3]: platform:ios,platform:android,lang:ts
     desc:
@@ -206,6 +214,7 @@ projects[10]:
       - "flowchart TD\n  User\n\n  subgraph App\n    Settings[\"Settings Screen\"]\n    NotiSettingsScreen[\"Notification Settings\"]\n\n    subgraph Android\n      Badge[\"Notification Badge\"]\n      SDK33[\"Is SDK 33?\"]\n      ReadMediaPerm[\"READ_MEDIA_IMAGES\"]\n      ReadExternalPerm[\"READ_EXTERNAL_STORAGE\"]\n    end\n\n    subgraph iOS\n      Badge[\"Notification Badge\"]\n      Extension[\"Notification Extension\"]\n    end\n  end\n\n  APNS\n  FCM\n\n  FCM -->|Sync| Badge\n\n  APNS --> Extension\n  Extension --> Badge\n\n  NotiSettingsScreen --> SDK33\n  SDK33 -->|\"Y\"| ReadMediaPerm\n  SDK33 -->|\"N\"| ReadExternalPerm\n\n  User --> Settings\n  Settings --> NotiSettingsScreen"
   - id: kickgoing-eng
     name: "외국어 지원"
+    nameEn: "Multilingual Support"
     meta: "2023.06 – 2023.08 · Mobile · TypeScript"
     tags[3]: platform:ios,platform:android,lang:ts
     desc:
@@ -241,6 +250,7 @@ projects[10]:
       - "flowchart TD\n  User\n\n\tsubgraph OS\n\t\tSettings[\"Settings App\"]\n\t\tLocalSettings[\"Locale Settings\"]\n\n\t  subgraph App\n\t    LangHook[\"useLanguage Hook\"]\n\n\t\t\tsubgraph Screen\n\t\t\t\tStringHook[\"useStrings Hook\"]\n\t\t\t\tText\n\n\t\t\t\tImageHook[\"useImages Hook\"]\n\t\t\t\tImage\n\t\t\tend\n\t  end\n  end\n\n  Server[\"App Server\"]\n\n\tUser --> Settings\n\tSettings --> |Open| LocalSettings\n\tLocalSettings --> |Choose Locale| LangHook\n\n\tLangHook --> StringHook\n\tStringHook --> Text\n\n\tLangHook --> ImageHook\n\tImageHook --> Image\n\n  Server -->|Fetch with Lang| Screen"
   - id: kickgoing-stamp
     name: "스탬프"
+    nameEn: "Stamp Rewards"
     meta: "2023.09 – 2023.10 · Mobile · TypeScript"
     tags[3]: platform:ios,platform:android,lang:ts
     desc:

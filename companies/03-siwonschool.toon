@@ -8,6 +8,7 @@ cur: false
 projects[12]:
   - id: lectureroom
     name: "시원스쿨"
+    nameEn: "SiwonSchool"
     meta: "2018.06 – 2021.05 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -39,6 +40,7 @@ projects[12]:
       - "flowchart LR\n  User[\"Learner\"]\n  CocoaPods[\"Private CocoaPods\"]\n  CDN\n\n  subgraph iOS\n    subgraph App\n      Course[\"Course list / lecture room\"]\n      Player\n      Minimization\n      Maximization\n\n      DRM[\"DRM library\"]\n      Controls[\"Minimize / fullscreen / PiP / landscape\"]\n      Offline[\"Offline playback\"]\n      Review[\"App Review\"]\n    end\n\n    Background[\"Background\"]\n    Play\n    RemoteControl[\"Remote Control\"]\n  end\n\n  Tests[\"XCUITest\"]\n\n  CocoaPods -->|Install| Player\n\n  CDN -->|\"(Background)Download\"| DRM\n  DRM -->|Decode| Player\n  Player --> Minimization\n  Player --> Maximization\n  Player --> Background\n  Background --> Play\n  Background --> RemoteControl\n\n  Server\n  AppStore\n\n  User -->|Choose| Course\n  Server --|Query| Course\n  Course --> Player\n  Player --> Controls\n  Offline --> Player\n\n  Review -->|Prompt| User\n\n  User -->|Rating| AppStore\n\n  User -->|VoidceOver| App\n\n  Tests --> App"
   - id: real-training
     name: "리얼트레이닝"
+    nameEn: "Real Training"
     meta: "2018.06 – 2021.05 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -63,6 +65,7 @@ projects[12]:
       - "flowchart LR\n  User[\"Learner\"]\n  Server\n\n  subgraph App\n    Login[\"login\"]\n    Video[\"Play Native speaker video\"]\n    Record[\"Speech recording\"]\n    Library\n  end\n\n  Firebase\n  Facebook\n  KakaoTalk\n\n  Server --> Video\n\n  Video -->|Replay| Video\n\n  User --> Login\n  Login --> Server\n  Login --> Firebase\n  Login --> Facebook\n  Login --> KakaoTalk\n\n  User --> Record\n  Record -->|Analyze| Library\n  Library -->|Result| User"
   - id: victoeic-voca
     name: "빅토익 보카"
+    nameEn: "VicTOEIC Vocabulary"
     meta: "2019.01 – 2021.05 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -101,6 +104,7 @@ projects[12]:
       - "flowchart LR\n  Server\n  NPM\n\n  subgraph App[\"React Native PoC\\nof 시원스쿨\"]\n    Home[\"Home Screen\"]\n    Free[\"Free Lecture Screen\"]\n    DRM[\"DRM Library\"]\n    Player[\"Video Player\"]\n  end\n\n  Team\n  Docs[\"Training Documentation\"]\n\n  Server -->|REST API| Home\n  Server -->|REST API| Free\n  Home --> DRM\n  Free --> DRM\n  DRM -->|Decode| Player\n  App -->|Export Experience| Docs\n  NPM -->|Install| Player\n  Docs --> Team"
   - id: word-rocket
     name: "단어 로켓 게임"
+    nameEn: "Word Rocket Game"
     meta: "2019.07 – 2019.09 · Mobile · Unity"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -118,6 +122,7 @@ projects[12]:
       - "flowchart LR\n  Server\n\n  subgraph Unity[\"Unity Game\"]\n    Word[\"Word Data\"]\n    Letters[\"Letters\"]\n    Rocket[\"Rocket (Auto Move)\"]\n    Touch[\"Touch Direction\"]\n    Collect[\"Letter Collection\"]\n  end\n\n  subgraph App\n    UnityLib[\"Unity as Library\"]\n  end\n\n  Docs[\"Training Documentation\"]\n  Team\n\n  Server -->|Random Word| Letters\n  Letters --> Collect\n  Rocket --> Touch\n  Rocket --> Collect\n  Unity -->|Embed| UnityLib\n  UnityLib -->|기반| Docs\n  Docs --> Team"
   - id: lectureroom-b2b
     name: "시원스쿨 B2B"
+    nameEn: "SiwonSchool B2B"
     meta: "2019.08 – 2019.09 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -138,6 +143,7 @@ projects[12]:
       - "flowchart LR\n  subgraph Workspace[\"Xcode Workspace\"]\n    Preprocessor{\"#if B2B?\"}\n\n    subgraph B2CTarget[\"B2C Target\"]\n      subgraph B2CLogin[\"B2C Login\"]\n        B2CID[\"User ID\"]\n        B2CContact[\"Customer Center\"]\n      end\n    end\n\n    subgraph B2BTarget[\"B2B Target\"]\n      subgraph B2BLogin[\"B2B Login\"]\n        B2BID[\"User ID\"]\n        B2BCorpID[\"Corp ID\"]\n        B2BContact[\"Corp Customer Center\"]\n        B2BStory[\"B2B Storyboard\"]\n      end\n    end\n  end\n\n  B2BServer[\"B2B 서버\"]\n  subgraph CocoaPods[\"Podfile\"]\n    CB2B[\"B2B\"]\n    CNormal[\"B2C\"]\n  end\n\n  Preprocessor -->|Y| B2BTarget\n  Preprocessor -->|N| B2CTarget\n  CocoaPods --> Workspace\n  B2BServer --> B2BLogin"
   - id: siwon-alimi
     name: "시원알리미"
+    nameEn: "Siwon Notifier"
     meta: "2019.05 – 2019.06 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -155,6 +161,7 @@ projects[12]:
       - "flowchart LR\n  User[\"Employee\"]\n  Server[\"Intranet Server\"]\n\n  subgraph App\n    subgraph WebView\n      Intranet[\"Intranet\"]\n    end\n    JSInject[\"JavaScript Injection\"]\n    Inbox[\"Move to InBox\"]\n  end\n\n  Firebase[\"Firebase\"]\n\n  User -->|Run| App\n  WebView -->|Inject| JSInject\n  JSInject -->|\"Detect Login\"| Inbox\n  JSInject -->|\"Register ID as topic\"| Firebase\n  Firebase -->|\"Personal Notification\"| User\n  Server -->|\"Send Notification to topics\"| Firebase\n  Inbox --> Intranet"
   - id: siwon-pen
     name: "시원스쿨펜"
+    nameEn: "SiwonSchool Pen"
     meta: "2019.11 – 2021.05 · Mobile · React Native"
     tags[2]: platform:ios,lang:reactnative
     desc:
@@ -186,6 +193,7 @@ projects[12]:
       - "flowchart LR\n  subgraph App\n    WordCard[\"Word Cards (FlatList)\"]\n    Lecture[\"Lecture Player\"]\n    Quiz[\"Quiz\"]\n    MyWords[\"My Vocabulary\"]\n  end\n\n  Server\n  CDN\n  Firebase[\"Firebase Analytics\"]\n\n  Server -->|Content| WordCard\n  Server -->|Video| Lecture\n  CDN -->|Audio| WordCard\n  WordCard --> Quiz\n  Quiz --> MyWords\n  App -->|Events| Firebase"
   - id: amgigorae
     name: "암기고래 iOS"
+    nameEn: "Amgigorae iOS"
     meta: "2019.11 – 2021.05 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -209,6 +217,7 @@ projects[12]:
       - "flowchart LR\n\n\tsubgraph iOS\n\t  subgraph App\n\t    Excel[\"Excel File\"]\n\t    Words[\"Word List\"]\n\t    Player\n\t    Reminder\n\t  end\n\t  \n\t  UserNotification[\"User Notification\"]\n  end\n\n\tExcel -->|Upload| Server\n  Push[\"Local Push\"]\n\n  Server -->|Download| Words\n  Excel -->|Vocabulary| Words\n  Words -->|Audio| Player\n  Reminder -->|Register Schedule| UserNotification\n  UserNotification -->|Notification| App"
   - id: english-adventure
     name: "영어대모험"
+    nameEn: "English Adventure"
     meta: "2020.04 – 2020.05 · Mobile · Unity"
     tags[2]: platform:ios,lang:unity
     desc:
@@ -234,6 +243,7 @@ projects[12]:
       - "flowchart LR\n  subgraph App\n    Intro[\"Intro Video\"]\n    subgraph Stage\n\t    Assets[\"Character Assets\"]\n\t    Words[\"Word - Image Pairs\"]\n\t    Cards[\"Cards\"]\n    end\n    Complete[\"Stage Complete\"]\n  end\n\n  Demo\n\n\tIntro --> Stage\n  Words -->|Generate| Cards\n  Cards -->|Flip| Cards\n  \n  Stage -->|All matched| Complete\n  \n  Complete -->|Next Stage| Stage\n  App -->|TestFlight| Demo"
   - id: siwon-intra
     name: "시원인트라"
+    nameEn: "Siwon Intranet"
     meta: "2020.06 – 2021.05 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:

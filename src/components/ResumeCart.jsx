@@ -18,7 +18,7 @@ function buildResumeHTML(cart, template, lang, roleLabel) {
 
   const projectsHTML = projects.map(p => `
     <div class="proj">
-      <div class="proj-name">${p.name}</div>
+      <div class="proj-name">${lang === 'en' && p.nameEn ? p.nameEn : p.name}</div>
       <div class="proj-meta">${p.meta}</div>
       ${isDetailed || (!isOnePager) ? `<p class="proj-desc">${tr(p.desc)}</p>` : ''}
       ${isDetailed ? `<p class="proj-role"><strong>${roleLabel}:</strong> ${tr(p.role)}</p>` : ''}

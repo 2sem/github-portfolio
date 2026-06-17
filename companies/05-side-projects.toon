@@ -8,6 +8,7 @@ cur: false
 projects[3]:
   - id: zicding
     name: "직딩"
+    nameEn: "Jikding"
     meta: "2024.01 – 2024.02 · Mobile · React Native"
     tags[3]: platform:ios,platform:android,lang:ts
     desc:
@@ -28,6 +29,7 @@ projects[3]:
       - "flowchart TD\n  User\n  PublicAPI[\"Public Holiday API\"]\n\n  subgraph App[\"직딩 App\"]\n    Realm\n    TodayTime[\"Time Left Today\"]\n    Holidays[\"Upcoming Holidays\"]\n    LeavePlanner[\"Leave Planner\"]\n  end\n\n  User --> App\n  PublicAPI -->|Holiday Data| Realm\n  Realm --> Holidays\n  Realm --> LeavePlanner\n  TodayTime --> User\n  Holidays --> User\n  LeavePlanner --> User"
   - id: symlink-maker
     name: "심볼릭 링크 생성기"
+    nameEn: "Symlink Maker"
     meta: "2020.10 – 2020.11 · macOS · Swift"
     tags[2]: platform:macos,lang:swift
     desc:
@@ -47,6 +49,7 @@ projects[3]:
       - "flowchart LR\n  User\n\n  subgraph Finder\n    Files[\"Selected Files\"]\n    ContextMenu[\"Context Menu\\n(right-click)\"]\n  end\n\n  subgraph Extension[\"Finder Sync Extension\"]\n    MenuAction[\"Menu Action\"]\n    RenameDialog[\"Rename Dialog\"]\n  end\n\n  Main[\"Main App\\n(XPC Handler)\"]\n  FileSystem[\"File System\\n(symlink)\"]\n\n  User -->|Select + right-click| Files\n  Files --> ContextMenu\n  ContextMenu --> MenuAction\n  MenuAction --> RenameDialog\n  RenameDialog -->|XPC| Main\n  Main -->|ln -s| FileSystem"
   - id: loa-helper
     name: "로아도우미"
+    nameEn: "Lost Ark Helper"
     meta: "2019.01 – 2019.02 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:

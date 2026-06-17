@@ -8,6 +8,7 @@ cur: false
 projects[9]:
   - id: shownote-indie
     name: "ShowNote 유지보수"
+    nameEn: "ShowNote (Maintenance)"
     meta: "2017.02 – 2018.07 · Mobile · Swift"
     tags[2]: platform:ipados,lang:swift
     desc:
@@ -32,6 +33,7 @@ projects[9]:
       - "flowchart LR\n  subgraph Cloud[\"Cloud storage\"]\n    GDrive[\"Google Drive\"]\n    Dropbox\n  end\n\n  subgraph App\n    subgraph Presentation\n      subgraph Page\n        Background\n        Trigger\n        Object\n        Media\n      end\n    end\n  end\n\n  User\n\n  Cloud -->|PDF| Background\n  Cloud -->|Image| Background\n  Cloud -->|Effect| Media\n  Cloud -->|Image| Object\n  Page --> Presentation\n  User -->|Touch| Trigger\n  Trigger -->|Present| Object\n  Trigger -->|Play| Media"
   - id: letscheers
     name: "술마셔 건배사"
+    nameEn: "Let's Cheers"
     meta: "2017.01 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -54,6 +56,7 @@ projects[9]:
       - "flowchart LR\n  subgraph App[\"App\"]\n    Xlsx[\"Excel (default data)\"]\n    List[\"Category / toast list\"]\n    Random[\"Random suggestion\"]\n    Fav[\"Favorites\"]\n    DB[\"Core Data(Sqlite)\"]\n  end\n\n  Xlsx -->|\"Bundled default\"| DB\n  DB --> List\n  DB --> Random\n  Fav <--> DB"
   - id: related-stocks-ios
     name: "관련주식검색기 iOS"
+    nameEn: "Related Stocks iOS"
     meta: "2017.01 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -84,6 +87,7 @@ projects[9]:
       - "flowchart LR\n  Developer[\"App developer\"]\n  App\n\n  subgraph Windows\n    subgraph Board[\"GNUBoard\"]\n      Web\n    end\n\n    subgraph DB\n      subgraph PostTable[\"Post title = keyword\"]\n        CommentTable[\"Comments = stocks related to keyword\"]\n      end\n    end\n\n    subgraph Server[\"App Server\"]\n      REST[\"REST API\"]\n    end\n  end\n\n  Firebase\n  APNS\n  UserApp[\"Other User's App\"]\n\n  Developer -->|Post stock item as comment| Web\n  Board -->|Post| DB\n  Query --> REST\n  REST -->|Query| DB\n  App -->|Request by keyword| Server\n  Server -->|Related /\n  recommended stocks| App\n\n  App -->|Register| Firebase\n  Developer -->|Send Notification| Firebase\n  Firebase --> APNS\n  APNS -->|Notification| UserApp"
   - id: wherewego
     name: "우리어디가"
+    nameEn: "WhereWeGo"
     meta: "2017.05 · Mobile · Swift"
     tags[3]: platform:ios,lang:swift,framework:swiftui
     desc:
@@ -111,6 +115,7 @@ projects[9]:
       - "flowchart LR\n  TourAPI[\"TourAPI 3.0 (public data)\"]\n\n  subgraph iOS\n    Loc[\"Core Location\"]\n    subgraph App\n      REST[\"REST API\"]\n      List[\"Place List\"]\n      Detail[\"Place Detail\"]\n      Cat[\"Category filter\"]\n      Map[\"Google Maps\"]\n      Favorites[\"Favorite List\"]\n      Share[\"KakaoTalk Framework\"]\n      DB[\"Core Data\"]\n    end\n  end\n\n  KakaoTalk[\"KakaoTalk Server\"]\n  User[\"Other User\"]\n\n  Loc --> REST\n  Cat -->|Set Category| REST\n  Map -->|Set Location| REST\n  REST -->|Query Places| TourAPI\n  TourAPI --> List\n  List --> Detail\n  Detail -->|Share| Share\n  Share --> KakaoTalk\n  KakaoTalk -->|Notification| User\n  Detail -->|Register| Favorites\n  Favorites --> DB"
   - id: sendadv
     name: "보내봐 단체문자"
+    nameEn: "Group SMS Sender"
     meta: "2017.02 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -136,6 +141,7 @@ projects[9]:
       - "flowchart LR\n  subgraph iOS\n    subgraph App\n      Rules[\"Rules \n(company / dept / position)\"]\n      List[\"Recipient List\"]\n      DB[\"Core Data\"]\n    end\n\n    Contacts\n  end\n\n  User1\n  User2\n  Users\n\n  Contacts -->|Mobile Numbers| Rules\n  Rules <--> DB\n  Rules -->|Generate| List\n  List -->|Group SMS| User1\n  List -->|Group SMS| User2\n  List -->|Group SMS| Users"
   - id: talktrans
     name: "말해봐 번역기"
+    nameEn: "Voice Translator"
     meta: "2017.01 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -161,6 +167,7 @@ projects[9]:
       - "flowchart LR\n  subgraph App\n    Input[\"Source Text\"]\n    Swap[\"Swap Language\"]\n    Flip[\"Flip result screen\"]\n    Theme\n    Translator\n    Output[\"Translated Text\"]\n  end\n\n  Papago[\"Naver Papago API\"]\n  Pods[\"CocoaPods\"]\n  Remote[\"Firebase\"]\n\n  Input -->|\"Translate\"| Translator\n  Pods <--> Papago\n  Pods --> Output\n  Input <--> Swap\n  Output <--> Swap\n  Remote -->|Remote Config| Theme\n  Translator --> Pods"
   - id: democracyaction
     name: "문자행동"
+    nameEn: "TextAction"
     meta: "2017.06 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -185,6 +192,7 @@ projects[9]:
       - "flowchart LR\n  GDrive[\"Google Drive (Xlsx)\"]\n\n  subgraph App[\"문자행동 (Swift)\"]\n    Import[\"Import → Core Data\"]\n    Search[\"Search by name / party / region\"]\n    Detail[\"Member detail: phone / email / site / SNS\"]\n    Fav[\"Favorites\"]\n  end\n\n  SNS[\"Facebook / Twitter / ... apps\"]\n  Kakao[\"KakaoTalk share\"]\n\n  GDrive --> Import\n  Import --> Search\n  Search --> Detail\n  Detail -->|\"Open via URL / SDK\"| SNS\n  Detail --> Kakao\n  Detail --> Fav"
   - id: gersang-helper
     name: "거상도우미"
+    nameEn: "Gersang Helper"
     meta: "2017.06 – 2017.12 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
@@ -212,6 +220,7 @@ projects[9]:
       - "flowchart LR\n  Game\n  Xlsx[\"Excel File\"]\n\n  subgraph App\n    subgraph SyncMode\n      XlsxResource[\"Xlsx Resource\"]\n    end\n\n    subgraph NormalMode\n      Sqlite[\"Sqlite Resource\"]\n    end\n\n    ImageResource[\"Image Resource\"]\n  end\n\n  subgraph Device\n    Container\n  end\n\n  Game -->|Manual Data| Xlsx\n  Xlsx -->|Embed| XlsxResource\n  XlsxResource -->|Core Data| Container\n  Container -->|Download| Sqlite\n\n  Game -->|Screenshot| ImageResource\n  Game -->|Export| ImageResource"
   - id: realtornote
     name: "공인중개사요약집"
+    nameEn: "Realtor Exam Notes"
     meta: "2017.08 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
