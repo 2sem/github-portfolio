@@ -44,10 +44,10 @@ projects[9]:
       en: "Shipped a solo iOS app by repurposing an Android app's Excel dataset as bundled default data, with Core Data for favorites and a random-suggestion feature."
       ko: "안드로이드 앱의 Excel 데이터를 기본 데이터로 재활용해 iOS 앱을 단독 출시 — 즐겨찾기는 Core Data로 저장하고 랜덤 추천 기능을 구현."
     tech[3]: Swift,CoreData,Excel
-    image: "/images/indie/letscheers/letscheer1.png"
+    image: "/images/indie/letscheers/letscheer2.png"
     images[4]:
-      - "/images/indie/letscheers/letscheer1.png"
       - "/images/indie/letscheers/letscheer2.png"
+      - "/images/indie/letscheers/letscheer1.png"
       - "/images/indie/letscheers/letscheer3.png"
       - "/images/indie/letscheers/letscheer4.png"
     diagrams[1]:
