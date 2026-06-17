@@ -4,6 +4,12 @@ when: "2024.06 – 2025.10"
 role:
   en: "Freelancer iOS Developer"
   ko: "서비스 프론트 / iOS 개발자 (프리랜서)"
+desc:
+  en: "SKT outsourcing partner · Freelance iOS developer"
+  ko: "SK텔레콤 협력사 · 프리랜서 iOS 개발자"
+story:
+  en: "Shipped AI recommendations, resolved critical crashes, mentored junior engineers."
+  ko: "AI 추천 구현, 대규모 크래시 해결, 주니어 멘토링으로 팀 역량 향상."
 cur: false
 projects[3]:
   - id: skcc-ai-sdk

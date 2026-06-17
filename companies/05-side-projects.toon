@@ -20,6 +20,9 @@ projects[3]:
     achievement:
       en: "Integrated the Korean public holidays API to display remaining holidays and generate annual leave suggestions. Implemented a custom calendar view. Used Realm for offline-first local data storage. Built a real-time countdown showing time remaining in the workday."
       ko: "공공데이터 공휴일 API 연동으로 남은 공휴일 표시 및 연차 계획 제안 생성. 커스텀 캘린더 구현. Realm으로 오프라인 우선 로컬 저장소 구성. 오늘 남은 시간 실시간 카운트다운 구현."
+    highlight:
+      en: "Work-life balance app — holiday API, Realm, countdown with UX designer"
+      ko: "UX 디자이너 협업 — 공휴일 API·Realm·카운트다운 직장인 앱"
     tech[4]: TypeScript,"React Native",Realm,"Public API"
     image: null
     links[1]:
@@ -41,6 +44,9 @@ projects[3]:
     achievement:
       en: "Implemented a Finder Sync Extension target — a sandboxed App Extension process that injects a right-click menu item into Finder and communicates with the main app via XPC to perform symlink creation outside the sandbox. Handled multi-file selection by batching the operation across all selected files. Added a rename flow so users can specify a custom link name at creation time, solving the core UX problem that ln -s argument order is unintuitive."
       ko: "Finder Sync Extension 타겟으로 Finder에 우클릭 메뉴 항목 주입 — 샌드박스 App Extension 프로세스가 XPC로 메인 앱과 통신해 샌드박스 외부에서 심볼릭 링크 생성. 다중 파일 선택 시 일괄 처리. 링크 이름 직접 지정 흐름 추가 — ln -s 인자 순서 혼란 문제를 UI로 해결."
+    highlight:
+      en: "Finder Sync Extension — right-click symlink with XPC sandbox bypass"
+      ko: "Finder Sync Extension으로 우클릭 심볼릭 링크 생성 — XPC 샌드박스 우회"
     tech[3]: Swift,"Finder Extension",macOS
     image: "/images/side-projects/symlink-maker/symlink-maker1.png"
     images[1]:
@@ -61,6 +67,9 @@ projects[3]:
     achievement:
       en: "Scraped the Lost Ark item dictionary site solo — analyzed the HTML structure and implemented web crawling to collect item data without a server. Bundled base class and item data as Xlsx and stored dynamic user data in Core Data, eliminating the need for any backend. Built a full item-level simulator: character creation, item search with grade adjustment, and equip-to-level verification."
       ko: "아이템 사전 사이트 HTML 구조를 직접 분석해 크롤링 구현, 서버 없이 데이터 수집. 기본 클래스·아이템 데이터는 Xlsx로 번들링, 동적 데이터는 Core Data로 로컬 저장. 캐릭터 생성, 아이템 검색·등급 조정, 장착 후 레벨 확인 시뮬레이터 완성."
+    highlight:
+      en: "Item-level simulator — site crawled solo, serverless with Xlsx + Core Data"
+      ko: "서버 없이 사이트 크롤링으로 아이템 레벨 시뮬레이터 완성"
     tech[3]: Swift,"Core Data",Xlsx
     image: "/images/side-projects/loa-helper/loa-helper1.png"
     images[5]:

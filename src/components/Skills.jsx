@@ -18,7 +18,7 @@ export default function Skills({ skills, onVisible }) {
 
   return (
     <section id="skills" className="skills-section" ref={ref}>
-      <div className="klabel"><span className="c">//</span> 03 — {t('skills')}</div>
+      <div className="klabel"><span className="c">//</span> 04 — {t('skills')}</div>
       <div className="skills-grid">
         {skills.map((sg, i) => (
           <div className="skill-group" key={i}>

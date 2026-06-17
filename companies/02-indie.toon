@@ -4,6 +4,12 @@ when: "2017 — 2018"
 role:
   en: "Plan · Design · Development"
   ko: "기획 · 디자인 · 개발"
+desc:
+  en: "Self-directed iOS transition · 1 year · worked from home like an office"
+  ko: "독학 iOS 전환 · 1년 · 집을 사무실처럼 사용하며 성실히 임했음"
+story:
+  en: "Committed a full year to learning iOS from scratch — no team, no spec, no shortcuts. Shipped real apps to validate the work."
+  ko: "팀도 스펙도 없이 1년을 iOS에 온전히 쏟았습니다. 실제 앱을 출시하며 결과로 증명했습니다."
 cur: false
 projects[9]:
   - id: shownote-indie
@@ -45,6 +51,9 @@ projects[9]:
     achievement:
       en: "Shipped a solo iOS app by repurposing an Android app's Excel dataset as bundled default data, with Core Data for favorites and a random-suggestion feature."
       ko: "안드로이드 앱의 Excel 데이터를 기본 데이터로 재활용해 iOS 앱을 단독 출시 — 즐겨찾기는 Core Data로 저장하고 랜덤 추천 기능을 구현."
+    highlight:
+      en: "Solo iOS launch — repurposed Android Excel dataset as bundled data"
+      ko: "Android Excel 데이터 재활용해 iOS 앱 단독 출시"
     tech[3]: Swift,CoreData,Excel
     image: "/images/indie/letscheers/letscheer2.png"
     images[4]:
@@ -99,6 +108,9 @@ projects[9]:
     achievement:
       en: "Gained hands-on experience applying for and integrating Korean government open data (TourAPI 3.0), shipping a solo SwiftUI app that turns it into a category-based, multi-language nearby-tourism guide with map directions and KakaoTalk sharing."
       ko: "공공데이터(TourAPI 3.0) 신청·연동을 직접 경험하고, 이를 카테고리별·다국어 주변 관광 가이드(지도 길찾기·카카오톡 공유 포함)로 만든 SwiftUI 앱을 단독 출시."
+    highlight:
+      en: "Solo SwiftUI app — Korean government TourAPI, 10-language tourism guide"
+      ko: "공공 TourAPI 기반 10개 국어 SwiftUI 관광 앱 단독 출시"
     tech[6]: Swift,SwiftUI,MapKit,CoreLocation,"Tour API",AdMob
     image: "/images/indie/wherewego/wherewego2.png"
     images[6]:
@@ -127,6 +139,9 @@ projects[9]:
     achievement:
       en: "Turned manual group-texting into a rule-driven flow: users compose reusable recipient rules (by company / department / position) that auto-generate condition lists and pull mobile-only numbers from Contacts, then toggle which rules apply per send."
       ko: "수동 단체 문자를 규칙 기반 흐름으로 전환: 회사·부서·직위 기준의 재사용 가능한 수신자 규칙을 만들어 조건 목록을 자동 생성하고 연락처에서 모바일 번호만 추출하며, 발송마다 적용할 규칙을 켜고 끌 수 있게 함."
+    highlight:
+      en: "Rule-based group SMS — filter contacts by company/dept/position"
+      ko: "회사·부서·직위 기반 규칙으로 단체 문자 자동화"
     tech[4]: Swift,Contacts,CoreData,MessageUI
     image: "/images/indie/sendadv/sendadv1.png"
     images[4]:
@@ -153,6 +168,9 @@ projects[9]:
     achievement:
       en: "Built a translator on the Naver Papago API with a flip-the-screen result view for face-to-face conversation and one-tap source/target swap, and drove the app's theme remotely via Firebase Remote Config."
       ko: "네이버 파파고 API 기반 번역기를 구현하고, 마주 보고 대화할 수 있는 결과 화면 뒤집기와 원문/번역 한 번에 맞바꾸기를 제공; Firebase Remote Config로 앱 테마를 원격 제어."
+    highlight:
+      en: "Papago translator with flip-screen for face-to-face conversation"
+      ko: "화면 뒤집어 마주 보며 대화하는 파파고 번역기"
     tech[4]: Swift,"Papago API","Firebase Remote Config",CocoaPods
     image: "/images/indie/talktrans/talktrans1.png"
     images[4]:
@@ -176,6 +194,9 @@ projects[9]:
     role:
       en: "Sole developer of the iOS version, born from a friend's idea amid a wave of civic 'text-action' messaging. Members' phone numbers weren't obtainable (privacy), so over two weeks I collected each member's linked SNS and sites from the Assembly website, and wired Facebook/Twitter/etc. to open natively via URL schemes and SDKs. Data was bundled from an Excel sheet (Google Drive) into Core Data."
       ko: "iOS 버전 단독 개발. 시민 '문자행동' 흐름 속 친구의 아이디어에서 출발. 의원 휴대폰 번호는 개인정보 문제로 확보가 어려워, 국회 사이트를 기초로 각 의원의 연결 SNS·사이트를 2주에 걸쳐 직접 수집하고 Facebook·Twitter 등을 URL 스킴·SDK로 각 앱이 바로 열리게 연결. 데이터는 Excel(Google Drive)을 Core Data로 번들."
+    highlight:
+      en: "Went viral after a community post — covered by SBS and major media outlets."
+      ko: "커뮤니티 공유로 입소문, SBS 등 주요 언론 인터뷰."
     achievement:
       en: "Hand-collected linked SNS/site data for National Assembly members over two weeks (numbers being unavailable for privacy) and made every channel open natively via URL schemes/SDKs. After a community post, the app went viral and earned interviews with major outlets including SBS, gaining substantial public visibility and influence."
       ko: "(번호 확보가 불가능한 상황에서) 국회의원의 연결 SNS·사이트 데이터를 2주간 직접 수집하고 모든 채널이 URL 스킴·SDK로 네이티브하게 열리도록 구현. 커뮤니티 공유로 입소문을 타며 SBS 등 주요 언론 인터뷰를 진행해 앱 인지도와 영향력을 크게 확보."
@@ -204,6 +225,9 @@ projects[9]:
     achievement:
       en: "Launched a self-planned game utility, built the game-data pipeline by combining manual capture and extraction tools, reached 500+ daily users, and passed $100 in first-month revenue, validating monetization for a solo app."
       ko: "온라인 게임 보조 도구를 직접 기획·데이터 구축·개발해 출시. 게임 데이터 캡처와 파일 해석 도구를 병행해 데이터 파이프라인을 만들고, 일간 사용자 500명 이상과 첫 월 수익 $100 돌파로 개인 앱의 유료화 가능성을 검증."
+    highlight:
+      en: "500+ daily users, $100+ first-month revenue — solo game utility"
+      ko: "일간 500명+, 첫 달 $100+ 수익 — 게임 보조 앱 단독 출시"
     tech[5]: Swift,CoreData,Xlsx,SQLite,LocalNotification
     image: "/images/indie/gersanghelper/gersanghelper1.png"
     images[6]:
@@ -232,6 +256,9 @@ projects[9]:
     achievement:
       en: "Built a serverless content-update mechanism: the study material lives in a Google Drive Excel file the app downloads (with per-version caching to skip re-downloads), so content updates ship without an App Store release. Modeled each spreadsheet sheet as a table, and added auto-generated quizzes and local-notification study reminders."
       ko: "서버 없는 콘텐츠 업데이트 구조를 구현: 학습 자료를 Google Drive Excel로 두고 앱이 다운로드(버전별 캐싱으로 재다운로드 방지)해, 앱스토어 출시 없이 콘텐츠를 갱신. 각 시트를 Table로 모델링하고 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
+    highlight:
+      en: "Serverless content updates — Google Drive Excel, no App Store release needed"
+      ko: "Google Drive Excel로 서버 없이 콘텐츠 업데이트 — 앱 출시 없이 갱신"
     tech[5]: Swift,CoreData,Xlsx,GoogleDrive,LocalNotification
     image: "/images/indie/realtornote/realtornote2.png"
     images[6]:

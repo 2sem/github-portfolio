@@ -4,6 +4,12 @@ when: "2009 — 2017"
 role:
   en: Developer
   ko: 개발자
+desc:
+  en: "KT Telecom partner · Public/private SI · ₩10B revenue"
+  ko: "KT 통신사 협력업체 · 공공·민간 SI · 매출 100억"
+story:
+  en: "Full-stack across C, C#, and Java. Proposed and shipped key ShowNote patent ideas."
+  ko: "C·C#·Java 풀스택 역량 구축. ShowNote 기획 수정 및 특허 아이디어 제안·구현."
 cur: false
 projects[27]:
   - id: ems
@@ -19,6 +25,9 @@ projects[27]:
     achievement:
       en: "Gained deep understanding of the Telnet protocol by working through the RFCs."
       ko: "RFC 문서를 직접 읽으며 Telnet 프로토콜을 깊이 이해하게 됨."
+    highlight:
+      en: "Telnet protocol implemented from RFC scratch"
+      ko: "RFC 기반 Telnet 프로토콜 직접 구현"
     tech[3]: VB,Telnet,XML
     diagrams[2]:
       - "graph LR\n  subgraph Form\n    Main --> User\n    Main --> Setting\n    Main --> Monitor\n  end\n  subgraph Module\n    Parse\n    Telnet\n    XML\n  end\n  subgraph Servers\n    S1[Server1]\n    S2[Server2]\n    SN[...]\n  end\n  subgraph Users\n    U1[User1.CFG]\n    U2[User2.CFG]\n    UN[...]\n  end\n  Form <--> Module\n  Telnet --> Servers\n  XML --> Users"
@@ -36,6 +45,9 @@ projects[27]:
     achievement:
       en: "Learned the company's in-house Linux C framework."
       ko: "사내 Linux C 프레임워크 사용법을 익힘."
+    highlight:
+      en: "Encrypted payment relay built on raw C/Linux"
+      ko: "Linux C로 암호화 결제 중계 게이트웨이 구현"
     tech[3]: C,Linux,Socket
     diagrams[1]:
       - "sequenceDiagram\n  autonumber\n  participant Client as Client (Partner)\n  participant GW as Gateway (중계 서버)\n  participant PG as Payment System (소액결제)\n  Client->>GW: Encrypted Payment Request\n  Note over GW: Only minimal header is checked\n  GW->>PG: Forward payload as-is\n  PG-->>GW: Payment Response\n  GW-->>Client: Forward response as-is"
@@ -52,6 +64,9 @@ projects[27]:
     achievement:
       en: "Maintained KT TwoPhone as the sole engineer for ~7 years — through an N-Step platform transition and a full IDC migration — without service downtime. Designed file-based number storage (per-phone-number folders) as a pragmatic alternative to a DBMS, which simplified provisioning and avoided database dependency for the virtual number mapping layer."
       ko: "약 7년간 단독으로 KT 투폰 운영 — N-Step 플랫폼 전환과 IDC 이전을 서비스 중단 없이 수행. DBMS 대신 전화번호별 폴더 기반 파일 저장 구조를 설계, 가상 번호 매핑 레이어의 DB 의존성을 제거하고 프로비저닝을 단순화."
+    highlight:
+      en: "7-year sole engineer — zero downtime through N-Step + IDC migration"
+      ko: "7년 단독 운영 — N-Step 전환·IDC 이전 무중단"
     tech[3]: C,Unix,SMS
   - id: verisign-sms
     name: "Verisign SMS"
@@ -66,6 +81,9 @@ projects[27]:
     achievement:
       en: "Built practical understanding of SMPP and Unicode, gained experience working with an international partner, and used MySQL in a production delivery flow."
       ko: "SMPP와 Unicode를 이해하고 국제 기업과 협업한 경험을 쌓았으며, 운영 발송 흐름에서 MySQL을 사용한 경험을 확보."
+    highlight:
+      en: "Verisign → Korea SMS delivery via SMPP with UCS2→EUC-KR conversion"
+      ko: "SMPP로 Verisign-한국 SMS 전달 서버 구현 — UCS2→EUC-KR 변환"
     tech[5]: C,Linux,SMPP,UCS2-BE,MySQL
     diagrams[1]:
       - "graph LR\n  Verisign[\"Verisign\"] -->|\"SMPP\"| SmsServer[\"SMS delivery server<br>(Verisign SMS)\"]\n  SmsServer -->|\"UCS2-BE\"| Ucs2[\"UCS2-BE\"]\n  Ucs2 -->|\"Convert\"| EucKr[\"EUC-KR\"]\n  SmsServer -->|\"Insert\"| MySql[\"MySQL\"]\n  MySql -->|\"Queue\"| CorpSms[\"SMS Agent\"]\n  CorpSms -->|\"Send\"| UserDevice[\"User device\"]\n  UserDevice -->|\"Delivery result\"| CorpSms\n  CorpSms -->|\"Update\"| MySql\n  MySql -->|\"Status lookup\"| SmsServer\n  SmsServer -->|\"Report\"| Verisign"
@@ -82,6 +100,9 @@ projects[27]:
     achievement:
       en: "Learned Google Calendar API usage, Outlook plug-in permission bypass techniques, and inter-process remote communication through Marshal."
       ko: "Google Calendar API 사용법, Outlook Plugin을 통한 권한 우회 방법, Marshal 기반 프로세스 간 원격 통신 방법을 습득."
+    highlight:
+      en: "Outlook-Google Calendar sync to drive KT SMS notification revenue"
+      ko: "Outlook↔Google 캘린더 동기화로 KT SMS 알림 수익 기여"
     tech[5]: "C#",Windows,Outlook,"Google Calendar API",Marshal
     links[1]{label,href}:
       "Blog","https://blog.naver.com/PostView.naver?blogId=k0fnaver&logNo=130085631771&redirect=Dlog&widgetTypeCall=true"
@@ -100,6 +121,9 @@ projects[27]:
     achievement:
       en: "Gained experience with Google Gmail API, collaboration with a planner, and calendar UI implementation."
       ko: "Google Gmail API 사용 경험, 기획자와의 협업 경험, 달력 UI 구현 경험을 확보."
+    highlight:
+      en: "Desktop Google Calendar client to grow KT SMS notification volume"
+      ko: "PC용 Google 캘린더 클라이언트로 KT SMS 알림 증가 기여"
     tech[5]: "C#",Windows,"Google Calendar API","Gmail API","Calendar UI"
     image: "/images/gcc-screenshot.jpeg"
     images[1]:
@@ -119,6 +143,9 @@ projects[27]:
     achievement:
       en: "Learned how to rotate views on iOS and how to structure reusable library code."
       ko: "iOS에서 View를 회전하는 방법과 재사용 가능한 라이브러리를 만드는 방법을 습득."
+    highlight:
+      en: "First iOS SDK prototype — rotation timer library"
+      ko: "최초 iOS SDK 프로토타입 — 회전 타이머 라이브러리"
     tech[4]: Objective-C,iOS,Timer,"Rotation Animation"
     diagrams[1]:
       - "flowchart TD\n  App --> SpinableImageView\n  SpinableImageView -->|Touch| Animation[\"Rotation Animation\"]\n  Animation -->|Rotate| Image[\"Image View\"]\n  Animation -->|Finish Event| App"
@@ -135,6 +162,9 @@ projects[27]:
     achievement:
       en: "Learned C# library development and process health monitoring, and reused XML serialization knowledge from GCOS to provide a communication library for the API process developer."
       ko: "C# 라이브러리 개발 방법과 프로세스 상태 감시 방법을 습득. GCOS 개발 과정에서 익힌 직렬화 기반 XML 통신 방식을 API 프로세스 개발자에게 라이브러리로 제공."
+    highlight:
+      en: "SMS backend + shared C# library delivered within a 4-role team"
+      ko: "4역할 팀 내 SMS 백엔드 + 공용 C# 라이브러리 제공"
     tech[5]: "C#",Windows,Socket,XML,"KT KHUB API"
     diagrams[1]:
       - "flowchart TB\n  App[\"App / Mobile Developer\"] <--> ALib\n\n  subgraph SMSECO[\"SMSECO\"]\n    direction TB\n\n    WatchDog[\"WatchDog\"]\n\n    subgraph ApiGroup[\"API\"]\n      direction TB\n      ALib[\"SMS Library\"]\n    end\n\n    subgraph SmsBeGroup[\"SMS Backend\"]\n      direction TB\n      SLib[\"SMS Library\"]\n      Sender[\"SMS Sender\"]\n    end\n\n    WatchDog -->|\"Keep running\"| ApiGroup\n    WatchDog -->|\"Keep running\"| SmsBeGroup\n    ApiGroup <-->|\"Socket + XML\"| SmsBeGroup\n  end\n\n  SLib --> Sender\n  Sender -->|\"KT KHUB API\"| KT[\"KT infrastructure\"]\n  KT -->|\"SMS\"| User[\"Recipient\"]"
@@ -151,6 +181,9 @@ projects[27]:
     achievement:
       en: "Learned how to call REST APIs from iOS."
       ko: "iOS에서 REST API를 호출하는 방법을 습득."
+    highlight:
+      en: "iOS test client for SMSECO API validation"
+      ko: "SMSECO API iOS 테스트 클라이언트 단독 구현"
     tech[4]: Objective-C,iOS,REST,SMSECO
     diagrams[1]:
       - "flowchart LR\n  Tester\n\n  subgraph App[\"SMSECO iOS App\"]\n    direction TB\n    AuthReq[\"Authentication\"]\n    AuthCheck[\"Authentication check\"]\n    SmsReq[\"SMS send\"]\n    LmsReq[\"LMS send\"]\n    MmsReq[\"MMS send\"]\n  end\n\n  subgraph SMSECO\n    API\n  end\n\n  Tester -->|Parameter| App\n  App -->|Request| API\n\n  API -->|Response| App\n  App -->|Log| Tester"
@@ -167,6 +200,9 @@ projects[27]:
     achievement:
       en: "Delivered the client under staffing constraints by training a .NET web developer and providing reusable Network and DB libraries. The libraries hid socket complexity and generated DB queries automatically, letting feature work proceed without low-level communication code."
       ko: "클라이언트 개발 인력 부족 상황에서 .NET 웹 개발자를 교육하고 재사용 가능한 Network/DB 라이브러리를 제공해 프로젝트를 완수. Socket 복잡도와 DB 쿼리 생성을 라이브러리로 흡수해 기능 개발에 집중할 수 있게 함."
+    highlight:
+      en: "Delivered under staffing constraints — coached .NET dev + Network/DB libs"
+      ko: "인력 부족 속 .NET 개발자 교육 + 라이브러리로 프로젝트 완수"
     tech[6]: "C#",WPF,MVVM,Socket,DataBinding,Database
     image: "/images/credif/pankyo-ibs/ibs-client.jpeg"
     images[1]:
@@ -187,6 +223,9 @@ projects[27]:
     achievement:
       en: "Reduced the gap between XML-based base-station configuration and the management database by applying Oracle XMLDB and sharing the approach with the team. Completed the configuration-management feature beyond the original server scope by building the JSP/jQuery UI and Daum Map-based location setup."
       ko: "XML 기반 기지국 설정과 관리 DB 사이의 간극을 Oracle XMLDB로 줄이고 적용 방식을 팀에 공유. 서버 담당 범위를 넘어 JSP/jQuery 관리 화면과 Daum Map 기반 위치 설정까지 구현해 형상관리 기능을 완성."
+    highlight:
+      en: "Delivered beyond scope — added JSP/jQuery UI to complete the feature"
+      ko: "담당 범위 초과 — JSP/jQuery UI 추가로 형상관리 기능 완성"
     tech[6]: C,Java,JSP,jQuery,"Oracle XMLDB","Daum Map"
     diagrams[1]:
       - "flowchart LR\n  subgraph HEMS[\"HeMS\"]\n    subgraph FE\n      MAP[\"Map\"]\n      CONFIG[\"Configuration Setup\"]\n    end\n\n    subgraph BE\n      WAS\n      EMSCOHB[\"COHB\"]\n    end\n\n    subgraph Oracle\n      XMLDB\n    end\n\n    MAP -->|JS| Daum[\"Daum Map\"]\n\n    CONFIG <-->|TCP| WAS\n    WAS <-->|TCP| EMSCOHB\n    EMSCOHB <--> XMLDB\n  end\n\n  subgraph HeNB[\"HeNB small base station\"]\n    ENBCOHB[\"COHB\"] -->|Update| ConfigXml[\"XML Configuration\"]\n  end\n\n  EMSCOHB <-->|\"TCP\"| ENBCOHB"
@@ -203,6 +242,9 @@ projects[27]:
     achievement:
       en: "Turned Pangyo's ad hoc, manual data-entry into a proper ObjectManager editor so part-time staff could load a dataset about three times larger. Recreated a commercial-grade theme with WPF global styles and themes after the paid UI library fell through, and tuned the client on multiple fronts to handle the large-scale data — gaining hands-on large-dataset optimization experience."
       ko: "판교의 수동·임시 데이터 입력을 전용 ObjectManager 편집기로 전환해 약 3배 규모의 데이터를 아르바이트 인력이 입력할 수 있게 함. 유료 UI 라이브러리 도입이 무산되자 WPF Global Style·Theme를 직접 적용해 상용 수준 외관을 재현하고, 급증한 데이터를 감당하기 위해 클라이언트를 다방면으로 튜닝하며 대용량 데이터 최적화 경험을 확보."
+    highlight:
+      en: "ObjectManager editor enabled 3× dataset — WPF theme built without paid lib"
+      ko: "ObjectManager로 3배 데이터 입력 가능 — 유료 UI 없이 WPF 테마 직접 구현"
     tech[6]: "C#",WPF,MVVM,DataBinding,Style,Database
     image: "/images/credif/muju-ibs/muju-ibs.jpeg"
     images[2]:
@@ -224,6 +266,9 @@ projects[27]:
     achievement:
       en: "Repackaged the fire-monitoring portion of Pangyo IBS into a small, focused IFS client under a short schedule. Implemented a field setup that connected fire-control equipment directly to the control-room PC over Serial without a separate physical server, gaining practical Serial Port communication experience."
       ko: "판교 IBS의 소방 감시 기능을 분리·축소해 짧은 일정의 단독 IFS 클라이언트로 재구성. 별도 물리 서버 없이 소방 제어 장비와 관제 PC를 Serial로 직접 연결하는 현장형 구성을 구현하며 Serial Port 통신 경험을 확보."
+    highlight:
+      en: "Fire monitor shipped without separate server — direct Serial to control PC"
+      ko: "별도 서버 없이 Serial 직결로 화재 감시 클라이언트 출시"
     tech[4]: "C#",Windows,Serial,WPF
     diagrams[1]:
       - "flowchart LR\n  FirePanel[\"Fire control equipment\"] -->|\"Serial signal\"| Server[\"Server Program\"]\n\n  subgraph ControlPC[\"Control-room PC\"]\n    Server -->|\"Fire alarm event\"| Client[\"IFS Client\"]\n    Client --> FloorPlan[\"Single fire floor plan\"]\n    FloorPlan --> Detector[\"Detected location\"]\n    Detector --> Wave[\"Wave animation\"]\n    Detector --> Tooltip[\"Location / device tooltip\"]\n  end"
@@ -240,6 +285,9 @@ projects[27]:
     achievement:
       en: "Learned UDT (UDP-based pseudo-TCP) and JNA, and proved out cross-platform desktop delivery with Java SWT after the WPF prototype couldn't meet the Linux/Mac requirement. Reused the IBS socket layer in Java to interoperate with a C server, and learned UDT's real cost firsthand — throughput was high but so resource-heavy that transfers saturated the office network during tests, forcing a dedicated line."
       ko: "UDT(UDP 기반 의사 TCP)와 JNA를 익히고, WPF 프로토타입이 Linux/Mac 요구를 충족하지 못하자 Java SWT로 크로스플랫폼 데스크톱 전달을 입증. C 서버와 통신하기 위해 IBS의 Socket 계층을 Java로 재사용. UDT는 속도는 빠르나 리소스 사용이 극심해 테스트 중 사무실 네트워크가 마비될 정도였고 결국 전용 회선을 설치 — 고속 전송의 실제 비용을 체득."
+    highlight:
+      en: "KT Genome Cloud cross-platform client — Java SWT after WPF couldn't meet Linux/Mac"
+      ko: "WPF 한계 후 Java SWT로 크로스플랫폼 KT 유전자 파일 전송 클라이언트 구현"
     tech[5]: Java,SWT,UDT,JNA,Socket
     image: "/images/credif/gstorage/gstorage-main.jpeg"
     images[2]:
@@ -261,6 +309,9 @@ projects[27]:
     achievement:
       en: "Generalized a personal visualization tool into a shared WIFI-positioning research platform (REST server + file import/export) so other developers could run their own algorithms. Built a first Android app to collect signal strength on-site, and found an algorithm that substantially cut positioning error — error dropped sharply once a proper indoor map was available (Gangnam) versus hand-measured floor plans (Seolleung)."
       ko: "개인용 시각화 도구를 REST 서버·파일 Import/Export를 갖춘 공용 WIFI 측위 연구 플랫폼으로 일반화해 다른 개발자도 자신의 알고리즘을 연구할 수 있게 함. 첫 Android 앱을 직접 개발해 현장 신호세기를 수집하고, 측위 오차를 크게 줄인 알고리즘을 발굴 — 수동 측정에 의존한 선릉역보다 정식 실내 지도를 확보한 강남역에서 오차가 크게 감소."
+    highlight:
+      en: "Algorithm found that substantially cut indoor positioning error"
+      ko: "실내 측위 오차를 크게 줄인 알고리즘 발굴"
     tech[5]: "C#",WPF,Java,Android,REST
     image: "/images/credif/wifi-lbs/wifi-lbs.jpeg"
     images[1]:
@@ -280,6 +331,9 @@ projects[27]:
     achievement:
       en: "Learned to read device barometric sensors and devised a floor-estimation algorithm that gates WIFI positioning to the current floor — using the difference between live pressure and a continuously-collected reference-floor pressure to resolve cross-floor signal interference in multi-floor buildings."
       ko: "기기 기압 센서 측정 방법을 습득하고, 실시간 기압과 지속 수집한 기준 층 기압의 차이로 현재 층을 추정하는 알고리즘을 고안 — 복층 건물에서 다른 층 WIFI 신호가 섞이는 문제를 현재 층 기준으로 필터링해 해결."
+    highlight:
+      en: "Floor-estimation algorithm from barometric sensor — 1–15 floors validated"
+      ko: "기압 센서 기반 층 추정 알고리즘 개발 — 1~15층 직접 검증"
     tech[3]: Java,Android,Barometer
     diagrams[1]:
       - "flowchart LR\n  subgraph Android[\"Android\"]\n    Sensor[\"Pressure Sensor\"]\n\n    subgraph App\n      Algorithm\n      Sqlite\n      UI\n    end\n  end\n\n  Sensor --> Sqlite\n  Sqlite --> Algorithm\n  Sensor --> Algorithm\n  Algorithm -->|Floor| UI"
@@ -296,6 +350,9 @@ projects[27]:
     achievement:
       en: "Learned to drive multiple concurrent RDP sessions on one PC to run parallel WebPageTest clients — the mechanism that made simultaneous multi-page testing possible. First hands-on C++ since graduation (reading and modifying a real open-source codebase), and first experience reaching out to an upstream open-source maintainer with questions."
       ko: "한 PC에서 여러 RDP 세션을 동시에 띄워 WebPageTest 클라이언트를 병렬 실행하는 방식을 익혀 다중 페이지 동시 테스트를 가능하게 함. 졸업 후 처음으로 실제 오픈소스 코드를 읽고 수정하며 C++을 다뤘고, 오픈소스 메인테이너에게 직접 문의해 본 첫 경험."
+    highlight:
+      en: "Multi-page concurrent WebPageTest via parallel RDP sessions"
+      ko: "여러 RDP 세션 병렬 실행으로 WebPageTest 다중 동시 테스트 구현"
     tech[4]: "C++",PHP,RDP,WebPageTest
     diagrams[1]:
       - "flowchart TB\n  Server[\"Server\"]\n\n  subgraph Browser[\"Browser\"]\n    Ext[\"Extension (js)\"]\n  end\n\n  Driver[\"wptdriver.exe\"]\n\n  subgraph OS[\"OS\"]\n    TestDat[\"test.dat\"]\n    subgraph Hook[\"wpthook.dll\"]\n      Web[\"local webservice\"]\n    end\n    Result[\"result\"]\n  end\n\n  Driver -->|\"① DLL Register\"| Hook\n  Driver -->|\"② query test job\"| Server\n  Driver -->|\"③ store\"| TestDat\n  Driver -->|\"④ Launch\"| Ext\n  Hook -->|\"⑤ Loading\"| Browser\n  TestDat -->|\"⑥ load\"| Hook\n  Hook -->|\"⑦ start web service\"| Web\n  Ext -->|\"⑧ navigate to blank\"| Web\n  Ext <-->|\"⑨ query test page url\"| Web\n  Browser -->|\"⑩ navigate to test page\"| Ext\n  Hook -->|\"⑪ store\"| Result\n  Result -->|\"⑫ upload result\"| Server"
@@ -312,6 +369,9 @@ projects[27]:
     achievement:
       en: "Designed the SDK so consuming developers register a simple event handler and need to know neither JNI nor AIDL — the agent connection is wrapped internally. Built it on Java/AIDL, strengthening Android skills, and explored Google Geofence as a lower-power alternative to constant Bluetooth scanning."
       ko: "외부 개발자가 단순히 이벤트 핸들러만 등록하면 되고 JNI·AIDL을 몰라도 되도록 Agent 연결을 내부에 감춘 SDK를 설계. Java/AIDL 기반으로 구현하며 Android 개발 역량을 강화했고, 상시 Bluetooth 스캔의 전력 문제를 줄일 대안으로 Google Geofence를 검토."
+    highlight:
+      en: "AIDL-free iBeacon SDK — developers register one handler, internals hidden"
+      ko: "AIDL 몰라도 되는 iBeacon SDK 설계 — 이벤트 핸들러 등록만으로 사용"
     tech[5]: Java,Android,AIDL,iBeacon,Bluetooth
     diagrams[1]:
       - "flowchart LR\n  subgraph Building\n    Beacon[\"iBeacon\"]\n  end\n\n  subgraph Device[\"Android\"]\n    subgraph App[\"Developer's App\"]\n      SDK[\"O2O SDK / Library\"]\n      Handler[\"Event handler\"]\n    end\n    Agent[\"O2O Agent (service)\"]\n  end\n\n  Server[\"O2O Server\"]\n  Developer[\"Web console\"]\n\n  Beacon -->|\"BLE signal\"| Agent\n  Agent <--> Server\n  Handler -->|\"Register handler\"| SDK\n  SDK -->|\"Event\"| Handler\n  SDK <-->|\"AIDL\"| Agent\n  Server --> Developer"
@@ -328,6 +388,9 @@ projects[27]:
     achievement:
       en: "Revived a legacy Delphi build whose external components were so old they were no longer findable online — recovering some from a leftover PC and substituting upgraded equivalents — and root-caused a map-rendering failure across client/server/vendor boundaries to the vendor's mis-uploaded data. Shipped an installer (including a source-less, binary-only server) to the hospital, putting school-learned Delphi to real use."
       ko: "외부 컴포넌트가 너무 오래돼 검색조차 안 되는 레거시 Delphi 빌드를 — 남은 PC에서 일부 복구하고 상위 버전으로 대체해 — 되살리고, 클라이언트·서버·맵 업체에 걸친 맵 렌더링 오류의 근본 원인을 맵 업체의 데이터 오등록으로 규명. 소스 없이 바이너리만 있던 서버를 포함해 인스톨러를 만들어 병원에 설치하며 학교에서 배운 Delphi를 실무에 적용."
+    highlight:
+      en: "Legacy Delphi build revived — map-rendering failure root-caused to vendor mis-upload"
+      ko: "레거시 Delphi 빌드 복구 — 맵 렌더링 오류 원인을 맵 업체 오등록으로 규명"
     tech[4]: Delphi,Java,Windows,Installer
     image: "/images/credif/skt-ilbp/ilbp.jpeg"
     images[1]:
@@ -347,6 +410,9 @@ projects[27]:
     achievement:
       en: "Took sole ownership of both the cross-platform client and the Linux/C server after the rest of the team left, gaining hands-on server-redundancy and performance-tuning experience: built a standby/proxy server with DB-driven failover and port forwarding to the primary, and recovered from a KT Cloud outage caused by UDT traffic by moving to alternate/standby routers."
       ko: "팀이 모두 떠난 뒤 크로스플랫폼 클라이언트와 Linux/C 서버를 단독으로 맡아 서버 이중화와 성능 튜닝을 실제로 경험: DB 기반 페일오버와 원본 서버로의 Port Forwarding을 갖춘 예비/프록시 서버를 구축하고, UDT 트래픽으로 발생한 KT Cloud 다운을 대체·예비 라우터 전환으로 복구."
+    highlight:
+      en: "Sole owner of client + Linux/C server — standby failover + KT Cloud outage recovered"
+      ko: "클라이언트·서버 단독 인수 — DB 기반 페일오버 구현·KT Cloud 장애 복구"
     tech[5]: Java,SWT,C,UDT,Socket
     diagrams[1]:
       - "flowchart LR\n  subgraph Client[\"gStorage Client (Java SWT)\"]\n    Console\n  end\n\n  Primary[\"Primary server (Linux C)\"]\n  Standby[\"Standby / proxy server\"]\n  DB[\"DB (server info)\"]\n\n  Client -->|\"1. connect\"| Primary\n  Client -.->|\"on failure\"| Standby\n  Standby -->|\"Port forward\"| Primary\n  Standby <--> DB\n  DB -->|\"primary / standby info\"| Standby"
@@ -363,6 +429,9 @@ projects[27]:
     achievement:
       en: "Devised an HTML-template approach to PDF generation: after WPF + free conversion libraries kept corrupting Korean text, switched to a hybrid that binds contract data into HTML elements and renders the PDF with PhantomJS — getting faithful Korean output and a layout matching the input form. Also integrated Mobilians mobile identity verification in place of handwritten signatures."
       ko: "HTML 템플릿 기반 PDF 생성 방식을 고안: WPF와 무료 변환 라이브러리가 한글을 깨뜨리는 문제를, 계약 데이터를 HTML Element에 연결하고 PhantomJS로 PDF를 렌더링하는 하이브리드 방식으로 해결해 한글 출력과 입력 화면과 유사한 레이아웃을 확보. 서명 대신 모빌리언스 휴대폰 본인 인증도 연동."
+    highlight:
+      en: "HTML-template PDF approach solved Korean text corruption in WPF"
+      ko: "WPF 한글 깨짐을 HTML 템플릿·PhantomJS PDF로 해결"
     tech[5]: "C#",WPF,JavaScript,PhantomJS,HTML
     diagrams[1]:
       - "flowchart LR\n  Buyer\n  Agent\n  Seller\n\n  subgraph AgentPC[\"Realtor Agent Program\"]\n    subgraph Addin[\"Add-in\"]\n      subgraph Form[\"Contract Input Form\"]\n        Data\n        Template[\"HTML template\"]\n      end\n\n      Phantom[\"PhantomJS\"]\n    end\n  end\n\n  Auth[\"Mobilians\"]\n  Storage[\"Certified e-Document Storage\"]\n\n  Buyer -->|Phone Auth| Auth\n  Agent -->|Phone Auth| Auth\n  Seller -->|Phone Auth| Auth\n  Form --> Template\n  Data -->|Binding| Template\n  Auth -->|\"Verified signature\"| Template\n  Template --> Phantom\n  Phantom -->|\"Export PDF\"| Storage"
@@ -379,6 +448,9 @@ projects[27]:
     achievement:
       en: "Worked around an unsupported-DB constraint: when KT mandated PostgreSQL but the Xroshot agent didn't support it, reproduced the agent's DB-in/result-out contract with a custom Socket/XML server on MyBatis, so existing service/admin pages could send SMS unchanged (KHUB included). Also stood up the surrounding infrastructure myself — VM, TB, and Apache reverse proxy."
       ko: "DBMS 미지원 제약을 우회: KT가 PostgreSQL을 의무화했지만 Xroshot Agent가 이를 지원하지 않자, Agent의 'DB 입력 → 결과 기록' 계약을 MyBatis 기반 Socket/XML 서버로 재현해 기존 서비스/관리자 페이지가 수정 없이 SMS를 발송할 수 있게 함(KHUB 포함). 주변 인프라(VM·TB·Apache 리버스 프록시)도 직접 구성."
+    highlight:
+      en: "Custom SMS server bypassed PostgreSQL incompatibility — existing pages unchanged"
+      ko: "PostgreSQL 미지원 우회 — MyBatis SMS 서버로 기존 서비스 수정 없이 해결"
     tech[5]: Java,JSP,MyBatis,Socket,XML
     diagrams[1]:
       - "flowchart LR\n  subgraph OllehTVPay[\"Olleh TV Pay\"]\n    AuthSystem[\"Auth System\"]\n\n    subgraph DB[\"PostgreSQL\"]\n      RequestTable[\"Request Table\"]\n      ResultTable[\"Result Table\"]\n    end\n\n    subgraph SMSAgent[\"SMS Agent\"]\n      IsPhoneKT{\"Is Phone KT?\"}\n      SDK\n      TCP\n    end\n  end\n\n  SMS[\"SMS Server\"]\n  KHUB[\"KHUB\"]\n\n  AuthSystem -->|Insert| RequestTable\n  RequestTable -->|Pull| SMSAgent\n\n  SMSAgent -->|Insert| ResultTable\n  SMSAgent --> IsPhoneKT\n\n  IsPhoneKT -->|Y| SDK\n  SDK --> KHUB\n  IsPhoneKT -->|N| TCP\n  TCP --> SMS\n\n  KHUB -->|Response| SMSAgent\n  KHUB -->|Pull Status| SMSAgent\n  SMS -->|Response| SMSAgent\n  SMS -->|Pull Status| SMSAgent"
@@ -395,6 +467,9 @@ projects[27]:
     achievement:
       en: "Learned the practical structure of SMTP/mail handling while turning group-mail backup needs into an automated board-posting workflow."
       ko: "그룹 메일 백업 요구를 자동 게시판 등록 흐름으로 구현하며 SMTP와 메일 처리 구조를 실무적으로 이해하게 됨."
+    highlight:
+      en: "Mail-to-board auto-posting via SMTP polling and subject routing"
+      ko: "SMTP 폴링과 제목 분류로 메일→사내 게시판 자동 등록 구현"
     tech[5]: "C#",Windows,SMTP,Email,Database
     diagrams[1]:
       - "flowchart LR\n  Employee\n\n  subgraph Server[\"Windows Server\"]\n    subgraph Converter[\"MailToBoardConverter\"]\n      Account[\"Dedicated mail account\"]\n      Poller[\"Mailbox\"]\n      Parser[\"Parse subject / recipients\"]\n      Router{\"Route rule\"}\n    end\n\n    MailServer[\"Mail Server\"]\n    BoardBySubject[\"Target board\"]\n    BoardByGroup[\"Mapped board\"]\n    Board[\"Intranet Board DB\"]\n  end\n\n  Employee -->|CC: Group Mail| MailServer\n  Employee -->|Specific Mail| MailServer\n  MailServer -->|SMTP| Poller\n  Poller -->|Poll| Parser\n  Parser --> Router\n\n  Router -->|\"Subject: @{board}\"| BoardBySubject\n  Router -->|\"Group mail recipient\"| BoardByGroup\n\n  BoardBySubject -->|Insert| Board\n  BoardByGroup -->|Insert| Board"
@@ -411,6 +486,9 @@ projects[27]:
     achievement:
       en: "Learned Node.js on this project and turned an existing GNUBoard forum into a zero-admin content store — post titles as keywords, comments as related stocks — so the app developer could manage the lists by simply editing comments, with no separate admin tool to build or maintain."
       ko: "이 프로젝트에서 Node.js를 익히고, 기존 GNU 보드 게시판을 관리 도구가 필요 없는 데이터 저장소로 전환 — 글 제목을 키워드, 댓글을 관련주로 — 해 앱 개발자가 댓글 수정만으로 목록을 관리할 수 있게 함(별도 관리자 도구 불필요)."
+    highlight:
+      en: "GNUBoard repurposed as zero-admin stock-data store — Node.js learned here"
+      ko: "GNU 보드를 관리 도구 없는 관련주 데이터 저장소로 전환"
     tech[3]: JavaScript,"Node.js",GNUBoard
     diagrams[1]:
       - "flowchart LR\n  Dev[\"App developer\"]\n\n  subgraph Windows\n    subgraph Board[\"GNUBoard\"]\n      Web\n    end\n\n    subgraph DB\n      subgraph PostTable[\"Post title = keyword\"]\n        CommentTable[\"Comments = stocks related to keyword\"]\n      end\n    end\n\n    subgraph Server[\"App Server\"]\n      REST[\"REST API\"]\n    end\n  end\n\n  Dev -->|Post stock item as comment| Web\n  Board -->|Post| DB\n  Query --> REST\n  REST -->|Query| DB\n  App -->|Request by keyword| Server\n  Server -->|Related /\n  recommended stocks| App"
@@ -427,6 +505,9 @@ projects[27]:
     achievement:
       en: "Rebuilt a hard-coded Objective-C app cleanly in Swift (the original had literal screen sizes scattered throughout), learning the iOS PDF API and Google Drive/Dropbox integration along the way. Designed a new 'Trigger' interaction — decoupling the touch target from the element it reveals — that wasn't in the original spec."
       ko: "하드코딩투성이(화면 크기를 숫자 그대로 박아둔) Objective-C 앱을 Swift로 깔끔하게 재구현하며 iOS PDF API와 Google Drive·Dropbox 연동을 습득. 기존 기획에 없던 'Trigger' 인터랙션 — 터치 영역과 나타날 요소를 분리 — 을 새로 설계."
+    highlight:
+      en: "Swift rebuild from scratch — invented 'Trigger' interaction not in original spec"
+      ko: "Swift로 처음부터 재구현 — 기획에 없던 'Trigger' 인터랙션 고안"
     tech[4]: Swift,PDF,GoogleDrive,Dropbox
     image: "/images/credif/shownote/shownote1.jpeg"
     images[3]:
@@ -448,6 +529,9 @@ projects[27]:
     achievement:
       en: "Revived a discontinued paid app with new capabilities: built an 'auto-set photo on incoming call' feature on the iOS Contacts API, and applied AdMob for the first time to establish a monetization base. Later modernized it — RxSwift during job prep, then a SwiftUI rebuild in 2026."
       ko: "판매 중지된 유료 앱을 새 기능으로 부활: iOS 연락처 API로 '전화 수신 시 사진 자동 설정' 기능을 기획·구현하고, Admob을 처음 적용해 앱 수익화 기반을 마련. 이후 구직 준비 중 RxSwift를 도입하고 2026년 SwiftUI로 재개발하며 현대화."
+    highlight:
+      en: "Discontinued paid app revived with auto-photo + AdMob monetization"
+      ko: "판매 중지 앱 부활 — 전화 수신 시 자동 사진 설정 + AdMob 수익화"
     tech[5]: Swift,CoreData,Contacts,AdMob,RxSwift
     image: "/images/credif/whocallme/whocallme1.jpeg"
     images[4]:
@@ -473,6 +557,9 @@ projects[27]:
     achievement:
       en: "First experience coordinating directly with an external company."
       ko: "처음으로 타 업체와 직접 소통한 경험."
+    highlight:
+      en: "Encrypted OTA relay built — first direct external company coordination"
+      ko: "암호화 OTA 중계 게이트웨이 구현 — 최초 타 업체 직접 협업"
     tech[3]: C,Unix,Socket
     diagrams[1]:
       - "graph TD\n  TM[\"TMoney\"] -->|\"Request (encrypted)\"| GW[\"OTA Gateway (Socket Server)\"]\n  GW -->|Forward| SCMS[\"SCMS (KT USIM System)\"]\n  SCMS -->|Response| GW\n  GW -->|Relay response| TM\n  subgraph Process Model\n    L[\"Listen socket\"] --> A[Accept]\n    A -->|fork per client| C[\"Child handles Tx/Rx\"]\n  end"

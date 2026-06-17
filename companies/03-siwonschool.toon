@@ -4,6 +4,12 @@ when: "2018.06 — 2021.05"
 role:
   en: "iOS Developer"
   ko: "EduTech 개발팀 / iOS 개발자"
+desc:
+  en: "#1 online language platform · ₩100B+ ARR · 300 employees"
+  ko: "국내 1위 온라인 어학 플랫폼 · 연매출 1,000억+ · 직원 300명"
+story:
+  en: "Built shared CocoaPods video player library, established CI/CD, pushed App Store rating to 4.7."
+  ko: "공유 CocoaPods 동영상 라이브러리 구축, CI/CD 도입, App Store 평점 4.7 달성."
 cur: false
 projects[12]:
   - id: lectureroom
@@ -52,6 +58,9 @@ projects[12]:
     achievement:
       en: "Stabilized a live learning app after takeover: reduced production friction through bug fixes, server-error handling, Safe Area adaptation, and user-feedback-driven UX improvements while keeping recording, analysis, playback, and SNS login flows operational."
       ko: "인수 직후 운영 중인 학습 앱을 안정화: 버그 수정, 서버 오류 대응, SafeArea 대응, 사용자 피드백 기반 편의성 개선을 진행하며 녹음·분석·재생·SNS 로그인 흐름을 유지."
+    highlight:
+      en: "Stabilized post-takeover — bugs, Safe Area, server-error handling"
+      ko: "인수 직후 안정화 — 버그·서버 오류·SafeArea 대응"
     tech[5]: Swift,Firebase,Recording,Video,SafeArea
     image: "/images/siwonschool/real-training/real-training2.png"
     images[6]:
@@ -77,6 +86,9 @@ projects[12]:
     achievement:
       en: "Delivered the first iOS version of an Android-only TOEIC vocabulary app, independently resolving spec/design inconsistencies to drive it to release, and transformed it from a book appendix into a standalone revenue service via in-app purchase."
       ko: "Android 전용 TOEIC 단어장 부록 앱을 iOS로 독자 개발. 기획·디자인·앱 불일치 상황을 직접 해결해 출시로 이끌고, 인앱 결제 모델 도입으로 독립적인 수익 서비스로 전환."
+    highlight:
+      en: "First iOS version — drove from spec conflict to App Store with in-app purchase"
+      ko: "Android 전용 앱을 iOS로 독자 개발 — 인앱 결제 모델 도입으로 출시"
     tech[5]: Swift,AVFoundation,StoreKit,CocoaPods,CDN
     image: "/images/siwonschool/victoeic-voca/victoeic-voca1.jpeg"
     images[3]:
@@ -98,6 +110,9 @@ projects[12]:
     achievement:
       en: "Independently drove a React Native PoC for a planned Korean lecture app after team-led momentum stalled — rebuilt two production screens, explored DRM integration, and delivered internal training docs that raised team readiness even though the project was ultimately cancelled."
       ko: "팀 주도가 중단된 상황에서도 React Native PoC를 독자 완성. 실 서비스 화면 2개 재구현·DRM 연동 탐색·교육 자료 배포로 팀 역량에 기여. 프로젝트는 최종 취소."
+    highlight:
+      en: "Solo RN PoC completed after team stalled — 2 screens, DRM, training docs"
+      ko: "팀 중단 후 RN PoC 독자 완성 — 화면 2개·DRM·교육 자료"
     tech[3]: "React Native",JavaScript,DRM
     image: null
     diagrams[1]:
@@ -116,6 +131,9 @@ projects[12]:
     achievement:
       en: "Validated Unity-as-Library integration with an existing iOS app by building a word-collection rocket game in Unity and successfully embedding it in the Siwonschool app — then documented the process as internal training material."
       ko: "Unity를 기존 iOS 앱에 라이브러리로 내장하는 가능성을 검증. 단어 로켓 게임을 직접 개발해 시원스쿨 앱 내장에 성공하고 교육 자료로 정리·배포."
+    highlight:
+      en: "Unity-as-Library embedded in iOS app — first practical Unity output"
+      ko: "Unity 라이브러리를 iOS 앱에 내장 성공 — 팀 첫 Unity 실용화"
     tech[3]: Unity,Swift,"Unity as Library"
     image: null
     diagrams[1]:
@@ -134,6 +152,9 @@ projects[12]:
     achievement:
       en: "Delivered a B2B white-label of the Siwonschool app by structuring shared code across a common Xcode Workspace, using Swift preprocessor branching and separate Storyboards to swap only B2B-specific login, server, and contact screens — zero duplication."
       ko: "시원스쿨 앱을 공통 Xcode Workspace 구조로 공유하고 Swift preprocessor + 별도 Storyboard로 기업 전용 로그인·서버·연락처만 교체하는 B2B 버전 출시. 중복 개발 없음."
+    highlight:
+      en: "B2B white-label via shared Workspace — zero code duplication"
+      ko: "공통 Workspace로 B2B 버전 출시 — 코드 중복 없음"
     tech[4]: Swift,Xcode,"Preprocessor",CocoaPods
     image: "/images/siwonschool/lectureroom-b2b/lectureroom-b2b1.jpeg"
     images[2]:
@@ -155,6 +176,9 @@ projects[12]:
     achievement:
       en: "Solved intranet notification failures from frequent logouts by building an iOS app that uses WebView JavaScript injection for login detection and Firebase topic-based push — zero extra server development required."
       ko: "인트라넷 잦은 로그아웃으로 인한 알림 누락 문제를 iOS 앱으로 해결. WebView JS injection으로 로그인 감지·자동 이동, Firebase topic 구독으로 추가 서버 개발 없이 개인화 푸시 구현."
+    highlight:
+      en: "JS injection + Firebase topic solved intranet notification dropouts"
+      ko: "JS injection + Firebase topic으로 인트라넷 알림 누락 문제 해결"
     tech[4]: Swift,WebView,"JavaScript Injection",Firebase
     image: null
     diagrams[1]:
@@ -173,6 +197,9 @@ projects[12]:
     achievement:
       en: "Delivered the initial React Native lecture-player code — built during the prior 선행 학습 project — to the 시원스쿨펜 team, which shipped as the app's core feature. Post-launch, replaced ScrollView with FlatList in word cards to eliminate scroll jank, removed the confirm-tap from quiz flow for instant submission, redesigned my-vocabulary with inline edit/delete, introduced Appium regression coverage, and wired Firebase Analytics to track study-flow patterns."
       ko: "선행 학습 프로젝트에서 구현한 RN 강의 재생 코드를 시원스쿨펜 팀에 제공해 앱의 핵심 기능으로 출시. 출시 후 ScrollView→FlatList 교체로 단어 카드 스크롤 성능 개선, 퀴즈 즉시 제출로 학습 흐름 개선, 내단어장 인라인 편집/삭제 재설계, Appium 회귀 테스트 도입, Firebase Analytics 연동."
+    highlight:
+      en: "RN lecture player shipped + FlatList perf fix + Appium regression coverage"
+      ko: "RN 강의 재생 기여 → FlatList 성능 개선 + Appium 회귀 테스트 도입"
     tech[3]: "React Native",Firebase,Appium
     image: "/images/siwonschool/siwon-pen/siwon-pen1.png"
     images[13]:
@@ -205,6 +232,9 @@ projects[12]:
     achievement:
       en: "Inherited a solo-maintained codebase when the team lead left. Migrated Objective-C modules to Swift to reduce future maintenance overhead; replaced the legacy XlsxReaderWriter Excel library to resolve build warnings; added NSNull safety across JSON parsing to eliminate server-response crashes; implemented local push notifications for study reminders and enrollment expiry without any server changes; added audio playback speed control, word-card navigation tracks, pronunciation search filter, new learning language support, landscape layout, and small-device (SE) fixes."
       ko: "팀장 퇴사 후 단독 유지보수 코드베이스 인수. ObjC→Swift 변환으로 유지보수 진입 비용 절감; XlsxReaderWriter 교체로 빌드 경고 해소; JSON NSNull 처리 전면 추가로 서버 응답 파싱 크래시 제거; 서버 변경 없이 앱 내 스케줄링으로 리마인드·수강만료 로컬 푸시 구현; 음원 재생속도 조절, 단어 카드 탐색 트랙, 발음 검색 조건, 신규 학습 언어, Landscape 대응, 소형기기 레이아웃 수정."
+    highlight:
+      en: "Solo inheritance — ObjC→Swift, crash fixes, local push, 6+ features added"
+      ko: "단독 인수 — ObjC→Swift 변환, 크래시 제거, 로컬 푸시, 기능 6개+ 추가"
     tech[4]: Swift,"Storyboard / Auto Layout",NotificationCenter,XlsxReaderWriter
     image: "/images/siwonschool/amgigorae/amgigorae1.jpeg"
     images[5]:
@@ -255,6 +285,9 @@ projects[12]:
     achievement:
       en: "Implemented JavaScript Injection to bypass the intranet's SMS authentication gate — the site requires SMS auth on any non-registered device, so JS was injected into the WebView to handle the login flow without triggering the SMS step. Collaborated with a designer to build the native home screen."
       ko: "등록된 기기가 아니면 문자인증을 요구하는 인트라넷 웹페이지에 JavaScript Injection을 적용해 SMS 단계 없이 앱에서 로그인 처리 구현. 디자이너와 협업해 네이티브 홈 화면 완성."
+    highlight:
+      en: "JS injection bypassed SMS auth for intranet login in app"
+      ko: "JavaScript Injection으로 인트라넷 SMS 인증 우회"
     tech[3]: Swift,WebView,"JavaScript Injection"
     image: "/images/siwonschool/siwon-intra/siwon-intra1.jpeg"
     images[2]:
@@ -275,6 +308,9 @@ projects[12]:
     achievement:
       en: "Chose Expo over bare React Native to satisfy a possible web requirement — one codebase targeting both iOS/Android and mobile web. Set up the team's development environment and implemented login/signup UI from the design spec before the project was cancelled."
       ko: "모바일 웹 대응 가능성에 대비해 bare RN 대신 Expo 선택 — iOS/Android + 웹을 단일 코드베이스로 지원. 개발환경 구성 및 기획서 기반 로그인·회원가입 UI 구현 후 프로젝트 중단."
+    highlight:
+      en: "Expo chosen for iOS + web single codebase — env set up before cancellation"
+      ko: "Expo로 iOS·웹 단일 코드베이스 구성 — 취소 전 환경 구축·UI 구현"
     tech[3]: Expo,"React Native",JavaScript
     image: null
     diagrams[1]:

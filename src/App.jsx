@@ -8,12 +8,14 @@ import Projects from './components/Projects.jsx'
 import Skills from './components/Skills.jsx'
 import Contact from './components/Contact.jsx'
 import ResumeCart from './components/ResumeCart.jsx'
+import Experiences from './components/Experiences.jsx'
 
 const NAV_ITEMS = [
   { id: 'summary', pre: '01' },
-  { id: 'projects', pre: '02' },
-  { id: 'skills', pre: '03' },
-  { id: 'contact', pre: '04' },
+  { id: 'experiences', pre: '02' },
+  { id: 'projects', pre: '03' },
+  { id: 'skills', pre: '04' },
+  { id: 'contact', pre: '05' },
 ]
 
 // Latest YYYY(.MM) date in a project's meta (handles ranges like "2010.01 – 2017.02").
@@ -154,7 +156,6 @@ export default function App() {
         <ResumeCart
           cart={cart}
           onRemove={removeFromCart}
-          onReorder={reorderCart}
           onClose={() => setCartOpen(false)}
           isInCart={isInCart}
         />
@@ -183,6 +184,8 @@ export default function App() {
             highlights={highlights}
             onVisible={() => setActiveSection('summary')}
           />
+
+          <Experiences onVisible={() => setActiveSection('experiences')} />
 
           <Projects
             filterDefs={filterDefs}

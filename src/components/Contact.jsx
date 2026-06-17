@@ -27,7 +27,7 @@ export default function Contact({ github, linkedin, email, x, threads, facebook,
 
   return (
     <section id="contact" className="contact-section" ref={ref}>
-      <div className="klabel"><span className="c">//</span> 04 — {t('contact')}</div>
+      <div className="klabel"><span className="c">//</span> 05 — {t('contact')}</div>
       <div className="contact-box">
         <div>
           <p className="contact-msg">{tr(contactMsg)}</p>

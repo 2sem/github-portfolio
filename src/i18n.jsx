@@ -5,6 +5,7 @@ export const LANGS = ['en', 'ko']
 const UI = {
   en: {
     summary: 'summary',
+    experiences: 'experience',
     projects: 'projects',
     skills: 'skills',
     contact: 'contact',
@@ -44,6 +45,7 @@ const UI = {
   },
   ko: {
     summary: '소개',
+    experiences: '경력',
     projects: '프로젝트',
     skills: '기술',
     contact: '연락처',
