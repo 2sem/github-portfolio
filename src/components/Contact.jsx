@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useLang } from '../i18n.jsx'
 
 export default function Contact({ github, linkedin, email, x, threads, facebook, contactMsg, onVisible }) {
-  const { t, tr } = useLang()
+  const { t, tr, lang } = useLang()
   const ref = useRef(null)
 
   useEffect(() => {
@@ -41,11 +41,12 @@ export default function Contact({ github, linkedin, email, x, threads, facebook,
             ))}
           </div>
           <div className="resume-dl">
-            <a className="resume-dl-btn" href="/Lee-Young-jun-Resume-ko.pdf" download>
-              {t('downloadResume')} · KO
-            </a>
-            <a className="resume-dl-btn" href="/Lee-Young-jun-Resume-en.pdf" download>
-              {t('downloadResume')} · EN
+            <a
+              className="resume-dl-btn"
+              href={lang === 'ko' ? '/Lee-Young-jun-Resume-ko.pdf' : '/Lee-Young-jun-Resume-en.pdf'}
+              download="Lee-Young-jun-Resume.pdf"
+            >
+              {t('downloadResume')}
             </a>
           </div>
         </div>
