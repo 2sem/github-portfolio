@@ -26,8 +26,8 @@ projects[3]:
       en: "Inherited SDK maintenance with one handoff briefing and no contract — declared a work stoppage in month 4 when no formal assignment had been made, which prompted an additional contract with retroactive payment from 2025.01. Improved accessibility and UI, set up MR templates, and established a Slack notification workflow to alert the team on every SDK update."
       ko: "계약 없이 1회 인수 설명만 받은 상태로 유지보수 담당 — 4개월 후 공식 계약 없음을 이유로 작업 중단 선언, 2025.01 소급 추가 계약 체결. 접근성·UI 개선, MR 템플릿 구축, SDK 업데이트 시 Slack 알림 운영 체계 수립."
     highlight:
-      en: "Retroactive contract secured after work stoppage"
-      ko: "작업 중단으로 소급 계약 체결"
+      en: "Accessibility & UI improvements, MR template setup"
+      ko: "접근성·UI 개선, MR 템플릿 구축"
     tech[3]: Swift,GitLab,Slack
     image: null
     links[0]:
