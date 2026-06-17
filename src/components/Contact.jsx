@@ -40,6 +40,14 @@ export default function Contact({ github, linkedin, email, x, threads, facebook,
               </a>
             ))}
           </div>
+          <div className="resume-dl">
+            <a className="resume-dl-btn" href="/Lee-Young-jun-Resume-ko.pdf" download>
+              {t('downloadResume')} · KO
+            </a>
+            <a className="resume-dl-btn" href="/Lee-Young-jun-Resume-en.pdf" download>
+              {t('downloadResume')} · EN
+            </a>
+          </div>
         </div>
         <div className="contact-art">
           <div className="contact-status">
