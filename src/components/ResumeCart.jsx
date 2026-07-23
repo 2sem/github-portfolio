@@ -114,7 +114,7 @@ function buildResumeHTML(cart, template, lang, roleLabel) {
     <div class="role">${tr(DATA.role)}</div>
     <div class="contact">
       <span>${DATA.email}</span>
-      <span>${DATA.github.replace('https://', '')}</span>
+      <span>2sem.github.io</span>
       <span>${DATA.linkedin.replace('https://', '')}</span>
     </div>
   </div>
