@@ -1415,10 +1415,10 @@ section[id] {
   border-radius: 8px;
   background: repeating-linear-gradient(
     45deg,
-    #0f140e,
-    #0f140e 8px,
-    #0c100b 8px,
-    #0c100b 16px
+    var(--panel),
+    var(--panel) 8px,
+    var(--panel2) 8px,
+    var(--panel2) 16px
   );
   display: flex;
   align-items: center;
