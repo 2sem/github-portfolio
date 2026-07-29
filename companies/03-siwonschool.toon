@@ -99,6 +99,7 @@ projects[12]:
       - "flowchart LR\n  User[\"Learner\"]\n  AppStore[\"App Store\"]\n  CDN\n  Server\n  CocoaPods[\"Shared CocoaPods\\n(with 시원스쿨)\"]\n\n  subgraph iOS\n    subgraph App\n      Books[\"Book List\"]\n\n      subgraph Study[\"Study\"]\n        subgraph Card[\"Word Cards\"]\n          Audio\n        end\n        Bookmark[\"Bookmark\"]\n\n        Lecture\n      end\n\n      Player[\"Video Player\"]\n      Group[\"Vocab Group\"]\n    end\n\n    Background\n    BGPlay[\"Background Play\"]\n    Remote[\"Remote Control\"]\n  end\n\n  User --> Books\n  Server -->|REST API| Books\n  Books -->|In App Purchase| AppStore\n  AppStore -->|Unlock| Books\n  Books --> Study\n\n  CDN -->|Download MP3| Audio\n\n  Lecture --> Player\n\n  CocoaPods -->|Install| Player\n\n  Player --> Background\n  Background --> BGPlay\n  Background --> Remote\n\n  Audio --> Background\n\n  Bookmark --> Cards\n  Card -->|Add| Bookmark"
   - id: korean-lecture
     name: "React Native 선행 학습"
+    nameEn: "React Native Preliminary Study (PoC)"
     meta: "2019.04 – 2019.06 · Mobile · React Native"
     tags[2]: platform:ios,lang:reactnative
     desc:

@@ -110,6 +110,7 @@ projects[27]:
       - "flowchart TD\n  A[GCOS]\n  B[Outlook]\n  C[Google Calendar]\n  D[File DB]\n  E[Outlook Add-in]\n  A -->|Permission prompt| B\n  A -->|Calendar lookup| C\n  A -->|One-way: delete all target events| C\n  A -->|Create events| C\n  A <-->|Outlook - Google ID pairs| D\n  A -->|Sync: bypass permission| E\n  B <-->|Sync| E"
   - id: gcc
     name: "구달e"
+    nameEn: "Gudal-e (Google Calendar Client)"
     meta: "2010.05 – 2011.02 · Desktop · C#"
     tags[2]: platform:windows,lang:csharp
     desc:
@@ -132,6 +133,7 @@ projects[27]:
       - "flowchart TD\n  Client[\"구달e\"] <-->|\"Contacts\"| Gmail[\"Gmail\"]\n  Client -->|Invitation| Calendar[\"Google Calendar\"]\n  Client -->|Schedule| Calendar[\"Google Calendar\"]\n  Calendar --> Verisign\n  Verisign --> CREDiF\n  CREDiF -->|SMS| User"
   - id: rolling-timer
     name: "무조건 한바퀴"
+    nameEn: "One Full Spin (Rotation Timer SDK)"
     meta: "2011.04 · iOS SDK · Objective-C"
     tags[2]: platform:ios,lang:objc
     desc:
@@ -189,6 +191,7 @@ projects[27]:
       - "flowchart LR\n  Tester\n\n  subgraph App[\"SMSECO iOS App\"]\n    direction TB\n    AuthReq[\"Authentication\"]\n    AuthCheck[\"Authentication check\"]\n    SmsReq[\"SMS send\"]\n    LmsReq[\"LMS send\"]\n    MmsReq[\"MMS send\"]\n  end\n\n  subgraph SMSECO\n    API\n  end\n\n  Tester -->|Parameter| App\n  App -->|Request| API\n\n  API -->|Response| App\n  App -->|Log| Tester"
   - id: pankyo-ibs
     name: "판교 R&D Center IBS/FMS"
+    nameEn: "Pangyo R&D Center IBS/FMS"
     meta: "2011.12 – 2012.05 · Desktop · C#"
     tags[3]: platform:windows,lang:csharp,framework:wpf
     desc:
@@ -231,6 +234,7 @@ projects[27]:
       - "flowchart LR\n  subgraph HEMS[\"HeMS\"]\n    subgraph FE\n      MAP[\"Map\"]\n      CONFIG[\"Configuration Setup\"]\n    end\n\n    subgraph BE\n      WAS\n      EMSCOHB[\"COHB\"]\n    end\n\n    subgraph Oracle\n      XMLDB\n    end\n\n    MAP -->|JS| Daum[\"Daum Map\"]\n\n    CONFIG <-->|TCP| WAS\n    WAS <-->|TCP| EMSCOHB\n    EMSCOHB <--> XMLDB\n  end\n\n  subgraph HeNB[\"HeNB small base station\"]\n    ENBCOHB[\"COHB\"] -->|Update| ConfigXml[\"XML Configuration\"]\n  end\n\n  EMSCOHB <-->|\"TCP\"| ENBCOHB"
   - id: muju-ibs
     name: "무주 태권도 공원 IBS"
+    nameEn: "Muju Taekwondo Park IBS"
     meta: "2012.09 – 2012.11 · Desktop · C#"
     tags[3]: platform:windows,lang:csharp,framework:wpf
     desc:
@@ -255,6 +259,7 @@ projects[27]:
       - "flowchart TB\n  subgraph Windows\n    subgraph IBS[\"WPF IBS client\"]\n      CSharp[\"C#\"]\n      WPF\n      Styles[\"Global styles / theme\"]\n      DataBinding\n    end\n\n    ObjectManager[\"ObjectManager\"] --> DataBinding\n    Styles --> WPF\n  end"
   - id: ifs
     name: "평택 삼성 물류 센터 IFS"
+    nameEn: "Pyeongtaek Samsung Logistics Center IFS"
     meta: "2012.09 – 2012.11 · Desktop · C#"
     tags[2]: platform:windows,lang:csharp
     desc:
@@ -320,6 +325,7 @@ projects[27]:
       - "flowchart LR\n  subgraph Wifi\n    AP1\n    AP2\n    AP3\n    AP4\n  end\n\n  subgraph App[\"Android App\"]\n    Map\n    Sqlite\n  end\n\n  Map <--> Sqlite\n\n  subgraph Developer\n    RESTClient[\"Client\"]\n    Algorithm\n  end\n\n  Wifi -->|Signal| App\n\n  subgraph Platform[\"WIFI Research Platform\"]\n    Viz[\"Map\"]\n    Search\n    RESTServer[\"REST server\"]\n    PSqlite[\"Sqlite\"]\n  end\n\n  Sqlite <-->|Import| PSqlite\n  RESTClient -->|Import| RESTServer\n  PSqlite <--> RESTServer\n  RESTServer -->|Export| Developer\n  Algorithm --> RESTClient\n  PSqlite --> Viz\n  Search --> PSqlite"
   - id: air-floor
     name: "측위 알고리즘 연구 – 기압에 의한 현재 층 추정"
+    nameEn: "Positioning Research — Floor Estimation via Air Pressure"
     meta: "2014.04 – 2014.05 · Android · Java"
     tags[2]: platform:android,lang:java
     desc:
@@ -339,6 +345,7 @@ projects[27]:
       - "flowchart LR\n  subgraph Android[\"Android\"]\n    Sensor[\"Pressure Sensor\"]\n\n    subgraph App\n      Algorithm\n      Sqlite\n      UI\n    end\n  end\n\n  Sensor --> Sqlite\n  Sqlite --> Algorithm\n  Sensor --> Algorithm\n  Algorithm -->|Floor| UI"
   - id: web-page-test-multi
     name: "WebPageTest – 다중 테스트 기능 추가"
+    nameEn: "WebPageTest — Concurrent Multi-Test Feature"
     meta: "2014.05 · Desktop · C++"
     tags[3]: platform:windows,lang:cpp,lang:php
     desc:
@@ -377,6 +384,7 @@ projects[27]:
       - "flowchart LR\n  subgraph Building\n    Beacon[\"iBeacon\"]\n  end\n\n  subgraph Device[\"Android\"]\n    subgraph App[\"Developer's App\"]\n      SDK[\"O2O SDK / Library\"]\n      Handler[\"Event handler\"]\n    end\n    Agent[\"O2O Agent (service)\"]\n  end\n\n  Server[\"O2O Server\"]\n  Developer[\"Web console\"]\n\n  Beacon -->|\"BLE signal\"| Agent\n  Agent <--> Server\n  Handler -->|\"Register handler\"| SDK\n  SDK -->|\"Event\"| Handler\n  SDK <-->|\"AIDL\"| Agent\n  Server --> Developer"
   - id: skt-ilbp
     name: "SKT ILBP – 분당 서울대 병원"
+    nameEn: "SKT ILBP — Bundang Seoul National University Hospital"
     meta: "2014.07 – 2014.08 · Desktop · Delphi"
     tags[3]: platform:windows,lang:delphi,lang:java
     desc:
@@ -399,6 +407,7 @@ projects[27]:
       - "flowchart LR\n  Vendor[\"Map vendor\"]\n\n  subgraph Windows\n    subgraph Tool[\"ILBP Client\"]\n      Editor[\"Map Tool\"]\n    end\n\n    DB[\"MSSql\"]\n    Server[\"ILBP Server\"]\n  end\n\n  Installer[\"Mobile app\"]\n\n  Vendor -->|Download| Tool\n  Editor -->|Upload| Server\n  Server <--> DB\n  Server -->|Download| Installer"
   - id: gpt-advance
     name: "KT GenomeCloud gStorage 고도화"
+    nameEn: "KT GenomeCloud gStorage Enhancement"
     meta: "2014.07 – 2015.04 · Desktop · Java"
     tags[6]: platform:windows,platform:linux,platform:macos,lang:c,lang:java,framework:swt
     desc:
@@ -418,6 +427,7 @@ projects[27]:
       - "flowchart LR\n  subgraph Client[\"gStorage Client (Java SWT)\"]\n    Console\n  end\n\n  Primary[\"Primary server (Linux C)\"]\n  Standby[\"Standby / proxy server\"]\n  DB[\"DB (server info)\"]\n\n  Client -->|\"1. connect\"| Primary\n  Client -.->|\"on failure\"| Standby\n  Standby -->|\"Port forward\"| Primary\n  Standby <--> DB\n  DB -->|\"primary / standby info\"| Standby"
   - id: safe-house
     name: "SafeHouse - 전자 부동산 계약 인증"
+    nameEn: "SafeHouse — Electronic Real-Estate Contract Certification"
     meta: "2014.11 – 2015.02 · Desktop · C#"
     tags[4]: platform:windows,lang:csharp,lang:js,framework:wpf
     desc:
@@ -437,6 +447,7 @@ projects[27]:
       - "flowchart LR\n  Buyer\n  Agent\n  Seller\n\n  subgraph AgentPC[\"Realtor Agent Program\"]\n    subgraph Addin[\"Add-in\"]\n      subgraph Form[\"Contract Input Form\"]\n        Data\n        Template[\"HTML template\"]\n      end\n\n      Phantom[\"PhantomJS\"]\n    end\n  end\n\n  Auth[\"Mobilians\"]\n  Storage[\"Certified e-Document Storage\"]\n\n  Buyer -->|Phone Auth| Auth\n  Agent -->|Phone Auth| Auth\n  Seller -->|Phone Auth| Auth\n  Form --> Template\n  Data -->|Binding| Template\n  Auth -->|\"Verified signature\"| Template\n  Template --> Phantom\n  Phantom -->|\"Export PDF\"| Storage"
   - id: olleh-tv-pay
     name: "OllehTVPay - SMS 서버"
+    nameEn: "OllehTVPay — SMS Server"
     meta: "2015.05 – 2015.08 · Backend · Java"
     tags[2]: platform:linux,lang:java
     desc:
@@ -456,6 +467,7 @@ projects[27]:
       - "flowchart LR\n  subgraph OllehTVPay[\"Olleh TV Pay\"]\n    AuthSystem[\"Auth System\"]\n\n    subgraph DB[\"PostgreSQL\"]\n      RequestTable[\"Request Table\"]\n      ResultTable[\"Result Table\"]\n    end\n\n    subgraph SMSAgent[\"SMS Agent\"]\n      IsPhoneKT{\"Is Phone KT?\"}\n      SDK\n      TCP\n    end\n  end\n\n  SMS[\"SMS Server\"]\n  KHUB[\"KHUB\"]\n\n  AuthSystem -->|Insert| RequestTable\n  RequestTable -->|Pull| SMSAgent\n\n  SMSAgent -->|Insert| ResultTable\n  SMSAgent --> IsPhoneKT\n\n  IsPhoneKT -->|Y| SDK\n  SDK --> KHUB\n  IsPhoneKT -->|N| TCP\n  TCP --> SMS\n\n  KHUB -->|Response| SMSAgent\n  KHUB -->|Pull Status| SMSAgent\n  SMS -->|Response| SMSAgent\n  SMS -->|Pull Status| SMSAgent"
   - id: mail-to-board
     name: "MailToBoardConverter – 메일을 통한 사내 게시판 작성기"
+    nameEn: "MailToBoardConverter — Email-to-Intranet-Board Poster"
     meta: "2015.07 – 2015.09 · Desktop · C#"
     tags[2]: platform:windows,lang:csharp
     desc:
@@ -475,6 +487,7 @@ projects[27]:
       - "flowchart LR\n  Employee\n\n  subgraph Server[\"Windows Server\"]\n    subgraph Converter[\"MailToBoardConverter\"]\n      Account[\"Dedicated mail account\"]\n      Poller[\"Mailbox\"]\n      Parser[\"Parse subject / recipients\"]\n      Router{\"Route rule\"}\n    end\n\n    MailServer[\"Mail Server\"]\n    BoardBySubject[\"Target board\"]\n    BoardByGroup[\"Mapped board\"]\n    Board[\"Intranet Board DB\"]\n  end\n\n  Employee -->|CC: Group Mail| MailServer\n  Employee -->|Specific Mail| MailServer\n  MailServer -->|SMTP| Poller\n  Poller -->|Poll| Parser\n  Parser --> Router\n\n  Router -->|\"Subject: @{board}\"| BoardBySubject\n  Router -->|\"Group mail recipient\"| BoardByGroup\n\n  BoardBySubject -->|Insert| Board\n  BoardByGroup -->|Insert| Board"
   - id: related-stock-searcher
     name: "관련주식검색기 - 서버"
+    nameEn: "Related Stock Searcher — Server"
     meta: "2015.09 · Backend · JavaScript"
     tags[3]: platform:windows,lang:js,framework:nodejs
     desc:
@@ -518,6 +531,7 @@ projects[27]:
       - "flowchart LR\n  subgraph Cloud[\"Cloud storage\"]\n    GDrive[\"Google Drive\"]\n    Dropbox\n  end\n\n  subgraph App\n    subgraph Presentation\n      subgraph Page\n        Background\n        Trigger\n        Object\n        Media\n      end\n    end\n  end\n\n  User\n\n  Cloud -->|PDF| Background\n  Cloud -->|Image| Background\n  Cloud -->|Effect| Media\n  Cloud -->|Image| Object\n  Page --> Presentation\n  User -->|Touch| Trigger\n  Trigger -->|Present| Object\n  Trigger -->|Play| Media"
   - id: whocallme
     name: "누군지 다알아 2.0"
+    nameEn: "Who Is It 2.0 (Caller ID)"
     meta: "2016.04 – 2016.06 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
