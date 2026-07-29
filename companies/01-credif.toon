@@ -531,7 +531,7 @@ projects[27]:
       - "flowchart LR\n  subgraph Cloud[\"Cloud storage\"]\n    GDrive[\"Google Drive\"]\n    Dropbox\n  end\n\n  subgraph App\n    subgraph Presentation\n      subgraph Page\n        Background\n        Trigger\n        Object\n        Media\n      end\n    end\n  end\n\n  User\n\n  Cloud -->|PDF| Background\n  Cloud -->|Image| Background\n  Cloud -->|Effect| Media\n  Cloud -->|Image| Object\n  Page --> Presentation\n  User -->|Touch| Trigger\n  Trigger -->|Present| Object\n  Trigger -->|Play| Media"
   - id: whocallme
     name: "누군지 다알아 2.0"
-    nameEn: "Who Is It 2.0 (Caller ID)"
+    nameEn: "WhoCallMe 2.0"
     meta: "2016.04 – 2016.06 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
