@@ -1,4 +1,27 @@
-# Editing portfolio content
+# github-portfolio
+
+Terminal-styled developer portfolio for **Lee Young-jun** — bilingual (en/ko),
+64 projects across 7 companies, with per-project diagrams, screenshots, and a
+resume builder. Live at **https://2sem.github.io**.
+
+Built with React + Vite. Project data is authored in [TOON](https://github.com/toon-format/toon)
+and loaded by a small Vite plugin. Deploys to GitHub Pages via GitHub Actions on
+push to `main`.
+
+## Develop
+
+```bash
+npm install
+npm run dev        # http://localhost:5173 — hot-reloads on source & .toon save
+npm run build      # production build (also validates every .toon)
+npm run preview    # serve the production build locally
+```
+
+Push to `main` → GitHub Actions builds and deploys to 2sem.github.io (~1 min).
+
+---
+
+# Editing content
 
 All project data lives in **`companies/*.toon`** — one file per company, loaded
 automatically by the Vite plugin (`vite-plugin-toon.js`). No registration or
@@ -71,15 +94,7 @@ company ordering.
 ## Edit → preview → publish
 
 ```bash
-npm run dev        # http://localhost:5173 — hot-reloads on .toon save
-```
-
-Save a `.toon` file → the browser reloads with your change. Then:
-
-```bash
+npm run dev        # hot-reloads on .toon save
 npm run build      # optional: errors out if any .toon is malformed
 git add -A && git commit -m "content: <what you changed>" && git push
 ```
-
-Push to `main` → GitHub Actions builds and deploys to 2sem.github.io
-automatically (~1 min).
