@@ -17,9 +17,12 @@ projects[3]:
     role:
       en: "App developer — collaborated with a UX designer."
       ko: "앱 개발 — UX 디자이너와 협업."
+    work:
+      en: "Integrated the Korean public holidays API to show remaining holidays and generate leave suggestions; implemented a custom calendar view; used Realm for offline-first local storage; built a real-time workday countdown."
+      ko: "공공데이터 공휴일 API 연동으로 남은 공휴일 표시·연차 계획 제안; 커스텀 캘린더 구현; Realm 오프라인 우선 로컬 저장소 구성; 오늘 남은 시간 실시간 카운트다운 구현."
     achievement:
-      en: "Integrated the Korean public holidays API to display remaining holidays and generate annual leave suggestions. Implemented a custom calendar view. Used Realm for offline-first local data storage. Built a real-time countdown showing time remaining in the workday."
-      ko: "공공데이터 공휴일 API 연동으로 남은 공휴일 표시 및 연차 계획 제안 생성. 커스텀 캘린더 구현. Realm으로 오프라인 우선 로컬 저장소 구성. 오늘 남은 시간 실시간 카운트다운 구현."
+      en: "Solo-built (with a UX designer) a work-life-balance app that surfaces remaining workday time, upcoming holidays, and annual-leave suggestions."
+      ko: "UX 디자이너와 함께 오늘 남은 근무시간·다가오는 공휴일·연차 계획을 제안하는 워라밸 앱을 단독 개발."
     highlight:
       en: "Work-life balance app — holiday API, Realm, countdown with UX designer"
       ko: "UX 디자이너 협업 — 공휴일 API·Realm·카운트다운 직장인 앱"
@@ -41,9 +44,12 @@ projects[3]:
     role:
       en: "Solo developer."
       ko: "단독 개발."
+    work:
+      en: "Handled multi-file selection by batching the operation across all selected files, and added a rename flow so users can set a custom link name at creation time."
+      ko: "다중 파일 선택 시 일괄 처리하고, 생성 시점에 링크 이름을 직접 지정하는 흐름 추가."
     achievement:
-      en: "Implemented a Finder Sync Extension target — a sandboxed App Extension process that injects a right-click menu item into Finder and communicates with the main app via XPC to perform symlink creation outside the sandbox. Handled multi-file selection by batching the operation across all selected files. Added a rename flow so users can specify a custom link name at creation time, solving the core UX problem that ln -s argument order is unintuitive."
-      ko: "Finder Sync Extension 타겟으로 Finder에 우클릭 메뉴 항목 주입 — 샌드박스 App Extension 프로세스가 XPC로 메인 앱과 통신해 샌드박스 외부에서 심볼릭 링크 생성. 다중 파일 선택 시 일괄 처리. 링크 이름 직접 지정 흐름 추가 — ln -s 인자 순서 혼란 문제를 UI로 해결."
+      en: "Built a macOS Finder Sync Extension — a sandboxed App Extension that injects a right-click menu into Finder and creates symlinks outside the sandbox via XPC to the main app — solving the unintuitive ln -s argument order."
+      ko: "macOS Finder Sync Extension 구현 — 샌드박스 App Extension이 Finder에 우클릭 메뉴를 주입하고 XPC로 메인 앱과 통신해 샌드박스 외부에서 심볼릭 링크를 생성, ln -s 인자 순서 혼란을 해결."
     highlight:
       en: "Solved ln -s confusion — right-click symlink creation via Finder extension"
       ko: "ln -s 혼란 해결 — Finder 우클릭으로 심볼릭 링크 생성"
@@ -59,14 +65,17 @@ projects[3]:
     meta: "2019.01 – 2019.02 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
-      en: "Personal Lost Ark item-level simulator built solo after a friend who promised to handle the server never followed through. Scraped the item dictionary site, bundled base data as Xlsx, and stored dynamic data in Core Data — no server needed."
-      ko: "친구가 서버를 약속했지만 혼자 하게 된 로스트아크 아이템 레벨 시뮬레이터. 아이템 사전 사이트 크롤링으로 데이터 수집, 기본 데이터 Xlsx 번들링 + 동적 데이터 Core Data 저장으로 서버 없이 완성."
+      en: "Personal, serverless Lost Ark item-level simulator — base data bundled as Xlsx, dynamic data in Core Data."
+      ko: "서버 없이 동작하는 개인용 로스트아크 아이템 레벨 시뮬레이터 — 기본 데이터는 Xlsx 번들, 동적 데이터는 Core Data 저장."
     role:
       en: "Solo developer."
       ko: "단독 개발."
+    work:
+      en: "Built the full simulator: character creation, item search with grade adjustment, and equip-to-level verification."
+      ko: "시뮬레이터 전체 구현: 캐릭터 생성, 아이템 검색·등급 조정, 장착 후 레벨 확인."
     achievement:
-      en: "Scraped the Lost Ark item dictionary site solo — analyzed the HTML structure and implemented web crawling to collect item data without a server. Bundled base class and item data as Xlsx and stored dynamic user data in Core Data, eliminating the need for any backend. Built a full item-level simulator: character creation, item search with grade adjustment, and equip-to-level verification."
-      ko: "아이템 사전 사이트 HTML 구조를 직접 분석해 크롤링 구현, 서버 없이 데이터 수집. 기본 클래스·아이템 데이터는 Xlsx로 번들링, 동적 데이터는 Core Data로 로컬 저장. 캐릭터 생성, 아이템 검색·등급 조정, 장착 후 레벨 확인 시뮬레이터 완성."
+      en: "Made a Lost Ark item-level simulator fully serverless — solo-analyzed the item-dictionary site's HTML and crawled it for data, bundling base data as Xlsx and storing dynamic data in Core Data, so no backend was needed."
+      ko: "로스트아크 아이템 레벨 시뮬레이터를 완전 서버리스로 구현 — 아이템 사전 사이트 HTML을 직접 분석·크롤링하고, 기본 데이터는 Xlsx 번들·동적 데이터는 Core Data 저장으로 백엔드 없이 동작."
     highlight:
       en: "Item-level simulator — site crawled solo, serverless with Xlsx + Core Data"
       ko: "서버 없이 사이트 크롤링으로 아이템 레벨 시뮬레이터 완성"

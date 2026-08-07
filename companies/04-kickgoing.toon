@@ -187,8 +187,8 @@ projects[10]:
     meta: "2023.01 – 2023.02 · Mobile · TypeScript"
     tags[3]: platform:ios,platform:android,lang:ts
     desc:
-      en: "In-app customer support replacing the phone hotline — integrated Channel Talk SDK for live chat, fixed a push notification routing bug with a local notification workaround, and diagnosed a crash inside the SDK."
-      ko: "유선전화 고객센터를 채널톡으로 대체 — SDK 연동으로 앱 내 라이브 채팅 제공, 푸시 알림 라우팅 버그를 로컬 알림으로 우회 해결, SDK 내부 비정상 종료 원인 진단."
+      en: "In-app customer support that replaces the phone hotline with live chat, powered by the Channel Talk SDK."
+      ko: "유선전화 고객센터를 채널톡 SDK 기반 앱 내 라이브 채팅으로 대체한 고객 지원 기능."
     role:
       en: "Solo on client — SDK integration, push notification workaround, SDK crash root-cause analysis and patch, user info sync on session start."
       ko: "클라이언트 단독 — SDK 연동, 푸시 알림 우회, SDK 비정상 종료 원인 분석·패치, 세션 시작 시 고객 정보 동기화 구현."
@@ -221,9 +221,12 @@ projects[10]:
     role:
       en: "All client — screen separation, Android 33 permission split, iOS tracking permission, notification badge. Collaborated on FAQ screen with 1 server dev."
       ko: "클라이언트 전담 — 화면 분리, Android 33 권한 분기, iOS 추적 권한, 알림 배지 구현. 서버 1인·FAQ 화면 일부 협업."
+    work:
+      en: "Branched on Android SDK 33's changed photo-permission API; fixed iOS app-tracking permission not displaying by upgrading react-native-permissions and adding the required native setup; implemented a Notification Extension Service to increment the iOS badge per push, matching Android."
+      ko: "Android SDK 33 사진 권한 API 변경 분기 처리; iOS 앱 추적 권한 미표시 문제를 react-native-permissions 업그레이드·setup-ios-permission 네이티브 설정으로 해결; Notification Extension Service로 푸시 수신마다 iOS 배지 증가 구현해 Android와 동작 일치."
     achievement:
-      en: "Android SDK 33 changed photo album access permissions — implemented OS version branching to handle both old and new APIs cleanly. iOS app tracking permission was added to the request sequence but failed to display — traced the cause to a missing setup-ios-permission configuration and resolved by upgrading react-native-permissions and applying the required native setup. iOS does not auto-sync notification badge count (unlike Android) — implemented Notification Extension Service to manually increment the badge on each push received, matching Android behavior."
-      ko: "Android SDK 33에서 사진 앨범 접근 권한 API 변경 — OS 버전별 분기 처리로 이전·신규 버전 모두 대응. iOS 앱 추적 권한 요청 순서 추가 후 미표시 문제 발생 — react-native-permissions 업그레이드와 setup-ios-permission 네이티브 설정 추가로 해결. iOS는 Android와 달리 알림 배지가 자동 동기화되지 않음 — Notification Extension Service 구현으로 푸시 수신마다 배지 수동 증가, Android와 동일한 동작 구현."
+      en: "Handled platform-specific notification and permission edge cases across iOS and Android so the notification-settings split behaved consistently."
+      ko: "iOS·Android의 알림·권한 플랫폼별 예외를 처리해 알림 설정 분리가 일관되게 동작하도록 구현."
     highlight:
       en: "Android SDK 33 permission split + iOS Notification Extension badge sync"
       ko: "Android SDK 33 권한 분기 + iOS Notification Extension 배지 동기화"
@@ -280,9 +283,12 @@ projects[10]:
     role:
       en: "Solo — stamp count query, roulette redirect flow, roulette and celebration animations (Lottie + Reanimated), confetti fallback, return flow improvement."
       ko: "단독 — 스탬프 조회, 룰렛 이동 플로우, 룰렛·축하 애니메이션(Lottie + Reanimated), 꽃가루 대체 처리, 반납 플로우 개선."
+    work:
+      en: "Built dynamic post-win stamp animations with Reanimated (stamp count drives the animation count) and fixed-state roulette/celebration animations with Lottie; coordinated with planning to route users straight to the roulette on scooter return, improving the return flow."
+      ko: "당첨 후 스탬프 개수 기반 동적 애니메이션은 Reanimated로, 고정 뽑기·축하 애니메이션은 Lottie로 구현; 기획과 협의해 반납 즉시 룰렛으로 연결되도록 반납 플로우 개선."
     achievement:
-      en: "Dynamic post-win stamp animations built with Reanimated (stamp count drives the animation count dynamically). Fixed-state roulette and celebration animations used Lottie. Designer's original confetti Lottie file didn't render on iOS — proposed using a free Lottie confetti alternative and let the designer pick, resolving the blocker without an asset ping-pong loop. Coordinated with planning to route users directly to the roulette screen on scooter return, which required improving the existing return flow."
-      ko: "당첨 후 스탬프 개수 기반 동적 애니메이션은 Reanimated로 구현. 고정된 뽑기 전·축하 애니메이션은 Lottie 적용. 디자이너가 제작한 꽃가루 Lottie 파일이 iOS에서 미표시 — 무료 Lottie 옵션을 제안하고 디자이너가 직접 선정하게 하여 에셋 핑퐁 없이 해결. 기획자와 협의해 반납 즉시 룰렛 화면으로 연결되도록 반납 플로우 개선."
+      en: "Unblocked a shipping animation by proposing a free Lottie confetti alternative when the designer's file wouldn't render on iOS — letting the designer pick and avoiding an asset ping-pong loop."
+      ko: "디자이너의 꽃가루 Lottie가 iOS에서 미표시되자 무료 Lottie 대안을 제안하고 디자이너가 직접 선정하게 해 에셋 핑퐁 없이 출시 블로커를 해소."
     highlight:
       en: "Stamp loyalty with Reanimated dynamic animation + Lottie confetti iOS fix"
       ko: "Reanimated 동적 애니메이션 + iOS Lottie 꽃가루 대체로 스탬프 기능 출시"

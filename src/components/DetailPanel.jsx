@@ -91,6 +91,12 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
             <p>{tr(project.desc)}</p>
             <h4 className="detail-sec-gap">{t('myRole')}</h4>
             <p>{tr(project.role)}</p>
+            {project.work && (
+              <>
+                <h4 className="detail-sec-gap">{t('myWork')}</h4>
+                <p>{tr(project.work)}</p>
+              </>
+            )}
             {project.achievement && (
               <>
                 <h4 className="detail-sec-gap">{t('achievement')}</h4>

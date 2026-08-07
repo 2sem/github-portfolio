@@ -165,9 +165,12 @@ projects[9]:
     role:
       en: "Sole developer of the iOS version (contributed ideas like banner rotation on the Android side). Integrated the Naver Papago API through a CocoaPods wrapper and used Firebase Remote Config to drive theming."
       ko: "iOS 버전 단독 개발(안드로이드 버전엔 배너 회전 등 아이디어로 참여). NaverPapago CocoaPods로 파파고 API를 연동하고, Firebase Remote Config로 테마를 제어."
+    work:
+      en: "Added one-tap source/target swap and drove the app's theme remotely via Firebase Remote Config."
+      ko: "원문/번역 한 번에 맞바꾸기를 추가하고, Firebase Remote Config로 앱 테마를 원격 제어."
     achievement:
-      en: "Built a translator on the Naver Papago API with a flip-the-screen result view for face-to-face conversation and one-tap source/target swap, and drove the app's theme remotely via Firebase Remote Config."
-      ko: "네이버 파파고 API 기반 번역기를 구현하고, 마주 보고 대화할 수 있는 결과 화면 뒤집기와 원문/번역 한 번에 맞바꾸기를 제공; Firebase Remote Config로 앱 테마를 원격 제어."
+      en: "Built a Papago-based translator with a flip-the-screen result view for face-to-face conversation."
+      ko: "네이버 파파고 API 기반 번역기를 구현하고, 마주 보고 대화할 수 있는 결과 화면 뒤집기를 제공."
     highlight:
       en: "Papago translator with flip-screen for face-to-face conversation"
       ko: "화면 뒤집어 마주 보며 대화하는 파파고 번역기"
@@ -253,9 +256,12 @@ projects[9]:
     role:
       en: "Sole developer. Took text data (from an Android app built by someone who'd studied for the exam) into an Excel workbook — treating each sheet as a table and splitting/merging cells that overflowed — and added an auto-generated quiz with a countdown animation plus local-notification study reminders."
       ko: "단독 개발. (시험을 준비했던 분이 만든 안드로이드 앱의) 텍스트 데이터를 받아 Excel로 제작 — 각 시트를 Table로 취급하고 셀 크기를 넘는 데이터는 셀을 분리·병합 — 하고, 카운트다운 애니메이션이 있는 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
+    work:
+      en: "Modeled each spreadsheet sheet as a table, and added auto-generated quizzes and local-notification study reminders."
+      ko: "각 시트를 Table로 모델링하고, 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
     achievement:
-      en: "Built a serverless content-update mechanism: the study material lives in a Google Drive Excel file the app downloads (with per-version caching to skip re-downloads), so content updates ship without an App Store release. Modeled each spreadsheet sheet as a table, and added auto-generated quizzes and local-notification study reminders."
-      ko: "서버 없는 콘텐츠 업데이트 구조를 구현: 학습 자료를 Google Drive Excel로 두고 앱이 다운로드(버전별 캐싱으로 재다운로드 방지)해, 앱스토어 출시 없이 콘텐츠를 갱신. 각 시트를 Table로 모델링하고 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
+      en: "Built a serverless content-update mechanism: the study material lives in a Google Drive Excel file the app downloads (with per-version caching to skip re-downloads), so content updates ship without an App Store release."
+      ko: "서버 없는 콘텐츠 업데이트 구조를 구현: 학습 자료를 Google Drive Excel로 두고 앱이 다운로드(버전별 캐싱으로 재다운로드 방지)해, 앱스토어 출시 없이 콘텐츠를 갱신."
     highlight:
       en: "Serverless content updates — Google Drive Excel, no App Store release needed"
       ko: "Google Drive Excel로 서버 없이 콘텐츠 업데이트 — 앱 출시 없이 갱신"

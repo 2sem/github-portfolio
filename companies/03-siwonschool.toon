@@ -55,9 +55,12 @@ projects[12]:
     role:
       en: "iOS developer. Took over the app immediately after joining, fixed bugs and server-error cases without a dedicated planner, improved usability based on comments/feedback, handled Safe Area support, and made list UI changes near offboarding."
       ko: "iOS 개발 담당. 입사 직후 프로젝트를 인수해 별도 기획자나 명확한 요구사항이 부족한 상태에서 버그 수정, 서버 오류 대응, 댓글/피드백 기반 편의성 개선, SafeArea 대응, 퇴사 직전 리스트 UI 수정까지 처리."
+    work:
+      en: "Reduced production friction through bug fixes, server-error handling, Safe Area adaptation, and user-feedback-driven UX improvements."
+      ko: "버그 수정, 서버 오류 대응, SafeArea 대응, 사용자 피드백 기반 편의성 개선으로 운영 마찰 감소."
     achievement:
-      en: "Stabilized a live learning app after takeover: reduced production friction through bug fixes, server-error handling, Safe Area adaptation, and user-feedback-driven UX improvements while keeping recording, analysis, playback, and SNS login flows operational."
-      ko: "인수 직후 운영 중인 학습 앱을 안정화: 버그 수정, 서버 오류 대응, SafeArea 대응, 사용자 피드백 기반 편의성 개선을 진행하며 녹음·분석·재생·SNS 로그인 흐름을 유지."
+      en: "Stabilized a live learning app after taking it over, keeping its recording, analysis, playback, and SNS-login flows operational."
+      ko: "인수 직후 운영 중인 학습 앱을 안정화하며 녹음·분석·재생·SNS 로그인 흐름을 유지."
     highlight:
       en: "Stabilized post-takeover — bugs, Safe Area, server-error handling"
       ko: "인수 직후 안정화 — 버그·서버 오류·SafeArea 대응"
@@ -103,8 +106,8 @@ projects[12]:
     meta: "2019.04 – 2019.06 · Mobile · React Native"
     tags[2]: platform:ios,lang:reactnative
     desc:
-      en: "Proof-of-concept and internal R&D project to evaluate React Native for an upcoming Korean-language lecture app. Rebuilt Siwonschool's [Home] and [Free Lecture] screens in React Native, explored server communication and DRM player integration, and produced internal training documentation for the team."
-      ko: "한국어 강의 앱 신규 개발을 앞두고 React Native 기술 검증을 위한 사내 PoC 프로젝트. 시원스쿨 [홈]·[무료강의] 화면을 React Native로 재구현하고, 서버 통신·DRM 플레이어 연동을 탐색. 팀 내 교육 자료 작성·배포."
+      en: "Proof-of-concept / internal R&D to evaluate React Native for an upcoming Korean-language lecture app."
+      ko: "한국어 강의 앱 신규 개발을 앞두고 React Native 기술을 검증한 사내 PoC·R&D 프로젝트."
     role:
       en: "Self-directed R&D. Independently continued learning and prototyping after team momentum stalled, rebuilt existing screens to validate feasibility, and authored internal training docs."
       ko: "자기주도 R&D. 팀 진행이 중단된 이후에도 독자적으로 학습·프로토타이핑을 지속. 기존 화면 재구현으로 가능성을 검증하고 내부 교육 자료 작성."
@@ -190,14 +193,17 @@ projects[12]:
     meta: "2019.11 – 2021.05 · Mobile · React Native"
     tags[2]: platform:ios,lang:reactnative
     desc:
-      en: "Companion app for 시원스쿨's smart-pen hardware — the pen scans hidden patterns in textbooks to trigger audio playback, and this app provides word cards, lecture player, quiz, and my-vocabulary. I contributed the initial React Native lecture-player code, then owned post-launch maintenance: replaced ScrollView with FlatList for word cards, introduced Appium regression testing, and wired Firebase Analytics."
-      ko: "시원스쿨 자동암기펜 전용 앱. 펜이 교재의 숨겨진 패턴을 인식해 음원을 재생하는 제품에 연동되며, 단어 카드·강의 재생·퀴즈·내단어장 기능 제공. RN 강의 재생 코드를 기여해 앱 출시 기반을 만들고, ScrollView→FlatList 교체로 성능 개선, Appium 자동화 테스트 도입, Firebase Analytics 연동 등 유지보수 담당."
+      en: "Companion app for 시원스쿨's smart-pen hardware — the pen scans hidden patterns in textbooks to trigger audio playback. Provides word cards, a lecture player, quizzes, and my-vocabulary."
+      ko: "시원스쿨 자동암기펜 전용 앱. 펜이 교재의 숨겨진 패턴을 인식해 음원을 재생하며, 단어 카드·강의 재생·퀴즈·내단어장 기능 제공."
     role:
       en: "React Native code contributor → post-launch maintenance developer."
       ko: "React Native 코드 기여 → 출시 후 유지보수 담당."
+    work:
+      en: "Post-launch maintenance: replaced ScrollView with FlatList to eliminate word-card scroll jank, removed the confirm-tap from the quiz flow for instant submission, redesigned my-vocabulary with inline edit/delete, introduced Appium regression coverage, and wired Firebase Analytics to track study-flow patterns."
+      ko: "출시 후 유지보수: ScrollView→FlatList 교체로 단어 카드 스크롤 성능 개선, 퀴즈 즉시 제출로 학습 흐름 개선, 내단어장 인라인 편집/삭제 재설계, Appium 회귀 테스트 도입, Firebase Analytics 연동."
     achievement:
-      en: "Delivered the initial React Native lecture-player code — built during the prior 선행 학습 project — to the 시원스쿨펜 team, which shipped as the app's core feature. Post-launch, replaced ScrollView with FlatList in word cards to eliminate scroll jank, removed the confirm-tap from quiz flow for instant submission, redesigned my-vocabulary with inline edit/delete, introduced Appium regression coverage, and wired Firebase Analytics to track study-flow patterns."
-      ko: "선행 학습 프로젝트에서 구현한 RN 강의 재생 코드를 시원스쿨펜 팀에 제공해 앱의 핵심 기능으로 출시. 출시 후 ScrollView→FlatList 교체로 단어 카드 스크롤 성능 개선, 퀴즈 즉시 제출로 학습 흐름 개선, 내단어장 인라인 편집/삭제 재설계, Appium 회귀 테스트 도입, Firebase Analytics 연동."
+      en: "Delivered the initial React Native lecture-player code — built during the prior 선행 학습 project — to the 시원스쿨펜 team, which shipped as the app's core feature."
+      ko: "선행 학습 프로젝트에서 구현한 RN 강의 재생 코드를 시원스쿨펜 팀에 제공해 앱의 핵심 기능으로 출시."
     highlight:
       en: "RN lecture player shipped + FlatList perf fix + Appium regression coverage"
       ko: "RN 강의 재생 기여 → FlatList 성능 개선 + Appium 회귀 테스트 도입"
@@ -225,14 +231,17 @@ projects[12]:
     meta: "2019.11 – 2021.05 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
-      en: "Vocabulary memorization app — inherited maintenance from a departing team lead and worked through a backlog of bugs and feature requests in spare time. Migrated Objective-C modules to Swift, replaced the legacy Excel library, hardened JSON parsing, and added local push notifications without server changes."
-      ko: "단어 암기 앱. 팀장 퇴사 후 인수해 남는 시간에 버그·편의 기능 작업. ObjC→Swift 변환, 레거시 Excel 라이브러리 교체, JSON NSNull 크래시 수정, 서버 변경 없는 로컬 푸시 추가."
+      en: "iOS vocabulary-memorization app — word-card study with audio playback and study reminders."
+      ko: "iOS 단어 암기 앱 — 음원 재생 기반 단어 카드 학습과 학습 리마인드 제공."
     role:
       en: "Maintenance developer — inherited sole ownership from a departing team lead."
       ko: "유지보수 담당 — 퇴사한 팀장으로부터 단독 소유권 인수."
+    work:
+      en: "Migrated Objective-C modules to Swift; replaced the legacy XlsxReaderWriter Excel library to clear build warnings; added NSNull safety across JSON parsing to stop server-response crashes; implemented local push for study reminders and enrollment expiry with no server changes; added audio speed control, word-card navigation tracks, a pronunciation search filter, a new learning language, landscape layout, and small-device (SE) fixes."
+      ko: "ObjC→Swift 변환; XlsxReaderWriter 교체로 빌드 경고 해소; JSON NSNull 처리 전면 추가로 서버 응답 파싱 크래시 제거; 서버 변경 없이 리마인드·수강만료 로컬 푸시 구현; 음원 재생속도 조절·단어 카드 탐색 트랙·발음 검색 조건·신규 학습 언어·Landscape·소형기기 레이아웃 수정."
     achievement:
-      en: "Inherited a solo-maintained codebase when the team lead left. Migrated Objective-C modules to Swift to reduce future maintenance overhead; replaced the legacy XlsxReaderWriter Excel library to resolve build warnings; added NSNull safety across JSON parsing to eliminate server-response crashes; implemented local push notifications for study reminders and enrollment expiry without any server changes; added audio playback speed control, word-card navigation tracks, pronunciation search filter, new learning language support, landscape layout, and small-device (SE) fixes."
-      ko: "팀장 퇴사 후 단독 유지보수 코드베이스 인수. ObjC→Swift 변환으로 유지보수 진입 비용 절감; XlsxReaderWriter 교체로 빌드 경고 해소; JSON NSNull 처리 전면 추가로 서버 응답 파싱 크래시 제거; 서버 변경 없이 앱 내 스케줄링으로 리마인드·수강만료 로컬 푸시 구현; 음원 재생속도 조절, 단어 카드 탐색 트랙, 발음 검색 조건, 신규 학습 언어, Landscape 대응, 소형기기 레이아웃 수정."
+      en: "Took sole ownership of an inherited codebase when the team lead left and cleared its bug/feature backlog in spare time — modernizing Objective-C to Swift and adding study-reminder push with no server changes."
+      ko: "팀장 퇴사 후 단독 유지보수 코드베이스를 인수해 남는 시간에 버그·기능 백로그를 해소 — ObjC→Swift 현대화, 서버 변경 없는 학습 리마인드 푸시 추가."
     highlight:
       en: "Solo inheritance — ObjC→Swift, crash fixes, local push, 6+ features added"
       ko: "단독 인수 — ObjC→Swift 변환, 크래시 제거, 로컬 푸시, 기능 6개+ 추가"
@@ -252,8 +261,8 @@ projects[12]:
     meta: "2020.04 – 2020.05 · Mobile · Unity"
     tags[2]: platform:ios,lang:unity
     desc:
-      en: "Internal side-project Unity card-flip game to explore gamified English-learning content. Applied Unity skills the team had studied under the previous team lead — used official 영어대모험 textbook characters, built stage progression, and shipped to TestFlight in two months."
-      ko: "게임 접목 영어 학습 콘텐츠 가능성 검증을 위한 내부 사이드 프로젝트. 이전 팀장 주도로 공부했던 Unity를 실전에 적용, 시원스쿨 '영어대모험' 교재 캐릭터 활용, 단어 카드 플립 게임·단계 전환 구현, 2개월 만에 TestFlight 배포."
+      en: "Internal side-project Unity card-flip game exploring gamified English-learning content, using official 영어대모험 textbook characters."
+      ko: "게임 접목 영어 학습 콘텐츠 가능성을 검증한 내부 사이드 프로젝트. 시원스쿨 '영어대모험' 교재 캐릭터를 활용한 Unity 카드 플립 게임."
     role:
       en: "Solo developer — built and demoed the full Unity prototype in two months as part of a team-wide game experiment."
       ko: "단독 개발 — 팀 전체 게임 실험의 일환으로 2개월 안에 Unity 프로토타입 완성·시연."
@@ -278,8 +287,8 @@ projects[12]:
     meta: "2020.06 – 2021.05 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
-      en: "Native iOS intranet app built with a designer — used JavaScript Injection to handle login authentication through the company's WebView-based intranet, which normally requires SMS auth on unregistered devices. Home screen was completed but the project halted when server-side development stalled."
-      ko: "디자이너와 협업한 사내 인트라넷 iOS 앱. 미등록 기기에서 문자인증을 요구하는 인트라넷 웹페이지에 JavaScript Injection을 적용해 앱 내 로그인 처리 구현. 홈 화면까지 완성했으나 서버 개발 미진행으로 중단."
+      en: "Native iOS intranet app built with a designer, fronting the company's WebView-based intranet."
+      ko: "디자이너와 협업한 사내 인트라넷 iOS 앱 — WebView 기반 사내 인트라넷을 네이티브로 감싼 앱."
     role:
       en: "iOS developer — built the WebView login layer and native home screen with a designer."
       ko: "iOS 개발 담당 — WebView 로그인 레이어 및 디자이너와 협업한 네이티브 홈 화면 구현."
@@ -301,8 +310,8 @@ projects[12]:
     meta: "2020.08 – 2021.04 · Mobile · React Native / Expo"
     tags[2]: platform:ios,lang:reactnative
     desc:
-      en: "Global lecture platform for teaching Korean to non-native speakers — chosen Expo to support both React Native mobile and web from a single codebase. Implemented login/signup UI before the project was cancelled."
-      ko: "외국인 대상 한국어 글로벌 강의 플랫폼. 모바일 웹 동시 대응 요건에 맞춰 Expo(React Native + Web) 선택. 로그인·회원가입 UI 구현 후 프로젝트 중단."
+      en: "Global lecture platform for teaching Korean to non-native speakers, targeting mobile and web from one Expo (React Native) codebase."
+      ko: "외국인 대상 한국어 글로벌 강의 플랫폼 — Expo(React Native)로 모바일·웹을 단일 코드베이스로 대응."
     role:
       en: "Solo developer — set up the Expo environment and built login/signup screens."
       ko: "단독 개발 — Expo 개발환경 구축 및 로그인·회원가입 화면 구현."

@@ -411,8 +411,8 @@ projects[27]:
     meta: "2014.07 – 2015.04 · Desktop · Java"
     tags[6]: platform:windows,platform:linux,platform:macos,lang:c,lang:java,framework:swt
     desc:
-      en: "Enhancement and operations phase of the KT GenomeCloud gStorage client. Added console improvements (ls sort options, key-event handling, command history), server failover so the client connects to a standby server when the primary is unreachable, and same-account use across multiple PCs. Mid-project the server developers left, so the Linux/C server came under my ownership too."
-      ko: "KT GenomeCloud gStorage 클라이언트의 고도화·운영 단계. 콘솔 개선(ls 정렬 옵션, 키 이벤트 처리, History 명령), 기본 서버 접속 실패 시 예비 서버로 연결하는 서버 페일오버, 동일 계정의 다중 PC 사용을 추가. 도중에 서버 개발자들이 퇴사해 Linux/C 서버까지 직접 담당."
+      en: "Enhancement and operations phase of the KT GenomeCloud gStorage client — console improvements (ls sort options, key-event handling, command history), standby-server failover, and same-account use across multiple PCs."
+      ko: "KT GenomeCloud gStorage 클라이언트의 고도화·운영 단계 — 콘솔 개선(ls 정렬, 키 이벤트 처리, History 명령), 예비 서버 페일오버, 동일 계정 다중 PC 사용 추가."
     role:
       en: "Sole developer across client and server. Built a standby server that port-forwards to the primary and added DB-driven failover (the client falls back to the standby, which redirects to the primary). After UDT's heavy traffic once took down KT Cloud, switched to a KT-provided alternate router with standby-router fallback. Took over the Linux/C server when its developers left."
       ko: "클라이언트·서버 단독 개발. 기본 서버로 Port Forwarding하는 예비 서버를 만들고 DB 기반 페일오버를 구현(클라이언트가 예비 서버로 접속하면 원래 서버로 유도). UDT의 과다 트래픽으로 KT Cloud가 다운된 뒤 KT가 제공한 대체 라우터로 전환하고 라우터 장애 시 예비 라우터로 처리하도록 구현. 서버 개발자 퇴사 후 Linux/C 서버까지 인수."
@@ -456,9 +456,12 @@ projects[27]:
     role:
       en: "Sole developer (handed over from the original web developer). Built a DB-driven dispatch flow that behaves like the agent but actually talks to the MCS (Xroshot) server over Socket/XML: a poller reads the request table, sends to MCS, and writes acks and delivery results back to the result table — with KHUB SMS sending through the same structure. Used MyBatis for DB access. Beyond development, handled infra: VM allocation, TB setup, and Apache reverse-proxy configuration."
       ko: "단독 개발(기존 웹 개발자에게서 인수). Agent처럼 동작하지만 실제로는 MCS(Xroshot) 서버와 Socket/XML로 통신하는 DB 기반 발송 흐름을 구현 — 폴러가 요청 테이블을 읽어 MCS에 발송하고, 응답과 발송 결과를 결과 테이블에 기록. KHUB SMS 발송도 동일 구조로 처리. DB는 MyBatis로 접근. 개발 외에 VM 할당, TB 구성, Apache 리버스 프록시 설정 등 인프라 작업도 수행."
+    work:
+      en: "Stood up the surrounding infrastructure myself — VM, TB, and Apache reverse proxy."
+      ko: "주변 인프라(VM·TB·Apache 리버스 프록시)도 직접 구성."
     achievement:
-      en: "Worked around an unsupported-DB constraint: when KT mandated PostgreSQL but the Xroshot agent didn't support it, reproduced the agent's DB-in/result-out contract with a custom Socket/XML server on MyBatis, so existing service/admin pages could send SMS unchanged (KHUB included). Also stood up the surrounding infrastructure myself — VM, TB, and Apache reverse proxy."
-      ko: "DBMS 미지원 제약을 우회: KT가 PostgreSQL을 의무화했지만 Xroshot Agent가 이를 지원하지 않자, Agent의 'DB 입력 → 결과 기록' 계약을 MyBatis 기반 Socket/XML 서버로 재현해 기존 서비스/관리자 페이지가 수정 없이 SMS를 발송할 수 있게 함(KHUB 포함). 주변 인프라(VM·TB·Apache 리버스 프록시)도 직접 구성."
+      en: "Worked around an unsupported-DB constraint: when KT mandated PostgreSQL but the Xroshot agent didn't support it, reproduced the agent's DB-in/result-out contract with a custom Socket/XML server on MyBatis, so existing service/admin pages could send SMS unchanged (KHUB included)."
+      ko: "DBMS 미지원 제약을 우회: KT가 PostgreSQL을 의무화했지만 Xroshot Agent가 이를 지원하지 않자, Agent의 'DB 입력 → 결과 기록' 계약을 MyBatis 기반 Socket/XML 서버로 재현해 기존 서비스/관리자 페이지가 수정 없이 SMS를 발송할 수 있게 함(KHUB 포함)."
     highlight:
       en: "Custom SMS server bypassed PostgreSQL incompatibility — existing pages unchanged"
       ko: "PostgreSQL 미지원 우회 — MyBatis SMS 서버로 기존 서비스 수정 없이 해결"
