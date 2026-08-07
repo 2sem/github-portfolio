@@ -95,18 +95,28 @@ export function resolve(val, lang) {
 
 const LangContext = createContext(null)
 
-export function LangProvider({ children }) {
-  const [lang, setLang] = useState(() => {
-    const saved = typeof localStorage !== 'undefined' && localStorage.getItem('lang')
-    if (saved && LANGS.includes(saved)) return saved
-    if (typeof navigator !== 'undefined' && navigator.language?.startsWith('ko')) return 'ko'
-    return 'en'
-  })
+function detectLang() {
+  // Manual choice wins and sticks; otherwise follow the browser locale each visit.
+  const saved = typeof localStorage !== 'undefined' && localStorage.getItem('lang')
+  if (saved && LANGS.includes(saved)) return saved
+  if (typeof navigator !== 'undefined' && navigator.language?.startsWith('ko')) return 'ko'
+  return 'en'
+}
 
+export function LangProvider({ children }) {
+  const [lang, setLangState] = useState(detectLang)
+
+  // Reflect the current language on <html> — but do NOT persist here, so an
+  // auto-detected value never masquerades as a manual choice on later visits.
   useEffect(() => {
-    localStorage.setItem('lang', lang)
     document.documentElement.setAttribute('lang', lang)
   }, [lang])
+
+  // Only an explicit user action persists — that's what "keep it if switched" means.
+  const setLang = useCallback((next) => {
+    localStorage.setItem('lang', next)
+    setLangState(next)
+  }, [])
 
   const t = useCallback((key) => UI[lang][key] ?? UI.en[key] ?? key, [lang])
   const tr = useCallback((val) => resolve(val, lang), [lang])
