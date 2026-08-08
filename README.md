@@ -79,6 +79,19 @@ company ordering.
 
 - Every text field is `{en, ko}`. Keep both in sync — EN mode falls back to `ko`
   when `en` is missing, which looks broken.
+- **Bullets:** `desc` / `role` / `work` / `achievement` render as a paragraph
+  when the value is one string, or as a bullet list when it's an array. Use the
+  array form for multiple distinct items — keep the `en`/`ko` item counts equal:
+
+  ```toon
+      achievement:
+        en[2]:
+          - "First achievement."
+          - "Second achievement."
+        ko[2]:
+          - "첫 번째 성과."
+          - "두 번째 성과."
+  ```
 - **Section order on screen is fixed:** What it is → My role → My work →
   Achievement. `work` and `achievement` are optional — delete the whole block
   (the `work:` line plus its `en`/`ko`) to hide that section.

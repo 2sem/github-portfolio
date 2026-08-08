@@ -1224,6 +1224,28 @@ section[id] {
   margin-top: 14px;
 }
 
+.detail-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.detail-list li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--soft);
+  padding-left: 15px;
+  position: relative;
+}
+
+.detail-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
 .detail-sec-gap {
   margin-top: 14px;
 }

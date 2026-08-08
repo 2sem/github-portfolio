@@ -2,14 +2,14 @@ id: skcc
 name: "SK AX(C&C)"
 when: "2024.06 – 2025.10"
 role:
-  en: "Freelancer iOS Developer"
+  en: "Freelancer iOS Developer - Service Front"
   ko: "서비스 프론트 / iOS 개발자 (프리랜서)"
 desc:
   en: "SKT outsourcing partner · Freelance iOS developer"
   ko: "SK텔레콤 협력사 · 프리랜서 iOS 개발자"
 story:
   en: "Shipped AI recommendations, resolved critical crashes, mentored junior engineers."
-  ko: "AI 추천 구현, 대규모 크래시 해결, 주니어 멘토링으로 팀 역량 향상."
+  ko: "AI 추천 적용, 대규모 크래시 해결, 주니어 멘토링으로 팀 역량 향상."
 cur: false
 projects[3]:
   - id: skcc-ai-sdk
@@ -20,14 +20,18 @@ projects[3]:
       en: "AI Layer iOS SDK — a shared AI-assistant screen embedded in SKT's T world and T membership apps, overlaying an AI layer on each app's webview."
       ko: "SKT T world·T membership 앱에 탑재된 공용 AI 화면 iOS SDK — 각 앱 웹뷰 위에 AI 어시스턴트 레이어를 제공."
     role:
-      en: "Sole iOS maintainer of the shared SDK consumed by both apps."
-      ko: "두 앱이 사용하는 공용 SDK의 단독 iOS 담당자."
+      en: "Sole owner of the shared SDK — stabilization, requirement handling, releases, and release notifications."
+      ko: "단독 SDK 안정화, 요구사항 반영, 배포 및 통지"
     work:
-      en: "Improved SDK accessibility and UI, and introduced MR templates to standardize code review."
-      ko: "SDK 접근성·UI 개선, MR 템플릿 도입으로 코드 리뷰 표준화."
+      en: "Improved iOS SDK accessibility and UI."
+      ko: "iOS SDK 접근성·UI 개선"
     achievement:
-      en: "Built a Slack notification workflow that alerts both consuming apps' teams on every SDK release, reducing integration surprises."
-      ko: "SDK 릴리스 시 사용 앱 팀에 자동 Slack 알림 체계 구축 — 연동 리스크 감소."
+      en[2]:
+        - "Built a Slack notification workflow that alerts both consuming apps' teams on every SDK release, reducing integration surprises."
+        - "Introduced MR templates to standardize code review."
+      ko[2]:
+        - "SDK 릴리스 시 사용 앱 팀에 자동 Slack 알림 체계 구축 — 연동 리스크 감소."
+        - "MR 템플릿 도입으로 코드 리뷰 표준화."
     highlight:
       en: "Accessibility & UI improvements, MR template setup"
       ko: "접근성·UI 개선, MR 템플릿 구축"
@@ -41,14 +45,20 @@ projects[3]:
     meta: "2024.10 – 2025.10 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
-      en: "Maintenance and junior coaching for T world iOS — SKT's customer-service app (native shell over a webview)."
-      ko: "SKT 고객센터 앱 T world iOS 유지보수 및 주니어 코칭 — 웹뷰를 감싼 네이티브 앱."
+      en: "SKT's customer-service B2C iOS app — webview-based."
+      ko: "SKT 고객센터 B2C iOS 앱 - 웹뷰 기반"
     role:
-      en: "iOS developer — maintenance, AI tooling, and junior coaching."
-      ko: "iOS 개발자 — 유지보수, AI 툴링, 주니어 코칭."
+      en: "iOS app maintenance and junior coaching."
+      ko: "iOS 앱 유지보수, 주니어 코칭."
     achievement:
-      en: "WKWebview delegate method had a force-unwrapped optional (!) causing 5,000+ crashes per week — traced via Firebase, reproduced the scenario, and fixed with a guard statement, eliminating all weekly crashes in one change. Widget sessions were blocked for customers using the security password feature — avoided a broad API rewrite by using App Groups-based CookieStorage to share the session between app and widget, giving customers 1-hour widget access after password entry and resolving a standing complaint. Set up a GitLab Runner with a local Ollama model to auto-review MRs and post comments, solving the non-technical manager's review bottleneck while keeping code off external servers — published a Medium article on the setup."
-      ko: "WKWebview Delegate 메서드의 강제 언래핑(!)으로 주 5,000건 이상 Crash 발생 — Firebase로 추적 후 동일 상황 재현, Guard로 수정해 Crash 전량 제거. 보안 비밀번호 고객의 Widget 미사용 문제 — API 수정 범위가 넓어 보류 중이던 건을 App Groups 기반 CookieStorage로 앱↔Widget 세션 공유해 비밀번호 입력 후 1시간 Widget 사용 가능하도록 해결, 민원 해소. Ollama Local 모델 기반 GitLab Runner MR 자동 검토 구성 — 비개발자 매니저의 검토 부담 해소 및 보안 유지, Medium 아티클 게재."
+      en[3]:
+        - "WKWebview delegate method had a force-unwrapped optional (!) causing 5,000+ crashes per week — traced via Firebase, reproduced the scenario, and fixed with a guard statement, eliminating all weekly crashes in one change."
+        - "Widget sessions were blocked for customers using the security password feature — avoided a broad API rewrite by using App Groups-based CookieStorage to share the session between app and widget, giving customers 1-hour widget access after password entry and resolving a standing complaint."
+        - "Set up a GitLab Runner with a local Ollama model to auto-review MRs and post comments, solving the non-technical manager's review bottleneck while keeping code off external servers — published a Medium article on the setup."
+      ko[3]:
+        - "WKWebview Delegate 메서드의 강제 언래핑(!)으로 주 5,000건 이상 Crash 발생 — Firebase로 추적 후 동일 상황 재현, Guard로 수정해 Crash 전량 제거."
+        - "보안 비밀번호 고객의 Widget 미사용 문제 — API 수정 범위가 넓어 보류 중이던 건을 App Groups 기반 CookieStorage로 앱↔Widget 세션 공유해 비밀번호 입력 후 1시간 Widget 사용 가능하도록 해결, 민원 해소."
+        - "Ollama Local 모델 기반 GitLab Runner MR 자동 검토 구성 — 비개발자 매니저의 검토 부담 해소 및 보안 유지, Medium 아티클 게재."
     highlight:
       en: "5,000+ weekly crashes eliminated"
       ko: "주 5,000건+ Crash 제거"
@@ -64,17 +74,23 @@ projects[3]:
     meta: "2024.06 – 2025.10 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
-      en: "Maintenance and junior coaching for SWING iOS — an iPadOS Cordova hybrid app for SKT dealer management (native Swift/ObjC shell over a SWING Web webview, backed by SKT Intra)."
-      ko: "SKT 대리점 업무용 iPadOS Cordova 하이브리드 앱 SWING iOS 유지보수 및 주니어 코칭 — SKT Intra 기반, SWING Web 웹뷰를 네이티브 Swift/ObjC로 감싼 구조."
+      en: "Enterprise iPadOS Cordova hybrid app for SKT dealer management — SWING iOS maintenance and junior coaching (native Swift/ObjC shell over a SWING Web webview, backed by SKT Intra)."
+      ko: "SKT 대리점 업무용 Enterprise iPadOS 앱 - Cordova 하이브리드 앱 SWING iOS 유지보수 및 주니어 코칭 — SKT Intra 기반, SWING Web 웹뷰를 네이티브 Swift/ObjC로 감싼 구조."
     role:
-      en: "Sole iOS developer — maintenance, process improvement, and junior coaching. Joined the day after the interview with the previous developer leaving a week later."
-      ko: "단독 iOS 개발자 — 유지보수, 프로세스 개선, 주니어 코칭. 면접 다음날 합류, 전임자 일주일 후 퇴사."
+      en: "iOS app maintenance, process improvement, and junior coaching."
+      ko: "iOS 앱 유지보수, 프로세스 개선, 주니어 코칭."
     work:
-      en: "Migrated CocoaPods to SPM and refined the team's JIRA usage into a proper workflow."
-      ko: "CocoaPods→SPM 마이그레이션, 잘못 사용하던 JIRA 활용 방식을 올바른 워크플로우로 개선."
+      en: "Upgraded the Xcode version; split work into units and assigned them to a junior."
+      ko: "Xcode 버전 상향. 업무 분할 및 주니어 할당. "
     achievement:
-      en: "The project was locked to Xcode 13, blocking macOS upgrades and accumulating tech debt — researched a method to run older Xcode on newer macOS, published two Medium articles, and applied the same approach iteratively to upgrade from Xcode 13 to 16. GitLab MRs had no descriptions, templates, or reviewers — introduced a template with intent, test steps, results, default labels, and auto-assigned reviewer, speeding up manager approval and spreading the practice to other freelance projects. Coached a junior by splitting tasks into hand-off-sized units; the junior eventually took 80% ownership of SWING iOS."
-      ko: "Xcode 13 고착으로 macOS 업그레이드 불가·기술 부채 누적 — 구버전 Xcode를 신규 macOS에서 실행하는 방법 연구 후 Medium 아티클 2편 게재, 동일 방법으로 Xcode 13→16 순차 업그레이드해 기술 부채 해소. GitLab MR에 설명·템플릿·리뷰어 없음 — 의도·테스트 방법·결과·기본 Label·Reviewer 자동 설정 MR 템플릿 도입, 매니저 신속 승인·주니어 협업 교육·타 프리랜서 프로젝트에 전파. 주니어에게 Task 분할 방식으로 코칭, 이후 SWING의 80% 담당."
+      en[3]:
+        - "Researched and shared a method to run an older Xcode on newer macOS."
+        - "GitLab MRs had no descriptions, templates, or reviewers — introduced a template with intent, test steps, and results that auto-assigns default labels and a reviewer, speeding up manager approval, teaching juniors to collaborate, and spreading the practice to other freelance projects."
+        - "After coaching, a junior took 80% ownership of SWING iOS."
+      ko[3]:
+        - "구버전 Xcode를 신규 macOS에서 실행하는 방법 연구 및 전파."
+        - "기존 GitLab MR에 설명·템플릿·리뷰어가 없어 의도·테스트 방법·결과·기본를 가지고 Label·Reviewer 자동 설정하는 MR 템플릿 도입, 매니저 신속 승인·주니어 협업 교육·타 프리랜서 프로젝트에 전파."
+        - "주니어 코칭 후 SWING의 80% 위임."
     highlight:
       en: "Junior coached to 80% ownership"
       ko: "주니어 80% 업무 위임"

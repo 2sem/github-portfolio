@@ -4,6 +4,19 @@ import { ProjectCover } from './ProjectVisual.jsx'
 import { useLang } from '../i18n.jsx'
 import { tagLabel } from '../tagLabels.js'
 
+// A prose field is either a single string (→ paragraph) or an array of
+// strings (→ bullet list). Arrays come from {en:[...], ko:[...]} in the data.
+function Prose({ value }) {
+  if (Array.isArray(value)) {
+    return (
+      <ul className="detail-list">
+        {value.map((item, i) => <li key={i}>{item}</li>)}
+      </ul>
+    )
+  }
+  return <p>{value}</p>
+}
+
 function ImageModal({ src, alt, onClose }) {
   useEffect(() => {
     const onKey = e => { if (e.key === 'Escape') onClose() }
@@ -88,19 +101,19 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
         <div className="detail-body">
           <div>
             <h4>{t('whatItIs')}</h4>
-            <p>{tr(project.desc)}</p>
+            <Prose value={tr(project.desc)} />
             <h4 className="detail-sec-gap">{t('myRole')}</h4>
-            <p>{tr(project.role)}</p>
+            <Prose value={tr(project.role)} />
             {project.work && (
               <>
                 <h4 className="detail-sec-gap">{t('myWork')}</h4>
-                <p>{tr(project.work)}</p>
+                <Prose value={tr(project.work)} />
               </>
             )}
             {project.achievement && (
               <>
                 <h4 className="detail-sec-gap">{t('achievement')}</h4>
-                <p>{tr(project.achievement)}</p>
+                <Prose value={tr(project.achievement)} />
               </>
             )}
           </div>
