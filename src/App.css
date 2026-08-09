@@ -1240,10 +1240,11 @@ section[id] {
 }
 
 .detail-list li::before {
-  content: "▹";
+  content: "›";
   position: absolute;
   left: 0;
   color: var(--accent);
+  font-weight: 700;
 }
 
 .detail-sec-gap {
