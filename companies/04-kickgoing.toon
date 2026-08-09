@@ -8,8 +8,8 @@ desc:
   en: "Micro-mobility startup · ₩12B ARR · Mobile Tech Lead"
   ko: "마이크로 모빌리티 스타트업 · 연매출 120억 · Mobile Tech Lead"
 story:
-  en: "Led RN migration and BLE hardware. Founded monthly dev conference. Contributed to open-source."
-  ko: "RN 마이그레이션·BLE 하드웨어 주도. 월간 개발자 컨퍼런스 창설. 오픈소스 기여."
+  en: "RN migration and in-app navigation. Founded monthly dev conference. Contributed to open-source."
+  ko: "RN 마이그레이션·길안내. 월간 개발자 컨퍼런스 창설. 오픈소스 기여."
 cur: false
 projects[10]:
   - id: kickgoing-pass
