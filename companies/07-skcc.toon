@@ -27,10 +27,10 @@ projects[3]:
       ko: "iOS SDK 접근성·UI 개선"
     achievement:
       en[2]:
-        - "Built a Slack notification workflow that alerts both consuming apps' teams on every SDK release, reducing integration surprises."
+        - "Built a Slack notification workflow that alerts both consuming apps' teams on every SDK release."
         - "Introduced MR templates to standardize code review."
       ko[2]:
-        - "SDK 릴리스 시 사용 앱 팀에 자동 Slack 알림 체계 구축 — 연동 리스크 감소."
+        - "SDK 릴리스 시 사용 앱 팀에 자동 Slack 알림 체계 구축"
         - "MR 템플릿 도입으로 코드 리뷰 표준화."
     highlight:
       en: "Accessibility & UI improvements, MR template setup"
