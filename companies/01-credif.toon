@@ -20,11 +20,14 @@ projects[27]:
       en: "MDI terminal monitor for IDC ops — saves window positions and per-terminal connection settings so nothing needs repositioning after restart."
       ko: "IDC 운영을 위한 MDI 터미널 모니터 — 창 위치와 터미널별 접속 설정을 저장해 재시작 후 재배치가 필요 없습니다."
     role:
-      en: "Sole developer. Designed MDI layout engine, implemented Telnet protocol from RFC, built XML-based multi-user config system."
-      ko: "단독 개발. MDI 레이아웃 엔진 설계, RFC 기반 Telnet 프로토콜 구현, XML 기반 다중 사용자 설정 시스템 구축."
+      en: "Sole developer."
+      ko: "단독 개발."
+    work:
+      en: "Designed the MDI layout engine, implemented the Telnet protocol from the RFCs, and built an XML-based multi-user config system."
+      ko: "MDI 레이아웃 엔진 설계, RFC 기반 Telnet 프로토콜 구현, XML 기반 다중 사용자 설정 시스템 구축."
     achievement:
-      en: "Gained deep understanding of the Telnet protocol by working through the RFCs."
-      ko: "RFC 문서를 직접 읽으며 Telnet 프로토콜을 깊이 이해하게 됨."
+      en: "Gained a deep understanding of the Telnet protocol by working through the RFCs firsthand."
+      ko: "RFC 문서를 직접 읽으며 Telnet 프로토콜을 깊이 이해."
     highlight:
       en: "Telnet protocol implemented from RFC scratch"
       ko: "RFC 기반 Telnet 프로토콜 직접 구현"
@@ -40,8 +43,11 @@ projects[27]:
       en: "Relay gateway for an encrypted micro-payment protocol. Existing relay servers couldn't handle the new encrypted messages, so it checks only a minimal header and forwards the encrypted payload to the payment system as-is, returning the response unchanged."
       ko: "소액결제 전문에 암호화가 적용되며 기존 중계 서버로 처리할 수 없게 되자, 최소 헤더만 확인하고 암호화된 페이로드를 그대로 결제 시스템에 전달·응답하도록 재개발한 중계 게이트웨이."
     role:
-      en: "Sole developer. Rebuilt the entire relay logic on the company's C/Linux framework; the framework handled the underlying TCP/IP networking."
-      ko: "단독 개발. 사내 C/Linux 프레임워크 기반으로 통신부를 제외한 중계 로직 전체를 신규 구현. TCP/IP 통신은 프레임워크가 담당."
+      en: "Sole developer."
+      ko: "단독 개발."
+    work:
+      en: "Rebuilt the entire relay logic on the company's C/Linux framework (which handled the underlying TCP/IP networking)."
+      ko: "사내 C/Linux 프레임워크 기반으로 통신부를 제외한 중계 로직 전체를 신규 구현(TCP/IP 통신은 프레임워크 담당)."
     achievement:
       en: "Learned the company's in-house Linux C framework."
       ko: "사내 Linux C 프레임워크 사용법을 익힘."
@@ -79,11 +85,14 @@ projects[27]:
       en: "SMS delivery server that received Korea-bound SMS requests from Verisign through SMPP. Converted Korean message text from UCS2-BE to EUC-KR, inserted send requests into the corporate SMS Agent's MySQL queue, checked delivery status, and reported results back to Verisign."
       ko: "Verisign에서 SMPP로 전달한 한국 번호 대상 SMS 발송 요청을 처리한 발송 서버. 한글 메시지를 UCS2-BE에서 EUC-KR로 변환하고, 기업형 SMS Agent가 사용하는 MySQL 큐에 발송 요청을 insert한 뒤 발송 상태를 조회해 Verisign에 결과를 전달."
     role:
-      en: "Sole developer for the server-side integration with Verisign, SMPP message handling, character conversion, MySQL queue integration, and delivery-status reporting."
-      ko: "Verisign 연동, SMPP 전문 처리, 문자셋 변환, MySQL 큐 연동, 발송 상태 리포팅까지 서버 측 기능을 단독 개발."
+      en: "Sole developer of the server-side Verisign integration."
+      ko: "Verisign 연동 서버 측 기능 단독 개발."
+    work:
+      en: "Handled SMPP messages, converted Korean text (UCS2-BE→EUC-KR), inserted requests into the SMS Agent's MySQL queue, and reported delivery status back to Verisign."
+      ko: "SMPP 전문 처리, 한글 문자셋 변환(UCS2-BE→EUC-KR), SMS Agent의 MySQL 큐에 요청 insert, Verisign에 발송 상태 리포팅."
     achievement:
-      en: "Built practical understanding of SMPP and Unicode, gained experience working with an international partner, and used MySQL in a production delivery flow."
-      ko: "SMPP와 Unicode를 이해하고 국제 기업과 협업한 경험을 쌓았으며, 운영 발송 흐름에서 MySQL을 사용한 경험을 확보."
+      en: "Built practical understanding of SMPP and Unicode, worked with an international partner, and used MySQL in a production delivery flow."
+      ko: "SMPP·Unicode를 이해하고 국제 기업과 협업했으며, 운영 발송 흐름에서 MySQL 사용 경험을 확보."
     highlight:
       en: "Verisign → Korea SMS delivery via SMPP with UCS2→EUC-KR conversion"
       ko: "SMPP로 Verisign-한국 SMS 전달 서버 구현 — UCS2→EUC-KR 변환"
@@ -98,11 +107,14 @@ projects[27]:
       en: "Google Calendar Outlook Synchronizer built as part of a Google Calendar activation strategy. It made Outlook-to-Google Calendar sync easier, increasing calendar usage and SMS notification volume for the CREDiF-operated Korea delivery flow."
       ko: "Google Calendar 활성화 전략의 일환으로 만든 Outlook-Google Calendar 동기화 도구. Outlook과 Google Calendar 간 동기화를 쉽게 제공해 캘린더 사용과 CREDiF가 담당한 한국 번호 SMS 알림 발송량을 늘리는 데 기여."
     role:
-      en: "Sole developer. Integrated Microsoft Outlook objects and Google Calendar API, implemented one-way and two-way sync, stored sync identifiers in a serialized file DB, and built an Outlook Add-in to avoid repeated permission prompts for automatic sync."
-      ko: "단독 개발. Microsoft Outlook 객체와 Google Calendar API를 연동하고, 단방향·양방향 동기화, 직렬화 기반 파일 DB, 자동 동기화를 위한 Outlook Add-in 권한 우회 구조를 구현."
+      en: "Sole developer."
+      ko: "단독 개발."
+    work:
+      en: "Integrated Outlook objects with the Google Calendar API, implemented one-way/two-way sync, stored sync IDs in a serialized file DB, and built an Outlook Add-in to avoid repeated permission prompts."
+      ko: "Outlook 객체와 Google Calendar API 연동, 단방향·양방향 동기화, 직렬화 기반 파일 DB, 자동 동기화용 Outlook Add-in 권한 우회 구조 구현."
     achievement:
-      en: "Learned Google Calendar API usage, Outlook plug-in permission bypass techniques, and inter-process remote communication through Marshal."
-      ko: "Google Calendar API 사용법, Outlook Plugin을 통한 권한 우회 방법, Marshal 기반 프로세스 간 원격 통신 방법을 습득."
+      en: "Learned the Google Calendar API, Outlook plug-in permission-bypass techniques, and inter-process remote communication through Marshal."
+      ko: "Google Calendar API, Outlook Plugin 권한 우회, Marshal 기반 프로세스 간 원격 통신 방법을 습득."
     highlight:
       en: "Outlook-Google Calendar sync to drive KT SMS notification revenue"
       ko: "Outlook↔Google 캘린더 동기화로 KT SMS 알림 수익 기여"
@@ -120,11 +132,14 @@ projects[27]:
       en: "Desktop Google Calendar client built to increase Google Calendar usage without requiring users to open the web page. It let users view and edit schedules, manage Gmail contacts, and invite contacts to calendar events."
       ko: "웹 페이지에 접속하지 않고 Google Calendar를 사용할 수 있도록 만든 PC용 클라이언트. 일정 확인·수정, Gmail 주소록 관리, Gmail 주소록 기반 일정 초대를 지원해 Google Calendar 사용 활성화를 목표로 함."
     role:
-      en: "Sole developer. Loaded schedules for the selected month and adjacent months through Google Calendar API, rendered them in a calendar control, integrated Gmail contacts, and built invitation flows from the contact list."
-      ko: "단독 개발. Google Calendar API로 현재 선택한 월과 앞뒤 1개월 일정을 불러와 달력 컨트롤에 표시하고, Gmail 주소록 연동과 주소록 기반 일정 초대 흐름을 구현."
+      en: "Sole developer."
+      ko: "단독 개발."
+    work:
+      en: "Loaded the selected and adjacent months via the Google Calendar API into a calendar control, integrated Gmail contacts, and built invitation flows from the contact list."
+      ko: "Google Calendar API로 선택 월·앞뒤 월 일정을 달력 컨트롤에 표시, Gmail 주소록 연동, 주소록 기반 일정 초대 흐름 구현."
     achievement:
-      en: "Gained experience with Google Gmail API, collaboration with a planner, and calendar UI implementation."
-      ko: "Google Gmail API 사용 경험, 기획자와의 협업 경험, 달력 UI 구현 경험을 확보."
+      en: "Gained experience with the Gmail API, collaborating with a planner, and building a calendar UI."
+      ko: "Gmail API 사용, 기획자 협업, 달력 UI 구현 경험을 확보."
     highlight:
       en: "Desktop Google Calendar client to grow KT SMS notification volume"
       ko: "PC용 Google 캘린더 클라이언트로 KT SMS 알림 증가 기여"
@@ -143,11 +158,14 @@ projects[27]:
       en: "iOS rotation timer module for rotating a target image for a configured duration. It supported touch-based pause and resume behavior while the image kept rotating through timer-driven animation."
       ko: "설정한 시간 동안 대상 이미지를 회전시키는 iOS 회전 타이머 모듈. 이미지 터치로 정지와 계속을 제어하고 Timer와 Rotation Animation을 사용해 회전 동작을 구현."
     role:
-      en: "Built the rotation library as an Objective-C SDK prototype while preparing for future iPhone development work."
-      ko: "향후 iPhone 개발 투입을 준비하며 Objective-C 기반 회전 라이브러리 SDK 프로토타입을 개발."
+      en: "Sole developer — a prototype built while preparing for future iPhone work."
+      ko: "단독 개발 — 향후 iPhone 개발 투입을 준비하며 만든 프로토타입."
+    work:
+      en: "Built the rotation library as an Objective-C SDK prototype, with touch pause/resume over timer-driven rotation animation."
+      ko: "Objective-C SDK 프로토타입으로 회전 라이브러리 구현 — Timer 기반 회전 애니메이션과 터치 정지/재개."
     achievement:
       en: "Learned how to rotate views on iOS and how to structure reusable library code."
-      ko: "iOS에서 View를 회전하는 방법과 재사용 가능한 라이브러리를 만드는 방법을 습득."
+      ko: "iOS에서 View 회전 방법과 재사용 가능한 라이브러리 구성 방법을 습득."
     highlight:
       en: "First iOS SDK prototype — rotation timer library"
       ko: "최초 iOS SDK 프로토타입 — 회전 타이머 라이브러리"
@@ -162,11 +180,14 @@ projects[27]:
       en: "Backend SMS delivery component for an open messaging ECO service. As smartphone adoption reduced SMS revenue, the service shared revenue with mobile developers who sent SMS through an API; this component received API requests and performed the actual SMS delivery."
       ko: "개방형 메시지 ECO 서비스의 SMS 발송 백엔드. 스마트폰 증가로 SMS 수익이 감소하자 모바일 개발자가 API로 SMS를 발송하면 수익을 공유하는 서비스였고, 이 컴포넌트는 API 요청을 받아 실제 SMS 발송을 수행."
     role:
-      en: "SMS backend developer within the FE/API/Billing/SMS backend team. Received socket/XML send requests from the gateway, sent SMS through KT KHUB API, provided a C# communication library to the API process, and built a watchdog to keep server processes running."
-      ko: "FE/API/과금 BE/SMS BE 구성 중 SMS 백엔드 담당. Gateway의 Socket + XML 발송 요청을 수신하고 KT KHUB API로 SMS를 발송했으며, API 프로세스용 C# 통신 라이브러리와 서버 프로세스 WatchDog을 개발."
+      en: "SMS backend developer within a FE / API / Billing / SMS-backend team."
+      ko: "FE/API/과금 BE/SMS BE 팀 중 SMS 백엔드 담당."
+    work:
+      en: "Received socket/XML send requests from the gateway, sent SMS via KT KHUB API, provided a C# communication library to the API process, and built a watchdog to keep processes running."
+      ko: "Gateway의 Socket+XML 발송 요청 수신, KT KHUB API로 SMS 발송, API 프로세스용 C# 통신 라이브러리 제공, 서버 프로세스 WatchDog 개발."
     achievement:
-      en: "Learned C# library development and process health monitoring, and reused XML serialization knowledge from GCOS to provide a communication library for the API process developer."
-      ko: "C# 라이브러리 개발 방법과 프로세스 상태 감시 방법을 습득. GCOS 개발 과정에서 익힌 직렬화 기반 XML 통신 방식을 API 프로세스 개발자에게 라이브러리로 제공."
+      en: "Learned C# library development and process health monitoring, and reused XML-serialization know-how from GCOS to hand the API developer a ready-made communication library."
+      ko: "C# 라이브러리 개발과 프로세스 상태 감시 방법을 습득하고, GCOS에서 익힌 직렬화 XML 통신을 API 개발자에게 라이브러리로 제공."
     highlight:
       en: "SMS backend + shared C# library delivered within a 4-role team"
       ko: "4역할 팀 내 SMS 백엔드 + 공용 C# 라이브러리 제공"
@@ -181,8 +202,11 @@ projects[27]:
       en: "iPhone test app for validating whether the SMSECO API worked correctly from iOS. It called each API with entered parameters and displayed raw request and response messages for authentication, SMS, LMS, and MMS flows."
       ko: "SMSECO API가 iPhone에서 정상 호출되는지 검증하기 위한 테스트 앱. 입력한 파라미터로 인증, SMS, LMS, MMS API를 호출하고 각 요청 전문과 응답 전문을 그대로 확인할 수 있게 구성."
     role:
-      en: "Built the iOS test app while responsible for the SMSECO SMS backend. Implemented the basic UI and API communication with guidance from the iPhone developer, then used the app for internal validation and carrier review."
-      ko: "SMSECO SMS 백엔드 담당자로서 iOS 테스트 앱을 직접 개발. 기본 UI와 API 통신부를 구현하고, 내부 검증 및 통신사 검증용으로 제공."
+      en: "iOS test-app developer (while owning the SMSECO SMS backend)."
+      ko: "iOS 테스트 앱 개발(SMSECO SMS 백엔드 담당 병행)."
+    work:
+      en: "Built the basic UI and API communication with guidance from the iPhone developer, then used it for internal validation and carrier review."
+      ko: "iPhone 개발자 가이드로 기본 UI·API 통신부 구현 후 내부 검증·통신사 검증용으로 제공."
     achievement:
       en: "Learned how to call REST APIs from iOS."
       ko: "iOS에서 REST API를 호출하는 방법을 습득."
@@ -201,11 +225,18 @@ projects[27]:
       en: "WPF client for an integrated building system and facility management system at Pangyo R&D Center. It centralized monitoring and control for facility systems, displayed real object locations on floor plans, and supported alarm handling and automated response scenarios."
       ko: "판교 R&D Center의 IBS/FMS용 WPF 클라이언트. 엘리베이터, 주차, 전력, 소방 등 건물 설비 시스템을 중앙에서 모니터링·제어하고, 도면 위 실제 개체 위치 표시와 경보·자동 대응 시나리오를 지원."
     role:
-      en: "Lead client developer. Reworked the planning/design spec, guided another developer, built the WPF MVVM client, created packet and database helper libraries, implemented floor-plan object binding, and added a fire-area editor for alarm visualization."
-      ko: "클라이언트 개발 담당. 기획·디자인 산출물을 재정리하고 개발자를 가이드하며 WPF MVVM 클라이언트, 패킷/DB 헬퍼 라이브러리, 도면 개체 바인딩, 화재 구역 편집 및 경보 시각화를 구현."
+      en: "Lead client developer."
+      ko: "클라이언트 개발 리드."
+    work:
+      en[2]:
+        - "Reworked the planning/design spec and guided another developer."
+        - "Built the WPF MVVM client, packet and DB helper libraries, floor-plan object binding, and a fire-area editor for alarm visualization."
+      ko[2]:
+        - "기획·디자인 산출물을 재정리하고 다른 개발자를 가이드."
+        - "WPF MVVM 클라이언트, 패킷/DB 헬퍼 라이브러리, 도면 개체 바인딩, 화재 구역 편집·경보 시각화 구현."
     achievement:
-      en: "Delivered the client under staffing constraints by training a .NET web developer and providing reusable Network and DB libraries. The libraries hid socket complexity and generated DB queries automatically, letting feature work proceed without low-level communication code."
-      ko: "클라이언트 개발 인력 부족 상황에서 .NET 웹 개발자를 교육하고 재사용 가능한 Network/DB 라이브러리를 제공해 프로젝트를 완수. Socket 복잡도와 DB 쿼리 생성을 라이브러리로 흡수해 기능 개발에 집중할 수 있게 함."
+      en: "Delivered the client under staffing constraints by training a .NET web developer and providing reusable Network/DB libraries that hid socket complexity and auto-generated DB queries — letting feature work proceed without low-level communication code."
+      ko: "인력 부족 속에서 .NET 웹 개발자를 교육하고, Socket 복잡도·DB 쿼리 생성을 흡수한 재사용 Network/DB 라이브러리를 제공해 프로젝트를 완수 — 저수준 통신 코드 없이 기능 개발에 집중 가능."
     highlight:
       en: "Delivered under staffing constraints — coached .NET dev + Network/DB libs"
       ko: "인력 부족 속 .NET 개발자 교육 + 라이브러리로 프로젝트 완수"
@@ -224,11 +255,14 @@ projects[27]:
       en: "Configuration management module for LG's HeNB small base-station management system. It managed eNodeB basic information, location, CPU and memory limits, neighbor settings, and applied changed settings back to each HeNB Config.xml."
       ko: "LG 소형 기지국 HeNB 관리 시스템의 환경설정 형상관리 모듈. eNodeB 기본정보, 위치, CPU/Memory 제한, Neighbor 설정을 관리하고 변경된 환경설정을 각 HeNB의 Config.xml에 적용."
     role:
-      en: "Configuration Management developer. Implemented the server-side configuration flow and also built the JSP/jQuery admin UI after the project could not secure a dedicated web developer."
-      ko: "형상관리 기능 담당. 서버 측 환경설정 적용 흐름을 구현하고, 웹 개발자를 구하지 못한 상황에서 JSP/jQuery 기반 관리 화면까지 개발."
+      en: "Configuration-management developer."
+      ko: "형상관리 기능 담당."
+    work:
+      en: "Implemented the server-side configuration flow and, with no dedicated web developer available, also built the JSP/jQuery admin UI and Daum Map-based location setup."
+      ko: "서버 측 환경설정 적용 흐름을 구현하고, 웹 개발자가 없어 JSP/jQuery 관리 화면과 Daum Map 기반 위치 설정까지 개발."
     achievement:
-      en: "Reduced the gap between XML-based base-station configuration and the management database by applying Oracle XMLDB and sharing the approach with the team. Completed the configuration-management feature beyond the original server scope by building the JSP/jQuery UI and Daum Map-based location setup."
-      ko: "XML 기반 기지국 설정과 관리 DB 사이의 간극을 Oracle XMLDB로 줄이고 적용 방식을 팀에 공유. 서버 담당 범위를 넘어 JSP/jQuery 관리 화면과 Daum Map 기반 위치 설정까지 구현해 형상관리 기능을 완성."
+      en: "Narrowed the gap between XML-based base-station config and the management DB with Oracle XMLDB (sharing the approach with the team), and completed the feature beyond the original server scope."
+      ko: "XML 기반 기지국 설정과 관리 DB의 간극을 Oracle XMLDB로 줄이고 팀에 공유했으며, 서버 담당 범위를 넘어 형상관리 기능을 완성."
     highlight:
       en: "Delivered beyond scope — added JSP/jQuery UI to complete the feature"
       ko: "담당 범위 초과 — JSP/jQuery UI 추가로 형상관리 기능 완성"
@@ -278,11 +312,14 @@ projects[27]:
       en: "Fire-monitoring client for Samsung's Pyeongtaek logistics center. It extracted the fire-detection portion of the IBS concept to show alarm locations on a floor plan, with zoom support and tooltips for location names and device numbers."
       ko: "평택 삼성 물류 센터의 화재 감시 클라이언트. IBS 중 화재 감지 기능만 분리해 도면 위 화재 발생 위치를 표시하고, 도면 확대/축소와 위치명·장비번호 Tooltip을 제공."
     role:
-      en: "Client developer. Adapted the Pangyo IBS fire-monitoring UI into a focused single-floor-plan tool, using wave animation for detector alarms and a local server/client setup on the control-room PC."
-      ko: "클라이언트 개발 담당. 판교 IBS의 소방 감시 UI를 단일 도면 중심 도구로 축소·재구성하고, 감지기 경보 위치를 파형 애니메이션으로 표시하는 현장형 서버/클라이언트 구성을 구현."
+      en: "Client developer."
+      ko: "클라이언트 개발 담당."
+    work:
+      en: "Adapted the Pangyo IBS fire-monitoring UI into a focused single-floor-plan tool with wave-animated detector alarms and a local server/client setup on the control-room PC."
+      ko: "판교 IBS 소방 감시 UI를 단일 도면 중심 도구로 재구성 — 감지기 경보를 파형 애니메이션으로 표시, 관제 PC의 현장형 서버/클라이언트 구성."
     achievement:
-      en: "Repackaged the fire-monitoring portion of Pangyo IBS into a small, focused IFS client under a short schedule. Implemented a field setup that connected fire-control equipment directly to the control-room PC over Serial without a separate physical server, gaining practical Serial Port communication experience."
-      ko: "판교 IBS의 소방 감시 기능을 분리·축소해 짧은 일정의 단독 IFS 클라이언트로 재구성. 별도 물리 서버 없이 소방 제어 장비와 관제 PC를 Serial로 직접 연결하는 현장형 구성을 구현하며 Serial Port 통신 경험을 확보."
+      en: "Repackaged Pangyo IBS's fire-monitoring portion into a small, focused client on a short schedule, and gained practical Serial Port experience by wiring fire-control equipment directly to the control-room PC over Serial with no separate physical server."
+      ko: "판교 IBS의 소방 감시 기능을 짧은 일정에 소형 클라이언트로 재구성하고, 별도 물리 서버 없이 소방 장비와 관제 PC를 Serial로 직결하며 Serial Port 통신 경험을 확보."
     highlight:
       en: "Fire monitor shipped without separate server — direct Serial to control PC"
       ko: "별도 서버 없이 Serial 직결로 화재 감시 클라이언트 출시"
@@ -328,11 +365,18 @@ projects[27]:
       en: "Research platform for WIFI-based indoor positioning. It visualizes collected signal data and algorithm results, exposes a REST server and file import/export so algorithms can be researched across different languages and platforms, and offers error visualization against ground-truth positions with min/max-error location search."
       ko: "WIFI 기반 실내 측위 연구 플랫폼. 수집된 신호 데이터와 알고리즘 수행 결과를 시각화하고, REST 서버와 파일 Import/Export로 다양한 언어·플랫폼에서 알고리즘을 연구할 수 있게 하며, 실제 위치 대비 오차 시각화와 최소/최대 오차 위치 검색을 제공."
     role:
-      en: "Sole developer across the whole stack: a WIFI signal-collection Android app, a WPF research/visualization tool, and a REST server for sharing data and results. Designed the collect → import → run-your-algorithm → export → re-import → visualize workflow end to end."
-      ko: "전 영역 단독 개발. WIFI 신호 수집용 Android 앱, WPF 연구·시각화 도구, 데이터·결과 공유용 REST 서버를 모두 구현. 수집 → Import → 알고리즘 수행 → Export → 재Import → 시각화로 이어지는 연구 워크플로를 직접 설계."
+      en: "Sole developer across the whole stack (Android app, WPF tool, REST server)."
+      ko: "전 영역 단독 개발(Android 앱·WPF 도구·REST 서버)."
+    work:
+      en[2]:
+        - "Built a WIFI signal-collection Android app, a WPF research/visualization tool, and a REST server for sharing data and results."
+        - "Designed the collect → import → run-your-algorithm → export → re-import → visualize workflow end to end."
+      ko[2]:
+        - "WIFI 신호 수집 Android 앱, WPF 연구·시각화 도구, 데이터·결과 공유용 REST 서버 구현."
+        - "수집 → Import → 알고리즘 수행 → Export → 재Import → 시각화 연구 워크플로를 직접 설계."
     achievement:
-      en: "Generalized a personal visualization tool into a shared WIFI-positioning research platform (REST server + file import/export) so other developers could run their own algorithms. Built a first Android app to collect signal strength on-site, and found an algorithm that substantially cut positioning error — error dropped sharply once a proper indoor map was available (Gangnam) versus hand-measured floor plans (Seolleung)."
-      ko: "개인용 시각화 도구를 REST 서버·파일 Import/Export를 갖춘 공용 WIFI 측위 연구 플랫폼으로 일반화해 다른 개발자도 자신의 알고리즘을 연구할 수 있게 함. 첫 Android 앱을 직접 개발해 현장 신호세기를 수집하고, 측위 오차를 크게 줄인 알고리즘을 발굴 — 수동 측정에 의존한 선릉역보다 정식 실내 지도를 확보한 강남역에서 오차가 크게 감소."
+      en: "Generalized a personal visualization tool into a shared research platform so other developers could run their own algorithms, and found an algorithm that substantially cut positioning error — error dropped sharply with a proper indoor map (Gangnam) versus hand-measured floor plans (Seolleung)."
+      ko: "개인용 시각화 도구를 공용 연구 플랫폼으로 일반화해 다른 개발자도 알고리즘을 연구할 수 있게 하고, 측위 오차를 크게 줄인 알고리즘을 발굴 — 정식 실내 지도를 확보한 강남역이 수동 측정한 선릉역보다 오차가 크게 감소."
     highlight:
       en: "Algorithm found that substantially cut indoor positioning error"
       ko: "실내 측위 오차를 크게 줄인 알고리즘 발굴"
@@ -351,11 +395,14 @@ projects[27]:
       en: "Research into estimating a user's current floor from barometric pressure, to improve WIFI indoor positioning in multi-floor buildings. In stacked structures WIFI signals leak in from other floors; knowing the current floor lets positioning use only same-floor signals. Since air pressure varies with height, comparing live pressure against a continuously-collected reference-floor pressure yields the current floor."
       ko: "복층 건물에서 WIFI 실내 측위 정밀도를 높이기 위해 기압으로 현재 층을 추정하는 연구. 복층 구조에서는 다른 층의 WIFI 신호가 잡혀 문제가 되는데, 현재 층을 알면 같은 층 신호만 사용할 수 있음. 높이에 따라 기압이 달라지므로, 서버(앱)로 지속 수집한 기준 층 기압과의 차이로 현재 층을 추정."
     role:
-      en: "Sole researcher and developer. Built an Android app to sample the barometric sensor, designed the floor-estimation algorithm around the live-vs-reference pressure difference, and validated it by collecting and testing across floors 1–15 on foot via the stairwell."
-      ko: "단독 연구·개발. 기압 센서를 측정하는 Android 앱을 만들고, 실시간 기압과 기준 기압의 차이를 이용한 층 추정 알고리즘을 설계. 1층부터 15층까지 계단을 직접 오르내리며 수집·테스트해 검증."
+      en: "Sole researcher and developer."
+      ko: "단독 연구·개발."
+    work:
+      en: "Built an Android app to sample the barometric sensor and validated the algorithm by collecting and testing across floors 1–15 on foot via the stairwell."
+      ko: "기압 센서를 측정하는 Android 앱을 만들고, 1~15층 계단을 직접 오르내리며 수집·테스트해 알고리즘을 검증."
     achievement:
-      en: "Learned to read device barometric sensors and devised a floor-estimation algorithm that gates WIFI positioning to the current floor — using the difference between live pressure and a continuously-collected reference-floor pressure to resolve cross-floor signal interference in multi-floor buildings."
-      ko: "기기 기압 센서 측정 방법을 습득하고, 실시간 기압과 지속 수집한 기준 층 기압의 차이로 현재 층을 추정하는 알고리즘을 고안 — 복층 건물에서 다른 층 WIFI 신호가 섞이는 문제를 현재 층 기준으로 필터링해 해결."
+      en: "Learned to read device barometric sensors and devised a floor-estimation algorithm — using the difference between live pressure and a continuously-collected reference-floor pressure — to gate WIFI positioning to the current floor and resolve cross-floor signal interference."
+      ko: "기기 기압 센서 측정 방법을 습득하고, 실시간 기압과 지속 수집한 기준 층 기압의 차이로 현재 층을 추정하는 알고리즘을 고안 — 복층 건물의 다른 층 신호 간섭을 현재 층 기준으로 해결."
     highlight:
       en: "Floor-estimation algorithm from barometric sensor — 1–15 floors validated"
       ko: "기압 센서 기반 층 추정 알고리즘 개발 — 1~15층 직접 검증"
@@ -448,9 +495,18 @@ projects[27]:
     role:
       en: "Sole developer across client and server — took over the Linux/C server when its developers left."
       ko: "클라이언트·서버 단독 개발 — 서버 개발자 퇴사 후 Linux/C 서버까지 인수."
+    work:
+      en[3]:
+        - "Built a standby/proxy server with DB-driven failover and port forwarding to the primary."
+        - "After a UDT-traffic outage took down KT Cloud, switched to a KT-provided alternate router with standby-router fallback."
+        - "Added console improvements (ls sort, key-event handling, command history) and same-account use across multiple PCs."
+      ko[3]:
+        - "기본 서버로 Port Forwarding하는 예비/프록시 서버를 만들고 DB 기반 페일오버 구현."
+        - "UDT 과다 트래픽으로 KT Cloud가 다운된 뒤 KT 제공 대체 라우터로 전환하고 라우터 장애 시 예비 라우터로 처리."
+        - "콘솔 개선(ls 정렬·키 이벤트·History)과 동일 계정 다중 PC 사용 추가."
     achievement:
-      en: "Took sole ownership of both the cross-platform client and the Linux/C server after the rest of the team left, gaining hands-on server-redundancy and performance-tuning experience: built a standby/proxy server with DB-driven failover and port forwarding to the primary, and recovered from a KT Cloud outage caused by UDT traffic by moving to alternate/standby routers."
-      ko: "팀이 모두 떠난 뒤 크로스플랫폼 클라이언트와 Linux/C 서버를 단독으로 맡아 서버 이중화와 성능 튜닝을 실제로 경험: DB 기반 페일오버와 원본 서버로의 Port Forwarding을 갖춘 예비/프록시 서버를 구축하고, UDT 트래픽으로 발생한 KT Cloud 다운을 대체·예비 라우터 전환으로 복구."
+      en: "Took sole ownership of both the cross-platform client and the Linux/C server after the rest of the team left, gaining hands-on server-redundancy and performance-tuning experience."
+      ko: "팀이 모두 떠난 뒤 크로스플랫폼 클라이언트와 Linux/C 서버를 단독으로 맡아 서버 이중화·성능 튜닝을 실제로 경험."
     highlight:
       en: "Sole owner of client + Linux/C server — standby failover + KT Cloud outage recovered"
       ko: "클라이언트·서버 단독 인수 — DB 기반 페일오버 구현·KT Cloud 장애 복구"
@@ -512,11 +568,14 @@ projects[27]:
       en: "Windows desktop converter that periodically reads mail from a dedicated account, classifies messages by subject format or group-mail recipient, and automatically posts the mail body to the related internal bulletin board."
       ko: "전용 계정에 수신된 메일을 주기적으로 읽고, 제목 형식 또는 수신인에 포함된 그룹 메일을 기준으로 분류해 메일 본문을 관련 사내 게시판에 자동 등록하는 Windows 데스크톱 변환 도구."
     role:
-      en: "Sole developer. Built the mail polling and parsing flow with an SMTP library, mapped subject markers like @{board name} and group-mail recipients to board targets, and inserted parsed mail content into the internal board database."
-      ko: "단독 개발. SMTP 라이브러리로 메일 수신·해석 흐름을 만들고, 제목의 @{게시판명} 표시와 수신인에 포함된 그룹 메일을 게시판 대상으로 매핑해 해석된 메일 내용을 사내 게시판 DB에 등록하도록 구성."
+      en: "Sole developer."
+      ko: "단독 개발."
+    work:
+      en: "Built the mail polling/parsing flow with an SMTP library, mapped subject markers like @{board name} and group-mail recipients to board targets, and inserted parsed content into the internal board database."
+      ko: "SMTP 라이브러리로 메일 수신·해석 흐름 구현, 제목의 @{게시판명}·수신 그룹 메일을 게시판 대상으로 매핑, 해석된 내용을 사내 게시판 DB에 등록."
     achievement:
-      en: "Learned the practical structure of SMTP/mail handling while turning group-mail backup needs into an automated board-posting workflow."
-      ko: "그룹 메일 백업 요구를 자동 게시판 등록 흐름으로 구현하며 SMTP와 메일 처리 구조를 실무적으로 이해하게 됨."
+      en: "Learned the practical structure of SMTP/mail handling while turning a group-mail backup need into an automated board-posting workflow."
+      ko: "그룹 메일 백업 요구를 자동 게시판 등록 흐름으로 구현하며 SMTP·메일 처리 구조를 실무적으로 이해."
     highlight:
       en: "Mail-to-board auto-posting via SMTP polling and subject routing"
       ko: "SMTP 폴링과 제목 분류로 메일→사내 게시판 자동 등록 구현"
@@ -532,11 +591,14 @@ projects[27]:
       en: "Backend server that supplies the 'Related Stock Searcher' app with lists of related stocks. To let the app developer manage the data easily, the related-stock lists are driven from comments on a specific GNUBoard forum — editing a comment updates the list."
       ko: "'관련주식검색기' 앱에 관련주 목록을 제공하는 백엔드 서버. 앱 개발자가 데이터를 쉽게 관리할 수 있도록, GNU 보드 특정 게시판의 댓글을 수정하면 목록에 반영되도록 구성."
     role:
-      en: "Backend developer. Built the server in Node.js to support an Android developer's idea inside an in-house app TF. Designated a GNUBoard forum as the data source — post titles are keywords, each comment is a related stock — and on a related-stocks request, queried that board's table and returned the extracted list (plus recommended stocks)."
-      ko: "백엔드 개발 담당. 사내 앱 TF에서 안드로이드 개발자의 아이디어를 돕기 위해 서버를 Node.js로 구현. GNU 보드의 특정 게시판을 데이터 소스로 지정 — 글 제목을 키워드, 각 댓글을 관련주로 등록 — 하고, 관련주 요청 시 해당 게시판 테이블을 검색해 목록을 추출·전송(추천주 포함)."
+      en: "Backend developer, supporting an Android developer's idea in an in-house app TF."
+      ko: "백엔드 개발 담당 — 사내 앱 TF에서 안드로이드 개발자의 아이디어를 지원."
+    work:
+      en: "Built the server in Node.js, designating a GNUBoard forum as the data source (post titles as keywords, comments as related stocks) and querying it to return the extracted list plus recommended stocks."
+      ko: "서버를 Node.js로 구현, GNU 보드 특정 게시판을 데이터 소스로 지정(제목=키워드, 댓글=관련주)하고 요청 시 검색해 목록·추천주 반환."
     achievement:
-      en: "Learned Node.js on this project and turned an existing GNUBoard forum into a zero-admin content store — post titles as keywords, comments as related stocks — so the app developer could manage the lists by simply editing comments, with no separate admin tool to build or maintain."
-      ko: "이 프로젝트에서 Node.js를 익히고, 기존 GNU 보드 게시판을 관리 도구가 필요 없는 데이터 저장소로 전환 — 글 제목을 키워드, 댓글을 관련주로 — 해 앱 개발자가 댓글 수정만으로 목록을 관리할 수 있게 함(별도 관리자 도구 불필요)."
+      en: "Learned Node.js and turned an existing forum into a zero-admin content store, so the app developer could manage the lists by simply editing comments — no separate admin tool to build or maintain."
+      ko: "Node.js를 익히고 기존 게시판을 관리 도구가 필요 없는 데이터 저장소로 전환 — 앱 개발자가 댓글 수정만으로 목록을 관리(별도 관리자 도구 불필요)."
     highlight:
       en: "GNUBoard repurposed as zero-admin stock-data store — Node.js learned here"
       ko: "GNU 보드를 관리 도구 없는 관련주 데이터 저장소로 전환"
@@ -551,11 +613,18 @@ projects[27]:
       en: "iPad presentation app built on PDF documents. It uses each PDF page as a background so you can run a presentation directly from an existing document, with Google Drive and Dropbox integration for loading files."
       ko: "PDF 문서 기반 iPad 프리젠테이션 앱. PDF 각 페이지를 배경으로 사용해 이미 만들어진 문서로 바로 프레젠테이션을 진행하며, Google Drive·Dropbox 연동으로 파일을 불러옴."
     role:
-      en: "Sole developer. The project came as a 'do you know Objective-C?' favor (revenue-share, not paid). The original Objective-C source reused a Duzon ebook codebase that rasterized every PDF page to images — and was riddled with hard-coded values (e.g. literal 1024×768 screen sizes scattered through the code), so I rebuilt it from scratch in Swift as iOS was moving that way. Built the main features over about a month of remote work, and devised a 'Trigger' concept (not in the original spec) that separates the touch target from the element it reveals."
-      ko: "단독 개발. 'Objective-C 할 줄 아냐'로 시작된 지인 아이디어(개발비 없이 수익 배분) 건. 원본 Objective-C 소스는 더존 ebook 코드를 활용해 PDF 전 페이지를 이미지로 변환·압축하는 구조였고 하드코딩(예: 1024×768 화면 크기가 상수도 아닌 숫자로 여러 소스에 박힘)이 심해, iOS 흐름에 맞춰 Swift로 새로 구현. 약 한 달간 재택으로 주요 기능을 만들고, 기존 기획에 없던 'Trigger' 개념 — 터치할 부분과 나타날 부분을 분리 — 을 고안."
+      en: "Sole developer — took it on as a revenue-share favor."
+      ko: "단독 개발 — 개발비 없이 수익 배분 조건으로 맡은 지인 건."
+    work:
+      en[2]:
+        - "Rebuilt the app from scratch in Swift; the original Objective-C (a Duzon ebook codebase that rasterized every PDF page) was riddled with hard-coded values like literal 1024×768 sizes."
+        - "Built the main features over about a month of remote work."
+      ko[2]:
+        - "Swift로 처음부터 재구현 — 원본 Objective-C(더존 ebook 코드, PDF 전 페이지를 이미지로 변환)는 1024×768 같은 값이 곳곳에 하드코딩돼 있었음."
+        - "약 한 달간 재택으로 주요 기능 구현."
     achievement:
-      en: "Rebuilt a hard-coded Objective-C app cleanly in Swift (the original had literal screen sizes scattered throughout), learning the iOS PDF API and Google Drive/Dropbox integration along the way. Designed a new 'Trigger' interaction — decoupling the touch target from the element it reveals — that wasn't in the original spec."
-      ko: "하드코딩투성이(화면 크기를 숫자 그대로 박아둔) Objective-C 앱을 Swift로 깔끔하게 재구현하며 iOS PDF API와 Google Drive·Dropbox 연동을 습득. 기존 기획에 없던 'Trigger' 인터랙션 — 터치 영역과 나타날 요소를 분리 — 을 새로 설계."
+      en: "Designed a new 'Trigger' interaction (not in the original spec) that decouples the touch target from the element it reveals, and learned the iOS PDF API and Google Drive/Dropbox integration along the way."
+      ko: "기존 기획에 없던 'Trigger' 인터랙션 — 터치 영역과 나타날 요소를 분리 — 을 새로 설계하고, iOS PDF API와 Google Drive·Dropbox 연동을 습득."
     highlight:
       en: "Swift rebuild from scratch — invented 'Trigger' interaction not in original spec"
       ko: "Swift로 처음부터 재구현 — 기획에 없던 'Trigger' 인터랙션 고안"
@@ -607,8 +676,11 @@ projects[27]:
       en: "Relay gateway between TMoney and SCMS (KT's USIM system). TMoney's encrypted messages couldn't pass through the existing relay, so it accepts TMoney connections, forwards the encrypted payload to SCMS untouched, and relays the response back."
       ko: "TMoney와 SCMS(KT USIM 시스템) 사이의 중계 게이트웨이. TMoney의 암호화 전문을 기존 중계기로 처리할 수 없어, TMoney 접속을 수락하고 암호화된 페이로드를 그대로 SCMS에 전달한 뒤 응답을 되돌려줌."
     role:
-      en: "Sole developer. Built it on the raw Socket API with no framework, using a fork-per-client process model (unlike the select-based micro-payment gateway)."
-      ko: "단독 개발. 프레임워크 없이 기본 Socket API로 구현했고, (select 기반인 소액결제 게이트웨이와 달리) 클라이언트마다 fork하는 프로세스 모델을 사용."
+      en: "Sole developer."
+      ko: "단독 개발."
+    work:
+      en: "Built it on the raw Socket API with no framework, using a fork-per-client process model (unlike the select-based micro-payment gateway)."
+      ko: "프레임워크 없이 기본 Socket API로 구현 — (select 기반 소액결제 게이트웨이와 달리) 클라이언트마다 fork하는 프로세스 모델 사용."
     achievement:
       en: "First experience coordinating directly with an external company."
       ko: "처음으로 타 업체와 직접 소통한 경험."
