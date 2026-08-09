@@ -111,9 +111,12 @@ projects[12]:
     role:
       en: "Self-directed R&D."
       ko: "자기주도 R&D."
+    work:
+      en: "Rebuilt the [Home] and [Free Lecture] screens in React Native, explored server communication and DRM player integration, and wrote internal training docs."
+      ko: "[홈]·[무료강의] 화면을 React Native로 재구현, 서버 통신·DRM 플레이어 연동을 탐색하고 내부 교육 자료 작성."
     achievement:
-      en: "Independently drove a React Native PoC for a planned Korean lecture app after team-led momentum stalled — rebuilt two production screens, explored DRM integration, and delivered internal training docs that raised team readiness even though the project was ultimately cancelled."
-      ko: "팀 주도가 중단된 상황에서도 React Native PoC를 독자 완성. 실 서비스 화면 2개 재구현·DRM 연동 탐색·교육 자료 배포로 팀 역량에 기여. 프로젝트는 최종 취소."
+      en: "Independently kept a React Native PoC going after team-led momentum stalled, raising team readiness even though the project was ultimately cancelled."
+      ko: "팀 주도가 중단된 뒤에도 React Native PoC를 독자적으로 이어가 팀 역량을 끌어올림 — 프로젝트는 최종 취소."
     highlight:
       en: "Solo RN PoC completed after team stalled — 2 screens, DRM, training docs"
       ko: "팀 중단 후 RN PoC 독자 완성 — 화면 2개·DRM·교육 자료"
@@ -132,9 +135,12 @@ projects[12]:
     role:
       en: "Self-directed R&D."
       ko: "자기주도 R&D."
+    work:
+      en: "Built the full Unity word-collection rocket game and wrote internal training material on the integration."
+      ko: "Unity 단어 로켓 게임 전체 개발, 연동 과정을 내부 교육 자료로 정리."
     achievement:
-      en: "Validated Unity-as-Library integration with an existing iOS app by building a word-collection rocket game in Unity and successfully embedding it in the Siwonschool app — then documented the process as internal training material."
-      ko: "Unity를 기존 iOS 앱에 라이브러리로 내장하는 가능성을 검증. 단어 로켓 게임을 직접 개발해 시원스쿨 앱 내장에 성공하고 교육 자료로 정리·배포."
+      en: "Validated Unity-as-Library integration by successfully embedding the game inside the existing Siwonschool iOS app."
+      ko: "Unity 게임을 기존 시원스쿨 iOS 앱에 성공적으로 내장해 Unity-as-Library 연동 가능성을 검증."
     highlight:
       en: "Unity-as-Library embedded in iOS app — first practical Unity output"
       ko: "Unity 라이브러리를 iOS 앱에 내장 성공 — 팀 첫 Unity 실용화"
@@ -177,9 +183,12 @@ projects[12]:
     role:
       en: "Sole developer — from identifying the pain point to designing and building the solution."
       ko: "단독 개발 — 문제 발굴부터 해결책 설계·구현까지."
+    work:
+      en: "Detected login state via WebView JavaScript injection and delivered personalized push through Firebase topic subscriptions."
+      ko: "WebView JavaScript Injection으로 로그인 상태 감지, Firebase topic 구독으로 개인화 푸시 전달."
     achievement:
-      en: "Solved intranet notification failures from frequent logouts by building an iOS app that uses WebView JavaScript injection for login detection and Firebase topic-based push — zero extra server development required."
-      ko: "인트라넷 잦은 로그아웃으로 인한 알림 누락 문제를 iOS 앱으로 해결. WebView JS injection으로 로그인 감지·자동 이동, Firebase topic 구독으로 추가 서버 개발 없이 개인화 푸시 구현."
+      en: "Solved missed intranet alerts from frequent logouts with zero extra server development."
+      ko: "잦은 로그아웃으로 인한 인트라넷 알림 누락 문제를 추가 서버 개발 없이 해결."
     highlight:
       en: "JS injection + Firebase topic solved intranet notification dropouts"
       ko: "JS injection + Firebase topic으로 인트라넷 알림 누락 문제 해결"

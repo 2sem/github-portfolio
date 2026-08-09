@@ -61,9 +61,12 @@ projects[27]:
     role:
       en: "Sole maintainer and operator for ~7 years."
       ko: "약 7년간 단독 유지보수·운영."
+    work:
+      en: "Ran the N-Step platform transition and a full IDC migration while keeping the service live."
+      ko: "N-Step 플랫폼 전환과 IDC 이전을 서비스 중단 없이 수행."
     achievement:
-      en: "Maintained KT TwoPhone as the sole engineer for ~7 years — through an N-Step platform transition and a full IDC migration — without service downtime. Designed file-based number storage (per-phone-number folders) as a pragmatic alternative to a DBMS, which simplified provisioning and avoided database dependency for the virtual number mapping layer."
-      ko: "약 7년간 단독으로 KT 투폰 운영 — N-Step 플랫폼 전환과 IDC 이전을 서비스 중단 없이 수행. DBMS 대신 전화번호별 폴더 기반 파일 저장 구조를 설계, 가상 번호 매핑 레이어의 DB 의존성을 제거하고 프로비저닝을 단순화."
+      en: "Kept KT TwoPhone running as the sole engineer for ~7 years with no downtime — using a file-based number store (per-phone-number folders) instead of a DBMS to simplify provisioning and drop the database dependency for virtual-number mapping."
+      ko: "약 7년간 단독 운영으로 무중단 유지 — DBMS 대신 전화번호별 폴더 기반 파일 저장 구조를 설계해 프로비저닝을 단순화하고 가상 번호 매핑의 DB 의존성 제거."
     highlight:
       en: "7-year sole engineer — zero downtime through N-Step + IDC migration"
       ko: "7년 단독 운영 — N-Step 전환·IDC 이전 무중단"
@@ -243,9 +246,18 @@ projects[27]:
     role:
       en: "Client lead — extended the Pangyo IBS client to handle a much larger floor-plan and equipment dataset."
       ko: "클라이언트 리드 — 판교 IBS 클라이언트를 대규모 도면·장비 데이터용으로 확장."
+    work:
+      en[3]:
+        - "Built the ObjectManager editor — draw/align/search floor-plan objects, bind them to equipment, upload maps and set display sizing."
+        - "Recreated a commercial-grade look with WPF global styles and themes after the paid UI library fell through."
+        - "Tuned the client on multiple fronts to handle the much larger dataset."
+      ko[3]:
+        - "ObjectManager 편집기 구현 — 도면 개체 작성·정렬·검색, 장비 연결, 도면 업로드·표시 크기 설정."
+        - "유료 UI 라이브러리 도입이 무산되자 WPF Global Style·Theme로 상용 수준 외관 재현."
+        - "급증한 데이터를 감당하기 위해 클라이언트를 다방면으로 튜닝."
     achievement:
-      en: "Turned Pangyo's ad hoc, manual data-entry into a proper ObjectManager editor so part-time staff could load a dataset about three times larger. Recreated a commercial-grade theme with WPF global styles and themes after the paid UI library fell through, and tuned the client on multiple fronts to handle the large-scale data — gaining hands-on large-dataset optimization experience."
-      ko: "판교의 수동·임시 데이터 입력을 전용 ObjectManager 편집기로 전환해 약 3배 규모의 데이터를 아르바이트 인력이 입력할 수 있게 함. 유료 UI 라이브러리 도입이 무산되자 WPF Global Style·Theme를 직접 적용해 상용 수준 외관을 재현하고, 급증한 데이터를 감당하기 위해 클라이언트를 다방면으로 튜닝하며 대용량 데이터 최적화 경험을 확보."
+      en: "Replaced Pangyo's ad hoc manual data entry with an ObjectManager editor, letting part-time staff load a dataset about 3× larger."
+      ko: "판교의 수동·임시 데이터 입력을 ObjectManager 편집기로 대체해 약 3배 규모 데이터를 아르바이트 인력이 입력 가능하게 함."
     highlight:
       en: "ObjectManager editor enabled 3× dataset — WPF theme built without paid lib"
       ko: "ObjectManager로 3배 데이터 입력 가능 — 유료 UI 없이 WPF 테마 직접 구현"
@@ -287,9 +299,16 @@ projects[27]:
     role:
       en: "Sole client developer — from the WPF/TCP demo prototype to the Java SWT re-platform after a Linux/macOS requirement."
       ko: "단독 클라이언트 개발 — WPF/TCP 데모 프로토타입부터 Linux/macOS 요구에 따른 Java SWT 재구현까지."
+    work:
+      en[2]:
+        - "Re-platformed from a WPF/TCP prototype to Java SWT to meet the Linux/macOS requirement."
+        - "Ported the IBS socket layer into Java to talk to the C server, and drove UDT via its JAR through JNA."
+      ko[2]:
+        - "Linux/macOS 요구를 충족하기 위해 WPF/TCP 프로토타입을 Java SWT로 재구현."
+        - "C 서버와 통신하기 위해 IBS Socket 계층을 Java로 이식하고, UDT는 JAR을 JNA로 연동."
     achievement:
-      en: "Learned UDT (UDP-based pseudo-TCP) and JNA, and proved out cross-platform desktop delivery with Java SWT after the WPF prototype couldn't meet the Linux/Mac requirement. Reused the IBS socket layer in Java to interoperate with a C server, and learned UDT's real cost firsthand — throughput was high but so resource-heavy that transfers saturated the office network during tests, forcing a dedicated line."
-      ko: "UDT(UDP 기반 의사 TCP)와 JNA를 익히고, WPF 프로토타입이 Linux/Mac 요구를 충족하지 못하자 Java SWT로 크로스플랫폼 데스크톱 전달을 입증. C 서버와 통신하기 위해 IBS의 Socket 계층을 Java로 재사용. UDT는 속도는 빠르나 리소스 사용이 극심해 테스트 중 사무실 네트워크가 마비될 정도였고 결국 전용 회선을 설치 — 고속 전송의 실제 비용을 체득."
+      en: "Proved out cross-platform desktop delivery with Java SWT, and learned UDT's real cost firsthand — throughput was high but so resource-heavy that transfers saturated the office network in tests, forcing a dedicated line."
+      ko: "Java SWT로 크로스플랫폼 데스크톱 전달을 입증하고, UDT의 실제 비용을 체득 — 속도는 빠르나 리소스 사용이 극심해 테스트 중 사무실 네트워크가 마비될 정도라 결국 전용 회선을 설치."
     highlight:
       en: "KT Genome Cloud cross-platform client — Java SWT after WPF couldn't meet Linux/Mac"
       ko: "WPF 한계 후 Java SWT로 크로스플랫폼 KT 유전자 파일 전송 클라이언트 구현"
@@ -354,9 +373,12 @@ projects[27]:
     role:
       en: "Sole developer, modifying the C++ open-source codebase; dropped when the requesting client lost their bid before a demo."
       ko: "단독 개발 — C++ 오픈소스 코드 분석·수정. 의뢰 업체가 데모 전 수주에 실패해 중단."
+    work:
+      en: "Analyzed and modified the C++ open-source codebase (first hands-on C++ since graduation) and reached out to the upstream maintainer with questions."
+      ko: "C++ 오픈소스 코드를 분석·수정(졸업 후 첫 C++)하고 오픈소스 메인테이너에게 직접 문의."
     achievement:
-      en: "Learned to drive multiple concurrent RDP sessions on one PC to run parallel WebPageTest clients — the mechanism that made simultaneous multi-page testing possible. First hands-on C++ since graduation (reading and modifying a real open-source codebase), and first experience reaching out to an upstream open-source maintainer with questions."
-      ko: "한 PC에서 여러 RDP 세션을 동시에 띄워 WebPageTest 클라이언트를 병렬 실행하는 방식을 익혀 다중 페이지 동시 테스트를 가능하게 함. 졸업 후 처음으로 실제 오픈소스 코드를 읽고 수정하며 C++을 다뤘고, 오픈소스 메인테이너에게 직접 문의해 본 첫 경험."
+      en: "Enabled simultaneous multi-page testing by driving multiple concurrent RDP sessions on a single PC, each running its own WebPageTest client."
+      ko: "한 PC에서 여러 RDP 세션을 동시에 띄워 각 세션이 WebPageTest 클라이언트를 실행하게 함으로써 다중 페이지 동시 테스트를 가능하게 함."
     highlight:
       en: "Multi-page concurrent WebPageTest via parallel RDP sessions"
       ko: "여러 RDP 세션 병렬 실행으로 WebPageTest 다중 동시 테스트 구현"
@@ -373,9 +395,12 @@ projects[27]:
     role:
       en: "SDK developer — analyzed the beacon-scanning agent, then built the developer-facing SDK; handed it off when reassigned."
       ko: "SDK 개발 담당 — 비콘 스캔 Agent 분석 후 개발자용 SDK 구현. 재배치되며 인계."
+    work:
+      en: "Analyzed the beacon-scanning agent source, built the SDK on Java/AIDL, and explored Google Geofence as a lower-power alternative to constant Bluetooth scanning."
+      ko: "비콘 스캔 Agent 소스를 분석하고 SDK를 Java/AIDL로 구현했으며, 상시 Bluetooth 스캔의 전력 문제 대안으로 Google Geofence 검토."
     achievement:
-      en: "Designed the SDK so consuming developers register a simple event handler and need to know neither JNI nor AIDL — the agent connection is wrapped internally. Built it on Java/AIDL, strengthening Android skills, and explored Google Geofence as a lower-power alternative to constant Bluetooth scanning."
-      ko: "외부 개발자가 단순히 이벤트 핸들러만 등록하면 되고 JNI·AIDL을 몰라도 되도록 Agent 연결을 내부에 감춘 SDK를 설계. Java/AIDL 기반으로 구현하며 Android 개발 역량을 강화했고, 상시 Bluetooth 스캔의 전력 문제를 줄일 대안으로 Google Geofence를 검토."
+      en: "Designed the SDK so consuming developers register a simple event handler and need to know neither JNI nor AIDL — the agent connection is wrapped internally."
+      ko: "외부 개발자가 이벤트 핸들러만 등록하면 되고 JNI·AIDL을 몰라도 되도록 Agent 연결을 내부에 감춘 SDK를 설계."
     highlight:
       en: "AIDL-free iBeacon SDK — developers register one handler, internals hidden"
       ko: "AIDL 몰라도 되는 iBeacon SDK 설계 — 이벤트 핸들러 등록만으로 사용"
@@ -393,9 +418,16 @@ projects[27]:
     role:
       en: "Sole developer on a legacy project with no original developers and uncertain source."
       ko: "원 개발자도 없고 소스 최신 여부도 불분명한 레거시 프로젝트의 단독 개발."
+    work:
+      en[2]:
+        - "Reconstructed the build by recovering old external components from a leftover PC and substituting upgraded equivalents."
+        - "Shipped an installer — including a source-less, binary-only server — and deployed it at the hospital."
+      ko[2]:
+        - "남은 PC에서 오래된 외부 컴포넌트를 복구하거나 상위 버전으로 대체해 빌드를 재구성."
+        - "소스 없이 바이너리만 있던 서버를 포함해 인스톨러를 만들어 병원에 설치."
     achievement:
-      en: "Revived a legacy Delphi build whose external components were so old they were no longer findable online — recovering some from a leftover PC and substituting upgraded equivalents — and root-caused a map-rendering failure across client/server/vendor boundaries to the vendor's mis-uploaded data. Shipped an installer (including a source-less, binary-only server) to the hospital, putting school-learned Delphi to real use."
-      ko: "외부 컴포넌트가 너무 오래돼 검색조차 안 되는 레거시 Delphi 빌드를 — 남은 PC에서 일부 복구하고 상위 버전으로 대체해 — 되살리고, 클라이언트·서버·맵 업체에 걸친 맵 렌더링 오류의 근본 원인을 맵 업체의 데이터 오등록으로 규명. 소스 없이 바이너리만 있던 서버를 포함해 인스톨러를 만들어 병원에 설치하며 학교에서 배운 Delphi를 실무에 적용."
+      en: "Root-caused a map-rendering failure spanning client, server, and map vendor to the vendor's mis-uploaded data — reviving an abandoned legacy Delphi project that had no original developers."
+      ko: "클라이언트·서버·맵 업체에 걸친 맵 렌더링 오류의 근본 원인을 맵 업체의 데이터 오등록으로 규명 — 원 개발자도 없던 레거시 Delphi 프로젝트를 되살림."
     highlight:
       en: "Legacy Delphi build revived — map-rendering failure root-caused to vendor mis-upload"
       ko: "레거시 Delphi 빌드 복구 — 맵 렌더링 오류 원인을 맵 업체 오등록으로 규명"
@@ -436,9 +468,12 @@ projects[27]:
     role:
       en: "Sole developer — inherited when the web project was changed to ship as an add-in; halted amid a vendor patent dispute."
       ko: "단독 개발 — 웹 기반이 애드인으로 변경되며 인수. 타 업체 특허 소송으로 진행 중단."
+    work:
+      en: "Integrated Mobilians mobile identity verification in place of handwritten signatures."
+      ko: "서명 대신 모빌리언스 휴대폰 본인 인증 연동."
     achievement:
-      en: "Devised an HTML-template approach to PDF generation: after WPF + free conversion libraries kept corrupting Korean text, switched to a hybrid that binds contract data into HTML elements and renders the PDF with PhantomJS — getting faithful Korean output and a layout matching the input form. Also integrated Mobilians mobile identity verification in place of handwritten signatures."
-      ko: "HTML 템플릿 기반 PDF 생성 방식을 고안: WPF와 무료 변환 라이브러리가 한글을 깨뜨리는 문제를, 계약 데이터를 HTML Element에 연결하고 PhantomJS로 PDF를 렌더링하는 하이브리드 방식으로 해결해 한글 출력과 입력 화면과 유사한 레이아웃을 확보. 서명 대신 모빌리언스 휴대폰 본인 인증도 연동."
+      en: "Devised an HTML-template PDF approach after WPF and free conversion libraries kept corrupting Korean — binding contract data into HTML elements and rendering with PhantomJS for faithful Korean output and an input-matching layout."
+      ko: "WPF와 무료 변환 라이브러리가 한글을 깨뜨리자 HTML 템플릿 기반 PDF 생성 방식을 고안 — 계약 데이터를 HTML Element에 연결하고 PhantomJS로 렌더링해 한글 출력과 입력 화면과 유사한 레이아웃 확보."
     highlight:
       en: "HTML-template PDF approach solved Korean text corruption in WPF"
       ko: "WPF 한글 깨짐을 HTML 템플릿·PhantomJS PDF로 해결"
@@ -543,9 +578,12 @@ projects[27]:
     role:
       en: "Sole developer — revived the discontinued Objective-C app by rewriting in Swift; later modernized (RxSwift, then a SwiftUI rebuild in 2026)."
       ko: "단독 개발 — 판매 중단된 Objective-C 앱을 Swift로 재개발해 부활. 이후 RxSwift·2026년 SwiftUI로 현대화."
+    work:
+      en: "Built an 'auto-set photo on incoming call' feature on the iOS Contacts API; later modernized the app — RxSwift during job prep, then a SwiftUI rebuild in 2026."
+      ko: "iOS 연락처 API로 '전화 수신 시 사진 자동 설정' 기능 구현; 이후 RxSwift 도입·2026년 SwiftUI 재개발로 현대화."
     achievement:
-      en: "Revived a discontinued paid app with new capabilities: built an 'auto-set photo on incoming call' feature on the iOS Contacts API, and applied AdMob for the first time to establish a monetization base. Later modernized it — RxSwift during job prep, then a SwiftUI rebuild in 2026."
-      ko: "판매 중지된 유료 앱을 새 기능으로 부활: iOS 연락처 API로 '전화 수신 시 사진 자동 설정' 기능을 기획·구현하고, Admob을 처음 적용해 앱 수익화 기반을 마련. 이후 구직 준비 중 RxSwift를 도입하고 2026년 SwiftUI로 재개발하며 현대화."
+      en: "Revived a discontinued paid app with new capabilities and applied AdMob for the first time to establish a monetization base."
+      ko: "판매 중단된 유료 앱을 새 기능과 함께 부활시키고, Admob을 처음 적용해 수익화 기반 마련."
     highlight:
       en: "Discontinued paid app revived with auto-photo + AdMob monetization"
       ko: "판매 중지 앱 부활 — 전화 수신 시 자동 사진 설정 + AdMob 수익화"

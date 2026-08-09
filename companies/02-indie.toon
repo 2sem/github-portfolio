@@ -48,9 +48,12 @@ projects[9]:
     role:
       en: "Sole developer of the iOS version."
       ko: "iOS 버전 단독 개발."
+    work:
+      en: "Bundled the Android app's Excel dataset as default data; stored favorites in Core Data; added a random-suggestion feature."
+      ko: "안드로이드 앱의 Excel 데이터를 기본 데이터로 번들; 즐겨찾기는 Core Data 저장; 랜덤 추천 기능 구현."
     achievement:
-      en: "Shipped a solo iOS app by repurposing an Android app's Excel dataset as bundled default data, with Core Data for favorites and a random-suggestion feature."
-      ko: "안드로이드 앱의 Excel 데이터를 기본 데이터로 재활용해 iOS 앱을 단독 출시 — 즐겨찾기는 Core Data로 저장하고 랜덤 추천 기능을 구현."
+      en: "Shipped a solo iOS app with no backend by repurposing an existing Android dataset as bundled data."
+      ko: "기존 안드로이드 데이터를 번들 데이터로 재활용해 백엔드 없이 iOS 앱을 단독 출시."
     highlight:
       en: "Solo iOS launch — repurposed Android Excel dataset as bundled data"
       ko: "Android Excel 데이터 재활용해 iOS 앱 단독 출시"
@@ -105,9 +108,12 @@ projects[9]:
     role:
       en: "Sole developer — design through App Store, including the public-data application process."
       ko: "단독 개발 — 디자인부터 앱스토어 출시, 공공데이터 신청 절차까지."
+    work:
+      en: "Built the SwiftUI (MVVM) app on CoreLocation/MapKit; integrated KakaoTalk sharing and Google AdMob."
+      ko: "CoreLocation/MapKit 기반 SwiftUI(MVVM) 앱 구현; 카카오톡 공유·Google AdMob 연동."
     achievement:
-      en: "Gained hands-on experience applying for and integrating Korean government open data (TourAPI 3.0), shipping a solo SwiftUI app that turns it into a category-based, multi-language nearby-tourism guide with map directions and KakaoTalk sharing."
-      ko: "공공데이터(TourAPI 3.0) 신청·연동을 직접 경험하고, 이를 카테고리별·다국어 주변 관광 가이드(지도 길찾기·카카오톡 공유 포함)로 만든 SwiftUI 앱을 단독 출시."
+      en: "Went through the Korean government open-data (TourAPI 3.0) application and integration process firsthand, shipping a solo SwiftUI app that turns it into a category-based, 10-language nearby-tourism guide."
+      ko: "공공데이터(TourAPI 3.0) 신청·연동을 직접 경험하고, 이를 카테고리별·다국어 주변 관광 가이드로 만든 SwiftUI 앱을 단독 출시."
     highlight:
       en: "Solo SwiftUI app — Korean government TourAPI, 10-language tourism guide"
       ko: "공공 TourAPI 기반 10개 국어 SwiftUI 관광 앱 단독 출시"
@@ -136,9 +142,12 @@ projects[9]:
     role:
       en: "Sole developer of the iOS version (also contributed to the Android version's planning)."
       ko: "iOS 버전 단독 개발(안드로이드 버전 기획에도 참여)."
+    work:
+      en: "Built rule-based recipient generation over the iOS Contacts framework with Core Data — auto-generating condition lists and extracting mobile-only numbers."
+      ko: "iOS Contacts 프레임워크와 Core Data로 규칙 기반 수신자 생성 구현 — 조건 목록 자동 생성, 모바일 번호만 추출."
     achievement:
-      en: "Turned manual group-texting into a rule-driven flow: users compose reusable recipient rules (by company / department / position) that auto-generate condition lists and pull mobile-only numbers from Contacts, then toggle which rules apply per send."
-      ko: "수동 단체 문자를 규칙 기반 흐름으로 전환: 회사·부서·직위 기준의 재사용 가능한 수신자 규칙을 만들어 조건 목록을 자동 생성하고 연락처에서 모바일 번호만 추출하며, 발송마다 적용할 규칙을 켜고 끌 수 있게 함."
+      en: "Turned manual, one-by-one group texting into a reusable rule system: define recipient rules once (by company/department/position) and toggle which apply per send."
+      ko: "수동 단체 문자를 재사용 가능한 규칙 시스템으로 전환 — 회사·부서·직위 기준 수신자 규칙을 한 번 정의하고 발송마다 적용할 규칙을 켜고 끔."
     highlight:
       en: "Rule-based group SMS — filter contacts by company/dept/position"
       ko: "회사·부서·직위 기반 규칙으로 단체 문자 자동화"
