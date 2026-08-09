@@ -21,11 +21,18 @@ projects[12]:
       en: "Representative Siwonschool iOS app for taking language courses across the service. It supports video/audio playback, minimized and full-screen playback, Picture in Picture, landscape/iPad layouts, background downloads, offline playback, section repeat, and gesture controls for volume and brightness."
       ko: "시원스쿨의 모든 언어 강의를 수강할 수 있는 대표 iOS 앱. 영상/음원 재생, 최소화·전체화면·PIP·Landscape, 백그라운드 다운로드와 오프라인 재생, iPad/Landscape 대응, 구간 반복, 제스처 기반 볼륨·밝기 조정을 지원."
     role:
-      en: "iOS developer from zero-base development through three years of maintenance. Led planning review and server-progress coordination during early project stagnation, designed reusable minimized playback across screens, built iPad playback layouts, PiP/background playback controls, background download task queues, XCUITest automation, VoiceOver improvements, and RxSwift + MVVM structure."
-      ko: "Zero-Base iOS 개발부터 3년간 유지보수까지 담당. 초기 프로젝트 정체 상황에서 기획 검토와 서버 진행 관리를 주도하고, 화면 전반에 재사용 가능한 최소화/복원 구조, iPad 전용 재생 화면, PIP/백그라운드 재생 제어, 백그라운드 다운로드 Task Queue, XCUITest 자동화, VoiceOver 개선, RxSwift + MVVM 구조를 구현."
+      en: "iOS developer — zero-base build through three years of maintenance."
+      ko: "iOS 개발 — Zero-Base 개발부터 3년간 유지보수."
+    work:
+      en[2]:
+        - "Built reusable minimized playback across screens, iPad playback layouts, PiP/background controls, and background-download task queues."
+        - "Added XCUITest automation, VoiceOver improvements, and an RxSwift + MVVM structure."
+      ko[2]:
+        - "화면 전반의 재사용 최소화/복원 재생, iPad 재생 화면, PIP/백그라운드 제어, 백그라운드 다운로드 Task Queue 구현."
+        - "XCUITest 자동화, VoiceOver 개선, RxSwift + MVVM 구조 적용."
     achievement:
-      en: "Built and maintained the representative lecture app from scratch, recovered momentum in a stalled early project by leading planning/server coordination, and proposed/implemented review prompts that helped the app reach and keep a 4.7 rating after offboarding."
-      ko: "대표 강의 앱을 처음부터 개발하고 3년간 유지보수. 초기 정체 상황에서 기획/서버 진행을 주도해 프로젝트 흐름을 회복했으며, 사용자 리뷰 요청 기능을 제안·구현해 평점 4.7 달성과 퇴사 후 유지에 기여."
+      en: "Recovered momentum in a stalled early project by leading planning review and server coordination, and proposed/implemented review prompts that helped the app reach and keep a 4.7 rating after I offboarded."
+      ko: "초기 정체 상황에서 기획 검토·서버 진행 관리를 주도해 흐름을 회복했고, 리뷰 요청 기능을 제안·구현해 평점 4.7 달성과 퇴사 후 유지에 기여."
     highlight:
       en: "App Store rating reached 4.7"
       ko: "앱스토어 평점 4.7 달성"
@@ -84,11 +91,14 @@ projects[12]:
       en: "iOS version of the Big TOEIC Voca vocabulary app — previously Android-only. Learners browse TOEIC word books, unlock content via in-app purchase, study with card-style UI, bookmark words, group vocabulary, and play MP3 audio with background playback and Remote Control support."
       ko: "Android로만 존재하던 빅토익 보카 iOS 버전. 책 선택·인앱 결제·단어카드·북마크·단어장 그룹·MP3 다운로드·백그라운드 재생·Remote Control을 지원."
     role:
-      en: "Sole iOS developer. Received a project where the spec, design, and existing Android app were all inconsistent, independently determined the development direction, proposed and implemented an in-app purchase model, and built all features from scratch including background audio playback and Card UI."
-      ko: "iOS 단독 개발. 기획서·디자인·기존 앱이 모두 불일치하는 상태에서 개발 방향을 직접 정립. 인앱 결제 모델 제안·구축, 백그라운드 음원 재생·Card UI 포함 전 기능 개발."
+      en: "Sole iOS developer."
+      ko: "iOS 단독 개발."
+    work:
+      en: "Independently set the development direction for an inconsistent spec/design/Android app, proposed and implemented an in-app-purchase model, and built all features from scratch including background audio and a card UI."
+      ko: "기획·디자인·기존 앱이 불일치한 상황에서 개발 방향을 직접 정립, 인앱 결제 모델 제안·구현, 백그라운드 음원·Card UI 포함 전 기능 개발."
     achievement:
-      en: "Delivered the first iOS version of an Android-only TOEIC vocabulary app, independently resolving spec/design inconsistencies to drive it to release, and transformed it from a book appendix into a standalone revenue service via in-app purchase."
-      ko: "Android 전용 TOEIC 단어장 부록 앱을 iOS로 독자 개발. 기획·디자인·앱 불일치 상황을 직접 해결해 출시로 이끌고, 인앱 결제 모델 도입으로 독립적인 수익 서비스로 전환."
+      en: "Delivered the first iOS version of an Android-only TOEIC vocabulary app and transformed it from a book appendix into a standalone revenue service via in-app purchase."
+      ko: "Android 전용 TOEIC 단어장 부록 앱을 iOS로 첫 출시하고, 인앱 결제로 독립적인 수익 서비스로 전환."
     highlight:
       en: "First iOS version — drove from spec conflict to App Store with in-app purchase"
       ko: "Android 전용 앱을 iOS로 독자 개발 — 인앱 결제 모델 도입으로 출시"
@@ -157,11 +167,14 @@ projects[12]:
       en: "B2B variant of the Siwonschool lecture app for corporate users. Shares the full codebase via a common Xcode Workspace, with B2B-specific login and customer service contacts branched using Swift preprocessor macros and a separate Storyboard — minimizing duplication while keeping both apps maintainable."
       ko: "시원스쿨 강의 앱의 기업 전용 B2B 버전. 동일 Xcode Workspace 내 공통 소스를 공유하고, Swift preprocessor와 별도 Storyboard로 기업 전용 로그인·연락처만 분기 처리."
     role:
-      en: "Sole iOS developer. Designed the multi-target workspace structure, configured the multi-project Podfile, and implemented preprocessor-based branching for all B2B-specific screens."
-      ko: "iOS 단독 개발. 멀티 타겟 Workspace 구조 설계, 다중 프로젝트 Podfile 구성, preprocessor 분기 처리 구현."
+      en: "Sole iOS developer."
+      ko: "iOS 단독 개발."
+    work:
+      en: "Designed the multi-target workspace structure, configured the multi-project Podfile, and implemented preprocessor-based branching for all B2B-specific screens."
+      ko: "멀티 타겟 Workspace 구조 설계, 다중 프로젝트 Podfile 구성, 기업 전용 화면 preprocessor 분기 구현."
     achievement:
-      en: "Delivered a B2B white-label of the Siwonschool app by structuring shared code across a common Xcode Workspace, using Swift preprocessor branching and separate Storyboards to swap only B2B-specific login, server, and contact screens — zero duplication."
-      ko: "시원스쿨 앱을 공통 Xcode Workspace 구조로 공유하고 Swift preprocessor + 별도 Storyboard로 기업 전용 로그인·서버·연락처만 교체하는 B2B 버전 출시. 중복 개발 없음."
+      en: "Delivered a B2B white-label of the Siwonschool app with zero code duplication — a shared Xcode Workspace swapping only B2B-specific login, server, and contact screens."
+      ko: "공통 Xcode Workspace로 코드 중복 없이 기업 전용 로그인·서버·연락처만 교체하는 B2B 화이트라벨 앱을 출시."
     highlight:
       en: "B2B white-label via shared Workspace — zero code duplication"
       ko: "공통 Workspace로 B2B 버전 출시 — 코드 중복 없음"
@@ -273,11 +286,14 @@ projects[12]:
       en: "Internal side-project Unity card-flip game exploring gamified English-learning content, using official 영어대모험 textbook characters."
       ko: "게임 접목 영어 학습 콘텐츠 가능성을 검증한 내부 사이드 프로젝트. 시원스쿨 '영어대모험' 교재 캐릭터를 활용한 Unity 카드 플립 게임."
     role:
-      en: "Solo developer — built and demoed the full Unity prototype in two months as part of a team-wide game experiment."
-      ko: "단독 개발 — 팀 전체 게임 실험의 일환으로 2개월 안에 Unity 프로토타입 완성·시연."
+      en: "Solo developer — part of a team-wide game experiment."
+      ko: "단독 개발 — 팀 전체 게임 실험의 일환."
+    work:
+      en: "Built the full Unity card-flip prototype in two months and sourced/edited official 영어대모험 brand assets from the business team solo, without a designer."
+      ko: "2개월 만에 Unity 카드 플립 프로토타입 전체 개발, 디자이너 없이 사업부 '영어대모험' 교재 캐릭터·이미지를 직접 편집·적용."
     achievement:
-      en: "Turned team-wide Unity study into a shipped prototype in two months — the first practical output of the Unity investment. Sourced and edited official 영어대모험 brand assets from the business team solo, without a designer. Demoed to the business team and got a positive reception for the gamified learning concept."
-      ko: "팀이 학습했던 Unity를 2개월 만에 TestFlight 배포 가능한 프로토타입으로 결실. 디자이너 없이 사업부 교재 캐릭터·표지 이미지를 직접 편집·적용. 게임 접목 학습 콘텐츠 상품 가능성을 사업부에 시연하고 긍정적 반응 확인."
+      en: "Turned the team's Unity study into its first practical output and demoed it to the business team, getting a positive reception for the gamified-learning concept."
+      ko: "팀이 학습하던 Unity를 첫 실질 결과물로 만들어 사업부에 시연하고 게임 접목 학습 콘텐츠에 긍정적 반응을 확인."
     highlight:
       en: "Unity prototype shipped solo in 2 months"
       ko: "2개월 만에 Unity 프로토타입 단독 출시"
@@ -299,11 +315,14 @@ projects[12]:
       en: "Native iOS intranet app built with a designer, fronting the company's WebView-based intranet."
       ko: "디자이너와 협업한 사내 인트라넷 iOS 앱 — WebView 기반 사내 인트라넷을 네이티브로 감싼 앱."
     role:
-      en: "iOS developer — built the WebView login layer and native home screen with a designer."
-      ko: "iOS 개발 담당 — WebView 로그인 레이어 및 디자이너와 협업한 네이티브 홈 화면 구현."
+      en: "iOS developer — built with a designer."
+      ko: "iOS 개발 담당 — 디자이너와 협업."
+    work:
+      en: "Built the native home screen with a designer."
+      ko: "디자이너와 협업해 네이티브 홈 화면 구현."
     achievement:
-      en: "Implemented JavaScript Injection to bypass the intranet's SMS authentication gate — the site requires SMS auth on any non-registered device, so JS was injected into the WebView to handle the login flow without triggering the SMS step. Collaborated with a designer to build the native home screen."
-      ko: "등록된 기기가 아니면 문자인증을 요구하는 인트라넷 웹페이지에 JavaScript Injection을 적용해 SMS 단계 없이 앱에서 로그인 처리 구현. 디자이너와 협업해 네이티브 홈 화면 완성."
+      en: "Bypassed the intranet's SMS-authentication gate — required on any unregistered device — with WebView JavaScript injection, handling login without triggering the SMS step."
+      ko: "미등록 기기마다 문자인증을 요구하는 인트라넷을 WebView JavaScript Injection으로 우회 — SMS 단계 없이 앱에서 로그인 처리."
     highlight:
       en: "JS injection bypassed SMS auth for intranet login in app"
       ko: "JavaScript Injection으로 인트라넷 SMS 인증 우회"
@@ -322,11 +341,14 @@ projects[12]:
       en: "Global lecture platform for teaching Korean to non-native speakers, targeting mobile and web from one Expo (React Native) codebase."
       ko: "외국인 대상 한국어 글로벌 강의 플랫폼 — Expo(React Native)로 모바일·웹을 단일 코드베이스로 대응."
     role:
-      en: "Solo developer — set up the Expo environment and built login/signup screens."
-      ko: "단독 개발 — Expo 개발환경 구축 및 로그인·회원가입 화면 구현."
+      en: "Solo developer."
+      ko: "단독 개발."
+    work:
+      en: "Set up the team's Expo development environment and implemented the login/signup UI from the design spec before the project was cancelled."
+      ko: "팀 Expo 개발환경을 구축하고 기획서 기반 로그인·회원가입 UI를 구현(이후 프로젝트 중단)."
     achievement:
-      en: "Chose Expo over bare React Native to satisfy a possible web requirement — one codebase targeting both iOS/Android and mobile web. Set up the team's development environment and implemented login/signup UI from the design spec before the project was cancelled."
-      ko: "모바일 웹 대응 가능성에 대비해 bare RN 대신 Expo 선택 — iOS/Android + 웹을 단일 코드베이스로 지원. 개발환경 구성 및 기획서 기반 로그인·회원가입 UI 구현 후 프로젝트 중단."
+      en: "Chose Expo over bare React Native to satisfy a possible web requirement — one codebase targeting iOS, Android, and mobile web."
+      ko: "모바일 웹 대응 가능성에 대비해 bare RN 대신 Expo를 선택 — iOS·Android·웹을 단일 코드베이스로 지원."
     highlight:
       en: "Expo chosen for iOS + web single codebase — env set up before cancellation"
       ko: "Expo로 iOS·웹 단일 코드베이스 구성 — 취소 전 환경 구축·UI 구현"
