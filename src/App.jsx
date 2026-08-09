@@ -109,13 +109,27 @@ export default function App() {
     }).sort(byRecency)
   }, [search, activeChips, lang, tr])
 
+  // Sum of actual employment, excluding non-working gaps. Only companies with a
+  // closed start–end range count as a job (skips "Side Projects 2019 —" and
+  // "Freelance 2017 — now"); overlapping ranges are merged so shared time isn't
+  // double-counted, and the period since the last job isn't counted at all.
   const experienceYears = useMemo(() => {
-    const earliest = Math.min(
-      ...DATA.companies
-        .map(co => parseInt(co.when))
-        .filter(Boolean)
-    )
-    return new Date().getFullYear() - earliest
+    const toDecimal = (y, m) => Number(y) + (m ? (Number(m) - 1) / 12 : 0)
+    const intervals = DATA.companies
+      .map(co => {
+        const d = [...String(co.when).matchAll(/(\d{4})(?:\.(\d{2}))?/g)]
+        return d.length >= 2 ? [toDecimal(d[0][1], d[0][2]), toDecimal(d[1][1], d[1][2])] : null
+      })
+      .filter(Boolean)
+      .sort((a, b) => a[0] - b[0])
+    if (!intervals.length) return 0
+    const merged = [intervals[0].slice()]
+    for (const [s, e] of intervals.slice(1)) {
+      const last = merged[merged.length - 1]
+      if (s <= last[1]) last[1] = Math.max(last[1], e)
+      else merged.push([s, e])
+    }
+    return Math.floor(merged.reduce((sum, [s, e]) => sum + (e - s), 0))
   }, [])
 
   const projectCount = useMemo(() =>

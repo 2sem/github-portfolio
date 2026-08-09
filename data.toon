@@ -21,7 +21,7 @@ contactMsg:
 
 stats[4]:
   - num: 6
-    em: y
+    em: +
     cap:
       en: experience
       ko: 경력
