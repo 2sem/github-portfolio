@@ -50,11 +50,11 @@ projects[12]:
     meta: "2018.06 – 2021.05 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
-      en: "iOS app for situation-based English speaking practice. Learners watch native-speaker prompts, record their own speech, receive analysis/evaluation, and replay results; maintenance covered SNS login, recording/playback, Firebase integration, Safe Area adaptation, and production stabilization."
-      ko: "상황별 원어민 영어를 따라 말하고 녹음·분석·평가받는 iOS 학습 앱. SNS 로그인, 녹음·분석·재생, Firebase 연동, SafeArea 대응과 운영 안정화를 맡음."
+      en: "iOS app for situation-based English speaking practice — watch a native-speaker prompt, record your speech, get analysis and evaluation, and replay results."
+      ko: "상황별 영어 말하기 연습 iOS 앱 — 원어민 예문을 보고 따라 녹음, 분석·평가 후 결과 재생."
     role:
-      en: "iOS developer. Took over the app immediately after joining, fixed bugs and server-error cases without a dedicated planner, improved usability based on comments/feedback, handled Safe Area support, and made list UI changes near offboarding."
-      ko: "iOS 개발 담당. 입사 직후 프로젝트를 인수해 별도 기획자나 명확한 요구사항이 부족한 상태에서 버그 수정, 서버 오류 대응, 댓글/피드백 기반 편의성 개선, SafeArea 대응, 퇴사 직전 리스트 UI 수정까지 처리."
+      en: "iOS developer — took the app over immediately after joining, without a dedicated planner."
+      ko: "iOS 개발 담당 — 입사 직후 별도 기획자 없이 앱 인수."
     work:
       en: "Reduced production friction through bug fixes, server-error handling, Safe Area adaptation, and user-feedback-driven UX improvements."
       ko: "버그 수정, 서버 오류 대응, SafeArea 대응, 사용자 피드백 기반 편의성 개선으로 운영 마찰 감소."
@@ -109,8 +109,8 @@ projects[12]:
       en: "Proof-of-concept / internal R&D to evaluate React Native for an upcoming Korean-language lecture app."
       ko: "한국어 강의 앱 신규 개발을 앞두고 React Native 기술을 검증한 사내 PoC·R&D 프로젝트."
     role:
-      en: "Self-directed R&D. Independently continued learning and prototyping after team momentum stalled, rebuilt existing screens to validate feasibility, and authored internal training docs."
-      ko: "자기주도 R&D. 팀 진행이 중단된 이후에도 독자적으로 학습·프로토타이핑을 지속. 기존 화면 재구현으로 가능성을 검증하고 내부 교육 자료 작성."
+      en: "Self-directed R&D."
+      ko: "자기주도 R&D."
     achievement:
       en: "Independently drove a React Native PoC for a planned Korean lecture app after team-led momentum stalled — rebuilt two production screens, explored DRM integration, and delivered internal training docs that raised team readiness even though the project was ultimately cancelled."
       ko: "팀 주도가 중단된 상황에서도 React Native PoC를 독자 완성. 실 서비스 화면 2개 재구현·DRM 연동 탐색·교육 자료 배포로 팀 역량에 기여. 프로젝트는 최종 취소."
@@ -127,11 +127,11 @@ projects[12]:
     meta: "2019.07 – 2019.09 · Mobile · Unity"
     tags[2]: platform:ios,lang:swift
     desc:
-      en: "Unity-based word rocket game and iOS integration PoC for Siwonschool. A spaceship auto-moves through space collecting alphabet letters in order to form words fetched from the server. Researched and successfully embedded Unity as a library inside the existing Siwonschool iOS app."
-      ko: "시원스쿨을 위한 Unity 기반 단어 로켓 게임 및 iOS 연동 PoC. 우주선이 자동 이동하며 서버에서 가져온 단어의 알파벳을 순서대로 수집. Unity를 기존 iOS 앱에 라이브러리로 내장하는 데 성공."
+      en: "Unity-based word rocket game and iOS-integration PoC for Siwonschool — a spaceship auto-flies through space collecting alphabet letters in order to form server-fetched words."
+      ko: "시원스쿨을 위한 Unity 단어 로켓 게임·iOS 연동 PoC — 우주선이 자동 이동하며 서버에서 받은 단어의 알파벳을 순서대로 수집."
     role:
-      en: "Self-directed R&D. Built the full Unity game, researched Unity-as-Library integration with iOS, successfully embedded it in the Siwonschool app, and produced internal training docs."
-      ko: "자기주도 R&D. Unity 게임 개발, iOS 라이브러리 내장 연구·성공, 교육 자료 작성."
+      en: "Self-directed R&D."
+      ko: "자기주도 R&D."
     achievement:
       en: "Validated Unity-as-Library integration with an existing iOS app by building a word-collection rocket game in Unity and successfully embedding it in the Siwonschool app — then documented the process as internal training material."
       ko: "Unity를 기존 iOS 앱에 라이브러리로 내장하는 가능성을 검증. 단어 로켓 게임을 직접 개발해 시원스쿨 앱 내장에 성공하고 교육 자료로 정리·배포."
@@ -172,11 +172,11 @@ projects[12]:
     meta: "2019.05 – 2019.06 · Mobile · Swift"
     tags[2]: platform:ios,lang:swift
     desc:
-      en: "Internal iOS app for Siwonschool intranet notifications. Solved the problem of missing important alerts due to frequent intranet logouts — detects login state via WebView JavaScript injection and delivers personalized push notifications through Firebase topic subscriptions without additional server development."
-      ko: "시원스쿨 인트라넷 알림을 위한 사내 iOS 앱. 잦은 로그아웃으로 알림을 놓치는 문제를 해결. WebView JavaScript injection으로 로그인 감지·수신함 자동 이동, Firebase topic 구독으로 별도 토큰 저장 없이 개인화 푸시 전달."
+      en: "Internal iOS app for Siwonschool intranet notifications — delivers personalized push so staff stop missing alerts after frequent intranet logouts."
+      ko: "시원스쿨 인트라넷 알림 iOS 앱 — 잦은 인트라넷 로그아웃으로 놓치던 중요 알림을 개인화 푸시로 전달."
     role:
-      en: "Sole developer. Identified the pain point, proposed the solution architecture (JS injection + Firebase topic), and built the full app."
-      ko: "단독 개발. 문제를 직접 발굴하고 해결 방식(JS injection + Firebase topic)을 제안·설계·구현."
+      en: "Sole developer — from identifying the pain point to designing and building the solution."
+      ko: "단독 개발 — 문제 발굴부터 해결책 설계·구현까지."
     achievement:
       en: "Solved intranet notification failures from frequent logouts by building an iOS app that uses WebView JavaScript injection for login detection and Firebase topic-based push — zero extra server development required."
       ko: "인트라넷 잦은 로그아웃으로 인한 알림 누락 문제를 iOS 앱으로 해결. WebView JS injection으로 로그인 감지·자동 이동, Firebase topic 구독으로 추가 서버 개발 없이 개인화 푸시 구현."

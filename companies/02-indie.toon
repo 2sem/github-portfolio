@@ -46,8 +46,8 @@ projects[9]:
       en: "A collection app of Korean drinking toasts (건배사) for year-end/new-year gatherings and company dinners. Browse by category, favorite the ones you like, and get a random suggestion."
       ko: "연말·연초 모임이나 회식 등 각종 술자리에서 쓰는 건배사 모음 앱. 카테고리별로 둘러보고, 즐겨찾기하고, 랜덤 추천을 받을 수 있음."
     role:
-      en: "Sole developer. Built the iOS version from an Excel file provided by an Android developer I knew — bundling it as default data and storing favorites in Core Data."
-      ko: "단독 개발. 아는 안드로이드 개발자가 만든 앱의 Excel 파일을 받아 iOS 버전으로 구현 — Excel을 기본 데이터로 번들하고 즐겨찾기는 Core Data에 저장."
+      en: "Sole developer of the iOS version."
+      ko: "iOS 버전 단독 개발."
     achievement:
       en: "Shipped a solo iOS app by repurposing an Android app's Excel dataset as bundled default data, with Core Data for favorites and a random-suggestion feature."
       ko: "안드로이드 앱의 Excel 데이터를 기본 데이터로 재활용해 iOS 앱을 단독 출시 — 즐겨찾기는 Core Data로 저장하고 랜덤 추천 기능을 구현."
@@ -103,8 +103,8 @@ projects[9]:
       en: "Location-based tourism guide built on Korea's public TourAPI 3.0. From a chosen location and radius it surfaces nearby attractions, restaurants, cafes and lodging by category, with details, map directions, and tourism info translated into 10 languages; KakaoTalk sharing built in."
       ko: "한국관광공사 공공데이터(TourAPI 3.0) 기반 위치 관광 가이드. 설정한 위치와 반경 내의 관광지·맛집·카페·숙소를 카테고리별로 보여주고, 지도에서 상세 정보와 길찾기를 제공하며 10개 국어로 번역된 관광 정보를 제공. 카카오톡 공유 지원."
     role:
-      en: "Sole developer — design to App Store. Built the SwiftUI app (MVVM) on CoreLocation/MapKit and the public TourAPI 3.0, integrated KakaoTalk sharing and Google AdMob, and went through the public-data application/integration process firsthand."
-      ko: "단독 개발 — 디자인부터 앱스토어 출시까지. CoreLocation/MapKit과 공공 TourAPI 3.0 위에 SwiftUI(MVVM) 앱을 구현하고, 카카오톡 공유와 Google AdMob을 연동했으며, 공공데이터 신청·연동 절차를 직접 수행."
+      en: "Sole developer — design through App Store, including the public-data application process."
+      ko: "단독 개발 — 디자인부터 앱스토어 출시, 공공데이터 신청 절차까지."
     achievement:
       en: "Gained hands-on experience applying for and integrating Korean government open data (TourAPI 3.0), shipping a solo SwiftUI app that turns it into a category-based, multi-language nearby-tourism guide with map directions and KakaoTalk sharing."
       ko: "공공데이터(TourAPI 3.0) 신청·연동을 직접 경험하고, 이를 카테고리별·다국어 주변 관광 가이드(지도 길찾기·카카오톡 공유 포함)로 만든 SwiftUI 앱을 단독 출시."
@@ -134,8 +134,8 @@ projects[9]:
       en: "Group-SMS app that filters contacts by company / department / position to send bulk messages. You define recipient-generation rules, enable just the ones you want, auto-generate condition lists, and extract only mobile numbers from contacts."
       ko: "연락처를 회사·부서·직위로 필터링해 단체 문자를 보내는 앱. 수신자 생성 규칙을 정의하고 원하는 규칙만 활성화하며, 조건 목록을 자동 생성하고 연락처에서 모바일 번호만 추출."
     role:
-      en: "Sole developer of the iOS version (also contributed to the idea on the Android side). Built rule-based recipient generation over the iOS Contacts framework with Core Data, auto-generating condition lists and extracting mobile-only numbers for sending."
-      ko: "iOS 버전 단독 개발(안드로이드 버전 기획에도 참여). iOS Contacts 프레임워크와 Core Data로 규칙 기반 수신자 생성을 구현하고, 조건 목록 자동 생성과 모바일 번호만 추출하는 발송 흐름을 구성."
+      en: "Sole developer of the iOS version (also contributed to the Android version's planning)."
+      ko: "iOS 버전 단독 개발(안드로이드 버전 기획에도 참여)."
     achievement:
       en: "Turned manual group-texting into a rule-driven flow: users compose reusable recipient rules (by company / department / position) that auto-generate condition lists and pull mobile-only numbers from Contacts, then toggle which rules apply per send."
       ko: "수동 단체 문자를 규칙 기반 흐름으로 전환: 회사·부서·직위 기준의 재사용 가능한 수신자 규칙을 만들어 조건 목록을 자동 생성하고 연락처에서 모바일 번호만 추출하며, 발송마다 적용할 규칙을 켜고 끌 수 있게 함."
@@ -163,8 +163,8 @@ projects[9]:
       en: "Korean ↔ foreign-language translator that calls Naver Papago. Pick source and target languages, flip the result screen to show the other person face-to-face, and swap source/target with one tap."
       ko: "네이버 파파고를 호출해 번역하는 한국어 ↔ 외국어 번역기. 원문/번역 언어를 선택하고, 번역 결과 화면을 뒤집어 마주 본 상대에게 보여주며, 원문/번역 언어를 한 번에 맞바꿀 수 있음."
     role:
-      en: "Sole developer of the iOS version (contributed ideas like banner rotation on the Android side). Integrated the Naver Papago API through a CocoaPods wrapper and used Firebase Remote Config to drive theming."
-      ko: "iOS 버전 단독 개발(안드로이드 버전엔 배너 회전 등 아이디어로 참여). NaverPapago CocoaPods로 파파고 API를 연동하고, Firebase Remote Config로 테마를 제어."
+      en: "Sole developer of the iOS version (contributed ideas to the Android side)."
+      ko: "iOS 버전 단독 개발(안드로이드 버전엔 아이디어로 참여)."
     work:
       en: "Added one-tap source/target swap and drove the app's theme remotely via Firebase Remote Config."
       ko: "원문/번역 한 번에 맞바꾸기를 추가하고, Firebase Remote Config로 앱 테마를 원격 제어."
@@ -254,8 +254,8 @@ projects[9]:
       en: "Study app that summarizes the Korean licensed-real-estate-agent exam by subject for learning on the go. Favorites, zoom, search, auto-generated quizzes, study-time reminders, and last-read position memory."
       ko: "공인중개사 시험 내용을 과목별로 요약해 이동 중에도 학습할 수 있는 앱. 즐겨찾기·확대/축소·검색, 자동 생성 퀴즈, 공부 시간 알림, 최근 학습 위치 기억을 제공."
     role:
-      en: "Sole developer. Took text data (from an Android app built by someone who'd studied for the exam) into an Excel workbook — treating each sheet as a table and splitting/merging cells that overflowed — and added an auto-generated quiz with a countdown animation plus local-notification study reminders."
-      ko: "단독 개발. (시험을 준비했던 분이 만든 안드로이드 앱의) 텍스트 데이터를 받아 Excel로 제작 — 각 시트를 Table로 취급하고 셀 크기를 넘는 데이터는 셀을 분리·병합 — 하고, 카운트다운 애니메이션이 있는 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
+      en: "Sole developer — brought an existing text dataset into a per-sheet Excel structure."
+      ko: "단독 개발 — 기존 텍스트 데이터를 시트별 Excel 구조로 재구성."
     work:
       en: "Modeled each spreadsheet sheet as a table, and added auto-generated quizzes and local-notification study reminders."
       ko: "각 시트를 Table로 모델링하고, 자동 생성 퀴즈와 Local Notification 학습 알림을 구현."
