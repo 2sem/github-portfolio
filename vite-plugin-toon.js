@@ -10,13 +10,20 @@ function normalizeProject(p) {
   return { ...p, tech: arr(p.tech), links: arr(p.links), tags: arr(p.tags), images: arr(p.images), diagrams: arr(p.diagrams) }
 }
 
-function loadCompanies(data, companiesDir) {
-  if (existsSync(companiesDir)) {
-    return readdirSync(companiesDir)
-      .filter(f => f.endsWith('.toon'))
-      .sort()
-      .map(f => decode(readFileSync(join(companiesDir, f), 'utf-8')))
-  }
+function loadDir(dir, extra) {
+  if (!existsSync(dir)) return []
+  return readdirSync(dir)
+    .filter(f => f.endsWith('.toon'))
+    .sort()
+    .map(f => ({ ...decode(readFileSync(join(dir, f), 'utf-8')), ...extra }))
+}
+
+// Employers from companies/, personal work from sides/ (flagged so the UI can
+// always park them below the company list regardless of project dates).
+function loadCompanies(data, baseDir) {
+  const companies = loadDir(join(baseDir, 'companies'), {})
+  const sides = loadDir(join(baseDir, 'sides'), { side: true })
+  if (companies.length || sides.length) return [...companies, ...sides]
   return arr(data.companies)
 }
 
@@ -39,8 +46,7 @@ export function toonPlugin() {
     load(id) {
       if (!id.endsWith('.toon')) return null
       const content = readFileSync(id, 'utf-8')
-      const companiesDir = join(dirname(id), 'companies')
-      const data = normalize(decode(content), companiesDir)
+      const data = normalize(decode(content), dirname(id))
       return `export default ${JSON.stringify(data)}`
     },
     handleHotUpdate({ file, server }) {
