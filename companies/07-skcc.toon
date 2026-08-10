@@ -77,8 +77,8 @@ projects[3]:
       en: "Enterprise iPadOS Cordova hybrid app for SKT dealer management."
       ko: "SKT 대리점 업무용 Enterprise iPadOS Cordova 하이브리드 앱."
     role:
-      en: "iOS app maintenance, process improvement, and junior coaching."
-      ko: "iOS 앱 유지보수, 프로세스 개선, 주니어 코칭."
+      en: "iOS app maintenance and junior coaching."
+      ko: "iOS 앱 유지보수 및 주니어 코칭."
     work:
       en: "Upgraded the Xcode version; split work into units and assigned them to a junior."
       ko: "Xcode 버전 상향. 업무 분할 및 주니어 할당. "
