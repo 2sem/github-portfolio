@@ -50,6 +50,9 @@ projects[3]:
     role:
       en: "iOS app maintenance and junior coaching."
       ko: "iOS 앱 유지보수, 주니어 코칭."
+    work:
+      en: "Upgraded the TID SDK to TID 2.0."
+      ko: "TID SDK를 TID 2.0으로 업그레이드."
     achievement:
       en[3]:
         - "WKWebview delegate method had a force-unwrapped optional (!) causing 5,000+ crashes per week — traced via Firebase, reproduced the scenario, and fixed with a guard statement, eliminating all weekly crashes in one change."
