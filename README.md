@@ -23,23 +23,25 @@ Push to `main` → GitHub Actions builds and deploys to 2sem.github.io (~1 min).
 
 # Editing content
 
-All project data lives in **`companies/*.toon`** — one file per company, loaded
-automatically by the Vite plugin (`vite-plugin-toon.js`). No registration or
-build step: add content, it appears.
+All project data lives in **`.toon`** files, loaded automatically by the Vite
+plugin (`vite-plugin-toon.js`). No registration or build step: add content, it
+appears. Two folders:
 
 ```
-companies/
+companies/              employers
   01-credif.toon        CREDiF
   02-indie.toon         Indie apps
   03-siwonschool.toon   Siwonschool
   04-kickgoing.toon     KICKGOING
-  05-side-projects.toon Side projects
   06-freelance.toon     (empty)
   07-skcc.toon          SK AX / SKCC
+sides/                  personal work
+  side-projects.toon    Side projects
 ```
 
-Files load in **filename order** (`01-`, `02-`…), so the number prefix controls
-company ordering.
+In the Projects section, companies are ordered **by their most recent project
+date** (newest first); the filename prefix does not control display order.
+Everything from `sides/` is always parked **below the whole company list**.
 
 ## Anatomy of one project
 

@@ -152,7 +152,11 @@ export default function App() {
         projects: co.projects.filter(p => visibleIds.has(p.id)).sort(byRecency),
       }))
       .filter(co => co.projects.length > 0)
-      .sort((a, b) => recencyKey(b.projects[0].meta) - recencyKey(a.projects[0].meta))
+      .sort((a, b) => {
+        // Personal work (sides/) always sits below the employer list.
+        if (!!a.side !== !!b.side) return a.side ? 1 : -1
+        return recencyKey(b.projects[0].meta) - recencyKey(a.projects[0].meta)
+      })
   }, [filteredProjects])
 
   return (
