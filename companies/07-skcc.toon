@@ -63,7 +63,9 @@ projects[3]:
       en: "5,000+ weekly crashes eliminated"
       ko: "주 5,000건+ Crash 제거"
     tech[6]: Swift,Firebase,SPM,WKWebview,Ollama,Widget
-    image: null
+    image: "/images/skcc/tworld-home.png"
+    images[1]:
+      - "/images/skcc/tworld-home.png"
     links[1]:
       - label: "Medium: Automating MR Review on GitLab Using AI (Ollama)"
         href: "https://medium.com/@toyboy2/automating-mr-review-on-self-hosted-gitlab-using-ai-ollama-932e1cab30d9"
