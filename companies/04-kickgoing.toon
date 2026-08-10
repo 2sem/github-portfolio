@@ -360,7 +360,7 @@ projects[10]:
       ko: "당첨 후 스탬프 개수 기반 동적 애니메이션은 Reanimated로, 고정 뽑기·축하 애니메이션은 Lottie로 구현; 기획과 협의해 반납 즉시 룰렛으로 연결되도록 반납 플로우 개선."
     achievement:
       en: "Unblocked a shipping animation by proposing a free Lottie confetti alternative when the designer's file wouldn't render on iOS — letting the designer pick and avoiding an asset ping-pong loop."
-      ko: "디자이너의 꽃가루 Lottie가 iOS에서 미표시되자 무료 Lottie 대안을 제안하고 디자이너가 직접 선정하게 해 에셋 핑퐁 없이 출시 블로커를 해소."
+      ko: "디자이너의 꽃가루 Lottie가 iOS에서 미표시되자 무료 Lottie 대안을 제안하고 디자이너가 직접 선정하게 해 에셋 핑퐁 없이 출시 지연 요소를 해소."
     highlight:
       en: "Stamp loyalty with Reanimated dynamic animation + Lottie confetti iOS fix"
       ko: "Reanimated 동적 애니메이션 + iOS Lottie 꽃가루 대체로 스탬프 기능 출시"
