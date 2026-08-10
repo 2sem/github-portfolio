@@ -54,11 +54,11 @@ projects[3]:
       en[3]:
         - "WKWebview delegate method had a force-unwrapped optional (!) causing 5,000+ crashes per week — traced via Firebase, reproduced the scenario, and fixed with a guard statement, eliminating all weekly crashes in one change."
         - "Widget sessions were blocked for customers using the security password feature — avoided a broad API rewrite by using App Groups-based CookieStorage to share the session between app and widget, giving customers 1-hour widget access after password entry and resolving a standing complaint."
-        - "Set up a GitLab Runner with a local Ollama model to auto-review MRs and post comments, solving the non-technical manager's review bottleneck while keeping code off external servers — published a Medium article on the setup."
+        - "Set up a GitLab Runner with a local Ollama model to auto-review MRs and post comments, solving the non-technical manager's review bottleneck while keeping code off external servers — shared the knowledge on Medium."
       ko[3]:
         - "WKWebview Delegate 메서드의 강제 언래핑(!)으로 주 5,000건 이상 Crash 발생 — Firebase로 추적 후 동일 상황 재현, Guard로 수정해 Crash 전량 제거."
         - "보안 비밀번호 고객의 Widget 미사용 문제 — API 수정 범위가 넓어 보류 중이던 건을 App Groups 기반 CookieStorage로 앱↔Widget 세션 공유해 비밀번호 입력 후 1시간 Widget 사용 가능하도록 해결, 민원 해소."
-        - "Ollama Local 모델 기반 GitLab Runner MR 자동 검토 구성 — 비개발자 매니저의 검토 부담 해소 및 보안 유지, Medium 아티클 게재."
+        - "Ollama Local 모델 기반 GitLab Runner MR 자동 검토 구성 — 비개발자 매니저의 검토 부담 해소 및 보안 유지, Medium으로 지식 공유."
     highlight:
       en: "5,000+ weekly crashes eliminated"
       ko: "주 5,000건+ Crash 제거"

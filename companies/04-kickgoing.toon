@@ -34,11 +34,11 @@ projects[10]:
       en[3]:
         - "Drove a second-by-second pass countdown outside the render cycle by holding a Redux dispatch reference outside the component tree and firing a setInterval from it — no hidden container component needed."
         - "Added a deep link that jumps straight to the Pass home, working around a React Navigation limitation that blocked the built-in handler."
-        - "Published two Medium articles on the Jest testing patterns developed alongside this feature."
+        - "Shared the Jest testing patterns developed alongside this feature as two Medium articles."
       ko[3]:
         - "Redux dispatch 참조를 컴포넌트 트리 외부에 저장하고 setInterval에서 직접 호출해 렌더 사이클 밖에서 초 단위 카운트다운을 구현 — 숨겨진 컨테이너 불필요."
         - "React Navigation의 구조적 제한을 우회해 패스 홈으로 바로 진입하는 딥링크 구현."
-        - "관련 Jest 테스트 패턴을 Medium 아티클 2편으로 게재."
+        - "관련 Jest 테스트 패턴을 Medium 2편으로 지식 공유."
     highlight:
       en: "Real-time countdown via Redux dispatch ref — bypassed React Navigation deep link limit"
       ko: "Redux dispatch 외부 참조로 실시간 카운트다운 — 딥링크 구조 한계 우회"
@@ -81,10 +81,10 @@ projects[10]:
     achievement:
       en[2]:
         - "Eliminated the risk of shipping a dev config and cut broken-build incidents, while letting testers keep the old and new QA builds side by side."
-        - "Published two Medium articles documenting the techniques."
+        - "Shared the techniques as two Medium articles."
       ko[2]:
         - "잘못된 설정 배포 위험을 제거하고 빌드 오류를 줄였으며, 테스터가 이전·신규 QA 빌드를 동시에 설치할 수 있게 함."
-        - "관련 기법을 Medium 아티클 2편으로 게재."
+        - "관련 기법을 Medium 2편으로 지식 공유."
     highlight:
       en: "CI/CD pipeline — config injection eliminated wrong-env deploys"
       ko: "CI/CD 파이프라인 — 설정 주입으로 잘못된 환경 배포 위험 제거"
