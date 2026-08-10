@@ -20,17 +20,21 @@ projects[3]:
       en: "AI Layer iOS SDK — a shared AI-assistant screen embedded in SKT's T world and T membership apps, overlaying an AI layer on each app's webview."
       ko: "SKT T world·T membership 앱에 탑재된 공용 AI 화면 iOS SDK — 각 앱 웹뷰 위에 AI 어시스턴트 레이어를 제공."
     role:
-      en: "Sole owner of the shared SDK — stabilization, requirement handling, releases, and release notifications."
-      ko: "단독 SDK 안정화, 요구사항 반영, 배포 및 통지"
+      en: "Shared SDK stabilization, requirement handling, releases, and release notifications."
+      ko: "SDK 안정화, 요구사항 반영, 배포 및 통지"
     work:
-      en: "Improved iOS SDK accessibility and UI."
-      ko: "iOS SDK 접근성·UI 개선"
+      en[2]:
+        - "Improved iOS SDK accessibility and UI."
+        - "Added webview debugging support."
+      ko[2]:
+        - "iOS SDK 접근성·UI 개선"
+        - "Webview Debugging 지원"
     achievement:
       en[2]:
-        - "Built a Slack notification workflow that alerts both consuming apps' teams on every SDK release."
+        - "Built an automated Slack notification workflow with Fastlane, triggered on every SDK release."
         - "Introduced MR templates to standardize code review."
       ko[2]:
-        - "SDK 릴리스 시 사용 앱 팀에 자동 Slack 알림 체계 구축"
+        - "Fastlane으로 SDK 배포 시 자동 Slack 알림 체계 구축"
         - "MR 템플릿 도입으로 코드 리뷰 표준화."
     highlight:
       en: "Accessibility & UI improvements, MR template setup"
@@ -51,21 +55,23 @@ projects[3]:
       en: "iOS app maintenance and junior coaching."
       ko: "iOS 앱 유지보수, 주니어 코칭."
     work:
-      en[2]:
+      en[3]:
         - "Adopted the AI Recommend feature via the AI Layer SDK."
         - "Upgraded the TID SDK to TID 2.0."
-      ko[2]:
+        - "Migrated from CocoaPods to SPM."
+      ko[3]:
         - "AI Layer SDK 기반 AI 추천 기능 도입."
         - "TID SDK를 TID 2.0으로 업그레이드."
+        - "CocoaPods를 SPM로 전환."
     achievement:
       en[3]:
         - "WKWebview delegate method had a force-unwrapped optional (!) causing 5,000+ crashes per week — traced via Firebase, reproduced the scenario, and fixed with a guard statement, eliminating all weekly crashes in one change."
         - "Widget sessions were blocked for customers using the security password feature — avoided a broad API rewrite by using App Groups-based CookieStorage to share the session between app and widget, giving customers 1-hour widget access after password entry and resolving a standing complaint."
-        - "Set up a GitLab Runner with a local Ollama model to auto-review MRs and post comments, solving the non-technical manager's review bottleneck while keeping code off external servers — shared the knowledge on Medium."
+        - "Set up a GitLab Runner with a local Ollama model to auto-review MRs and post comments, solving the non-technical manager's review bottleneck while keeping code off external servers — shared how it was built on Medium."
       ko[3]:
-        - "WKWebview Delegate 메서드의 강제 언래핑(!)으로 주 5,000건 이상 Crash 발생 — Firebase로 추적 후 동일 상황 재현, Guard로 수정해 Crash 전량 제거."
-        - "보안 비밀번호 고객의 Widget 미사용 문제 — API 수정 범위가 넓어 보류 중이던 건을 App Groups 기반 CookieStorage로 앱↔Widget 세션 공유해 비밀번호 입력 후 1시간 Widget 사용 가능하도록 해결, 민원 해소."
-        - "Ollama Local 모델 기반 GitLab Runner MR 자동 검토 구성 — 비개발자 매니저의 검토 부담 해소 및 보안 유지, Medium으로 지식 공유."
+        - "WKWebview Delegate 메서드의 강제 언래핑(!)으로 주 5,000건 이상 Crash 발생 — Firebase로 추적 후 동일 상황 재현 후 Guard로 Crash 해결"
+        - "보안 기능 설정한 고객 Widget 사용 불가 — API 수정 범위가 넓어 보류한 건을 App Groups 기반 CookieStorage로 앱↔Widget 세션 공유해 사용 가능하도록 해결, 민원 해소."
+        - "Ollama Local 모델 기반 GitLab Runner MR 자동 리뷰 구성 — 비개발자 매니저의 검토 부담 해소 및 보안 유지, Medium으로 구축 방법 공유."
     highlight:
       en: "5,000+ weekly crashes eliminated"
       ko: "주 5,000건+ Crash 제거"
@@ -89,8 +95,8 @@ projects[3]:
       en: "iOS app maintenance and junior coaching."
       ko: "iOS 앱 유지보수 및 주니어 코칭."
     work:
-      en: "Upgraded the Xcode version; split work into units and assigned them to a junior."
-      ko: "Xcode 버전 상향. 업무 분할 및 주니어 할당. "
+      en: "Upgraded the Xcode version; migrated CocoaPods to SPM; split work into units and assigned them to a junior."
+      ko: "Xcode 버전 상향. CocoaPods SPM 전환, 업무 분할 및 주니어 할당. "
     achievement:
       en[3]:
         - "Researched and shared a method to run an older Xcode on newer macOS."
