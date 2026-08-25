@@ -6,10 +6,12 @@ const NAV = [
   { id: 'projects', pre: '02' },
   { id: 'skills', pre: '03' },
   { id: 'contact', pre: '04' },
+  { id: 'applications', pre: '05' },
 ]
 
-export default function Sidebar({ name, role, github, linkedin, email, x, threads, facebook, activeSection }) {
+export default function Sidebar({ name, role, github, linkedin, email, x, threads, facebook, activeSection, showApplications }) {
   const { t, tr, lang } = useLang()
+  const navItems = showApplications ? NAV : NAV.filter(item => item.id !== 'applications')
   return (
     <aside className="sidebar">
       <AvatarDot realSrc="/images/profile.jpeg" alt="Lee Young-jun" />
@@ -20,7 +22,7 @@ export default function Sidebar({ name, role, github, linkedin, email, x, thread
       </div>
 
       <nav className="sidebar-nav">
-        {NAV.map(item => (
+        {navItems.map(item => (
           <a
             key={item.id}
             href={`#${item.id}`}

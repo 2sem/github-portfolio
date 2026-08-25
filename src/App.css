@@ -432,6 +432,69 @@ section[id] {
   line-height: 1.5;
 }
 
+/* ─── applications ───────────────────────────────────────────────────── */
+.applications-section {
+  margin-bottom: 56px;
+}
+.app-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.app-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 14px 10px;
+  margin: 0 -10px;
+  border-bottom: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.app-list > div:first-child .app-row {
+  border-top: 1px solid var(--line);
+}
+.app-row:hover,
+.app-row.active {
+  background: var(--panel2);
+}
+.app-company {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: 0.02em;
+}
+.app-title {
+  font-size: 13px;
+  color: var(--soft);
+}
+.app-when {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.app-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 7px;
+}
+.app-detail .detail-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.app-detail .detail-body {
+  grid-template-columns: 1fr;
+}
+
 /* ─── summary ────────────────────────────────────────────────────────── */
 .summary-section {
   margin-bottom: 56px;
