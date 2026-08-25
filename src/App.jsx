@@ -9,6 +9,7 @@ import Skills from './components/Skills.jsx'
 import Contact from './components/Contact.jsx'
 import ResumeCart from './components/ResumeCart.jsx'
 import Experiences from './components/Experiences.jsx'
+import Applications from './components/Applications.jsx'
 
 const NAV_ITEMS = [
   { id: 'summary', pre: '01' },
@@ -16,6 +17,7 @@ const NAV_ITEMS = [
   { id: 'projects', pre: '03' },
   { id: 'skills', pre: '04' },
   { id: 'contact', pre: '05' },
+  { id: 'applications', pre: '06' },
 ]
 
 // Latest YYYY(.MM) date in a project's meta (handles ranges like "2010.01 – 2017.02").
@@ -136,6 +138,8 @@ export default function App() {
     DATA.companies.reduce((sum, co) => sum + co.projects.length, 0), [])
 
   const highlights = DATA.highlights ?? []
+  const hasApplications = (DATA.applications ?? []).length > 0
+  const navItems = hasApplications ? NAV_ITEMS : NAV_ITEMS.filter(item => item.id !== 'applications')
 
   const stats = useMemo(() => DATA.stats.map((s, i) => {
     if (i === 0) return { ...s, num: experienceYears }
@@ -191,6 +195,7 @@ export default function App() {
           facebook={DATA.facebook}
           resume={DATA.resume}
           activeSection={activeSection}
+          showApplications={hasApplications}
         />
 
         <main className="main-content">
@@ -234,11 +239,13 @@ export default function App() {
             contactMsg={DATA.contactMsg}
             onVisible={() => setActiveSection('contact')}
           />
+
+          <Applications onVisible={() => setActiveSection('applications')} />
         </main>
       </div>
 
       <nav className="mobile-nav">
-        {NAV_ITEMS.map(item => (
+        {navItems.map(item => (
           <a
             key={item.id}
             href={`#${item.id}`}

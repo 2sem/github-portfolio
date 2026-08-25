@@ -43,6 +43,10 @@ const UI = {
     searchPlaceholder: 'projects, or type a tag…',
     addAll: 'add all',
     inCart: '✓ all added',
+    applications: 'applications',
+    jobDescription: 'Job description',
+    originalPosting: 'Original posting ↗',
+    viewResume: 'View resume →',
   },
   ko: {
     summary: '소개',
@@ -84,6 +88,10 @@ const UI = {
     searchPlaceholder: '프로젝트명 또는 태그 입력…',
     addAll: '전체 추가',
     inCart: '✓ 전체 추가됨',
+    applications: '지원 내역',
+    jobDescription: '채용 공고',
+    originalPosting: '원본 공고 보기 ↗',
+    viewResume: '이력서 보기 →',
   },
 }
 

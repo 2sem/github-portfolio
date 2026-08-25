@@ -27,6 +27,13 @@ function loadCompanies(data, baseDir) {
   return arr(data.companies)
 }
 
+// Archived job applications from applications/ — one file per application.
+function loadApplications(data, baseDir) {
+  const applications = loadDir(join(baseDir, 'applications'), {})
+  if (applications.length) return applications
+  return arr(data.applications)
+}
+
 function normalize(data, companiesDir) {
   return {
     ...data,
@@ -37,6 +44,7 @@ function normalize(data, companiesDir) {
       ...c,
       projects: arr(c.projects).map(normalizeProject),
     })),
+    applications: loadApplications(data, companiesDir),
   }
 }
 
