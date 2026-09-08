@@ -256,6 +256,20 @@ projects[9]:
     highlight:
       en: "500+ daily users, $100+ first-month revenue — solo game utility"
       ko: "일간 500명+, 첫 달 $100+ 수익 — 게임 보조 앱 단독 출시"
+    stats:
+      kind: "active-devices"
+      source: "App Store Connect"
+      since: "2017.12"
+      peak: "1,500"
+      peakWhen: "2018"
+      current: "470"
+      currentNote:
+        en: "monthly avg"
+        ko: "월 평균"
+      note:
+        en: "Active devices, monthly average — opt-in devices only. Traced from the App Store Connect graph."
+        ko: "활성 상태 기기, 월 평균 — 옵트인 기기만 집계. App Store Connect 그래프 기준."
+      series[30]: 560,1050,1300,1470,1350,1430,1500,1050,950,780,1150,1200,780,880,900,620,520,480,440,400,370,480,370,350,360,330,340,320,300,250
     tech[5]: Swift,CoreData,Xlsx,SQLite,LocalNotification
     image: "/images/indie/gersanghelper/gersanghelper1.png"
     images[6]:
