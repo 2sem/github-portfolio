@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Diagram from './Diagram.jsx'
+import ProjectStats from './ProjectStats.jsx'
 import { ProjectCover } from './ProjectVisual.jsx'
 import { useLang } from '../i18n.jsx'
 import { tagLabel } from '../tagLabels.js'
@@ -115,6 +116,11 @@ export default function DetailPanel({ project, isInCart, onCartToggle, onClose }
                 <h4 className="detail-sec-gap">{t('achievement')}</h4>
                 <Prose value={tr(project.achievement)} />
               </>
+            )}
+            {project.stats && (
+              <div className="detail-sec-gap">
+                <ProjectStats stats={project.stats} />
+              </div>
             )}
           </div>
           <div>

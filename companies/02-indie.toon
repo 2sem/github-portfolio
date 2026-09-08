@@ -256,6 +256,24 @@ projects[9]:
     highlight:
       en: "500+ daily users, $100+ first-month revenue — solo game utility"
       ko: "일간 500명+, 첫 달 $100+ 수익 — 게임 보조 앱 단독 출시"
+    stats:
+      kind: "mau"
+      source: "App Store Connect"
+      since: "2017.12"
+      peak: "1,373"
+      peakWhen: "2018"
+      avg: "470"
+      avgNote:
+        en: "all-time avg"
+        ko: "전체 평균"
+      current: "78"
+      currentNote:
+        en: "current MAU"
+        ko: "현재 MAU"
+      note:
+        en: "Monthly active users — opt-in devices only. Traced from the App Store Connect graph."
+        ko: "월간 활성 사용자(MAU) — 옵트인 기기만 집계. App Store Connect 그래프 기준."
+      series[30]: 560,1000,1250,1373,1300,1350,1280,1050,950,720,1050,1150,760,840,880,600,500,440,410,380,340,430,330,300,280,240,200,160,120,78
     tech[5]: Swift,CoreData,Xlsx,SQLite,LocalNotification
     image: "/images/indie/gersanghelper/gersanghelper1.png"
     images[6]:
