@@ -69,16 +69,20 @@ Everything from `sides/` is always parked **below the whole company list**.
     stats:                             # OPTIONAL — App Store Connect metric block
       source: "App Store Connect"      #   caption, top-right
       since: "2017.12"                 #   → "<since> since"
-      peak: "1,500"                    #   → "~<peak> peak · <peakWhen>"
+      peak: "1,373"                    #   → "~<peak> peak · <peakWhen>"
       peakWhen: "2018"
-      current: "470"                   #   headline number
-      currentNote:                     #   label under the headline number
-        en: "monthly avg"
-        ko: "월 평균"
+      current: "78"                    #   headline number (leftmost)
+      currentNote:                     #   label under it
+        en: "current MAU"
+        ko: "현재 MAU"
+      avg: "470"                       #   OPTIONAL — second number
+      avgNote:
+        en: "all-time avg"
+        ko: "전체 평균"
       note:                            #   caption under the sparkline
         en: "..."
         ko: "..."
-      series[30]: 560,1050,1300,...    #   sparkline values, oldest → newest
+      series[30]: 560,1000,1250,...    #   sparkline values, oldest → newest
     tech[3]: Swift,GitLab,Slack        # chips
     image: null                        # or "/images/.../shot.jpeg"
     images[1]:                         # screenshots (zoomable)

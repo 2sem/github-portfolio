@@ -62,6 +62,12 @@ export default function ProjectStats({ stats }) {
             <span>{tr(stats.currentNote)}</span>
           </div>
         )}
+        {stats.avg && (
+          <div className="stat-num">
+            <b>{stats.avg}</b>
+            <span>{tr(stats.avgNote)}</span>
+          </div>
+        )}
         {stats.peak && (
           <div className="stat-num">
             <b>~{stats.peak}</b>
