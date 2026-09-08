@@ -89,6 +89,24 @@ projects[9]:
     highlight:
       en: "Push notifications doubled Android revenue"
       ko: "푸시 알림으로 안드로이드 매출 2배"
+    stats:
+      kind: "mau"
+      source: "App Store Connect"
+      since: "2017.01"
+      peak: "5,899"
+      peakWhen: "2021"
+      avg: "1,180"
+      avgNote:
+        en: "all-time avg"
+        ko: "전체 평균"
+      current: "174"
+      currentNote:
+        en: "current MAU"
+        ko: "현재 MAU"
+      note:
+        en: "Monthly active users — opt-in devices only. Traced from the App Store Connect graph."
+        ko: "월간 활성 사용자(MAU) — 옵트인 기기만 집계. App Store Connect 그래프 기준."
+      series[32]: 55,80,120,180,260,320,400,520,680,950,1500,2500,3900,3500,4200,5899,5200,4900,4600,4800,4200,3700,3200,2700,2100,1600,1200,900,700,560,380,174
     tech[6]: Swift,RxSwift,CoreData,KakaoSDK,FCM,"Node.js"
     image: "/images/indie/related-stocks/related-stocks1.png"
     images[6]:
