@@ -1,0 +1,10 @@
+id: 2026-08-gbike
+company: 지바이크
+jobTitle:
+  en: Mobile & Backend Developer
+  ko: 모바일·백엔드 개발자
+appliedDate: 2026-08-14
+jd:
+  en[5]: End-to-end development of a new mobile app (iOS/Android) and its backend,Design app–server–IoT device interfaces as RESTful APIs,"Multi-country, multi-language service structure","Mobile experience with React Native, Flutter, Swift or Kotlin; RDBMS/NoSQL","Preferred: AI-driven development (Claude Code, Cursor), BLE/IoT integration"
+  ko[5]: 신규 모바일 앱(iOS/Android)과 백엔드 서비스 end-to-end 개발,앱–서버–IoT 기기 인터페이스를 RESTful API로 설계,다국가·다국어 대응 서비스 구조 설계,"React Native·Flutter·Swift·Kotlin 중 1개 이상 앱 개발 경험, RDBMS/NoSQL 활용","우대: AI 주도 개발(Claude Code, Cursor), IoT·BLE 연동 경험"
+jdUrl: "https://www.wanted.co.kr/wd/380454"

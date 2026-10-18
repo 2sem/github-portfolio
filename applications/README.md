@@ -11,7 +11,7 @@ exists here — add one to make the section (and its nav link) appear.
 - `jobTitle` (required) — string or `{en, ko}`
 - `appliedDate` (required) — `"YYYY-MM-DD"`, used for sorting (newest first)
 - `status` (optional) — string or `{en, ko}`, shown as a small pill next to the date
-- `jd` (required) — job description; string (paragraph) or array (bullets), each as `{en, ko}` or plain string
+- `jd` (optional; omit when no posting text was archived) — job description; string (paragraph) or array (bullets), each as `{en, ko}` or plain string
 - `jdUrl` (optional) — link to the original posting
 - `resumeFile` (optional) — path under `public/` to a resume PDF snapshot used for this application (e.g. `/applications/acme-resume-ko.pdf`); falls back to the default `/Lee-Young-jun-Resume-{lang}.pdf` when omitted
 

@@ -1,0 +1,10 @@
+id: 2026-09-channel-talk
+company: 채널톡
+jobTitle:
+  en: "Software Engineer (Mobile, iOS)"
+  ko: "소프트웨어 엔지니어 (모바일, iOS)"
+appliedDate: 2026-09-17
+jd:
+  en[4]: Develop the Android/iOS SDK installed in customer apps,Deliver real-time features without hurting host-app performance and stability,"Own problems from hypothesis to design, release and validation","iOS stack: Swift, SwiftUI, UIKit, Combine, Tuist, WebRTC"
+  ko[4]: 고객사 앱에 설치되는 Android·iOS SDK 개발,호스트 앱의 성능·안정성에 영향 없이 실시간 기능 제공,"가설 정의부터 설계, 출시, 검증까지 책임","iOS 스택: Swift, SwiftUI, UIKit, Combine, Tuist, WebRTC"
+jdUrl: "https://www.linkedin.com/jobs/view/4460883273/"

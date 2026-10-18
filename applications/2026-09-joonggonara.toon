@@ -1,0 +1,10 @@
+id: 2026-09-joonggonara
+company: 중고나라
+jobTitle:
+  en: iOS Developer
+  ko: iOS 개발자
+appliedDate: 2026-09-03
+jd:
+  en[5]: Architecture design and continuous improvement while moving a Flutter app to native iOS,"Stable state management for real-time data (chat, trade status)",Reusable UI components on a design system,Keep feature parity with Android/Flutter developers,3–7 years of Swift iOS; MVVM/Clean Architecture; SwiftUI; async/await
+  ko[5]: Flutter 앱의 iOS Native 전환 과정에서 아키텍처 설계 및 구조 개선,"실시간 데이터(채팅, 거래 상태) 기반 안정적 상태 관리",디자인 시스템 기반 재사용 UI 컴포넌트 개발,Android/Flutter 개발자와 협업해 플랫폼 간 기능 일관성 유지,"Swift iOS 3~7년, MVVM·Clean Architecture, SwiftUI, async/await 경험"
+jdUrl: "https://www.wanted.co.kr/wd/383608"

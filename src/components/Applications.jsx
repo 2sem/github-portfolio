@@ -137,8 +137,12 @@ export default function Applications({ onVisible }) {
                   </div>
                   <div className="detail-body">
                     <div>
-                      <h4>{t('jobDescription')}</h4>
-                      <Prose value={tr(app.jd)} />
+                      {app.jd && (
+                        <>
+                          <h4>{t('jobDescription')}</h4>
+                          <Prose value={tr(app.jd)} />
+                        </>
+                      )}
                       {app.jdUrl && (
                         <div className="detail-links">
                           <a className="detail-link" href={app.jdUrl} target="_blank" rel="noopener noreferrer">
