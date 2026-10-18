@@ -80,6 +80,7 @@ Check with `python3 -I .claude/skills/archive-application/scripts/check_phone.py
 | 2026-09-17 | 채널톡 | resume-glitty-base.docx, resume.docx, resume.md, spec.docx |
 | 2026-09-18 | 글리티 | resume.docx, resume.md, resume.pdf, spec.docx |
 | 2026-10-13 | 쿠팡페이 | resume.docx, resume.pdf, spec.docx |
+| 2026-10-19 | 뤼튼 | resume.html, resume.md, resume.pdf, spec.docx |
 
 ## Undated
 
@@ -91,7 +92,6 @@ Check with `python3 -I .claude/skills/archive-application/scripts/check_phone.py
 | TRUST WALLET | spec.docx |
 | UJET | resume-en.pdf, resume-mobile.pdf, spec.docx |
 | xAI | jd.docx, jd.pdf |
-| 뤼튼 | resume.md, spec.docx |
 | 비버웍스 | spec.docx |
 | 빗썸 | resume.md, resume.pdf, spec.docx |
 | 엔디소프트 | resume.docx, resume.md, resume.pdf, spec.docx |
