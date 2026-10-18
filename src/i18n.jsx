@@ -50,6 +50,10 @@ const UI = {
     jobDescription: 'Job description',
     originalPosting: 'Original posting ↗',
     viewResume: 'View resume →',
+    appCount: '{n} applications',
+    appCountFiltered: '{n} of {total} applications',
+    appSearchPlaceholder: 'company or role…',
+    appNoMatch: 'No matching applications',
   },
   ko: {
     summary: '소개',
@@ -98,6 +102,10 @@ const UI = {
     jobDescription: '채용 공고',
     originalPosting: '원본 공고 보기 ↗',
     viewResume: '이력서 보기 →',
+    appCount: '지원 {n}건',
+    appCountFiltered: '{total}건 중 {n}건',
+    appSearchPlaceholder: '회사 또는 직무…',
+    appNoMatch: '일치하는 지원 내역이 없습니다',
   },
 }
 
