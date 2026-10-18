@@ -153,7 +153,7 @@ React Native와 iOS를 중심으로 다양한 도메인에서 담당 영역을 �
 - Naver Map SDK Native Bridge에 축척 계산 로직 추가해 지도 자동 Zoom(길안내) 구현
 - BLE 통신 로직 최적화: 스캔·연결 소요 시간 지표화로 개선 검증
 - react-native-ble-plx가 Xcode 13과 호환되는 Pod을 참조하지 않아 발생한 빌드 오류를 [Pod과 라이브러리를 fork해 CocoaPods·npm에 배포하는 방식으로 해결](https://toyboy2.medium.com/react-native-ble-plx-xcode-13-troubleshootings-dca3f793b1e0)
-- Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 성능 개선
+- Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 테스트 시간 **37초 → 27초** 단축
 - **Redux**로 앱 전역 상태 관리
 
 `React Native` `TypeScript` `Redux` `Java/Objective-C(Native Bridge)` `Naver Map SDK` `Channel Talk SDK` `BLE` `Jest` `Fastlane` `GitHub Actions`
@@ -363,7 +363,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 - BLE, O2O, 지표 => BLE 통신 로직 최적화 — 스캔·연결 소요 시간 지표화로 개선 검증
 - BLE, 빌드, 외부 라이브러리 수정 => react-native-ble-plx가 Xcode 13과 호환되는 Pod을 참조하지 않아 발생한 빌드 오류를 [Pod과 라이브러리를 fork해 CocoaPods·npm에 배포하는 방식으로 해결](https://toyboy2.medium.com/react-native-ble-plx-xcode-13-troubleshootings-dca3f793b1e0)
 - 지표 => Amplitude로 사용자 경험 데이터 수집·기능 개선 성과 측정
-- Unit Test => Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 성능 개선
+- Unit Test => Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 테스트 시간 **37초 → 27초** 단축
 - 다국어, Localization => 외국어 지원 프로젝트에서 [다국어 대응 구축](https://toyboy2.medium.com/supporting-multi-language-in-react-native-applications-8bf4ddc8a8ef), [Android 언어 설정 관련 오픈소스 기여](https://toyboy2.medium.com/react-native-android-per-app-language-settings-5f9d4a29e9d2)
 - Android => Native Bridge의 Manifest 수정으로 **Android 12 권한 정책** 대응
 - Android, Amplitude, 로그 => Install Referrer 상용 환경 동작과 BLE 개선 효과를 Amplitude Log로 검증
@@ -506,6 +506,12 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 **스킬 태그**: `C` `C#` `Java` `WPF` `Delphi` `Python` `RESTful API` `MySQL` `Oracle` `MSSQL` `PostgreSQL` `AIDL` `Beacon`
 
 ---
+### 개인 프로젝트 — 직딩 (2024.01 – 2024.02 · React Native · 2026-10 사용자 확인, 출처 sides/side-projects.toon)
+- React Native·TypeScript로 UX 디자이너와 협업해 워라밸 앱을 단독 개발
+- 공공데이터 공휴일 API 연동으로 남은 공휴일 표시·연차 계획 제안, 커스텀 캘린더 구현
+- Realm 오프라인 우선 로컬 저장소 구성, 오늘 남은 근무시간 실시간 카운트다운 구현
+- 킥고잉 기술부채 해소 결과: React Native **0.71** 업그레이드 (2026-10 사용자 확인)
+
 ## 4. AI 활용 경험 (통합 — 날짜 무관, 자유 배치 가능)
 
 > 구조 옵션: 별도 섹션 대신, 관련성이 가장 큰 회사 블록(주로 SK AX) 안에 해당 불릿을 직접 내장하는 구조도 가능(헤렌 버전 사례 — Ollama MR 리뷰 불릿을 SK AX 불릿 리스트 안에 배치). JD에 Storyboard 있는 경우만 Storyboard 언급

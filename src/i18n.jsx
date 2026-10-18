@@ -54,6 +54,13 @@ const UI = {
     appCountFiltered: '{n} of {total} applications',
     appSearchPlaceholder: 'company or role…',
     appNoMatch: 'No matching applications',
+    cartProjectOne: '{n} project',
+    cartProjectMany: '{n} projects',
+    cartCompanyOne: '{n} company',
+    cartCompanyMany: '{n} companies',
+    remove: 'Remove',
+    popupBlocked: 'Pop-up blocked. Allow pop-ups for this site and try again.',
+    onePagerWarn: '1-pager shows only the first {max} projects.',
   },
   ko: {
     summary: '소개',
@@ -106,6 +113,13 @@ const UI = {
     appCountFiltered: '{total}건 중 {n}건',
     appSearchPlaceholder: '회사 또는 직무…',
     appNoMatch: '일치하는 지원 내역이 없습니다',
+    cartProjectOne: '{n}개 프로젝트',
+    cartProjectMany: '{n}개 프로젝트',
+    cartCompanyOne: '{n}개 회사',
+    cartCompanyMany: '{n}개 회사',
+    remove: '삭제',
+    popupBlocked: '팝업이 차단되었습니다. 이 사이트의 팝업을 허용한 뒤 다시 시도하세요.',
+    onePagerWarn: '1페이지 템플릿은 처음 {max}개 프로젝트만 표시합니다.',
   },
 }
 
@@ -121,7 +135,8 @@ const LangContext = createContext(null)
 
 function detectLang() {
   // Manual choice wins and sticks; otherwise follow the browser locale each visit.
-  const saved = typeof localStorage !== 'undefined' && localStorage.getItem('lang')
+  let saved = null
+  try { saved = localStorage.getItem('lang') } catch { /* storage unavailable */ }
   if (saved && LANGS.includes(saved)) return saved
   if (typeof navigator !== 'undefined' && navigator.language?.startsWith('ko')) return 'ko'
   return 'en'
@@ -138,7 +153,7 @@ export function LangProvider({ children }) {
 
   // Only an explicit user action persists — that's what "keep it if switched" means.
   const setLang = useCallback((next) => {
-    localStorage.setItem('lang', next)
+    try { localStorage.setItem('lang', next) } catch { /* storage unavailable */ }
     setLangState(next)
   }, [])
 
