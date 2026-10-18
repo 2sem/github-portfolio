@@ -66,14 +66,14 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 
 **올룰로 (킥고잉) · 2021.06 – 2023.10 · 정규직 · App Developer → Mobile Tech Lead**
 국내 최초 공유 킥보드(모빌리티) 서비스 · React Native 기반 크로스플랫폼 앱(iOS·Android)
-- **Channel Talk(외부 CX SDK) 통합**: 전화 전용 고객 지원을 인앱 전환, 통합 후 알림 분류 메소드에서 발생한 Crash를 제조사에 제보하고 [수정안 PR 제출](https://github.com/channel-io/react-native-channel-io/pull/107)
+- **Channel Talk(외부 CX SDK) 통합**: [채팅 상담](https://youtube.com/shorts/tC-np8ShcZU) 기능 추가, 통합 후 알림 분류 메소드에서 발생한 **Crash**를 제조사에 제보하고 [수정안 PR 제출](https://github.com/channel-io/react-native-channel-io/pull/107)
 - **react-native-vision-camera**의 Android 빌드 오류(Unresolved reference: resolveView)를 메서드 이름 기반 동적 호출로 바꿔 해결하고 [오픈소스 PR 제출](https://github.com/mrousavy/react-native-vision-camera/pull/1318)
-- Naver Map SDK Native Bridge에 축척 계산 로직 추가해 지도 자동 Zoom(길안내) 구현
-- 구역 정보 API 호출 **4회→1회로 데이터 사용량 최소 75% 절감**(위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여
+- Naver Map SDK **Native Bridge**에 [축척 계산 로직 추가](https://github.com/team-olulo/react-native-naver-map/pull/7)해 지도 자동 Zoom(길안내) 구현
+- 구역 정보 API 호출 **4회→1회로 데이터 사용량 최소 75% 절감**(+위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여
 - iOS/Android로 분리돼 있던 GitHub CI/CD를 **Fastlane 기반으로 통합**
 - [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part1-54362deaeda2)으로 **배포 소요 시간 50% 감축**
 - 외국어 지원 프로젝트에서 [다국어 대응 구축](https://toyboy2.medium.com/supporting-multi-language-in-react-native-applications-8bf4ddc8a8ef), [Android 언어 설정 관련 오픈소스 기여](https://toyboy2.medium.com/react-native-android-per-app-language-settings-5f9d4a29e9d2)
-- 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → React Native 업그레이드 등 기술부채 해소
+- 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → [**React Native 점진적 업그레이드**](https://medium.com/@toyboy2/migration-react-native-from-0-65-to-0-68-troubleshooting-guide-0a8a7401c581) 등 기술부채 해소
 
 `React Native` `TypeScript` `Java/Objective-C(Native Bridge)` `Naver Map SDK` `Channel Talk SDK` `Fastlane` `GitHub Actions`
 
@@ -140,23 +140,34 @@ React Native와 iOS를 중심으로 다양한 도메인에서 담당 영역을 �
 
 **올룰로 (킥고잉) · 2021.06 – 2023.10 · 정규직 · App Developer → Mobile Tech Lead**
 국내 최초 공유 킥보드(모빌리티) 서비스 · React Native 기반 크로스플랫폼 앱(iOS·Android)
-- 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → React Native 업그레이드 등 기술부채 해소
+- 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → [**React Native 점진적 업그레이드**](https://medium.com/@toyboy2/migration-react-native-from-0-65-to-0-68-troubleshooting-guide-0a8a7401c581) 등 기술부채 해소
 - PR Template·Jira Workflow로 코드 리뷰·업무 프로세스 표준화
-- 구역 정보 API 호출 **4회→1회로 데이터 사용량 최소 75% 절감**(위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여
+- 구역 정보 API 호출 **4회→1회로 데이터 사용량 최소 75% 절감**(+위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여
 - iOS/Android로 분리돼 있던 GitHub CI/CD를 **Fastlane 기반으로 통합**
 - Android 배포를 AWS S3 링크 공유 방식에서 [**APK Slack 직접 업로드**](https://toyboy2.medium.com/how-to-distribute-apk-to-slack-automatically-1b3aa992177e)로 개선해 테스트 단계 단축
 - Android Build-tools 31 이후 dx를 찾지 못해 로컬 빌드가 실패하던 문제를 **d8 링크 생성 Gradle 스크립트**로 해결하고 직접 등록한 [공개 이슈](https://github.com/channel-io/react-native-channel-io/issues/109)에 해결 방법 공유
-- 이전 버전 APK와 동시에 설치할 수 있도록 QA 버전 '테스트킥'을 [**flavor로 분리해 배포**](https://toyboy2.medium.com/how-to-split-android-project-for-qa-version-1128b2bce7bb)
+- 이전 버전과 동시에 설치할 수 있도록 QA 버전 '테스트킥'을 [**flavor로 분리해 배포**](https://toyboy2.medium.com/how-to-split-android-project-for-qa-version-1128b2bce7bb)
 - [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part1-54362deaeda2)으로 **배포 소요 시간 50% 감축**
-- **Channel Talk(외부 CX SDK) 통합**: 전화 전용 고객 지원을 인앱 전환, 통합 후 알림 분류 메소드에서 발생한 Crash를 제조사에 제보하고 [수정안 PR 제출](https://github.com/channel-io/react-native-channel-io/pull/107)
+- **Channel Talk(외부 CX SDK) 통합**: [채팅 상담](https://youtube.com/shorts/tC-np8ShcZU) 기능 추가, 통합 후 알림 분류 메소드에서 발생한 **Crash**를 제조사에 제보하고 [수정안 PR 제출](https://github.com/channel-io/react-native-channel-io/pull/107)
 - **react-native-vision-camera**의 Android 빌드 오류(Unresolved reference: resolveView)를 메서드 이름 기반 동적 호출로 바꿔 해결하고 [오픈소스 PR 제출](https://github.com/mrousavy/react-native-vision-camera/pull/1318)
-- Naver Map SDK Native Bridge에 축척 계산 로직 추가해 지도 자동 Zoom(길안내) 구현
-- BLE 통신 로직 최적화: 스캔·연결 소요 시간 지표화로 개선 검증
+- Naver Map SDK **Native Bridge**에 [축척 계산 로직 추가](https://github.com/team-olulo/react-native-naver-map/pull/7)해 지도 자동 Zoom(길안내) 구현
+- BLE 통신 로직 최적화: Library 옵션 및 제조사 펌웨어 조정 후 스캔·연결 소요 시간 지표화로 개선 검증
 - react-native-ble-plx가 Xcode 13과 호환되는 Pod을 참조하지 않아 발생한 빌드 오류를 [Pod과 라이브러리를 fork해 CocoaPods·npm에 배포하는 방식으로 해결](https://toyboy2.medium.com/react-native-ble-plx-xcode-13-troubleshootings-dca3f793b1e0)
 - Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 테스트 시간 **37초 → 27초** 단축
 - **Redux**로 앱 전역 상태 관리
 
 `React Native` `TypeScript` `Redux` `Java/Objective-C(Native Bridge)` `Naver Map SDK` `Channel Talk SDK` `BLE` `Jest` `Fastlane` `GitHub Actions`
+
+> 2026-10 뤼튼 이력서 반영: RN 직무에서는 직딩(개인 RN 프로젝트)을 킥고잉 바로 아래 블록으로 둔다. 최근 RN·TypeScript 근거와 0→1 단독 개발 근거. 비버웍스도 동일 적용.
+
+**개인 프로젝트 (직딩) · 2024.01 – 2024.02 · 개인 · React Native 앱 개발자**
+직장인 워라밸 앱(iOS·Android) · UX 디자이너 협업 · [GitHub](https://github.com/2sem/zicding-app)
+- React Native·TypeScript로 UX 디자이너와 협업해 워라밸 앱을 단독 개발
+- 공공데이터 공휴일 API 연동으로 남은 [공휴일 표시](https://medium.com/@toyboy2/%EC%A7%81%EB%94%A9-%EA%B0%9C%EB%B0%9C%EA%B8%B0-%EA%B3%B5%ED%9C%B4%EC%9D%BC-%EC%A1%B0%ED%9A%8C-394715feb9ea?sharedUserId=toyboy2)·연차 계획 제안, [커스텀 캘린더](https://medium.com/@toyboy2/%EC%A7%81%EB%94%A9-%EA%B0%9C%EB%B0%9C%EA%B8%B0-%EC%9E%85%EC%82%AC%EC%9D%BC-%EC%84%A0%ED%83%9D-ffec8c67e36d?sharedUserId=toyboy2) 구현
+- Realm 오프라인 우선 로컬 저장소 구성, 오늘 남은 근무시간 실시간 카운트다운 구현
+- [개발 과정](https://toyboy2.medium.com/list/ba6efa6fce3c) 기록
+
+`React Native` `TypeScript` `Realm`
 
 **SK AX (계약: 디투엘) · 2024.06 – 2025.10 · 프리랜서 · iOS Developer**
 IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world, AI Layer SDK) · T world MAU 800만
@@ -201,7 +212,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 - 개인 [iOS 앱](https://apps.apple.com/kr/developer/young-jun-lee/id1225480114) 전반에 [**Tuist**](https://tuist.dev)를 실제 적용해 모듈화 구조 구축·운영(개인 프로젝트 한정)
 - Seoul iOS Meetup에서 ['Tuist 캐시, 선택적 테스트 그리고 쉬운 CI로 빌드 반복 가속하기'](https://youtu.be/FFkEbqG4ips) 발표
 - **Flutter · Dart(학습 · 아티클 연재)**: 퇴근길 지하철에서 Dart 학습, Firestore로 카카오톡 채팅 화면을 클론 구현, [Medium 아티클](https://toyboy2.medium.com/list/flutter-c6e656a0db03)로 연재
-- [**Medium**](https://toyboy2.medium.com)에 [iOS](https://medium.com/@toyboy2/list/ios-4adba6bc75d5)·[React Native](https://medium.com/@toyboy2/list/reactnative-ec618220f682) 등 기술 Article 다수 발행, Dev Korea Meetup 등 커뮤니티 정기 참여
+- [**Medium**](https://toyboy2.medium.com)에 [React Native](https://medium.com/@toyboy2/list/reactnative-ec618220f682)·[iOS](https://medium.com/@toyboy2/list/ios-4adba6bc75d5) 등 기술 Article 다수 발행, Dev Korea Meetup 등 커뮤니티 정기 참여
 
 #### AI 활용 경험
 - 보안 제약을 고려해 GitLab Runner에 [**Ollama를 연결한 Agent MR 리뷰**](https://medium.com/@toyboy2/automating-mr-review-on-self-hosted-gitlab-using-ai-ollama-932e1cab30d9) 구축, 비개발자 매니저의 AI 활용 KPI 달성에 기여하고 변경 사항을 안심하고 빠르게 리뷰할 수 있도록 지원
@@ -291,6 +302,11 @@ E 확장(리더십·프로세스 정착 강조 + 도메인 도전 클로징):
 
 ---
 
+### H. 뤼튼 제출본 소개문 (2026-10 · 참고 전용 · 기술 경험의 폭 + 리드 + 프로세스 개선형)
+서버 개발로 시작해 2015년부터 Mobile 분야에 도전해왔습니다. Presentation 앱을 개발하면서 PDF 렌더링을, 외국어 강의 수강 앱을 신규 개발하면서 영상 재생 기술을 경험했고, 앱이 중요한 공유 모빌리티 서비스를 개선하면서 BLE 기술을, 통신사 앱 운영 과정에서 Webview 기반 하이브리드 앱의 구조를 파악했습니다. 모바일 엔지니어 2~3명을 리드하며 코드 리뷰 프로세스와 기술부채 해소 사이클을 팀에 정착시켰고, 배포 프로세스 개선으로 개발 업무를 가속했습니다. 개인 앱에 새로운 기술을 실험해서 얻은 노하우를 전파하고, 제도와 도구의 병목을 연구하여 업무 프로세스를 개선합니다.
+
+> 마스터 고정 소개문(베이스 ①②)과 다르다. 공고별 맞춤 요청 시에만 사용. 비버웍스는 AI 활용 문장이 필요해 베이스 ② 고정 소개문을 썼다.
+
 ## 2. 경력 요약 라인 (참고 전용 · 고정형은 섹션 0-1)
 
 > ⚠️ 요약 줄은 섹션 0-1의 한 줄로 고정. 공고별로 순서를 바꾸거나 생략하지 않는다. 아래 변형은 사용 중단.
@@ -319,6 +335,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 - Swift Concurrency, Combine => Closure 기반 API 호출은 Swift Concurrency, 신규 UI는 Combine으로 점진 전환해 생산성·성능 개선
 - SwiftUI, Widget,협업,문제해결력 => 보안 기능 설정한 사용자가 SwiftUI 위젯을 사용할 수 없는 문제를 Cookie Storage 공유로 세션을 재사용하고 API를 분석 후 서버 개발자에게 수정안 제시로 해결
 - Unit Test => 신규 API 연동 추가 시 **Unit Test 작성**으로 예외 사항 검증
+- Webview, Crash, Crashlytics => **Crashlytics**로 확인한 **WKWebView** Delegate 강제 언래핑 **주간 5,000건 이상의 Crash**를 병합 전 전임자 PR의 가설로는 동일한 Crash가 발생하지 않아 코드를 추적하여 동일 Crash 재현 및 원인 해결 (2026-10 비버웍스: 모니터링 도구 명시 목적의 변형. 원문은 아래)
 - Webview, Crash => **WKWebView** Delegate에서 강제 언래핑으로 발생한 **주간 5,000건 이상의 Crash**를 병합 전 전임자 PR의 가설로는 동일한 Crash가 발생하지 않아 코드를 추적하여 동일 Crash 재현 및 원인 해결
 - 대량 트래픽 => 대량 동시 접속 시 서버 과부하를 줄이기 위한 **대기열(Queue) 기능** 구현으로 트래픽 급증 구간 안정성 확보
 - Webview, SDK 제공자 => **AI Layer iOS SDK** 유지보수, Accessibility·UI 개선
@@ -357,31 +374,31 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 기술 스택: **React Native** — iOS 네이티브 경력 아님, 모바일 경력으로만 카운트
 
 **개발자로서 · 2021.06 – 2022.03**
-- Native 경험 => Naver Map SDK Native Bridge에 축척 계산 로직 추가해 지도 자동 Zoom(길안내) 구현
+- Native 경험 => Naver Map SDK **Native Bridge**에 [축척 계산 로직 추가](https://github.com/team-olulo/react-native-naver-map/pull/7)해 지도 자동 Zoom(길안내) 구현
 - 리서치, UX => Naver Place·Daum Map 분석해 앱내 경로 표시 기능 구현, 대리운전기사 사용자층 긍정 평가
-- 성능 개선 경험 => 구역 정보 API 호출 **4회→1회로 데이터 사용량 최소 75% 절감**(위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여
-- BLE, O2O, 지표 => BLE 통신 로직 최적화 — 스캔·연결 소요 시간 지표화로 개선 검증
+- 성능 개선 경험 => 구역 정보 API 호출 **4회→1회로 데이터 사용량 최소 75% 절감**(+위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여
+- BLE, O2O, 지표 => BLE 통신 로직 최적화: Library 옵션 및 제조사 펌웨어 조정 후 스캔·연결 소요 시간 지표화로 개선 검증
 - BLE, 빌드, 외부 라이브러리 수정 => react-native-ble-plx가 Xcode 13과 호환되는 Pod을 참조하지 않아 발생한 빌드 오류를 [Pod과 라이브러리를 fork해 CocoaPods·npm에 배포하는 방식으로 해결](https://toyboy2.medium.com/react-native-ble-plx-xcode-13-troubleshootings-dca3f793b1e0)
 - 지표 => Amplitude로 사용자 경험 데이터 수집·기능 개선 성과 측정
 - Unit Test => Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 테스트 시간 **37초 → 27초** 단축
 - 다국어, Localization => 외국어 지원 프로젝트에서 [다국어 대응 구축](https://toyboy2.medium.com/supporting-multi-language-in-react-native-applications-8bf4ddc8a8ef), [Android 언어 설정 관련 오픈소스 기여](https://toyboy2.medium.com/react-native-android-per-app-language-settings-5f9d4a29e9d2)
 - Android => Native Bridge의 Manifest 수정으로 **Android 12 권한 정책** 대응
 - Android, Amplitude, 로그 => Install Referrer 상용 환경 동작과 BLE 개선 효과를 Amplitude Log로 검증
-- SDK 소비자, 문제 해결력 => **Channel Talk(외부 CX SDK) 통합** — 전화 전용 고객 지원을 인앱 전환, 통합 후 알림 분류 메소드에서 발생한 Crash를 제조사에 제보하고 [수정안 PR 제출](https://github.com/channel-io/react-native-channel-io/pull/107)
+- SDK 소비자, 문제 해결력 => **Channel Talk(외부 CX SDK) 통합**: [채팅 상담](https://youtube.com/shorts/tC-np8ShcZU) 기능 추가, 통합 후 알림 분류 메소드에서 발생한 **Crash**를 제조사에 제보하고 [수정안 PR 제출](https://github.com/channel-io/react-native-channel-io/pull/107)
 
 **CI/CD 관련 불릿**
 - Fastlane => iOS/Android로 분리돼 있던 GitHub CI/CD를 **Fastlane 기반으로 통합**
 - DX, 개발 환경 개선, Android => Android 배포를 AWS S3 링크 공유 방식에서 [**APK Slack 직접 업로드**](https://toyboy2.medium.com/how-to-distribute-apk-to-slack-automatically-1b3aa992177e)로 개선해 테스트 단계 단축
 - 개발 환경 개선, 성능 개선 => [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part1-54362deaeda2)으로 **배포 소요 시간 50% 감축**
 - 개발 환경 개선, Android, 빌드 => Android Build-tools 31 이후 dx를 찾지 못해 로컬 빌드가 실패하던 문제를 **d8 링크 생성 Gradle 스크립트**로 해결하고 직접 등록한 [공개 이슈](https://github.com/channel-io/react-native-channel-io/issues/109)에 해결 방법 공유
-- 개발 환경 개선, QA, Android => 이전 버전 APK와 동시에 설치할 수 있도록 QA 버전 '테스트킥'을 [**flavor로 분리해 배포**](https://toyboy2.medium.com/how-to-split-android-project-for-qa-version-1128b2bce7bb)
+- 개발 환경 개선, QA, Android => 이전 버전과 동시에 설치할 수 있도록 QA 버전 '테스트킥'을 [**flavor로 분리해 배포**](https://toyboy2.medium.com/how-to-split-android-project-for-qa-version-1128b2bce7bb)
 - 오픈소스, 크래시, 외부 라이브러리 수정 => **react-native-vision-camera**의 Android 빌드 오류(Unresolved reference: resolveView)를 메서드 이름 기반 동적 호출로 바꿔 해결하고 [오픈소스 PR 제출](https://github.com/mrousavy/react-native-vision-camera/pull/1318)
 
 **상태 관리**
 - 상태 관리 => **Redux**로 앱 전역 상태 관리
 
 **리드로서 · 2022.04 – 2023.10**
-- 개발 문화 => 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → React Native 업그레이드 등 기술부채 해소
+- 개발 문화 => 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → [**React Native 점진적 업그레이드**](https://medium.com/@toyboy2/migration-react-native-from-0-65-to-0-68-troubleshooting-guide-0a8a7401c581) 등 기술부채 해소
 - 개발 문화 => 월간 모바일 개발자 회의 운영, 기술 부채 선정 및 도전 과제 도출
 - 협업 => UX팀과 협의해 Figma-소스 Asset 이름 일치, 디자인 부서 커뮤니케이션·구현 비용 절감
 - 업무 프로세스 개선 => PR Template·Jira Workflow로 코드 리뷰·업무 프로세스 표준화
@@ -422,6 +439,9 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 - 재사용, 확장 => 최소화·최대화 기능을 전 화면에서 **재사용** 가능하도록 기반 ViewController 설계·구현
 - Appstore 리뷰, 오너십 => App **Store 리뷰**에 **직접 답변**하고, 기획이 불필요한 개선 사항은 직접 조치
 
+**연동/인증**
+- 소셜 로그인, SNS, 외부 SDK => **SNS 소셜 로그인**(Google·Kakao·Facebook·Naver) 연동 (2026-10 사용자 확인)
+
 **테스트/안정성**
 - UI Test, QA 프로세스 => 전체 강의를 순회하며 재생 가능 여부를 검증하는 UI Test 기반 [**QA 프로세스**](https://toyboy2.medium.com/xcuielement-wait-extension-c6c40cdce458) 구축
 - 메모리 => **Instruments**로 메모리 릭 탐지, Memory Graph로 순환 참조 해결
@@ -431,7 +451,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 **인프라**
 - Fastlane => 유휴 iMac을 이용하여 Fastlane 기반 CI/CD 인프라 구축
 
-**스킬 태그**: `Swift` `MVVM` `RxSwift` `AVFoundation` `XCUITest` `Instruments` `Fastlane` `Firebase` `Storyboard`
+**스킬 태그**: `Swift` `MVVM` `RxSwift` `AVFoundation` `XCUITest` `Instruments` `Fastlane` `Firebase` `Crashlytics` `SNS Login` `Storyboard`
 
 #### 암기고래 (계열사 앱)
 - Objective-C, 마이그레이션, 리팩토링 => Objective-C로 된 앱을 인수해 Swift로 점진 마이그레이션, 레거시 리팩토링
@@ -474,6 +494,8 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 - 아키텍쳐 => 앱 업데이트 없이 콘텐츠 갱신이 필요한 앱(공인중개사요약집 등)은 별도 서버 없이 **Google Drive Xlsx를 원격 데이터소스**로 활용하는 경량 아키텍처 구축
 
 **ShowNote 후속 (투자 유치는 퇴사 후 개인 기간에 받음. 개발·기획 개편 불릿은 3-5 크레디프로 이동)**
+- ShowNote, 단독 개발, 유지보수, 특허, 투자 => ShowNote: 재직 중 단독 개발한 앱을 퇴사 후에도 투자 유치 시점까지 유지보수, 특허 핵심 **'Trigger'** 아이디어를 직접 고안해 **특허 출원**과 2018.07 **10억 원 규모 엔젤 투자 유치(Enable Holdings)** 에 기여 (2026-10 비버웍스 확정 표현. 인과 모호 해소용)
+- **사실 관계(본인 확인 2026-10)**: ShowNote는 본인이 단독 개발. 투자는 아이디어를 보유한 업체가 받았고, 본인은 투자 유치 시점까지 유지보수했으며 특허 핵심 아이디어(Trigger)는 본인이 고안. "투자를 직접 유치"로 읽히지 않게 쓴다. 아래 구 문장은 인과가 모호해 쓰지 않는다.
 - 앞선 개발·기획 성과가 **특허 출원**과 2018.07 **10억 원 규모 엔젤 투자 유치(Enable Holdings)** 결정으로 이어짐 (시원스쿨 앱과 무관, 크레디프 재직 중 ShowNote 성과. 투자 확정 시점은 2018.07로 본인 확인)
 
 **스킬 태그**: `Swift` `UIKit` `Storyboard` `CocoaPods` `Firebase` `PDF Rendering` `PDFKit` `Node.js` `Google Drive API`
@@ -491,6 +513,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 ### 3-5. 크레디프 — 이동통신 3사·공공기관 대상 SI/SM 전문기업
 **2009.08 – 2017.02 (7년+) · 정규직 · 개발자**
 
+- **모바일 경력 인정 메모(2026-10 사용자)**: 크레디프 기간을 모바일 경력으로 인정받으려면 iOS/Android 네이티브 **구현 내용**(ShowNote PDF·Trigger·Device Lock·Zip·드래그, 초성 검색, Beacon AIDL SDK)이 본문에 있어야 한다. 모바일 경력을 강조하는 공고에서는 이 구현 불릿을 삭제하지 않는다.
 - 담당자 공백·인수인계 부재·장애 등 위기 상황마다 투입돼 문제 해결, 신규 언어·플랫폼 선행 연구
 - 서버(C)부터 클라이언트(C#/Java, 모바일 iOS/Android)까지 **7년 이상 풀스택**으로 **30개+ 프로젝트** 개발·유지보수
 - Client => 판교 R&D센터 IBS/FMS 클라이언트 개발을 위해 사내 C# 교육, Core Framework 개발
@@ -517,6 +540,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 > 구조 옵션: 별도 섹션 대신, 관련성이 가장 큰 회사 블록(주로 SK AX) 안에 해당 불릿을 직접 내장하는 구조도 가능(헤렌 버전 사례 — Ollama MR 리뷰 불릿을 SK AX 불릿 리스트 안에 배치). JD에 Storyboard 있는 경우만 Storyboard 언급
 
 - SK AX에서 보안 제약을 고려해 GitLab Runner에 [**Ollama를 연결한 Agent MR 리뷰**](https://medium.com/@toyboy2/automating-mr-review-on-self-hosted-gitlab-using-ai-ollama-932e1cab30d9) 구축, 비개발자 매니저의 AI 활용 KPI 달성에 기여하고 변경 사항을 안심하고 빠르게 리뷰할 수 있도록 지원
+- 개인 앱 유지보수를 위해 **ios-developer·designer·marketer·cs·reporter 에이전트로 팀을 구성**하고, CLAUDE.md에 역할·위임 규칙·QA 게이트를 정의해 메인 에이전트가 목표를 나눠 위임하고 결과를 검토하는 **멀티 에이전트 오케스트레이션** 운영 (cs가 피드백 수집 → reporter가 이슈 작성 → 검토 후 담당 에이전트에 배정) (2026-10 사용자 확인: 오케스트레이션 경험, 비버웍스 JD 요구. 에이전트 구성은 사용자 진술과 개인 앱 CLAUDE.md 팀 구조 기준)
 - 개인 앱 현대화를 위해 [**SwiftUI 마이그레이션  Skill**](https://github.com/2sem/swiftui-migrator-skill) 구축, 앱당 1주 이상 걸리던 작업을 **1~2일로 단축**
 - Youtube 영상 편집을 위해 유료 버전 전용 기능인 Davinci Resolve MCP를 무료 버전 [davinci-resolve-lite-mcp](https://github.com/2sem/davinci-resolve-lite-mcp)으로 직접 구축, 장면 분류·편집 방법·검증 단계를 Skill과 Script로 분리해 신뢰성 향상
 
@@ -584,6 +608,7 @@ Flutter(학습) · Dart(학습) · TensorFlow(교육 수강)
 | 피에프씨테크놀로지스 | D 확장(적극적 의견 제시·신기술 실험) + 금융 도메인 도전 클로징 | AI 활용 경험 섹션 최상단 배치, 킥고잉 Naver Place/Daum Map 경로 표시 기능 신규 등장, ShowNote 투자사명(Enable Holdings) 최초 명시, AI Layer SDK 소비 앱 구체화(T world·T membership) |
 | 핀다 | E 확장(리더십·프로세스 정착) + 핀테크 도메인 도전 클로징 | 경력요약 순서 변형(모바일 8년+ 먼저), 거의 모든 불릿에 결과/임팩트 프레이징 보강(대기열→트래픽 안정성, Figma→비용 절감, S3개선→테스트 단축 등) |
 | 스트레스솔루션(HealingBeat) | B 확장(React Native-lead) + 제품경험 공감 클로징 | 경력요약에 RN 2년+ 분리 명시 최초 등장, 소개문이 "React Native와 iOS" 순서로 시작(RN 우선), Flutter/Dart/TensorFlow 태그 최초 등장(스코프 명시 처리), $100/$800 두 시점 수치 한 문장 병기 |
+| 비버웍스(RN 시니어, AI 네이티브) | B(RN 모바일 리드) + 규칙 예외로 AI 활용 경험을 경력 위로 이동 | 킥고잉 불릿을 CI/CD(Fastlane·빌드 캐시·**Jest 포함**)·상태관리·Native Bridge·외부 SDK 순으로 재배열, SK AX는 Crashlytics 5,000건 Crash 최상단, 시원스쿨 SNS 소셜 로그인 신규, Crashlytics 태그를 모바일 블록 전체(크레디프 제외)에 추가, Davinci MCP를 AI 활용 경험에 포함, 개인 iOS의 SPM Action 불릿 삭제(RN 직무 부적합), 크레디프 구현 불릿 유지(모바일 경력 인정) |
 
 ---
 
