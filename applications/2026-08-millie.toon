@@ -1,0 +1,10 @@
+id: 2026-08-millie
+company: 밀리의서재
+jobTitle:
+  en: iOS Engineer (Client Team)
+  ko: iOS 엔지니어 (클라이언트팀)
+appliedDate: 2026-08-12
+jd:
+  en[6]: "Lead app architecture: module structure, dependencies, state management","Build EPUB/PDF viewer, audiobook playback, IAP, Apple Watch/CarPlay/widgets","Own code review, test strategy and CI/CD improvements",5+ years of iOS; Swift Concurrency/Combine; UIKit and SwiftUI,MVVM/Clean Architecture/TCA experience; SPM module separation,"Preferred: coding agents (Claude Code, Cursor), MCP tooling"
+  ko[6]: 앱 전반의 아키텍처(모듈 구조·의존성·상태 관리) 설계 주도,"EPUB·PDF 뷰어, 오디오북 재생, 결제(IAP), Apple Watch·CarPlay·위젯 핵심 기능 개발",코드 리뷰·테스트 전략·CI/CD 개선,"iOS 5년 이상, Swift Concurrency·Combine, UIKit·SwiftUI 경험","MVVM·Clean Architecture·TCA, SPM 기반 모듈 분리 경험","우대: Claude Code·Cursor 등 코딩 에이전트, MCP 도구 경험"
+jdUrl: "https://www.wanted.co.kr/wd/367283"

@@ -1,0 +1,10 @@
+id: 2026-09-hunet
+company: 휴넷
+jobTitle:
+  en: iOS Engineer (Architecture)
+  ko: iOS 엔지니어 (아키텍처)
+appliedDate: 2026-09-01
+jd:
+  en[5]: Lead overall iOS architecture design and structural improvement,Redefine module responsibilities and dependencies in a multi-module setup,Design WebView–Native bridge,Transition gradually from Objective-C/Storyboard to Swift/SwiftUI,5+ years of iOS; MVVM/Clean Architecture
+  ko[5]: iOS 앱 전반의 아키텍처 설계·구조 개선 주도,멀티 모듈 구조에서 모듈 책임·의존성·경계 재정의,WebView–Native 브릿지 구조 설계,Objective-C/Storyboard에서 Swift/SwiftUI로 점진적 전환,"iOS 5년 이상, MVVM·Clean Architecture 경험"
+jdUrl: "https://www.wanted.co.kr/wd/382702"

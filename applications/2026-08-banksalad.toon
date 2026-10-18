@@ -1,0 +1,10 @@
+id: 2026-08-banksalad
+company: 뱅크샐러드
+jobTitle:
+  en: iOS Engineer
+  ko: iOS 엔지니어
+appliedDate: 2026-08-19
+jd:
+  en[5]: "Build native features (home, assets, ledger, transfer, certificates)",Lead migration from UIKit + RxSwift to SwiftUI + Swift Concurrency,Domain-level modularization in a Tuist monorepo,"Improve push notifications, deep links and the Web–Native interface",Use AI tools from coding to review and QA
+  ko[5]: "네이티브 기능 개발 (홈, 자산, 가계부, 송금, 인증서 등)",UIKit + RxSwift 레거시를 SwiftUI + Swift Concurrency로 전환하는 마이그레이션 주도,Tuist 기반 모노레포에서 도메인 단위 모듈화,"Push Notification·딥링크 개선, Web–Native 인터페이스 유지보수","코드 작성부터 리뷰, QA까지 AI 도구 활용"
+jdUrl: "https://www.wanted.co.kr/wd/283078"
