@@ -1,73 +1,91 @@
 # 이영준
 
-toyboy2@hanmail.net · [LinkedIn](https://www.linkedin.com/in/gamehelper/) · [Medium](https://toyboy2.medium.com) · [Portfolio](https://2sem.github.io) · [GitHub](https://github.com/2sem)
+Mobile Tech Lead · React Native / iOS
 
-React Native와 iOS를 중심으로 다양한 도메인에서 담당 영역을 단독으로 책임져 왔습니다. 업무를 스스로 발굴·분할하고 우선순위를 할당해 수행하며, 이슈나 장애 상황에서도 원인을 끝까지 추적해 침착하게 해결합니다. 초기 단계 프로덕트를 기획부터 출시까지 단독으로 이끈 경험이 다수 있으며, AI 코딩 도구를 동료로 활용하되 산출물은 비판적으로 검증하고 책임집니다. 사용자가 캐릭터와 끊김 없이 대화하는 경험을 뤼튼에서 함께 만들고 싶습니다.
+toyboy2@hanmail.net · [GitHub](https://github.com/2sem) · [LinkedIn](https://www.linkedin.com/in/gamehelper/) · [Medium](https://toyboy2.medium.com)
 
----
+서버 개발로 시작해 2015년부터 Mobile 분야에 도전해왔습니다. Presentation 앱을 개발하면서 PDF 렌더링을, 외국어 강의 수강 앱을 신규 개발하면서 영상 재생 기술을 경험했고, 앱이 중요한 공유 모빌리티 서비스를 개선하면서 BLE 기술을, 통신사 앱 운영 과정에서 Webview 기반 하이브리드 앱의 구조를 파악했습니다. 모바일 엔지니어 2~3명을 리드하며 코드 리뷰 프로세스와 기술부채 해소 사이클을 팀에 정착시켰고, 배포 프로세스 개선으로 개발 업무를 가속했습니다. 개인 앱에 새로운 기술을 실험해서 얻은 노하우를 전파하고, 제도와 도구의 병목을 연구하여 업무 프로세스를 개선합니다.
+
+**총 경력 15년+** · 모바일 8년+ (iOS 5년+ · React Native 2년+) · Mobile Tech Lead
 
 ## 경력
 
-### 올룰로 (킥고잉) — 2021.06 – 2023.10 · App Developer → Mobile Tech Lead
-국내 최초·국내 1위 공유 킥보드 서비스 · 대규모 B2C O2O · React Native 기반 크로스플랫폼 앱(iOS·Android)
+**올룰로 (킥고잉) · 2021.06 – 2023.10 · 정규직 · App Developer → Mobile Tech Lead**
+국내 최초 공유 킥보드(모빌리티) 서비스 · React Native 기반 크로스플랫폼 앱(iOS·Android)
+- **Channel Talk(외부 CX SDK) 통합**: [채팅 상담](https://youtube.com/shorts/tC-np8ShcZU) 기능 추가, 통합 후 알림 분류 메소드에서 발생한 **Crash**를 제조사에 제보하고 [수정안 PR 제출](https://github.com/channel-io/react-native-channel-io/pull/107)
+- **react-native-vision-camera**의 Android 빌드 오류(Unresolved reference: resolveView)를 메서드 이름 기반 동적 호출로 바꿔 해결하고 [오픈소스 PR 제출](https://github.com/mrousavy/react-native-vision-camera/pull/1318)
+- Naver Map SDK **Native Bridge**에 [축척 계산 로직 추가](https://github.com/team-olulo/react-native-naver-map/pull/7)해 지도 자동 Zoom(길안내) 구현
+- react-native-ble-plx가 Xcode 13과 호환되는 Pod을 참조하지 않아 발생한 빌드 오류를 [Pod과 라이브러리를 fork해 CocoaPods·npm에 배포하는 방식으로 해결](https://toyboy2.medium.com/react-native-ble-plx-xcode-13-troubleshootings-dca3f793b1e0)
+- Android Build-tools 31 이후 dx를 찾지 못해 로컬 빌드가 실패하던 문제를 **d8 링크 생성 Gradle 스크립트**로 해결하고 직접 등록한 [공개 이슈](https://github.com/channel-io/react-native-channel-io/issues/109)에 해결 방법 공유
+- 구역 정보 API 호출 **4회→1회로 데이터 사용량 최소 75% 절감**(+위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여
+- BLE 통신 로직 최적화: Library 옵션 및 제조사 펌웨어 조정 후 스캔·연결 소요 시간 지표화로 개선 검증
+- iOS/Android로 분리돼 있던 GitHub CI/CD를 **Fastlane 기반으로 통합**
+- [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part1-54362deaeda2)으로 **배포 소요 시간 50% 감축**
+- 이전 버전과 동시에 설치할 수 있도록 QA 버전 '테스트킥'을 [**flavor로 분리해 배포**](https://toyboy2.medium.com/how-to-split-android-project-for-qa-version-1128b2bce7bb)
+- Android 배포를 AWS S3 링크 공유 방식에서 [**APK Slack 직접 업로드**](https://toyboy2.medium.com/how-to-distribute-apk-to-slack-automatically-1b3aa992177e)로 개선해 테스트 단계 단축
+- Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 테스트 시간 **37초 → 27초**로 단축
+- PR Template·Jira Workflow로 코드 리뷰·업무 프로세스 표준화
+- 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → [**React Native 점진적 업그레이드**](https://medium.com/@toyboy2/migration-react-native-from-0-65-to-0-68-troubleshooting-guide-0a8a7401c581) 등 기술부채 해소
 
-Native 모듈 수정 PR Template, CI/CD 개선, 모바일 개발자 회의와 기술 부채 해결 시간 등을 도입하여 개발 프로세스 개선
+`React Native` `TypeScript` `Redux` `Java/Objective-C(Native Bridge)` `Naver Map SDK` `Channel Talk SDK` `BLE` `Jest` `Fastlane` `GitHub Actions`
 
-- **채널톡**: 유선 고객센터를 앱 내 고객센터 기능으로 전환. SDK에서 알림 분류 시 **크래시** 발생하여 원인을 분석해서 수정하고 제조사에 제보 및 **PR 제출**
-- **동네지도**: 지도에 킥보드가 아닌 장소를 표시하는 SNS 기능 제공. Custom Tooltip의 Design을 일치할 수 있게 Map 라이브러리의 **Native Module 수정**. 장소 등록 시 설정할 Emoji 선택 기능 개발하여 오픈소스로 배포
-- **데이터 사용 최적화**: 서버와 지도 정보에 대한 격자 Grid 캐싱 구축과 Google Polyline 적용으로 송/수신 데이터를 줄이고 앱 자체로도 Profiler 분석을 통해 **호출 횟수를 1/4로 최적화**
-- **알림 설정 분리**: 마케팅 알림 동의를 별도 설정으로 제공. OS에 따라 사진 접근 대응, 추적 권한 요청 추가. iOS는 자동으로 배지 카운트가 동기화되지 않아 **Notification Service Extension**로 구현
-- **전기자전거**: 신규 기기 유형 대여 기능 제공. Protocol 분석 및 전용 **BLE 모듈** 개발, UI 개발 지도
-- **패스**: 여러 화면에서 동일한 패스의 상태를 사용하기 위해 UI 외부에서 전역으로 패스 상태 업데이트하기 위한 **Redux** dispatch 호출 구조 설계 구현
-- **외국어 지원**: 설정 언어에 따른 Resource 전환 **Hook** 설계, Android 설정 오픈소스에 앱 언어 설정 기능 추가
-- **CI/CD**: iOS/Android로 분리돼 있던 GitHub CI/CD를 **Fastlane 기반으로 통합**, 빌드 캐시 적용으로 **배포 소요 시간 50% 감축**
-- **리드**: 엔지니어 2~3명 리드, **1일 1시간** 기술부채 해소 시간 도입 → React Native 업그레이드 등 기술부채 해소, PR Template·Jira Workflow로 코드 리뷰·업무 프로세스 표준화
+**개인 프로젝트 (직딩) · 2024.01 – 2024.02 · 개인 · React Native 앱 개발자**
+직장인 워라밸 앱(iOS·Android) · UX 디자이너 협업 · [GitHub](https://github.com/2sem/zicding-app)
+- React Native·TypeScript로 UX 디자이너와 협업해 워라밸 앱을 단독 개발
+- 공공데이터 공휴일 API 연동으로 남은 [공휴일 표시](https://medium.com/@toyboy2/%EC%A7%81%EB%94%A9-%EA%B0%9C%EB%B0%9C%EA%B8%B0-%EA%B3%B5%ED%9C%B4%EC%9D%BC-%EC%A1%B0%ED%9A%8C-394715feb9ea?sharedUserId=toyboy2)·연차 계획 제안, [커스텀 캘린더](https://medium.com/@toyboy2/%EC%A7%81%EB%94%A9-%EA%B0%9C%EB%B0%9C%EA%B8%B0-%EC%9E%85%EC%82%AC%EC%9D%BC-%EC%84%A0%ED%83%9D-ffec8c67e36d?sharedUserId=toyboy2) 구현
+- Realm 오프라인 우선 로컬 저장소 구성, 오늘 남은 근무시간 실시간 카운트다운 구현
+- [개발 과정](https://toyboy2.medium.com/list/ba6efa6fce3c) 기록
 
-`React Native` `TypeScript` `Redux` `Objective-C/Kotlin(Native Bridge)` `BLE` `Amplitude` `Jest` `Fastlane` `GitHub Actions`
+`React Native` `TypeScript` `Realm`
 
-### SK AX (프리랜서, 계약: 디투엘) — 2024.06 – 2025.10 · iOS Developer
-IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 — T world(고객센터 B2C), SWING(대리점 B2B Hybrid), AI Layer SDK
+**SK AX (계약: 디투엘) · 2024.06 – 2025.10 · 프리랜서 · iOS Developer**
+IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world, AI Layer SDK) · T world MAU 800만
+- **WKWebView** Delegate에서 강제 언래핑으로 발생한 **주간 5,000건 이상의 Crash**를 병합 전 전임자 PR의 가설로는 동일한 Crash가 발생하지 않아 코드를 추적하여 동일 Crash 재현 및 원인 해결
+- 보안 기능 설정한 사용자가 SwiftUI 위젯을 사용할 수 없는 문제를 Cookie Storage 공유로 세션을 재사용하고 API를 분석 후 서버 개발자에게 수정안 제시로 해결
+- **AI Layer iOS SDK** 유지보수, Accessibility·UI 개선
+- 대형 MR 리뷰 불가 문제를 Jira에 Epic을 도입하고 Subtask 단위 MR + [**MR Template**](https://toyboy2.medium.com/automate-your-tasks-with-mr-template-using-gitlab-commands-b1af5c84ce7b) 적용으로 해결, SK 매니저 만족으로 타 프로젝트에도 전파
+- Closure 기반 API 호출은 Swift Concurrency, 신규 UI는 Combine으로 점진 전환해 생산성·성능 개선
+- Objective-C를 Swift로 점진적 마이그레이션(Extension 단위)
 
-- **T world**: **WKWebView** Delegate에서 강제 언래핑으로 발생한 **주간 5,000건 이상의 Crash**를 Firebase Crashlytics로 추적, 전임자 PR의 가설로는 재현되지 않아 코드를 추적하여 동일 Crash 재현 및 원인 해결
-- **T world**: 대량 동시 접속 시 서버 과부하를 줄이기 위한 **대기열(Queue) 기능** 구현으로 트래픽 급증 구간 안정성 확보. 보안 기능 설정한 사용자가 **SwiftUI 위젯**을 사용할 수 없는 문제를 Cookie Storage 공유로 세션을 재사용하고 API를 분석 후 서버 개발자에게 수정안 제시로 해결
-- **SWING**: Objective-C를 Swift로 점진적 마이그레이션(Extension 단위), CocoaPods 종료 대비 라이브러리별 **SPM 전환**
-- **AI Layer SDK**: T world, T membership에 탑재하는 SDK. 스플래시 버그, 접근성 문제 해결. Fastlane으로 빌드→TestFlight→Slack IPA 업로드 자동화
-- **AI 활용**: 보안 제약을 고려해 GitLab Runner에 [**Ollama를 연결한 Agent MR 리뷰**](https://medium.com/@toyboy2/automating-mr-review-on-self-hosted-gitlab-using-ai-ollama-932e1cab30d9) 구축, 변경 사항을 안심하고 빠르게 리뷰할 수 있도록 지원
-- **프로세스**: 대형 MR 리뷰 불가 문제를 Jira에 Epic을 도입하고 Subtask 단위 MR + **MR Template** 적용으로 해결. 주니어 엔지니어 2명을 Subtask 단위 업무 할당·분할 위임 방식으로 코칭
+`Swift` `Objective-C` `SwiftUI` `WidgetKit` `WKWebView` `Combine` `Swift Concurrency` `MVVM` `Unit Test` `Fastlane` `GitLab CI/CD` `Jira`
 
-`Swift` `SwiftUI` `Objective-C` `WidgetKit` `Swift Concurrency` `XCTest` `SPM` `CocoaPods` `Fastlane` `GitLab CI/CD` `Firebase Crashlytics`
+**에스제이더블유인터내셔널 (시원스쿨) · 2018.06 – 2021.05 · 정규직 · iOS Developer**
+국내 1위 온라인 어학 교육 플랫폼
+- **빅토익보카**: 기획·디자인·Android 앱이 모두 다른 상황에서 기획을 새로 정립해 iOS 버전 개발 / **StoreKit 기반 인앱결제**를 직접 제안·구현해 도서 부록을 넘어 자체 수익화
+- 인앱 리뷰 요청 노출을 제안하고 설계·구현해 평점을 4.1 → **4.7**로 상향
+- 정체된 프로젝트를 기획서 전면 재검토로 재정립, 서버 개발자와 소통하며 제로베이스로 자체 앱 단독 개발
+- **React Native, Unity, Xamarin** 등 CrossPlatform 선행 학습, 팀 내 교육 및 파일럿 프로젝트 수행
+- 전체 강의를 순회하며 재생 가능 여부를 검증하는 UI Test 기반 [**QA 프로세스**](https://toyboy2.medium.com/xcuielement-wait-extension-c6c40cdce458) 구축
 
-### 에스제이더블유인터내셔널 (시원스쿨) — 2018.06 – 2021.05 · iOS Developer
-국내 1위 온라인 어학 교육 플랫폼 · 대규모 B2C 학습 서비스(유료 강의·인앱결제)
+`Swift` `MVVM` `RxSwift` `AVFoundation` `StoreKit` `XCUITest` `Instruments`
 
-- **시원스쿨 강의실**: 정체된 프로젝트를 기획서 전면 재검토로 재정립, 서버 개발자와 소통하며 제로베이스로 자체 앱 단독 개발. 인앱 리뷰 요청 노출을 제안하고 설계·구현해 평점을 4.1 → **4.7**로 상향
-- **안정성**: **Instruments**로 메모리 릭 탐지, Memory Graph로 순환 참조 해결. 전체 강의를 순회하며 재생 가능 여부를 검증하는 UI Test 기반 **QA 프로세스** 구축
-- **시원스쿨 플레이어**: AVFoundation 기반 공용 **영상 플레이어** 라이브러리 개발해서 다른 앱과 공유
-- **빅토익 보카**: **StoreKit 기반 인앱결제**를 직접 제안·구현해 도서 부록을 넘어 자체 수익화
-- **시원스쿨펜**: 단어 카드 스크롤 성능을 ScrollView 대신 **FlatList**로 변경하여 개선. React Native, Unity 등 CrossPlatform 선행 학습, 팀 내 교육 및 파일럿 프로젝트 수행
-
-`Swift` `UIKit` `RxSwift` `MVVM` `AVFoundation` `StoreKit` `XCUITest` `Instruments` `Fastlane`
-
-### 개인 iOS 개발자 — 2017.02 – 2018.06 · 개인
+**개인 iOS 개발자 · 2017.02 – 2018.06 · 개인**
 - 개인 앱 다수를 기획·개발·**App Store 출시**해 앱 전체 합산 **광고 수익 월 $100 이상** 달성(2017.12 기준, 2020년 기준 $800+)
-- '관련주식검색기': 푸시 알림 제안 + Node.js·**FCM** 기반 발송 서버 구축으로 **매출 2배** 달성(최대 **MAU 5,899**)
-- ShowNote: iPad 대상 Presentation 앱. 특허 핵심 아이디어인 'Trigger' 고안, 10억 투자 유치
+- '관련주식검색기': 푸시 알림 제안 + Node.js·**FCM** 기반 발송 서버 구축으로 **매출 2배** 달성
+- ShowNote: 앞선 개발·기획 성과가 **특허 출원**과 2018.07 **10억 원 규모 엔젤 투자 유치(Enable Holdings)** 결정으로 이어짐
+- Xcode 업그레이드 후 GitHub Workflow(CD)에서 발생한 [SPM 오류(Package.resolved 손상)를 해결하고 패치 Action으로 제작](https://toyboy2.medium.com/package-resolved-file-is-corrupted-or-malformed-fix-or-delete-the-file-baeb572863fc)
 
-### 크레디프 — 2009.08 – 2017.02 · 개발자
-이동통신 3사·공공기관 대상 SI/SM
+`Swift` `UIKit` `Firebase` `Node.js`
+
+**크레디프 · 2009.08 – 2017.02 · 정규직 · 개발자**
+이동통신 3사·공공기관 대상 SI/SM 전문기업
 - 서버(C)부터 클라이언트(C#/Java, 모바일 iOS/Android)까지 **7년 이상 풀스택**으로 **30개+ 프로젝트** 개발·유지보수
-- 저전력 Beacon 구매자 대상 SKT O2O **Android SDK**를 JNI 대신 AIDL 기반으로 개발
+- 담당자 공백·인수인계 부재·장애 등 위기 상황마다 투입돼 문제 해결, 신규 언어·플랫폼 선행 연구
+- ShowNote: PDF 페이지를 배경으로 렌더링하고 개체를 위에 표시하는 방식 구현, 기획을 전면 개편하며 기존 기획서에 없던 특허 핵심 [**'Trigger'**](https://www.apnews.kr/news/articleView.html?idxno=1525364) 개념 고안
+- ShowNote의 [문서 잠금(Device Lock)](https://toyboy2.medium.com/how-to-lock-your-ios-app-with-device-lock-656f739fe4c6)·[Zip 압축/암호화 저장](https://toyboy2.medium.com/zip-archiving-files-in-ios-app-ade489532066)·[페이지 순서 드래그 변경](https://toyboy2.medium.com/how-to-move-cells-in-your-ios-app-by-dragging-ad83f8ad72e6) 구현
+- '누군지다알아'에 수신 이미지 생성 기능을 추가해 2.0 출시, 연락처 [초성 검색](https://toyboy2.medium.com/ios%EC%97%90%EC%84%9C-%EC%B4%88%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%97%B0%EB%9D%BD%EC%B2%98-%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0-c2fbdce54383) 기술을 연구해 정리
 
----
+`C` `C#` `Java` `MySQL` `Oracle` `MSSQL`
 
-## AI 활용 · 외부 활동
+## 외부 활동
+- [**Medium**](https://toyboy2.medium.com)에 [React Native](https://medium.com/@toyboy2/list/reactnative-ec618220f682)·[iOS](https://medium.com/@toyboy2/list/ios-4adba6bc75d5) 등 기술 Article 다수 발행, Dev Korea Meetup 등 커뮤니티 정기 참여
+- **Flutter · Dart(학습 · 아티클 연재)**: 퇴근길 지하철에서 Dart 학습, Firestore로 카카오톡 채팅 화면을 클론 구현, [Medium 아티클](https://toyboy2.medium.com/list/flutter-c6e656a0db03)로 연재
+- 개인 [iOS 앱](https://apps.apple.com/kr/developer/young-jun-lee/id1225480114) 전반에 [**Tuist**](https://tuist.dev)를 실제 적용해 모듈화 구조 구축·운영하고 [공유](https://toyboy2.medium.com/list/tuist-c1abeaa7d167)
+- Seoul iOS Meetup에서 ['Tuist 캐시, 선택적 테스트 그리고 쉬운 CI로 빌드 반복 가속하기'](https://youtu.be/FFkEbqG4ips) 발표
+
+## AI 활용 경험
+- 보안 제약을 고려해 GitLab Runner에 [**Ollama를 연결한 Agent MR 리뷰**](https://medium.com/@toyboy2/automating-mr-review-on-self-hosted-gitlab-using-ai-ollama-932e1cab30d9) 구축, 비개발자 매니저의 AI 활용 KPI 달성에 기여하고 변경 사항을 안심하고 빠르게 리뷰할 수 있도록 지원
 - 개인 앱 현대화를 위해 [**SwiftUI 마이그레이션 Skill**](https://github.com/2sem/swiftui-migrator-skill) 구축, 앱당 1주 이상 걸리던 작업을 **1~2일로 단축**
-- 개인 [iOS 앱](https://apps.apple.com/kr/developer/young-jun-lee/id1225480114) 전반에 [**Tuist**](https://tuist.dev) 모듈화 적용, [한국어 문서 번역](https://toyboy2.medium.com/contributing-to-open-source-as-translator-translating-tuist-documentation-into-korean-ad08b205da65) 기여 및 Tuist 노하우 공유 오픈채팅방 운영
-- Seoul iOS Meetup ['Tuist 캐시, 선택적 테스트 그리고 쉬운 CI로 빌드 반복 가속하기'](https://youtu.be/FFkEbqG4ips) 발표
-- [Medium](https://toyboy2.medium.com)에 [React Native](https://medium.com/@toyboy2/list/reactnative-ec618220f682)·[iOS](https://medium.com/@toyboy2/list/ios-4adba6bc75d5) 기술 Article 다수 발행
-
-## 스킬
-React Native · TypeScript · Redux · Jest · Native Module(Objective-C/Kotlin) · Swift · SwiftUI · UIKit · Objective-C · Swift Concurrency · SPM · CocoaPods · Fastlane · GitHub Actions · GitLab CI/CD · Firebase Crashlytics · Instruments · StoreKit · AVFoundation · BLE
 
 ## 학력
 **서일대학교** · 2003.03 – 2009.02 · 졸업 · 소프트웨어전공 (3년제)
