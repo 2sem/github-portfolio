@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react'
 import { useLang } from '../i18n.jsx'
+import { resumePdfUrl } from '../constants.js'
 
 export default function Contact({ github, linkedin, email, x, threads, facebook, contactMsg, onVisible }) {
   const { t, tr, lang } = useLang()
   const ref = useRef(null)
 
   const handleResumeDownload = () => {
-    const url = lang === 'ko' ? '/Lee-Young-jun-Resume-ko.pdf' : '/Lee-Young-jun-Resume-en.pdf'
-    window.open(url, '_blank')
+    window.open(resumePdfUrl(lang), '_blank')
   }
 
   useEffect(() => {
@@ -37,9 +37,9 @@ export default function Contact({ github, linkedin, email, x, threads, facebook,
         <div>
           <p className="contact-msg">{tr(contactMsg)}</p>
           <div className="contact-links">
-            {links.map((l, i) => (
-              <a key={i} className="contact-link" href={l.href} target="_blank" rel="noopener noreferrer">
-                <span className="arrow">{l.mail ? '✉' : '↗'}</span>
+            {links.map(l => (
+              <a key={l.name} className="contact-link" href={l.href} target="_blank" rel="noopener noreferrer">
+                <span className="arrow" aria-hidden="true">{l.mail ? '✉' : '↗'}</span>
                 <span className="sns-name">{l.name}</span>
                 <span className="sns-handle">{l.handle}</span>
               </a>
@@ -54,19 +54,19 @@ export default function Contact({ github, linkedin, email, x, threads, facebook,
         <div className="contact-art">
           <div className="contact-status">
             <div className="contact-status-row">
-              <span className="cs-key">📍</span>
+              <span className="cs-key" aria-hidden="true">📍</span>
               <span className="cs-val">{t('location').replace('📍 ', '')}</span>
             </div>
             <div className="contact-status-row">
-              <span className="cs-key">🕐</span>
+              <span className="cs-key" aria-hidden="true">🕐</span>
               <span className="cs-val">UTC+9 · KST</span>
             </div>
             <div className="contact-status-row">
-              <span className="cs-key cs-green">✓</span>
+              <span className="cs-key cs-green" aria-hidden="true">✓</span>
               <span className="cs-val">{t('openToWork')}</span>
             </div>
             <div className="contact-status-row">
-              <span className="cs-key">✉</span>
+              <span className="cs-key" aria-hidden="true">✉</span>
               <span className="cs-val">{t('replyTime')}</span>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { useLang } from '../i18n.jsx'
+import { resumePdfUrl } from '../constants.js'
 import AvatarDot from './AvatarDot.jsx'
 
 const NAV = [
@@ -72,7 +73,7 @@ export default function Sidebar({ name, role, github, linkedin, email, x, thread
 
       <button
         className="dl-btn"
-        onClick={() => window.open(lang === 'ko' ? '/Lee-Young-jun-Resume-ko.pdf' : '/Lee-Young-jun-Resume-en.pdf', '_blank')}
+        onClick={() => window.open(resumePdfUrl(lang), '_blank')}
       >
         {t('downloadResume')}
       </button>
