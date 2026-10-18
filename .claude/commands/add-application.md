@@ -30,14 +30,18 @@ Full field reference: `applications/README.md`. Required: `id`, `company`,
 5. If the user supplied a resume snapshot file, copy it into
    `public/applications/` and set `resumeFile` to `/applications/<file>`.
    Otherwise omit `resumeFile` (falls back to the default resume PDF).
-6. Run `npm run build` to confirm the TOON file parses and the build
+6. Also archive the source files (resume, spec, screenshots) per the
+   `archive-application` skill into `application-history/applications/`,
+   unless the user says not to. Never commit `application-history/` without
+   asking — the repo is public and it holds personal data.
+7. Run `npm run build` to confirm the TOON file parses and the build
    still succeeds.
-7. Follow this repo's normal git workflow: if on `main`, create a new
+8. Follow this repo's normal git workflow: if on `main`, create a new
    branch describing the addition (e.g. `add-application-<company-slug>`,
    not `-v2`/`-v3`); commit just the new/changed files with a message
    like `Add archived application: <company> <job title>`; push; open a
    PR. This is a content-only change (no user-flow change), so a Mermaid
    diagram in the PR body is not needed.
-8. Open the PR in the browser and stop — do not merge. Per this repo's
+9. Open the PR in the browser and stop — do not merge. Per this repo's
    rules, merging always waits for the user's explicit instruction after
    they've reviewed it.
