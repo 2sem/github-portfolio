@@ -1,13 +1,14 @@
 ---
 name: deploy
-description: Deploy the portfolio to 2sem.github.io by running scripts/deploy.sh locally, for when the GitHub Actions deploy workflow can't run (free-tier limits). Use when the user says deploy, publish the site, or push to 2sem.github.io.
+description: Deploy the portfolio to 2sem.github.io by running scripts/deploy.sh locally (there is no GitHub Actions deploy workflow). Use when the user says deploy, publish the site, or push to 2sem.github.io.
 ---
 
 # Deploy
 
 Runs `scripts/deploy.sh`: `npm ci`, `npm run build`, then mirrors `dist/` into
-`2sem/2sem.github.io` (`main`) and pushes. Same job as `.github/workflows/deploy.yml`,
-using the user's git SSH access instead of `PAGES_DEPLOY_TOKEN`.
+`2sem/2sem.github.io` (`main`) and pushes, using the user's git SSH access.
+This is the only deploy path; the old Actions workflow was removed because its
+`PAGES_DEPLOY_TOKEN` expired.
 
 ## Steps
 

@@ -5,8 +5,8 @@ Terminal-styled developer portfolio for **Lee Young-jun** — bilingual (en/ko),
 resume builder. Live at **https://2sem.github.io**.
 
 Built with React + Vite. Project data is authored in [TOON](https://github.com/toon-format/toon)
-and loaded by a small Vite plugin. Deploys to GitHub Pages via GitHub Actions on
-push to `main`.
+and loaded by a small Vite plugin. Deployed to GitHub Pages with the local
+`scripts/deploy.sh` (or the `/deploy` skill).
 
 ## Develop
 
@@ -17,7 +17,7 @@ npm run build      # production build (also validates every .toon)
 npm run preview    # serve the production build locally
 ```
 
-Push to `main` → GitHub Actions builds and deploys to 2sem.github.io (~1 min).
+Run `scripts/deploy.sh` from an up-to-date `main` → builds and publishes to 2sem.github.io (~1 min).
 
 ---
 
