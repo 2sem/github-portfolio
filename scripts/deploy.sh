@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Local replacement for .github/workflows/deploy.yml (used when Actions minutes run out).
-# Builds, then mirrors dist/ into 2sem/2sem.github.io (main), like peaceiris/actions-gh-pages.
+# Local deploy (the only deploy path; no GitHub Actions workflow).
+# Builds, then mirrors dist/ into 2sem/2sem.github.io (main).
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
