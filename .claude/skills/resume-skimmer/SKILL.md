@@ -9,7 +9,7 @@ Two personas read the resume cold, each as the real person would. Their reaction
 
 ## Inputs
 - JD (text, URL, or an `application-history/` folder path). If missing, ask for it.
-- Resume (PDF or text; default: the latest resume produced by `resume-writer`). PDFs: extract text; never print phone numbers (see `archive-application/scripts/check_phone.py`).
+- Resume (PDF or text; default: the latest resume produced by `yj-resume-writer`). PDFs: extract text with `swift .claude/skills/archive-application/scripts/pdf_text.swift <pdf>`; never print phone numbers (see `archive-application/scripts/check_phone.py`). Prefer `resume.md` over the PDF when both exist.
 
 ## Steps
 

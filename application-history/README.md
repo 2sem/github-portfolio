@@ -23,8 +23,8 @@ application-history/
   bases/                                 resume base files and the pre-skill master
 ```
 
-The live resume source of truth is the `resume-writer` skill
-(`.claude/skills/resume-writer/references/master.md`). `bases/master-legacy.md` is the
+The live resume source of truth is the `yj-resume-writer` skill
+(`.claude/skills/yj-resume-writer/references/master.md`). `bases/master-legacy.md` is the
 older, smaller master kept for reference only.
 
 ## File naming (per application folder)

@@ -1,5 +1,5 @@
 ---
-name: resume-writer
+name: yj-resume-writer
 description: 이영준(iOS 엔지니어)의 공고용 이력서를 만들 때 쓰는 스킬. 공고를 받으면 지원 필터(3신호 중 2개 이상)를 판별하고, references/master.md의 확정 베이스 ①(Senior iOS) 또는 ②(RN/크로스플랫폼) 중 하나를 골라 불릿 순서와 볼드만 조정해 빌드한다. 불릿 추가·재작성, 포지셔닝 변경, 클로징 문장은 하지 않는다. "이력서 써줘", "이 공고에 맞춰 이력서", "JD 보고 이력서", "지원할만한 공고인지", "레주메", "resume", "경력기술서"를 언급하면 반드시 이 스킬을 사용. 새 이력서 버전을 업로드해 master.md에 반영해달라거나 PDF 양식을 분석해달라는 요청에도 사용.
 ---
 
@@ -13,7 +13,7 @@ description: 이영준(iOS 엔지니어)의 공고용 이력서를 만들 때 �
 - `references/pdf-writing-guide.md` — PDF 양식 스펙.
 
 ## 저장 위치 (이 저장소)
-- 스킬 원본: `.claude/skills/resume-writer/` (master.md가 최신 단일 소스)
+- 스킬 원본: `.claude/skills/yj-resume-writer/` (master.md가 최신 단일 소스)
 - 지원 이력·산출물 아카이브: `application-history/` (규칙은 `application-history/README.md`, 보관 절차는 `archive-application` 스킬)
 - 과거 베이스 파일: `application-history/bases/`
 
@@ -25,7 +25,7 @@ description: 이영준(iOS 엔지니어)의 공고용 이력서를 만들 때 �
 2. 팀 상황: 첫 iOS 채용 / 신규 SDK·신규 앱 / iOS 소수 인원
 3. 우대사항 수준: 모듈화·코드리뷰/멘토링·안정성 지표
 
-애매하면 지원 전에 채용 담당자에게 시니어 레벨 여부를 먼저 묻도록 안내한다(문의 문구 초안 제공 가능). 신호 개수와 근거를 한두 줄로 보고하고, 지원 트래커에 적을 값(신호 개수, 추천 채널)을 함께 준다.
+애매하면 지원 전에 채용 담당자에게 시니어 레벨 여부를 먼저 묻도록 안내한다(문의 문구 초안 제공 가능). 신호 개수와 근거를 한두 줄로 보고하고, `application-history/README.md` 지원 표에 적을 값(신호 개수, 추천 채널)을 함께 준다.
 
 ### 2. 베이스 선택
 - ① Senior iOS(SDK/플랫폼형): iOS 네이티브 중심, SDK·플랫폼·모듈화·안정성
@@ -38,13 +38,13 @@ description: 이영준(iOS 엔지니어)의 공고용 이력서를 만들 때 �
 불릿은 master.md 원문 그대로 쓴다. 필요한 불릿이 마스터에 없을 때만 새로 쓰고 즉시 master.md에 반영하며 사용자에게 알린다.
 
 ### 4. 빌드
-md는 항상 파일로 만들어 present한다. Docx/PDF는 요청할 때만 만든다(korean-docx-resume 스킬). 레이아웃은 템플릿 고정이며 확인은 3가지뿐이다: 폰트 깨짐, 블록 중간 잘림, 2페이지 초과.
+md는 항상 파일로 만들어 present한다. 초안은 `<회사>/resume-draft.md`, 확정(사용자 OK 또는 skim·refine 반영 후)되면 `resume.md`로 승격하고 draft는 지운다. PDF는 `export-resume` 스킬로 만든다(`resume.md`만 입력으로 받음). Docx는 요청할 때만(korean-docx-resume 스킬). 레이아웃은 템플릿 고정이며 확인은 3가지뿐이다: 폰트 깨짐, 블록 중간 잘림, 2페이지 초과.
 
 ### 5. 보관
 지원 완료 후 이력서·Spec·스크린샷은 `archive-application` 스킬로 `application-history/applications/<YYYY-MM-DD>_<회사>/`에 보관한다.
 
 ### 6. 채널 안내
-공고 지원은 필터를 통과한 건만. 인바운드(리멤버·원티드·LinkedIn, 1페이지 기본 이력서)와 직접 접촉(Tuist·Meetup·Medium 근거로 CTO/리드)을 병행하도록 상기시키고, 지원 트래커에 기록하도록 한다.
+공고 지원은 필터를 통과한 건만. 인바운드(리멤버·원티드·LinkedIn, 1페이지 기본 이력서)와 직접 접촉(Tuist·Meetup·Medium 근거로 CTO/리드)을 병행하도록 상기시키고, 지원 표(`application-history/README.md`)에 기록하도록 한다.
 
 ## 워크플로우 B. 새 이력서 버전 업로드 → master.md 업데이트
 1. 기존 master.md와 대조해 새 표현·불릿·태그·수치·링크를 스캔.
@@ -57,6 +57,6 @@ PDF를 업로드하면 `pdftoppm`/`pdfinfo`/`pdffonts`로 양식을 역산해 `r
 
 ## 출력 규칙
 - Markdown은 항상 실제 파일로 present(대화 텍스트로만 보여주지 않는다).
-- Docx/PDF는 명시적 요청이 있을 때만. Docx는 korean-docx-resume 스킬, PDF는 pdf-writing-guide.md와 pdf 스킬 참고, 산출 후 `pdftoppm`으로 육안 검수.
+- PDF는 `export-resume` 스킬(양식 스펙 참고는 pdf-writing-guide.md). Docx는 명시적 요청이 있을 때만 korean-docx-resume 스킬. 산출 후 PNG로 육안 검수.
 - 위치는 줄 번호 대신 섹션/내용으로 지칭한다.
 - 판단이 애매하면 임의로 정하지 말고 근거를 제시한 뒤 확인을 구한다.
