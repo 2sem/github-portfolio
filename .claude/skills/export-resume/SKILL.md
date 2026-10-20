@@ -30,7 +30,9 @@ lays it out. **Never reword, add, or drop content**; no phone number anywhere.
      orphaned job header at a page bottom.
    - Body font ≥ 9pt. If it needs less, go up a page instead.
 5. Check no text overlaps or overflows; links stay clickable.
-6. If asked, copy to Downloads: `cp resume.pdf ~/Downloads/이영준_이력서_<회사>.pdf`.
+6. When export is done (pages fit, checks pass), always copy the PDF to Downloads
+   without being asked: `cp resume.pdf ~/Downloads/이영준_이력서_<회사>.pdf`
+   (`<회사>` = the application folder name). Overwrite an earlier copy of the same name.
 
 ## Notes
 - Needs Google Chrome at `/Applications/Google Chrome.app` and `swift` (for page count/preview).
