@@ -82,6 +82,7 @@ Check with `python3 -I .claude/skills/archive-application/scripts/check_phone.py
 | 2026-10-13 | 쿠팡페이 | resume.docx, resume.pdf, spec.docx |
 | 2026-10-19 | 뤼튼 | resume.html, resume.md, resume.pdf, spec.docx |
 | 2026-10-19 | 비버웍스 | jd.md, resume.html, resume.md, resume.pdf |
+| 2026-10-20 | 데이터라이즈 | jd.md, resume.html, resume.md, resume.pdf, spec.md |
 
 ## Undated
 
