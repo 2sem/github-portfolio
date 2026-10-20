@@ -13,7 +13,7 @@ A JD, the current resume, and skim reports from the HR and CTO personas (what ea
 
 ## Process
 
-1. Read `.claude/skills/resume-writer/references/writing-principles.md` and master.md section 0-1 first. Those rules win over any skim suggestion.
+1. Read `.claude/skills/yj-resume-writer/references/writing-principles.md` and master.md section 0-1 first. Those rules win over any skim suggestion.
 2. Merge the two reports. Rank problems by how much they hurt the pass/fail verdict.
 3. For each problem, pick the smallest fix: reorder bullets, move or change bold, swap in an existing bullet from the master.md bank, adjust tags.
 4. Rewriting or adding a bullet only when no existing bullet covers a JD requirement the candidate genuinely meets. Mark such edits clearly as proposals needing user approval.
