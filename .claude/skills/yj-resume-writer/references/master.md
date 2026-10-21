@@ -23,7 +23,8 @@ toyboy2@hanmail.net · [GitHub](https://github.com/2sem) · [LinkedIn](https://w
 
 **경력 요약 줄 (고정, 두 베이스 공통)**
 
-**총 경력 15년+** · 모바일 8년+ (iOS 5년+ · React Native 2년+) · Mobile Tech Lead
+**모바일 8년+** (iOS 5년+ · React Native 2년+) · Mobile Tech Lead
+> 연수 계산 규칙은 writing-principles.md 5-1 참고. 총 경력 숫자는 요약 줄에 쓰지 않는다(2026-10 사용자 결정: 2017.02 이후 합산 9년+가 모바일 8년+와 같은 의미라 하나로 통합). 크레디프 등 이전 구간은 경력 블록에 그대로 둔다. 아래 참고 전용 섹션의 "15년+" 표기는 옛 기준이다.
 
 **연락처 줄 (고정)**
 
@@ -399,6 +400,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 
 **리드로서 · 2022.04 – 2023.10**
 - 개발 문화 => 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → [**React Native 점진적 업그레이드**](https://medium.com/@toyboy2/migration-react-native-from-0-65-to-0-68-troubleshooting-guide-0a8a7401c581) 등 기술부채 해소
+- 개발 문화, RN 버전 => 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → [**React Native 점진적 업그레이드**](https://medium.com/@toyboy2/migration-react-native-from-0-65-to-0-68-troubleshooting-guide-0a8a7401c581)로 **0.71**까지 상향 등 기술부채 해소 (2026-10 CJ ENM: 사용자 확인된 0.71 사실 반영)
 - 개발 문화 => 월간 모바일 개발자 회의 운영, 기술 부채 선정 및 도전 과제 도출
 - 협업 => UX팀과 협의해 Figma-소스 Asset 이름 일치, 디자인 부서 커뮤니케이션·구현 비용 절감
 - 업무 프로세스 개선 => PR Template·Jira Workflow로 코드 리뷰·업무 프로세스 표준화

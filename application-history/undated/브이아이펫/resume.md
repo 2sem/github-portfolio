@@ -6,7 +6,7 @@ toyboy2@hanmail.net · [GitHub](https://github.com/2sem) · [LinkedIn](https://w
 
 React Native와 iOS를 중심으로 다양한 도메인에서 담당 영역을 단독으로 책임져 왔습니다. 모바일 엔지니어 2~3명을 리드하며 코드 리뷰 프로세스와 기술부채 해소 사이클을 팀에 정착시켰고, 이슈나 장애 상황에서도 원인을 끝까지 추적해 침착하게 해결합니다. AI 코딩 도구를 동료로 활용하되 산출물은 비판적으로 검증하고 책임집니다.
 
-**총 경력 15년+** · 모바일 8년+ (iOS 5년+ · React Native 2년+) · Mobile Tech Lead
+**모바일 8년+** (iOS 5년+ · React Native 2년+) · Mobile Tech Lead
 
 ## 경력
 
