@@ -18,7 +18,7 @@ lays it out. **Never reword, add, or drop content**; no phone number anywhere.
    - `.job` blocks: `.co` + `.period`, `.pos`, `.desc`, `<ul>`, `.tags`
    - trailing sections (외부 활동, AI 활용 경험, 학력)
    - md links → `<a href>`; `**bold**` → `<b>`; backtick tag lines → `.tags` chips
-   - Update the stat strip to match the md's 총 경력 line.
+   - Update the stat strip to match the md's summary line (모바일·iOS·RN years + Tech Lead; no 총 경력 tile).
 3. Render: `.claude/skills/export-resume/scripts/export.sh <resume.html> <scratchpad-dir>`
    Prints page count and writes `p1.png…`; Read the PNGs to check.
    Only `resume.md` is exported; if only `resume-draft.md` exists, ask the user
