@@ -13,21 +13,19 @@ React Native와 iOS를 중심으로 다양한 도메인에서 담당 영역을 �
 **올룰로 (킥고잉) · 2021.06 – 2023.10 · 정규직 · App Developer → Mobile Tech Lead**
 국내 최초 공유 킥보드(모빌리티) 서비스 · React Native 기반 크로스플랫폼 앱(iOS·Android)
 - 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → [**React Native 점진적 업그레이드**](https://medium.com/@toyboy2/migration-react-native-from-0-65-to-0-68-troubleshooting-guide-0a8a7401c581) 등 기술부채 해소
+- **Channel Talk(외부 CX SDK) 통합**: [채팅 상담](https://youtube.com/shorts/tC-np8ShcZU) 기능 추가, 통합 후 알림 분류 메소드에서 발생한 **Crash**를 제조사에 제보하고 [수정안 PR 제출](https://github.com/channel-io/react-native-channel-io/pull/107)
+- Naver Map SDK **Native Bridge**에 [축척 계산 로직 추가](https://github.com/team-olulo/react-native-naver-map/pull/7)해 지도 자동 Zoom(길안내) 구현
+- 구역 정보 API 호출 **4회→1회로 데이터 사용량 최소 75% 절감**(+위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여
+- BLE 통신 로직 최적화: Library 옵션 및 제조사 펌웨어 조정 후 **스캔·연결 소요 시간** 지표화로 개선 검증
 - PR Template·Jira Workflow로 **코드 리뷰**·업무 프로세스 표준화
 - iOS/Android로 분리돼 있던 GitHub CI/CD를 **Fastlane 기반으로 통합**
 - [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part1-54362deaeda2)으로 **배포 소요 시간 50% 감축**
 - 이전 버전과 동시에 설치할 수 있도록 QA 버전 '테스트킥'을 [**flavor로 분리해 배포**](https://toyboy2.medium.com/how-to-split-android-project-for-qa-version-1128b2bce7bb)
 - Android 배포를 AWS S3 링크 공유 방식에서 [**APK Slack 직접 업로드**](https://toyboy2.medium.com/how-to-distribute-apk-to-slack-automatically-1b3aa992177e)로 개선해 테스트 단계 단축
-- **Channel Talk(외부 CX SDK) 통합**: [채팅 상담](https://youtube.com/shorts/tC-np8ShcZU) 기능 추가, 통합 후 알림 분류 메소드에서 발생한 **Crash**를 제조사에 제보하고 [수정안 PR 제출](https://github.com/channel-io/react-native-channel-io/pull/107)
-- Naver Map SDK **Native Bridge**에 [축척 계산 로직 추가](https://github.com/team-olulo/react-native-naver-map/pull/7)해 지도 자동 Zoom(길안내) 구현
-- 구역 정보 API 호출 **4회→1회로 데이터 사용량 최소 75% 절감**(+위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여
-- **react-native-vision-camera**의 Android 빌드 오류(Unresolved reference: resolveView)를 메서드 이름 기반 동적 호출로 바꿔 해결하고 [오픈소스 PR 제출](https://github.com/mrousavy/react-native-vision-camera/pull/1318)
-- Android Build-tools 31 이후 dx를 찾지 못해 로컬 빌드가 실패하던 문제를 **d8 링크 생성 Gradle 스크립트**로 해결하고 직접 등록한 [공개 이슈](https://github.com/channel-io/react-native-channel-io/issues/109)에 해결 방법 공유
 - react-native-ble-plx가 Xcode 13과 호환되는 Pod을 참조하지 않아 발생한 빌드 오류를 [Pod과 라이브러리를 fork해 CocoaPods·npm에 배포하는 방식으로 해결](https://toyboy2.medium.com/react-native-ble-plx-xcode-13-troubleshootings-dca3f793b1e0)
-- BLE 통신 로직 최적화: Library 옵션 및 제조사 펌웨어 조정 후 스캔·연결 소요 시간 지표화로 개선 검증
-- Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 테스트 시간 **37초 → 27초**로 단축
+- **react-native-vision-camera**의 Android 빌드 오류(Unresolved reference: resolveView)를 메서드 이름 기반 동적 호출로 바꿔 해결하고 [오픈소스 PR 제출](https://github.com/mrousavy/react-native-vision-camera/pull/1318)
 
-`React Native` `TypeScript` `Redux` `Java/Objective-C(Native Bridge)` `Naver Map SDK` `Channel Talk SDK` `BLE` `Jest` `Fastlane` `GitHub Actions`
+`React Native` `TypeScript` `Redux` `Java/Objective-C(Native Bridge)` `Naver Map SDK` `Channel Talk SDK` `BLE` `Fastlane` `GitHub Actions`
 
 **개인 프로젝트 (직딩) · 2024.01 – 2024.02 · 개인 · React Native 앱 개발자**
 직장인 워라밸 앱(iOS·Android) · UX 디자이너 협업 · [GitHub](https://github.com/2sem/zicding-app)
@@ -60,9 +58,10 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 `Swift` `MVVM` `RxSwift` `AVFoundation` `StoreKit` `XCUITest` `Instruments`
 
 **개인 iOS 개발자 · 2017.02 – 2018.06 · 개인**
-- 개인 앱 다수를 기획·개발·**App Store 출시**해 앱 전체 합산 **광고 수익 월 $100 이상** 달성(2017.12 기준, 2020년 기준 $800+)
 - '관련주식검색기': 푸시 알림 제안 + Node.js·**FCM** 기반 발송 서버 구축으로 **매출 2배** 달성
-- ShowNote: 앞선 개발·기획 성과가 **특허 출원**과 2018.07 **10억 원 규모 엔젤 투자 유치(Enable Holdings)** 결정으로 이어짐
+- 개인 앱 다수를 기획·개발·**App Store 출시**해 앱 전체 합산 **광고 수익 월 $100 이상** 달성(2017.12 기준, 2020년 기준 $800+)
+- ShowNote: 재직 중 단독 개발한 앱을 퇴사 후에도 투자 유치 시점까지 유지보수, 특허 핵심 **'Trigger'** 아이디어를 직접 고안해 **특허 출원**과 2018.07 **10억 원 규모 엔젤 투자 유치(Enable Holdings)** 에 기여
+- 공인중개사 요약집 앱: 팝업 디자인 4가지 **Firebase A/B 테스트**로 비교 검증
 - Xcode 업그레이드 후 GitHub Workflow(CD)에서 발생한 [SPM 오류(Package.resolved 손상)를 해결하고 패치 Action으로 제작](https://toyboy2.medium.com/package-resolved-file-is-corrupted-or-malformed-fix-or-delete-the-file-baeb572863fc)
 
 `Swift` `UIKit` `Firebase` `Node.js`
@@ -70,16 +69,16 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 **크레디프 · 2009.08 – 2017.02 · 정규직 · 개발자**
 이동통신 3사·공공기관 대상 SI/SM 전문기업
 - 서버(C)부터 클라이언트(C#/Java, 모바일 iOS/Android)까지 **7년 이상 풀스택**으로 **30개+ 프로젝트** 개발·유지보수
+- WIFI 실내측위 (연구)플랫폼 **풀스택 단독 개발**
 - 담당자 공백·인수인계 부재·장애 등 위기 상황마다 투입돼 문제 해결, 신규 언어·플랫폼 선행 연구
 - ShowNote: PDF 페이지를 배경으로 렌더링하고 개체를 위에 표시하는 방식 구현, 기획을 전면 개편하며 기존 기획서에 없던 특허 핵심 [**'Trigger'**](https://www.apnews.kr/news/articleView.html?idxno=1525364) 개념 고안
 - ShowNote의 [문서 잠금(Device Lock)](https://toyboy2.medium.com/how-to-lock-your-ios-app-with-device-lock-656f739fe4c6)·[Zip 압축/암호화 저장](https://toyboy2.medium.com/zip-archiving-files-in-ios-app-ade489532066)·[페이지 순서 드래그 변경](https://toyboy2.medium.com/how-to-move-cells-in-your-ios-app-by-dragging-ad83f8ad72e6) 구현
 - '누군지다알아'에 수신 이미지 생성 기능을 추가해 2.0 출시, 연락처 [초성 검색](https://toyboy2.medium.com/ios%EC%97%90%EC%84%9C-%EC%B4%88%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%97%B0%EB%9D%BD%EC%B2%98-%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0-c2fbdce54383) 기술을 연구해 정리
 
-`C` `C#` `Java` `MySQL` `Oracle` `MSSQL`
+`C` `C#` `Java` `MySQL` `Oracle` `MSSQL` `RESTful API` `PostgreSQL`
 
 ## 외부 활동
 - [**Medium**](https://toyboy2.medium.com)에 [React Native](https://medium.com/@toyboy2/list/reactnative-ec618220f682)·[iOS](https://medium.com/@toyboy2/list/ios-4adba6bc75d5) 등 기술 Article 다수 발행, Dev Korea Meetup 등 커뮤니티 정기 참여
-- **Flutter · Dart(학습 · 아티클 연재)**: 퇴근길 지하철에서 Dart 학습, Firestore로 카카오톡 채팅 화면을 클론 구현, [Medium 아티클](https://toyboy2.medium.com/list/flutter-c6e656a0db03)로 연재
 - 개인 [iOS 앱](https://apps.apple.com/kr/developer/young-jun-lee/id1225480114) 전반에 [**Tuist**](https://tuist.dev)를 실제 적용해 모듈화 구조 구축·운영하고 [공유](https://toyboy2.medium.com/list/tuist-c1abeaa7d167)
 - Seoul iOS Meetup에서 ['Tuist 캐시, 선택적 테스트 그리고 쉬운 CI로 빌드 반복 가속하기'](https://youtu.be/FFkEbqG4ips) 발표
 
