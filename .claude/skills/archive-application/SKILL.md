@@ -22,6 +22,10 @@ Layout and naming rules live in `application-history/README.md`; read it first.
    Normalize Korean file names to NFC.
 4. Add a row to the Applications table in `application-history/README.md`
    (keep it sorted by date).
+   For material filed under `undated/<company>/`, add or update its row in the
+   Undated table with a Status (`pending` / `skipped` / `applied` / `unknown`) and a
+   short Note (date + reason when skipped). When a pending company is later applied to,
+   move it to `applications/` and drop its Undated row.
 5. Phone numbers: never reveal or print one (not in chat, README, commits, logs).
    Run `python3 -I .claude/skills/archive-application/scripts/check_phone.py <folder>`
    (prints file paths only). For any docx/pdf/md it flags, create a phone-free `.md`
