@@ -19,7 +19,7 @@ A company only under `undated/` has no known apply date.
 ```
 application-history/
   applications/<YYYY-MM-DD>_<company>/   applied (date = apply date)
-  undated/<company>/                     material with no apply screenshot (applied-date unknown, or not applied)
+  undated/<company>/                     material with no apply date: not applied (see Status in the Undated table) or applied-date unknown
   bases/                                 resume base files and the pre-skill master
 ```
 
@@ -88,19 +88,31 @@ Check with `python3 -I .claude/skills/archive-application/scripts/check_phone.py
 
 ## Undated
 
-| Company | Files |
-|---|---|
-| 29CM | jd.pdf, resume.pdf |
-| CMC Global | jd.pdf, presentation-gp-kr.pptx, presentation-gp.pptx, presentation-talkfile.pptx, qcells-core-ios-workflow.docx, qcells-core-ios.docx, qcells-core-pro-proposal-1.md, qcells-core-pro-proposal-en.docx, qcells-core-pro-proposal-fix-en.docx, qcells-core-pro-proposal-fix.docx, qcells-core-pro-proposal.docx, qcells-core-pro-proposal.md, resume-en.md, test.docx, untitled.docx |
-| KIRA | screenshot-jd.png, spec.docx |
-| TRUST WALLET | spec.docx |
-| UJET | resume-en.pdf, resume-mobile.pdf, spec.docx |
-| xAI | jd.docx, jd.pdf |
-| 비버웍스 | spec.docx |
-| 빗썸 | resume.md, resume.pdf, spec.docx |
-| 엔디소프트 | resume.docx, resume.md, resume.pdf, spec.docx |
-| 오늘의집 | assignment-기술경영론.pdf, cover-letter.pdf, jd.pdf, resume.pdf |
-| 페이타랩 | resume.md, spec.docx |
-| 하이퍼노바 | resume.docx, resume.md, spec.docx |
-| 한화생명 | spec.docx |
-| 현대자동차 | jd.pdf |
+Status: `pending` = JD collected, apply/skip not decided · `skipped` = reviewed, decided not to apply · `applied` = applied elsewhere (see Applications) · `unknown` = older material, not reviewed.
+
+| Company | Status | Note | Files |
+|---|---|---|---|
+| 29CM | unknown |  | jd.pdf, resume.pdf |
+| CMC Global | unknown |  | jd.pdf, presentation-gp-kr.pptx, presentation-gp.pptx, presentation-talkfile.pptx, qcells-core-ios-workflow.docx, qcells-core-ios.docx, qcells-core-pro-proposal-1.md, qcells-core-pro-proposal-en.docx, qcells-core-pro-proposal-fix-en.docx, qcells-core-pro-proposal-fix.docx, qcells-core-pro-proposal.docx, qcells-core-pro-proposal.md, resume-en.md, test.docx, untitled.docx |
+| KIRA | unknown |  | screenshot-jd.png, spec.docx |
+| TRUST WALLET | unknown |  | spec.docx |
+| UJET | unknown |  | resume-en.pdf, resume-mobile.pdf, spec.docx |
+| xAI | unknown |  | jd.docx, jd.pdf |
+| 더블유클럽 | unknown |  | jd.md |
+| 디지털엑스 | unknown |  | jd.md |
+| 브이아이펫 | unknown |  | jd.md, resume.md |
+| 비버웍스 | applied | 2026-10-19, see applications/ | spec.docx |
+| 비전아이 | pending | fit maybe/low; apply or skip undecided | jd.md, resume.md |
+| 빗썸 | unknown |  | resume.md, resume.pdf, spec.docx |
+| 스피커블 | unknown |  | jd.md |
+| 에이티씨아이 | unknown |  | jd.md |
+| 엔디소프트 | unknown |  | resume.docx, resume.md, resume.pdf, spec.docx |
+| 엠피에이지 | unknown |  | jd.md |
+| 오늘의집 | unknown |  | assignment-기술경영론.pdf, cover-letter.pdf, jd.pdf, resume.pdf |
+| 올리브영 | pending | 10~15 yrs required vs 8 yrs; awaiting decision | jd.md |
+| 웨이비나 | skipped | 2026-10-23 · solo dev at a seed-stage company, no medical-domain experience | jd.md, resume.html, resume.md, resume.pdf |
+| 티맵모빌리티 | pending | fit check awaiting | jd.md |
+| 페이타랩 | unknown |  | resume.md, spec.docx |
+| 하이퍼노바 | unknown |  | resume.docx, resume.md, spec.docx |
+| 한화생명 | unknown |  | spec.docx |
+| 현대자동차 | unknown |  | jd.pdf |
