@@ -87,6 +87,7 @@ Check with `python3 -I .claude/skills/archive-application/scripts/check_phone.py
 | 2026-10-22 | 텔어스 | jd.md, resume.html, resume.md, resume.pdf |
 | 2026-10-23 | 티맵모빌리티 | jd.md, resume.html, resume.md, resume.pdf |
 | 2026-10-26 | 비전아이 | jd.md, resume.html, resume.md, resume.pdf, submission-note.md |
+| 2026-10-26 | 올리브영 | jd.md, resume.html, resume.md, resume.pdf |
 
 ## Undated
 
@@ -110,7 +111,6 @@ Status: `pending` = JD collected, apply/skip not decided · `skipped` = reviewed
 | 엔디소프트 | unknown |  | resume.docx, resume.md, resume.pdf, spec.docx |
 | 엠피에이지 | unknown |  | jd.md |
 | 오늘의집 | unknown |  | assignment-기술경영론.pdf, cover-letter.pdf, jd.pdf, resume.pdf |
-| 올리브영 | pending | 10~15 yrs required vs 8 yrs; awaiting decision | jd.md |
 | 웨이비나 | skipped | 2026-10-23 · solo dev at a seed-stage company, no medical-domain experience | jd.md, resume.html, resume.md, resume.pdf |
 | 페이타랩 | unknown |  | resume.md, spec.docx |
 | 하이퍼노바 | unknown |  | resume.docx, resume.md, spec.docx |
