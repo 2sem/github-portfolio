@@ -43,8 +43,9 @@ toyboy2@hanmail.net · [GitHub](https://github.com/2sem) · [LinkedIn](https://w
 > 구조 원칙: 각 회사 첫 불릿은 SDK/라이브러리 → 이후 안정성·자동화·리드 순. 소개 첫 문장은 "SDK 제공·소비 양쪽 경험". 기술 스택 섹션은 없고 회사별 태그 줄만 둔다. Ollama MR 리뷰·SwiftUI 마이그레이션 Skill·Davinci MCP는 "AI 활용 경험" 섹션에 둔다.
 > 2026-10 샵라이브 제출 DOCX의 구성(회사별 불릿 선택과 순서, 섹션 구조)을 기준으로 하되, 불릿 문장은 제출본의 손질 표현이 아니라 마스터 원문으로 통일했다. 제출본에만 있던 샵라이브 전용 요소(소개문 말미의 Shoplive 클로징, 외부 활동의 Flutter 불릿, TCA 불릿, 크레디프의 SMSECO 불릿)는 베이스에서 제외했다.
 
-**태그라인 (이름 아래 고정)**
+**태그라인 (이름 아래 · 기본값)**
 Senior iOS Developer · Mobile SDK
+> `· Mobile SDK`와 소개 첫 문장(SDK 제공·소비)은 JD가 SDK를 요구할 때만 쓴다. 아니면 `Senior iOS Developer`로 하고 그 문장을 생략한다. writing-principles.md 0-3b 참고.
 
 **소개 (고정)**
 iOS SDK를 유지보수·확장하는 쪽과 외부 SDK를 앱에 통합하는 쪽을 모두 경험했습니다. 모바일 엔지니어 2~3명을 리드하며 코드 리뷰 프로세스와 기술부채 해소 사이클을 팀에 정착시켰고, 이슈나 장애 상황에서도 원인을 끝까지 추적해 침착하게 해결합니다. AI 코딩 도구를 동료로 활용하되 산출물은 비판적으로 검증하고 책임집니다.
