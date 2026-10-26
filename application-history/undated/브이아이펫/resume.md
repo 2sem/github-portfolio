@@ -25,7 +25,7 @@ React Native와 iOS를 중심으로 다양한 도메인에서 담당 영역을 �
 - Android Build-tools 31 이후 dx를 찾지 못해 로컬 빌드가 실패하던 문제를 **d8 링크 생성 Gradle 스크립트**로 해결하고 직접 등록한 [공개 이슈](https://github.com/channel-io/react-native-channel-io/issues/109)에 해결 방법 공유
 - react-native-ble-plx가 Xcode 13과 호환되는 Pod을 참조하지 않아 발생한 빌드 오류를 [Pod과 라이브러리를 fork해 CocoaPods·npm에 배포하는 방식으로 해결](https://toyboy2.medium.com/react-native-ble-plx-xcode-13-troubleshootings-dca3f793b1e0)
 - BLE 통신 로직 최적화: Library 옵션 및 제조사 펌웨어 조정 후 스캔·연결 소요 시간 지표화로 개선 검증
-- Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 테스트 시간 **37초 → 27초**로 단축
+- Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 테스트 시간 **37초 → 27초** 단축
 
 `React Native` `TypeScript` `Redux` `Java/Objective-C(Native Bridge)` `Naver Map SDK` `Channel Talk SDK` `BLE` `Jest` `Fastlane` `GitHub Actions`
 
@@ -71,7 +71,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 이동통신 3사·공공기관 대상 SI/SM 전문기업
 - 서버(C)부터 클라이언트(C#/Java, 모바일 iOS/Android)까지 **7년 이상 풀스택**으로 **30개+ 프로젝트** 개발·유지보수
 - 담당자 공백·인수인계 부재·장애 등 위기 상황마다 투입돼 문제 해결, 신규 언어·플랫폼 선행 연구
-- ShowNote: PDF 페이지를 배경으로 렌더링하고 개체를 위에 표시하는 방식 구현, 기획을 전면 개편하며 기존 기획서에 없던 특허 핵심 [**'Trigger'**](https://www.apnews.kr/news/articleView.html?idxno=1525364) 개념 고안
+- ShowNote: PDF 페이지를 배경으로 렌더링하고 개체를 위에 표시하는 방식 구현, 기획을 전면 개편하며 기존 기획서에 없던 특허 핵심 **'Trigger'** 개념 고안
 - ShowNote의 [문서 잠금(Device Lock)](https://toyboy2.medium.com/how-to-lock-your-ios-app-with-device-lock-656f739fe4c6)·[Zip 압축/암호화 저장](https://toyboy2.medium.com/zip-archiving-files-in-ios-app-ade489532066)·[페이지 순서 드래그 변경](https://toyboy2.medium.com/how-to-move-cells-in-your-ios-app-by-dragging-ad83f8ad72e6) 구현
 - '누군지다알아'에 수신 이미지 생성 기능을 추가해 2.0 출시, 연락처 [초성 검색](https://toyboy2.medium.com/ios%EC%97%90%EC%84%9C-%EC%B4%88%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%97%B0%EB%9D%BD%EC%B2%98-%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0-c2fbdce54383) 기술을 연구해 정리
 
@@ -80,7 +80,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 ## 외부 활동
 - [**Medium**](https://toyboy2.medium.com)에 [React Native](https://medium.com/@toyboy2/list/reactnative-ec618220f682)·[iOS](https://medium.com/@toyboy2/list/ios-4adba6bc75d5) 등 기술 Article 다수 발행, Dev Korea Meetup 등 커뮤니티 정기 참여
 - **Flutter · Dart(학습 · 아티클 연재)**: 퇴근길 지하철에서 Dart 학습, Firestore로 카카오톡 채팅 화면을 클론 구현, [Medium 아티클](https://toyboy2.medium.com/list/flutter-c6e656a0db03)로 연재
-- 개인 [iOS 앱](https://apps.apple.com/kr/developer/young-jun-lee/id1225480114) 전반에 [**Tuist**](https://tuist.dev)를 실제 적용해 모듈화 구조 구축·운영하고 [공유](https://toyboy2.medium.com/list/tuist-c1abeaa7d167)
+- 개인 [iOS 앱](https://apps.apple.com/kr/developer/young-jun-lee/id1225480114) 전반에 [**Tuist**](https://tuist.dev)를 실제 적용해 모듈화 구조 구축·운영(개인 프로젝트 한정)
 - Seoul iOS Meetup에서 ['Tuist 캐시, 선택적 테스트 그리고 쉬운 CI로 빌드 반복 가속하기'](https://youtu.be/FFkEbqG4ips) 발표
 
 ## AI 활용 경험

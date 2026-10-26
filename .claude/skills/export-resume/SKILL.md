@@ -38,8 +38,10 @@ lays it out. **Never reword, add, or drop content**; no phone number anywhere.
    - No phone number: `python3 -I .claude/skills/archive-application/scripts/check_phone.py <folder>`
      must report `flagged=0` for the folder (it prints paths only).
 7. When the gate passes, always copy the PDF to Downloads
-   without being asked: `cp resume.pdf ~/Downloads/이영준_이력서_<회사>.pdf`
-   (`<회사>` = the application folder name). Overwrite an earlier copy of the same name.
+   without being asked: `cp resume.pdf ~/Downloads/Lee_Youngjun_Resume_<Company>.pdf`
+   (`<Company>` = ASCII/English slug of the company, e.g. `VIPet`, `TMAP`, `CJENM`).
+   Keep the name ASCII-only: Hangul names get re-encoded to NFD by zip/AirDrop/cloud
+   and show up broken on Windows. Overwrite an earlier copy of the same name.
 
 ## Notes
 - Needs Google Chrome at `/Applications/Google Chrome.app` and `swift` (for page count/preview).
