@@ -86,6 +86,7 @@ Check with `python3 -I .claude/skills/archive-application/scripts/check_phone.py
 | 2026-10-21 | CJ ENM | jd.md, resume.html, resume.md, resume.pdf, spec.md |
 | 2026-10-22 | 텔어스 | jd.md, resume.html, resume.md, resume.pdf |
 | 2026-10-23 | 티맵모빌리티 | jd.md, resume.html, resume.md, resume.pdf |
+| 2026-10-26 | 비전아이 | jd.md, resume.html, resume.md, resume.pdf, submission-note.md |
 
 ## Undated
 
@@ -103,7 +104,6 @@ Status: `pending` = JD collected, apply/skip not decided · `skipped` = reviewed
 | 디지털엑스 | unknown |  | jd.md |
 | 브이아이펫 | unknown |  | jd.md, resume.md |
 | 비버웍스 | applied | 2026-10-19, see applications/ | spec.docx |
-| 비전아이 | pending | fit maybe/low; apply or skip undecided | jd.md, resume.md |
 | 빗썸 | unknown |  | resume.md, resume.pdf, spec.docx |
 | 스피커블 | unknown |  | jd.md |
 | 에이티씨아이 | unknown |  | jd.md |
