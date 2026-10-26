@@ -37,6 +37,9 @@ description: 이영준(iOS 엔지니어)의 공고용 이력서를 만들 때 �
 **하지 않는다**: 불릿 추가·재작성, 섹션 순서 변경, 소개문·포지셔닝 교체, 경력 요약 줄 변경(모바일 8년+, Mobile Tech Lead 고정; 총 경력 숫자는 쓰지 않음, 연수 계산은 writing-principles.md 5-1), 클로징 문장, 과스펙 회피 장치.
 불릿은 master.md 원문 그대로 쓴다. 필요한 불릿이 마스터에 없을 때만 새로 쓰고 즉시 master.md에 반영하며 사용자에게 알린다.
 
+### 3b. JD 키워드 대조 (필수, 빌드 전)
+`writing-principles.md` 0-3b를 따른다. JD에 없는 베이스 강조어(SDK 등)는 태그라인·소개 첫 문장·볼드에서 뺀다. PDF 1쪽 상단을 JD와 다시 대조해 어긋난 단어를 보고한다.
+
 ### 4. 빌드
 md는 항상 파일로 만들어 present한다. 초안은 `<회사>/resume-draft.md`, 확정(사용자 OK 또는 skim·refine 반영 후)되면 `resume.md`로 승격하고 draft는 지운다. PDF는 `export-resume` 스킬로 만든다(`resume.md`만 입력으로 받음). Docx는 요청할 때만(korean-docx-resume 스킬). 레이아웃은 템플릿 고정이며 확인은 3가지뿐이다: 폰트 깨짐, 블록 중간 잘림, 2페이지 초과.
 
