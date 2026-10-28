@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>이영준 – Senior iOS Developer</title>
+<style>
+  @page { size: A4; margin: 11mm 14mm 11mm 14mm; }
+  :root {
+    --ink: #1c2330;
+    --muted: #5d6675;
+    --faint: #8b93a1;
+    --line: #dfe3ea;
+    --accent: #1f4fd8;
+    --accent-bg: #eef2fd;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    font-size: 9pt;
+    line-height: 1.42;
+    color: var(--ink);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  a { color: inherit; text-decoration: none; border-bottom: 0.5pt solid #b5bccb; }
+  b, strong { font-weight: 700; }
+
+  /* header */
+  header { padding-bottom: 9pt; border-bottom: 2pt solid var(--ink); }
+  h1 { margin: 0; font-size: 23pt; line-height: 1.1; letter-spacing: -0.5pt; font-weight: 800; }
+  .role { margin-top: 3pt; font-size: 11.5pt; font-weight: 600; color: var(--accent); }
+  .contact { margin-top: 5pt; font-size: 8.8pt; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0 12pt; }
+  .contact a { border-bottom: none; }
+
+  .summary { margin: 7pt 0 6pt; color: #2b3342; }
+  .stats { display: flex; gap: 6pt; margin-bottom: 4pt; }
+  .stat { flex: 1; background: var(--accent-bg); border-radius: 4pt; padding: 3pt 8pt; }
+  .stat .n { font-size: 12pt; font-weight: 800; color: var(--accent); line-height: 1.2; }
+  .stat .l { font-size: 8pt; color: var(--muted); }
+
+  /* sections */
+  h2 {
+    margin: 9pt 0 4pt; font-size: 8.6pt; letter-spacing: 1.4pt; text-transform: uppercase;
+    color: var(--accent); font-weight: 800; display: flex; align-items: center; gap: 8pt;
+    break-after: avoid;
+  }
+  h2::after { content: ""; flex: 1; height: 0.6pt; background: var(--line); }
+
+  .job { margin-bottom: 7pt; }
+  .job + .job { break-inside: avoid; }
+  .job-head { break-after: avoid; }
+  .job-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10pt; }
+  .co { font-size: 10.5pt; font-weight: 800; }
+  .co small { font-weight: 500; color: var(--muted); font-size: 9pt; }
+  .period { font-size: 8.8pt; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .pos { font-size: 9pt; font-weight: 600; color: var(--accent); }
+  .pos span { color: var(--faint); font-weight: 500; }
+  .desc { font-size: 8.5pt; color: var(--muted); margin-top: 1pt; }
+
+  ul { margin: 3pt 0 2pt; padding: 0; list-style: none; }
+  li { position: relative; padding-left: 9pt; margin-bottom: 1pt; break-inside: avoid; }
+  li::before { content: ""; position: absolute; left: 1pt; top: 5.2pt; width: 3pt; height: 3pt; border-radius: 50%; background: var(--accent); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 2pt; margin-top: 3pt; }
+  .tags span {
+    font-size: 7.2pt; line-height: 1; padding: 2.2pt 4.5pt; border-radius: 3pt;
+    background: #f1f3f7; color: #46506a; font-family: "SF Mono", Menlo, monospace;
+  }
+
+  .job.compact li { margin-bottom: 1.2pt; }
+  .edu { display: flex; justify-content: space-between; align-items: baseline; }
+  section { break-inside: auto; }
+  .keep { break-inside: avoid; }
+</style>
+</head>
+<body>
+<header>
+  <h1>이영준</h1>
+  <div class="role">Senior iOS Developer</div>
+  <div class="contact">
+    <a href="mailto:toyboy2@hanmail.net">toyboy2@hanmail.net</a>
+    <a href="https://github.com/2sem">github.com/2sem</a>
+    <a href="https://www.linkedin.com/in/gamehelper/">linkedin.com/in/gamehelper</a>
+    <a href="https://toyboy2.medium.com">toyboy2.medium.com</a>
+  </div>
+</header>
+<p class="summary">
+  모바일 엔지니어 2~3명을 리드하며 코드 리뷰 프로세스와 기술부채 해소 사이클을 팀에 정착시켰고, 이슈나 장애 상황에서도 원인을 끝까지 추적해 침착하게 해결합니다. AI 코딩 도구를 동료로 활용하되 산출물은 비판적으로 검증하고 책임집니다.
+</p>
+<div class="stats">
+  <div class="stat"><div class="n">8년+</div><div class="l">모바일</div></div>
+  <div class="stat"><div class="n">5년+</div><div class="l">iOS</div></div>
+  <div class="stat"><div class="n">2년+</div><div class="l">React Native</div></div>
+  <div class="stat"><div class="n">Tech Lead</div><div class="l">엔지니어 2~3명 리드</div></div>
+</div>
+<section>
+<h2>경력</h2>
+<div class="job">
+  <div class="job-head">
+    <div class="job-top"><div class="co">SK AX <small>(계약: 디투엘)</small></div><div class="period">2024.06 – 2025.10</div></div>
+    <div class="pos">iOS Developer <span>· 프리랜서</span></div>
+    <div class="desc">IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world, AI Layer SDK) · T world MAU 800만</div>
+  </div>
+  <ul>
+    <li><b>WKWebView</b> Delegate에서 강제 언래핑으로 발생한 <b>주간 5,000건 이상의 Crash</b>를 병합 전 전임자 PR의 가설로는 동일한 Crash가 발생하지 않아 코드를 추적하여 동일 Crash 재현 및 원인 해결</li>
+    <li>대량 동시 접속 시 서버 과부하를 줄이기 위한 <b>대기열(Queue) 기능</b> 구현으로 트래픽 급증 구간 안정성 확보</li>
+    <li>대형 MR 리뷰 불가 문제를 Jira에 Epic을 도입하고 Subtask 단위 MR + <a href="https://toyboy2.medium.com/automate-your-tasks-with-mr-template-using-gitlab-commands-b1af5c84ce7b"><b>MR Template</b></a> 적용으로 해결, SK 매니저 만족으로 타 프로젝트에도 전파</li>
+    <li>주니어 엔지니어 2명을 Subtask 단위 업무 할당·분할 위임 방식으로 코칭</li>
+    <li>보안 기능 설정한 사용자가 SwiftUI 위젯을 사용할 수 없는 문제를 Cookie Storage 공유로 세션을 재사용하고 API를 분석 후 서버 개발자에게 수정안 제시로 해결</li>
+    <li>Closure 기반 API 호출은 Swift Concurrency, 신규 UI는 Combine으로 점진 전환해 생산성·성능 개선</li>
+    <li>Objective-C를 Swift로 점진적 마이그레이션(Extension 단위)</li>
+    <li>CocoaPods 종료 대비 라이브러리별 SPM 전환 진행</li>
+    <li>AI Layer iOS SDK 유지보수, Accessibility·UI 개선</li>
+  </ul>
+  <div class="tags"><span>Swift</span><span>Objective-C</span><span>UIKit</span><span>SwiftUI</span><span>WidgetKit</span><span>WKWebView</span><span>Combine</span><span>Swift Concurrency</span><span>MVVM</span><span>RxSwift</span><span>Unit Test</span><span>SPM</span><span>CocoaPods</span><span>Firebase</span><span>Fastlane</span><span>GitLab CI/CD</span><span>Jira</span></div>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-top"><div class="co">올룰로 <small>(킥고잉)</small></div><div class="period">2021.06 – 2023.10</div></div>
+    <div class="pos">App Developer → Mobile Tech Lead <span>· 정규직</span></div>
+    <div class="desc">국내 최초 공유 킥보드(모빌리티) 서비스 · React Native 기반 크로스플랫폼 앱(iOS·Android)</div>
+  </div>
+  <ul>
+    <li>엔지니어 2~3명 리드, <b>1일 1시간</b> <a href="https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2">기술부채 해소 시간 도입</a> → <a href="https://medium.com/@toyboy2/migration-react-native-from-0-65-to-0-68-troubleshooting-guide-0a8a7401c581"><b>React Native 점진적 업그레이드</b></a> 등 기술부채 해소</li>
+    <li>iOS/Android로 분리돼 있던 GitHub CI/CD를 <b>Fastlane 기반으로 통합</b></li>
+    <li><a href="https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part1-54362deaeda2">빌드 캐시 적용</a>으로 <b>배포 소요 시간 50% 감축</b></li>
+    <li>구역 정보 API 호출 <b>4회→1회로 데이터 사용량 최소 75% 절감</b>(+위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여</li>
+    <li>Channel Talk(외부 CX SDK) 통합: <a href="https://youtube.com/shorts/tC-np8ShcZU">채팅 상담</a> 기능 추가, 통합 후 알림 분류 메소드에서 발생한 Crash를 제조사에 제보하고 <a href="https://github.com/channel-io/react-native-channel-io/pull/107">수정안 PR 제출</a></li>
+    <li>react-native-vision-camera의 Android 빌드 오류(Unresolved reference: resolveView)를 메서드 이름 기반 동적 호출로 바꿔 해결하고 <a href="https://github.com/mrousavy/react-native-vision-camera/pull/1318">오픈소스 PR 제출</a></li>
+    <li>Naver Map SDK Native Bridge에 <a href="https://github.com/team-olulo/react-native-naver-map/pull/7">축척 계산 로직 추가</a>해 지도 자동 Zoom(길안내) 구현</li>
+    <li>외국어 지원 프로젝트에서 <a href="https://toyboy2.medium.com/supporting-multi-language-in-react-native-applications-8bf4ddc8a8ef">다국어 대응 구축</a>, <a href="https://toyboy2.medium.com/react-native-android-per-app-language-settings-5f9d4a29e9d2">Android 언어 설정 관련 오픈소스 기여</a></li>
+  </ul>
+  <div class="tags"><span>React Native</span><span>TypeScript</span><span>Java/Objective-C(Native Bridge)</span><span>Naver Map SDK</span><span>Channel Talk SDK</span><span>Fastlane</span><span>GitHub Actions</span></div>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-top"><div class="co">에스제이더블유인터내셔널 <small>(시원스쿨)</small></div><div class="period">2018.06 – 2021.05</div></div>
+    <div class="pos">iOS Developer <span>· 정규직</span></div>
+    <div class="desc">국내 1위 온라인 어학 교육 플랫폼</div>
+  </div>
+  <ul>
+    <li>정체된 프로젝트를 <b>기획서 전면 재검토</b>로 재정립, 서버 개발자와 소통하며 제로베이스로 자체 앱 <b>단독 개발</b></li>
+    <li>인앱 리뷰 요청 노출을 제안하고 설계·구현해 평점을 4.1 → <b>4.7</b>로 상향</li>
+    <li><b>빅토익보카</b>: 기획·디자인·Android 앱이 모두 다른 상황에서 <b>기획</b>을 새로 정립해 iOS 버전 개발 / <b>StoreKit 기반 인앱결제</b>를 직접 제안·구현해 도서 부록을 넘어 자체 수익화</li>
+    <li>전체 강의를 순회하며 재생 가능 여부를 검증하는 UI Test 기반 <a href="https://toyboy2.medium.com/xcuielement-wait-extension-c6c40cdce458"><b>QA 프로세스</b></a> 구축</li>
+    <li>AVFoundation 기반 공용 영상 플레이어 라이브러리 개발해서 다른 앱과 공유</li>
+    <li>최소화·최대화 기능을 전 화면에서 재사용 가능하도록 기반 ViewController 설계·구현</li>
+    <li>Objective-C로 된 앱을 인수해 Swift로 점진 마이그레이션, 레거시 리팩토링</li>
+  </ul>
+  <div class="tags"><span>Swift</span><span>Objective-C</span><span>AVFoundation</span><span>StoreKit</span><span>XCUITest</span></div>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-top"><div class="co">개인 iOS 개발자</div><div class="period">2017.02 – 2018.06</div></div>
+  </div>
+  <ul>
+    <li>개인 앱 다수를 기획·개발·<b>App Store 출시</b>해 앱 전체 합산 <b>광고 수익 월 $100 이상</b> 달성(2017.12 기준, 2020년 기준 $800+)</li>
+    <li>'관련주식검색기': 푸시 알림 제안 + Node.js·<b>FCM</b> 기반 발송 서버 구축으로 <b>매출 2배</b> 달성</li>
+    <li>ShowNote: 앞선 개발·기획 성과가 <b>특허 출원</b>과 2018.07 <b>10억 원 규모 엔젤 투자 유치(Enable Holdings)</b> 결정으로 이어짐</li>
+    <li>Xcode 업그레이드 후 GitHub Workflow(CD)에서 발생한 <a href="https://toyboy2.medium.com/package-resolved-file-is-corrupted-or-malformed-fix-or-delete-the-file-baeb572863fc">SPM 오류(Package.resolved 손상)를 해결하고 패치 Action으로 제작</a></li>
+  </ul>
+  <div class="tags"><span>Swift</span><span>UIKit</span><span>Firebase</span><span>Node.js</span></div>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-top"><div class="co">크레디프</div><div class="period">2009.08 – 2017.02</div></div>
+    <div class="pos">개발자 <span>· 정규직</span></div>
+    <div class="desc">이동통신 3사·공공기관 대상 SI/SM 전문기업</div>
+  </div>
+  <ul>
+    <li>저전력 <b>Beacon</b> 구매자 대상 SKT O2O Android SDK를 JNI 대신 <b>AIDL</b> 기반으로 개발</li>
+    <li>서버(C)부터 클라이언트(C#/Java, 모바일 iOS/Android)까지 <b>7년 이상 풀스택</b>으로 <b>30개+ 프로젝트</b> 개발·유지보수</li>
+    <li>담당자 공백·인수인계 부재·장애 등 위기 상황마다 투입돼 문제 해결, 신규 언어·플랫폼 선행 연구</li>
+    <li>ShowNote: PDF 페이지를 배경으로 렌더링하고 개체를 위에 표시하는 방식 구현, 기획을 전면 개편하며 기존 기획서에 없던 특허 핵심 <b>'Trigger'</b> 개념 고안</li>
+    <li>ShowNote의 <a href="https://toyboy2.medium.com/how-to-lock-your-ios-app-with-device-lock-656f739fe4c6">문서 잠금(Device Lock)</a>·<a href="https://toyboy2.medium.com/zip-archiving-files-in-ios-app-ade489532066">Zip 압축/암호화 저장</a>·<a href="https://toyboy2.medium.com/how-to-move-cells-in-your-ios-app-by-dragging-ad83f8ad72e6">페이지 순서 드래그 변경</a> 구현</li>
+    <li>'누군지다알아'에 수신 이미지 생성 기능을 추가해 2.0 출시, 연락처 <a href="https://toyboy2.medium.com/ios%EC%97%90%EC%84%9C-%EC%B4%88%EC%84%B1%EC%9C%BC%EB%A1%9C-%EC%97%B0%EB%9D%BD%EC%B2%98-%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0-c2fbdce54383">초성 검색</a> 기술을 연구해 정리</li>
+  </ul>
+  <div class="tags"><span>C</span><span>C#</span><span>Java</span><span>AIDL</span><span>Beacon</span><span>MySQL</span><span>Oracle</span><span>MSSQL</span></div>
+</div>
+
+</section>
+
+<section>
+<h2>외부 활동</h2>
+<ul>
+  <li><a href="https://toyboy2.medium.com"><b>Medium</b></a>에 <a href="https://medium.com/@toyboy2/list/ios-4adba6bc75d5">iOS</a>·<a href="https://medium.com/@toyboy2/list/reactnative-ec618220f682">React Native</a> 등 기술 Article 다수 발행, Dev Korea Meetup 등 커뮤니티 정기 참여</li>
+  <li>Seoul iOS Meetup에서 <a href="https://youtu.be/FFkEbqG4ips">'Tuist 캐시, 선택적 테스트 그리고 쉬운 CI로 빌드 반복 가속하기'</a> 발표</li>
+  <li>개인 <a href="https://apps.apple.com/kr/developer/young-jun-lee/id1225480114">iOS 앱</a> 전반에 <a href="https://tuist.dev">Tuist</a>를 실제 적용해 모듈화 구조 구축·운영(개인 프로젝트 한정)</li>
+  <li>위 경험을 <a href="https://toyboy2.medium.com/list/tuist-c1abeaa7d167">Article</a>로 작성해 Tuist CEO Pedro Piñera와 LinkedIn으로 직접 연결, <a href="https://toyboy2.medium.com/contributing-to-open-source-as-translator-translating-tuist-documentation-into-korean-ad08b205da65">한국어 페이지 번역</a>에 기여</li>
+</ul>
+</section>
+
+<section class="keep">
+<h2>AI 활용 경험</h2>
+<ul>
+  <li>보안 제약을 고려해 GitLab Runner에 <a href="https://medium.com/@toyboy2/automating-mr-review-on-self-hosted-gitlab-using-ai-ollama-932e1cab30d9"><b>Ollama를 연결한 Agent MR 리뷰</b></a> 구축, 비개발자 매니저의 AI 활용 KPI 달성에 기여하고 변경 사항을 안심하고 빠르게 리뷰할 수 있도록 지원</li>
+  <li>개인 앱 현대화를 위해 <a href="https://github.com/2sem/swiftui-migrator-skill"><b>SwiftUI 마이그레이션 Skill</b></a> 구축, 앱당 1주 이상 걸리던 작업을 <b>1~2일로 단축</b></li>
+  <li>Youtube 영상 편집을 위해 유료 버전 전용 기능인 Davinci Resolve MCP를 무료 버전 <a href="https://github.com/2sem/davinci-resolve-lite-mcp">davinci-resolve-lite-mcp</a>으로 직접 구축, 장면 분류·편집 방법·검증 단계를 Skill과 Script로 분리해 신뢰성 향상</li>
+</ul>
+</section>
+
+<section class="keep">
+<h2>학력</h2>
+<div class="edu"><div><b>서일대학교</b> · 소프트웨어전공 (3년제) · 졸업</div><div class="period">2003.03 – 2009.02</div></div>
+</section>
+
+</body>
+</html>
