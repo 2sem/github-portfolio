@@ -41,7 +41,7 @@ description: 이영준(iOS 엔지니어)의 공고용 이력서를 만들 때 �
 `writing-principles.md` 0-3b를 따른다. JD에 없는 베이스 강조어(SDK 등)는 태그라인·소개 첫 문장·볼드에서 뺀다. PDF 1쪽 상단을 JD와 다시 대조해 어긋난 단어를 보고한다.
 
 ### 4. 빌드
-md는 항상 파일로 만들어 present한다. 초안은 `<회사>/resume-draft.md`, 확정(사용자 OK 또는 skim·refine 반영 후)되면 `resume.md`로 승격하고 draft는 지운다. PDF는 `export-resume` 스킬로 만든다(`resume.md`만 입력으로 받음). Docx는 요청할 때만(korean-docx-resume 스킬). 레이아웃은 템플릿 고정이며 확인은 3가지뿐이다: 폰트 깨짐, 블록 중간 잘림, 2페이지 초과.
+md는 항상 파일로 만들어 present한다. 초안은 `<회사>/resume-draft.md`, 확정(사용자 OK 또는 skim·refine 반영 후)되면 `resume.md`로 승격하고 draft는 지운다. PDF는 `export-resume` 스킬로 만든다(`resume.md`만 입력으로 받음). PDF를 만들면 같은 스킬의 8단계가 Google Drive 이력 폴더에 회사 폴더(없으면 생성)와 `spec`(jd.md 내용)을 추가하고, 폴더를 브라우저로 열어 사용자가 PDF를 직접 올리게 한다. Docx는 요청할 때만(korean-docx-resume 스킬). 레이아웃은 템플릿 고정이며 확인은 3가지뿐이다: 폰트 깨짐, 블록 중간 잘림, 2페이지 초과.
 
 ### 5. 보관
 지원 완료 후 이력서·Spec·스크린샷은 `archive-application` 스킬로 `application-history/applications/<YYYY-MM-DD>_<회사>/`에 보관한다.

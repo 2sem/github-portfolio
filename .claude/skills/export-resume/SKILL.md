@@ -43,6 +43,33 @@ lays it out. **Never reword, add, or drop content**; no phone number anywhere.
    Keep the name ASCII-only: Hangul names get re-encoded to NFD by zip/AirDrop/cloud
    and show up broken on Windows. Overwrite an earlier copy of the same name.
 
+8. **Archive to Google Drive** (after step 7, only when the step 6 gate passed).
+   Root folder: https://drive.google.com/drive/u/0/folders/1lH6hPRVNNFlJFpfMvkjkVX7WSo4nHQNK
+   (folder id `1lH6hPRVNNFlJFpfMvkjkVX7WSo4nHQNK`). Use the Google Drive MCP tools
+   (load with ToolSearch `select:mcp__claude_ai_Google_Drive__search_files,mcp__claude_ai_Google_Drive__create_file`);
+   if they are unavailable, open the URL in Chrome and do the same by hand.
+   1. Find the company folder: `search_files` with
+      `parentId = '1lH6hPRVNNFlJFpfMvkjkVX7WSo4nHQNK' and mimeType = 'application/vnd.google-apps.folder' and title contains '<회사>'`
+      (use the Hangul company name as in the application-history folder). If none, create it with
+      `create_file` (`contentMimeType`/`mimeType` `application/vnd.google-apps.folder`, `title` = company name, `parentId` = root id).
+   2. List the company folder (`parentId = '<company folder id>'`) before adding anything.
+      Drive does not overwrite: if `spec` or the PDF already exists, tell the user and skip that file
+      instead of making a duplicate.
+   3. `spec` file: `create_file` with `title` `spec`, `parentId` = company folder, `contentMimeType` `text/plain`,
+      `textContent` = the full text of the company folder's `jd.md`, unchanged (converts to a Google Doc).
+      If there is no `jd.md`, skip and say so.
+   4. Resume PDF (`Lee_Youngjun_Resume_<Company>.pdf`, same ASCII name as step 7): a real resume PDF is ~450KB,
+      about 600K characters of base64, which is too big to send inline through `create_file`. Do not try it, and do not
+      try Chrome `file_upload` (Drive's "파일 업로드" is a menu item, not a file input), or a localhost-served
+      page-side `fetch` + synthetic drop (tried 2026-10-28; the page timed out and nothing uploaded).
+      Instead open the company folder in the user's browser (`open "<folder url>"`) and reveal the Downloads PDF
+      in Finder (`open -R ~/Downloads/<pdf>`) so they drag it in themselves.
+      Only use `create_file` with `base64Content` (`contentMimeType` `application/pdf`,
+      `disableConversionToGoogleType` `true`) if the PDF is small (about 50KB or less).
+   5. Report the company folder link and what was created or skipped, and say plainly that the PDF still needs the
+      manual drag. Only the gated PDF and the JD go to Drive; never upload `resume.md`/`resume.html` or anything the
+      phone check did not cover.
+
 ## Notes
 - Needs Google Chrome at `/Applications/Google Chrome.app` and `swift` (for page count/preview).
 - Font: Pretendard if installed, else Apple SD Gothic Neo.

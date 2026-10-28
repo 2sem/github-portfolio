@@ -73,7 +73,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 - Naver Map SDK **Native Bridge**에 [축척 계산 로직 추가](https://github.com/team-olulo/react-native-naver-map/pull/7)해 지도 자동 Zoom(길안내) 구현
 - 구역 정보 API 호출 **4회→1회로 데이터 사용량 최소 75% 절감**(+위치 데이터 캐싱), 네트워크 트래픽 최적화에 기여
 - iOS/Android로 분리돼 있던 GitHub CI/CD를 **Fastlane 기반으로 통합**
-- [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part1-54362deaeda2)으로 **배포 소요 시간 50% 감축**
+- [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part2-ac3405af0d6c)으로 **배포 소요 시간 50% 감축**
 - 외국어 지원 프로젝트에서 [다국어 대응 구축](https://toyboy2.medium.com/supporting-multi-language-in-react-native-applications-8bf4ddc8a8ef), [Android 언어 설정 관련 오픈소스 기여](https://toyboy2.medium.com/react-native-android-per-app-language-settings-5f9d4a29e9d2)
 - 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → [**React Native 점진적 업그레이드**](https://medium.com/@toyboy2/migration-react-native-from-0-65-to-0-68-troubleshooting-guide-0a8a7401c581) 등 기술부채 해소
 
@@ -149,7 +149,7 @@ React Native와 iOS를 중심으로 다양한 도메인에서 담당 영역을 �
 - Android 배포를 AWS S3 링크 공유 방식에서 [**APK Slack 직접 업로드**](https://toyboy2.medium.com/how-to-distribute-apk-to-slack-automatically-1b3aa992177e)로 개선해 테스트 단계 단축
 - Android Build-tools 31 이후 dx를 찾지 못해 로컬 빌드가 실패하던 문제를 **d8 링크 생성 Gradle 스크립트**로 해결하고 직접 등록한 [공개 이슈](https://github.com/channel-io/react-native-channel-io/issues/109)에 해결 방법 공유
 - 이전 버전과 동시에 설치할 수 있도록 QA 버전 '테스트킥'을 [**flavor로 분리해 배포**](https://toyboy2.medium.com/how-to-split-android-project-for-qa-version-1128b2bce7bb)
-- [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part1-54362deaeda2)으로 **배포 소요 시간 50% 감축**
+- [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part2-ac3405af0d6c)으로 **배포 소요 시간 50% 감축**
 - **Channel Talk(외부 CX SDK) 통합**: [채팅 상담](https://youtube.com/shorts/tC-np8ShcZU) 기능 추가, 통합 후 알림 분류 메소드에서 발생한 **Crash**를 제조사에 제보하고 [수정안 PR 제출](https://github.com/channel-io/react-native-channel-io/pull/107)
 - **react-native-vision-camera**의 Android 빌드 오류(Unresolved reference: resolveView)를 메서드 이름 기반 동적 호출로 바꿔 해결하고 [오픈소스 PR 제출](https://github.com/mrousavy/react-native-vision-camera/pull/1318)
 - Naver Map SDK **Native Bridge**에 [축척 계산 로직 추가](https://github.com/team-olulo/react-native-naver-map/pull/7)해 지도 자동 Zoom(길안내) 구현
@@ -157,6 +157,7 @@ React Native와 iOS를 중심으로 다양한 도메인에서 담당 영역을 �
 - react-native-ble-plx가 Xcode 13과 호환되는 Pod을 참조하지 않아 발생한 빌드 오류를 [Pod과 라이브러리를 fork해 CocoaPods·npm에 배포하는 방식으로 해결](https://toyboy2.medium.com/react-native-ble-plx-xcode-13-troubleshootings-dca3f793b1e0)
 - Jest 기반 Unit 테스트 보강, [실행 Parameter 조정과 캐시 적용](https://medium.com/@toyboy2/how-to-speed-up-jest-8c8f5d40f4f9)으로 테스트 시간 **37초 → 27초** 단축
 - **Redux**로 앱 전역 상태 관리
+- [**Flipper**](https://toyboy2.medium.com/debugging-react-native-with-flipper-262da7bcadc7)로 렌더링을 분석해 불필요한 UI 업데이트 감소
 
 `React Native` `TypeScript` `Redux` `Java/Objective-C(Native Bridge)` `Naver Map SDK` `Channel Talk SDK` `BLE` `Jest` `Fastlane` `GitHub Actions`
 
@@ -165,6 +166,7 @@ React Native와 iOS를 중심으로 다양한 도메인에서 담당 영역을 �
 **개인 프로젝트 (직딩) · 2024.01 – 2024.02 · 개인 · React Native 앱 개발자**
 직장인 워라밸 앱(iOS·Android) · UX 디자이너 협업 · [GitHub](https://github.com/2sem/zicding-app)
 - React Native·TypeScript로 UX 디자이너와 협업해 워라밸 앱을 단독 개발
+- [App Store](https://apps.apple.com/app/id6448208169)·Play Store 출시
 - 공공데이터 공휴일 API 연동으로 남은 [공휴일 표시](https://medium.com/@toyboy2/%EC%A7%81%EB%94%A9-%EA%B0%9C%EB%B0%9C%EA%B8%B0-%EA%B3%B5%ED%9C%B4%EC%9D%BC-%EC%A1%B0%ED%9A%8C-394715feb9ea?sharedUserId=toyboy2)·연차 계획 제안, [커스텀 캘린더](https://medium.com/@toyboy2/%EC%A7%81%EB%94%A9-%EA%B0%9C%EB%B0%9C%EA%B8%B0-%EC%9E%85%EC%82%AC%EC%9D%BC-%EC%84%A0%ED%83%9D-ffec8c67e36d?sharedUserId=toyboy2) 구현
 - Realm 오프라인 우선 로컬 저장소 구성, 오늘 남은 근무시간 실시간 카운트다운 구현
 - [개발 과정](https://toyboy2.medium.com/list/ba6efa6fce3c) 기록
@@ -391,13 +393,14 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 **CI/CD 관련 불릿**
 - Fastlane => iOS/Android로 분리돼 있던 GitHub CI/CD를 **Fastlane 기반으로 통합**
 - DX, 개발 환경 개선, Android => Android 배포를 AWS S3 링크 공유 방식에서 [**APK Slack 직접 업로드**](https://toyboy2.medium.com/how-to-distribute-apk-to-slack-automatically-1b3aa992177e)로 개선해 테스트 단계 단축
-- 개발 환경 개선, 성능 개선 => [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part1-54362deaeda2)으로 **배포 소요 시간 50% 감축**
+- 개발 환경 개선, 성능 개선 => [빌드 캐시 적용](https://toyboy2.medium.com/how-to-deploy-react-native-app-all-in-one-click-part2-ac3405af0d6c)으로 **배포 소요 시간 50% 감축**
 - 개발 환경 개선, Android, 빌드 => Android Build-tools 31 이후 dx를 찾지 못해 로컬 빌드가 실패하던 문제를 **d8 링크 생성 Gradle 스크립트**로 해결하고 직접 등록한 [공개 이슈](https://github.com/channel-io/react-native-channel-io/issues/109)에 해결 방법 공유
 - 개발 환경 개선, QA, Android => 이전 버전과 동시에 설치할 수 있도록 QA 버전 '테스트킥'을 [**flavor로 분리해 배포**](https://toyboy2.medium.com/how-to-split-android-project-for-qa-version-1128b2bce7bb)
 - 오픈소스, 크래시, 외부 라이브러리 수정 => **react-native-vision-camera**의 Android 빌드 오류(Unresolved reference: resolveView)를 메서드 이름 기반 동적 호출로 바꿔 해결하고 [오픈소스 PR 제출](https://github.com/mrousavy/react-native-vision-camera/pull/1318)
 
 **상태 관리**
 - 상태 관리 => **Redux**로 앱 전역 상태 관리
+- 성능, 렌더링 => [**Flipper**](https://toyboy2.medium.com/debugging-react-native-with-flipper-262da7bcadc7)로 렌더링을 분석해 불필요한 UI 업데이트 감소 (2026-10 사용자 확인)
 
 **리드로서 · 2022.04 – 2023.10**
 - 개발 문화 => 엔지니어 2~3명 리드, **1일 1시간** [기술부채 해소 시간 도입](https://toyboy2.medium.com/%EC%9E%91%EC%9D%80-%EA%B2%83%EB%B6%80%ED%84%B0-%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EA%B2%83%EB%B6%80%ED%84%B0-%EB%B0%94%EA%BF%94%EB%82%98%EA%B0%80%EA%B8%B0-ff21ea4fb6c2) → [**React Native 점진적 업그레이드**](https://medium.com/@toyboy2/migration-react-native-from-0-65-to-0-68-troubleshooting-guide-0a8a7401c581) 등 기술부채 해소
@@ -534,6 +537,7 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 ---
 ### 개인 프로젝트 — 직딩 (2024.01 – 2024.02 · React Native · 2026-10 사용자 확인, 출처 sides/side-projects.toon)
 - React Native·TypeScript로 UX 디자이너와 협업해 워라밸 앱을 단독 개발
+- [App Store](https://apps.apple.com/app/id6448208169)·Play Store 출시 (2026-10 사용자 확인)
 - 공공데이터 공휴일 API 연동으로 남은 공휴일 표시·연차 계획 제안, 커스텀 캘린더 구현
 - Realm 오프라인 우선 로컬 저장소 구성, 오늘 남은 근무시간 실시간 카운트다운 구현
 - 킥고잉 기술부채 해소 결과: React Native **0.71** 업그레이드 (2026-10 사용자 확인)

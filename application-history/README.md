@@ -86,8 +86,11 @@ Check with `python3 -I .claude/skills/archive-application/scripts/check_phone.py
 | 2026-10-21 | CJ ENM | jd.md, resume.html, resume.md, resume.pdf, spec.md |
 | 2026-10-22 | 텔어스 | jd.md, resume.html, resume.md, resume.pdf |
 | 2026-10-23 | 티맵모빌리티 | jd.md, resume.html, resume.md, resume.pdf |
-| 2026-10-26 | 비전아이 | jd.md, resume.html, resume.md, resume.pdf, submission-note.md |
 | 2026-10-26 | 올리브영 | jd.md, resume.html, resume.md, resume.pdf |
+| 2026-10-27 | 비전아이 | jd.md, resume.html, resume.md, resume.pdf, submission-note.md |
+| 2026-10-27 | 디지털엑스 | jd.md, resume.html, resume.md, resume.pdf |
+| 2026-10-27 | 필상 | jd.md, resume.html, resume.md, resume.pdf |
+| 2026-10-28 | 당근 | jd.md, resume.html, resume.md, resume.pdf |
 
 ## Undated
 
@@ -102,16 +105,19 @@ Status: `pending` = JD collected, apply/skip not decided · `skipped` = reviewed
 | UJET | unknown |  | resume-en.pdf, resume-mobile.pdf, spec.docx |
 | xAI | unknown |  | jd.docx, jd.pdf |
 | 더블유클럽 | unknown |  | jd.md |
-| 디지털엑스 | unknown |  | jd.md |
 | 브이아이펫 | unknown |  | jd.md, resume.md |
 | 비버웍스 | applied | 2026-10-19, see applications/ | spec.docx |
 | 빗썸 | unknown |  | resume.md, resume.pdf, spec.docx |
 | 스피커블 | unknown |  | jd.md |
-| 에이티씨아이 | unknown |  | jd.md |
+| 알서포트 | skipped | 2026-10-27 · macOS SDK, 1/3 신호, 3-of-5 게이트(코덱·네트워크·암호화·macOS) 근거 부족, 강동 위치 | jd.md |
+| 에이티씨아이 | skipped | 2026-10-26 · unclear experience requirement, 가산, Next.js→mobile rebuild | jd.md |
 | 엔디소프트 | unknown |  | resume.docx, resume.md, resume.pdf, spec.docx |
+| 엘핀 | skipped | 2026-10-27 · iOS+Android 병행 요구, 1/3 신호, 회사 단계 불명, 하향 지원 위험 | jd.md |
 | 엠피에이지 | unknown |  | jd.md |
 | 오늘의집 | unknown |  | assignment-기술경영론.pdf, cover-letter.pdf, jd.pdf, resume.pdf |
 | 웨이비나 | skipped | 2026-10-23 · solo dev at a seed-stage company, no medical-domain experience | jd.md, resume.html, resume.md, resume.pdf |
+| 큐피스트(글램) | skipped | 2026-10-27 · AI 챗 스트리밍 UI 경험 없음, RN 3년 미만, 회사 단계 불명 | jd.md |
+| 토스 | skipped | 2026-10-27 · 1/3 신호, 성숙한 슈퍼앱 단일 서비스 슬롯, 사전 과제, 같은 그룹 토스플레이스 2026-04-13 탈락(재지원 정책 미확인) | jd.md |
 | 페이타랩 | unknown |  | resume.md, spec.docx |
 | 하이퍼노바 | unknown |  | resume.docx, resume.md, spec.docx |
 | 한화생명 | unknown |  | spec.docx |
