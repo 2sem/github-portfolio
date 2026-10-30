@@ -91,6 +91,7 @@ Check with `python3 -I .claude/skills/archive-application/scripts/check_phone.py
 | 2026-10-27 | 디지털엑스 | jd.md, resume.html, resume.md, resume.pdf |
 | 2026-10-27 | 필상 | jd.md, resume.html, resume.md, resume.pdf |
 | 2026-10-28 | 당근 | jd.md, resume.html, resume.md, resume.pdf |
+| 2026-10-30 | 블록체인랩스 | jd.md, resume.html, resume.md, resume.pdf |
 
 ## Undated
 
@@ -104,12 +105,16 @@ Status: `pending` = JD collected, apply/skip not decided · `skipped` = reviewed
 | TRUST WALLET | unknown |  | spec.docx |
 | UJET | unknown |  | resume-en.pdf, resume-mobile.pdf, spec.docx |
 | xAI | unknown |  | jd.docx, jd.pdf |
+| 고스트패스 | pending | 2026-10-28 · JobKorea 50070126, 여의도, iOS Swift+BLE 시니어, ① iOS, 마감 11/28 | jd.md |
+| 더게임 | pending | 2026-10-28 · JobKorea 50017847, 성수, RN+React 웹 병행, 약함(~1/3), 마감 11/17 | jd.md |
+| 더크리스피 | skipped | 2026-10-28 · AI 챗 스트리밍 UI 경험 없음, Expo+Next.js 웹 스택 부재, RN 3년 미만 (큐피스트와 동일 사유), 1/3 | jd.md |
 | 더블유클럽 | unknown |  | jd.md |
 | 브이아이펫 | unknown |  | jd.md, resume.md |
 | 비버웍스 | applied | 2026-10-19, see applications/ | spec.docx |
 | 빗썸 | unknown |  | resume.md, resume.pdf, spec.docx |
 | 스피커블 | unknown |  | jd.md |
 | 알서포트 | skipped | 2026-10-27 · macOS SDK, 1/3 신호, 3-of-5 게이트(코덱·네트워크·암호화·macOS) 근거 부족, 강동 위치 | jd.md |
+| 아이엘케이코리아 | pending | 2026-10-28 · JobKorea 50194900, 신사, RN/Expo PG 결제앱, 3~5년, 약함(1-2/3), 마감 12/18 | jd.md |
 | 에이티씨아이 | skipped | 2026-10-26 · unclear experience requirement, 가산, Next.js→mobile rebuild | jd.md |
 | 엔디소프트 | unknown |  | resume.docx, resume.md, resume.pdf, spec.docx |
 | 엘핀 | skipped | 2026-10-27 · iOS+Android 병행 요구, 1/3 신호, 회사 단계 불명, 하향 지원 위험 | jd.md |
