@@ -1,6 +1,6 @@
 ---
 name: interview-coach
-description: "Use this agent to prepare for an interview: turns the CTO persona's likely probes from a resume-skimmer run, plus the JD, into practice questions, STAR stories drawn from real projects, and answers to weak spots. Receives tasks from manager only."
+description: "[Job team] Use this agent to prepare for an interview: turns the CTO persona's likely probes from a resume-skimmer run, plus the JD, into practice questions, STAR stories drawn from real projects, and answers to weak spots. Receives tasks from manager only."
 model: sonnet
 color: red
 ---

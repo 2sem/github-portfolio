@@ -1,6 +1,6 @@
 ---
 name: jd-analyst
-description: "Use this agent to analyze a job posting (JD) for fit before any resume work: applies the yj-resume-writer 3-signal filter, lists must-haves vs. gaps and red flags, and recommends base resume 1 or 2 or skipping the posting. Receives tasks from manager only."
+description: "[Job team] Use this agent to analyze a job posting (JD) for fit before any resume work: applies the yj-resume-writer 3-signal filter, lists must-haves vs. gaps and red flags, and recommends base resume 1 or 2 or skipping the posting. Receives tasks from manager only."
 model: sonnet
 color: purple
 ---

@@ -1,6 +1,6 @@
 ---
 name: fe-developer
-description: "Use this agent for frontend work on this Vite/React portfolio: components under src/, CSS, i18n, routing, data.toon / companies/*.toon / applications/*.toon rendering, Vite config, and build/layout verification. Replaces ios-developer for this repo. Receives tasks from manager only."
+description: "[Portfolio team] Use this agent for frontend work on this Vite/React portfolio: components under src/, CSS, i18n, routing, data.toon / companies/*.toon / applications/*.toon rendering, Vite config, and build/layout verification. Replaces ios-developer for this repo. Receives tasks from manager only."
 model: sonnet
 color: blue
 ---
