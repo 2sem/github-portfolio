@@ -1,6 +1,6 @@
 ---
 name: resume-refiner
-description: "Use this agent (job consultant / resume refiner) to improve a resume using skim feedback from the resume-skimmer skill (HR and CTO personas). It proposes and applies minimal edits to bullet order, bold, and wording gaps while keeping facts exact. Receives tasks from manager only."
+description: "[Job team] Use this agent (job consultant / resume refiner) to improve a resume using skim feedback from the resume-skimmer skill (HR and CTO personas). It proposes and applies minimal edits to bullet order, bold, and wording gaps while keeping facts exact. Receives tasks from manager only."
 model: sonnet
 color: orange
 ---
