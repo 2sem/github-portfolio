@@ -377,6 +377,9 @@ IT 외주 SK 계열 · SKT의 3개 iOS 프로젝트 유지보수 (SWING, T world
 **2021.06 – 2023.10 (2년+) · 정규직 · App Developer → Mobile Tech Lead**
 기술 스택: **React Native** — iOS 네이티브 경력 아님, 모바일 경력으로만 카운트
 
+**추천사 (LinkedIn, 2023-09-26 · 직속 상사 Jinbok Lee, Head of Engineering, LifeX)**
+"모바일 개발에 대한 이해도가 높고, 난이도 높은 문제도 척척 해결하실 수 있는 분입니다." (원문 그대로 인용만 가능, 요약·가공 금지)
+
 **개발자로서 · 2021.06 – 2022.03**
 - Native 경험 => Naver Map SDK **Native Bridge**에 [축척 계산 로직 추가](https://github.com/team-olulo/react-native-naver-map/pull/7)해 지도 자동 Zoom(길안내) 구현
 - 리서치, UX => Naver Place·Daum Map 분석해 앱내 경로 표시 기능 구현, 대리운전기사 사용자층 긍정 평가

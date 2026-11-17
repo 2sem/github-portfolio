@@ -431,6 +431,22 @@ section[id] {
   opacity: 0.85;
   line-height: 1.5;
 }
+.exp-rec {
+  margin: 8px 0 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--soft);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--fg);
+  opacity: 0.85;
+}
+.exp-rec cite {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-style: normal;
+  color: var(--soft);
+}
 
 /* ─── applications ───────────────────────────────────────────────────── */
 .applications-section {
