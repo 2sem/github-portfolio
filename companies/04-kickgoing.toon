@@ -10,6 +10,17 @@ desc:
 story:
   en: "RN migration and in-app navigation. Founded monthly dev conference. Contributed to open-source."
   ko: "RN 마이그레이션·길안내. 월간 개발자 컨퍼런스 창설. 오픈소스 기여."
+recommendation:
+  by: "Jinbok Lee"
+  title:
+    en: "Head of Engineering, LifeX"
+    ko: "Head of Engineering, LifeX"
+  relation:
+    en: "Direct manager (LinkedIn recommendation, 2023-09-26)"
+    ko: "직속 상사 (LinkedIn 추천, 2023-09-26)"
+  quote:
+    en: "He has a deep understanding of mobile development and can solve even difficult problems with ease."
+    ko: "모바일 개발에 대한 이해도가 높고, 난이도 높은 문제도 척척 해결하실 수 있는 분입니다."
 cur: false
 projects[10]:
   - id: kickgoing-pass

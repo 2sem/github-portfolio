@@ -40,6 +40,14 @@ export default function Experiences({ onVisible }) {
               <span className="exp-desc">{tr(c.desc)}</span>
             </div>
             <div className="exp-story">{tr(c.story)}</div>
+            {c.recommendation && (
+              <blockquote className="exp-rec">
+                “{tr(c.recommendation.quote)}”
+                <cite>
+                  — {c.recommendation.by}, {tr(c.recommendation.title)} · {tr(c.recommendation.relation)}
+                </cite>
+              </blockquote>
+            )}
           </div>
         ))}
       </div>
